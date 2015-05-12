@@ -1,1 +1,2 @@
-Welcome to the stacki wiki!
+Welcome to the StackI Wiki
+==========================
