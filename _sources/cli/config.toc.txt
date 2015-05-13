@@ -1,7 +1,0 @@
-config
-======
-
-.. toctree::
-	:maxdepth: 1
-
-	config.host.interface

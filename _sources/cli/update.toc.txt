@@ -1,7 +1,0 @@
-update
-======
-
-.. toctree::
-	:maxdepth: 1
-
-	update

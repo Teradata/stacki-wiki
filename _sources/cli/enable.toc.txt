@@ -1,8 +1,0 @@
-enable
-======
-
-.. toctree::
-	:maxdepth: 1
-
-	enable.host.channel
-	enable.roll

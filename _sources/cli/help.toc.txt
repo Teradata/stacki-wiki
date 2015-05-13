@@ -1,7 +1,0 @@
-help
-====
-
-.. toctree::
-	:maxdepth: 1
-
-	help

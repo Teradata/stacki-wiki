@@ -1,7 +1,0 @@
-start
-=====
-
-.. toctree::
-	:maxdepth: 1
-
-	start.host.logreader

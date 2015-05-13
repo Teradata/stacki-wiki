@@ -1,7 +1,0 @@
-swap
-====
-
-.. toctree::
-	:maxdepth: 1
-
-	swap.host.interface
