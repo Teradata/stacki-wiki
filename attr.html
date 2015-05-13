@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4. Attributes &mdash; StackIQ Manual v6.6</title>
+    
+    <link rel="stylesheet" href="_static/stackiq.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'develop',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="StackIQ Manual v6.6" href="index.html" />
+    <link rel="next" title="5. StackIQ Command Line" href="rcl.html" />
+    <link rel="prev" title="3. Installation" href="installation.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+          <p class="logo"><a href="index.html">
+            <img class="logo" src="_static/stackiq-logo.png" alt="Logo"/>
+          </a></p>
+        <div class="headertitle"><a
+          href="index.html">StackIQ Manual v6.6</a></div>
+        <div class="rel">
+          <a href="installation.html" title="3. Installation"
+             accesskey="P">previous</a> |
+          <a href="rcl.html" title="5. StackIQ Command Line"
+             accesskey="N">next</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="attributes">
+<h1>4. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h1>
+<p><em>Attributes</em> are key-value pairs used to fine tune <em>Appliance</em>
+configurations for a given host.
+While <em>Attributes</em> are often defined at the host level they can
+also be defined at the Global, Environment, os OS level.
+In addition StackIQ defines an Intrinsic level that maps the cluster
+database schema into key-value pairs.</p>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>ATTR</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><em>TYPE</em></span></dt>
+<dd>DESCRIPTION</dd>
+<dt><strong>Kickstart_DistroDir</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>This attribute is no longer used,
+and will be removed in the next release of the code.</dd>
+<dt><strong>Kickstart_Multicast</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>This IP multicast address used in the cluster private network.
+This address is randomly generated during the <em>Frontend</em>
+installation.</dd>
+<dt><strong>Kickstart_PrivateAddress</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id1">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP address of the private network interface for the
+<em>Frontend</em>.
+This is the value in the <em>IP</em> column in the <em>private</em> row
+returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span> <span class="pre">interface</span> <span class="pre">localhost</span></tt>
+as run on the <em>Frontend</em>.</dd>
+<dt><strong>Kickstart_PrivateBroadcast</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id2">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP broadcast address of the cluster private network.
+This is calculated based on the <em>SUBNET</em> and <em>NETMASK</em> columns returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">private</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">netmask</span> <span class="pre">private</span></tt>.</dd>
+<dt><strong>Kickstart_PrivateDNSDomain</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id3">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The domain name associated witht the cluster private network.
+This is the value in the <em>DNSZONE</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">private</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">zone</span> <span class="pre">private</span></tt>.</dd>
+<dt><strong>Kickstart_PrivateDNSServers</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The address of the DNS servers to be used by all hosts on
+the private network.
+This defaults to the private interface address of the
+<em>Frontend</em> meaning all hosts use the <em>Frontend</em> for DNS
+queries rather than reaching out to the LAN or Internet.</dd>
+<dt><strong>Kickstart_PrivateGateway</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>This attribute is for internal use only.</dd>
+<dt><strong>Kickstart_PrivateHostname</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id4">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The name of the private network interface for the  <em>Frontend</em>.
+This is the value in the <em>NAME</em> column in the <em>private</em> row
+returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span> <span class="pre">interface</span> <span class="pre">localhost</span></tt>
+as run on the <em>Frontend</em>.</dd>
+<dt><strong>Kickstart_PrivateKickstartBasedir</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>This attribute is for internal use only.</dd>
+<dt><strong>Kickstart_PrivateNetmask</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id5">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP network mask of the cluster private network.
+This is the value in the <em>NETMASK</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">private</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">netmask</span> <span class="pre">private</span></tt>.</dd>
+<dt><strong>Kickstart_PrivateNetmaskCIDR</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id6">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP network mask of the cluster private network in CIDR format.
+This is calculated based on the value in the <em>NETMASK</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">private</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">netmask</span> <span class="pre">private</span></tt>.</dd>
+<dt><strong>Kickstart_PrivateNetwork</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id7">[1]</a>: <em>String</em></dt>
+<dd>The IP network of the cluster private network.
+This is the value in the <em>SUBNET</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">private</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">subnet</span> <span class="pre">private</span></tt>.</dd>
+<dt><strong>Kickstart_PublicAddress</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id8">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP address of the public network interface for the
+<em>Frontend</em>.
+This is the value in the <em>IP</em> column in the <em>public</em> row
+returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span> <span class="pre">interface</span> <span class="pre">localhost</span></tt>
+as run on the <em>Frontend</em>.</dd>
+<dt><strong>Kickstart_PublicBroadcast</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id9">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP broadcast address of the cluster public network.
+This is calculated based on the <em>SUBNET</em> and <em>NETMASK</em> columns returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">public</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">netmask</span> <span class="pre">public</span></tt>.</dd>
+<dt><strong>Kickstart_PublicDNSDomain</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id10">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The domain name associated witht the cluster public network.
+This is the value in the <em>DNSZONE</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">public</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">zone</span> <span class="pre">public</span></tt>.</dd>
+<dt><strong>Kickstart_PublicGateway</strong> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>This attribute is for internal use only.</dd>
+<dt><strong>Kickstart_PublicHostname</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id11">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The name of the public network interface for the  <em>Frontend</em>.
+This is the value in the <em>NAME</em> column in the <em>public</em> row
+returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span> <span class="pre">interface</span> <span class="pre">localhost</span></tt>
+as run on the <em>Frontend</em>.</dd>
+<dt><strong>Kickstart_PublicNetmask</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id12">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP network mask of the cluster public network.
+This is the value in the <em>NETMASK</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">public</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">netmask</span> <span class="pre">public</span></tt>.</dd>
+<dt><strong>Kickstart_PublicNetmaskCIDR</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id13">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP network mask of the cluster public network in CIDR format.
+This is calculated based on the value in the <em>NETMASK</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">public</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">netmask</span> <span class="pre">public</span></tt>.</dd>
+<dt><strong>Kickstart_PublicNetwork</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id14">[1]</a>: <em>String</em></dt>
+<dd>The IP network of the cluster public network.
+This is the value in the <em>SUBNET</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">network</span> <span class="pre">public</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">network</span> <span class="pre">subnet</span> <span class="pre">public</span></tt>.</dd>
+<dt><strong>appliance</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id15">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The <em>Appliance</em> type for a given host.
+This is the value of the <em>APPLIANCE</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">host</span> <span class="pre">appliance</span></tt>.</dd>
+<dt><strong>cpus</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id16">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>Integer</em></span></dt>
+<dd>The number of CPU cores for a given host.
+This is the value of the <em>CPUS</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">host</span> <span class="pre">cpus</span></tt>.</dd>
+<dt><strong>distribution</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id17">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The name of the <em>Distribution</em> for a given host.
+This is the value of the <em>DISTRIBUTION</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">host</span> <span class="pre">distribution</span></tt>.</dd>
+<dt><strong>graph</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id18">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The name of the graph directory containing the XML graph files
+for a given hosts.
+This is the value of the <em>GRAPH</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">distribution</span></tt>
+for the distribution that the host&#8217;s distribution.
+This value is always set to <tt class="docutils literal"><span class="pre">default</span></tt> and is never modified.</dd>
+<dt><strong>hostaddr</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id19">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The IP address of the private network interface for a given
+host.
+This is the value in the <em>IP</em> column in the <em>private</em> row
+returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span> <span class="pre">interface</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">host</span> <span class="pre">interface</span> <span class="pre">ip</span></tt>.</dd>
+<dt><strong>hostname</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id20">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The name of the private network interface for a given host.
+This is the value in the <em>NAME</em> column in the <em>private</em> row
+returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span> <span class="pre">interface</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">host</span> <span class="pre">interface</span> <span class="pre">name</span></tt>.</dd>
+<dt><strong>membership</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id21">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The <em>Appliance</em> type for a given host.
+This is the value of the <em>MEMBERSHIP</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">host</span> <span class="pre">appliance</span></tt>.</dd>
+<dt><strong>os</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id22">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>String</em></span></dt>
+<dd>The name of the operating system for a given host.
+This is the value of the <em>OS</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">distribution</span></tt>
+for the distribution used by the given host.
+For both Red Hat and CentOS hosts this value is <em>redhat</em>.</dd>
+<dt><strong>rack</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id23">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>Integer</em></span></dt>
+<dd>The rack number for a given hosts.
+This is the value of the <em>RACK</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">host</span> <span class="pre">rack</span></tt>.</dd>
+<dt><strong>rank</strong> <a class="footnote-reference" href="#intrinsic-attribute" id="id24">[1]</a> <span class="classifier-delimiter">:</span> <span class="classifier"><em>Integer</em></span></dt>
+<dd>The rank number for a given hosts.
+This is the value of the <em>RANK</em> column returned by
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">list</span> <span class="pre">host</span></tt>,
+and can be modified with
+<tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span> <span class="pre">host</span> <span class="pre">rank</span></tt>.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><strong>Kickstart_PrivateKickstartHost</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">10.1.1.1</span></tt> : Kickstart Host</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Kickstart_PrivateNTPHost</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">10.1.1.1</span></tt> : Private NTP Host</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Kickstart_PrivateSyslogHost</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">10.1.1.1</span></tt> : Private Syslog host</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Kickstart_PublicDNSServers</strong> : <em>String</em> :  : Public DNS Servers</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Kickstart_PublicNTPHost</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">pool.ntp.org</span></tt> : Public NTP Server</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Kickstart_Timezone</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">America/Los_Angeles</span></tt> : Timezone</div>
+<div class="line"><br /></div>
+<div class="line"><strong>discover_start</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Controls discovery mode in the GUI</div>
+<div class="line"><br /></div>
+<div class="line"><strong>discovery.base.rack</strong> : <em>Integer</em> : <tt class="docutils literal"><span class="pre">0</span></tt> : Starting Rack number</div>
+<div class="line"><br /></div>
+<div class="line"><strong>discovery.base.rank</strong> : <em>Integer</em> : <tt class="docutils literal"><span class="pre">0</span></tt> : Starting position number in rack</div>
+<div class="line"><br /></div>
+<div class="line"><strong>distribution.rocks-dist.version</strong> : <em>Integer</em> : <tt class="docutils literal"><span class="pre">1</span></tt> : Latest rocks-dist version number</div>
+<div class="line"><br /></div>
+<div class="line"><strong>firewall</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Enables/disables firewall on backend nodes</div>
+<div class="line"><br /></div>
+<div class="line"><strong>ganglia_address</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">224.0.0.3</span></tt> : Ganglia multicast address</div>
+<div class="line"><br /></div>
+<div class="line"><strong>managed</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Enables/disables management of nodes.</div>
+<div class="line"><br /></div>
+<div class="line"><strong>mcli.flags</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">WB,NORA,Direct,NoCachedBadBBU</span></tt> : Controls flags used when creating MegaCLI RAID configurations</div>
+<div class="line"><br /></div>
+<div class="line"><strong>nukedisks</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">false</span></tt> : Controls whether to wipe all disks when re-installing</div>
+<div class="line"><br /></div>
+<div class="line"><strong>os</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">redhat</span></tt> : OS of a host.</div>
+<div class="line"><br /></div>
+<div class="line"><strong>rocks_version</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">6.6</span></tt> : StackIQ Version Information</div>
+<div class="line"><br /></div>
+<div class="line"><strong>salt.master</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">false</span></tt> : Controls installation of salt master</div>
+<div class="line"><br /></div>
+<div class="line"><strong>salt.master.interface</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">10.1.1.1</span></tt> : Interface on which the salt-master listens</div>
+<div class="line"><br /></div>
+<div class="line"><strong>salt.master.log_level</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">info</span></tt> : Log level of the salt-master</div>
+<div class="line"><br /></div>
+<div class="line"><strong>salt.master.log_level_logfile</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">warning</span></tt> : Log level logfile for the salt-master</div>
+<div class="line"><br /></div>
+<div class="line"><strong>salt.minion</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Controls installation of salt-minion</div>
+<div class="line"><br /></div>
+<div class="line"><strong>salt.minion.log_level</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">info</span></tt> : Log level for the salt-minion</div>
+<div class="line"><br /></div>
+<div class="line"><strong>salt.minion.log_level_logfile</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">warning</span></tt> : Log level logfile for salt-minion</div>
+<div class="line"><br /></div>
+<div class="line"><strong>salt.minion.master</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">10.1.1.1</span></tt> : Address of salt-master</div>
+<div class="line"><br /></div>
+<div class="line"><strong>ssh.use_dns</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Resolve DNS when using SSH</div>
+<div class="line"><br /></div>
+<div class="line"><strong>stats.cpu</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Enables/disables collection of CPU stats</div>
+<div class="line"><br /></div>
+<div class="line"><strong>stats.disk</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Enables/disables collection of disk stats</div>
+<div class="line"><br /></div>
+<div class="line"><strong>stats.net</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Enables/disables collection of Network stats</div>
+<div class="line"><br /></div>
+<div class="line"><strong>stats.rrd.path</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">/state/partition1/stats/rrds</span></tt> : Location of stats</div>
+<div class="line"><br /></div>
+<div class="line"><strong>stats.rrd.seconds</strong> : <em>Integer</em> : <tt class="docutils literal"><span class="pre">157680000</span></tt> : Longevity of stats</div>
+<div class="line"><br /></div>
+<div class="line"><strong>stats.rrd.startup</strong> : <em>Integer</em> : <tt class="docutils literal"><span class="pre">1</span></tt> : Enables/disables collection of stats</div>
+<div class="line"><br /></div>
+<div class="line"><strong>sync.autofs</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Enables/disables syncing of autofs files</div>
+<div class="line"><br /></div>
+<div class="line"><strong>sync.root</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Enables/disables syncing of root user information</div>
+<div class="line"><br /></div>
+<div class="line"><strong>sync.users</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Enables/disables syncing of user information</div>
+<div class="line"><br /></div>
+<div class="line"><strong>user.auth</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">unix</span></tt> : Method for user authentication</div>
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>RepositoryLocal</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Use local repository</div>
+<div class="line"><br /></div>
+<div class="line"><strong>dhcp_filename</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">pxelinux.0</span></tt> : Name of PXE file served by DHCP</div>
+<div class="line"><br /></div>
+<div class="line"><strong>dhcp_nextserver</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">10.1.1.1</span></tt> : DHCP Nextserver</div>
+<div class="line"><br /></div>
+<div class="line"><strong>exec_host</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">false</span></tt> : Execution capability of appliance</div>
+<div class="line"><br /></div>
+<div class="line"><strong>kickstartable</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">yes</span></tt> : Kickstart capability of appliance</div>
+<div class="line"><br /></div>
+<div class="line"><strong>managed</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Managed appliance</div>
+<div class="line"><br /></div>
+<div class="line"><strong>primary_net</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">private</span></tt> : Primary network of appliance</div>
+<div class="line"><br /></div>
+<div class="line"><strong>submit_host</strong> : <em>Bool</em> : <tt class="docutils literal"><span class="pre">true</span></tt> : Job submission capability of appliance</div>
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>salt.minion.disable_modules</strong> : <em>String</em> : <tt class="docutils literal"><span class="pre">[</span> <span class="pre">cmdmod,</span> <span class="pre">test</span> <span class="pre">]</span></tt> : Disabled salt modules.</div>
+</div>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="intrinsic-attribute" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>, <a class="fn-backref" href="#id4">4</a>, <a class="fn-backref" href="#id5">5</a>, <a class="fn-backref" href="#id6">6</a>, <a class="fn-backref" href="#id7">7</a>, <a class="fn-backref" href="#id8">8</a>, <a class="fn-backref" href="#id9">9</a>, <a class="fn-backref" href="#id10">10</a>, <a class="fn-backref" href="#id11">11</a>, <a class="fn-backref" href="#id12">12</a>, <a class="fn-backref" href="#id13">13</a>, <a class="fn-backref" href="#id14">14</a>, <a class="fn-backref" href="#id15">15</a>, <a class="fn-backref" href="#id16">16</a>, <a class="fn-backref" href="#id17">17</a>, <a class="fn-backref" href="#id18">18</a>, <a class="fn-backref" href="#id19">19</a>, <a class="fn-backref" href="#id20">20</a>, <a class="fn-backref" href="#id21">21</a>, <a class="fn-backref" href="#id22">22</a>, <a class="fn-backref" href="#id23">23</a>, <a class="fn-backref" href="#id24">24</a>)</em> </td></tr>
+</tbody>
+</table>
+<p>This is an <em>Intrinsic</em> <em>Attribute</em> which means the value is a
+read-only and derived from structured data in the cluster database.
+While it is possible to set the value using any of the <tt class="docutils literal"><span class="pre">rocks</span> <span class="pre">set</span>
+<span class="pre">attr</span></tt> commands, the calculated (instrinsic) value will always be the
+one reported.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">1. Quickstart Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">2. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">3. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4. Attributes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rcl.html">5. StackIQ Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes.html">6. Release Notes</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="installation.html" title="3. Installation"
+             >previous</a> |
+          <a href="rcl.html" title="5. StackIQ Command Line"
+             >next</a>
+            <br/>
+            <a href="_sources/attr.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

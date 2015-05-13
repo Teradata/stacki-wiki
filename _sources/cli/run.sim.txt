@@ -1,0 +1,11 @@
+.. _run.sim:
+
+run sim
+-------
+
+Usage
+"""""
+
+``rocks run sim``
+
+

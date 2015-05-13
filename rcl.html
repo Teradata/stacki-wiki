@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5. StackIQ Command Line &mdash; StackIQ Manual v6.6</title>
+    
+    <link rel="stylesheet" href="_static/stackiq.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'develop',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="StackIQ Manual v6.6" href="index.html" />
+    <link rel="next" title="add" href="cli/add.toc.html" />
+    <link rel="prev" title="4. Attributes" href="attr.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+          <p class="logo"><a href="index.html">
+            <img class="logo" src="_static/stackiq-logo.png" alt="Logo"/>
+          </a></p>
+        <div class="headertitle"><a
+          href="index.html">StackIQ Manual v6.6</a></div>
+        <div class="rel">
+          <a href="attr.html" title="4. Attributes"
+             accesskey="P">previous</a> |
+          <a href="cli/add.toc.html" title="add"
+             accesskey="N">next</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="stackiq-command-line">
+<span id="rcl"></span><h1>5. StackIQ Command Line<a class="headerlink" href="#stackiq-command-line" title="Permalink to this headline">¶</a></h1>
+<p>The StackIQ Command Line Interface is used the manage
+a StackIQ Cluster.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cli/add.toc.html">add</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.appliance.html">add appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.appliance.attr.html">add appliance attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.appliance.firewall.html">add appliance firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.appliance.route.html">add appliance route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.attr.html">add attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.bootaction.html">add bootaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.distribution.html">add distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.environment.attr.html">add environment attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.firewall.html">add firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.html">add host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.alias.html">add host alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.attr.html">add host attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.bonded.html">add host bonded</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.bridge.html">add host bridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.firewall.html">add host firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.interface.html">add host interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.key.html">add host key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.message.html">add host message</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.partition.html">add host partition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.host.route.html">add host route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.network.html">add network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.os.attr.html">add os attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.os.firewall.html">add os firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.os.route.html">add os route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.roll.html">add roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.route.html">add route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.storage.controller.html">add storage controller</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/backup.toc.html">backup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/backup.ucs.html">backup ucs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/config.toc.html">config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/config.host.interface.html">config host interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/create.toc.html">create</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/create.distro.html">create distro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/create.keys.html">create keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/create.mirror.html">create mirror</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/create.new.roll.html">create new roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/create.package.html">create package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/create.roll.html">create roll</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/disable.toc.html">disable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/disable.host.channel.html">disable host channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/disable.roll.html">disable roll</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/dump.toc.html">dump</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.html">dump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.appliance.html">dump appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.appliance.attr.html">dump appliance attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.appliance.firewall.html">dump appliance firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.appliance.route.html">dump appliance route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.attr.html">dump attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.environment.attr.html">dump environment attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.firewall.html">dump firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.host.html">dump host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.host.attr.html">dump host attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.host.boot.html">dump host boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.host.firewall.html">dump host firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.host.interface.html">dump host interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.host.key.html">dump host key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.host.route.html">dump host route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.network.html">dump network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.os.attr.html">dump os attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.os.firewall.html">dump os firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.os.route.html">dump os route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.route.html">dump route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.storage.controller.html">dump storage controller</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/enable.toc.html">enable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/enable.host.channel.html">enable host channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/enable.roll.html">enable roll</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/help.toc.html">help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/help.html">help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/iterate.toc.html">iterate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/iterate.host.html">iterate host</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/list.toc.html">list</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.access.html">list access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.appliance.html">list appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.appliance.attr.html">list appliance attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.appliance.firewall.html">list appliance firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.appliance.route.html">list appliance route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.appliance.xml.html">list appliance xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.attr.html">list attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.bootaction.html">list bootaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.distribution.html">list distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.distribution.roll.html">list distribution roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.environment.attr.html">list environment attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.firewall.html">list firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.help.html">list help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.html">list host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.alert.html">list host alert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.alias.html">list host alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.asset.html">list host asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.asset.chassis.html">list host asset chassis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.asset.cpu.html">list host asset cpu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.asset.memory.html">list host asset memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.asset.network.html">list host asset network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.asset.pci.html">list host asset pci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.attr.html">list host attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.boot.html">list host boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.channel.html">list host channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.firewall.html">list host firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.graph.html">list host graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.installfile.html">list host installfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.interface.html">list host interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.key.html">list host key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.macs.html">list host macs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.message.html">list host message</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.partition.html">list host partition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.profile.html">list host profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.route.html">list host route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.stat.html">list host stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.storage.html">list host storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.ucs.html">list host ucs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.ucs.profile.html">list host ucs profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.host.xml.html">list host xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.license.html">list license</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.network.html">list network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.node.xml.html">list node xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.os.attr.html">list os attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.os.firewall.html">list os firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.os.route.html">list os route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.roll.html">list roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.roll.command.html">list roll command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.route.html">list route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.storage.controller.html">list storage controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.user.html">list user</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.user.widget.html">list user widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/load.toc.html">load</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/load.attrfile.html">load attrfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/load.hostfile.html">load hostfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/load.storage.controller.html">load storage controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/load.storage.partition.html">load storage partition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/open.toc.html">open</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/open.host.console.html">open host console</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/remove.toc.html">remove</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.access.html">remove access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.appliance.html">remove appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.appliance.attr.html">remove appliance attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.appliance.firewall.html">remove appliance firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.appliance.route.html">remove appliance route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.attr.html">remove attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.bootaction.html">remove bootaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.distribution.html">remove distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.environment.attr.html">remove environment attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.firewall.html">remove firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.html">remove host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.alert.html">remove host alert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.alias.html">remove host alias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.attr.html">remove host attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.boot.html">remove host boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.bootflags.html">remove host bootflags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.firewall.html">remove host firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.interface.html">remove host interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.key.html">remove host key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.partition.html">remove host partition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.host.route.html">remove host route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.network.html">remove network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.os.html">remove os</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.os.attr.html">remove os attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.os.firewall.html">remove os firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.os.route.html">remove os route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.roll.html">remove roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.route.html">remove route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.storage.controller.html">remove storage controller</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/report.toc.html">report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.bug.html">report bug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.dbhost.html">report dbhost</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.distro.html">report distro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.html">report host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.attr.html">report host attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.bootflags.html">report host bootflags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.config411.html">report host config411</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.dhcpd.html">report host dhcpd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.firewall.html">report host firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.ganglia.gmond.html">report host ganglia gmond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.interface.html">report host interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.mq.html">report host mq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.network.html">report host network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.nfs.html">report host nfs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.route.html">report host route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.salt.html">report host salt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.storage.controller.html">report host storage controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.host.yum.html">report host yum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.hostfile.html">report hostfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.named.html">report named</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.resolv.html">report resolv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.resolv.private.html">report resolv private</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.script.html">report script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.version.html">report version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.zones.html">report zones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/restore.toc.html">restore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/restore.ucs.html">restore ucs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/run.toc.html">run</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/run.host.html">run host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/run.host.diff.html">run host diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/run.host.saltmod.html">run host saltmod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/run.host.test.html">run host test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/run.process.html">run process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/run.roll.html">run roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/run.sim.html">run sim</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/set.toc.html">set</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.access.html">set access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.appliance.attr.html">set appliance attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.attr.html">set attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.environment.attr.html">set environment attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.address.html">set host address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.appliance.html">set host appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.attr.html">set host attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.boot.html">set host boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.bootflags.html">set host bootflags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.comment.html">set host comment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.cpus.html">set host cpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.distribution.html">set host distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.installaction.html">set host installaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.channel.html">set host interface channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.iface.html">set host interface iface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.ip.html">set host interface ip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.mac.html">set host interface mac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.module.html">set host interface module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.name.html">set host interface name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.options.html">set host interface options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.subnet.html">set host interface subnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.interface.vlan.html">set host interface vlan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.membership.html">set host membership</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.name.html">set host name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.power.html">set host power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.rack.html">set host rack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.rank.html">set host rank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.runaction.html">set host runaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.host.storage.html">set host storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.network.mtu.html">set network mtu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.network.netmask.html">set network netmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.network.servedns.html">set network servedns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.network.subnet.html">set network subnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.network.zone.html">set network zone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.os.attr.html">set os attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.password.html">set password</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/show.toc.html">show</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/show.appliance.attr.html">show appliance attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/show.attr.html">show attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/show.context.html">show context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/show.host.html">show host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/show.host.attr.html">show host attr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/show.membership.html">show membership</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/start.toc.html">start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/start.host.logreader.html">start host logreader</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/swap.toc.html">swap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/swap.host.interface.html">swap host interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/sync.toc.html">sync</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.config.html">sync config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.dhcpd.html">sync dhcpd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.dns.html">sync dns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.host.config.html">sync host config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.host.firewall.html">sync host firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.host.network.html">sync host network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.host.sharedkey.html">sync host sharedkey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.host.state.html">sync host state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.users.html">sync users</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/unload.toc.html">unload</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/unload.attrfile.html">unload attrfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/unload.hostfile.html">unload hostfile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli/update.toc.html">update</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/update.html">update</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">1. Quickstart Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">2. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attr.html">4. Attributes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">5. StackIQ Command Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli/add.toc.html">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/backup.toc.html">backup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/config.toc.html">config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/create.toc.html">create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/disable.toc.html">disable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/dump.toc.html">dump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/enable.toc.html">enable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/help.toc.html">help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/iterate.toc.html">iterate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/list.toc.html">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/load.toc.html">load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/open.toc.html">open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/remove.toc.html">remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/report.toc.html">report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/restore.toc.html">restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/run.toc.html">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/set.toc.html">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/show.toc.html">show</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/start.toc.html">start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/swap.toc.html">swap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/sync.toc.html">sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/unload.toc.html">unload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli/update.toc.html">update</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes.html">6. Release Notes</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="attr.html" title="4. Attributes"
+             >previous</a> |
+          <a href="cli/add.toc.html" title="add"
+             >next</a>
+            <br/>
+            <a href="_sources/rcl.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

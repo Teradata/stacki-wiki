@@ -1,0 +1,44 @@
+.. _list.host.ucs.profile:
+
+list host ucs profile
+---------------------
+
+Usage
+"""""
+
+``rocks list host ucs profile [host]...``
+
+Description
+"""""""""""
+
+	List the servers profiles managed by the UCS Manager
+
+
+	
+
+Arguments
+"""""""""
+``[host]``
+
+	Zero, one or more host names. If no host names are supplied, info about
+	all the known hosts is listed.
+	
+
+
+Examples
+""""""""
+
+``rocks list host ucs profile ucs-manager-0-0``
+
+
+	List all known servers managed by ucs-manager-0-0 appliance.
+	
+
+``rocks list host ucs profile``
+
+
+	List all known servers managed by every UCS Manager appliance.
+	
+
+
+

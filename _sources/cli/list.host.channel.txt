@@ -1,0 +1,44 @@
+.. _list.host.channel:
+
+list host channel
+-----------------
+
+Usage
+"""""
+
+``rocks list host channel [host]...``
+
+Description
+"""""""""""
+
+        List the Message Queue channel that are currently being
+        transported from the given host(s) to the frontend.
+
+	
+
+Arguments
+"""""""""
+``[host]``
+
+	Zero, one or more host names. If no host names are supplied, info about
+	all the known hosts is listed.
+	
+
+
+Examples
+""""""""
+
+``rocks list host channel compute-0-0``
+
+
+	List channel for compute-0-0.
+	
+
+``rocks list host``
+
+
+	List channels for all known hosts.
+	
+
+
+

@@ -1,0 +1,28 @@
+.. _report.bug:
+
+report bug
+----------
+
+Usage
+"""""
+
+``rocks report bug``
+
+Description
+"""""""""""
+
+        Report info about the system to help debug issues.
+        
+        
+
+Examples
+""""""""
+
+``rocks report bug``
+
+                
+        Report system info.
+        
+
+
+

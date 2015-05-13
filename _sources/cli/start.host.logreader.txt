@@ -1,0 +1,11 @@
+.. _start.host.logreader:
+
+start host logreader
+--------------------
+
+Usage
+"""""
+
+``rocks start host logreader``
+
+

@@ -1,0 +1,11 @@
+.. _show.attr:
+
+show attr
+---------
+
+Usage
+"""""
+
+``rocks show attr``
+
+

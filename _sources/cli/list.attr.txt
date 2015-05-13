@@ -1,0 +1,28 @@
+.. _list.attr:
+
+list attr
+---------
+
+Usage
+"""""
+
+``rocks list attr``
+
+Description
+"""""""""""
+
+	Lists the set of global attributes.
+
+	
+
+Examples
+""""""""
+
+``rocks list attr``
+
+
+	List the global attributes.
+	
+
+
+

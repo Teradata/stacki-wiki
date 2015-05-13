@@ -1,0 +1,36 @@
+.. _backup.ucs:
+
+backup ucs
+----------
+
+Usage
+"""""
+
+``rocks backup ucs [host]``
+
+Description
+"""""""""""
+
+	Backup the logical and system XML configuration for the UCS Manager
+
+	
+
+Arguments
+"""""""""
+``[host]``
+
+	Provide one UCS Manager host name.
+	
+
+
+Examples
+""""""""
+
+``rocks backup ucs ucs-manager-0-0 mybackup.xml``
+
+
+	Backup the ucs-manager-0-0 configuration to mybackup.xml file.
+	
+
+
+

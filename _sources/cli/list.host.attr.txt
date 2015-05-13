@@ -1,0 +1,36 @@
+.. _list.host.attr:
+
+list host attr
+--------------
+
+Usage
+"""""
+
+``rocks list host attr [host]``
+
+Description
+"""""""""""
+
+	Lists the set of attributes for hosts.
+
+	
+
+Arguments
+"""""""""
+``[host]``
+
+	Host name of machine
+	
+
+
+Examples
+""""""""
+
+``rocks list host attr compute-0-0``
+
+
+	List the attributes for compute-0-0.
+	
+
+
+

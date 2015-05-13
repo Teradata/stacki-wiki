@@ -1,0 +1,7 @@
+open
+====
+
+.. toctree::
+	:maxdepth: 1
+
+	open.host.console

@@ -1,0 +1,11 @@
+.. _show.context:
+
+show context
+------------
+
+Usage
+"""""
+
+``rocks show context``
+
+

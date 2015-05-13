@@ -1,0 +1,11 @@
+.. _dump.attr:
+
+dump attr
+---------
+
+Usage
+"""""
+
+``rocks dump attr``
+
+

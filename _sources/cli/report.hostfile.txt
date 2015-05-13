@@ -1,0 +1,17 @@
+.. _report.hostfile:
+
+report hostfile
+---------------
+
+Usage
+"""""
+
+``rocks report hostfile``
+
+Description
+"""""""""""
+
+	Outputs a host file in CSV format.
+	
+
+

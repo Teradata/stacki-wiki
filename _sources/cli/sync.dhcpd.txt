@@ -1,0 +1,11 @@
+.. _sync.dhcpd:
+
+sync dhcpd
+----------
+
+Usage
+"""""
+
+``rocks sync dhcpd``
+
+

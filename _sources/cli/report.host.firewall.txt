@@ -1,0 +1,36 @@
+.. _report.host.firewall:
+
+report host firewall
+--------------------
+
+Usage
+"""""
+
+``rocks report host firewall {host}``
+
+Description
+"""""""""""
+
+	Create a report that outputs the firewall rules for a host.
+
+	
+
+Arguments
+"""""""""
+``{host}``
+
+	Host name of machine
+	
+
+
+Examples
+""""""""
+
+``rocks report host firewall compute-0-0``
+
+
+	Create a report of the firewall rules for compute-0-0.
+	
+
+
+

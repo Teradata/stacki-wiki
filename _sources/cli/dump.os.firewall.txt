@@ -1,0 +1,11 @@
+.. _dump.os.firewall:
+
+dump os firewall
+----------------
+
+Usage
+"""""
+
+``rocks dump os firewall``
+
+

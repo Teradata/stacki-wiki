@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Introduction &mdash; StackIQ Manual v6.6</title>
+    
+    <link rel="stylesheet" href="_static/stackiq.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'develop',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="StackIQ Manual v6.6" href="index.html" />
+    <link rel="next" title="3. Installation" href="installation.html" />
+    <link rel="prev" title="Quick Start Guide: Installing StackIQ Enterprise HPC" href="quickstart/sehpc.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+          <p class="logo"><a href="index.html">
+            <img class="logo" src="_static/stackiq-logo.png" alt="Logo"/>
+          </a></p>
+        <div class="headertitle"><a
+          href="index.html">StackIQ Manual v6.6</a></div>
+        <div class="rel">
+          <a href="quickstart/sehpc.html" title="Quick Start Guide: Installing StackIQ Enterprise HPC"
+             accesskey="P">previous</a> |
+          <a href="installation.html" title="3. Installation"
+             accesskey="N">next</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction">
+<h1>2. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.stackiq.com/">StackIQ</a> software is used to provision and manage Linux systems.
+From a single management host users can rapidly provision fully
+configured Linux servers.
+Once provisioned StackIQ provides a management portal for system
+monitoring and management.
+Central to the software is a database that stores the complete state
+of your machines,
+capturing what is truly unique to your infrastructure.
+Additionally StackIQ provides turn-key solutions for Big Data,
+Cloud, and High Performance Computing,
+saving time and training to deploy complete systems in hours instead of weeks.</p>
+<p>The software is based on the open-source <a class="reference external" href="http://www.rocksclusters.org/">Rocks</a> cluster
+distribution <a class="footnote-reference" href="#rocks-license" id="id1">[1]</a>,
+which is widely known in the HPC community for its easy
+of use and flexibility.</p>
+<div class="section" id="clusters">
+<h2>Clusters<a class="headerlink" href="#clusters" title="Permalink to this headline">¶</a></h2>
+<p>StackIQ views everything as a cluster.
+Clusters have traditionally been thought of as homogeneous
+servers - each configured identically.
+However, even in High Performance Computing this has never been the common case.
+Systems have always had heterogeneity at some level of hardware,
+and multiple software roles for different sets of machine in the cluster.
+StackIQ embraces this view while removing assumptions of any
+homogeneity of both hardware and software for sets of Linux servers.</p>
+<p>We define a cluster is a set of machines (typically called <em>Compute</em>
+nodes) on the same network subnet all centrally managed by a single
+StackIQ <em>Frontend</em> management host.
+This is illustrated in the <a class="reference internal" href="#figure-cluster-architecture"><em>Simplified Cluster Architecture</em></a> figure.</p>
+<div class="figure" id="figure-cluster-architecture">
+<img alt="_images/cluster-architecture.png" src="_images/cluster-architecture.png" />
+<p class="caption">Simplified Cluster Architecture</p>
+</div>
+<p>All servers managed by the <em>Frontend</em> must have a network interface
+connected a single subnet.
+This network is used for system provisioning, management,
+and optionally applications themselves.
+Servers can optionally include other networks which will also be
+managed from StackIQ.
+The <em>Frontend</em> must also have a network interface connected to this
+subnet and may optionally have a secondary (or more) networks.</p>
+</div>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="kickstart-installation">
+<h3>Kickstart Installation<a class="headerlink" href="#kickstart-installation" title="Permalink to this headline">¶</a></h3>
+<p>The StackIQ installer is built on top of Red Hat Anaconda and
+dynamically creates Kickstart files to install machines from bare
+metal.
+Because we use a framework built on top of Kickstart,
+StackIQ systems are managed at a much higher (and simpler) level
+than systems using disk imaging or virtual machine images.
+Seemingly complex actions such as swapping an OS between minor versions,
+or updating a kernel become trivial operations.
+Much of this is the consequence of managing a description of the
+machine (Kickstart) rather than the image of a machine.
+Think of this is the difference in maintaining the compiled object
+code of a program versus maintaining the higher level program itself.
+StackIQ is about programming your cluster, not managing at the bit level.</p>
+</div>
+<div class="section" id="avalanche-installer">
+<h3>Avalanche Installer<a class="headerlink" href="#avalanche-installer" title="Permalink to this headline">¶</a></h3>
+<p>The Avalanche installer is a peer-to-peer, package-sharing,
+installation system. It was inspired by the BitTorrent file-sharing
+system. It was developed at the Rocks Clusters Group
+at UC San Diego, as part of the Rocks Clusters suite.</p>
+<p>The Avalanche installer allows for package sharing between installing
+hosts. The <em>Frontend</em> hosts all the packages that may be used to install
+the <em>Backend</em> nodes. However, if all the <em>Backend</em> nodes are installed
+at the same time, the <em>Frontend</em> may be overwhelmed by responding to
+the number of packages requested. To alleviate this problem, the Avalanche
+installer was developed.</p>
+<p>The Avalanche installer allows each <em>Backend</em> host to download a small
+subset of the overall packages, and then share these packages between
+themselves during installation. This reduces the burden of package
+distribution on the frontend.</p>
+</div>
+<div class="section" id="stackiq-command-line">
+<h3>StackIQ Command Line<a class="headerlink" href="#stackiq-command-line" title="Permalink to this headline">¶</a></h3>
+<p>The StackIQ Cluster Manager suite has a command line utility
+that allows the administrator to manage his cluster.</p>
+<p>Managing a cluster is complicated business. Since a cluster
+is a federated way of managing multiple hosts, disks,
+networks, etc., administrators will need a consistent way to
+manage these entities. Some of the requirements for managing
+a cluster are -</p>
+<blockquote>
+<div><ul class="simple">
+<li>Maintaining the state of hosts</li>
+<li>Maintaining the state of network configuration</li>
+<li>maintaining the state of disk configuration</li>
+<li>Ability to change the state of entities mentioned
+above.</li>
+<li>Ability to generate configuration files from the
+maintained data about the cluster.</li>
+<li>Ability to generate installation profiles for
+hosts in the cluster.</li>
+</ul>
+</div></blockquote>
+<p>In the initial days of development of the Rocks Cluster
+suite, the above operations were performed using a variety
+of simple scripts. These scripts, while functional, were an
+administrative and developmental nightmare. Some of the
+disadvantages of using these scripts were -</p>
+<blockquote>
+<div><ul class="simple">
+<li>Lack of consistency of usage,
+parameters, and arguments</li>
+<li>Lack of extensibility</li>
+<li>Redundant Functionality</li>
+</ul>
+</div></blockquote>
+<p>The StackIQ Command Line, invoked using the command</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># rocks</span>
+</pre></div>
+</div>
+<p>was developed to address the requirements mentioned above,
+and to alleviate some of the problems of using various scripts
+for managing the cluster.</p>
+<p>For more information about the StackIQ Command Line, see the
+<a class="reference internal" href="rcl.html#rcl"><em>StackIQ Command Line</em></a> documentation.</p>
+</div>
+<div class="section" id="software-architecture">
+<h3>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h3>
+<p>All computer systems are inherently heterogeneous - both and the
+hardware level, and at the software level.
+StackIQ makes no assumptions of homogeneity of either of these layers (see
+<a class="reference internal" href="#section-system-requirements"><em>System Requirements</em></a>).
+Hardware differences are handled by the installer itself,
+and software differences can be expressed in the StackIQ framework.</p>
+</div>
+<div class="section" id="appliances">
+<h3>Appliances<a class="headerlink" href="#appliances" title="Permalink to this headline">¶</a></h3>
+<p>We use the term <em>Appliance</em> to refer to a type of system with unique
+functionality.
+The default <em>Appliance</em> created by StackIQ is called a <em>Compute</em> appliance.
+This name originates from High Performance Computing where the <em>Compute</em> nodes
+are the fundamental element of the cluster.
+The definition of a given <em>Appliance</em> is derived from the set of <em>Rolls</em> installed on the
+<em>Frontend</em>.
+For example, adding the Hortonworks <em>Roll</em> will extend the
+definition of a <em>Compute</em> node to include Hadoop services.
+Fine grain control over an <em>Appliance</em> is managed using <em>Attributes</em>,
+which are simple key-value pairs applied to sets of hosts.
+<em>Rolls</em> are also used to define the distributions used to install and update machine.</p>
+<p>The combinations of <em>Appliances</em>, <em>Rolls</em>, <em>Attributes</em>, and
+distributions are the key to defining and managing a StackIQ
+system.</p>
+</div>
+</div>
+<div class="section" id="system-requirements">
+<span id="section-system-requirements"></span><h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>StackIQ supports all Red Hat Linux compatible operating systems,
+which includes CentOS.
+The current release of StackIQ is based on CentOS
+6.6 and
+works with previous 6.x versions.
+StackIQ support all x86_64 systems,
+with no support for other CPU architectures.
+Additional <em>Frontend</em> and <em>Compute</em> node requirements for the RAM,
+disk size, network, and the BIOS boot order are as
+follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="38%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&nbsp;</td>
+<td><em>Frontend</em></td>
+<td><em>Compute</em></td>
+</tr>
+<tr class="row-even"><td>RAM</td>
+<td>2 GB</td>
+<td>2 GB</td>
+</tr>
+<tr class="row-odd"><td>Disk</td>
+<td>100 GB</td>
+<td>100 GB</td>
+</tr>
+<tr class="row-even"><td>Network</td>
+<td>Dual Ethernet</td>
+<td>One Ethernet</td>
+</tr>
+<tr class="row-odd"><td>Boot Order</td>
+<td>DVD, Hard Disk</td>
+<td>PXE, Hard Disk</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="rocks-license" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td></td></tr>
+</tbody>
+</table>
+<p>This product includes software developed by the
+Rocks(r) Cluster Group at the San Diego Supercomputer Center at the
+University of California, San Diego and its contributors.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">1. Quickstart Guides</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2. Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#clusters">Clusters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#concepts">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attr.html">4. Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rcl.html">5. StackIQ Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes.html">6. Release Notes</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="quickstart/sehpc.html" title="Quick Start Guide: Installing StackIQ Enterprise HPC"
+             >previous</a> |
+          <a href="installation.html" title="3. Installation"
+             >next</a>
+            <br/>
+            <a href="_sources/introduction.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,11 @@
+.. _report.dbhost:
+
+report dbhost
+-------------
+
+Usage
+"""""
+
+``rocks report dbhost``
+
+

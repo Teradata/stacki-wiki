@@ -1,0 +1,57 @@
+.. _add.os.attr:
+
+add os attr
+-----------
+
+Usage
+"""""
+
+``rocks add os attr {os} {attr} {value} [attr=string] [value=string]``
+
+Description
+"""""""""""
+
+	Adds an attribute to an os and sets the associated values 
+
+	
+
+Arguments
+"""""""""
+``{os}``
+
+	Name of os
+	
+
+``{attr}``
+
+	Name of the attribute
+	
+
+``{value}``
+
+	Value of the attribute
+	
+
+
+Parameters
+""""""""""
+``[attr=string]``
+
+	same as attr argument
+	
+``[value=string]``
+
+	same as value argument
+	
+
+Examples
+""""""""
+
+``rocks add os attr redhat sge False``
+
+
+	Sets the sge attribution to False for redhat nodes
+	
+
+
+

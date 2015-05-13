@@ -1,0 +1,11 @@
+.. _list.os.route:
+
+list os route
+-------------
+
+Usage
+"""""
+
+``rocks list os route``
+
+

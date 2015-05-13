@@ -1,0 +1,48 @@
+.. _remove.host.alert:
+
+remove host alert
+-----------------
+
+Usage
+"""""
+
+``rocks remove host alert {host}... {id} [id=string]``
+
+Description
+"""""""""""
+
+	Dismiss and remove a host alert.
+
+	
+
+Arguments
+"""""""""
+``{host}``
+
+	One or more hosts from which the alert will be dismissed.
+	
+
+``{id}``
+
+	The ID of the alert.
+	
+
+
+Parameters
+""""""""""
+``[id=string]``
+
+	Can be used in place of the id argument.
+	
+
+Examples
+""""""""
+
+``rocks remove host alert compute-0-0 id=5``
+
+
+	Dismiss alert #5 issued by compute-0-0.
+	
+
+
+

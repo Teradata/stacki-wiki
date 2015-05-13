@@ -1,0 +1,11 @@
+.. _sync.host.sharedkey:
+
+sync host sharedkey
+-------------------
+
+Usage
+"""""
+
+``rocks sync host sharedkey``
+
+

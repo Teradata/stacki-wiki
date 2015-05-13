@@ -1,0 +1,28 @@
+.. _report.resolv:
+
+report resolv
+-------------
+
+Usage
+"""""
+
+``rocks report resolv``
+
+Description
+"""""""""""
+
+	Report for /etc/resolv.conf for public side nodes.
+
+	
+
+Examples
+""""""""
+
+``rocks report resolv``
+
+
+	Outputs data for /etc/resolv.conf for the frontend.
+	
+
+
+

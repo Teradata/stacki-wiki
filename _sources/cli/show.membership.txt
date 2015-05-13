@@ -1,0 +1,11 @@
+.. _show.membership:
+
+show membership
+---------------
+
+Usage
+"""""
+
+``rocks show membership``
+
+

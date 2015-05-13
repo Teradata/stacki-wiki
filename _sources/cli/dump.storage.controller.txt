@@ -1,0 +1,11 @@
+.. _dump.storage.controller:
+
+dump storage controller
+-----------------------
+
+Usage
+"""""
+
+``rocks dump storage controller``
+
+

@@ -1,0 +1,36 @@
+.. _list.environment.attr:
+
+list environment attr
+---------------------
+
+Usage
+"""""
+
+``rocks list environment attr [environment]``
+
+Description
+"""""""""""
+
+	Lists the set of attributes for environments.
+
+	
+
+Arguments
+"""""""""
+``[environment]``
+
+	Name of environment (e.g. "test") 
+	
+
+
+Examples
+""""""""
+
+``rocks list environment attr test``
+
+
+	List the attributes for the test environment
+	
+
+
+

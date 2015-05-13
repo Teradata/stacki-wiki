@@ -1,0 +1,54 @@
+.. _create.new.roll:
+
+create new roll
+---------------
+
+Usage
+"""""
+
+``rocks create new roll {version} {name} {color} [color=string] [name=string] [version=string]``
+
+Description
+"""""""""""
+	
+	Create a new roll from a template.
+
+	
+
+Arguments
+"""""""""
+``{version}``
+	
+	
+
+``{name}``
+	
+	
+
+``{color}``
+	
+	
+
+
+Parameters
+""""""""""
+``[color=string]``
+
+	
+``[name=string]``
+
+	
+``[version=string]``
+
+	
+
+Examples
+""""""""
+
+``rocks create new roll``
+
+
+	
+
+
+

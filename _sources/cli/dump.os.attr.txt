@@ -1,0 +1,11 @@
+.. _dump.os.attr:
+
+dump os attr
+------------
+
+Usage
+"""""
+
+``rocks dump os attr``
+
+

@@ -1,0 +1,29 @@
+.. _report.host:
+
+report host
+-----------
+
+Usage
+"""""
+
+``rocks report host``
+
+Description
+"""""""""""
+
+	Report the host to IP address mapping in the form suitable for
+	/etc/hosts.
+
+	
+
+Examples
+""""""""
+
+``rocks report host``
+
+
+	Outputs data for /etc/hosts.
+	
+
+
+

@@ -1,0 +1,28 @@
+.. _report.host.ganglia.gmond:
+
+report host ganglia gmond
+-------------------------
+
+Usage
+"""""
+
+``rocks report host ganglia gmond``
+
+Description
+"""""""""""
+
+	Report the configuration file that can be used for gmond.
+
+	
+
+Examples
+""""""""
+
+``rocks report host ganglia gmond``
+
+
+	Report the machines that are managed by SGE.
+	
+
+
+

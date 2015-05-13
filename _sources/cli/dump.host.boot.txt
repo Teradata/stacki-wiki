@@ -1,0 +1,11 @@
+.. _dump.host.boot:
+
+dump host boot
+--------------
+
+Usage
+"""""
+
+``rocks dump host boot``
+
+

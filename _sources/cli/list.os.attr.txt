@@ -1,0 +1,36 @@
+.. _list.os.attr:
+
+list os attr
+------------
+
+Usage
+"""""
+
+``rocks list os attr [os]``
+
+Description
+"""""""""""
+
+	Lists the set of attributes for OSes.
+
+	
+
+Arguments
+"""""""""
+``[os]``
+
+	Name of OS (e.g. "linux", "sunos") 
+	
+
+
+Examples
+""""""""
+
+``rocks list os attr linux``
+
+
+	List the attributes for the Linux OS
+	
+
+
+

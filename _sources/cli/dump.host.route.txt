@@ -1,0 +1,11 @@
+.. _dump.host.route:
+
+dump host route
+---------------
+
+Usage
+"""""
+
+``rocks dump host route``
+
+

@@ -1,0 +1,31 @@
+.. _update:
+
+update
+------
+
+Usage
+"""""
+
+``rocks update``
+
+Description
+"""""""""""
+
+	Download and install updated packages and Rolls from Rocks.  This
+	does not include any OS packages.
+	
+	This does not rebuild the distribution or update the backend nodes.
+	
+	
+
+Examples
+""""""""
+
+``rocks update``
+
+
+	Updates the frontend.
+	
+
+
+

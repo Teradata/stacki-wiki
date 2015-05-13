@@ -1,0 +1,11 @@
+.. _dump.appliance.route:
+
+dump appliance route
+--------------------
+
+Usage
+"""""
+
+``rocks dump appliance route``
+
+

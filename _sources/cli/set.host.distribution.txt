@@ -1,0 +1,48 @@
+.. _set.host.distribution:
+
+set host distribution
+---------------------
+
+Usage
+"""""
+
+``rocks set host distribution {host}... {distribution} [distribution=string]``
+
+Description
+"""""""""""
+
+	Sets the distribution for a list of hosts.
+	
+	
+
+Arguments
+"""""""""
+``{host}``
+
+	One or more host names.
+	
+
+``{distribution}``
+
+	The name of the distribution (e.g. rocks-dist)
+	
+
+
+Parameters
+""""""""""
+``[distribution=string]``
+
+	Can be used in place of the distribution argument.
+	
+
+Examples
+""""""""
+
+``rocks set host distribution compute rocks-dist``
+
+
+	Set the distribution for all current compute nodes to rocks-dist.
+	
+
+
+

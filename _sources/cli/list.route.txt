@@ -1,0 +1,11 @@
+.. _list.route:
+
+list route
+----------
+
+Usage
+"""""
+
+``rocks list route``
+
+

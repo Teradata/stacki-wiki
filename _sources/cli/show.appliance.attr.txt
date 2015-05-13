@@ -1,0 +1,11 @@
+.. _show.appliance.attr:
+
+show appliance attr
+-------------------
+
+Usage
+"""""
+
+``rocks show appliance attr``
+
+

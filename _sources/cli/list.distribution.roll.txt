@@ -1,0 +1,36 @@
+.. _list.distribution.roll:
+
+list distribution roll
+----------------------
+
+Usage
+"""""
+
+``rocks list distribution roll [disribution]...``
+
+Description
+"""""""""""
+
+	List the rolls enabled in each distribution.
+	
+	
+
+Arguments
+"""""""""
+``[disribution]``
+
+	List of distributions.
+	
+
+
+Examples
+""""""""
+
+``rocks list distribution roll rocks-dist``
+
+
+	List the rolls used in the distribution
+	
+
+
+

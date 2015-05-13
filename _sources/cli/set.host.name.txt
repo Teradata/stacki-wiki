@@ -1,0 +1,54 @@
+.. _set.host.name:
+
+set host name
+-------------
+
+Usage
+"""""
+
+``rocks set host name {host} {name} [name=string]``
+
+Description
+"""""""""""
+
+	Rename a host.
+	
+	
+
+Arguments
+"""""""""
+``{host}``
+
+	The current name of the host.
+	
+
+``{name}``
+
+	The new name for the host.
+	
+
+
+Parameters
+""""""""""
+``[name=string]``
+
+	Can be used in place of the 'name' argument.
+	
+
+Examples
+""""""""
+
+``rocks set host name compute-0-0 new-compute-0-0``
+
+
+	Changes the name of compute-0-0 to new-compute-0-0.
+	
+
+``rocks set host cpus compute-0-0 name=new-compute-0-1``
+
+
+	Same as above.
+	
+
+
+

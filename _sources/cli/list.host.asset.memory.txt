@@ -1,0 +1,50 @@
+.. _list.host.asset.memory:
+
+list host asset memory
+----------------------
+
+Usage
+"""""
+
+``rocks list host asset memory [host]... [search=string]``
+
+Description
+"""""""""""
+
+	List asset information about a host's CPUs.
+
+	
+
+Arguments
+"""""""""
+``[host]``
+
+	Zero, one or more host names. If no host names are supplied, info about
+	all the known hosts is listed.
+	
+
+
+Parameters
+""""""""""
+``[search=string]``
+
+	Output host memory info that matches the 'search'.
+	
+
+Examples
+""""""""
+
+``rocks list host asset memory compute-0-0``
+
+
+	List memory info for compute-0-0.
+	
+
+``rocks list host asset memory search="manufacturer=AMD"``
+
+
+	List memory info for all hosts that are manufactured by "AMD".
+	
+
+
+

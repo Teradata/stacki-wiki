@@ -1,0 +1,27 @@
+.. _sync.host.config:
+
+sync host config
+----------------
+
+Usage
+"""""
+
+``rocks sync host config {hostname}...``
+
+Description
+"""""""""""
+
+	!!! Rocks+ Internal Only !!!
+	Generate host specific configuration files
+	on the frontend
+	
+
+Arguments
+"""""""""
+``{hostname}``
+
+	Hostname(s)
+	
+
+
+

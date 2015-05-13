@@ -1,0 +1,43 @@
+.. _list.user:
+
+list user
+---------
+
+Usage
+"""""
+
+``rocks list user [user]...``
+
+Description
+"""""""""""
+
+	List the UNIX user accounts on this host.
+
+	
+
+Arguments
+"""""""""
+``[user]``
+
+	Zero, one or more user names (or UIDs). If no names are supplied, info about
+	all the known users are listed.
+	
+
+
+Examples
+""""""""
+
+``rocks list user root``
+
+
+	List info for the root account.
+	
+
+``rocks list user``
+
+
+	List info for all known users.
+	
+
+
+

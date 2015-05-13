@@ -1,0 +1,43 @@
+.. _list.network:
+
+list network
+------------
+
+Usage
+"""""
+
+``rocks list network [network]...``
+
+Description
+"""""""""""
+
+	List the defined networks for this system.
+
+	
+
+Arguments
+"""""""""
+``[network]``
+
+	Zero, one or more network names. If no network names are supplied,
+	info about all the known networks is listed.
+	
+
+
+Examples
+""""""""
+
+``rocks list network private``
+
+
+	List network info for the network named 'private'.
+	
+
+``rocks list network``
+
+
+	List info for all defined networks.
+	
+
+
+

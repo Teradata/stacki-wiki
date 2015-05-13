@@ -1,0 +1,28 @@
+.. _report.distro:
+
+report distro
+-------------
+
+Usage
+"""""
+
+``rocks report distro``
+
+Description
+"""""""""""
+
+	Output the path prefix for the location of the Rocks distribution.
+
+	
+
+Examples
+""""""""
+
+``rocks report distro``
+
+
+	Output the current path prefix to the distribution.
+	
+
+
+

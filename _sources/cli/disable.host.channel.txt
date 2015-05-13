@@ -1,0 +1,44 @@
+.. _disable.host.channel:
+
+disable host channel
+--------------------
+
+Usage
+"""""
+
+``rocks disable host channel [host]... {channel}``
+
+Description
+"""""""""""
+
+        Disables forwarding of a Message Queue channel for a given
+        host.  By default only the 'alert' channel is forwarded from
+        all nodes.
+
+	
+
+Arguments
+"""""""""
+``[host]``
+
+	Zero, one or more host names. If no host names are supplied, the
+        channel is disabled on all hosts.
+	
+
+``{channel}``
+
+	Name of the channel
+	
+
+
+Examples
+""""""""
+
+``rocks list disable host channel compute-0-0 channel=debug``
+
+
+	Disable forwarding of the debug channel from compute-0-0.
+	
+
+
+

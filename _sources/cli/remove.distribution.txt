@@ -1,0 +1,36 @@
+.. _remove.distribution:
+
+remove distribution
+-------------------
+
+Usage
+"""""
+
+``rocks remove distribution {distribution}``
+
+Description
+"""""""""""
+
+	Remove a distribution specification from the database.
+
+	
+
+Arguments
+"""""""""
+``{distribution}``
+
+	Distribution name.
+	
+
+
+Examples
+""""""""
+
+``rocks remove distribution rocks-optiputer``
+
+
+	Removes the distribution named "rocks-optiputer" from the database.
+	
+
+
+

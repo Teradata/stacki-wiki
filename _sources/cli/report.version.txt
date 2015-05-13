@@ -1,0 +1,28 @@
+.. _report.version:
+
+report version
+--------------
+
+Usage
+"""""
+
+``rocks report version``
+
+Description
+"""""""""""
+
+	Output the version of Rocks.
+
+	
+
+Examples
+""""""""
+
+``rocks report version``
+
+
+	Output the current Rocks version.
+	
+
+
+

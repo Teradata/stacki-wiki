@@ -1,0 +1,51 @@
+.. _list.host.ucs:
+
+list host ucs
+-------------
+
+Usage
+"""""
+
+``rocks list host ucs [host]... [display-manager=boolean]``
+
+Description
+"""""""""""
+
+	List the servers (AKA service profiles) managed by the UCS Manager
+
+    
+
+Arguments
+"""""""""
+``[host]``
+
+	Zero, one or more host names. If no host names are supplied, info about
+	all the known hosts is listed.
+	
+
+
+Parameters
+""""""""""
+``[display-manager=boolean]``
+
+    If "yes", then display the UCS Manager that the hosts are running on.
+    The default is: no.
+    
+
+Examples
+""""""""
+
+``rocks list host ucs ucs-manager-0-0``
+
+
+	List all known servers managed by ucs-manager-0-0 appliance.
+	
+
+``rocks list host ucs``
+
+
+	List all known servers managed by every UCS Manager appliance.
+	
+
+
+

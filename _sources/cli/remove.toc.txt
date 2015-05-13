@@ -1,0 +1,35 @@
+remove
+======
+
+.. toctree::
+	:maxdepth: 1
+
+	remove.access
+	remove.appliance
+	remove.appliance.attr
+	remove.appliance.firewall
+	remove.appliance.route
+	remove.attr
+	remove.bootaction
+	remove.distribution
+	remove.environment.attr
+	remove.firewall
+	remove.host
+	remove.host.alert
+	remove.host.alias
+	remove.host.attr
+	remove.host.boot
+	remove.host.bootflags
+	remove.host.firewall
+	remove.host.interface
+	remove.host.key
+	remove.host.partition
+	remove.host.route
+	remove.network
+	remove.os
+	remove.os.attr
+	remove.os.firewall
+	remove.os.route
+	remove.roll
+	remove.route
+	remove.storage.controller

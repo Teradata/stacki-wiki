@@ -1,0 +1,11 @@
+.. _show.host:
+
+show host
+---------
+
+Usage
+"""""
+
+``rocks show host``
+
+

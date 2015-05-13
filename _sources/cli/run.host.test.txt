@@ -1,0 +1,74 @@
+.. _run.host.test:
+
+run host test
+-------------
+
+Usage
+"""""
+
+``rocks run host test [host]... [extras=string] [status=string] {test=string}``
+
+Description
+"""""""""""
+
+	Run tests on hosts. This is commonly used to "validate" the
+	hardware for a cluster.
+
+	
+
+Arguments
+"""""""""
+``[host]``
+
+	Zero, one or more host names. If no host names are supplied, the command
+	is run on all 'managed' hosts. By default, all compute nodes are
+	'managed' nodes. To determine if a host is managed, execute:
+	'rocks list host attr hostname | grep managed'. If you see output like:
+	'compute-0-0: managed true', then the host is managed.
+	
+
+
+Parameters
+""""""""""
+``[extras=string]``
+
+	Test-specific parameter.
+	For the "all" test, this will be the filename prefix used to store
+	the test results. All test results will append ".{test}" to the prefix,
+	e.g., if "extras" is "/export/mytest", then the memory test results will
+	be stored in the file "/export/mytest.memory". Default: "/tmp/test".
+	For the "network" test, this is an optional parameter that can be
+	used to specify which "network" to test. To get a list of networks,
+	execute "rocks list network". Default: "private".
+	
+``[status=string]``
+
+	Determine if "rocks run host test" is already running. If it is,
+	output "is running". If there are no other instances of "rocks run
+	host test" running, then output "is not running".
+	
+``{test=string}``
+
+	The test(s) to run. Valid tests are: "memory", "disk", "network" and
+	"all".
+	If "all", then run "memory", "disk" and "network" tests on the hosts.
+	
+
+Examples
+""""""""
+
+``rocks run host test compute-0-0 test="memory"``
+
+
+	Run the "memory" test on compute-0-0.
+	
+
+``rocks run host test compute test="all" extras="/tmp/test"``
+
+
+	Run all the tests on all the compute nodes and store the results in
+	"/tmp/test.memory", "/tmp/test.disk" and "/tmp/test.network".
+	
+
+
+

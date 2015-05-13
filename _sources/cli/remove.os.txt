@@ -1,0 +1,36 @@
+.. _remove.os:
+
+remove os
+---------
+
+Usage
+"""""
+
+``rocks remove os {os}``
+
+Description
+"""""""""""
+
+	Remove an OS definition from the system.
+
+	
+
+Arguments
+"""""""""
+``{os}``
+
+	The OS type (e.g., "linux", "sunos").
+	
+
+
+Examples
+""""""""
+
+``rocks remove os sunos``
+
+
+	Removes the OS type "sunos" from the database.
+	
+
+
+
