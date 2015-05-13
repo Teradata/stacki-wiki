@@ -1,10 +1,3 @@
-Quickstart Guides
-#################
-
-.. toctree::
-
-        sehpc
-[root@boss5osp quickstart]# cat sehpc.rst
 .. include:: ../macros.rst
 
 ****************************************************
@@ -24,7 +17,7 @@ Quick Start Guide: Installing StackIQ Enterprise HPC
 #.	Wait for the :ref:`figure-welcome-qsg`.
 
         .. _figure-welcome-qsg:
-	.. figure:: ../images/install/install-welcome-6_5.png
+	.. figure:: ../images/install/install-welcome-6_5.png 
 
 	        Welcome screen
 
@@ -61,3 +54,4 @@ Quick Start Guide: Installing StackIQ Enterprise HPC
 .. include:: common.txt
    :start-after: __inst2__
    :end-before: __end_inst2__
+
