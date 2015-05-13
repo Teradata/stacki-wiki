@@ -1,2 +1,2 @@
 CLI
-*[add host interface](add.host.interface)
+*[add host interface](cli/add.host.interface)
