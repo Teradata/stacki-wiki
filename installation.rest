@@ -11,7 +11,7 @@ Getting Started
 ===============
 
 
-First download the |stackiq| software by filling out the customer
+First download the | stackiq | software by filling out the customer
 `registration page
 <http://web.stackiq.com/software-download-request/>`_.  
 After entering you email contact information you may choose between |bigdata|,
