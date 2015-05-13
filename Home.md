@@ -1,11 +1,11 @@
 Welcome to the StackI Wiki
 ==========================
 
-# Introduction # 
+# Introduction
 
-# Install frontend #
+# Install frontend
 
-# Install Backend #
+# Install Backend
 
-# CLI Documentation #
+# CLI Documentation
 
