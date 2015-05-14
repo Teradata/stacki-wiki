@@ -1,8 +1,8 @@
 [**StackI Command Line Interface Reference**](CLI-documentation)
 
-* [add](add-toc)
-* [config](config-toc)
-* [create](create-toc)
+* [add](add-)
+* [config](config-)
+* [create](create-)
 * disable
   * [disable roll](disable-roll)
 * [dump](dump)

@@ -1,6 +1,6 @@
 [**StackI Command Line Interface Reference**](CLI-documentation)
 
-* [add](add-toc)
+* [add](add-)
 * config
   * [config host interface](config-host-interface)
 * [create](create-toc)

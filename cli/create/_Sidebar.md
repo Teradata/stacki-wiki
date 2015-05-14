@@ -1,7 +1,7 @@
 [**StackI Command Line Interface Reference**](CLI-documentation)
 
-* [add](add-toc)
-* [config](config-toc)
+* [add](add-)
+* [config](config-)
 * create
   * [create distro](create-distro)
   * [create keys](create-keys)
