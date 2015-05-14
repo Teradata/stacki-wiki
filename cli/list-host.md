@@ -12,6 +12,7 @@ List the membership, CPU count and physical position info for
 ### Arguments
 
 `[host]`
+
 Zero, one or more host names. If no host names are supplied, info about
 	all the known hosts is listed.
 
@@ -19,9 +20,11 @@ Zero, one or more host names. If no host names are supplied, info about
 ### Examples
 
 * `stack list host compute-0-0`
+
    List info for compute-0-0.
 
 * `stack list host`
+
    List info for all known hosts.
 
 
