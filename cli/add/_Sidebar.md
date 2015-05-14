@@ -1,4 +1,4 @@
-[**StackI Command Line Interface Reference**](CLI-documentation)
+[Command Line Interface](CLI-documentation)
 
 * add
   * [add appliance](add-appliance)
