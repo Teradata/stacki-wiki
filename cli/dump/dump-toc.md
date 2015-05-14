@@ -1,10 +1,5 @@
-[**StackI Command Line Interface Reference**](CLI-documentation)
+# dump
 
-* [add](add-toc)
-* [config](config-toc)
-* [create](create-toc)
-* [disable](disable-toc)
-* dump
   * [dump](dump)
   * [dump appliance](dump-appliance)
   * [dump appliance attr](dump-appliance-attr)
@@ -26,16 +21,3 @@
   * [dump os route](dump-os-route)
   * [dump route](dump-route)
   * [dump storage controller](dump-storage-controller)
-* [enable](enable-toc)
-* [help](help)
-* [iterate](iterate-toc)
-* [list](list-toc)
-* [load](load-toc)
-* [open](open-toc)
-* [remove](remove-toc)
-* [report](report-toc)
-* [run](run-toc)
-* [set](set-toc)
-* [swap](swap-toc)
-* [sync](sync-toc)
-* [unload](unload-toc)

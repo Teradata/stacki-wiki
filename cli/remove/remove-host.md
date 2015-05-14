@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack remove host {host ...}`
+`stack remove host {host}...`
 
 ### Description
 
