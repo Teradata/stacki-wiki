@@ -1,6 +1,6 @@
 [Command Line Interface](CLI-documentation)
 
-* [add](add-)
+* [add](add-commands)
   * [add appliance](add-appliance)
   * [add appliance attr](add-appliance-attr)
   * [add appliance firewall](add-appliance-firewall)

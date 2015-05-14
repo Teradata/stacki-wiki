@@ -1,7 +1,7 @@
 [Command Line Interface](CLI-documentation)
 
-* [add](add-)
-* [config](config-)
+* [add](add-commands)
+* [config](config-commands)
   * [config host interface](config-host-interface)
 * [create](create-)
 * [disable](disable-)
