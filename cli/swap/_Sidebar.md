@@ -17,5 +17,5 @@
 * [set](set-commands)
 * [swap](swap-commands)
   * [swap host interface](swap-host-interface)
-* [sync](sync-)
-* [unload](unload-)
+* [sync](sync-commands)
+* [unload](unload-commands)
