@@ -16,7 +16,7 @@
 * run
   * [run host](run-host)
   * [run roll](run-roll)
-* [set](set-toc)
-* [swap](swap-toc)
-* [sync](sync-toc)
-* [unload](unload-toc)
+* [set](set-)
+* [swap](swap-)
+* [sync](sync-)
+* [unload](unload-)

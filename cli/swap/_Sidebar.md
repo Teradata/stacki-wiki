@@ -17,5 +17,5 @@
 * [set](set-)
 * swap
   * [swap host interface](swap-host-interface)
-* [sync](sync-toc)
-* [unload](unload-toc)
+* [sync](sync-)
+* [unload](unload-)
