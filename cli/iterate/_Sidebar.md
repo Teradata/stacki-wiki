@@ -1,3 +1,3 @@
 * iterate
 
-  *[iterate host](iterate-host)
+  * [iterate host](iterate-host)

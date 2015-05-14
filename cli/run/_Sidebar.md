@@ -1,4 +1,4 @@
 * run
 
-  *[run host](run-host)
-  *[run roll](run-roll)
+  * [run host](run-host)
+  * [run roll](run-roll)
