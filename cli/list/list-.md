@@ -1,4 +1,4 @@
-# list Commands
+# list commands
 
   * [list access](list-access)
   * [list appliance](list-appliance)

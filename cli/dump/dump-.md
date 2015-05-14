@@ -1,6 +1,6 @@
-# dump Commands
+# dump commands
 
-  * [dump ](dump-)
+  * [dump ](dump)
   * [dump appliance](dump-appliance)
   * [dump appliance attr](dump-appliance-attr)
   * [dump appliance firewall](dump-appliance-firewall)

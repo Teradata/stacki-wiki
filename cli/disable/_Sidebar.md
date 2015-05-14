@@ -1,9 +1,9 @@
 [Command Line Interface](CLI-documentation)
 
-* [add commands](add-)
-* [config commands](config-)
-* [create commands](create-)
-* disable
+* [add](add-)
+* [config](config-)
+* [create](create-)
+* [disable](disable-)
   * [disable roll](disable-roll)
 * [dump](dump-)
 * [enable](enable-)

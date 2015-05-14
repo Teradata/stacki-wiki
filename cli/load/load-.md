@@ -1,4 +1,4 @@
-# load Commands
+# load commands
 
   * [load attrfile](load-attrfile)
   * [load hostfile](load-hostfile)

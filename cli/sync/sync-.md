@@ -1,4 +1,4 @@
-# sync Commands
+# sync commands
 
   * [sync config](sync-config)
   * [sync dhcpd](sync-dhcpd)

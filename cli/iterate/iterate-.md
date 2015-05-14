@@ -1,3 +1,3 @@
-# iterate Commands
+# iterate commands
 
   * [iterate host](iterate-host)

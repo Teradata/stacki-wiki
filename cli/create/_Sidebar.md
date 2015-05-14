@@ -1,8 +1,8 @@
 [Command Line Interface](CLI-documentation)
 
-* [add commands](add-)
-* [config commands](config-)
-* create
+* [add](add-)
+* [config](config-)
+* [create](create-)
   * [create distro](create-distro)
   * [create keys](create-keys)
   * [create mirror](create-mirror)

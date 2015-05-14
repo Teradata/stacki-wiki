@@ -1,4 +1,4 @@
-# add Commands
+# add commands
 
   * [add appliance](add-appliance)
   * [add appliance attr](add-appliance-attr)

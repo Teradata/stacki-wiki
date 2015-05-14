@@ -1,3 +1,3 @@
-# help Commands
+# help commands
 
-  * [help ](help-)
+  * [help ](help)

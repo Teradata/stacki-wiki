@@ -1,4 +1,4 @@
-# create Commands
+# create commands
 
   * [create distro](create-distro)
   * [create keys](create-keys)

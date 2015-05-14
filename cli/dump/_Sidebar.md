@@ -1,11 +1,11 @@
 [Command Line Interface](CLI-documentation)
 
-* [add commands](add-)
-* [config commands](config-)
-* [create commands](create-)
-* [disable commands](disable-)
-* dump
-  * [dump ](dump-)
+* [add](add-)
+* [config](config-)
+* [create](create-)
+* [disable](disable-)
+* [dump](dump-)
+  * [dump ](dump)
   * [dump appliance](dump-appliance)
   * [dump appliance attr](dump-appliance-attr)
   * [dump appliance firewall](dump-appliance-firewall)

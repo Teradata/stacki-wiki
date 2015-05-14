@@ -1,4 +1,4 @@
-# remove Commands
+# remove commands
 
   * [remove access](remove-access)
   * [remove appliance](remove-appliance)

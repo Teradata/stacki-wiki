@@ -1,4 +1,4 @@
-# set Commands
+# set commands
 
   * [set access](set-access)
   * [set appliance attr](set-appliance-attr)
