@@ -1,13 +1,13 @@
 [Command Line Interface](CLI-documentation)
 
-* [add](add-)
+* [add commands](add-)
 * config
   * [config host interface](config-host-interface)
 * [create](create-)
 * [disable](disable-)
-* [dump](dump)
+* [dump](dump-)
 * [enable](enable-)
-* [help](help)
+* [help](help-)
 * [iterate](iterate-)
 * [list](list-)
 * [load](load-)

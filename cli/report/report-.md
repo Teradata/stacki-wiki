@@ -1,4 +1,4 @@
-# report
+# report Commands
 
   * [report dbhost](report-dbhost)
   * [report distro](report-distro)

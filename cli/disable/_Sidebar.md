@@ -1,13 +1,13 @@
 [Command Line Interface](CLI-documentation)
 
-* [add](add-)
-* [config](config-)
-* [create](create-)
+* [add commands](add-)
+* [config commands](config-)
+* [create commands](create-)
 * disable
   * [disable roll](disable-roll)
-* [dump](dump)
+* [dump](dump-)
 * [enable](enable-)
-* [help](help)
+* [help](help-)
 * [iterate](iterate-)
 * [list](list-)
 * [load](load-)

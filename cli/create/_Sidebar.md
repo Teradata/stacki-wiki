@@ -1,7 +1,7 @@
 [Command Line Interface](CLI-documentation)
 
-* [add](add-)
-* [config](config-)
+* [add commands](add-)
+* [config commands](config-)
 * create
   * [create distro](create-distro)
   * [create keys](create-keys)
@@ -10,9 +10,9 @@
   * [create package](create-package)
   * [create roll](create-roll)
 * [disable](disable-)
-* [dump](dump)
+* [dump](dump-)
 * [enable](enable-)
-* [help](help)
+* [help](help-)
 * [iterate](iterate-)
 * [list](list-)
 * [load](load-)
