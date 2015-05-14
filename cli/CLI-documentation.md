@@ -1,3 +1,5 @@
+# StackI Command Line Interface Reference
+
 * [add](add)
   * [add appliance](add-appliance)
   * [add appliance attr](add-appliance-attr)

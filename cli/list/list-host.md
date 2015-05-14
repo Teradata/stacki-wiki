@@ -11,9 +11,9 @@ List the membership, CPU count and physical position info for
 
 ### Arguments
 
-`[host]`
+* `[host]`
 
-Zero, one or more host names. If no host names are supplied, info about
+   Zero, one or more host names. If no host names are supplied, info about
 	all the known hosts is listed.
 
 

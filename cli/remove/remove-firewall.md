@@ -1,0 +1,19 @@
+## remove firewall
+
+### Usage
+
+`stack remove firewall {rulename}`
+
+### Description
+
+Remove a global firewall rule. To remove a rule, you must supply
+	the name of the rule.
+
+### Arguments
+
+* `{rulename}`
+
+   Name of the global rule
+
+
+
