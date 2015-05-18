@@ -3,3 +3,4 @@
    * [Frontend](Install-Frontend)
    * [Backend](Installing-Backend-Nodes)
 3. [Command Line Interface](CLI-Documentation)
+4. [How To's](howto)
