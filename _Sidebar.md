@@ -1,4 +1,4 @@
-1. [Introduction](Introduction)
+1. [Home](Home)
 2. [Installation](Installation)
    * [Frontend](Install-Frontend)
    * [Backend](Installing-Backend-Nodes)
