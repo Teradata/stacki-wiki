@@ -1,21 +1,22 @@
 Adding a pallet expands the range of software available to backend machines. Newer versions of the OS (6.6 vs. 6.5), different distributions (e.g. RedHat instead of CentOS), updated OS packages, application packages with a yum repository etc. can all be added as a pallet. Once a pallet is added and enabled, a backend machine can have the desired RPMS installed with either yum or install/reinstall of the machine. 
 
-### Cheat Sheet ### 
+### Cheat Sheet
 If you like to get your hands dirty damn the consquences, here are the raw commands for adding a pallet. Otherwise, read the rest.
 
 On the frontend:  
 `# stack list pallet`  
 `# cd /export`  
-`# wget http://mirror.umd.edu/centos/6.6/isos/x86_64/CentOS-6.6-x86_64-bin-DVD1.iso`  
-(Just get the ISO on the frontend in some way or another.)  
-`# stack add pallet CentOS-6.6-x86_64-bin-DVD1.iso` 
-If an OS pallet of a different version exists, disable the older pallet (otherwise just enable the new pallet):  
+`# wget http://mirror.umd.edu/centos/6.6/isos/x86_64/CentOS-6.6-x86_64-bin-DVD1.iso`   
+(Just get the ISO on the frontend in some way or another.)    
+`# stack add pallet CentOS-6.6-x86_64-bin-DVD1.iso`  
+If an OS pallet of a different version exists, disable the older pallet (otherwise just enable the new pallet):   
 `# stack disable pallet CentOS version=6.5` 
 `# stack disable pallet CentOS version=6.6`
 `# stack create distribution` 
 
-Reinstall backend machines. 
-
+Reinstall backend machines.  
+`# stack set host boot backend action=install`  
+`# stack run host backend "reboot"`  
 
 ### Adding a pallet - simple case:
 
