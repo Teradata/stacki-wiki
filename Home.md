@@ -43,7 +43,7 @@ The lessons we've learned from large scale HPC and enterprise computing are now 
 
 stacki is released as opensource with a combination of licenses.
 StackIQ forked the Rocks project source code in 2010 but maintains the original copyright on this code.
-As such the two primary licenses are for [stacki](copyright-stacki) and [Rocks](copyright-rocks) source,
+As such the two primary licenses are for [stacki](stacki-License) and [Rocks](Rocks-license) source,
 both are based on the traditional BSD attribution license.
 stacki also includes several third party opensource packages each with their own copyrights.
 Details on this are found in the source tree.
