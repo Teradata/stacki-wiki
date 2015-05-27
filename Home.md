@@ -37,13 +37,13 @@ And once stacki is done, you’re can augment it with your favorite configuratio
 
 Long before devops and webscale we were building world class supercomputers made from simple Linux boxes.
 The hardware was cheap, but the complexity at scale killed us.
-So we help create the [Rocks](www.rocksclusters.org) toolkit to automate the deployment of high performance computing clusters.
+So we help create the [Rocks](http://www.rocksclusters.org) toolkit to automate the deployment of high performance computing clusters.
 Along the way co-founders, developers, and users of Rocks started StackIQ to build upon the Rocks software and make it appropriate for the enteprise.
 The lessons we've learned from large scale HPC and enterprise computing are now yours as part of stacki.
 
 stacki is released as open-source with a combination of licenses.
 StackIQ forked the Rocks project source code in 2010 but maintains the original copyright on this code.
-As such the two primary licenses are for [StackIQ] and [Rocks] source,
+As such the two primary licenses are for [StackIQ](copyright-stacki) and [Rocks] source,
 both are based on the traditional BSD license.
 
 stacki also includes several third party opensource packages each with their own copyrights.
