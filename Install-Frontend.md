@@ -51,3 +51,5 @@ The "Id" column denotes pallets loaded from a DVD and the "Network" column denot
 <h3>Step 7 - Review</h3>
 
 Review your credentials and click "Install" to proceed.  This will complete the wizard installation process.
+
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_7.png)
