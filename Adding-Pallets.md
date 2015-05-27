@@ -8,4 +8,4 @@ List the pallets you currently have:
 
     stack list pallet
 
-![](https://github.com/StackIQ/images/stack-list-pallet-1.png)
+![](stack-list-pallet-1.png)
