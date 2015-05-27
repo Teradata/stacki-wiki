@@ -6,7 +6,7 @@ Welcome to stacki! Our goal is to make fast, repeatable, and adaptable Linux ins
 It is quick and easy to get started spinning up Linux servers with stacki, and advanced features let you go deeper and deeper into customizing installations so they are better suited for your specific environment.
 
 
-### What is stacki?
+## What is stacki?
 stacki is a bare metal install tool that can take your machine/VM from hardware to working Linux, ready for you to install your applications. Advanced users can even have stacki install their applications, but we’ll save that discussion for a different document. stacki has a long history, and is in use at some of the most demanding organizations in the world. The commercial version of stacki is used by Fortune 500 companies to maintain their cloud and big data clusters, so it definitely has seen its share of production use.
 
 What it does is simple, if it’s doing it for you…
@@ -27,13 +27,13 @@ In theory, with stacki, you could make machines disposable. “Give me a couple 
 
 And once stacki is done, you’re ready to use whatever your application configuration toolset – be it puppet, chef, StackIQ Boss, whatever – to configure the rest of the system.
 
-### Why Open Source?
+## Why Open Source?
 It’s in our blood. StackIQ grew out of the Rocks Open Source project. Where Rocks focuses on High Performance Computing, StackIQ Boss specializes in clustered enterprise software – Big Data clusters and OpenStack. We wanted to offer the unserved portion of the world – the Linux server farm and individual developer – the same agility and performance that these two projects offer. So we created the stacki project. The source is actually a streamlined version of StackIQ Boss, so has a long history of working in demanding environments.
 
-### Linux? Which Linux?
+## Linux? Which Linux?
 stacki currently supports RedHat and variants. Our How To documents and examples will generally use CentOS, but the commands will work on any of the RedHat derivative linux distributions.
 
-### Getting Involved!
+## Getting Involved!
 And now you can help make it better. Post suggestions, improve documentation, join the developers on GitHub (Link to GitHub). Any place you think you can help, that’s what this site and the forums are all about. As Open Source, it now counts on the support of the community to drive it farther. That’s you and me!
 
 
