@@ -1,8 +1,6 @@
-
-                            www.stacki.com
-                                 v1.0
-
-     Copyright (c) 2006 - 2015 StackIQ Inc. All rights reserved.
+# www.stacki.com
+### v1.0
+### Copyright (c) 2006 - 2015 StackIQ Inc. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -19,7 +17,7 @@ with the distribution.
 3. All advertising and press materials, printed or electronic, mentioning
 features or use of this software must display the following acknowledgement: 
 
-         "This product includes software developed by StackIQ" 
+> This product includes software developed by StackIQ
  
 4. Except as permitted for the purposes of acknowledgment in paragraph 3,
 neither the name or logo of this software nor the names of its
