@@ -8,7 +8,7 @@ Let's presume we have a stacki frontend with just two pallets, "stacki" and Cent
 
     stack list pallet
 
-![test](../images/stack-list-pallet-1.png)
+![stack list pallet](images/stack-list-pallet-1.png)
 
 % Download the CentOS 6.6 DVD 1 ISO to the stack frontend. (This may take a bit....)
 
@@ -23,23 +23,23 @@ Let's presume we have a stacki frontend with just two pallets, "stacki" and Cent
 
 Like this:
 
-![stack add pallet](../images/stack-add-pallet-1.png)
+![stack add pallet](images/stack-add-pallet-1.png)
 
 % Enable new pallet, disable old pallet.
 
 You don't want two OS pallets of different version being installed. So disable the old CentOS pallet, and enable the new one. (The version is listed in the output of `# stack list pallet`.) The '----' indicates a pallet that is is not enabled.
 
-![stack list pallet](../images/stack-list-pallet-1.png)
+![stack list pallet](images/stack-list-pallet-1.png)
 
 Disable the old version:  
 `# stack disable pallet CentOS version=6.5`
 
-![stack disable pallet](../images/stack-disable-pallet-1.png)
+![stack disable pallet](images/stack-disable-pallet-1.png)
 
 Enable the new version:  
 `# stack enable pallet CentOS version=6.6`
 
-![stack enable pallet](../images/stack-enable-pallet-1.png)
+![stack enable pallet](images/stack-enable-pallet-1.png)
 
 % Remake the distribution
 
@@ -47,11 +47,11 @@ A distribution contains packaging and configuration for installation of backend 
 
 `# stack create distribution`
 
+![stack create distribution](images/stack-create-distribution-1.png)
 
-Will remake the configuration graph and add the CentOS 6.6 RPMS to the repository. This means during installation, backend nodes will be installed with 6.6 and all RPMS from 6.6 are available to the installed backend nodes with yum.
+Will remake the "default" distribution containing the kickstart configuration graph and the CentOS 6.6 RPMS and create a yum repository. This means during installation, backend nodes will be installed with 6.6 and all RPMS from 6.6 are available to the installed backend nodes with yum.
 
-
-
+From here, reinstall nodes. You will not lose any data on the nodes unless you set the "nukedisks" or "nukecontrollers" attributes to "true," but the nodes will now have 6.6 as their base OS.
 
 
 
