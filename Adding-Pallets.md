@@ -27,14 +27,19 @@ Like this:
 
 % Enable new pallet, disable old pallet.
 
-You don't want two OS pallets of different version being installed. So disable the old CentOS pallet, and enable the new one. (The version is listed in the output of `# stack list pallet`.)
+You don't want two OS pallets of different version being installed. So disable the old CentOS pallet, and enable the new one. (The version is listed in the output of `# stack list pallet`.) The '----' indicates a pallet that is is not enabled.
 
-Disable:  
+![stack list pallet](../images/stack-list-pallet-1.png)
+
+Disable the old version:  
 `# stack disable pallet CentOS version=6.5`
 
-Enable:  
-`# stack disable pallet CentOS version=6.6`
+![stack disable pallet](../images/stack-disable-pallet-1.png)
 
+Enable the new version:  
+`# stack enable pallet CentOS version=6.6`
+
+![stack enable pallet](../images/stack-enable-pallet-1.png)
 
 
 
