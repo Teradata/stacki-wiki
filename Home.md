@@ -1,4 +1,4 @@
-![StackI Logo](https://github.com/StackIQ/stacki/blob/master/logo.png?raw=true)
+![stacki logo](https://github.com/StackIQ/stacki/blob/master/logo.png?raw=true)
 
 # Introduction
 
