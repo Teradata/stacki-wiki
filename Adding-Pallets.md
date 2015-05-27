@@ -8,7 +8,7 @@ Let's presume we have a stacki frontend with just two pallets, "stacki" and Cent
 
     stack list pallet
 
-![test](stack-list-pallet-1.png)
+![stack list pallet](images/stack-list-pallet-1.png)
 
 % Download the CentOS 6.6 DVD 1 ISO to the stack frontend. (This may take a bit....)
 
