@@ -5,14 +5,15 @@
 Welcome to stacki.
 Our goal is to make fast, repeatable, and adaptable Linux installations not only possible, but easy.
 
-It is quick and easy to get started spinning up Linux servers with stacki, and advanced features let you go deeper and deeper into customizing installations so they are better suited for your specific environment.
+It is quick and easy to get started spinning up Linux servers with stacki, and advanced features let you go deeper and deeper into customizing installations so they are better suited for your unique environment.
 
 
 ## What is stacki?
 
-stacki is a bare metal install tool that can take your server from bare hardware (or virtual machine) to working Linux, ready for you to install your applications.
-stacki does this at scale, so deploying 100 servers is no more complex than deploying one.
-Advanced users can even have stacki install their applications, but we’ll save that discussion for a different document. stacki has a long history, and is in use at some of the most demanding organizations in the world.
+stacki is a bare metal install tool that can take your server from bare hardware (or virtual hardware) to working Linux, ready for you to install your applications.
+stacki does this at scale, so deploying 100 servers is no more complex (and barely slower) than deploying one.
+Advanced users can even have stacki install their applications.
+stacki has a long history, and is in use at some of the most demanding organizations in the world.
 The commercial version of stacki is used by Fortune 500 companies to maintain their cloud and big data clusters, so it definitely has seen its share of production use.
 
 What it does is simple:
@@ -31,7 +32,7 @@ With stacki, you cam make machines disposable.
 Everything is built from the ground up programmatically so recovering from disasters can means just rebuilding the infrastrucutre.
 Our goal is to keep you off of your servers and away from the question "what state are my servers in?".
 
-And once stacki is done, you’re can augment it with your favorite configuration toolset - be it salt, chef, puppet, cfengine, or homegrown.
+And once stacki is done, you can augment it with your favorite configuration toolset - be it salt, chef, puppet, cfengine, or homegrown.
 
 
 ## Origins<a name="license"></a>
