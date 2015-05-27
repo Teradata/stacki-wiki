@@ -1,4 +1,4 @@
-<h1>Using the Stacki Installer</h1>
+<h2>Using the Stacki Installer</h2>
 
 <h3>Step 1 - Cluster Information</h3>
 
