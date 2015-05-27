@@ -18,7 +18,7 @@ Note that after clicking on "Next", the wizard will immediately set these creden
 
 <h3>Step 4 - Password</h3>
 
-Enter your <b>Password</b>.  This will be the root password to the frontend.
+Enter your <i>Password</i>.  This will be the root password of the frontend.
 
 
 <h3>Step 5 - Choose Partition</h3>
