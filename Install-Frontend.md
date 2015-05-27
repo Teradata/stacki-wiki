@@ -12,20 +12,27 @@ Enter public network settings. First choose your <i>Public Network Device</i>.  
 <br /><br />
 Note that after clicking on "Next", the wizard will immediately set these credentials.
 
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_2b.png)
+
 <h3>Step 3 - Private Network</h3>
 
 Enter private network settings. Choose your <i>Private Network Device</i>.  This is the interface that connects your frontend to the compute nodes.  Then enter the <i>Private IP</i> and <i>Netmask</i>.
 <br /><br />
 Note that after clicking on "Next", the wizard will immediately set these credentials.
 
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_3b.png)
+
 <h3>Step 4 - Password</h3>
 
 Enter your <i>Password</i>.  This will be the root password of the frontend.
 
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_4.png)
 
 <h3>Step 5 - Choose Partition</h3>
 
-Choose partition setup.  In automatic mode, the first disk will be partitioned in default manner of the OS.  In manual mode, a partition setup screen will appear for you to setup after you complete this wizard.
+Choose partition setup.  In <i>Automatic</i> mode, the first disk will be partitioned in default manner of the OS.  In <i>Manual</i> mode, a partition setup screen will appear for you to setup after you complete this wizard.
+
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_5.png)
 
 <h3>Step 6 - Add Pallets</h3>
 
