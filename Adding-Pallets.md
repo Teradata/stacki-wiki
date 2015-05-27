@@ -47,8 +47,11 @@ A distribution contains packaging and configuration for installation of backend 
 
 `# stack create distribution`
 
+![stack create distribution](../images/stack-create-distribution-1.png)
 
-Will remake the configuration graph and add the CentOS 6.6 RPMS to the repository. This means during installation, backend nodes will be installed with 6.6 and all RPMS from 6.6 are available to the installed backend nodes with yum.
+Will remake the "default" distribution containing the kickstart configuration graph and the CentOS 6.6 RPMS and create a yum repository. This means during installation, backend nodes will be installed with 6.6 and all RPMS from 6.6 are available to the installed backend nodes with yum.
+
+From here, reinstall nodes. You will not lose any data on the nodes unless you set the "nukedisks" or "nukecontrollers" attributes to "true," but the nodes will now have 6.6 as their base OS.
 
 
 
