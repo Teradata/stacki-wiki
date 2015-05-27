@@ -2,19 +2,19 @@
 
 <h3>Step 1 - Cluster Information</h3>
 
-The first screen will appear where you enter the <b>Name</b> of the frontend (head node), the <b>Fully Qualified Domain Name</b> (i.e. name.yourdomain.com) of your frontend, <b>Email</b> and <b>Timezone</b> of the cluster.
+The first screen will appear where you enter the <i>Name</i> of the frontend (head node), the <i>Fully Qualified Domain Name</i> (i.e., name.yourdomain.com) of your frontend, <i>Email</i> and <i>Timezone</i> of the cluster.
 
 <h3>Step 2 - Public Network</h3>
 
-Enter public network settings. First choose your <b>Public Network Device</b>.  This is the device that connects the frontend to the outside network.  Provide the <b>Public IP</b>, <b>Netmask</b> and <b>Public Gateway</b>.  Next provide <b>DNS Servers</b>, if more than one DNS Server you can type a comma separated list (i.e. 8.8.8.8, 4.2.2.2, 8.8.4.4).
+Enter public network settings. First choose your <i>Public Network Device</i>.  This is the device that connects the frontend to the outside network.  Provide the <i>Public IP</i>, <i>Netmask</i> and <i>Public Gateway</i>.  Next provide <i>DNS Servers</i>, if more than one DNS Server you can type a comma separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
 <br /><br />
-<i>Note that after clicking on "Next", the wizard will immediately set these credentials.</i>
+Note that after clicking on "Next", the wizard will immediately set these credentials.
 
 <h3>Step 3 - Private Network</h3>
 
-Enter private network settings. Choose your <b>Private Network Device</b>.  This is the interface that connects your frontend to the compute nodes.  Then enter the <b>Private IP</b> and <b>Netmask</b>.
+Enter private network settings. Choose your <i>Private Network Device</i>.  This is the interface that connects your frontend to the compute nodes.  Then enter the <i>Private IP</i> and <i>Netmask</i>.
 <br /><br />
-<i>Note that after clicking on "Next", the wizard will immediately set these credentials.</i>
+Note that after clicking on "Next", the wizard will immediately set these credentials.
 
 <h3>Step 4 - Password</h3>
 
@@ -27,7 +27,7 @@ Choose partition setup.  In automatic mode, the first disk will be partitioned i
 
 <h3>Step 6 - Add Pallets</h3>
 
-Choose the </b>Pallets</b> you want to install.  If booting from a DVD, pallets should automatically load onto the list for you to choose.  You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.  That will load the pallets as well.  The "Id" column will distinguish between pallets loaded from DVD vs pallets from a network.
+Choose the <i>Pallets</i> you want to install.  If booting from a DVD, pallets should automatically load onto the list for you to choose.  You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.  That will load the pallets as well.  The "Id" column will distinguish between pallets loaded from DVD vs pallets from a network.
 
 <h3>Step 7 - Review</h3>
 
