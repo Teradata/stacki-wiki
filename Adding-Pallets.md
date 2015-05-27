@@ -41,6 +41,17 @@ Enable the new version:
 
 ![stack enable pallet](../images/stack-enable-pallet-1.png)
 
+% Remake the distribution
+
+A distribution contains packaging and configuration for installation of backend nodes. In this example, it's just the basic backend node configuration and now CentOS 6.6. To make all the RPMS that have been added in the CentOS pallet available to backend nodes for installation, the "default" distribution needs to be synced. 
+
+`# stack create distribution`
+
+
+Will remake the configuration graph and add the CentOS 6.6 RPMS to the repository. This means during installation, backend nodes will be installed with 6.6 and all RPMS from 6.6 are available to the installed backend nodes with yum.
+
+
+
 
 
 
