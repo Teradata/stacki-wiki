@@ -44,7 +44,7 @@ You can also load more pallets through a network by clicking on "Add Pallets" an
 
 ![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_6c.png)
 
-The "Id" column will denotes pallets loaded from a DVD and the "Network" column denotes pallets from a network. Select all pallets you want to install.
+The "Id" column denotes pallets loaded from a DVD and the "Network" column denotes pallets from a network. Select all pallets you want to install.
 
 ![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_6e.png)
 
