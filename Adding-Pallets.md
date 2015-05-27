@@ -7,11 +7,14 @@ On the frontend:
 `# stack list pallet`  
 `# cd /export`  
 `# wget http://mirror.umd.edu/centos/6.6/isos/x86_64/CentOS-6.6-x86_64-bin-DVD1.iso`   
-(Just get the ISO on the frontend in some way or another.)    
+(Just get the ISO on the frontend in some way or another.)  
+  
 `# stack add pallet CentOS-6.6-x86_64-bin-DVD1.iso`  
+
 If an OS pallet of a different version exists, disable the older pallet (otherwise just enable the new pallet):   
 `# stack disable pallet CentOS version=6.5` 
-`# stack disable pallet CentOS version=6.6`
+
+`# stack enable pallet CentOS version=6.6`  
 `# stack create distribution` 
 
 Reinstall backend machines.  
