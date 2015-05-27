@@ -36,7 +36,17 @@ Choose partition setup.  In <i>Automatic</i> mode, the first disk will be partit
 
 <h3>Step 6 - Add Pallets</h3>
 
-Choose the <i>Pallets</i> you want to install.  If booting from a DVD, pallets should automatically load onto the list for you to choose.  You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.  That will load the pallets as well.  The "Id" column will distinguish between pallets loaded from DVD vs pallets from a network.
+Choose the <i>Pallets</i> you want to install.  If booting from a DVD, pallets should automatically load onto the list for you to choose.  In this case, we are not using a DVD and installing from a network.
+
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_6a.png)
+
+You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.  This is another method to load pallets as well.
+
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_6c.png)
+
+The "Id" column will denotes pallets loaded from a DVD and the "Network" column denotes pallets from a network. Select all pallets you want to install.
+
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_6e.png)
 
 <h3>Step 7 - Review</h3>
 
