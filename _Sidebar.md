@@ -2,5 +2,6 @@
 2. [Installation](Installation)
    * [Frontend](Install-Frontend)
    * [Backend](Installing-Backend-Nodes)
-3. [Command Line Interface](CLI-Documentation)
-4. [How To's](howto)
+3. [Storage Configuration](Storage)
+4. [Command Line Interface](CLI-Documentation)
+5. [How To's](howto)
