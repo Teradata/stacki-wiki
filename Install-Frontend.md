@@ -6,11 +6,15 @@ The first screen will appear where you enter the <b>Name</b> of the frontend (he
 
 <h3>Step 2 - Public Network</h3>
 
-Enter public network settings. First choose your <b>Public Network Device</b>.  This is the device that connects the frontend to the outside network.  Provide the <b>Public IP</b>, <b>Netmask</b> and <b>Public Gateway</b>.  Next provide <b>DNS Servers</b>, if more than one DNS Server you can type a comma separated list (i.e. 8.8.8.8, 4.2.2.2, 8.8.4.4).  Note that after clicking on "Next", the wizard will immediately set these credentials.
+Enter public network settings. First choose your <b>Public Network Device</b>.  This is the device that connects the frontend to the outside network.  Provide the <b>Public IP</b>, <b>Netmask</b> and <b>Public Gateway</b>.  Next provide <b>DNS Servers</b>, if more than one DNS Server you can type a comma separated list (i.e. 8.8.8.8, 4.2.2.2, 8.8.4.4).
+<br /><br />
+<i>Note that after clicking on "Next", the wizard will immediately set these credentials.</i>
 
 <h3>Step 3 - Private Network</h3>
 
 Enter private network settings. Choose your <b>Private Network Device</b>.  This is the interface that connects your frontend to the compute nodes.  Then enter the <b>Private IP</b> and <b>Netmask</b>.
+<br /><br />
+<i>Note that after clicking on "Next", the wizard will immediately set these credentials.</i>
 
 <h3>Step 4 - Password</h3>
 
