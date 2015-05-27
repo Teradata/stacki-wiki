@@ -4,6 +4,8 @@
 
 The first screen will appear where you enter the <i>Name</i> of the frontend (head node), the <i>Fully Qualified Domain Name</i> (i.e., name.yourdomain.com) of your frontend, <i>Email</i> and <i>Timezone</i> of the cluster.
 
+![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_1b.png)
+
 <h3>Step 2 - Public Network</h3>
 
 Enter public network settings. First choose your <i>Public Network Device</i>.  This is the device that connects the frontend to the outside network.  Provide the <i>Public IP</i>, <i>Netmask</i> and <i>Public Gateway</i>.  Next provide <i>DNS Servers</i>, if more than one DNS Server you can type a comma separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
