@@ -3,7 +3,7 @@
    * [Frontend](Install-Frontend)
    * [Backend](Installing-Backend-Nodes)
 3. [Storage Configuration](Storage)
-4. [Adding Pallets]
+4. [Adding Pallets](Adding-Pallets)
 5. [Creating and using distributions](create-use-distributions)
    * [Create Distributions](create-distribution)
        * [Adding ISO pallets](adding-isos)
