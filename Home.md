@@ -1,7 +1,8 @@
 ![StackI Logo](https://github.com/StackIQ/stacki/blob/master/logo.png?raw=true)
 
 # Introduction
-Welcome to stacki! Our goal is to make fast, repeatable, and adaptable Linux installations not only possible, but easy.
+Welcome to stacki!
+Our goal is to make fast, repeatable, and adaptable Linux installations not only possible, but easy.
 
 It is quick and easy to get started spinning up Linux servers with stacki, and advanced features let you go deeper and deeper into customizing installations so they are better suited for your specific environment.
 
