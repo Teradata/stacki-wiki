@@ -8,4 +8,4 @@ List the pallets you currently have:
 
     stack list pallet
 
-![](stack-list-pallet-1.png)
+![test](../images/stack-list-pallet-1.png)
