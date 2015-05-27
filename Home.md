@@ -33,6 +33,7 @@ Our goal is to keep you off of your servers and away from the question "what sta
 
 And once stacki is done, you’re can augment it with your favorite configuration toolset - be it salt, chef, puppet, cfengine, or homegrown.
 
+
 ## Origins
 
 Long before devops and webscale we were building world class supercomputers made from simple Linux boxes.
@@ -48,17 +49,11 @@ both are based on the traditional BSD attribution license.
 stacki also includes several third party opensource packages each with their own copyrights.
 Details on this are found in the source tree.
 
-## Linux? Which Linux?
+
+## Linux
 
 stacki currently supports RedHat and variants.
-Our How To documents and examples will generally use CentOS, but the commands will work on any of the RedHat derivative linux distributions.
+We general develop on CentOS but we always test on RHEL to give you the choice on what level of OS support you require.
 
-## Getting Involved!
-
-And now you can help make it better.
-Post suggestions, improve documentation, join the developers on GitHub (Link to GitHub).
-Any place you think you can help, that’s what this site and the forums are all about.
-As Open Source, it now counts on the support of the community to drive it farther.
-That’s you and me!
 
 
