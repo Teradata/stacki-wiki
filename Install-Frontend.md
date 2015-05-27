@@ -27,7 +27,7 @@ Choose partition setup.  In automatic mode, the first disk will be partitioned i
 
 <h3>Step 6 - Add Pallets</h3>
 
-Choose the </b>Pallets</b> you want to install.  If booting from a CD, pallets should automatically load onto the list for you to choose.  You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.  That will load the pallets as well.  The "Id" column will distinguish between pallets loaded from CD vs pallets from a network.
+Choose the </b>Pallets</b> you want to install.  If booting from a DVD, pallets should automatically load onto the list for you to choose.  You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.  That will load the pallets as well.  The "Id" column will distinguish between pallets loaded from DVD vs pallets from a network.
 
 <h3>Step 7 - Review</h3>
 
