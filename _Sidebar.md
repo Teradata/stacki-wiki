@@ -1,5 +1,5 @@
 * [Home](Home)
-* [Frontend Installation](Install-Frontend)
+* [Frontend Installation](Frontend-Installation)
 * [Backend Installation](Installing-Backend-Nodes)
 * [Storage Configuration](Storage)
 * [Adding Pallets](Adding-Pallets)
