@@ -32,11 +32,11 @@ external network (e.g., the internet or your organization’s intranet).
 Insert the stacki DVD into your frontend and reset the
 frontend machine. You will see the installation wizard described below.
 
+## Boot Media 
+
+![](images/stack-iso-boot.png) 
+
 ## Installation Wizard
-
-### Boot Media
-
-![](images/stack-iso-boot.png)
 
 ### Cluster Information
 
