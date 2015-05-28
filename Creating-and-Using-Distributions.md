@@ -55,12 +55,17 @@ There's not much point in creating a distribution if you don't use it. So, let's
 % Assign backend nodes to the distribution  
 `# stack list host`  
 
+![stack list host](images/stack-list-host-1.png)
 
 `# stack set host distribution backend distribution=test-dist`  
 (Please note here "backend" is an appliance and will put all hosts of appliance-type "backend" into the "test-dist" distribution. I could have used a hostname or several hostnames or a hostname in regex here as well)
 
+![stack set host distribution](images/stack-set-host-distribution-1.png)
+
 % Verify new host distribution  
 `# stack list host`  
+
+![stack list host](images/stack-list-host-2.png)
 
 % Install/reinstall machines
 
@@ -69,8 +74,11 @@ There's not much point in creating a distribution if you don't use it. So, let's
 `# stack run host "reboot"`  
 (With `stack run host` not putting in a host designation will make it run on all hosts.)
 
+![stack host reintall](images/stack-reinstall-1.png)
+
 Once the backend nodes install, they should have the new OS. Check /etc/redhat-release to verify.  
 `# stack run host "cat /etc/redhat-release"`
+
 
 ### Removing a distribution
 
