@@ -57,7 +57,6 @@ other Pallets define additional Appliance types.
 A *Pallet* is a set of software packages and
 [Wire](#Wire) to specific how servers should install and configure the packages.
 
-
 ## Wire
 
 We call the stacki Kickstart framework *Wire*.
@@ -67,10 +66,9 @@ The power here comes from two ideas:
 1. The XML files have access to the configuration database, so a single file can be applied in multiple situations (server, or even datacenters).
 2. The wiring pattern of the XML files define a complete Kickstart profile.
 
-
 ## Attributes
 
 One of the most useful items in the configuration database are *Attributes*.
-An Attributes is a key-value pair that applies to a set of one or more hosts.
+An Attribute is a key-value pair that applies to a set of one or more hosts.
 These values are the configuration data that Wire uses to build host-specific Kickstart profiles.
 
