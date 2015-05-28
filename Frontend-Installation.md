@@ -1,7 +1,7 @@
 Stacki requires a single dedicated server that will host all
 the software and services used to build out other servers. We
 call this server the **Frontend**, and the first step to running
-Stacki is to build a Frontend.
+stacki is to build a Frontend.
 
 The process is fairly simple and looks similar to a standard Linux
 build with the addition of a wizard to capture site-specific
