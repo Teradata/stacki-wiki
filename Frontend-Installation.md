@@ -48,7 +48,7 @@ odd, but this is correct).
 
 ## New or Existing
 
-Stacki can build you a Frontend from bare metal or it can be added on
+Stacki can build you a [New](#new) Frontend from bare metal or it can be added on
 top of an existing server.
 If you wish to install stacki on top of an existing system skip to the
 [Existing](#existing) section.
@@ -113,46 +113,47 @@ when it completes you can continue to the [Installation Wizard](#installation-wi
 
 The first screen will appear where you enter
 
-1. _Name_ of the Cluster - for example "Demo"
-2. _Fully Qualified Domain Name_ of the frontend (i.e., name.yourdomain.com)
+1. _Cluster Name_ - for example "Demo"
+2. _Fully Qualified Host Name_ of the frontend (i.e., name.yourdomain.com)
 3. _Email_ - Administrator Email
 4. _Timezone_ of the cluster.
 
 ![](images/stacki_config_step_1b.png)
 
 ### Public Network
+
 The public cluster network configuration screen allows you to set up the
 networking parameters for the ethernet network that connects the frontend to the
 outside network (e.g., the internet).
 
-1. Select _Network Interface_ connected to the **Public network**.
-2. _IP Address_ of Public interface
+1. Select from the network _Devices_ to select the public network.
+2. _IP_ address of the public interface
 3. _Netmask_
-4. _IP Address of the Public Gateway / Router_.
-5. _DNS Servers_ - More than one DNS Server can be
-   entered as a comma-separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
+4. _Gateway_
+5. _DNS Servers_ - More than one DNS Server can be entered as a comma-separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
 
-On clicking "Next", the wizard configures the network interface
-to the provided information.
+Click _Continue_ to configure the network interface. 
 
 ![](images/stacki_config_step_2b.png)
 
 ### Private Network
+
 The private network configuration screen configures the
 networking parameters for the ethernet network that
 connects the frontend to the backend nodes.
 
-1. Select _Network Interface_ connected to the **Private(Management) Network**.
-2. _IP Address_ of the Private Interface
+1. Select from the network _Devices_ to select the private network.
+2. _IP_ Address of the private Interface
 3. _Netmask_
 
-On clicking "Next", the wizard configures the network interface
-to the provided information.
+Click _Continue_ to configure the network interface.
+ 
 
 ![](images/stacki_config_step_3b.png)
 
 ### Password
-Enter the password for the **root** account on the frontend.
+
+Enter the password for the **root** account on the Frontend.
 
 ![](images/stacki_config_step_4.png)
 
@@ -175,11 +176,11 @@ and reformats the first hard drive (e.g. _sda_) that the installer
 discovers. All previous data on this drive will be erased.
 All other drives will be left untouched. If you are unsure about how
 the drives will be discovered in a multi-disk frontend,
-select *Manual Partitioning*.
+select _Manual Partitioning_.
 
 In _Manual_ mode, the installer brings up a partition setup
 screen after the wizard exits. In this mode, specify at least 16 GB
-for the root partition and a separate **/export** partition.
+for the root partition and a separate /export partition.
 
 ![](images/stacki_config_step_5.png)
 
@@ -190,15 +191,15 @@ Booting from a DVD, pallets should automatically load onto the list for you to c
 
 ![](images/stacki_config_step_6a_2.png)
 
-The "Id" column denotes pallets loaded from a DVD and the "Network" column denotes pallets from a network (not being used).
+The _Id_ column denotes pallets loaded from a DVD and the _Network_ column denotes pallets from a network (not being used).
 
-Select "stacki" and "os" pallets to install.
+Select _stacki_ and _os_ pallets to install.
 
 ![](images/stacki_config_step_6b_2.png)
 
 ### Review
 
-Review the installation parameters and click "Install" to proceed.
+Review the installation parameters and click _Continue_ to proceed.
 
 If this was a [New](#new) installation the Frontend will now format
 its filesystems and copy the Pallets from the onto its hard disk.
