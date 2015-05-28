@@ -1,5 +1,6 @@
 * [Home](Home)
 * [Frontend Installation](Frontend-Installation)
+    * [Installing a Frontend on an Existing CentOS/RHEL Server](Frontend-Installation-Barnacle)
 * [Backend Installation](Backend-Installation)
 * [Storage Configuration](Storage-Configuration)
 * [Adding Pallets](Adding-Pallets)
