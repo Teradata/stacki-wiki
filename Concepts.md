@@ -49,13 +49,13 @@ rapid deployment (in parallel) is freedom.
 
 We use the term **Appliance** to refer to a group of servers,
 usually with related functionallity.
-The stacki [Pallet](#Pallets) include only the Backend Appliance,
+The stacki [Pallet](#pallets--distributions) include only the Backend Appliance,
 other Pallets define additional Appliance types.
 
 ## Pallets & Distributions
 
 A **Pallet** is a set of software packages and
-[Wire](#Wire) to specific how servers should install and configure the packages.
+[Wire](#wire) to specific how servers should install and configure the packages.
 A **Distribution** is a composition of Pallets that can also serves as the source of packages during Backend installation and as an installed hosts primary Yum repository.
 
 ## Wire
