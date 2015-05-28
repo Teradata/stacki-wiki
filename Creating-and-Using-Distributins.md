@@ -20,8 +20,8 @@ See which rolls are available:
 `# stack list roll`
 
 % Enable RHEL and stacki pallets.       
-`# stack enable pallet stacki RHEL distribution=test-dist      
-(a version may be required using the "version=" argument. The version is show in the output of `# stack list roll`
+`# stack enable pallet stacki RHEL distribution=test-dist`      
+(a version may be required using the "version=" argument. The version is shown in the output of `# stack list roll`
 
 % Make the distribution  
 `# stack create distribution name=test-dist`
