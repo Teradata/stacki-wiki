@@ -1,4 +1,5 @@
 * [Home](Home)
+* [Concepts](Concepts)
 * [Frontend Installation](Frontend-Installation)
 * [Backend Installation](Backend-Installation)
 * [Storage Configuration](Storage-Configuration)
