@@ -58,17 +58,17 @@ The Host CSV file needs to have the following headers:
 
 **Sample Host CSV file**
 
-| NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET |  
-|------|-----------|------|------|----|-----|-----------|--------| 
-| backend-0-0 | backend | 0 | 0 | 10.1.255.254 | 00:22:19:1c:0c:99 | eth0 | private |
-| backend-0-1 | backend | 0 | 1 | 10.1.255.255 | 00:22:19:1c:0c:98 | eth0 | private |
-| backend-0-2 | backend | 0 | 2 | 10.1.255.253 | 00:22:19:1c:0c:97 | eth0 | private |
-| backend-0-3 | backend | 0 | 3 | 10.1.255.252 | 00:22:19:1c:0c:96 | eth0 | private |
-| backend-0-4 | backend | 0 | 4 | 10.1.255.251 | 00:22:19:1c:0c:95 | eth0 | private |
-| backend-0-5 | backend | 0 | 5 | 10.1.255.250 | 00:22:19:1c:0c:94 | eth0 | private |
+| NAME        | APPLIANCE | RACK | RANK | IP           | MAC               | INTERFACE | SUBNET  |  
+|-------------|-----------|------|------|--------------|-------------------|-----------|---------| 
+| backend-0-0 | backend   | 0    | 0    | 10.1.255.254 | 00:22:19:1c:0c:99 | eth0      | private |
+| backend-0-1 | backend   | 0    | 1    | 10.1.255.255 | 00:22:19:1c:0c:98 | eth0      | private |
+| backend-0-2 | backend   | 0    | 2    | 10.1.255.253 | 00:22:19:1c:0c:97 | eth0      | private |
+| backend-0-3 | backend   | 0    | 3    | 10.1.255.252 | 00:22:19:1c:0c:96 | eth0      | private |
+| backend-0-4 | backend   | 0    | 4    | 10.1.255.251 | 00:22:19:1c:0c:95 | eth0      | private |
+| backend-0-5 | backend   | 0    | 5    | 10.1.255.250 | 00:22:19:1c:0c:94 | eth0      | private |
 
-Once the CSV file is created, it can be added onto stacki frontend via the command line interface -
-1. Copy the CSV file onto the frontend.
+Once the CSV file is created, it can be added onto stacki frontend via the command line interface -  
+1. Copy the CSV file onto the frontend  
 2. Run the command:  
 
         # stack load hostfile file=hostfile.csv
