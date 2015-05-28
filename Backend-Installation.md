@@ -44,7 +44,7 @@ manager is discovered on the network, by an app called
    This will bring up the screen that shows a list of appliances
    available for installation. By default, there is only one appliance
    available in Stacki - a **backend** appliance.
-   ![insert-ethers-1](http://github.com/StackIQ/stacki/wiki/images/insert-ethers/insert-ethers-1.png)
+   ![insert-ethers-1](images/insert-ethers/insert-ethers-1.png)
 
 2. Select the **Backend** appliance, and hit `enter`. This brings
    up the following screen.
