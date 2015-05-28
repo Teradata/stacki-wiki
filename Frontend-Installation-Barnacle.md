@@ -33,8 +33,7 @@ cp /media/frontend-install.py /tmp
 Execute frontend-install.py:
 
 `
-/tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 \
-        /path/to/CentOS*iso CentOS 6.6
+/tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
 `
 
 The above step will take several minutes to complete.
@@ -43,8 +42,8 @@ is the _stacki installation wizard_ so you will need to be running in a
 graphical environment when you execute frontend-install.py (or you will
 need to have X11 forwarded to your laptop/workstation).
 
-For details on the _stacki installation wizard_ see section
-**Installation Wizard** in this [section](Frontend-Installation).
+For details on the _stacki installation wizard_ see the section
+[**Installation Wizard**](Frontend-Installation).
 
 Reboot your server.
 
