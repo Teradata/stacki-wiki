@@ -2,6 +2,8 @@ stacki requires a single dedicated server that will host all the software and se
 We call this server the Frontend, and the first step to running stacki is to build a Frontend.
 The process is fairly simple and looks similar to a standard Linux build with the addition of a wizard to capture your site specific networking information.
 
+## Requirements 
+
 A Frontend has the following hardware requirements.
 
 **Resource** | Minimum | Recommended
@@ -10,22 +12,15 @@ A Frontend has the following hardware requirements.
 **Network Interfaces** | 2 | 2
 **Disk Capacity** | 64 GB | 200GB 
 
-### Additional Requirements
-
-**BIOS Boot Order**
+Further the BIOS _boot order_ needs to be set to first boot from CDROM:
 
 1. CD/DVD Device (Optional - Only if device is present)
 2. Hard Disk
 
-At least two Ethernet interfaces are required. The private interface e.g. eth0
- should be connected to the same Ethernet network as the
-compute nodes. The public interface e.g. eth1 should be connected to the
-external network (e.g., the internet or your organization’s intranet).
-
-Insert the stacki DVD into your frontend and reset the
-frontend machine. You will see the installation wizard described below.
-
 ## Boot Media 
+
+Insert the stacki DVD into your Frontend and boot from the media.
+You will see the following screen, just hit enter (or wait) and proceed to the installation wizard.
 
 ![](images/stack-iso-boot.png) 
 
