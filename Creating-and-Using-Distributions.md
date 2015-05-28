@@ -74,10 +74,12 @@ There's not much point in creating a distribution if you don't use it. So, let's
 `# stack run host "reboot"`  
 (With `stack run host` not putting in a host designation will make it run on all hosts.)
 
-![stack host reintall](images/stack-reinstall-1.png)
+![stack host reinstall](images/stack-reinstall-1.png)
 
 Once the backend nodes install, they should have the new OS. Check /etc/redhat-release to verify.  
 `# stack run host "cat /etc/redhat-release"`
+
+![stack verify](images/stack-distribution-verify-1.png)
 
 
 ### Removing a distribution
@@ -87,8 +89,12 @@ To remove a distribution, do the following:
 % Reset the backend nodes to a valid distribution.  
 `# stack set host distribution backend distribution=default`
 
+![stack reset distribution](images/stack-reset-distribution-1.png)
+
 % Remove the distribution.  
-`# stack remove distribution test-dist`
+`# stack remove distribution test-dist`  
+
+![stack remove distribution](images/stack-remove-distribution-1.png)
 
 There is a little more work do, however. A `stack add distribution` creates two directories that allow for customizing the software and configuration of the backend nodes. These directories sit under /export/stack/contrib/<distro_name/ and /export/stack/site-profiles/<distro_name>.
 
@@ -96,6 +102,8 @@ Keeping with this example, remove these two directories:
 
 `# rm -fr /export/stack/contrib/test-dist`  
 `# rm -fr /export/stack/site-profiles/test-dist`
+
+
 
 % Reinstall backend machines
 
