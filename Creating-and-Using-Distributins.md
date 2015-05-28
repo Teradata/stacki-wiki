@@ -9,7 +9,7 @@ This example will create a new distribution using RHEL 6.6 instead of CentOS 6.5
 
 
 % Create a new distribution  
-`# stack create distribution name=test-dist`
+`# stack add distribution test-dist`
 
 and list it to verify:
 
@@ -19,16 +19,16 @@ The "----"s indicate there are no pallets associated with the distribution, so a
 
 % Add pallets to the distribution.
 
-See which rolls are available:
+See which pallets are available:
 
-`# stack list roll`
+`# stack list pallet`
 
 % Enable RHEL and stacki pallets.       
 `# stack enable pallet stacki RHEL distribution=test-dist`      
 (a version may be required using the "version=" argument. The version is shown in the output of `# stack list roll`
 
 % Make the distribution  
-`# stack create distribution name=test-dist`
+`# stack create distribution test-dist`
 
 ### Using the distribution
 
