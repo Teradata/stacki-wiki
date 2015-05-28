@@ -84,7 +84,7 @@ In this case, we are not using a DVD and installing from a network.
 ![](images/stacki_config_step_6a.png)
 
 You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.
-This is another method to load pallets as well.
+This is another method to load pallets.
 
 ![](images/stacki_config_step_6c.png)
 
