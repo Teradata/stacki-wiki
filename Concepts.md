@@ -17,7 +17,8 @@ that when combined completely define Backend node software footprints
 (from OS kernel to application).
 Backend nodes can be identical or completely unique hardware and software, this
 is not an imaging tool, stacki implements software defined infrastructure.
-Code your datacenter.
+
+> Code your datacenter.
 
 ## Kickstart 
 
