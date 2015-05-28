@@ -16,9 +16,9 @@ A Frontend has the following hardware requirements.
 **System Memory** | 2 GB | 16 GB
 **Network Interfaces** | 2 | 2
 **Disk Capacity** | 64 GB | 200GB
-**CD/DVD Device | 1 | 1
+**CD/DVD Device** | 1 | 1
 
-##### BIOS _boot order_
+BIOS _boot order_
 
 1. CD/DVD Device
 2. Hard Disk
