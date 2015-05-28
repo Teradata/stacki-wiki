@@ -52,10 +52,11 @@ usually with related functionallity.
 The stacki [Pallet](#Pallets) include only the Backend Appliance,
 other Pallets define additional Appliance types.
 
-## Pallets
+## Pallets & Distributions
 
 A *Pallet* is a set of software packages and
 [Wire](#Wire) to specific how servers should install and configure the packages.
+A *Distribution* is a composition of Pallets that can also serves as the source of packages during Backend installation and as an installed hosts primary Yum repository.
 
 ## Wire
 
