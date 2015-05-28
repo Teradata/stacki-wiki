@@ -52,12 +52,14 @@ See which pallets are available:
 
 There's not much point in creating a distribution if you don't use it. So, let's use it.
 
-% Assign backend nodes to the distribution
+% Assign backend nodes to the distribution  
+`# stack list host`  
+
 
 `# stack set host distribution backend distribution=test-dist`  
 (Please note here "backend" is an appliance and will put all hosts of appliance-type "backend" into the "test-dist" distribution. I could have used a hostname or several hostnames or a hostname in regex here as well)
 
-% Check host distribution  
+% Verify new host distribution  
 `# stack list host`  
 
 % Install/reinstall machines
@@ -93,6 +95,5 @@ Since you've changed distributions on the backend machines, reinstall them.
 
 `# stack set host boot backend action=install`  
 `# stack run host backend "reboot"`
-
 
 
