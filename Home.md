@@ -55,6 +55,6 @@ Details on these are found in the [source tree](https://github.com/StackIQ/stack
 ## Linux
 
 Stacki supports RedHat and its variants.
-We general develop on CentOS but we always test on RHEL to give you the choice of platform
+We generally develop on CentOS but we always test on RHEL to give you the choice of platform
 
 
