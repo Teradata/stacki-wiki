@@ -4,19 +4,11 @@ can be installed.
 ## Hardware Requirements for a backend machine
 
 ##### Minimum Requirements
-**Resource** | Capacity
--------- | --------
-**System Memory** | 1 GB
-**Network Interfaces** | 1 (PXE-Capable)
-**Disk Capacity** | 40 GB
-
-##### Recommended Hardware
-
-Resource | Capacity
--------- | --------
-**System Memory** | 8 GB
-**Network Interfaces** | 1 or more (PXE-Capable)
-**Disk Capacity** | 100 GB
+**Resource** | **Minimum** | **Recommended**
+-------- | -------- | ------------
+**System Memory** | 1 GB | 8 GB
+**Network Interfaces** | 1 (PXE-Capable) | 1 or more (PXE-Capable)
+**Disk Capacity** | 40 GB | 100 GB
 
 ##### Additional Requirements
 

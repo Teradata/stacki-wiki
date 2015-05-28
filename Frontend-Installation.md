@@ -15,11 +15,12 @@ A Frontend has the following hardware requirements.
 --- | --- | ---
 **System Memory** | 2 GB | 16 GB
 **Network Interfaces** | 2 | 2
-**Disk Capacity** | 64 GB | 200GB 
+**Disk Capacity** | 64 GB | 200GB
+**CD/DVD Device | 1 | 1
 
-Further the BIOS _boot order_ needs to be set to first boot from CDROM:
+##### BIOS _boot order_
 
-1. CD/DVD Device (Optional - Only if device is present)
+1. CD/DVD Device
 2. Hard Disk
 
 ## Boot Media 
@@ -120,7 +121,7 @@ Select "stacki" and "os" pallets to install.
 
 ### Review
 
-Review your credentials and click "Install" to proceed.
+Review the installation parameters and click "Install" to proceed.
 The frontend will format its filesystems and subsequently copy the
 pallets from the network / DVD onto the frontend's hard disk.
 Packages will be installed after all pallets are copied.
