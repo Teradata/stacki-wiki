@@ -119,4 +119,4 @@ backend-0-2: | install
 backend-0-1: | install 
 backend-0-0: | install 
 
-Now, power up the first backend node.
+Now, power up the backend machines. Once these machines come up, your cluster is ready for use!
