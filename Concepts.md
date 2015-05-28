@@ -10,7 +10,7 @@ Below we introduce some of the main concepts that power stacki.
 ## Frontend
 
 Stacki requires a single dedicated server that to build out other servers.
-We call this server the *Frontend*, and the servers it builds *Backend* nodes.
+We call this server the **Frontend**, and the servers it builds **Backend** nodes.
 
 The stacki Frontend includes a configuration database, and software distributions
 that when combined completely define Backend node software footprints
@@ -47,20 +47,20 @@ rapid deployment (in parallel) is freedom.
 
 ## Appliances
 
-We use the term *Appliance* to refer to a group of servers,
+We use the term **Appliance** to refer to a group of servers,
 usually with related functionallity.
 The stacki [Pallet](#Pallets) include only the Backend Appliance,
 other Pallets define additional Appliance types.
 
 ## Pallets & Distributions
 
-A *Pallet* is a set of software packages and
+A **Pallet** is a set of software packages and
 [Wire](#Wire) to specific how servers should install and configure the packages.
-A *Distribution* is a composition of Pallets that can also serves as the source of packages during Backend installation and as an installed hosts primary Yum repository.
+A **Distribution** is a composition of Pallets that can also serves as the source of packages during Backend installation and as an installed hosts primary Yum repository.
 
 ## Wire
 
-We call the stacki Kickstart framework *Wire*.
+We call the stacki Kickstart framework **Wire**.
 Wire is implemented in XML and looks like a collection of small Kickstart files.
 The power here comes from two ideas:
 
@@ -69,7 +69,7 @@ The power here comes from two ideas:
 
 ## Attributes
 
-One of the most useful items in the configuration database are *Attributes*.
+One of the most useful items in the configuration database are **Attributes**.
 An Attribute is a key-value pair that applies to a set of one or more hosts.
 These values are the configuration data that Wire uses to build host-specific Kickstart profiles.
 
