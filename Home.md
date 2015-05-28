@@ -35,9 +35,9 @@ And once stacki is done, you can augment it with your favorite configuration too
 
 ## Origins<a name="license"></a>
 
-Long before devops and webscale we were building world class supercomputers made from simple Linux boxes.
+Long before devops and webscale we were building world class [supercomputers](http://www.sdsc.edu) made from simple Linux boxes.
 The hardware was cheap, but the complexity at scale killed us.
-So we help create the [Rocks](http://www.rocksclusters.org) toolkit to automate the deployment of high performance computing clusters.
+So we helped create the [Rocks](http://www.rocksclusters.org) toolkit to automate the deployment of high performance computing clusters.
 Along the way we co-founders, developers, and users of Rocks started [StackIQ](http://www.stackiq.com) to build upon the Rocks software and make it appropriate for the enteprise.
 The lessons we've learned from large scale HPC and enterprise computing are now yours as part of stacki.
 
