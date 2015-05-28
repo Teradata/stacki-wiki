@@ -125,6 +125,6 @@ Finally, the boot loader will be installed and post configuration
 scripts will be run in the background.
 When they complete, the frontend will reboot.
 
-![](images/stacki_config_step_7.png)
+![](images/stacki_config_step_7_2.png)
 
 Your stacki frontend is now ready to roll!
