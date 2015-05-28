@@ -1,7 +1,5 @@
 ![stacki logo](https://github.com/StackIQ/stacki/blob/master/logo.png?raw=true)
 
-# Introduction
-
 Welcome to stacki.
 Our goal is to make fast, repeatable, and adaptable Linux installations not only possible, but easy.
 
