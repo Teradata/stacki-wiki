@@ -1,6 +1,4 @@
-# Installing Backend Nodes
-
-After the frontend is up and running, the backend nodes
+After the Frontend is up and running, the backend nodes
 can be installed.
 
 ## Hardware Requirements for a backend machine
