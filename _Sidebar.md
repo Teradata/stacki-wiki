@@ -3,6 +3,7 @@
 * [Backend Installation](Backend-Installation)
 * [Storage Configuration](Storage-Configuration)
 * [Adding Pallets](Adding-Pallets)
-* [Adding and Using Distributions](Distribution-Management)
+* [Distribution Management](Distribution-Management)
+    * [Using Distributions](using-distribution)
 * [Command Line Interface](CLI-Documentation)
 * [How To's](howto)
