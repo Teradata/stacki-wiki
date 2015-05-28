@@ -102,15 +102,10 @@ Booting from a DVD, pallets should automatically load onto the list for you to c
 
 ![](images/stacki_config_step_6a_2.png)
 
-You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.
-This is another method to load pallets.
-
-![](images/stacki_config_step_6c.png)
-
 The "Id" column denotes pallets loaded from a DVD and the "Network" column denotes pallets from a network.
 Select all pallets you want to install.
 
-![](images/stacki_config_step_6e.png)
+![](images/stacki_config_step_6b_2.png)
 
 ### Review
 
