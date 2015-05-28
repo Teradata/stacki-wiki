@@ -7,9 +7,13 @@ This example will create a new distribution using RHEL 6.6 instead of CentOS 6.5
 % Create a new distribution  
 `# stack create distribution name=test-dist`
 
-% Add pallets to the distribution.
+and list it:
 
-A distribution requires an OS pallet and the stacki pallet. Any other available application pallets can be added also.
+`# stack list distribution`  
+
+You'll see there are not pallets associated with the distribution, so we'll add the minimum pallets: stacki and an OS pallet. Any applications pallets may be added too.
+
+% Add pallets to the distribution.
 
 See which rolls are available:
 
