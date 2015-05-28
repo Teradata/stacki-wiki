@@ -4,17 +4,20 @@
 
 ## Cluster Information
 
-The first screen will appear where you enter the <i>Name</i> of the frontend (head node), the <i>Fully Qualified Domain Name</i> (i.e., name.yourdomain.com) of your frontend, <i>Email</i> and <i>Timezone</i> of the cluster.
+The first screen will appear where you enter the _Name_ of the frontend (head node), the _Fully Qualified Domain Name_ (i.e., name.yourdomain.com) of your frontend, _Email_ and _Timezone_ of the cluster.
 
 ![](images/stacki_config_step_1b.png)
 
 ### Public Network
 
-Enter public network settings. First choose your <i>Public Network Device</i>.  This is the device that connects the frontend to the outside network.  Provide the <i>Public IP</i>, <i>Netmask</i> and <i>Public Gateway</i>.  Next provide <i>DNS Servers</i>, if more than one DNS Server you can type a comma separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
-<br /><br />
+Enter public network settings. First choose your _Public Network Device_.  
+This is the device that connects the frontend to the outside network.  
+Provide the _Public IP_, _Netmask_ and _Public Gateway_.
+Next provide _DNS Servers_, if more than one DNS Server you can type a comma separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
+
 Note that after clicking on "Next", the wizard will immediately set these credentials.
 
-![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_2b.png)
+![](images/stacki_config_step_2b.png)
 
 ### Private Network
 
