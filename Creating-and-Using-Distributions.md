@@ -34,7 +34,7 @@ See which pallets are available:
 
 % Enable RHEL and stacki pallets.  
 `# stack enable pallet stacki RHEL distribution=test-dist`        
-(a version may be required using the "version=" argument. The version is shown in the output of `# stack list roll`)
+(a version may be required using the "version=" argument. The version is shown in the output of `# stack list pallet`)
 
 ![stack enable pallet](images/stack-enable-pallet-2.png)
 
