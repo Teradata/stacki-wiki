@@ -1,6 +1,6 @@
 Stacki enables you to create a **Distribution** which holds the Pallets a
 particular machine will use for its software configuration.
-The _default_distribution consists of the _stacki_ and _OS_ pallets
+The _default_ Distribution consists of the _stacki_ and _OS_ pallets
 (the OS pallet can be CentOS
 or RHEL or any other RHEL variant in the 6.x series >= 6.5).
 These two pallets are the minimal
