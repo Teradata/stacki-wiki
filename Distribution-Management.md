@@ -1,9 +1,11 @@
-Stacki enables you to create a "distribution" which holds the pallets a
-particular machine will use for its software configuration. The "default"
-distribution consists of the "stacki" pallet and an OS pallet (the OS pallet can be CentOS
-or RHEL or any other RHEL variant in the 6.x series >= 6.5). These two pallets are the minimal
-requirement for installing a backend machine. Backend machines are assigned the
-"default" distribution automatically.
+Stacki enables you to create a **Distribution** which holds the Pallets a
+particular machine will use for its software configuration.
+The _default_distribution consists of the _stacki_ and _OS_ pallets
+(the OS pallet can be CentOS
+or RHEL or any other RHEL variant in the 6.x series >= 6.5).
+These two pallets are the minimal
+requirement for installing a Backend machine.
+Backend machines are assigned the _default_ distribution automatically.
 
 You can create additional distributions by adding ISOs you have downloaded or
 have created from a mirrored repository with the "stack create mirror" command.
