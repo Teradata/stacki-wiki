@@ -1,4 +1,4 @@
-# Configuring Storage on Backend Nodes
+# Configuring Storage on Backend Hosts
 
 ## Configure Hardware RAID Controllers
 stacki can automatically configure two types of hardware RAID controllers:
@@ -39,28 +39,100 @@ The third logical disk (_sdc_) will be a RAID 5 composed of the disks in slots 1
 The fourth logical disk (_sdd_) will be a RAID 6 composed of the disks in slots 6 through 12 and the disks in slots 13 and 14 will be hot spares associated with only this array.
 The disks in slots 22 and 23 are designated as hot spares that can be used as replacements for any failed drive in any array.
 
+### Applying the Spreadsheet Configuration to a Frontend
+
+When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend.
+Then, load the CSV file onto the frontend by executing:
+
+`
+stack load storage controller file=your-controller.csv
+`
+
+You can view your storage controller configuration by executing:
+
+`
+stack list storage controller
+`
+
 ### The _nukecontroller_ Attribute
 
 A host's hardware RAID controller will only be reconfigured if the _nukecontroller_ attribute is set to _true_.
 As an example, to set the _nukecontroller_ attribute for host _node221_, execute:
 
-`stack set host attr node221 attr=nukecontroller value=true`
+`
+stack set host attr node221 attr=nukecontroller value=true
+`
 
 Then, the next time _node221_ is installed, it will remove the current hardware RAID controller configuration, then configure it as you specified in your spreadsheet.
 
-While a node is installing, after it configures its controller, it will send a message to the frontend to instruct it to set the  _nukecontroller_ attribute back to _false_.
+While a host is installing, after it configures its controller, it will send a message to the frontend to instruct it to set the  _nukecontroller_ attribute back to _false_.
 This ensures that the controller will not be reconfigured on the next installation.
 
+
 ## Configure Partitions on Disks
-Disk partitioning info here.
 
-nukedisks attribute
+### Spreadsheet Configuration
 
-nukedisks reset to false after install
-
-Talk about LVM
-
+The configuration of partitions is driven through a spreadsheet.
 Here is a [sample spreadsheet](https://docs.google.com/spreadsheets/d/1Hg-yEVgelArXvCGaHk5hTLKQsvNP3Cv9jvKYdOeRavI/pubhtml).
 
+There are five columns:
 
+1. **Name**. A host name, appliance type or global.
+
+2. **Device**. The Linux disk device name (e.g., _sda_, _sdb_).
+
+3. **Mountpoint**. Where the partition should be mounted on the file system.
+
+4. **Size**. The size of the partition in megabytes.
+
+5. **Type**. How the partition should be formatted (e.g., _xfs_, _swap_).
+
+The _Name_ column can contain a specific host name (e.g., _node221_), an
+appliance type (e.g., _backend_) or it can be set to _global_.
+
+In the sample spreadsheet, we see the default configuration (_global_) is to
+only configure the partitions for the first disk (_sda_).
+The root partition _/_ is an ext4 partition and it is 50 GB.
+The _/var_ partition is an ext4 partition and it is 80 GB.
+The _swap_ partition is 16 GB.
+Lastly, _/scratch_ is an xfs partition and it will be the remainder of _sda_.
+
+The configuration for _node221_ has a similar configuration for _sda_ as the _global_ configuration.
+Additionally, _sdb_ and _sdc_ will be configured for _node221_ as single partitions that span the entire disk.
+
+### Applying the Spreadsheet Configuration to a Frontend
+
+When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend.
+Then, load the CSV file onto the frontend by executing:
+
+`
+stack load storage partition file=your-controller.csv
+`
+
+You can view your storage partition configuration by executing:
+
+`
+stack list storage partition
+`
+
+### The _nukedisks_ Attribute
+
+A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_.
+As an example, to set the _nukedisks_ attribute for host _node221_, execute:
+
+`
+stack set host attr node221 attr=nukedisks value=true
+`
+
+Then, the next time _node221_ is installed, it will remove all partitions for all disks, then repartition the disks as you specified in your spreadsheet.
+
+While a host is installing, after it partitions its disks, it will send a message to the frontend to instruct it to set the  _nukedisks_ attribute back to _false_.
+This ensures that the disks will not be reconfigured on the next installation.
+
+### LVM Configuration via Spreadsheets
+
+Currently, there is no support to configure logical volumes via spreadsheets. This feature is in development.
+
+LVM configuration is supported in stacki. Please contact us for assistance.
 
