@@ -4,7 +4,7 @@
 * [Storage Configuration](Storage-Configuration)
 * [Adding Pallets](Adding-Pallets)
 * [Creating Pallets](Creating-Pallets)
-* [Creating and using distributions](create-use-distributions)
+* [Distribution Management](Distribution-Management)
    * [Create Distributions](create-distribution)
        * [Adding ISO pallets](adding-isos)
        * [Creating ISOs](creating-isos)
