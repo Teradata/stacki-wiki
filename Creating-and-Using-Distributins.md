@@ -4,14 +4,18 @@ A new distribution combines a set of application and OS pallets to install backe
 
 This example will create a new distribution using RHEL 6.6 instead of CentOS 6.5. We'll then assign a machine to the new distribution.
 
+% List distributions.  
+`# stack list distribution`
+
+
 % Create a new distribution  
 `# stack create distribution name=test-dist`
 
-and list it:
+and list it to verify:
 
 `# stack list distribution`  
 
-You'll see there are not pallets associated with the distribution, so we'll add the minimum pallets: stacki and an OS pallet. Any applications pallets may be added too.
+The "----"s indicate there are no pallets associated with the distribution, so add the minimum pallets: stacki and an OS pallet. Any applications pallets may be added too.
 
 % Add pallets to the distribution.
 
