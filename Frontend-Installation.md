@@ -201,10 +201,17 @@ Select _stacki_ and _os_ pallets to install.
 
 Review the installation parameters and click _Continue_ to proceed.
 
+![](images/stacki_config_step_7_2.png) 
+
+#### New
+
 If this was a [New](#new) installation the Frontend will now format
 its filesystems and copy the Pallets from the onto its hard disk.
 Next it will install all the packages and configuration.
 When this is complete the Frontend will reboot.
+Your stacki Frontend is now ready. 
+
+#### Existing
 
 If this was an [Existing](#existing) the installer will finalize the
 Frontent configuration, after this complete you must reboot the
@@ -212,7 +219,6 @@ Frontend.
 
     /sbin/init 6
 
-![](images/stacki_config_step_7_2.png)
+Your stacki Frontend is now ready. 
 
 
-For either method your stacki Frontend is now ready.
