@@ -62,15 +62,13 @@ The advantage of using CSV files, is that it gives fine-grained control over the
 configuration of the cluster. The CSV files may be created in a program like Microsoft
 Excel, or Google Docs spreadsheet application, and imported directly into the
 stacki frontend.  
-The Host CSV file needs to have the following headers:    
 
+The Host CSV file needs to have the following headers:    
 
 NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET 
 -----|-----------|------|------|----|-----|-----------|--------
 
 **Sample Host CSV file**
-
-![](hosts.csv)
 
 | NAME        | APPLIANCE | RACK | RANK | IP           | MAC               | INTERFACE | SUBNET  |  
 |-------------|-----------|------|------|--------------|-------------------|-----------|---------| 
