@@ -55,18 +55,31 @@ If you wish to install stacki on top of an existing system skip to the
 
 ## New
 
-### Boot Media 
+Down the stacki jumbo dvd [here](?) and burn the file to a DVD or
+mount it on the virtual media for the server to be installed.
+This is going to completely erase and reformat the hard disks in the
+machine, so be careful on your selection of hosts.
 
-Insert the stacki DVD into your Frontend and boot from the media.
-You will see the following screen, just hit enter (or wait) and proceed to the installation wizard.
+Boot the server with the DVD (or virtual media) mounted and the
+following screen will apear after the BIOS is initialized.
+If you don't see this go back to the [requirements](#requirements) and
+make sure the DVD is the first in the boot order.
 
-![](images/stack-iso-boot.png) 
+![](images/stack-iso-boot.png)
+
+You can hit enter or just wait a few seconds and the stacki
+Frontent installation will begin and you will soon see the
+[Installation Wizard](#installation-wizard)
 
 ## Existing
 
-In addition to the [requirements](#requirments) for Frontends,
+In addition to the [requirements](#requirements) for Frontends,
 installing stacki on top of a previous build host requires that host
-be running the x86_64 version of CentOS 6.x or RHEL 6.x.
+must be running the x86_64 version of CentOS 6.x or RHEL 6.x.
+
+Log into the Gnome (or generic X11) environment on the servers console
+as root.
+You must be root and X11 is required.
 
 To start the installation download two ISOs and put them on your server:
 
@@ -90,19 +103,8 @@ Execute frontend-install.py:
     /tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
 
 
-The above step will take several minutes to complete.
-It will pop open a window that
-is the _stacki installation wizard_ so you will need to be running in a
-graphical environment when you execute frontend-install.py (or you will
-need to have X11 forwarded to your laptop/workstation).
-
-For details on the _stacki installation wizard_ see the section
-[**Installation Wizard**](Frontend-Installation).
-
-Reboot your server.
-
-When the server reboots, it will be ready to install backend nodes!
-
+The above step will take several minutes to complete,
+when it completes you can continue to the [Installation Wizard](#installation-wizard).
 
 
 ## Installation Wizard
@@ -197,13 +199,19 @@ Select "stacki" and "os" pallets to install.
 ### Review
 
 Review the installation parameters and click "Install" to proceed.
-The frontend will format its filesystems and subsequently copy the
-pallets from the network / DVD onto the frontend's hard disk.
-Packages will be installed after all pallets are copied.
-Finally, the boot loader will be installed and post configuration
-scripts will be run in the background.
-When they complete, the frontend will reboot.
+
+If this was a [New](#new) installation the Frontend will now format
+its filesystems and copy the Pallets from the onto its hard disk.
+Next it will install all the packages and configuration.
+When this is complete the Frontend will reboot.
+
+If this was an [Existing](#existing) the installer will finalize the
+Frontent configuration, after this complete you must reboot the
+Frontend.
+
+    /sbin/init 6
 
 ![](images/stacki_config_step_7_2.png)
 
-Your stacki frontend is now ready to roll!
+
+For either method your stacki Frontend is now ready.
