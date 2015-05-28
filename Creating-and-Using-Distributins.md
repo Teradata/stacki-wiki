@@ -39,6 +39,9 @@ See which pallets are available:
 % List to verify  
 `# stack list distribution`
 
+![stack list distribution](images/stack-list-distribution-2.png)
+
+
 
 
 % Make the distribution  
