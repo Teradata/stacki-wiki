@@ -54,7 +54,27 @@ Once the backend nodes install, they should have the new OS. Check /etc/redhat-r
 
 ### Removing a distribution
 
+To remove a distribution, do the following:
 
+% Reset the backend nodes to a valid distribution.  
+`# stack set host distribution backend distribution=default`
+
+% Remove the distribution.  
+`# stack remove distribution test-dist`
+
+There is a little more work do, however. A `stack add distribution` creates two directories that allow for customizing the software and configuration of the backend nodes. These directories sit under /export/stack/contrib/<distro_name/ and /export/stack/site-profiles/<distro_name>.
+
+Keeping with this example, remove these two directories:
+
+`# rm -fr /export/stack/contrib/test-dist`  
+`# rm -fr /export/stack/site-profiles/test-dist`
+
+% Reinstall backend machines
+
+Since you've changed distributions on the backend machines, reinstall them.
+
+`# stack set host boot backend action=install`
+`# stack run host backend "reboot"`
 
 
 
