@@ -17,6 +17,29 @@ Further the BIOS _boot order_ needs to be set to first boot from CDROM:
 1. CD/DVD Device (Optional - Only if device is present)
 2. Hard Disk
 
+stacki allows you to place only the Frontend on your public network
+and to then deploy all Backend servers on an isolated private network.
+This recommended setup is shown below.
+
+![](images/cluster-architecture-two-networks.png)
+
+You may also place all Backend nodes on the public network and use
+only a single network interface from the stacki Frontend, as shown
+below.
+If you choose to run in the configuration there are two additional
+requirements.
+First, the public network cannot have a DHCP server that would answer
+a DHCP request from a Backend server (this is the Frontend's job).
+Second, when in the Installation Wizard you will still need to
+configure both interfaces.
+But in this case simple configure the _Public_ and _Private_ with the
+same network information but only cable the _Private_ one (yes this is
+odd, but this is correct).
+
+![](images/cluster-architecture-one-network.png) 
+
+
+
 ## Boot Media 
 
 Insert the stacki DVD into your Frontend and boot from the media.
