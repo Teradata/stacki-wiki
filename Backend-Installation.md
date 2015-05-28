@@ -1,7 +1,7 @@
 After the Frontend is up and running, the backend nodes
 can be installed.
 
-## Hardware Requirements for a backend machine
+## Requirements
 
 ##### Minimum Requirements
 **Resource** | **Minimum** | **Recommended**
@@ -25,6 +25,7 @@ to install backend nodes.
 2. Spreadsheet Mode
 
 ### Discovery Mode
+
 In discovery mode, a host that is unknown to the stacki frontend is discovered on the network, by an application called
 **insert-ethers**.
 
@@ -54,6 +55,7 @@ In discovery mode, a host that is unknown to the stacki frontend is discovered o
 Repeat 3,4 for all backend machines in your cluster.
 
 ### Host Spreadsheet
+
 Another feature of stacki is the ability to add backend 
 nodes to the system using CSV (Comma Separated Value) files.
 The advantage of using CSV files, is that it gives fine-grained control over the
