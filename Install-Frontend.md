@@ -8,10 +8,10 @@ The first screen will appear where you enter the _Name_ of the frontend (head no
 
 ![](images/stacki_config_step_1b.png)
 
-### Public Network
+## Public Network
 
-Enter public network settings. First choose your _Public Network Device_.  
-This is the device that connects the frontend to the outside network.  
+Enter public network settings. First choose your _Public Network Device_.
+This is the device that connects the frontend to the outside network.
 Provide the _Public IP_, _Netmask_ and _Public Gateway_.
 Next provide _DNS Servers_, if more than one DNS Server you can type a comma separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
 
@@ -19,7 +19,7 @@ Note that after clicking on "Next", the wizard will immediately set these creden
 
 ![](images/stacki_config_step_2b.png)
 
-### Private Network
+## Private Network
 
 Enter private network settings. Choose your _Private Network Device_.
 This is the interface that connects your frontend to the compute
@@ -30,14 +30,14 @@ Note that after clicking on "Next", the wizard will immediately set these creden
 
 ![](images/stacki_config_step_3b.png)
 
-### Password
+## Password
 
 Enter your _Password_.
 This will be the root password of the frontend.
 
 ![](images/stacki_config_step_4.png)
 
-### Choose Partition
+## Choose Partition
 
 Choose partition setup.
 In _Automatic_ mode, the first disk will be partitioned in default
@@ -46,7 +46,7 @@ In _Manual_ mode, a partition setup screen will appear for you to setup after yo
 
 ![](images/stacki_config_step_5.png)
 
-### Add Pallets
+## Add Pallets
 
 Choose the _Pallets_ you want to install.
 If booting from a DVD, pallets should automatically load onto the list for you to choose.
@@ -65,7 +65,7 @@ Select all pallets you want to install.
 
 ![](images/stacki_config_step_6e.png)
 
-### Review
+## Review
 
 Review your credentials and click "Install" to proceed.  This will complete the wizard installation process.
 
