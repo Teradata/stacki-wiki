@@ -1,4 +1,5 @@
 * [Home](Home)
+* [Hardware Requirements](Hardware-Requirements)
 * [Frontend Installation](Frontend-Installation)
 * [Backend Installation](Backend-Installation)
 * [Storage Configuration](Storage-Configuration)

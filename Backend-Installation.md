@@ -3,30 +3,6 @@
 After the frontend is up and running, the backend nodes
 can be installed.
 
-The minimum requirements for backend nodes are -
-
-Resource | Capacity
--------- | --------
-System RAM | 1 GB
-Network Interfaces | 1 (PXE-Capable)
-Hard Drive | 40 GB
-
-For production systems, the recommended configuration
-for backend nodes are -
-
-Resource | Capacity
--------- | --------
-System RAM | 16 GB or more
-Network Interfaces | 1 or More (PXE-Capable)
-Hard Drive | 200 GB or more
-
-An additional requirement is that the backend nodes must
-be setup in the BIOS have the following boot order.
-
-1. PXE Boot
-2. CD/DVD Device (Optional - Only if device is present)
-3. Hard Drive
-
 Stacki gives the system administrator 2 choices of ways
 to install backend nodes.
 
