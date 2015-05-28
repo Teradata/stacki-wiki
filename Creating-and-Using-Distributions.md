@@ -91,8 +91,9 @@ To remove a distribution, do the following:
 
 ![stack reset distribution](images/stack-reset-distribution-1.png)
 
-% Remove the distribution.  
+% Remove the distribution and verify it is gone.
 `# stack remove distribution test-dist`  
+`# stack list distribution`  
 
 ![stack remove distribution](images/stack-remove-distribution-1.png)
 
@@ -103,13 +104,8 @@ Keeping with this example, remove these two directories:
 `# rm -fr /export/stack/contrib/test-dist`  
 `# rm -fr /export/stack/site-profiles/test-dist`
 
-
+![stack remove distribution](images/stack-reset-distribution-1.png)
 
 % Reinstall backend machines
 
-Since you've changed distributions on the backend machines, reinstall them.
-
-`# stack set host boot backend action=install`  
-`# stack run host backend "reboot"`
-
-
+Since you've changed distributions on the backend machines, reinstall them as per the previous instruction.
