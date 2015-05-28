@@ -1,7 +1,7 @@
-Stacki requires a single dedicated server that will host all
-the software and services used to build out other servers. We
-call this server the **Frontend**, and the first step to running
-stacki is to build a Frontend.
+Stacki requires a single dedicated server that will host all 
+the software and services used to build out other servers. We 
+call this server the **Frontend**, and the first step to running 
+stacki is to build a Frontend. 
 
 The process is fairly simple and looks similar to a standard Linux
 build with the addition of a wizard to capture site-specific
@@ -46,12 +46,64 @@ odd, but this is correct).
 
 
 
-## Boot Media 
+## New or Existing
+
+Stacki can build you a Frontend from bare metal or it can be added on
+top of an existing server.
+If you wish to install stacki on top of an existing system skip to the
+[Existing](#existing) section.
+
+## New
+
+### Boot Media 
 
 Insert the stacki DVD into your Frontend and boot from the media.
 You will see the following screen, just hit enter (or wait) and proceed to the installation wizard.
 
 ![](images/stack-iso-boot.png) 
+
+## Existing
+
+In addition to the [requirements](#requirments) for Frontends,
+installing stacki on top of a previous build host requires that host
+be running the x86_64 version of CentOS 6.x or RHEL 6.x.
+
+To start the installation download two ISOs and put them on your server:
+
+1. **stacki**. The stacki ISO can be found [here](http://stacki.s3.amazonaws.com/1.0/stacki-1.0-I.x86_64.disk1.iso).
+
+2. **CentOS** or **RHEL** installation ISO. A CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
+
+Mount the stacki ISO:
+
+    mount -o loop stacki*iso /media
+
+Copy frontend-install.py from the ISO to your local disk:
+
+
+    cp /media/frontend-install.py /tmp
+
+
+Execute frontend-install.py:
+
+
+    /tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
+
+
+The above step will take several minutes to complete.
+It will pop open a window that
+is the _stacki installation wizard_ so you will need to be running in a
+graphical environment when you execute frontend-install.py (or you will
+need to have X11 forwarded to your laptop/workstation).
+
+For details on the _stacki installation wizard_ see the section
+[**Installation Wizard**](Frontend-Installation).
+
+Reboot your server.
+
+When the server reboots, it will be ready to install backend nodes!
+
+
 
 ## Installation Wizard
 
