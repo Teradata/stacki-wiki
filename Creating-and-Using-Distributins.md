@@ -36,16 +36,17 @@ See which pallets are available:
 `# stack enable pallet stacki RHEL distribution=test-dist`      
 (a version may be required using the "version=" argument. The version is shown in the output of `# stack list roll`
 
+![stack enable pallet](images/stack-enable-pallet-2.png)
+
 % List to verify  
 `# stack list distribution`
 
 ![stack list distribution](images/stack-list-distribution-2.png)
 
-
-
-
 % Make the distribution  
 `# stack create distribution test-dist`
+
+![stack create distribution](images/stack-create-distribution-2.png)
 
 ### Using the distribution
 
