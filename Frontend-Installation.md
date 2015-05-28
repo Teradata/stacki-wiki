@@ -15,6 +15,10 @@ frontend machine. You will see the installation wizard described below.
 
 ## Installation Wizard
 
+### Boot Media
+
+![](images/stack-iso-boot.png)
+
 ### Cluster Information
 
 The first screen will appear where you enter the _Name_ of the frontend, the _Fully Qualified Domain Name_ (i.e., name.yourdomain.com) of your frontend, _Email_ and _Timezone_ of the cluster.
@@ -95,8 +99,13 @@ Select all pallets you want to install.
 
 ### Review
 
-Review your credentials and click "Install" to proceed.   
-The frontend will format its filesystems and subsequently copy the pallets from the network / DVD onto the frontend's hard disk. Packages will be installed after all pallets are copied. Finally, the boot loader will be installed and post configuration scripts will be run in the background. When they complete, the frontend will reboot.
+Review your credentials and click "Install" to proceed.
+The frontend will format its filesystems and subsequently copy the
+pallets from the network / DVD onto the frontend's hard disk.
+Packages will be installed after all pallets are copied.
+Finally, the boot loader will be installed and post configuration
+scripts will be run in the background.
+When they complete, the frontend will reboot.
 
 ![](images/stacki_config_step_7.png)
 
