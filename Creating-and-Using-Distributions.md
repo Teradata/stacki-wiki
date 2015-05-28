@@ -2,7 +2,7 @@
 
 A new distribution combines a set of application and OS pallets to install backend machines. Allowing for different versions of OS and applications to be on different machines for either testing or production services. 
 
-This example will create a new distribution using RHEL 6.6 instead of CentOS 6.5. We'll then assign a machine to the new distribution.
+This example will create a new distribution using RHEL 6.6 instead of CentOS 6.6. We'll then assign a machine to the new distribution.
 
 % List distributions.  
 `# stack list distribution`
@@ -32,9 +32,9 @@ See which pallets are available:
 
 ![stack list pallet](images/stack-list-pallet-2.png)
 
-% Enable RHEL and stacki pallets.       
-`# stack enable pallet stacki RHEL distribution=test-dist`      
-(a version may be required using the "version=" argument. The version is shown in the output of `# stack list roll`
+% Enable RHEL and stacki pallets.  
+`# stack enable pallet stacki RHEL distribution=test-dist`        
+(a version may be required using the "version=" argument. The version is shown in the output of `# stack list roll`)
 
 ![stack enable pallet](images/stack-enable-pallet-2.png)
 
@@ -72,7 +72,7 @@ There's not much point in creating a distribution if you don't use it. So, let's
 `# stack set host attr backend attr=nukedisks value=true`  
 `# stack set host boot backend action=install`  
 `# stack run host "reboot"`  
-(With `stack run host` not putting in a host designation will make it run on all hosts.)
+(With `stack run host`, not putting in a host designation will make it run on all hosts.)
 
 ![stack host reinstall](images/stack-reinstall-1.png)
 
