@@ -6,7 +6,7 @@ can be installed.
 ## Hardware Requirements for a backend machine
 * **Disk Capacity:** 100 GB
 * **Memory Capacity:** 2 GB
-* **Ethernet:** 1 physical port (e.g., "eth0")
+* **Ethernet:** Atleast 1 physical port (e.g., "eth0")
 * **BIOS Boot Order:** PXE (Network Boot), Hard Disk
 
 Stacki gives the system administrator 2 choices of ways
@@ -120,4 +120,9 @@ backend-0-2: | install
 backend-0-1: | install 
 backend-0-0: | install 
 
-Now, power up the backend machines. Once these machines come up, your cluster is ready for use!
+Now, power up the backend machines. Once these machines come up, your cluster is ready for use!  
+You can verify this by running the below command:  
+
+       # stack run host backend command='uptime'
+       backend-0-0: 09:12:24 up 33 min,  0 users,  load average: 0.00, 0.00, 0.00
+       backend-0-1: 09:12:24 up 32 min,  0 users,  load average: 0.00, 0.00, 0.00
