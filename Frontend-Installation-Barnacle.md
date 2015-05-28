@@ -33,7 +33,8 @@ cp /media/frontend-install.py /tmp
 Execute frontend-install.py:
 
 `
-/tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
+/tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 \
+        /path/to/CentOS*iso CentOS 6.6
 `
 
 The above step will take several minutes to complete.
