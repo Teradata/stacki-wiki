@@ -5,8 +5,6 @@
 * [Adding Pallets](Adding-Pallets)
 * [Distribution Management](Distribution-Management)
    * [Create Distributions](create-distribution)
-       * [Adding ISO pallets](adding-isos)
-       * [Creating ISOs](creating-isos)
    * [Using Distributions](using-distribution)
 * [Command Line Interface](CLI-Documentation)
 * [How To's](howto)
