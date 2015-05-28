@@ -14,7 +14,7 @@ customizing installations so they are better suited for your unique environment.
 Stacki is a bare metal install tool that can take your server from bare hardware (or virtual hardware) to working Linux, ready for you to install your applications.
 Stacki does this at scale, so deploying 100 servers is no more complex (and barely slower) than deploying one.
 Advanced users can even have stacki install their applications.
-Stacki has a [long history](#Origins), and is in use at some of the most demanding organizations in the world.
+Stacki has a [long history](#origins), and is in use at some of the most demanding organizations in the world.
 The commercial version of stacki is used by Fortune 500 companies to maintain their cloud and big data clusters, so it definitely has seen its share of production use.
 
 What it does is simple:
