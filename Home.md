@@ -30,7 +30,7 @@ With stacki, you cam make machines disposable.
 Everything is built from the ground up programmatically so recovering from disasters can means just rebuilding the infrastrucutre.
 Our goal is to keep you off of your servers and away from the question "what state are my servers in?".
 
-And once stacki is done, you can augment it with your favorite configuration toolset - be it salt, chef, puppet, cfengine, or homegrown.
+And once stacki is done, you can augment it with your favorite configuration toolset - be it Salt, Chef, Puppet, CFEngine, or homegrown.
 
 
 ## Origins<a name="license"></a>
