@@ -79,68 +79,72 @@ NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET
 | backend-0-4 | backend   | 0    | 4    | 10.1.255.251 | 00:22:19:1c:0c:95 | eth0      | private |
 | backend-0-5 | backend   | 0    | 5    | 10.1.255.250 | 00:22:19:1c:0c:94 | eth0      | private |
 
-Once the CSV file is created, it can be added onto stacki frontend via the command line interface -  
-1. Copy the CSV file onto the frontend  
-2. Run the command:  
+Once the CSV file is created, it can be added onto stacki frontend via the stack CLI.
+  
+   1. Copy the CSV file onto the frontend  
+   2. Run the command:  
    ```
    # stack load hostfile file=hostfile.csv
    ```
 
-Check the hosts table
-```
-# stack list host
-```
-```
-HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
-frontend-0-0: 0     0   1    frontend  default      os        install      
-backend-0-0:  0     0   2    backend   default      os        install      
-backend-0-1:  0     1   4    backend   default      os        install      
-backend-0-2:  0     2   4    backend   default      os        install
-backend-0-3:  0     3   4    backend   default      os        install
-backend-0-4:  0     4   4    backend   default      os        install
-backend-0-5:  0     5   4    backend   default      os        install
-```
-Be default number of CPUS on every backend node is set to 1.
-This value will be updated automatically once a backend node
-is reinstalled.
+   3. Check the hosts table
+   ```
+   # stack list host
+   ```
+   ```
+	HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
+	frontend-0-0: 0     0   1    frontend  default      os        install      
+	backend-0-0:  0     0   2    backend   default      os        install      
+	backend-0-1:  0     1   4    backend   default      os        install      
+	backend-0-2:  0     2   4    backend   default      os        install
+	backend-0-3:  0     3   4    backend   default      os        install
+	backend-0-4:  0     4   4    backend   default      os        install
+	backend-0-5:  0     5   4    backend   default      os        install
+	```
+	By default number of CPUS on every backend node is set to 1.
+	This value will be updated automatically once a backend node
+	is reinstalled.
+	
+	4. Instruct the backend nodes to reinstall themselves on the next reboot.    
+	```
+	# stack list host boot
+	```
+	```
+	HOST          ACTION
+	frontend-0-0: ------ 
+	backend-0-0:  os    
+	backend-0-1:  os    
+	backend-0-2:  os    
+	backend-0-3:  os    
+	backend-0-4:  os    
+	backend-0-5:  os    
+	```
+	Here the boot action is set to _os_ indicating that the
+	backend machines are currently set to boot off their own
+	hard disks. Update all backend appliances so that
+	they reinstall next time they are powered on. 
+	```
+	# stack set host boot backend action=install
+	# stack list host boot
+	```
+	```
+	HOST          ACTION
+	frontend-0-0: ------ 
+	backend-0-0:  install
+	backend-0-1:  install
+	backend-0-2:  install
+	backend-0-3:  install
+	backend-0-4:  install
+	backend-0-5:  install
+	```
+	
+	5. Now, power up the backend machines. The backend machines will
+   first boot into the stacki installer, install the OS, and reboot.
+   Once these machines come up, your cluster is ready for use.
 
-Now, we need to instruct the backend nodes to reinstall themselves on the next reboot.    
-```
-# stack list host boot
-```
-```
-HOST          ACTION
-frontend-0-0: ------ 
-backend-0-0:  os    
-backend-0-1:  os    
-backend-0-2:  os    
-backend-0-3:  os    
-backend-0-4:  os    
-backend-0-5:  os    
-```
-Here the boot action is set to _os_ indicating that the
-backend machines are currently set to boot off their own
-hard disks. Update all backend appliances so that
-they reinstall next time they are powered on. 
-```
-# stack set host boot backend action=install
-# stack list host boot
-```
-```
-HOST          ACTION
-frontend-0-0: ------ 
-backend-0-0:  install
-backend-0-1:  install
-backend-0-2:  install
-backend-0-3:  install
-backend-0-4:  install
-backend-0-5:  install
-```
-
-Now, power up the backend machines. Once these machines come up, your cluster is ready for use!  
-You can verify this by running the below command:
-```
-# stack run host backend command='uptime'
-backend-0-0: 09:12:24 up 33 min,  0 users,  load average: 0.00, 0.00, 0.00
-backend-0-1: 09:12:24 up 32 min,  0 users,  load average: 0.00, 0.00, 0.00
-```
+	6. You can verify this by running the below command:
+	```
+	# stack run host backend command='uptime'
+	backend-0-0: 09:12:24 up 33 min,  0 users,  load average: 0.00, 0.00, 0.00
+	backend-0-1: 09:12:24 up 32 min,  0 users,  load average: 0.00, 0.00, 0.00
+	```
