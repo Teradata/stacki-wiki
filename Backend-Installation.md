@@ -23,6 +23,7 @@ Resource | Capacity
 ##### Additional Requirements
 
 **BIOS Boot Order**
+
 1. PXE (Network Boot)
 2. CD/DVD Device (Optional - Only if device is present)
 3. Hard Disk

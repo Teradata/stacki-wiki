@@ -20,6 +20,7 @@ Resource | Capacity
 ##### Additional Requirements
 
 **BIOS Boot Order**
+
 1. CD/DVD Device (Optional - Only if device is present)
 2. Hard Disk
 
