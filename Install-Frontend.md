@@ -1,14 +1,12 @@
-# Frontend Installation
+# Boot From CDROM
 
-## Boot
+# Installation Wizard
 
-## Installation Wizard
-
-### Cluster Information
+## Cluster Information
 
 The first screen will appear where you enter the <i>Name</i> of the frontend (head node), the <i>Fully Qualified Domain Name</i> (i.e., name.yourdomain.com) of your frontend, <i>Email</i> and <i>Timezone</i> of the cluster.
 
-![](https://github.com/StackIQ/stacki/wiki/images/stacki_config_step_1b.png)
+![](images/stacki_config_step_1b.png)
 
 ### Public Network
 
