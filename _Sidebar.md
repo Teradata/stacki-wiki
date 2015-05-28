@@ -5,6 +5,6 @@
 * [Storage Configuration](Storage-Configuration)
 * [Adding Pallets](Adding-Pallets)
 * [Distribution Management](Distribution-Management)
-    * [Creating and Using Distributions](create-distribution)
+    * [Creating and Using Distributions](creating-and-using-distributions)
 * [Command Line Interface](CLI-Documentation)
 * [How To's](howto)
