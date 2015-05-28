@@ -9,7 +9,7 @@ It is quick and easy to get started spinning up Linux servers with stacki, and a
 ## What is it?
 
 Stacki is a bare metal install tool that can take your server from bare hardware (or virtual hardware) to working Linux, ready for you to install your applications.
-stacki does this at scale, so deploying 100 servers is no more complex (and barely slower) than deploying one.
+Stacki does this at scale, so deploying 100 servers is no more complex (and barely slower) than deploying one.
 Advanced users can even have stacki install their applications.
 stacki has a long history, and is in use at some of the most demanding organizations in the world.
 The commercial version of stacki is used by Fortune 500 companies to maintain their cloud and big data clusters, so it definitely has seen its share of production use.
@@ -43,17 +43,17 @@ The lessons we've learned from large scale HPC and enterprise computing are now 
 
 ### Opensource
 
-stacki is released as opensource with a combination of licenses.
+Stacki is released as opensource with a combination of licenses.
 StackIQ forked the Rocks project source code in 2010 and maintains the original copyright on this code.
 As such the two primary licenses are for [stacki](stacki-License) and [Rocks](Rocks-license) source,
 both are based on the traditional BSD attribution license.
-stacki also includes several third party opensource packages each with their own copyrights.
+Stacki also includes several third party opensource packages each with their own copyrights.
 Details on these are found in the [source tree](https://github.com/StackIQ/stacki).
 
 
 ## Linux
 
-stacki supports RedHat and its variants.
+Stacki supports RedHat and its variants.
 We general develop on CentOS but we always test on RHEL to give you the choice of platform
 
 
