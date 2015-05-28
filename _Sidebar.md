@@ -1,7 +1,7 @@
 * [Home](Home)
 * [Frontend Installation](Frontend-Installation)
 * [Backend Installation](Backend-Installation)
-* [Storage Configuration](Storage)
+* [Storage Configuration](Storage-Configuration)
 * [Adding Pallets](Adding-Pallets)
 * [Creating Pallets](Creating-Pallets)
 * [Creating and using distributions](create-use-distributions)

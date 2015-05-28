@@ -1,5 +1,3 @@
-# Configuring Storage on Backend Hosts
-
 ## Configure Hardware RAID Controllers
 stacki can automatically configure two types of hardware RAID controllers:
 1) LSI MegaRAID, and 2) HP Smart Array Controllers.
