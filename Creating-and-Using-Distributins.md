@@ -73,7 +73,7 @@ Keeping with this example, remove these two directories:
 
 Since you've changed distributions on the backend machines, reinstall them.
 
-`# stack set host boot backend action=install`
+`# stack set host boot backend action=install`  
 `# stack run host backend "reboot"`
 
 
