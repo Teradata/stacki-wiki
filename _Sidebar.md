@@ -3,7 +3,6 @@
 * [Backend Installation](Backend-Installation)
 * [Storage Configuration](Storage-Configuration)
 * [Adding Pallets](Adding-Pallets)
-* [Creating Pallets](Creating-Pallets)
 * [Distribution Management](Distribution-Management)
    * [Create Distributions](create-distribution)
        * [Adding ISO pallets](adding-isos)
