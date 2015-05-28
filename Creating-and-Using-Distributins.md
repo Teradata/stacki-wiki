@@ -7,7 +7,7 @@ This example will create a new distribution using RHEL 6.6 instead of CentOS 6.5
 % List distributions.  
 `# stack list distribution`
 
-![](images/stacki-list-distribution-3.png)
+![](images/stack-list-distribution-3.png)
 
 
 % Create a new distribution  
