@@ -7,7 +7,7 @@ make the management of highly interconnected clusters simple.
 
 Below we introduce some of the main concepts that power stacki.
 
-## Single Point of Managment
+## Frontend
 
 Stacki requires a single dedicated server that to build out other servers.
 We call this server the *Frontend*, and the servers it builds *Backend* nodes.
@@ -64,8 +64,8 @@ We call the stacki Kickstart framework *Wire*.
 Wire is implemented in XML and looks like a collection of small Kickstart files.
 The power here comes from two ideas:
 
-1) The XML files have access to the configuration database, so a single file can be applied in multiple situations (server, or even datacenters).
-2) The wiring pattern of the XML files define a complete Kickstart profile.
+1. The XML files have access to the configuration database, so a single file can be applied in multiple situations (server, or even datacenters).
+2. The wiring pattern of the XML files define a complete Kickstart profile.
 
 
 ## Attributes
