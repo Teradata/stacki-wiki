@@ -61,8 +61,8 @@ the frontend. All other drives connected to the frontend will be left untouched.
 |       swap     |  1GB | 
 | /export (symbolically linked to /state/partition1)|remainder of root disk|
 
-    When you use automatic partitioning, the installer will repartition and reformat the first hard drive that the   
-    installer discovers. All previous data on this drive will be erased. All other drives will be left untouched.
+When you use automatic partitioning, the installer will repartition and reformat the first hard drive that the   
+installer discovers. All previous data on this drive will be erased. All other drives will be left untouched.
     The drive discovery process uses the output of cat /proc/partitions to get the list of drives.  
     But, there are instances when a drive you don’t expect is the first discovered drive (we’ve seen this with   
     certain fibre channel connected drives). If you are unsure on how the drives will be discovered in a
