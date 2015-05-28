@@ -213,7 +213,7 @@ Your stacki Frontend is now ready.
 
 #### Existing
 
-If this was an [Existing](#existing) the installer will finalize the
+If this was an [Existing](#existing) installation the installer will finalize the
 Frontent configuration, after this complete you must reboot the
 Frontend.
 
