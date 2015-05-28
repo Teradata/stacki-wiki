@@ -104,7 +104,7 @@ backend-0-1: | os
 backend-0-0: | os
 
 Here the boot action is set to _os_ indicating that the backend machines are currently set to boot off their
-own hard disks. Lets update this so that they reinstall next time they powerup.   
+own hard disks. Let's update all _backend_ appliances so that they reinstall next time they powerup.   
 
        # stack set host boot backend action=install
        # stack list host boot
