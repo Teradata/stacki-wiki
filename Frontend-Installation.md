@@ -1,5 +1,3 @@
-# Installing a stacki Frontend
-
 ## Boot From CDROM
 
 ## Installation Wizard
