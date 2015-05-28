@@ -53,7 +53,7 @@ top of an existing server.
 If you wish to install stacki on top of an existing system skip to the
 [Existing](#existing) section.
 
-## New
+### New
 
 Down the stacki jumbo dvd [here](?) and burn the file to a DVD or
 mount it on the virtual media for the server to be installed.
@@ -71,7 +71,7 @@ You can hit enter or just wait a few seconds and the stacki
 Frontent installation will begin and you will soon see the
 [Installation Wizard](#installation-wizard)
 
-## Existing
+### Existing
 
 In addition to the [requirements](#requirements) for Frontends,
 installing stacki on top of a previous build host requires that host
