@@ -3,7 +3,7 @@
 After the frontend is up and running, the backend nodes
 can be installed.
 
-## Hardware Requirements for the backend
+## Hardware Requirements for a backend machine
 * **Disk Capacity:** 100 GB
 * **Memory Capacity:** 2 GB
 * **Ethernet:** 1 physical port (e.g., "eth0")
@@ -16,8 +16,7 @@ to install backend nodes.
 2. Spreadsheet Mode
 
 ### Discovery Mode
-In discovery mode, a host that is unknown to the cluster
-manager is discovered on the network, by an app called
+In discovery mode, a host that is unknown to the stacki frontend is discovered on the network, by an application called
 **insert-ethers**.
 
 1.  After the frontend is installed, on the command line, run
@@ -42,6 +41,8 @@ manager is discovered on the network, by an app called
    insert-ethers UI indicates it using a ```*``` next to
    the host.
    ![insert-ethers-5](images/insert-ethers/insert-ethers-5.png)
+
+Repeat 3,4 for all backend machines in your cluster.
 
 ### Host Spreadsheet
 Another feature of stacki is the ability to add compute
