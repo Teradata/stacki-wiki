@@ -23,7 +23,7 @@ BIOS _boot order_
 1. CD/DVD Device
 2. Hard Disk
 
-stacki allows you to place only the Frontend on your public network
+Stacki allows you to place only the Frontend on your public network
 and to then deploy all Backend servers on an isolated private network.
 This recommended setup is shown below.
 
