@@ -1,23 +1,16 @@
-Frontend is our management node from which we will be installing other nodes in the cluster.
+stacki requires a single dedicated server that will host all the software and services used to build out other servers.
+We call this server the Frontend, and the first step to running stacki is to build a Frontend.
+The process is fairly simple and looks similar to a standard Linux build with the addition of a wizard to capture your site specific networking information.
 
-## Hardware Requirements for a frontend
+A Frontend has the following hardware requirements.
 
-##### Minimum Requirements
-**Resource** | Capacity
--------- | --------
-**System Memory** | 2 GB
-**Network Interfaces** | 2
-**Disk Capacity** | 64 GB
+**Resource** | Minimum | Recommended
+--- | --- | ---
+**System Memory** | 2 GB | 16 GB
+**Network Interfaces** | 2 | 2
+**Disk Capacity** | 64 GB | 200GB 
 
-##### Recommended Hardware
-
-Resource | Capacity
--------- | --------
-**System Memory** | 16 GB or more
-**Network Interfaces** | 2 or more
-**Disk Capacity** | 200 GB
-
-##### Additional Requirements
+### Additional Requirements
 
 **BIOS Boot Order**
 
