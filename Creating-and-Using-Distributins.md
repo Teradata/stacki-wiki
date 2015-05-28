@@ -48,6 +48,8 @@ There's not much point in creating a distribution if you don't use it. So, let's
 Once the backend nodes install, they should have the new OS. Check /etc/redhat-release to verify.  
 `# stack run host "cat /etc/redhat-release"`
 
+### Removing a distribution
+
 
 
 
