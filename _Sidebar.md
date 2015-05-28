@@ -4,6 +4,7 @@
    * [Backend](Installing-Backend-Nodes)
 * [Storage Configuration](Storage)
 * [Adding Pallets](Adding-Pallets)
+* [Creating Pallets](Creating-Pallets)
 * [Creating and using distributions](create-use-distributions)
    * [Create Distributions](create-distribution)
        * [Adding ISO pallets](adding-isos)

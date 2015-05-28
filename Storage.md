@@ -4,6 +4,8 @@
 stacki can automatically configure two types of hardware RAID controllers:
 1) LSI MegaRAID, and 2) HP Smart Array Controllers.
 
+### Spreadsheet Configuration
+
 The configuration of a controller is driven through a spreadsheet. Here is a [sample spreadsheet](https://docs.google.com/spreadsheets/d/1MWSmqj8WWTp5OspQK8MxS8jYqH8PvwdHV-Kzyft2qJY/pubhtml).
 
 There are four columns:
@@ -37,9 +39,17 @@ The third logical disk (_sdc_) will be a RAID 5 composed of the disks in slots 1
 The fourth logical disk (_sdd_) will be a RAID 6 composed of the disks in slots 6 through 12 and the disks in slots 13 and 14 will be hot spares associated with only this array.
 The disks in slots 22 and 23 are designated as hot spares that can be used as replacements for any failed drive in any array.
 
-nukecontroller attribute
+### The _nukecontroller_ Attribute
 
-nukecontroller reset to false after install
+A host's hardware RAID controller will only be reconfigured if the _nukecontroller_ attribute is set to _true_.
+As an example, to set the _nukecontroller_ attribute for host _node221_, execute:
+
+`stack set host attr node221 attr=nukecontroller value=true`
+
+Then, the next time _node221_ is installed, it will remove the current hardware RAID controller configuration, then configure it as you specified in your spreadsheet.
+
+While a node is installing, after it configures its controller, it will send a message to the frontend to instruct it to set the  _nukecontroller_ attribute back to _false_.
+This ensures that the controller will not be reconfigured on the next installation.
 
 ## Configure Partitions on Disks
 Disk partitioning info here.
