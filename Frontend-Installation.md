@@ -95,9 +95,9 @@ Select all pallets you want to install.
 
 ### Review
 
-Review your credentials and click "Install" to proceed.  
+Review your credentials and click "Install" to proceed.   
 The frontend will format its filesystems and subsequently copy the pallets from the network / DVD onto the frontend's hard disk. Packages will be installed after all pallets are copied. Finally, the boot loader will be installed and post configuration scripts will be run in the background. When they complete, the frontend will reboot.
 
-Congratulations! Your stacki frontend is up and running!
-
 ![](images/stacki_config_step_7.png)
+
+Your stacki frontend is now ready to roll!
