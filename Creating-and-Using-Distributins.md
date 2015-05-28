@@ -7,15 +7,20 @@ This example will create a new distribution using RHEL 6.6 instead of CentOS 6.5
 % List distributions.  
 `# stack list distribution`
 
-![](images/stack-list-distribution-3.png)
+![stack list distribution](images/stack-list-distribution-3.png)
 
 
 % Create a new distribution  
 `# stack add distribution test-dist`
 
+![stack add distribution](images/stack-add-distribution-1.png)
+
 and list it to verify:
 
-`# stack list distribution`  
+`# stack list distribution` 
+
+![stack list distribution](images/stack-list-distribution-1.png)
+ 
 
 The "----"s indicate there are no pallets associated with the distribution, so add the minimum pallets: stacki and an OS pallet. Any applications pallets may be added too.
 
@@ -25,9 +30,13 @@ See which pallets are available:
 
 `# stack list pallet`
 
+![stack list pallet](images/stack-list-pallet-2.png)
+
 % Enable RHEL and stacki pallets.       
 `# stack enable pallet stacki RHEL distribution=test-dist`      
 (a version may be required using the "version=" argument. The version is shown in the output of `# stack list roll`
+
+
 
 % Make the distribution  
 `# stack create distribution test-dist`
