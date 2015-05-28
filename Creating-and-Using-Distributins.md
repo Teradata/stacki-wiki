@@ -22,6 +22,10 @@ See which rolls are available:
 % Make the distribution  
 `# stack create distribution name=test-dist`
 
+### Using the distribution
+
+There's not much point in creating a distribution if you don't use it. So, let's use it.
+
 % Assign backend nodes to the distribution
 
 `# stack set host distribution backend distribution=test-dist`  
