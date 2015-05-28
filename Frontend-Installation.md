@@ -98,11 +98,9 @@ root partition and you must create a separate /export partition.
 ### Add Pallets
 
 Choose the _Pallets_ you want to install.
-If booting from a DVD, pallets should automatically load onto the list for you to choose.
+Booting from a DVD, pallets should automatically load onto the list for you to choose.
 
-In this case, we are not using a DVD and installing from a network.
-
-![](images/stacki_config_step_6a.png)
+![](images/stacki_config_step_6a_2.png)
 
 You can also load more pallets through a network by clicking on "Add Pallets" and providing the URL to the pallets server.
 This is another method to load pallets.
