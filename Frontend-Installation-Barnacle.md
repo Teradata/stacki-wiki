@@ -16,7 +16,7 @@ Download two ISOs and put them on your server:
 
 1. **stacki**. The stacki ISO can be found [here](http://stacki.s3.amazonaws.com/1.0/stacki-1.0-I.x86_64.disk1.iso).
 
-2. **CentOS** or **RHEL** installation ISO. An CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
+2. **CentOS** or **RHEL** installation ISO. A CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
 
 Mount the stacki ISO:
 
@@ -33,7 +33,7 @@ cp /media/frontend-install.py /tmp
 Execute frontend-install.py:
 
 `
-/tmp/frontend-install.py stacki*iso stacki 1.0 CentOS*iso CentOS 6.6
+/tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
 `
 
 The above step will take several minutes to complete.
