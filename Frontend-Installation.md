@@ -33,18 +33,29 @@ frontend machine. You will see the installation wizard described below.
 
 ### Cluster Information
 
-The first screen will appear where you enter the _Name_ of the frontend, the _Fully Qualified Domain Name_ (i.e., name.yourdomain.com) of your frontend, _Email_ and _Timezone_ of the cluster.
+The first screen will appear where you enter
+
+1. _Name_ of the Cluster - for example "Demo"
+2. _Fully Qualified Domain Name_ of the frontend (i.e., name.yourdomain.com)
+3. _Email_ - Administrator Email
+4. _Timezone_ of the cluster.
 
 ![](images/stacki_config_step_1b.png)
 
 ### Public Network
 The public cluster network configuration screen allows you to set up the
 networking parameters for the ethernet network that connects the frontend to the
-outside network (e.g., the internet). First choose your _Public Network Device_.
-Then provide the _Public IP_, _Netmask_ and _Public Gateway_.
-Next provide _DNS Servers_, if there is more than one DNS Server you can type a comma separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
+outside network (e.g., the internet).
 
-Note that after clicking on "Next", the wizard will immediately set these credentials.
+1. Select _Network Interface_ connected to the **Public network**.
+2. _IP Address_ of Public interface
+3. _Netmask_
+4. _IP Address of the Public Gateway / Router_.
+5. _DNS Servers_ - More than one DNS Server can be
+   entered as a comma-separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
+
+On clicking "Next", the wizard configures the network interface
+to the provided information.
 
 ![](images/stacki_config_step_2b.png)
 
