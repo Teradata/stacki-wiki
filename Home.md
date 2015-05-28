@@ -6,9 +6,9 @@ Our goal is to make fast, repeatable, and adaptable Linux installations not only
 It is quick and easy to get started spinning up Linux servers with stacki, and advanced features let you go deeper and deeper into customizing installations so they are better suited for your unique environment.
 
 
-## What is stacki?
+## What is it?
 
-stacki is a bare metal install tool that can take your server from bare hardware (or virtual hardware) to working Linux, ready for you to install your applications.
+Stacki is a bare metal install tool that can take your server from bare hardware (or virtual hardware) to working Linux, ready for you to install your applications.
 stacki does this at scale, so deploying 100 servers is no more complex (and barely slower) than deploying one.
 Advanced users can even have stacki install their applications.
 stacki has a long history, and is in use at some of the most demanding organizations in the world.
