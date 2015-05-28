@@ -1,4 +1,5 @@
 * [Home](Home)
+* [Concepts](Concepts)
 * [Frontend Installation](Frontend-Installation)
     * [Installing a Frontend on an Existing CentOS/RHEL Server](Frontend-Installation-Barnacle)
 * [Backend Installation](Backend-Installation)
