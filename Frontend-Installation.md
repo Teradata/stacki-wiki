@@ -1,14 +1,32 @@
 Frontend is our management node from which we will be installing other nodes in the cluster.
-## Hardware Requirements for the frontend
-* **Disk Capacity**: 100 GB
-* **Memory Capacity**: 2 GB
-* **Ethernet**: 2 physical ports (e.g. eth0 and eth1)  
+
+## Hardware Requirements for a frontend
+
+##### Minimum Requirements
+**Resource** | Capacity
+-------- | --------
+**System Memory** | 2 GB
+**Network Interfaces** | 2
+**Disk Capacity** | 64 GB
+
+##### Recommended Hardware
+
+Resource | Capacity
+-------- | --------
+**System Memory** | 16 GB or more
+**Network Interfaces** | 2 or more
+**Disk Capacity** | 200 GB
+
+##### Additional Requirements
+
+**BIOS Boot Order**
+1. CD/DVD Device (Optional - Only if device is present)
+2. Hard Disk
+
 At least two Ethernet interfaces are required. The private interface e.g. eth0
  should be connected to the same Ethernet network as the
 compute nodes. The public interface e.g. eth1 should be connected to the
 external network (e.g., the internet or your organization’s intranet).
-* **BIOS Boot Order**: CD/DVD, Hard Disk  
-Make sure that the machine is set to boot off the CD/DVD Drive.  
 
 Insert the stacki DVD into your frontend and reset the
 frontend machine. You will see the installation wizard described below.

@@ -4,10 +4,28 @@ After the frontend is up and running, the backend nodes
 can be installed.
 
 ## Hardware Requirements for a backend machine
-* **Disk Capacity:** 100 GB
-* **Memory Capacity:** 2 GB
-* **Ethernet:** Atleast 1 physical port (e.g., "eth0")
-* **BIOS Boot Order:** PXE (Network Boot), Hard Disk
+
+##### Minimum Requirements
+**Resource** | Capacity
+-------- | --------
+**System Memory** | 1 GB
+**Network Interfaces** | 1 (PXE-Capable)
+**Disk Capacity** | 40 GB
+
+##### Recommended Hardware
+
+Resource | Capacity
+-------- | --------
+**System Memory** | 8 GB
+**Network Interfaces** | 1 or more (PXE-Capable)
+**Disk Capacity** | 100 GB
+
+##### Additional Requirements
+
+**BIOS Boot Order**
+1. PXE (Network Boot)
+2. CD/DVD Device (Optional - Only if device is present)
+3. Hard Disk
 
 Stacki gives the system administrator 2 choices of ways
 to install backend nodes.
@@ -45,7 +63,7 @@ In discovery mode, a host that is unknown to the stacki frontend is discovered o
 Repeat 3,4 for all backend machines in your cluster.
 
 ### Host Spreadsheet
-Another feature of stacki is the ability to add compute
+Another feature of stacki is the ability to add backend 
 nodes to the system using CSV (Comma Separated Value) files.
 The advantage of using CSV files, is that it gives fine-grained control over the
 configuration of the cluster. The CSV files may be created in a program like Microsoft
@@ -54,8 +72,8 @@ stacki frontend.
 The Host CSV file needs to have the following headers:    
 
 
-| NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET |  
-|------|-----------|------|------|----|-----|-----------|--------|  
+NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET 
+-----|-----------|------|------|----|-----|-----------|--------
 
 **Sample Host CSV file**
 
@@ -71,12 +89,13 @@ The Host CSV file needs to have the following headers:
 Once the CSV file is created, it can be added onto stacki frontend via the command line interface -  
 1. Copy the CSV file onto the frontend  
 2. Run the command:  
-
-        # stack load hostfile file=hostfile.csv
-
+   ```
+   # stack load hostfile file=hostfile.csv
+   ```
 Now when you run the below command, you will see that information about the backend machines has been loaded onto the frontend.
-
-       # stack list host  
+   ```
+   # stack list host  
+   ```
 
 HOST | RACK | RANK | CPUS | APPLIANCE | DISTRIBUTION | RUNACTION | INSTALLACTION
 -----|------|------|------|-----------|--------------|-----------|--------------
@@ -91,8 +110,9 @@ Be default number of CPUS on every backend node is set to 1. This value will be 
 a backend node is reinstalled.
 
 Now, we need to instruct the backend nodes to reinstall themselves on the next reboot.    
-
-         # stack list host boot
+   ```
+   # stack list host boot
+   ```
 
 HOST | ACTION
 ---- | ------
@@ -105,10 +125,11 @@ backend-0-1: | os
 backend-0-0: | os
 
 Here the boot action is set to _os_ indicating that the backend machines are currently set to boot off their
-own hard disks. Let's update all **Backend** appliances so that they reinstall next time they powerup.   
-
-       # stack set host boot backend action=install
-       # stack list host boot
+own hard disks. Update all **Backend** appliances so that they reinstall next time they powerup.   
+   ```
+   # stack set host boot backend action=install
+   # stack list host boot
+   ```
 
 HOST | ACTION
 ---- | ------
@@ -121,8 +142,9 @@ backend-0-1: | install
 backend-0-0: | install 
 
 Now, power up the backend machines. Once these machines come up, your cluster is ready for use!  
-You can verify this by running the below command:  
-
-       # stack run host backend command='uptime'
-       backend-0-0: 09:12:24 up 33 min,  0 users,  load average: 0.00, 0.00, 0.00
-       backend-0-1: 09:12:24 up 32 min,  0 users,  load average: 0.00, 0.00, 0.00
+You can verify this by running the below command:
+   ```
+   # stack run host backend command='uptime'
+   backend-0-0: 09:12:24 up 33 min,  0 users,  load average: 0.00, 0.00, 0.00
+   backend-0-1: 09:12:24 up 32 min,  0 users,  load average: 0.00, 0.00, 0.00
+   ```
