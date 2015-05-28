@@ -48,7 +48,7 @@ In discovery mode, a host that is unknown to the stacki frontend is discovered o
    ![insert-ethers-4](images/insert-ethers/insert-ethers-4.png)
 
 4. Once the backend node downloads its kickstart file, the
-   insert-ethers UI indicates it using a ```*``` next to
+   insert-ethers UI indicates it using a `*` next to
    the host.
    ![insert-ethers-5](images/insert-ethers/insert-ethers-5.png)
 
@@ -69,6 +69,8 @@ NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET
 -----|-----------|------|------|----|-----|-----------|--------
 
 **Sample Host CSV file**
+
+![](hosts.csv)
 
 | NAME        | APPLIANCE | RACK | RANK | IP           | MAC               | INTERFACE | SUBNET  |  
 |-------------|-----------|------|------|--------------|-------------------|-----------|---------| 
