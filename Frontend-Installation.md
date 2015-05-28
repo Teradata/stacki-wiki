@@ -1,6 +1,11 @@
-stacki requires a single dedicated server that will host all the software and services used to build out other servers.
-We call this server the Frontend, and the first step to running stacki is to build a Frontend.
-The process is fairly simple and looks similar to a standard Linux build with the addition of a wizard to capture your site specific networking information.
+Stacki requires a single dedicated server that will host all
+the software and services used to build out other servers. We
+call this server the **Frontend**, and the first step to running
+Stacki is to build a Frontend.
+
+The process is fairly simple and looks similar to a standard Linux
+build with the addition of a wizard to capture site-specific
+networking information.
 
 ## Requirements 
 
@@ -10,11 +15,12 @@ A Frontend has the following hardware requirements.
 --- | --- | ---
 **System Memory** | 2 GB | 16 GB
 **Network Interfaces** | 2 | 2
-**Disk Capacity** | 64 GB | 200GB 
+**Disk Capacity** | 64 GB | 200GB
+**CD/DVD Device | 1 | 1
 
-Further the BIOS _boot order_ needs to be set to first boot from CDROM:
+##### BIOS _boot order_
 
-1. CD/DVD Device (Optional - Only if device is present)
+1. CD/DVD Device
 2. Hard Disk
 
 stacki allows you to place only the Frontend on your public network
@@ -78,24 +84,30 @@ to the provided information.
 ![](images/stacki_config_step_2b.png)
 
 ### Private Network
-The private network configuration screen allows you to set up the
-networking parameters for the ethernet network that connects the frontend to the
-backend nodes. Choose your _Private Network Device_.
-Then enter the _Private IP_ and _Netmask_.
+The private network configuration screen configures the
+networking parameters for the ethernet network that
+connects the frontend to the backend nodes.
 
-Note that after clicking on "Next", the wizard will immediately set these credentials.
+1. Select _Network Interface_ connected to the **Private(Management) Network**.
+2. _IP Address_ of the Private Interface
+3. _Netmask_
+
+On clicking "Next", the wizard configures the network interface
+to the provided information.
 
 ![](images/stacki_config_step_3b.png)
 
 ### Password
-This will be the root account password of the frontend.
+Enter the password for the **root** account on the frontend.
 
 ![](images/stacki_config_step_4.png)
 
 ### Choose Partition
 
-The _Automatic_ mode, will repartition and reformat the first discovered hard drive that is connected to
-the frontend. All other drives connected to the frontend will be left untouched.
+If _Automatic_ mode is selected, the installer will
+repartition and reformat the first discovered hard drive
+that is connected to the frontend. All other drives
+connected to the frontend will be left untouched.
 
 | Partition Name | Size |
 | --------------- | ---- |
@@ -104,9 +116,16 @@ the frontend. All other drives connected to the frontend will be left untouched.
 |       swap     |  1GB | 
 | /export (symbolically linked to /state/partition1)|remainder of root disk|
 
-When you use automatic partitioning, the installer will repartition and reformat the first hard drive (e.g. _sda_) that the installer discovers. All previous data on this drive will be erased. All other drives will be left untouched. If you are unsure on how the drives will be discovered in a multi-disk frontend, then use manual partitioning.
+When using automatic partitioning, the installer repartitions
+and reformats the first hard drive (e.g. _sda_) that the installer
+discovers. All previous data on this drive will be erased.
+All other drives will be left untouched. If you are unsure about how
+the drives will be discovered in a multi-disk frontend,
+select *Manual Partitioning*.
 
-In _Manual_ mode, a partition setup screen will appear for you to setup after you complete this wizard. If you select manual partitioning, you must specify at least 16 GB for the root partition and you must create a separate /export partition.
+In _Manual_ mode, the installer brings up a partition setup
+screen after the wizard exits. In this mode, specify at least 16 GB
+for the root partition and a separate **/export** partition.
 
 ![](images/stacki_config_step_5.png)
 
@@ -125,7 +144,7 @@ Select "stacki" and "os" pallets to install.
 
 ### Review
 
-Review your credentials and click "Install" to proceed.
+Review the installation parameters and click "Install" to proceed.
 The frontend will format its filesystems and subsequently copy the
 pallets from the network / DVD onto the frontend's hard disk.
 Packages will be installed after all pallets are copied.
