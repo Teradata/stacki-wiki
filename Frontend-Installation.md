@@ -103,6 +103,7 @@ Booting from a DVD, pallets should automatically load onto the list for you to c
 ![](images/stacki_config_step_6a_2.png)
 
 The "Id" column denotes pallets loaded from a DVD and the "Network" column denotes pallets from a network (Not being used).
+
 Select "stacki" and "os" pallets to install.
 
 ![](images/stacki_config_step_6b_2.png)
