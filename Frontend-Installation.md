@@ -81,17 +81,9 @@ the frontend. All other drives connected to the frontend will be left untouched.
 |       swap     |  1GB | 
 | /export (symbolically linked to /state/partition1)|remainder of root disk|
 
-When you use automatic partitioning, the installer will repartition
-and reformat the first hard drive that the installer discovers.
-All previous data on this drive will be erased. All other drives will be left untouched.
-The drive discovery process uses the output of cat /proc/partitions to get the list of drives.
-But, there are instances when a drive you don’t expect is the first discovered drive (we’ve seen this with
-certain fibre channel connected drives). If you are unsure on how the drives will be discovered in a
-multi-disk frontend, then use manual partitioning.
+When you use automatic partitioning, the installer will repartition and reformat the first hard drive (e.g. _sda_) that the installer discovers. All previous data on this drive will be erased. All other drives will be left untouched. If you are unsure on how the drives will be discovered in a multi-disk frontend, then use manual partitioning.
 
-In _Manual_ mode, a partition setup screen will appear for you to setup after you complete this wizard.
-If you select manual partitioning, you must specify at least 16 GBs for the
-root partition and you must create a separate /export partition.
+In _Manual_ mode, a partition setup screen will appear for you to setup after you complete this wizard. If you select manual partitioning, you must specify at least 16 GB for the root partition and you must create a separate /export partition.
 
 ![](images/stacki_config_step_5.png)
 
