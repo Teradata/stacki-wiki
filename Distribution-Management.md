@@ -7,7 +7,7 @@ requirement for installing a backend machine. Backend machines are assigned the
 
 You can create additional distributions by adding ISOs you have downloaded or
 have created from a mirrored repository with the "stack create mirror" command.
-Either way, the iso is recognized as a pallet which can be enabled for the
+Either way, the ISO is recognized as a pallet which can be enabled for the
 "default" distribution or enabled for a new distribution you have created. 
 
 Machines can be assigned to a different distribution containing the software
