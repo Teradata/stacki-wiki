@@ -54,7 +54,7 @@ sections.
 
 The Stacki Wire XML framework supports the following tags.
 
-1. ##### `<pre>` Tag
+##### `<pre>` Tag
 
 This tag allows the admin to run scripts in the
 installer before the package installation, and disk
@@ -84,7 +84,7 @@ the installation.
 The `meta="1"` attribute informs the installer that the
 package is a group package. 
 
-1. ##### `<post>` Tag
+##### `<post>` Tag
 
 This tag allows the admin to run scripts after
 the package installation is done. The scripts can be in any
@@ -127,7 +127,7 @@ Examples:
   </post>
   ```
 
-1. ##### `<file>` Tag
+##### `<file>` Tag
 
 This tag allows the admin to create files on
 the filesystem of the installing machine. This tag is a
@@ -176,4 +176,4 @@ Examples:
   </post>
   ```
 
-2. ##### `<boot>` tag
+##### `<boot>` tag
