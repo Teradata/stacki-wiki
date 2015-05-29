@@ -162,8 +162,7 @@ by adding, changing, or removing files.
     interpreted language present on the installed system.
     Examples:
 
-    * 
-        ```xml
+    * ```xml
         <post>
         /sbin/chkconfig --enable httpd
         </post>
@@ -171,8 +170,7 @@ by adding, changing, or removing files.
         This is converted to a simple shell script that runs
         `chkconfig` to enable the Apache web server
 
-    * 
-        ```xml
+    * ```xml
         <post interpreter="/opt/rocks/bin/python">
         import os, sys
         import subprocess
