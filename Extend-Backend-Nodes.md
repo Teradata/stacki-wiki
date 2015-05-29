@@ -163,14 +163,17 @@ by adding, changing, or removing files.
     Examples:
 
     * This is converted to a simple shell script that runs
-      `chkconfig` to enable the Apache web server
+      `chkconfig` to enable the Apache web server.
+
       ```xml
       <post>
       /sbin/chkconfig --enable httpd
       </post>
       ```
+
     * This post section is interpreted as
       python code.
+
       ```xml
       <post interpreter="/opt/rocks/bin/python">
       import os, sys
@@ -182,27 +185,27 @@ by adding, changing, or removing files.
       </post>
       ```
 
-      
-
-    * ```xml
-      <post arg="--nochroot">
-      cp /tmp/anaconda.log /mnt/sysimage/tmp/anaconda.log
-      </post>
-      ```
-
-      The `--nochroot` argument causes the execution of the post
+    * The `--nochroot` argument causes the execution of the post
       section in a non-chrooted environment. Typically, after the
       package installation starts the post sections are run in a
       chrooted environment running under `/mnt/sysimage` - ie.-
       In the installer `/mnt/sysimage` is the `/` filesystem on
       the installed machine.
 
+      ```xml
+      <post arg="--nochroot">
+      cp /tmp/anaconda.log /mnt/sysimage/tmp/anaconda.log
+      </post>
+      ```
+
 3.  `<file>` Tag - This tag allows the admin to create files on
     the filesystem of the installing machine. This tag is a
     resides inside a `<post>` tag.
     Examples:
 
-    * ```xml
+    * This creates a file called `/tmp/hello.log` that contains
+      the word "HELLO" in it.
+      ```xml
       <post>
       	<file name="/tmp/hello.log">
         HELLO
@@ -210,10 +213,9 @@ by adding, changing, or removing files.
       </post>
       ```
 
-      This creates a file called `/tmp/hello.log` that contains
-      the word "HELLO" in it.
+    * This appends to a file called `/tmp/hello.log`.
 
-    * ```xml
+      ```xml
       <post>
         <file name="/tmp/hello.log" mode="append">
         WORLD
@@ -221,9 +223,10 @@ by adding, changing, or removing files.
       </post>
       ```
 
-      This appends to a file called `/tmp/hello.log`.
+    * This creates a file called `/tmp/hello.log` with
+      `chmod` permissions of 0400.
 
-    * ```xml
+      ```xml
       <post>
         <file name="/tmp/hello.log" perms="0400">
         HELLO
@@ -231,15 +234,13 @@ by adding, changing, or removing files.
       </post>
       ```
 
-      This creates a file called `/tmp/hello.log` with
-      `chmod` permissions of 0400.
+    * This creates a file called `/tmp/hello.log` owned by user
+      root and group apache.
 
-    * ```xml
+      ```xml
       <post>
 	<file name="/tmp/hello.log" owner="root:apache">
         HELLO
         </file>
       </post>
       ```
-      This creates a file called `/tmp/hello.log` owned by user
-      root and group apache.
