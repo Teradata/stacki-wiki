@@ -97,7 +97,7 @@ To remove a distribution, do the following:
 
 ![stack remove distribution](images/stack-remove-distribution-1.png)
 
-There is a little more work do, however. A `stack add distribution` creates two directories that allow for customizing the software and configuration of the backend nodes. These directories sit under /export/stack/contrib/<distro_name/ and /export/stack/site-profiles/<distro_name>.
+There is a little more work do, however. A `stack add distribution` creates two directories that allow for customizing the software and configuration of the backend nodes. These directories sit under /export/stack/contrib/_distribution_name_/ and /export/stack/site-profiles/_distribution_name_.
 
 Keeping with this example, remove these two directories:
 
