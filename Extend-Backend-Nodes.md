@@ -174,7 +174,7 @@ by adding, changing, or removing files.
     * This post section is interpreted as
       python code.
 
-      ```xml
+      ```python
       <post interpreter="/opt/rocks/bin/python">
       import os, sys
       import subprocess
