@@ -167,7 +167,7 @@ re-installing you need to set an Attribute for the given host before
 you reboot the server.
 
 ```
-stack set host attr backend-0-0 attr=nukedisks value=true
+# stack set host attr backend-0-0 attr=nukedisks value=true
 ```
 
 After the Backend re-installs it will reset the value of the Attribute
