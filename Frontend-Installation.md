@@ -50,12 +50,12 @@ odd, but this is correct).
 
 Stacki can build you a [New](#new) Frontend from bare metal or it can be added on
 top of an existing server.
-If you wish to install stacki on top of an existing system skip to the
+If you wish to install Stacki on top of an existing system skip to the
 [Existing](#existing) section.
 
 ### New
 
-Down the stacki jumbo dvd [here](?) and burn the file to a DVD or
+Down the Stacki jumbo dvd [here](?) and burn the file to a DVD or
 mount it on the virtual media for the server to be installed.
 This is going to completely erase and reformat the hard disks in the
 machine, so be careful on your selection of hosts.
@@ -67,14 +67,14 @@ make sure the DVD is the first in the boot order.
 
 ![](images/stack-iso-boot.png)
 
-You can hit enter or just wait a few seconds and the stacki
+You can hit enter or just wait a few seconds and the Stacki
 Frontent installation will begin and you will soon see the
 [Installation Wizard](#installation-wizard)
 
 ### Existing
 
 In addition to the [requirements](#requirements) for Frontends,
-installing stacki on top of a previous build host requires that host
+installing Stacki on top of a previous build host requires that host
 must be running the x86_64 version of CentOS 6.x or RHEL 6.x.
 
 Log into the Gnome (or generic X11) environment on the servers console
@@ -83,11 +83,11 @@ You must be root and X11 is required.
 
 To start the installation download two ISOs and put them on your server:
 
-1. **stacki**. The stacki ISO can be found [here](http://stacki.s3.amazonaws.com/1.0/stacki-1.0-I.x86_64.disk1.iso).
+1. **stacki**. The Stacki ISO can be found [here](http://stacki.s3.amazonaws.com/1.0/stacki-1.0-I.x86_64.disk1.iso).
 
 2. **CentOS** or **RHEL** installation ISO. A CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
 
-Mount the stacki ISO:
+Mount the Stacki ISO:
 
     # mount -o loop stacki*iso /media
 
@@ -209,7 +209,7 @@ If this was a [New](#new) installation the Frontend will now format
 its filesystems and copy the Pallets from the onto its hard disk.
 Next it will install all the packages and configuration.
 When this is complete the Frontend will reboot.
-Your stacki Frontend is now ready. 
+Your Stacki Frontend is now ready. 
 
 #### Existing
 
@@ -219,4 +219,4 @@ Frontend.
 
     # /sbin/init 6
 
-Your stacki Frontend is now ready. 
+Your Stacki Frontend is now ready. 

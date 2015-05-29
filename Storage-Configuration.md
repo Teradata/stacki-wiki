@@ -14,9 +14,9 @@ spreadsheet with the following columns:
 1. **Size**. The size of the partition in megabytes. 
 1. **Type**. How the partition should be formatted (e.g., xfs, swap). 
  
-A
-[sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=16332552&single=true)
-is shown below.
+A 
+[sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=16332552&single=true) 
+is shown below. 
 
 ![](images/sample-partition-configuration-csv.png) 
  
@@ -64,7 +64,7 @@ This ensures that the disks will not be reconfigured on the next installation.
  
 Currently, there is no support to configure logical volumes via spreadsheets. This feature is in development.
  
-LVM configuration is supported in stacki. Please contact us for assistance.
+LVM configuration is supported in Stacki. Please contact us for assistance.
 
 
 

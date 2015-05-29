@@ -74,7 +74,7 @@ and list it to verify:
 ![stack list distribution](images/stack-list-distribution-1.png)
  
 
-The "----"s indicate there are no pallets associated with the distribution, so add the minimum pallets: stacki and an OS pallet. Any applications pallets may be added too.
+The "----"s indicate there are no pallets associated with the distribution, so add the minimum pallets: Stacki and an OS pallet. Any applications pallets may be added too.
 
 % Add pallets to the distribution.
 
@@ -86,7 +86,7 @@ See which pallets are available:
 
 ![stack list pallet](images/stack-list-pallet-2.png)
 
-% Enable RHEL and stacki pallets.
+% Enable RHEL and Stacki pallets.
 
 ```
 # stack enable pallet stacki RHEL distribution=test-dist

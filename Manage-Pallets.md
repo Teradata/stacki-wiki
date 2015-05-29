@@ -34,7 +34,7 @@ Reinstall backend machines.
 
 ## Adding a pallet from an existing ISO:
 
-Let's presume we have a stacki frontend with just two pallets, "stacki" and CentOS v6.5. The stacki pallet and an OS pallet are the minimal pallets that will make up any given distribution. (See "Adding Distributions" in the sidebar for further discussion of distributions.)
+Let's presume we have a Stacki frontend with just two pallets, "stacki" and CentOS v6.5. The Stacki pallet and an OS pallet are the minimal pallets that will make up any given distribution. (See "Adding Distributions" in the sidebar for further discussion of distributions.)
 
 % List the pallets you currently have:
 

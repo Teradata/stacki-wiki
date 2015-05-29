@@ -2,8 +2,8 @@ Stacki allows the admin to customize the software
 footprint of a backend node to enable additional
 functionality.
 
-In a default setup, stacki installs backend nodes with
-a very small software footprint. In stacki parlance, the
+In a default setup, Stacki installs backend nodes with
+a very small software footprint. In Stacki parlance, the
 backend node is brought up to
 > a ping and a prompt
 
@@ -15,7 +15,7 @@ To make the backend node more useful, other application
 software, and services will need to be installed and
 configured.
 
-There are several “levels” of installing applications in stacki,
+There are several “levels” of installing applications in Stacki,
 we’re going to look at the simplest case. Assumptions are:
 
 1. The application to be installed is available as an RPM
@@ -47,7 +47,7 @@ the principal file being `backend.xml`.
    This file contains explanation of the different sections
    that are allowed in the XML file.
    Copy the file to `extend-backend.xml` in the same directory.
-   The new filename instructs stacki that this file will extend
+   The new filename instructs Stacki that this file will extend
    the backend appliance.
 
 2. Edit the file  to have the following contents
@@ -87,7 +87,7 @@ the principal file being `backend.xml`.
    # stack set host boot backend action=install
    ```
 5. Reboot the backend nodes. This will boot the backend nodes into
-   the stacki installer. Once the installation completes, the node
+   the Stacki installer. Once the installation completes, the node
    will boot back up into a running state with the Apache web server
    running.
 6. Verify that the Apache web server is running, using the command
@@ -139,10 +139,10 @@ sections.
 
 #### XML Syntax
 
-From the sections mentioned above, the stacki XML framework
+From the sections mentioned above, the Stacki XML framework
 maps the **main** section, the **pre** section, the **package**
 section, and the **post** section verbatim. There are other tags
-supported by stacki that allow the admin to modify the filesystem
+supported by Stacki that allow the admin to modify the filesystem
 by adding, changing, or removing files.
 
 1.  `<package>` Tag - This tag allows the admin to add packages to

@@ -5,28 +5,28 @@ completely disconnected such as a web farm.
 Stacki handles both cases with ease, but contains many unique features that
 make the management of highly interconnected clusters simple.
 
-Below we introduce some of the main concepts that power stacki.
+Below we introduce some of the main concepts that power Stacki.
 
 ## Frontend
 
 Stacki requires a single dedicated server that to build out other servers.
 We call this server the **Frontend**, and the servers it builds **Backend** nodes.
 
-The stacki Frontend includes a configuration database, and software distributions
+The Stacki Frontend includes a configuration database, and software distributions
 that when combined completely define Backend node software footprints
 (from OS kernel to application).
 Backend nodes can be identical or completely unique hardware and software, this
-is not an imaging tool, stacki implements software defined infrastructure.
+is not an imaging tool, Stacki implements software defined infrastructure.
 
 > Code your datacenter.
 
 ## Kickstart 
 
-The stacki installer is built on top of RedHat anaconda and
+The Stacki installer is built on top of RedHat anaconda and
 dynamically creates Kickstart files to install machines from bare
 metal.
 Because we use a framework built on top of kickstart,
-stacki systems are managed at a much higher (and simpler) level
+Stacki systems are managed at a much higher (and simpler) level
 than systems using disk imaging or virtual machine images. 
 Seemingly complex actions such as swapping an OS between minor versions,
 or updating a kernel become trivial operations. 
@@ -50,7 +50,7 @@ rapid deployment (in parallel) is freedom.
 
 We use the term **Appliance** to refer to a group of servers,
 usually with related functionallity.
-The stacki [Pallet](#pallets--distributions) include only the Backend Appliance,
+The Stacki [Pallet](#pallets--distributions) include only the Backend Appliance,
 other Pallets define additional Appliance types.
 
 ## Pallets & Distributions
@@ -61,7 +61,7 @@ A **Distribution** is a composition of Pallets that can also serves as the sourc
 
 ## Wire
 
-We call the stacki Kickstart framework **Wire**.
+We call the Stacki Kickstart framework **Wire**.
 Wire is implemented in XML and looks like a collection of small Kickstart files.
 The power here comes from two ideas:
 

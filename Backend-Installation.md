@@ -149,12 +149,12 @@ backend-0-2:  install
 ```
 
 Now power up the Backend machines.
-The Backend machines will first boot into the stacki installer,
+The Backend machines will first boot into the Stacki installer,
 install the OS, set its boot action back to _os_ and reboot.
 
 ## Re-Installation
 
-Because stacki manages the PXE boot of all of Backend nodes when it
+Because Stacki manages the PXE boot of all of Backend nodes when it
 comes time to re-install a machine you can just change the boot
 action back to _install_, for example:
 
