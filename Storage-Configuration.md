@@ -22,7 +22,7 @@ A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=16332552&single=true)
 is shown below
 
-![](images/stacki-sample-partition-csv)
+![](images/stacki-sample-partition-csv.png)
 
 The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
 Appliance type (e.g., _backend_) or it can be set to _global_.  
