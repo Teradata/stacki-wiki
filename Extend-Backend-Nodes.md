@@ -163,23 +163,25 @@ by adding, changing, or removing files.
     Examples:
 
     * ```xml
-        <post>
-        /sbin/chkconfig --enable httpd
-        </post>
-        ```
-        This is converted to a simple shell script that runs
-        `chkconfig` to enable the Apache web server
+      <post>
+      /sbin/chkconfig --enable httpd
+      </post>
+      ```
+
+      This is converted to a simple shell script that runs
+      `chkconfig` to enable the Apache web server
 
     * ```xml
-        <post interpreter="/opt/rocks/bin/python">
-        import os, sys
-        import subprocess
-        p = subprocess.Popen(['/sbin/chkconfig','--enable','httpd'])
-        rc = p.wait()
-        if rc != 0:
-            sys.stderr.write('Chkconfig Failed\n')
-        </post>
-        ```
+      <post interpreter="/opt/rocks/bin/python">
+      import os, sys
+      import subprocess
+      p = subprocess.Popen(['/sbin/chkconfig','--enable','httpd'])
+      rc = p.wait()
+      if rc != 0:
+      	sys.stderr.write('Chkconfig Failed\n')
+      </post>
+      ```
+
       This is converted to a post section that is interpreted as
       python code.
 
@@ -188,6 +190,7 @@ by adding, changing, or removing files.
       cp /tmp/anaconda.log /mnt/sysimage/tmp/anaconda.log
       </post>
       ```
+
       The `--nochroot` argument causes the execution of the post
       section in a non-chrooted environment. Typically, after the
       package installation starts the post sections are run in a
@@ -200,14 +203,14 @@ by adding, changing, or removing files.
     resides inside a `<post>` tag.
     Examples:
 
-    * 
-      ```xml
+    * ```xml
       <post>
-        <file name="/tmp/hello.log">
+      	<file name="/tmp/hello.log">
         HELLO
         </file>
       </post>
       ```
+
       This creates a file called `/tmp/hello.log` that contains
       the word "HELLO" in it.
 
@@ -218,6 +221,7 @@ by adding, changing, or removing files.
         </file>
       </post>
       ```
+
       This appends to a file called `/tmp/hello.log`.
 
     * ```xml
@@ -227,6 +231,7 @@ by adding, changing, or removing files.
         </file>
       </post>
       ```
+
       This creates a file called `/tmp/hello.log` with
       `chmod` permissions of 0400.
 
