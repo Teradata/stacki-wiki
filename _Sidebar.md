@@ -10,5 +10,5 @@
   * [Manage Pallets](Manage-Pallets)
   * [Extend Backend Nodes](Extend-Backend-Nodes)
 * Reference
-  * [Command Line](CLI-Documentation) 
+  * [Command Line](Command-Line-Reference) 
   
