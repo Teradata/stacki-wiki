@@ -6,8 +6,12 @@ Stacki manages storage at both the [Partition](#partition) level and the hardwar
 ### Spreadsheet
  
 The configuration of partitions is driven through a spreadsheet.
-Here is a [sample spreadsheet](https://docs.google.com/spreadsheets/d/1Hg-yEVgelArXvCGaHk5hTLKQsvNP3Cv9jvKYdOeRavI/pubhtml).
- 
+Here is a
+[sample spreadsheet](https://docs.google.com/a/stackiq.com/spreadsheets/d/1RXIRxSpaauzDasSKgTKNOC0uQh73Ssi0yW1Zq3i9oLQ/edit?usp=sharing)
+
+<iframe
+src="https://docs.google.com/spreadsheets/d/1RXIRxSpaauzDasSKgTKNOC0uQh73Ssi0yW1Zq3i9oLQ/pubhtml?widget=true&amp;headers=false"></iframe>
+
 There are five columns:
  
 1. **Name**. A host name, appliance type or global.
@@ -78,7 +82,8 @@ Stacki can automatically configure two types of hardware RAID controllers:
 ### Spreadsheet
 
 The configuration of a controller is driven through a spreadsheet.
-Here is a [sample spreadsheet](https://docs.google.com/spreadsheets/d/1MWSmqj8WWTp5OspQK8MxS8jYqH8PvwdHV-Kzyft2qJY/pubhtml).
+Here is a
+[sample spreadsheet](https://docs.google.com/a/stackiq.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/edit?usp=sharing)
 
 There are four columns:
 
