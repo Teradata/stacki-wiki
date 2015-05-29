@@ -89,18 +89,18 @@ To start the installation download two ISOs and put them on your server:
 
 Mount the stacki ISO:
 
-    mount -o loop stacki*iso /media
+    # mount -o loop stacki*iso /media
 
 Copy frontend-install.py from the ISO to your local disk:
 
 
-    cp /media/frontend-install.py /tmp
+    # cp /media/frontend-install.py /tmp
 
 
 Execute frontend-install.py:
 
 
-    /tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
+    # /tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
 
 
 The above step will take several minutes to complete,
@@ -217,6 +217,6 @@ If this was an [Existing](#existing) installation the installer will finalize th
 Frontent configuration, after this complete you must reboot the
 Frontend.
 
-    /sbin/init 6
+    # /sbin/init 6
 
 Your stacki Frontend is now ready. 
