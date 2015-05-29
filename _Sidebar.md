@@ -1,7 +1,8 @@
 * [Home](Home)
 * [Concepts](Concepts)
-* [Frontend Installation](Frontend-Installation)
-* [Backend Installation](Backend-Installation)
+* Installation
+  * [Frontend](Frontend-Installation)
+  * [Backend](Backend-Installation)
 * [Storage Configuration](Storage-Configuration)
 * [Adding Pallets](Adding-Pallets)
 * [Distribution Management](Distribution-Management)
