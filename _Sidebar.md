@@ -9,5 +9,5 @@
 * [Distribution Management](Distribution-Management)
     * [Creating and Using Distributions](creating-and-using-distributions)
 * [Command Line Interface](CLI-Documentation)
-* HOWTO
+* How To
 	* [Extending Backend Nodes](Extend-Backend)
