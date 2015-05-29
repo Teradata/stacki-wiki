@@ -5,25 +5,25 @@ Stacki manages storage at both the [Partition](#partition) level and the hardwar
 
 ### Spreadsheet
  
-The configuration of partitions is driven through a spreadsheet.
-Here is a
-[sample spreadsheet](https://docs.google.com/a/stackiq.com/spreadsheets/d/1RXIRxSpaauzDasSKgTKNOC0uQh73Ssi0yW1Zq3i9oLQ/edit?usp=sharing)
+The configuration of disk partitions can be specified in a
+spreadsheet with the following columns:
+ 
+1. **Name**. A host name, appliance type or global. 
+ 
+1. **Device**. The Linux disk device name (e.g., ``sda``, ``sdb``). 
+ 
+1. **Mountpoint**. Where the partition should be mounted on the file system. 
+ 
+1. **Size**. The size of the partition in megabytes. 
+ 
+1. **Type**. How the partition should be formatted (e.g., xfs, swap). 
+ 
+A
+[sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=16332552&single=true)
+is shown below
 
-<iframe
-src="https://docs.google.com/spreadsheets/d/1RXIRxSpaauzDasSKgTKNOC0uQh73Ssi0yW1Zq3i9oLQ/pubhtml?widget=true&amp;headers=false"></iframe>
+![](images/stacki-sample-partition-csv)
 
-There are five columns:
- 
-1. **Name**. A host name, appliance type or global.
- 
-2. **Device**. The Linux disk device name (e.g., ``sda``, ``sdb``).
- 
-3. **Mountpoint**. Where the partition should be mounted on the file system.
- 
-4. **Size**. The size of the partition in megabytes.
- 
-5. **Type**. How the partition should be formatted (e.g., xfs, swap).
- 
 The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
 Appliance type (e.g., _backend_) or it can be set to _global_.  
  
@@ -82,8 +82,10 @@ Stacki can automatically configure two types of hardware RAID controllers:
 ### Spreadsheet
 
 The configuration of a controller is driven through a spreadsheet.
+
+
 Here is a
-[sample spreadsheet](https://docs.google.com/a/stackiq.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/edit?usp=sharing)
+[sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=1529833735&single=true)
 
 There are four columns:
 
