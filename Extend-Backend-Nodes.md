@@ -147,36 +147,42 @@ by adding, changing, or removing files.
 
 1.  `<package>` Tag - This tag allows the admin to add packages to
     the installation.
-    * ```xml
+
+    * 
+      ```xml
       <package>httpd</package>
       <package meta="1">gnome-desktop</package>
       ```
+
       The `meta="1"` attribute informs the installer that the
       package is a group package. 
 
-2.  `<post>` Tag - This tag allows the admin to run scripts after
+1.  `<post>` Tag - This tag allows the admin to run scripts after
     the package installation is done. The scripts can be in any
     interpreted language present on the installed system.
     Examples:
+
     * ```xml
-      <post>
-      /sbin/chkconfig --enable httpd
-      </post>
-      ```
-      This is converted to a simple shell script that runs
-      `chkconfig` to enable the Apache web server
+        <post>
+        /sbin/chkconfig --enable httpd
+        </post>
+        ```
+        This is converted to a simple shell script that runs
+        `chkconfig` to enable the Apache web server
+
     * ```xml
-      <post interpreter="/opt/rocks/bin/python">
-      import os, sys
-      import subprocess
-      p = subprocess.Popen(['/sbin/chkconfig','--enable','httpd'])
-      rc = p.wait()
-      if rc != 0:
-        sys.stderr.write('Chkconfig Failed\n')
-      </post>
-      ```
+        <post interpreter="/opt/rocks/bin/python">
+        import os, sys
+        import subprocess
+        p = subprocess.Popen(['/sbin/chkconfig','--enable','httpd'])
+        rc = p.wait()
+        if rc != 0:
+            sys.stderr.write('Chkconfig Failed\n')
+        </post>
+        ```
       This is converted to a post section that is interpreted as
       python code.
+
     * ```xml
       <post arg="--nochroot">
       cp /tmp/anaconda.log /mnt/sysimage/tmp/anaconda.log
@@ -188,11 +194,14 @@ by adding, changing, or removing files.
       chrooted environment running under `/mnt/sysimage` - ie.-
       In the installer `/mnt/sysimage` is the `/` filesystem on
       the installed machine.
+
 3.  `<file>` Tag - This tag allows the admin to create files on
     the filesystem of the installing machine. This tag is a
     resides inside a `<post>` tag.
     Examples:
-    * ```xml
+
+    * 
+      ```xml
       <post>
         <file name="/tmp/hello.log">
         HELLO
@@ -201,6 +210,7 @@ by adding, changing, or removing files.
       ```
       This creates a file called `/tmp/hello.log` that contains
       the word "HELLO" in it.
+
     * ```xml
       <post>
         <file name="/tmp/hello.log" mode="append">
@@ -209,6 +219,7 @@ by adding, changing, or removing files.
       </post>
       ```
       This appends to a file called `/tmp/hello.log`.
+
     * ```xml
       <post>
         <file name="/tmp/hello.log" perms="0400">
@@ -218,9 +229,10 @@ by adding, changing, or removing files.
       ```
       This creates a file called `/tmp/hello.log` with
       `chmod` permissions of 0400.
+
     * ```xml
       <post>
-        <file name="/tmp/hello.log" owner="root:apache">
+	<file name="/tmp/hello.log" owner="root:apache">
         HELLO
         </file>
       </post>
