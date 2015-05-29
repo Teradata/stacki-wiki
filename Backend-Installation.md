@@ -117,7 +117,7 @@ is installed.
 
 Every time a Backend node boot it will send a PXE request to the
 Frontend.
-The Frontend will tell the backend node to either boot its os or to
+The Frontend will tell the Backend node to either boot its os or to
 install.
 The default boot action is always _os_ as you can see below.
 
@@ -146,7 +146,7 @@ backend-0-1:  install
 backend-0-2:  install
 ```
 
-Now power up the backend machines.
+Now power up the Backend machines.
 The Backend machines will first boot into the stacki installer,
 install the OS, set its boot action back to _os_ and reboot.
 
