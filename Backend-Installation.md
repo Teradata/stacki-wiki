@@ -135,9 +135,7 @@ to _install_ and then reboot.
 # stack set host boot Backend action=install 
 ```
 
-```
-# stack list host boot
-```
+```# stack list host boot```
 ```
 HOST          ACTION
 frontend-0-0: ------ 
