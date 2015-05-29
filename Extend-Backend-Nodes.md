@@ -75,7 +75,7 @@ the principal file being `backend.xml`.
    distribution, thereby extending the functionality of the backend node.
 
    ```
-   # stack create distro
+   # stack create distribution
    ```
 4. After the distribution is recreated, set all the backend nodes
    to install. For more information about re-installing backend
