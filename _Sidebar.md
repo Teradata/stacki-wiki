@@ -3,7 +3,8 @@
 * Installation
   * [Frontend](Frontend-Installation)
   * [Backend](Backend-Installation)
-* [Storage Configuration](Storage-Configuration)
+* Configuration
+  * [Storage](Storage-Configuration)
 * [Adding Pallets](Adding-Pallets)
 * [Distribution Management](Distribution-Management)
     * [Creating and Using Distributions](creating-and-using-distributions)

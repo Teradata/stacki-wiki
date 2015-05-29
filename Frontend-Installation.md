@@ -114,7 +114,7 @@ when it completes you can continue to the [Installation Wizard](#installation-wi
 The first screen will appear where you enter
 
 1. _Cluster Name_ - for example "Demo"
-2. _Fully Qualified Host Name_ of the frontend (i.e., name.yourdomain.com)
+2. _Fully Qualified Host Name_ of the Frontend (i.e., name.yourdomain.com)
 3. _Email_ - Administrator Email
 4. _Timezone_ of the cluster.
 
@@ -123,7 +123,7 @@ The first screen will appear where you enter
 ### Public Network
 
 The public cluster network configuration screen allows you to set up the
-networking parameters for the ethernet network that connects the frontend to the
+networking parameters for the ethernet network that connects the Frontend to the
 outside network (e.g., the internet).
 
 1. Select from the network _Devices_ to select the public network.
@@ -140,7 +140,7 @@ Click _Continue_ to configure the network interface.
 
 The private network configuration screen configures the
 networking parameters for the ethernet network that
-connects the frontend to the backend nodes.
+connects the Frontend to the backend nodes.
 
 1. Select from the network _Devices_ to select the private network.
 2. _IP_ Address of the private Interface
@@ -161,8 +161,8 @@ Enter the password for the **root** account on the Frontend.
 
 If _Automatic_ mode is selected, the installer will
 repartition and reformat the first discovered hard drive
-that is connected to the frontend. All other drives
-connected to the frontend will be left untouched.
+that is connected to the Frontend. All other drives
+connected to the Frontend will be left untouched.
 
 | Partition Name | Size |
 | --------------- | ---- |
@@ -175,7 +175,7 @@ When using automatic partitioning, the installer repartitions
 and reformats the first hard drive (e.g. _sda_) that the installer
 discovers. All previous data on this drive will be erased.
 All other drives will be left untouched. If you are unsure about how
-the drives will be discovered in a multi-disk frontend,
+the drives will be discovered in a multi-disk Frontend,
 select _Manual Partitioning_.
 
 In _Manual_ mode, the installer brings up a partition setup
@@ -220,5 +220,3 @@ Frontend.
     /sbin/init 6
 
 Your stacki Frontend is now ready. 
-
-
