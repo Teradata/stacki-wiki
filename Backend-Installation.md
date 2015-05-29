@@ -75,21 +75,23 @@ You can also specify all the information about a host before
 installation in a CSV (Comma Separated Value) file.
 The advantage of using CSV files, is that it gives fine-grained control over the
 configuration of the cluster.
-Create a new spreadsheet in Google Doc or Excel and export it as a
-.csv for use with stacki.
 
-The Host CSV file needs to have the following headers:
+The Host CSV file needs to have the following columns:
 
-NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET 
------|-----------|------|------|----|-----|-----------|--------
+1. **Name**. A hostname.
+1. **Appliance** The Appliace name for the host (e.g. backend).
+1. **Rack** The rack number for the host.
+1. **Rank** The position in the rack for the host.
+1. **IP** Network address.
+1. **MAC** Ethernet address.
+1. **Interface** Ethernet device name (e.g. em1)
+1. **Subnet** Subnet name for the interface (e.g. private)
 
-#### Sample Host CSV file
+A 
+[sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=142297572&single=true)
+is shown below. 
 
-| NAME        | APPLIANCE | RACK | RANK | IP           | MAC               | INTERFACE | SUBNET  |  
-|-------------|-----------|------|------|--------------|-------------------|-----------|---------| 
-| backend-0-0 | backend   | 0    | 0    | 10.1.255.254 | 00:22:19:1c:0c:99 | eth0      | private |
-| backend-0-1 | backend   | 0    | 1    | 10.1.255.255 | 00:22:19:1c:0c:98 | eth0      | private |
-| backend-0-2 | backend   | 0    | 2    | 10.1.255.253 | 00:22:19:1c:0c:97 | eth0      | private |
+![](images/sample-host-configuration-csv.png) 
 
 
 Once the CSV file is created and copied to the Frontend it can be
