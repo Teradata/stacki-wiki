@@ -156,7 +156,7 @@ If you want to completely reformat all data on the Backend during the
 re-installing you need to set an Attribute for the given host before
 you reboot the server.
 
-    # stack set host attr attr=nukedisks value=true
+    # stack set host attr backend-0-0 attr=nukedisks value=true
 
 After the Backend re-installs it will reset the value of the Attribute
 to _false_ so the next time you re-install it will do the default and
