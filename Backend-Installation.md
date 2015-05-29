@@ -2,7 +2,7 @@ After the Frontend is up and running, Backend nodes can be installed.
 
 ## Requirements 
 
-A Frontend has the following hardware requirements. 
+A Backend has the following hardware requirements. 
 
 **Resource** | Minimum | Recommended
 --- | --- | ---
@@ -21,8 +21,8 @@ BIOS _boot order_
 To install a new Backend node stacki needs to add information about
 the server (ip address, mac address, Appliance type, etc) to the
 configuration database.
-Choose between the [Discovery] or [SpreadSheet] procedure to install
-you new Backends.
+Choose between the [Discovery](#discovery) or [SpreadSheet](#spreadsheet) procedure to install
+your new Backends.
 
 ### Discovery
 
@@ -57,7 +57,7 @@ installed.
 Once the Backend node sends out a PXE request the Frontend captures the
 request and adds it to the stacki database.
 If the server did not PXE boot go back to the
-[Requirement](#requirements) and verify the BIOS boot order.
+[Requirements](#requirements) and verify the BIOS boot order.
 
 ![insert-ethers-4](images/insert-ethers/insert-ethers-4.png)
 
