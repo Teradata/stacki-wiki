@@ -55,7 +55,7 @@ If you wish to install Stacki on top of an existing system skip to the
 
 ### New
 
-Down the Stacki jumbo dvd [here](?) and burn the file to a DVD or
+Down the Stacki jumbo dvd [here](https://s3.amazonaws.com/stacki/1.0/stacki-os-1.0.x86_64.disk1.iso) and burn the file to a DVD or
 mount it on the virtual media for the server to be installed.
 This is going to completely erase and reformat the hard disks in the
 machine, so be careful on your selection of hosts.
