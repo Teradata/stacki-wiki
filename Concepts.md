@@ -39,7 +39,7 @@ A single Backend kickstart will download (via http) all the required
 software packages from the Frontend.
 In addition to installation the downloaded packages the Backend will
 cache the packages and serve them to other Backends just like the Frontend.
-This peer-to-peer package sharing is key to depoloying systems at scale,
+This peer-to-peer package sharing is key to deploying systems at scale,
 without this feature deploying 100 new Backend severs could take you all day.
 With peer-to-peer installation this takes you minutes.
 
