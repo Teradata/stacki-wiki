@@ -1,8 +1,9 @@
 ## Extending Backend Nodes
 
-In a default setup, stacki installs a backend node with
+In a default setup, stacki installs backend nodes with
 a very small software footprint. In stacki parlance, the
-backend node is brought up to a *"ping and a prompt"*.
+backend node is brought up to
+> ping and a prompt
 
 The backend node will have its network configured, and
 the SSH daemon is started to allow login access from
@@ -14,6 +15,7 @@ configured.
 
 There are several “levels” of installing applications in stacki,
 we’re going to look at the simplest case. Assumptions are:
+
 1. The application to be installed is available as an RPM
 2. The application can be configured using simple shell command
    or a script.
@@ -32,14 +34,15 @@ the Apache web server, and starting the service on the backend node.
 The backend appliance definition is a collection of XML files,
 the principal file being `backend.xml`.  
 
-1. Copy and modify a skeleton.xml template file.
-   The skeleton.xml file resides in
+1. Copy and modify a `skeleton.xml` template file.
+   The `skeleton.xml` file resides in
+
    ```
    /export/stack/site-profiles/default/1.0/nodes/
    ```
    This file contains explanation of the different sections
    that are allowed in the XML file.
-   Copy the file to extend-backend.xml in the same directory.
+   Copy the file to `extend-backend.xml` in the same directory.
    The new filename instructs stacki that this file will extend
    the backend appliance.
 
@@ -68,11 +71,13 @@ the principal file being `backend.xml`.
 3. Save the file, and recreate the default distribution. This step
    picks up `extend-backend.xml`, and merges it with the default
    distribution, thereby extending the functionality of the backend node.
+
    ```
    # stack create distro
    ```
 4. After the distribution is recreated, set all the backend nodes
    to install.
+
    ```
    # stack set host boot backend action=install
    ```
@@ -81,6 +86,7 @@ the principal file being `backend.xml`.
    will boot back up into a running state with the Apache web server
    running.
 6. Verify that the Apache web server is running, using the command
+
    ```
    # stack run host backend command='service httpd status'
-
+   ```
