@@ -7,23 +7,19 @@ Stacki manages storage at both the [Partition](#partition) level and the hardwar
  
 The configuration of disk partitions can be specified in a
 spreadsheet with the following columns:
- 
+  
 1. **Name**. A host name, appliance type or global. 
- 
 1. **Device**. The Linux disk device name (e.g., ``sda``, ``sdb``). 
- 
 1. **Mountpoint**. Where the partition should be mounted on the file system. 
- 
 1. **Size**. The size of the partition in megabytes. 
- 
 1. **Type**. How the partition should be formatted (e.g., xfs, swap). 
  
 A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=16332552&single=true)
-is shown below
+is shown below.
 
-![](images/stacki-sample-partition-csv.png)
-
+![](images/sample-partition-configuration-csv.png) 
+ 
 The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
 Appliance type (e.g., _backend_) or it can be set to _global_.  
  
@@ -81,21 +77,19 @@ Stacki can automatically configure two types of hardware RAID controllers:
 
 ### Spreadsheet
 
-The configuration of a controller is driven through a spreadsheet.
-
-
-Here is a
+The configuration of disk controllers can be specified in a
+spreadsheet with the following columns:
+  
+1. **Name**. A host name, appliance type or global.  
+1. **Slot**. The slot of a specific disk in the array.  
+1. **Raid Level**. The RAID level for the disks. This can be 0, 1, 5 or 6.  
+1. **Array Id**. The order in which the RAID groups will be constructed.  
+ 
+A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=1529833735&single=true)
+is shown below.
 
-There are four columns:
-
-1. **Name**. A host name, appliance type or global.
-
-2. **Slot**. The slot of a specific disk in the array.
-
-3. **Raid Level**. The RAID level for the disks. This can be 0, 1, 5 or 6.
-
-4. **Array Id**. The order in which the RAID groups will be constructed.
+![](images/sample-controller-configuration-csv.png) 
 
 The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
 appliance type (e.g., _backend_) or it can be set to _global_.
