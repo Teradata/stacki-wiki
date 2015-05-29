@@ -1,5 +1,3 @@
-## Extending Backend Nodes
-
 Stacki allows the admin to customize the software
 footprint of a backend node to enable additional
 functionality.
