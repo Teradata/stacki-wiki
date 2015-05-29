@@ -32,7 +32,7 @@ network.
 The DHCP response will also be a PXE response that will tell the
 server to re-install itself.
 Does this sound scary, good it is, it is also a great method to
-quickly and new Backends provided you are on an isolated private
+quickly add new Backends provided you are on an isolated private
 network.
 If this still sounds scary (it does to me) use the
 [Spreadsheet](#spreadsheet) procedure.
@@ -111,11 +111,11 @@ backend-0-1:  0     1   4    backend   default      os        install
 backend-0-2:  0     2   4    backend   default      os        install
 ```
 
-By default number of CPUs on every Nackend node is set to 1.
+By default number of CPUs on every Backend node is set to 1.
 This value will be updated automatically once a Backend node
 is installed.
 
-Every time a Backend node boot it will send a PXE request to the
+Every time a Backend node boots it will send a PXE request to the
 Frontend.
 The Frontend will tell the Backend node to either boot its os or to
 install.
