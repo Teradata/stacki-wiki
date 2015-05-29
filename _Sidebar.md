@@ -5,9 +5,8 @@
   * [Backend](Backend-Installation)
 * Configuration
   * [Storage](Storage-Configuration)
-* [Distribution Management](Distribution-Management)
-  * [Creating and Using Distributions](creating-and-using-distributions)
 * [Command Line Interface](CLI-Documentation)
 * How To
-  * [Adding Pallets](Adding-Pallets)
-  * [Extending Backend Nodes](Extend-Backend)
+  * [Manage Distributions](Manage-Distributions) 
+  * [Manage Pallets](Manage-Pallets)
+  * [Extend Backend Nodes](Extend-Backend-Nodes)

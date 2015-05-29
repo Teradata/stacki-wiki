@@ -159,7 +159,7 @@ Once the backend nodes install, they should have the new OS. Check /etc/redhat-r
 ![stack verify](images/stack-distribution-verify-1.png)
 
 
-### Removing a distribution
+## Removing a Distribution
 
 To remove a distribution, do the following:
 
