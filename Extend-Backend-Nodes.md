@@ -148,36 +148,40 @@ by adding, changing, or removing files.
 1.  `<package>` Tag - This tag allows the admin to add packages to
     the installation.
 
-    * ```xml
+    * 
+      ```xml
       <package>httpd</package>
       <package meta="1">gnome-desktop</package>
       ```
+
       The `meta="1"` attribute informs the installer that the
       package is a group package. 
 
-2.  `<post>` Tag - This tag allows the admin to run scripts after
+1.  `<post>` Tag - This tag allows the admin to run scripts after
     the package installation is done. The scripts can be in any
     interpreted language present on the installed system.
     Examples:
 
-    * ```xml
-      <post>
-      /sbin/chkconfig --enable httpd
-      </post>
-      ```
-      This is converted to a simple shell script that runs
-      `chkconfig` to enable the Apache web server
+    * 
+        ```xml
+        <post>
+        /sbin/chkconfig --enable httpd
+        </post>
+        ```
+        This is converted to a simple shell script that runs
+        `chkconfig` to enable the Apache web server
 
-    * ```xml
-      <post interpreter="/opt/rocks/bin/python">
-      import os, sys
-      import subprocess
-      p = subprocess.Popen(['/sbin/chkconfig','--enable','httpd'])
-      rc = p.wait()
-      if rc != 0:
-        sys.stderr.write('Chkconfig Failed\n')
-      </post>
-      ```
+    * 
+        ```xml
+        <post interpreter="/opt/rocks/bin/python">
+        import os, sys
+        import subprocess
+        p = subprocess.Popen(['/sbin/chkconfig','--enable','httpd'])
+        rc = p.wait()
+        if rc != 0:
+            sys.stderr.write('Chkconfig Failed\n')
+        </post>
+        ```
       This is converted to a post section that is interpreted as
       python code.
 
@@ -198,7 +202,8 @@ by adding, changing, or removing files.
     resides inside a `<post>` tag.
     Examples:
 
-    * ```xml
+    * 
+      ```xml
       <post>
         <file name="/tmp/hello.log">
         HELLO
