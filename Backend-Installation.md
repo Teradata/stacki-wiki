@@ -121,8 +121,6 @@ The default boot action is always _os_ as you can see below.
 
 ```
 # stack list host boot
-```
-```
 HOST          ACTION
 frontend-0-0: ------ 
 backend-0-0:  os    
@@ -137,8 +135,8 @@ to _install_ and then reboot.
 # stack set host boot Backend action=install 
 ```
 
-```# stack list host boot```
 ```
+# stack list host boot
 HOST          ACTION
 frontend-0-0: ------ 
 backend-0-0:  install
