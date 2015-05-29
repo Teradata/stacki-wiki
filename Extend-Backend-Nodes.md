@@ -162,16 +162,16 @@ by adding, changing, or removing files.
     interpreted language present on the installed system.
     Examples:
 
-    * ```xml
+    * This is converted to a simple shell script that runs
+      `chkconfig` to enable the Apache web server
+      ```xml
       <post>
       /sbin/chkconfig --enable httpd
       </post>
       ```
-
-      This is converted to a simple shell script that runs
-      `chkconfig` to enable the Apache web server
-
-    * ```xml
+    * This post section is interpreted as
+      python code.
+      ```xml
       <post interpreter="/opt/rocks/bin/python">
       import os, sys
       import subprocess
@@ -182,8 +182,7 @@ by adding, changing, or removing files.
       </post>
       ```
 
-      This is converted to a post section that is interpreted as
-      python code.
+      
 
     * ```xml
       <post arg="--nochroot">
