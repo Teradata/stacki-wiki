@@ -127,7 +127,7 @@ The default boot action is always _os_ as you can see below.
 In order to install a Backend you will need to switch the boot action
 to _install_ and then reboot.
 
-    # stack set host boot Backend action=install
+    # stack set host boot Backend action=install 
 #
     # stack list host boot
     HOST          ACTION
@@ -139,3 +139,26 @@ to _install_ and then reboot.
 Now, power up the backend machines.
 The Backend machines will first boot into the stacki installer,
 install the OS, set its boot action back to _os_ and reboot.
+
+## Re-Installation
+
+Because stacki manages the PXE boot of all of Backend nodes when it
+comes time to re-install a machine you can just change the boot
+action back to _install_, for example:
+
+    # stack set host boot backend-0-0 action=install
+
+Then next time you boot the _backend-0-0_ it will rebuild the itself.
+But a rebuild by default will only reformat the /var and / partitions.
+This means all data in /explort is maintained across re-installations.
+
+If you want to completely reformat all data on the Backend during the
+re-installing you need to set an Attribute for the given host before
+you reboot the server.
+
+    # stack set host attr attr=nukedisks value=true
+
+After the Backend re-installs it will reset the value of the Attribute
+to _false_ so the next time you re-install it will do the default and
+only reformat the /var and / paritions.
+We hate losing data also.
