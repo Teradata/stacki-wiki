@@ -90,9 +90,7 @@ NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET
 | backend-0-0 | backend   | 0    | 0    | 10.1.255.254 | 00:22:19:1c:0c:99 | eth0      | private |
 | backend-0-1 | backend   | 0    | 1    | 10.1.255.255 | 00:22:19:1c:0c:98 | eth0      | private |
 | backend-0-2 | backend   | 0    | 2    | 10.1.255.253 | 00:22:19:1c:0c:97 | eth0      | private |
-| backend-0-3 | backend   | 0    | 3    | 10.1.255.252 | 00:22:19:1c:0c:96 | eth0      | private |
-| backend-0-4 | backend   | 0    | 4    | 10.1.255.251 | 00:22:19:1c:0c:95 | eth0      | private |
-| backend-0-5 | backend   | 0    | 5    | 10.1.255.250 | 00:22:19:1c:0c:94 | eth0      | private |
+
 
 Once the CSV file is created and copied to the Frontend it can be
 loaded as root.
@@ -103,7 +101,6 @@ You can verify the data was correctly loaded be listing the host
 information from the configuration database.
 
     # stack list host
-
     HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
     frontend-0-0: 0     0   1    frontend  default      os        install      
     backend-0-0:  0     0   2    backend   default      os        install      
@@ -121,7 +118,6 @@ install.
 The default boot action is always _os_ as you can see below.
 
     # stack list host boot
-
     HOST          ACTION
     frontend-0-0: ------ 
     backend-0-0:  os    
@@ -132,9 +128,8 @@ In order to install a Backend you will need to switch the boot action
 to _install_ and then reboot.
 
     # stack set host boot Backend action=install
-
+#
     # stack list host boot
-
     HOST          ACTION
     frontend-0-0: ------ 
     backend-0-0:  install
