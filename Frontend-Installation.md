@@ -8,21 +8,21 @@ build with the addition of a wizard to capture site-specific
 networking information.
 
 ## Requirements 
+ 
+A Frontend has the following hardware requirements.  
 
-A Frontend has the following hardware requirements.
-
-**Resource** | Minimum | Recommended
+**Resource** | Minimum | Recommended  
 --- | --- | ---
-**System Memory** | 2 GB | 16 GB
-**Network Interfaces** | 2 | 2
-**Disk Capacity** | 64 GB | 200GB
-**CD/DVD Device** | 1 | 1
-
+**System Memory** | 2 GB | 16 GB  
+**Network Interfaces** | 2 | 2  
+**Disk Capacity** | 64 GB | 200GB  
+**CD/DVD Device** | 1 | 1  
+ 
 BIOS _boot order_
-
-1. CD/DVD Device
-2. Hard Disk
-
+ 
+1. CD/DVD Device  
+2. Hard Disk  
+ 
 Stacki allows you to place only the Frontend on your public network
 and to then deploy all Backend servers on an isolated private network.
 This recommended setup is shown below.

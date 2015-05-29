@@ -1,74 +1,89 @@
-After the Frontend is up and running, the backend nodes
-can be installed.
+After the Frontend is up and running, Backend nodes can be installed.
 
-## Requirements
+## Requirements 
 
-##### Minimum Requirements
-**Resource** | **Minimum** | **Recommended**
--------- | -------- | ------------
+A Frontend has the following hardware requirements. 
+
+**Resource** | Minimum | Recommended
+--- | --- | ---
 **System Memory** | 1 GB | 8 GB
 **Network Interfaces** | 1 (PXE-Capable) | 1 or more (PXE-Capable)
 **Disk Capacity** | 40 GB | 100 GB
 
-##### Additional Requirements
-
-**BIOS Boot Order**
+BIOS _boot order_
 
 1. PXE (Network Boot)
 2. CD/DVD Device (Optional - Only if device is present)
 3. Hard Disk
 
-Stacki gives the system administrator 2 choices of ways
-to install backend nodes.
+## Discovery or SpreadSheet
 
-1. Discovery Mode
-2. Spreadsheet Mode
+To install a new Backend node stacki needs to add information about
+the server (ip address, mac address, Appliance type, etc) to the
+configuration database.
+Choose between the [Discovery] or [SpreadSheet] procedure to install
+you new Backends.
 
-### Discovery Mode
+### Discovery
 
-In discovery mode, a host that is unknown to the stacki frontend is discovered on the network, by an application called
-**insert-ethers**.
+In this mode the Frontend will listen on for any host requesting a
+DHCP address and will respond with an address from its managed private
+network.
+The DHCP response will also be a PXE response that will tell the
+server to re-install itself.
+Does this sound scary, good it is, it is also a great method to
+quickly and new Backends provided you are on an isolated private
+network.
+If this still sounds scary (it does to me) use the
+[Spreadsheet](#spreadsheet) procedure.
 
-1.  After the frontend is installed, on the command line, run
-   ```
-   # insert-ethers
-   ```
-   This will bring up the screen that shows a list of appliances
-   available for installation. By default, there is only one appliance
-   available in stacki - a **Backend** appliance.
-   ![insert-ethers-1](images/insert-ethers/insert-ethers-1.png)
+To start disovery mode log into the Frontend as root as run the following:
 
-2. Select the **Backend** appliance, and hit `enter`. This brings
-   up the following screen.
-   ![insert-ethers-2](images/insert-ethers/insert-ethers-2.png)
+    # insert-ethers
 
-3. Turn on the backend node, and wait for it to PXE Boot. Once the
-   backend node sends out a PXE request, insert-ethers captures the
-   request and adds it to the stacki database.
-   ![insert-ethers-4](images/insert-ethers/insert-ethers-4.png)
 
-4. Once the backend node downloads its kickstart file, the
-   insert-ethers UI indicates it using a `*` next to
-   the host.
-   ![insert-ethers-5](images/insert-ethers/insert-ethers-5.png)
+This will bring up a screen that shows a list of Appliances available
+for installation.
 
-Repeat 3,4 for all backend machines in your cluster.
+![insert-ethers-1](images/insert-ethers/insert-ethers-1.png) 
 
-### Host Spreadsheet
+By default only the _Backend_ appliance will be listed.
+Press _OK_ to continue and then turn on the machine you want
+installed.
 
-Another feature of stacki is the ability to add backend 
-nodes to the system using CSV (Comma Separated Value) files.
+
+![insert-ethers-2](images/insert-ethers/insert-ethers-2.png)
+
+Once the Backend node sends out a PXE request the Frontend captures the
+request and adds it to the stacki database.
+If the server did not PXE boot go back to the
+[Requirement](#requirements) and verify the BIOS boot order.
+
+![insert-ethers-4](images/insert-ethers/insert-ethers-4.png)
+
+Once the Backend node downloads its Kickstart file, a '*' will next
+the the hostname assigned to the new Backend node.
+
+![insert-ethers-5](images/insert-ethers/insert-ethers-5.png)
+
+Continue to turn on any other machines you want installed and hi _F8_
+when done.
+
+### Spreadsheet
+
+You can also specify all the information about a host before
+installation in a CSV (Comma Separated Value) file.
 The advantage of using CSV files, is that it gives fine-grained control over the
-configuration of the cluster. The CSV files may be created in a program like Microsoft
-Excel, or Google Docs spreadsheet application, and imported directly into the
-stacki frontend.  
+configuration of the cluster.
+Create a new spreadsheet in Google Doc or Excel and export it as a
+.csv for use with stacki.
 
-The Host CSV file needs to have the following headers:    
+The Host CSV file needs to have the following headers:
 
 NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET 
 -----|-----------|------|------|----|-----|-----------|--------
 
-**Sample Host CSV file**
+#### Sample Host CSV file
 
 | NAME        | APPLIANCE | RACK | RANK | IP           | MAC               | INTERFACE | SUBNET  |  
 |-------------|-----------|------|------|--------------|-------------------|-----------|---------| 
@@ -79,72 +94,53 @@ NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET
 | backend-0-4 | backend   | 0    | 4    | 10.1.255.251 | 00:22:19:1c:0c:95 | eth0      | private |
 | backend-0-5 | backend   | 0    | 5    | 10.1.255.250 | 00:22:19:1c:0c:94 | eth0      | private |
 
-Once the CSV file is created, it can be added onto stacki frontend via the stack CLI.
+Once the CSV file is created and copied to the Frontend it can be
+loaded as root.
   
-   1. Copy the CSV file onto the frontend  
-   2. Run the command:  
-   ```
-   # stack load hostfile file=hostfile.csv
-   ```
+    # stack load hostfile file=hostfile.csv
 
-   3. Check the hosts table
-   ```
-   # stack list host
-   ```
-   ```
-   HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
-   frontend-0-0: 0     0   1    frontend  default      os        install      
-   backend-0-0:  0     0   2    backend   default      os        install      
-   backend-0-1:  0     1   4    backend   default      os        install      
-   backend-0-2:  0     2   4    backend   default      os        install
-   backend-0-3:  0     3   4    backend   default      os        install
-   backend-0-4:  0     4   4    backend   default      os        install
-   backend-0-5:  0     5   4    backend   default      os        install
-   ```
-   By default number of CPUS on every backend node is set to 1.
-   This value will be updated automatically once a backend node
-   is reinstalled.
-   
-   4. Instruct the backend nodes to reinstall themselves on the next reboot.    
-   ```
-   # stack list host boot
-   ```
-   ```
-   HOST          ACTION
-   frontend-0-0: ------ 
-   backend-0-0:  os    
-   backend-0-1:  os    
-   backend-0-2:  os    
-   backend-0-3:  os    
-   backend-0-4:  os    
-   backend-0-5:  os    
-   ```
-   Here the boot action is set to _os_ indicating that the
-   backend machines are currently set to boot off their own
-   hard disks. Update all backend appliances so that
-   they reinstall next time they are powered on. 
-   ```
-   # stack set host boot backend action=install
-   # stack list host boot
-   ```
-   ```
-   HOST          ACTION
-   frontend-0-0: ------ 
-   backend-0-0:  install
-   backend-0-1:  install
-   backend-0-2:  install
-   backend-0-3:  install
-   backend-0-4:  install
-   backend-0-5:  install
-   ```
-   
-   5. Now, power up the backend machines. The backend machines will
-   first boot into the stacki installer, install the OS, and reboot.
-   Once these machines come up, your cluster is ready for use.
+You can verify the data was correctly loaded be listing the host
+information from the configuration database.
 
-   6. You can verify this by running the below command:
-   ```
-   # stack run host backend command='uptime'
-   backend-0-0: 09:12:24 up 33 min,  0 users,  load average: 0.00, 0.00, 0.00
-   backend-0-1: 09:12:24 up 32 min,  0 users,  load average: 0.00, 0.00, 0.00
-   ```
+    # stack list host
+
+    HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
+    frontend-0-0: 0     0   1    frontend  default      os        install      
+    backend-0-0:  0     0   2    backend   default      os        install      
+    backend-0-1:  0     1   4    backend   default      os        install      
+    backend-0-2:  0     2   4    backend   default      os        install
+
+By default number of CPUs on every Nackend node is set to 1.
+This value will be updated automatically once a Backend node
+is installed.
+
+Every time a Backend node boot it will send a PXE request to the
+Frontend.
+The Frontend will tell the backend node to either boot its os or to
+install.
+The default boot action is always _os_ as you can see below.
+
+    # stack list host boot
+
+    HOST          ACTION
+    frontend-0-0: ------ 
+    backend-0-0:  os    
+    backend-0-1:  os    
+    backend-0-2:  os    
+
+In order to install a Backend you will need to switch the boot action
+to _install_ and then reboot.
+
+    # stack set host boot Backend action=install
+
+    # stack list host boot
+
+    HOST          ACTION
+    frontend-0-0: ------ 
+    backend-0-0:  install
+    backend-0-1:  install
+    backend-0-2:  install
+
+Now, power up the backend machines.
+The Backend machines will first boot into the stacki installer,
+install the OS, set its boot action back to _os_ and reboot.
