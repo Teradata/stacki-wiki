@@ -76,7 +76,8 @@ the principal file being `backend.xml`.
    # stack create distro
    ```
 4. After the distribution is recreated, set all the backend nodes
-   to install.
+   to install. For more information about re-installing backend
+   refer to the [Re-installation section](Backend-Installation#re-installation).
 
    ```
    # stack set host boot backend action=install
