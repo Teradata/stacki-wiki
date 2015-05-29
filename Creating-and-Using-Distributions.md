@@ -91,7 +91,7 @@ To remove a distribution, do the following:
 
 ![stack reset distribution](images/stack-reset-distribution-1.png)
 
-% Remove the distribution and verify it is gone.
+% Remove the distribution and verify it is gone.  
 `# stack remove distribution test-dist`  
 `# stack list distribution`  
 
