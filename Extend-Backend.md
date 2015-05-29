@@ -1,9 +1,13 @@
 ## Extending Backend Nodes
 
+Stacki allows the admin to customize the software
+footprint of a backend node to enable additional
+functionality.
+
 In a default setup, stacki installs backend nodes with
 a very small software footprint. In stacki parlance, the
 backend node is brought up to
-> ping and a prompt
+> a ping and a prompt
 
 The backend node will have its network configured, and
 the SSH daemon is started to allow login access from
@@ -91,3 +95,18 @@ the principal file being `backend.xml`.
    ```
    # stack run host backend command='service httpd status'
    ```
+
+## Concepts
+
+When the anaconda installer performs the OS installation, it does
+it in the following order.
+
+1. Hardware Probing
+1. Network setup
+1. Disk setup and partitioning
+1. Pre section
+
+#### XML Syntax
+The stacki XML framework allows the following tags
+1. `<pre>` - The `<pre>` tag is used to specify instructions
+    to be run before the package installation section 
