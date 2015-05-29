@@ -1,8 +1,8 @@
 # create commands
 
-  * [create distro](create-distro)
+  * [create distribution](create-distribution)
   * [create keys](create-keys)
   * [create mirror](create-mirror)
-  * [create new roll](create-new-roll)
+  * [create new pallet](create-new-pallet)
   * [create package](create-package)
-  * [create roll](create-roll)
+  * [create pallet](create-pallet)

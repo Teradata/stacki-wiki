@@ -1,4 +1,4 @@
-[Command Line Interface](CLI-documentation)
+[Home](Home)
 
 * [add](add-commands)
 * [config](config-commands)
@@ -37,10 +37,9 @@
   * [remove os attr](remove-os-attr)
   * [remove os firewall](remove-os-firewall)
   * [remove os route](remove-os-route)
-  * [remove roll](remove-roll)
+  * [remove pallet](remove-pallet)
   * [remove route](remove-route)
   * [remove storage controller](remove-storage-controller)
-  * [remove storage partition](remove-storage-partition)
 * [report](report-commands)
 * [run](run-commands)
 * [set](set-commands)

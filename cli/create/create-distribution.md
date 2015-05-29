@@ -1,8 +1,8 @@
-## create distro
+## create distribution
 
 ### Usage
 
-`stack create distro {distribution} [inplace=bool] [md5=bool] [resolve=bool] [rolls=string] [root=string]`
+`stack create distribution {distribution} [inplace=bool] [md5=bool] [pallets=string] [resolve=bool] [root=string]`
 
 ### Description
 
@@ -28,6 +28,13 @@ Create a Stack distribution. This distribution is used to install
    If true, then calculate the MD5 checksums for all files in the
 	distribution.
 	Default is true.
+* `[pallets=string]`
+
+   A space separated list of pallets to use when building a distribution.
+	"name,version" is required when delimiting pallets.
+	
+	For example: pallets="base,6.0 kernel,6.0 os,6.2".	
+	Default is "None".
 * `[resolve=bool]`
 
    If true, then resolve RPM versions during the build so only the
@@ -35,22 +42,14 @@ Create a Stack distribution. This distribution is used to install
         not required since yum and anaconda expect all versions to be
         present. Currently, this option exists for internal use only.
 	Default is false.
-* `[rolls=string]`
-
-   A space separated list of rolls to use when building a distribution.
-	
-	"rollname,version" is required when delimiting rolls.
-	
-	For example: rolls="base,6.0 kernel,6.0 os,6.2".	
-	Default is "None".
 * `[root=string]`
 
-   The root directory where the rolls are located.
+   The root directory where the pallets are located.
 	Default is "/export/stack".
 
 ### Examples
 
-* `stack create distro`
+* `stack create distribution`
 
    Create a RedHat distribution in /export/stack/distributions/default.
 

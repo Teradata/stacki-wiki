@@ -1,4 +1,4 @@
-[Command Line Interface](CLI-documentation)
+[Home](Home)
 
 * [add](add-commands)
 * [config](config-commands)

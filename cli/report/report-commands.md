@@ -1,7 +1,7 @@
 # report commands
 
   * [report dbhost](report-dbhost)
-  * [report distro](report-distro)
+  * [report distribution](report-distribution)
   * [report host](report-host)
   * [report host attr](report-host-attr)
   * [report host bootflags](report-host-bootflags)

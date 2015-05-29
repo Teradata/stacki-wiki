@@ -1,4 +1,4 @@
-[Command Line Interface](CLI-documentation)
+[Home](Home)
 
 * [add](add-commands)
 * [config](config-commands)
@@ -6,7 +6,7 @@
 * [disable](disable-commands)
 * [dump](dump-commands)
 * [enable](enable-commands)
-  * [enable roll](enable-roll)
+  * [enable pallet](enable-pallet)
 * [help](help-commands)
 * [iterate](iterate-commands)
 * [list](list-commands)

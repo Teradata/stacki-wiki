@@ -1,12 +1,12 @@
-## create new roll
+## create new pallet
 
 ### Usage
 
-`stack create new roll {version} {name} {color} [color=string] [name=string] [version=string]`
+`stack create new pallet {version} {name} {color} [color=string] [name=string] [version=string]`
 
 ### Description
 
-Create a new roll from a template.
+Create a new pallet from a template.
 
 ### Arguments
 
@@ -36,7 +36,7 @@ Create a new roll from a template.
 
 ### Examples
 
-* `stack create new roll`
+* `stack create new pallet`
 
    
 

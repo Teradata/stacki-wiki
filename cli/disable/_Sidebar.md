@@ -1,10 +1,10 @@
-[Command Line Interface](CLI-documentation)
+[Home](Home)
 
 * [add](add-commands)
 * [config](config-commands)
 * [create](create-commands)
 * [disable](disable-commands)
-  * [disable roll](disable-roll)
+  * [disable pallet](disable-pallet)
 * [dump](dump-commands)
 * [enable](enable-commands)
 * [help](help-commands)

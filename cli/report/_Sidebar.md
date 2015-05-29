@@ -1,4 +1,4 @@
-[Command Line Interface](CLI-documentation)
+[Home](Home)
 
 * [add](add-commands)
 * [config](config-commands)
@@ -14,7 +14,7 @@
 * [remove](remove-commands)
 * [report](report-commands)
   * [report dbhost](report-dbhost)
-  * [report distro](report-distro)
+  * [report distribution](report-distribution)
   * [report host](report-host)
   * [report host attr](report-host-attr)
   * [report host bootflags](report-host-bootflags)

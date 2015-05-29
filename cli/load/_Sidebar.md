@@ -1,4 +1,4 @@
-[Command Line Interface](CLI-documentation)
+[Home](Home)
 
 * [add](add-commands)
 * [config](config-commands)
@@ -13,7 +13,6 @@
   * [load attrfile](load-attrfile)
   * [load hostfile](load-hostfile)
   * [load storage controller](load-storage-controller)
-  * [load storage partition](load-storage-partition)
 * [open](open-commands)
 * [remove](remove-commands)
 * [report](report-commands)

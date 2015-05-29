@@ -1,4 +1,4 @@
-[Command Line Interface](CLI-documentation)
+[Home](Home)
 
 * [add](add-commands)
 * [config](config-commands)
@@ -15,7 +15,7 @@
 * [report](report-commands)
 * [run](run-commands)
   * [run host](run-host)
-  * [run roll](run-roll)
+  * [run pallet](run-pallet)
 * [set](set-commands)
 * [swap](swap-commands)
 * [sync](sync-commands)

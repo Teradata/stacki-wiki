@@ -1,4 +1,4 @@
 # run commands
 
   * [run host](run-host)
-  * [run roll](run-roll)
+  * [run pallet](run-pallet)

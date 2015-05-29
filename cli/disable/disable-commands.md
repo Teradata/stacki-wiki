@@ -1,3 +1,3 @@
 # disable commands
 
-  * [disable roll](disable-roll)
+  * [disable pallet](disable-pallet)

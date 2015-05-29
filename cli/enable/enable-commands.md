@@ -1,3 +1,3 @@
 # enable commands
 
-  * [enable roll](enable-roll)
+  * [enable pallet](enable-pallet)
