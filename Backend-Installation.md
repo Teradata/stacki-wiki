@@ -39,8 +39,9 @@ If this still sounds scary (it does to me) use the
 
 To start disovery mode log into the Frontend as root as run the following:
 
-    # insert-ethers
-
+```
+# insert-ethers
+```
 
 This will bring up a screen that shows a list of Appliances available
 for installation.
@@ -50,7 +51,6 @@ for installation.
 By default only the _Backend_ appliance will be listed.
 Press _OK_ to continue and then turn on the machine you want
 installed.
-
 
 ![insert-ethers-2](images/insert-ethers/insert-ethers-2.png)
 
@@ -100,12 +100,14 @@ loaded as root.
 You can verify the data was correctly loaded be listing the host
 information from the configuration database.
 
-    # stack list host
-    HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
-    frontend-0-0: 0     0   1    frontend  default      os        install      
-    backend-0-0:  0     0   2    backend   default      os        install      
-    backend-0-1:  0     1   4    backend   default      os        install      
-    backend-0-2:  0     2   4    backend   default      os        install
+```
+# stack list host
+HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
+frontend-0-0: 0     0   1    frontend  default      os        install      
+backend-0-0:  0     0   2    backend   default      os        install      
+backend-0-1:  0     1   4    backend   default      os        install      
+backend-0-2:  0     2   4    backend   default      os        install
+```
 
 By default number of CPUs on every Nackend node is set to 1.
 This value will be updated automatically once a Backend node
@@ -117,26 +119,32 @@ The Frontend will tell the backend node to either boot its os or to
 install.
 The default boot action is always _os_ as you can see below.
 
-    # stack list host boot
-    HOST          ACTION
-    frontend-0-0: ------ 
-    backend-0-0:  os    
-    backend-0-1:  os    
-    backend-0-2:  os    
+```
+# stack list host boot
+HOST          ACTION
+frontend-0-0: ------ 
+backend-0-0:  os    
+backend-0-1:  os    
+backend-0-2:  os    
+```
 
 In order to install a Backend you will need to switch the boot action
 to _install_ and then reboot.
 
-    # stack set host boot Backend action=install 
-#
-    # stack list host boot
-    HOST          ACTION
-    frontend-0-0: ------ 
-    backend-0-0:  install
-    backend-0-1:  install
-    backend-0-2:  install
+```
+# stack set host boot Backend action=install 
+```
 
-Now, power up the backend machines.
+```
+# stack list host boot
+HOST          ACTION
+frontend-0-0: ------ 
+backend-0-0:  install
+backend-0-1:  install
+backend-0-2:  install
+```
+
+Now power up the backend machines.
 The Backend machines will first boot into the stacki installer,
 install the OS, set its boot action back to _os_ and reboot.
 
