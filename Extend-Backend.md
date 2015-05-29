@@ -36,6 +36,7 @@ the principal file being `backend.xml`.
 
 1. Copy and modify a `skeleton.xml` template file.
    The `skeleton.xml` file resides in
+
    ```
    /export/stack/site-profiles/default/1.0/nodes/
    ```
@@ -70,11 +71,13 @@ the principal file being `backend.xml`.
 3. Save the file, and recreate the default distribution. This step
    picks up `extend-backend.xml`, and merges it with the default
    distribution, thereby extending the functionality of the backend node.
+
    ```
    # stack create distro
    ```
 4. After the distribution is recreated, set all the backend nodes
    to install.
+
    ```
    # stack set host boot backend action=install
    ```
@@ -83,6 +86,7 @@ the principal file being `backend.xml`.
    will boot back up into a running state with the Apache web server
    running.
 6. Verify that the Apache web server is running, using the command
+
    ```
    # stack run host backend command='service httpd status'
    ```
