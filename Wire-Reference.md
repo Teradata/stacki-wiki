@@ -76,13 +76,13 @@ Example:
 This tag allows the admin to add packages to
 the installation.
 
-* ```xml
-  <package>httpd</package>
-  <package meta="1">gnome-desktop</package>
-  ```
+```xml
+ <package>httpd</package>
+ <package meta="1">gnome-desktop</package>
+ ```
 
-  The `meta="1"` attribute informs the installer that the
-  package is a group package. 
+The `meta="1"` attribute informs the installer that the
+package is a group package. 
 
 ##### `<post>` Tag
 
@@ -91,8 +91,8 @@ the package installation is done. The scripts can be in any
 interpreted language present on the installed system.
 Examples:
 
-* This is converted to a simple shell script that runs
-  `chkconfig` to enable the Apache web server.
+* A simple shell command that runs `chkconfig` to enable the
+  Apache web server.
 
   ```xml
   <post>
