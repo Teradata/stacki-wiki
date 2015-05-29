@@ -94,8 +94,10 @@ NAME | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | SUBNET
 
 Once the CSV file is created and copied to the Frontend it can be
 loaded as root.
-  
-    # stack load hostfile file=hostfile.csv
+
+```
+# stack load hostfile file=hostfile.csv
+```
 
 You can verify the data was correctly loaded be listing the host
 information from the configuration database.
@@ -123,9 +125,9 @@ The default boot action is always _os_ as you can see below.
 # stack list host boot
 HOST          ACTION
 frontend-0-0: ------ 
-backend-0-0:  os    
-backend-0-1:  os    
-backend-0-2:  os    
+backend-0-0:  os
+backend-0-1:  os
+backend-0-2:  os
 ```
 
 In order to install a Backend you will need to switch the boot action
