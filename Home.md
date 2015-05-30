@@ -59,4 +59,11 @@ Details on these are found in the [source tree](https://github.com/StackiQ/stack
 Stacki supports RedHat and its variants.
 We generally develop on CentOS but we always test on RHEL to give you the choice of platform
 
+## Applications
 
+Every application from big data to cloud requires real electrons on real silicon. This is a short list of what we've used Stacki to install for clients large and small. If you can do it in Linux, Stacki can automate it over 1000s of machines. 
+
+* Big Data: Cloudera, Hortonworks, MapR, Pivotal, BigInsights, Spark, Storm, Cassandra, MongoDB, RabbitMQ, R
+* Cloud: OpenStack, CloudStack, VMWare
+* HPC: Torque, Slurm, MOAB, MPI, UGE/OGS/SGE, PBS, CUDA, LSF, PGI
+* Misc: CoreOS, ESXI, Puppet, Ansible, Chef, Salt, Ceph, GPFS, Intel Developer Tools, 
