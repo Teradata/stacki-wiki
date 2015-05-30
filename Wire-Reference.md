@@ -177,3 +177,22 @@ Examples:
   ```
 
 ##### `<boot>` tag
+
+This tag controls both the **Pre-boot** section and the
+**Post-boot** section of the installation.
+
+* Pre-boot section - Removes a file before all the other daemons
+  have started.
+  ```xml
+  <boot order="pre">
+  rm -rf /tmp/hello.log
+  </boot>
+  ```
+
+* Post-boot section - Creates the `/etc/hosts` file by running a
+  Stacki report.
+  ```xml
+  <boot order="post">
+  /opt/stack/bin/stack report host > /etc/hosts
+  </boot>
+  ```
