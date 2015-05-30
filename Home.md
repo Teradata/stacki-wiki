@@ -44,13 +44,13 @@ So we helped create the [Rocks](http://www.rocksclusters.org) toolkit to automat
 Along the way we co-founders, developers, and users of Rocks started [StackIQ](http://www.stackiq.com) to build upon the Rocks software and make it appropriate for the enterprise.
 The lessons we've learned from large scale HPC and enterprise computing are now yours as part of Stacki.
 
-### Opensource<a name="license"></a>
+### Open Source<a name="license"></a>
 
-Stacki is released as opensource with a combination of licenses.
+Stacki is released as open source with a combination of licenses.
 StackiQ forked the Rocks project source code in 2010 and maintains the original copyright on this code.
 As such the two primary licenses are for [Stacki](Stacki-License) and [Rocks](Rocks-license) source,
 both are based on the traditional BSD attribution license.
-Stacki also includes several third party opensource packages each with their own copyrights.
+Stacki also includes several third party open source packages each with their own copyrights.
 Details on these are found in the [source tree](https://github.com/StackiQ/stacki).
 
 
