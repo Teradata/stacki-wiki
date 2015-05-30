@@ -26,7 +26,11 @@ we’re going to look at the simplest case. Assumptions are:
 Stacki uses a collection of XML files that provide the definition
 of a system, and the instructions for installing a backend node.
 To extend the software footprint of a node, we will need to extend
-the XML framework to accommodate the extra functionality required.
+the XML framework to accommodate the extra functionality
+required.
+
+For more information about the available XML tags, refer to the
+[Wire Reference Guide](Wire-Reference)
 
 ### Example
 
