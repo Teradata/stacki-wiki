@@ -19,7 +19,7 @@ The commercial version of Stacki is used by Fortune 500 companies to maintain th
 
 What it does is simple:
 
-1. Configure RAID controllers and partitioning. 
+1. Configure RAID controllers and partitioning (both customizable).
 
 2. Install OS.
 
