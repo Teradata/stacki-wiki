@@ -64,7 +64,7 @@ We generally develop on CentOS but we always test on RHEL to give you the choice
 
 Every application from big data to cloud requires real electrons on real silicon. This is a short list of what we've used Stacki to install for clients large and small. If you can do it in Linux, Stacki can automate it over 1000s of machines. 
 
-* Big Data: Cloudera, Hortonworks, MapR, Pivotal, BigInsights, Spark, Storm, Cassandra, MongoDB, RabbitMQ, R, Mesos
-* Cloud: OpenStack, CloudStack, VMWare
+* Big Data: Cloudera, Hortonworks, MapR, Pivotal, BigInsights, Spark, Storm, Cassandra, MongoDB, RabbitMQ, R, Mesos, Splunk
+* Cloud: OpenStack (RHEL-OSP, communinity OpenStack, RDO), CloudStack, VMWare
 * HPC: Torque, Slurm, MOAB, MPI, UGE/OGS/SGE, PBS, CUDA, LSF, PGI
-* Misc: CoreOS, ESXI, Puppet, Ansible, Chef, Salt, Ceph, CFEngine, GPFS, Intel Developer Tools, VirtualBox
+* Good Stuff: CoreOS, ESXI, Puppet, Ansible, Chef, Salt, Ceph, CFEngine, GPFS, Intel Developer Tools, VirtualBox, Docker
