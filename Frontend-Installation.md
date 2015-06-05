@@ -1,7 +1,7 @@
 Stacki requires a single dedicated server that will host all 
 the software and services used to build out other servers. We 
 call this server the **Frontend**, and the first step to running 
-stacki is to build a Frontend. 
+Stacki is to build a Frontend. 
 
 The process is fairly simple and looks similar to a standard Linux
 build with the addition of a wizard to capture site-specific
@@ -30,17 +30,17 @@ This recommended setup is shown below.
 ![](images/cluster-architecture-two-networks.png)
 
 You may also place all Backend nodes on the public network and use
-only a single network interface from the stacki Frontend, as shown
+only a single network interface from the Stacki Frontend, as shown
 below.
-If you choose to run in the configuration there are two additional
+If you choose to run in this configuration there are two additional
 requirements.
 First, the public network cannot have a DHCP server that would answer
 a DHCP request from a Backend server (this is the Frontend's job).
 Second, when in the Installation Wizard you will still need to
 configure both interfaces.
-But in this case simple configure the _Public_ and _Private_ with the
+But in this case, simply configure the _Public_ and _Private_ with the
 same network information but only cable the _Private_ one (yes this is
-odd, but this is correct).
+odd, but it is required when you only have one interface for the Frontend).
 
 ![](images/cluster-architecture-one-network.png) 
 
@@ -48,42 +48,43 @@ odd, but this is correct).
 
 ## New or Existing
 
-Stacki can build you a [New](#new) Frontend from bare metal or it can be added on
+Stacki can build a [New](#new) Frontend from bare metal or it can be added on
 top of an existing server.
-If you wish to install Stacki on top of an existing system skip to the
-[Existing](#existing) section.
+If you wish to install Stacki on top of an existing system, skip to the
+section labeled [Existing](#existing).
 
 ### New
 
-Down the Stacki jumbo dvd [here](https://s3.amazonaws.com/stacki/1.0/stacki-os-1.0.x86_64.disk1.iso) and burn the file to a DVD or
+Download the Stacki jumbo DVD [here](https://s3.amazonaws.com/stacki/1.0/stacki-os-1.0.x86_64.disk1.iso) and burn the file to a DVD or
 mount it on the virtual media for the server to be installed.
-This is going to completely erase and reformat the hard disks in the
-machine, so be careful on your selection of hosts.
+Installing a Frontend will completely erase and reformat the hard disks in the
+server, so be careful which server you decide to become your Frontend.
 
-Boot the server with the DVD (or virtual media) mounted and the
-following screen will apear after the BIOS is initialized.
-If you don't see this go back to the [requirements](#requirements) and
-make sure the DVD is the first in the boot order.
+Boot the server with the DVD (or virtual media mounted) and the
+following screen will appear after the BIOS is initialized:
 
 ![](images/stack-iso-boot.png)
 
+If you don't see the above screen, go back to
+the [requirements](#requirements) section and
+make sure the DVD is the first entry in the boot order.
+
 You can hit enter or just wait a few seconds and the Stacki
-Frontent installation will begin and you will soon see the
-[Installation Wizard](#installation-wizard)
+Frontend installation will begin and you will soon see the
+[Installation Wizard](#installation-wizard).
 
 ### Existing
 
-In addition to the [requirements](#requirements) for Frontends,
-installing Stacki on top of a previous build host requires that host
-must be running the x86_64 version of CentOS 6.x or RHEL 6.x.
+A Stacki Frontend can be installed on top of an existing Red Hat based server.
+The server must be running the x86_64 version of CentOS 6.x or RHEL 6.x.
 
-Log into the Gnome (or generic X11) environment on the servers console
-as root.
+To perform this installation, log into the Gnome (or generic X11)
+environment on the servers console as root.
 You must be root and X11 is required.
 
-To start the installation download two ISOs and put them on your server:
+To start the installation, download two ISOs and put them on your server:
 
-1. **stacki**. The Stacki ISO can be found [here](http://stacki.s3.amazonaws.com/1.0/stacki-1.0-I.x86_64.disk1.iso).
+1. **Stacki**. The Stacki ISO can be found [here](http://stacki.s3.amazonaws.com/1.0/stacki-1.0-I.x86_64.disk1.iso).
 
 2. **CentOS** or **RHEL** installation ISO. A CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
 
@@ -102,16 +103,16 @@ Execute frontend-install.py:
 
     # /tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
 
-
-The above step will take several minutes to complete,
-when it completes you can continue to the [Installation Wizard](#installation-wizard).
+The above step will run several commands and will eventually display
+the [Installation Wizard](#installation-wizard).
 
 
 ## Installation Wizard
 
 ### Cluster Information
 
-The first screen will appear where you enter
+The first screen will appear and you will be prompted to enter the following
+info:
 
 1. _Cluster Name_ - for example "Demo"
 2. _Fully Qualified Host Name_ of the Frontend (i.e., name.yourdomain.com)
@@ -124,12 +125,12 @@ The first screen will appear where you enter
 
 The public cluster network configuration screen allows you to set up the
 networking parameters for the ethernet network that connects the Frontend to the
-outside network (e.g., the internet).
+outside network (e.g., the Internet).
 
-1. Select from the network _Devices_ to select the public network.
-2. _IP_ address of the public interface
-3. _Netmask_
-4. _Gateway_
+1. Choose from the network _Devices_ to select the public network.
+2. _IP_ address of the public interface.
+3. _Netmask_.
+4. _Gateway_.
 5. _DNS Servers_ - More than one DNS Server can be entered as a comma-separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
 
 Click _Continue_ to configure the network interface. 
@@ -140,11 +141,11 @@ Click _Continue_ to configure the network interface.
 
 The private network configuration screen configures the
 networking parameters for the ethernet network that
-connects the Frontend to the backend nodes.
+connects the Frontend to the Backend nodes.
 
-1. Select from the network _Devices_ to select the private network.
-2. _IP_ Address of the private Interface
-3. _Netmask_
+1. Choose from the network _Devices_ to select the private network.
+2. _IP_ address of the private interface.
+3. _Netmask_.
 
 Click _Continue_ to configure the network interface.
  
@@ -159,7 +160,7 @@ Enter the password for the **root** account on the Frontend.
 
 ### Choose Partition
 
-If _Automatic_ mode is selected, the installer will
+If _Automated_ mode is selected, the installer will
 repartition and reformat the first discovered hard drive
 that is connected to the Frontend. All other drives
 connected to the Frontend will be left untouched.
@@ -176,7 +177,7 @@ and reformats the first hard drive (e.g. _sda_) that the installer
 discovers. All previous data on this drive will be erased.
 All other drives will be left untouched. If you are unsure about how
 the drives will be discovered in a multi-disk Frontend,
-select _Manual Partitioning_.
+select _Manual_ mode.
 
 In _Manual_ mode, the installer brings up a partition setup
 screen after the wizard exits. In this mode, specify at least 16 GB
@@ -187,13 +188,13 @@ for the root partition and a separate /export partition.
 ### Add Pallets
 
 Choose the _Pallets_ you want to install.
-Booting from a DVD, pallets should automatically load onto the list for you to choose.
+Booting from a DVD, Pallets should automatically load onto the list for you to choose.
 
 ![](images/stacki_config_step_6a_2.png)
 
-The _Id_ column denotes pallets loaded from a DVD and the _Network_ column denotes pallets from a network (not being used).
+The _Id_ column denotes Pallets loaded from a DVD and the _Network_ column denotes Pallets from a network.
 
-Select _stacki_ and _os_ pallets to install.
+Select _stacki_ and _os_ Pallets to install.
 
 ![](images/stacki_config_step_6b_2.png)
 
@@ -205,18 +206,19 @@ Review the installation parameters and click _Continue_ to proceed.
 
 #### New
 
-If this was a [New](#new) installation the Frontend will now format
-its filesystems and copy the Pallets from the onto its hard disk.
-Next it will install all the packages and configuration.
-When this is complete the Frontend will reboot.
-Your Stacki Frontend is now ready. 
+If this was a [New](#new) installation, the Frontend will now format
+its filesystems and copy the Pallets from the DVD onto its hard disk.
+Next, it will install all the packages and then run post configuration
+scripts.
+When this is complete, the Frontend will reboot.
+Your Stacki Frontend is now ready to install Backend servers.
 
 #### Existing
 
-If this was an [Existing](#existing) installation the installer will finalize the
-Frontent configuration, after this complete you must reboot the
-Frontend.
+If this was an [Existing](#existing) installation, after the
+_frontend-install.py_ program completes, you must reboot the Frontend:
 
     # /sbin/init 6
 
-Your Stacki Frontend is now ready. 
+Your Stacki Frontend is now ready to install Backend servers.
+
