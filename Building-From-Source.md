@@ -47,7 +47,7 @@ After these files are in place clean out the yum cache with:
 yum clean all
 ```
 
-## Bootstrap Pallet
+## Bootstrap the Pallet
 
 Now with access to any missing RPMs we can prepare to compile the entire Stacki pallet by bootstrapping it.
 
@@ -57,7 +57,7 @@ Now with access to any missing RPMs we can prepare to compile the entire Stacki 
 # exit
 ```
 
-Not the ```exit``` command which will log you out of the hosts.
+Note the ```exit``` command which will log you out of the hosts.
 Now when you log back in your environment will be setup correctly to compile Stacki.
 
 ## Build the Pallet
