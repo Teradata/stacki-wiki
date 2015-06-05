@@ -79,3 +79,9 @@ When done you can verify the build with:
 ```
 
 This will report any packages that failed to build.
+
+## Contribute Code
+
+If you've made changes that you want to share with all of Stacki send a pull request to
+StackIQ/stacki.
+
