@@ -14,6 +14,10 @@ Log into your Frontend and checkout the repository somewhere in /export (its a l
 
 If you have an existing repository, you should also pull the latest code from the develop branch.
 
+These instructions assume you have commit access to the Stacki/stacki.git repository, if you do not
+please [fork](https://help.github.com/articles/fork-a-repo/) the repository first,
+and then clone from your fork.
+
 ```
 # cd /export/src/stacki
 # git pull
