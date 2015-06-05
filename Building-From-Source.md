@@ -12,6 +12,13 @@ Log into your Frontend and checkout the repository somewhere in /export (its a l
 # git clone git@github.com:StackIQ/stacki.git
 ```
 
+If you have an existing repository, you should also pull the latest code from the develop branch.
+
+```
+# cd /export/src/stacki
+# git pull
+```
+
 ## Setup Yum for CentOS and Updates
 
 Building Stacki requires several packages not included in the base install of the Frontend, so we
