@@ -126,7 +126,7 @@ info:
 ### Public Network
 
 The public cluster network configuration screen allows you to set up the
-networking parameters for the ethernet network that connects the Frontend to the
+networking parameters for the ethernet network that connects the frontend to the
 outside network (e.g., the Internet).
 
 1. Choose from the network _Devices_ to select the public network.
@@ -143,7 +143,7 @@ Click _Continue_ to configure the network interface.
 
 The private network configuration screen configures the
 networking parameters for the ethernet network that
-connects the Frontend to the Backend nodes.
+connects the frontend to the backend nodes.
 
 1. Choose from the network _Devices_ to select the private network.
 2. _IP_ address of the private interface.
@@ -156,7 +156,7 @@ Click _Continue_ to configure the network interface.
 
 ### Password
 
-Enter the password for the **root** account on the Frontend.  
+Enter the password for the **root** account on the frontend.  
 (Something better than "bob" is recommended, and no, "12345" is not better than "bob".)
 
 ![](images/stacki_config_step_4.png)
@@ -165,8 +165,8 @@ Enter the password for the **root** account on the Frontend.
 
 If _Automated_ mode is selected, the installer will
 repartition and reformat the first discovered hard drive
-that is connected to the Frontend. All other drives
-connected to the Frontend will be left untouched.
+that is connected to the frontend. All other drives
+connected to the frontend will be left untouched.
 
 | Partition Name | Size |
 | --------------- | ---- |
@@ -179,7 +179,7 @@ When using automatic partitioning, the installer repartitions
 and reformats the first hard drive (e.g. _sda_) that the installer
 discovers. All previous data on this drive will be erased.
 All other drives will be left untouched. If you are unsure about how
-the drives will be discovered in a multi-disk Frontend,
+the drives will be discovered in a multi-disk frontend,
 select _Manual_ mode.
 
 In _Manual_ mode, the installer brings up a partition setup
