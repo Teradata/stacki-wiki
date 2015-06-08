@@ -48,10 +48,10 @@ odd, but it is required when you only have one interface for the frontend, and h
 
 ## New or Existing
 
-Stacki can build a [New](#new) frontend from bare metal or it can be added on
+Stacki can build a [new](#new) frontend from bare metal or it can be added on
 top of an existing server.
 If you wish to install Stacki on top of an existing system, skip to the
-section labeled [Existing](#existing).
+section labeled [existing](#existing).
 
 ### New
 
@@ -211,7 +211,7 @@ Review the installation parameters and click _Continue_ to proceed.
 
 #### New
 
-If this was a [New](#new) installation, the frontend will now format
+If this was a [new](#new) installation, the frontend will now format
 its filesystems and copy the pallets from the DVD onto its hard disk.
 Next, it will install all the packages and then run post configuration
 scripts.
@@ -220,7 +220,7 @@ Your Stacki frontend is now ready to install Backend servers.
 
 #### Existing
 
-If this was an [Existing](#existing) installation, after the
+If this was an [existing](#existing) installation, after the
 _frontend-install.py_ program completes, you must reboot the frontend:
 
     # reboot
