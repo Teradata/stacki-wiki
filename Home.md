@@ -4,18 +4,15 @@ Welcome to **Stacki**.
 
 Automation and consistency across Linux infrastructure is hard. Our goal is to make Linux installations of heterogeneous hardware across 10s to 1000s of machines fast, flexible, and absolutely consistent.
 
-The Stacki default installation process will bring baremetal infrastructure (or VMs) to a ping and a prompt. The frontend machine has SSH password-less access at first boot, and the distribution on the frontend acts as the YUM repository for all backend machines. 
+The Stacki default installation process will bring bare metal infrastructure (or VMs) to a ping and a prompt. The front-end machine has SSH password-less access at first boot, and the distribution on the front-end acts as the YUM repository for all backend machines. All machines will be at the latest kernel and RPM revisions of the OS installed.
 
-It is quick and easy to get started spinning up Linux servers with
-Stacki, and advanced features let you go deeper into
-customizing installations so they are better suited for your unique environment.
-
+Stacki initial installations are relatively fast and simple, but may not completely reflect site-specific desired state. Complexity can be layered on using advanced features to customize local environments. The speed of installation/reinstallation Stacki provides allows convergence to a known/desired configuration of resources that reflect local needs. Deployed across the infrastructure, you've just made the complex simple and repeatable for existing or new infrastructure.
 
 ## What is it?
 
-Stacki is a bare metal install tool that can take your servers from bare hardware (or virtual hardware) to working Linux, ready for you to install your applications.
-Stacki does this at scale, so deploying 100 servers is no more complex than deploying one.
-Advanced users can even have Stacki install their applications.
+Stacki is a CentOS/RHEL bare metal install tool that can take your servers from bare hardware (or virtual hardware) to working Linux, ready to install applications.
+Stacki does this at scale, so deploying 1000+ servers is no more complex than deploying one.
+Advanced users can use Stacki to install applications (Hadoop, OpenStack, HPC etc.).
 Stacki has a long [history](#origins), and is in use at some of the most demanding organizations in the world.
 
 What it does is simple:
@@ -26,25 +23,24 @@ What it does is simple:
 
 3. Configure OS.
 
-4. Configure networking.
+4. Configure networking (including authenticated SSH password-less access.)
 
 5. Leave you to be productive, to focus on more interesting problems.
 
 With Stacki, machines are disposable.
 Everything is built from the ground up programmatically so recovering from disasters means just rebuilding your servers.
 
-Stacki delivers certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Our goal is to keep you off of your servers and away from the question "what state are my servers in?", because you'll always know.
+Stacki delivers certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Our goal is to keep you from having to configure individual servers and away from the question "What state are my servers in?", because you'll always know.
 
-Once your servers are installed with Stackidone, you can augment them with your favorite configuration toolset - be it Salt, Chef, Puppet, CFEngine, Ansible, or homegrown - so you don't have throw away work you've already done. 
-
+Once your servers are installed with Stacki, augment them with your favorite configuration toolset - be it shell scripts, Salt, Chef, Puppet, CFEngine, Ansible, or homegrown - you don't have throw away work already done. (Although, once you see what it can do, some of that post-install configuration management may be easily replaced during installation.) 
 
 ## Origins
 
 Long before devops and webscale we were building world class [supercomputers](http://www.sdsc.edu) made from simple Linux boxes.
 The hardware was cheap, but the complexity at scale killed us.
 So we helped create the [Rocks](http://www.rocksclusters.org) toolkit to automate the deployment of high performance computing clusters.
-Along the way we, started [StackIQ](http://www.stackiq.com) to build upon the Rocks software and make it appropriate for the enterprise.
-The lessons we've learned from large scale HPC and enterprise computing are now yours as part of Stacki.
+Along the way, we started [StackIQ](http://www.stackiq.com) to build on the Rocks software and make it appropriate for the enterprise.
+The lessons we've learned from large scale HPC and enterprise computing are yours as part of Stacki.
 
 ### Open Source<a name="license"></a>
 
