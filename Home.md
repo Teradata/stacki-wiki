@@ -17,7 +17,9 @@ Stacki has a long [history](#origins), and is in use at some of the most demandi
 
 What it does is simple:
 
-1. Configure RAID controllers and partitioning (both customizable).
+1. Configure RAID controllers and partitioning (both customizable).  
+
+(This means you never have to touch a monitoring and keyboard to customize the RAID configuration on machines, not even once. Set-up the RAID controller configuration via spreadsheet, ingest it, and install. The RAID will be configured on first installation.)
 
 2. Install OS.
 
@@ -28,7 +30,9 @@ What it does is simple:
 5. Leave you to be productive, to focus on more interesting problems.
 
 With Stacki, machines are disposable.
-Everything is built from the ground up programmatically so recovering from disasters means just rebuilding your servers.
+Everything is built from the ground up programmatically so recovering from disasters just means rebuilding your servers. 
+
+With Stacki, machines are disposable but data is not. After the initial installation, you will never lose data on data drives unless you specifically request it. An reinstallation in that instance becomes a refresh of the OS and/or application software with already created data preserved. 
 
 Stacki delivers certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Our goal is to keep you from having to configure individual servers and away from the question "What state are my servers in?", because you'll always know.
 
