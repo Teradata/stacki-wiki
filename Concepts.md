@@ -1,7 +1,7 @@
 Stacki has the view that all server infrastructure is essentially a collection of clusters.
 Where a cluster is any group of servers working in a single administration domain.
 The servers may be interconnected clusters such as Hadoop or OpenStack, or may be
-completely disconnected such as a web farm.
+completely disconnected such as a web or application farm (e.g. Tomcat).
 Stacki handles both cases with ease.
 In addition, it contains many unique features that
 make the management of highly interconnected clusters simple.
