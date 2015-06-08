@@ -75,6 +75,6 @@ The power comes from two ideas:
 
 One of the most useful items in the frontend's configuration database are **attributes**.
 An attribute is a key-value pair that applies to a set of one or more hosts.
-These values are the configuration data that Wire uses to build host-specific Kickstart profiles.
+These values are the configuration data that Wire uses to build host-specific kickstart profiles.
 
 The default installation has a set of attributes enabling the installation of a complete system via kickstart. Attributes can be changed. Arbitrary site specific attributes can be defined to customize kickstart for your site environment.
