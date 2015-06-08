@@ -18,29 +18,29 @@ Stacki has a long [history](#origins), and is in use at some of the most demandi
 What it does is simple:
 
 1. Configure RAID controllers and partitioning (both customizable).  
-
-(This means you never have to touch a monitor and keyboard to customize the RAID configuration on machines, not even once. Set-up the RAID controller configuration via spreadsheet, ingest it, and install. The RAID will be configured on first installation.)
+(This means you never have to touch a monitor and keyboard to customize the RAID configuration on machines, not even once. Set-up the RAID controller configuration via spreadsheet, ingest it, and install. The RAID will be configured on first installation with no human interaction required.)
 
 2. Install OS.
 
 3. Configure OS.
 
-4. Configure networking (including authenticated SSH password-less access.)
+4. Configure networking  
+(These include configuring multiple network interfaces, multiple network types: IB, 10G, 1G, and authenticated SSH password-less access at boot.)
 
 5. Leave you to be productive, to focus on more interesting problems.
 
 With Stacki, machines are disposable.
 Everything is built from the ground up programmatically so recovering from disasters just means rebuilding your servers. 
 
-With Stacki, machines are disposable but data is not. After the initial installation, you will never lose data on data drives unless you specifically request it. A reinstallation in that instance becomes a refresh of the OS and/or application software with already created data preserved. 
+Machines are disposable but data is not. After the initial installation, data is preserved across reinstalls. Data drives are reformatted only by deliberate action. A reinstall is a refresh of the OS and/or application software while data on disk is preserved. 
 
-Stacki delivers certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Our goal is to keep you from having to configure individual servers and away from the question "What state are my servers in?", because you'll always know.
+Stacki delivers certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Our goal is to keep you from having to configure individual servers and always knowing the answer to: "What state are my servers in?"
 
 Once your servers are installed with Stacki, augment them with your favorite configuration toolset - be it shell scripts, Salt, Chef, Puppet, CFEngine, Ansible, or homegrown - you don't have throw away work already done. (Although, once you see what it can do, some of that post-install configuration management may be easily replaced during installation.) 
 
 ## Origins
 
-Long before devops and webscale we were building world class [supercomputers](http://www.sdsc.edu) made from simple Linux boxes.
+Long before devops and webscale, we were building world class [supercomputers](http://www.sdsc.edu) made from simple Linux boxes.
 The hardware was cheap, but the complexity at scale killed us.
 So we helped create the [Rocks](http://www.rocksclusters.org) toolkit to automate the deployment of high performance computing clusters.
 Along the way, we started [StackIQ](http://www.stackiq.com) to build on the Rocks software and make it appropriate for the enterprise.
@@ -72,6 +72,7 @@ clients both large and small:
 * Cloud: OpenStack (RHEL-OSP, community OpenStack, RDO), CloudStack, VMWare
 * HPC: Torque, Slurm, MOAB, MPI, UGE/OGS/SGE, PBS, CUDA, LSF, PGI
 * Filesystems: Ceph, GPFS, GlusterFS
+* Hardware: Intel, Supermicro, Dell, IBM, HP, Cisco UCS, white box
 * Good Stuff: CoreOS, ESXI, Puppet, Ansible, Chef, Salt, CFEngine, Intel Developer Tools, VirtualBox, Docker
 
 If you can do it in Linux, Stacki can automate it and deploy it over thousands
