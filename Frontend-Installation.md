@@ -192,7 +192,7 @@ and just do / and a swap. You can also use LVM, but really? Why?
 
 ### Add Pallets
 
-Choose the _pallets_ you want to install.
+Choose the _Pallets_ you want to install.
 Booting from a DVD, pallets should automatically load onto the list for you to choose.
 
 ![](images/stacki_config_step_6a_2.png)
