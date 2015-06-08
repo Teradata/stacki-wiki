@@ -35,8 +35,8 @@ below.
 If you choose to run in this configuration there are two additional
 requirements.
 First, the public network cannot have a DHCP server that would answer
-a DHCP request from a backend server (this is the frontend's job).
-Second, when in the installation wizard you will still need to
+a DHCP request from a backend server. (This is the frontend's job.)
+Second, when in the installation wizard, you will still need to
 configure both interfaces.
 But in this case, simply configure the _public_ and _private_ with the
 same network information but only cable the _private_ one (yes this is
