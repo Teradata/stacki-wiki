@@ -69,9 +69,10 @@ The following is a list of some of the applications we've installed for
 clients both large and small:
 
 * Big Data: Cloudera, Hortonworks, MapR, Pivotal, BigInsights, Spark, Storm, Cassandra, MongoDB, RabbitMQ, R, Mesos, Splunk
-* Cloud: OpenStack (RHEL-OSP, communinity OpenStack, RDO), CloudStack, VMWare
+* Cloud: OpenStack (RHEL-OSP, community OpenStack, RDO), CloudStack, VMWare
 * HPC: Torque, Slurm, MOAB, MPI, UGE/OGS/SGE, PBS, CUDA, LSF, PGI
-* Good Stuff: CoreOS, ESXI, Puppet, Ansible, Chef, Salt, Ceph, CFEngine, GPFS, Intel Developer Tools, VirtualBox, Docker
+* Filesystems: Ceph, GPFS, GlusterFS
+* Good Stuff: CoreOS, ESXI, Puppet, Ansible, Chef, Salt, CFEngine, Intel Developer Tools, VirtualBox, Docker
 
 If you can do it in Linux, Stacki can automate it and deploy it over thousands
 of machines. 
