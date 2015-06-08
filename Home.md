@@ -2,7 +2,9 @@
 
 Welcome to **Stacki**.
 
-Our goal is to make fast, repeatable, and adaptable Linux installations not only possible, but easy.
+Automation and consistency across Linux infrastructure is hard. Our goal is to make Linux installations of heterogeneous hardware across 10s to 1000s of machines fast, flexible, and absolutely consistent.
+
+The Stacki default installation process will bring baremetal infrastructure (or VMs) to a ping and a prompt. The frontend machine has SSH password-less access at first boot, and the distribution on the frontend acts as the YUM repository for all backend machines. 
 
 It is quick and easy to get started spinning up Linux servers with
 Stacki, and advanced features let you go deeper into
