@@ -12,11 +12,11 @@ Below we introduce some of the main concepts of Stacki.
 
 Stacki requires a single dedicated server that is used to build other
 servers.
-We call this server the **Frontend**, and the servers it builds we call
-**Backend** nodes.
+We call this server the **frontend**, and the servers it builds we call
+**backend** nodes.
 
-The Stacki Frontend includes a configuration database coupled with software
-distributions that are used to completely define Backend node software
+The Stacki frontend includes a configuration database coupled with software
+distributions that are used to completely define backend node software
 footprints (from OS kernel to application).
 Backend nodes can be identical or completely unique hardware and software -
 Stacki has been designed to dynamically install and configure heterogeneous
@@ -25,9 +25,9 @@ server environments.
 ## Kickstart 
 
 Stacki is built on top of Red Hat's installation tool (known as: anaconda) and
-dynamically creates Kickstart files to install machines from bare
+dynamically creates kickstart files to install machines from bare
 metal.
-Because we use a framework built on top of Kickstart,
+Because we use a framework built on top of kickstart,
 Stacki systems are managed at a much higher (and simpler) level
 than systems using disk imaging or virtual machine images. 
 Seemingly complex actions such as swapping an OS between minor versions,
@@ -38,40 +38,43 @@ machine rather than the image of a machine.
 ## Parallel Installation
 
 A single Backend installation will download all the required
-software packages from the Frontend via HTTP.
-While a Backend is installing, it caches all downloaded packages and makes
+software packages from the frontend via HTTP.
+While a backend is installing, it caches all downloaded packages and makes
 them available to other installing Backends, that is, all downloaded packages
 can be shared.
 This peer-to-peer package sharing is key to deploying systems at scale.
-Without this feature, deploying several new Backend servers could take you all
+Without this feature, deploying several new backend servers could take you all
 day, but with peer-to-peer package sharing, installation takes only minutes.
 
 ## Appliances
 
-We use the term **Appliance** to refer to a group of servers,
+We use the term **appliance** to refer to a group of servers,
 usually with related functionality.
-The Stacki [Pallet](#pallets--distributions) includes only the Backend
-Appliance,
-other Pallets define additional Appliance types.
+The Stacki [pallet](#pallets--distributions) includes only the backend
+appliance,
+other pallets define additional appliance types. Appliances can be useful for segmenting hardware or application roles within your infrastructure. They are logical constructs and can be arbitrarily defined. If customization of the base appliance becomes unnecessarily complex for your organization, appliances are one way to reduce the complexity.
 
 ## Pallets & Distributions
 
-A **Pallet** is a set of software packages and
+A **pallet** is a set of software packages and
 [Wire](#wire) to specify how servers should be configured.
-A **Distribution** is a composition of Pallets that can also serves as the source of packages during Backend installation and as an installed hosts primary Yum repository.
+A **distribution** is a composition of pallets that serves as the package source during backend installation. It is also an installed host's primary YUM repository.
 
 ## Wire
 
-We call the Stacki Kickstart framework **Wire**.
-Wire is implemented in XML and looks like a collection of small Kickstart files.
+We call the Stacki kickstart framework **Wire**.
+Wire is implemented in XML and looks like a collection of small kickstart files.
 The power comes from two ideas:
 
-1. The XML files have access to the Frontend's configuration database, so a single file can be customized for multiple different deployments.
-2. The collection of XML files defines a complete Kickstart profile.
+1. The XML files have access to the frontend's configuration database, so a single file can be customized for multiple different deployments.
+2. The collection of XML files defines a complete kickstart profile.
 
+(Don't let XML freak you out. It's more like "HTML with extra tags," and those tags map to kickstart structure you should be familiar with: pre, post, main etc.)
+ 
 ## Attributes
 
-One of the most useful items in the Frontend's configuration database are **Attributes**.
-An Attribute is a key-value pair that applies to a set of one or more hosts.
+One of the most useful items in the frontend's configuration database are **attributes**.
+An attribute is a key-value pair that applies to a set of one or more hosts.
 These values are the configuration data that Wire uses to build host-specific Kickstart profiles.
 
+The default installation has a set of attributes enabling the installation of a complete system via kickstart. Attributes can be changed. Arbitrary site specific attributes can be defined to customize kickstart for your site environment.
