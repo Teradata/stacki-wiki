@@ -40,7 +40,7 @@ machine rather than the image of a machine.
 A single backend installation will download all the required
 software packages from the frontend via HTTP.
 While a backend is installing, it caches all downloaded packages and makes
-them available to other installing Backends, that is, all downloaded packages
+them available to other installing backends, that is, all downloaded packages
 can be shared.
 This peer-to-peer package sharing is key to deploying systems at scale.
 Without this feature, deploying several new backend servers could take you all
