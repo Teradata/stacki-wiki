@@ -37,7 +37,7 @@ machine rather than the image of a machine.
 
 ## Parallel Installation
 
-A single Backend installation will download all the required
+A single backend installation will download all the required
 software packages from the frontend via HTTP.
 While a backend is installing, it caches all downloaded packages and makes
 them available to other installing Backends, that is, all downloaded packages
