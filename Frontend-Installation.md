@@ -1,7 +1,7 @@
 Stacki requires a single dedicated server that will host all 
 the software and services used to build out other servers. We 
-call this server the **Frontend**, and the first step to running 
-Stacki is to build a Frontend. 
+call this server the **frontend**, and the first step to running 
+Stacki is to build a frontend. 
 
 The process is fairly simple and looks similar to a standard Linux
 build with the addition of a wizard to capture site-specific
@@ -9,7 +9,7 @@ networking information.
 
 ## Requirements 
  
-A Frontend has the following hardware requirements.  
+A frontend has the following hardware requirements.  
 
 **Resource** | Minimum | Recommended  
 --- | --- | ---
@@ -23,20 +23,20 @@ BIOS _boot order_
 1. CD/DVD Device  
 2. Hard Disk  
  
-Stacki allows you to place only the Frontend on your public network
-and to then deploy all Backend servers on an isolated private network.
+Stacki allows you to place only the frontend on your public network
+and to then deploy all backend servers on an isolated private network.
 This recommended setup is shown below.
 
 ![](images/cluster-architecture-two-networks.png)
 
-You may also place all Backend nodes on the public network and use
-only a single network interface from the Stacki Frontend, as shown
+You may also place all backend nodes on the public network and use
+only a single network interface from the Stacki frontend, as shown
 below.
 If you choose to run in this configuration there are two additional
 requirements.
 First, the public network cannot have a DHCP server that would answer
-a DHCP request from a Backend server (this is the Frontend's job).
-Second, when in the Installation Wizard you will still need to
+a DHCP request from a backend server (this is the frontend's job).
+Second, when in the installation wizard you will still need to
 configure both interfaces.
 But in this case, simply configure the _Public_ and _Private_ with the
 same network information but only cable the _Private_ one (yes this is
