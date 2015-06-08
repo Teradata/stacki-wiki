@@ -129,7 +129,7 @@ The public cluster network configuration screen allows you to set up the
 networking parameters for the ethernet network that connects the Frontend to the
 outside network (e.g., the Internet).
 
-1. Choose from the network _devices_ to select the public network.
+1. Choose from the network _Devices_ to select the public network.
 2. _IP_ address of the public interface.
 3. _Netmask_.
 4. _Gateway_.
@@ -145,7 +145,7 @@ The private network configuration screen configures the
 networking parameters for the ethernet network that
 connects the Frontend to the Backend nodes.
 
-1. Choose from the network _devices_ to select the private network.
+1. Choose from the network _Devices_ to select the private network.
 2. _IP_ address of the private interface.
 3. _Netmask_.
 
