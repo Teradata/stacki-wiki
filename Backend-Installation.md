@@ -1,8 +1,8 @@
-After the Frontend is up and running, Backend nodes can be installed.
+After the frontend is up and running, backend nodes can be installed.
 
 ## Requirements 
 
-A Backend has the following hardware requirements. 
+A backend has the following hardware requirements. 
 
 **Resource** | Minimum | Recommended
 --- | --- | ---
@@ -18,32 +18,32 @@ BIOS _boot order_
 
 ## Discovery or SpreadSheet
 
-To install a new Backend node stacki needs to add information about
-the server (ip address, mac address, Appliance type, etc) to the
+To install a new backend node stacki needs to add information about
+the server (ip address, mac address, appliance type, etc) to the
 configuration database.
 Choose between the [Discovery](#discovery) or [SpreadSheet](#spreadsheet) procedure to install
-your new Backends.
+your new backends.
 
 ### Discovery
 
-In this mode the Frontend will listen on for any host requesting a
+In this mode the frontend will listen on for any host requesting a
 DHCP address and will respond with an address from its managed private
 network.
 The DHCP response will also be a PXE response that will tell the
 server to re-install itself.
 Does this sound scary, good it is, it is also a great method to
-quickly add new Backends provided you are on an isolated private
+quickly add new backends provided you are on an isolated private
 network.
 If this still sounds scary (it does to me) use the
 [Spreadsheet](#spreadsheet) procedure.
 
-To start disovery mode log into the Frontend as root as run the following:
+To start discovery mode, log into the frontend as root as run the following:
 
 ```
 # insert-ethers
 ```
 
-This will bring up a screen that shows a list of Appliances available
+This will bring up a screen that shows a list of appliances available
 for installation.
 
 ![insert-ethers-1](images/insert-ethers/insert-ethers-1.png) 
@@ -54,15 +54,15 @@ installed.
 
 ![insert-ethers-2](images/insert-ethers/insert-ethers-2.png)
 
-Once the Backend node sends out a PXE request the Frontend captures the
+Once the backend node sends out a PXE request the frontend captures the
 request and adds it to the stacki database.
 If the server did not PXE boot go back to the
 [Requirements](#requirements) and verify the BIOS boot order.
 
 ![insert-ethers-4](images/insert-ethers/insert-ethers-4.png)
 
-Once the Backend node downloads its Kickstart file, a '*' will next
-the the hostname assigned to the new Backend node.
+Once the backend node downloads its Kickstart file, a '*' will next
+the the hostname assigned to the new backend node.
 
 ![insert-ethers-5](images/insert-ethers/insert-ethers-5.png)
 
@@ -79,7 +79,7 @@ configuration of the cluster.
 The Host CSV file needs to have the following columns:
 
 1. **Name**. A hostname.
-1. **Appliance** The Appliace name for the host (e.g. backend).
+1. **Appliance** The appliance name for the host (e.g. backend).
 1. **Rack** The rack number for the host.
 1. **Rank** The position in the rack for the host.
 1. **IP** Network address.
@@ -94,7 +94,7 @@ is shown below.
 ![](images/sample-host-configuration-csv.png) 
 
 
-Once the CSV file is created and copied to the Frontend it can be
+Once the CSV file is created and copied to the frontend it can be
 loaded as root.
 
 ```
@@ -113,13 +113,13 @@ backend-0-1:  0     1   4    backend   default      os        install
 backend-0-2:  0     2   4    backend   default      os        install
 ```
 
-By default number of CPUs on every Backend node is set to 1.
-This value will be updated automatically once a Backend node
+By default number of CPUs on every backend node is set to 1.
+This value will be updated automatically once a backend node
 is installed.
 
-Every time a Backend node boots it will send a PXE request to the
-Frontend.
-The Frontend will tell the Backend node to either boot its os or to
+Every time a backend node boots it will send a PXE request to the
+frontend.
+The frontend will tell the backend node to either boot its os or to
 install.
 The default boot action is always _os_ as you can see below.
 
@@ -132,7 +132,7 @@ backend-0-1:  os
 backend-0-2:  os
 ```
 
-In order to install a Backend you will need to switch the boot action
+In order to install a backend you will need to switch the boot action
 to _install_ and then reboot.
 
 ```
@@ -148,13 +148,13 @@ backend-0-1:  install
 backend-0-2:  install
 ```
 
-Now power up the Backend machines.
-The Backend machines will first boot into the Stacki installer,
+Now power up the backend machines.
+The backend machines will first boot into the Stacki installer,
 install the OS, set its boot action back to _os_ and reboot.
 
 ## Re-Installation
 
-Because Stacki manages the PXE boot of all of Backend nodes when it
+Because Stacki manages the PXE boot of all of backend nodes when it
 comes time to re-install a machine you can just change the boot
 action back to _install_, for example:
 
@@ -166,7 +166,7 @@ Then next time you boot the _backend-0-0_ it will rebuild the itself.
 But a rebuild by default will only reformat the ```/var``` and ```/``` partitions.
 This means all data in ```/export``` is maintained across re-installations.
 
-If you want to completely reformat all data on the Backend during the
+If you want to completely reformat all data on the backend during the
 re-installing you need to set an Attribute for the given host before
 you reboot the server.
 
@@ -174,7 +174,7 @@ you reboot the server.
 # stack set host attr backend-0-0 attr=nukedisks value=true
 ```
 
-After the Backend re-installs it will reset the value of the Attribute
+After the backend re-installs it will reset the value of the attribute
 to _false_ so the next time you re-install it will do the default and
 only reformat the ```/var``` and ```/``` partitions.
 We hate losing data also.
