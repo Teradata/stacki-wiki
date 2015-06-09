@@ -185,8 +185,7 @@ select _Manual_ mode.
 In _Manual_ mode, the installer brings up a partition setup
 screen after the wizard exits. In this mode, specify at least 16 GB
 for the root partition and a separate /export partition. You should add
-a swap partition, and /var if you have made / only 16GB. You can be bold
-and just do / and a swap. You can also use LVM, but really? Why?
+a swap partition, and /var if you have made / only 16GB.
 
 ![](images/stacki_config_step_5.png)
 
