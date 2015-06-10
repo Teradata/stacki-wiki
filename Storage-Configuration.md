@@ -113,7 +113,7 @@ The fourth logical disk (```sdd```) will be a RAID 6 composed of the disks in sl
 The disks in slots 22 and 23 are designated as hot spares that can be used as replacements for any failed drive in any array.
 
 When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend.
-Then, load the CSV file onto the frontend by executing:
+Then, load the CSV file into the database on the frontend by executing:
 
 ```
 # stack load storage controller file=your-controller.csv
