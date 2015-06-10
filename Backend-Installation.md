@@ -22,7 +22,7 @@ To install a new backend node, stacki needs to add information about
 the server (ip address, mac address, appliance type, etc) to the
 configuration database.
 Choose between the [Discovery](#discovery) or [SpreadSheet](#spreadsheet) procedure to install
-your new backends.
+your new backend nodes.
 
 ### Discovery
 
@@ -32,15 +32,15 @@ network.
 The DHCP response will also be a PXE response that will tell the
 server to install/re-install itself.
 Does this sound scary? Good, it is. It is also a great method to
-quickly add new backends provided you are on an isolated private
+quickly add new backend nodes, provided you are on an isolated private
 network. It's not a good method if you don't control the private network.
 
-Check with your networking group. If they say "no" ("Hell no!", "WTH are you
-thinking?", and "not in your lifetime" are all versions of "no.) or promiscuous
-DHCP on a subnet causes you nightmares, use the [SpreadSheet](#spreadsheet) procedure instead. 
+Check with your networking group. If they say "no" ("Hell no!", "Seriously?", and 
+"Not in your lifetime" are all versions of "no.") or promiscuous DHCP on a subnet 
+causes you nightmares, use the [SpreadSheet](#spreadsheet) procedure instead. 
 
 If you're testing (Virtual Box/VMWare) and control the network environment, Discovery 
-works great. 
+works great.
 
 To start discovery mode, log into the frontend as root and run the following:
 
@@ -88,7 +88,7 @@ configuration of the cluster.
 
 The disadvantage is you have to know the MAC addresses prior to installing backend nodes. 
 If you didn't get a listing from the vendor, you'll have to harvest them with IPMI or 
-eyeballs.
+someone's eyeballs.
 
 The Host CSV file needs to have the following columns:
 
@@ -109,7 +109,7 @@ is shown below.
 
 
 Once the CSV file is created and copied to the frontend it can be
-loaded as root.
+loaded by root.
 
 ```
 # stack load hostfile file=hostfile.csv
@@ -132,10 +132,8 @@ This value will be updated automatically once a backend node
 is installed.
 
 Every time a backend node boots, it will send a PXE request to the
-frontend.
-The frontend will tell the backend node to either boot its os or to
-install.
-The default boot action is always _os_ as you can see below.
+frontend. The frontend will tell the backend node to either boot its os or to
+install. The default boot action is always _os_ as you can see below.
 
 ```
 # stack list host boot
@@ -150,7 +148,7 @@ In order to install a backend you will need to switch the boot action
 to _install_ and then reboot.
 
 ```
-# stack set host boot Backend action=install 
+# stack set host boot backend action=install 
 ```
 
 ```
@@ -176,8 +174,8 @@ action back to _install_, for example:
 # stack set host boot backend-0-0 action=install
 ```
 
-The next time you boot the _backend-0-0_, it will rebuild itself.
-But a rebuild by default will only reformat the swap, ```/var```, and ```/``` partitions.
+The next time you boot _backend-0-0_, it will rebuild itself.
+But a rebuild, by default, will only reformat the swap, ```/var```, and ```/``` partitions.
 This means all data in ```/export```, or any other data disks you've partitioned, 
 is maintained across re-installations.
 
