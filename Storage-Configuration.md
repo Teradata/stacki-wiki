@@ -34,7 +34,7 @@ The configuration for _backend-0-0_ has a similar configuration for ``sda`` as t
 Additionally, ``sdb`` and ``sdc`` will be configured for _backend-0-0_ as single partitions that span the entire disk.
 
 When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend.
-Then, load the CSV file onto the frontend by executing:
+Then, load the CSV file into the database on the frontend by executing:
 
 ``` 
 # stack load storage partition file=your-controller.csv
