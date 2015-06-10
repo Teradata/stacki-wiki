@@ -215,7 +215,7 @@ its filesystems and copy the pallets from the DVD onto its hard disk.
 Next, it will install all the packages and then run post configuration
 scripts.
 When this is complete, the frontend will reboot.
-Your Stacki frontend is now ready to install Backend servers.
+Your Stacki frontend is now ready to install backend servers.
 
 #### Existing
 
