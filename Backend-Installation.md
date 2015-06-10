@@ -18,7 +18,7 @@ BIOS _boot order_
 
 ## Discovery or SpreadSheet
 
-To install a new backend node stacki needs to add information about
+To install a new backend node, stacki needs to add information about
 the server (ip address, mac address, appliance type, etc) to the
 configuration database.
 Choose between the [Discovery](#discovery) or [SpreadSheet](#spreadsheet) procedure to install
@@ -31,9 +31,14 @@ DHCP address and will respond with an address from its managed private
 network.
 The DHCP response will also be a PXE response that will tell the
 server to re-install itself.
-Does this sound scary, good it is, it is also a great method to
+Does this sound scary? Good, it is. It is also a great method to
 quickly add new backends provided you are on an isolated private
-network.
+network. It's not a good method if you don't control the private network.
+Check with your networking group. If they say "no" ("Hell no!", "WTH are you
+thinking?", and "not in your lifetime" are all versions of "no.) Use the 
+[SpreadSheet](#spreadsheet) procedure instead. 
+
+Use 
 If this still sounds scary (it does to me) use the
 [Spreadsheet](#spreadsheet) procedure.
 
