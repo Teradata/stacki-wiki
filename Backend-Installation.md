@@ -176,7 +176,7 @@ action back to _install_, for example:
 # stack set host boot backend-0-0 action=install
 ```
 
-Then next time you boot the _backend-0-0_ it will rebuild itself.
+The next time you boot the _backend-0-0_, it will rebuild itself.
 But a rebuild by default will only reformat the swap, ```/var```, and ```/``` partitions.
 This means all data in ```/export```, or any other data disks you've partitioned, 
 is maintained across re-installations.
