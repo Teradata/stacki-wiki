@@ -26,11 +26,11 @@ your new backends.
 
 ### Discovery
 
-In this mode the frontend will listen on for any host requesting a
+In this mode the frontend will listen for any host requesting a
 DHCP address and will respond with an address from its managed private
 network.
 The DHCP response will also be a PXE response that will tell the
-server to re-install itself.
+server to install/re-install itself.
 Does this sound scary? Good, it is. It is also a great method to
 quickly add new backends provided you are on an isolated private
 network. It's not a good method if you don't control the private network.
