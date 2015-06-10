@@ -34,15 +34,15 @@ server to re-install itself.
 Does this sound scary? Good, it is. It is also a great method to
 quickly add new backends provided you are on an isolated private
 network. It's not a good method if you don't control the private network.
+
 Check with your networking group. If they say "no" ("Hell no!", "WTH are you
-thinking?", and "not in your lifetime" are all versions of "no.) Use the 
-[SpreadSheet](#spreadsheet) procedure instead. 
+thinking?", and "not in your lifetime" are all versions of "no.) or promiscuous
+DHCP on a subnet causes you nightmares, use the [SpreadSheet](#spreadsheet) procedure instead. 
 
-Use 
-If this still sounds scary (it does to me) use the
-[Spreadsheet](#spreadsheet) procedure.
+If you're testing (Virtual Box/VMWare) and control the network environment, Discovery 
+works great. 
 
-To start discovery mode, log into the frontend as root as run the following:
+To start discovery mode, log into the frontend as root and run the following:
 
 ```
 # insert-ethers
@@ -59,20 +59,25 @@ installed.
 
 ![insert-ethers-2](images/insert-ethers/insert-ethers-2.png)
 
-Once the backend node sends out a PXE request the frontend captures the
-request and adds it to the stacki database.
-If the server did not PXE boot go back to the
+Once the backend node sends out a PXE request, the frontend captures the
+request and adds it to the Stacki database.
+
+The default ordering for "insert-ethers" assigns the name to:
+_appliance_-_rack_-_rank_. Where "rank" is assigned in the order
+a backend node is discovered. 
+
+If the server did not PXE boot, go back to the
 [Requirements](#requirements) and verify the BIOS boot order.
 
 ![insert-ethers-4](images/insert-ethers/insert-ethers-4.png)
 
-Once the backend node downloads its Kickstart file, a '*' will next
-the the hostname assigned to the new backend node.
+Once the backend node downloads its Kickstart file, a '*' will appear next 
+to the hostname assigned to the new backend node. 
 
 ![insert-ethers-5](images/insert-ethers/insert-ethers-5.png)
 
-Continue to turn on any other machines you want installed and hi _F8_
-when done.
+Continue to turn on any other machines you want installed and hit _F8_
+when done to quit "insert-ethers."
 
 ### Spreadsheet
 
@@ -80,6 +85,10 @@ You can also specify all the information about a host before
 installation in a CSV (Comma Separated Value) file.
 The advantage of using CSV files, is that it gives fine-grained control over the
 configuration of the cluster.
+
+The disadvantage is you have to know the MAC addresses prior to installing backend nodes. 
+If you didn't get a listing from the vendor, you'll have to harvest them with IPMI or 
+eyeballs.
 
 The Host CSV file needs to have the following columns:
 
