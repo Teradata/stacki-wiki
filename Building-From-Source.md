@@ -1,4 +1,4 @@
-Once you build your first Stacki Frontend you can now start working with the source code.
+Once you build your first Stacki frontend you can now start working with the source code.
 All development on Stacki is assumed to be done on a Stacki Frontend that you have root access on.
 This page walks you through the steps required to start developing on the code.
 
@@ -25,7 +25,7 @@ and then clone from your fork.
 
 ## Setup Yum for CentOS and Updates
 
-Building Stacki requires several packages not included in the base install of the Frontend, so we
+Building Stacki requires several packages not included in the base install of the frontend, so we
 must configure yum to have access to the complete and updated CentOS packages.
 Create the following two files:
 
@@ -71,7 +71,7 @@ Now when you log back in your environment will be setup correctly to compile Sta
 # make
 ```
 
-This will take a long time, there is a log of software to build.
+This will take a long time, there is a lot of software to build.
 When done you can verify the build with:
 
 ```
