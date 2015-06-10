@@ -4,7 +4,7 @@ The _default_ distribution consists of the _stacki_ and _OS_ pallets
 (the OS pallet can be CentOS
 or RHEL or any other RHEL variant in the 6.x series >= 6.5).
 These two pallets are the minimal
-requirement for installing a Backend machine.
+requirement for installing a backend machine.
 Backend machines are assigned the _default_ distribution automatically.
 
 You can create additional distributions by adding ISOs you have downloaded or
@@ -21,7 +21,7 @@ A few examples:
 * Maintaining different versions of the OS:
 
 If you have installed with CentOS 6.5
-and want to test on CentOS 6.6, add 6.6 as a Pallet, create a new distribution,
+and want to test on CentOS 6.6, add 6.6 as a pallet, create a new distribution,
 assign machines to it, and install/reinstall.
 The machine will have an updated version of the OS.
 
@@ -29,13 +29,13 @@ The machine will have an updated version of the OS.
 
 Pallets can be created by mirroring any publicly  available repo(or
 subscribed repo if using RHEL).
-Adding an _updates_ Pallet to any distribution will make available to
+Adding an _updates_ pallet to any distribution will make available to
 Yum all updated RPMS.
 
 * Maintaining dev/test/production environments:
 
 Again, having created dev, test,
-and production distributions with the appropriate Pallets, assign machines to
+and production distributions with the appropriate pallets, assign machines to
 each of those distributions.
 Install/reinstall the machines.
 When you want to
@@ -74,7 +74,7 @@ and list it to verify:
 ![stack list distribution](images/stack-list-distribution-1.png)
  
 
-The "----"s indicate there are no pallets associated with the distribution, so add the minimum pallets: Stacki and an OS pallet. Any applications pallets may be added too.
+The "----"s indicate there are no pallets associated with the distribution, so add the minimum pallets: stacki and an OS pallet. Any application pallets may be added too.
 
 % Add pallets to the distribution.
 
@@ -86,7 +86,7 @@ See which pallets are available:
 
 ![stack list pallet](images/stack-list-pallet-2.png)
 
-% Enable RHEL and Stacki pallets.
+% Enable RHEL and stacki pallets.
 
 ```
 # stack enable pallet stacki RHEL distribution=test-dist
@@ -143,7 +143,7 @@ There's not much point in creating a distribution if you don't use it. So, let's
 ```
 # stack set host attr backend attr=nukedisks value=true
 # stack set host boot backend action=install
-# stack run host reboot
+# stack run host "reboot"
 ```
 
 (With `stack run host`, not putting in a host designation will make it run on all hosts.)
