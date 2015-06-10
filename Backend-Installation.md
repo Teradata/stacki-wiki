@@ -131,7 +131,7 @@ By default number of CPUs on every backend node is set to 1.
 This value will be updated automatically once a backend node
 is installed.
 
-Every time a backend node boots it will send a PXE request to the
+Every time a backend node boots, it will send a PXE request to the
 frontend.
 The frontend will tell the backend node to either boot its os or to
 install.
@@ -168,7 +168,7 @@ install the OS, set its boot action back to _os_ and reboot.
 
 ## Re-Installation
 
-Because Stacki manages the PXE boot of all of backend nodes when it
+Because Stacki manages the PXE boot of all of backend nodes, when it
 comes time to re-install a machine you can just change the boot
 action back to _install_, for example:
 
@@ -176,9 +176,10 @@ action back to _install_, for example:
 # stack set host boot backend-0-0 action=install
 ```
 
-Then next time you boot the _backend-0-0_ it will rebuild the itself.
-But a rebuild by default will only reformat the ```/var``` and ```/``` partitions.
-This means all data in ```/export``` is maintained across re-installations.
+Then next time you boot the _backend-0-0_ it will rebuild itself.
+But a rebuild by default will only reformat the swap, ```/var```, and ```/``` partitions.
+This means all data in ```/export```, or any other data disks you've partitioned, 
+is maintained across re-installations.
 
 If you want to completely reformat all data on the backend during the
 re-installing you need to set an Attribute for the given host before
@@ -188,7 +189,16 @@ you reboot the server.
 # stack set host attr backend-0-0 attr=nukedisks value=true
 ```
 
-After the backend re-installs it will reset the value of the attribute
-to _false_ so the next time you re-install it will do the default and
+To do all backend hosts at once, give the appliance name:
+
+```
+# stack set host boot backend-0-0 action=install
+# stack set host attr backend-0-0 attr=nukedisks value=true
+# stack run host backend "reboot"
+```
+
+After the backend re-installs, it will reset the value of the attribute
+to _false_ so the next time you re-install, it will do the default and
 only reformat the ```/var``` and ```/``` partitions.
+
 We hate losing data also.
