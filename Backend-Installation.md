@@ -192,8 +192,8 @@ you reboot the server.
 To do all backend hosts at once, give the appliance name:
 
 ```
-# stack set host boot backend-0-0 action=install
-# stack set host attr backend-0-0 attr=nukedisks value=true
+# stack set host boot backend action=install
+# stack set host attr backend attr=nukedisks value=true
 # stack run host backend "reboot"
 ```
 
