@@ -48,7 +48,7 @@ You can view your storage partition configuration by executing:
 
 ### The _nukedisks_ Attribute
  
-A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_. On first install, all installing backend disks automatically have _nukedisks_ set to true. If you've added backend nodes via spreadsheet, you must set _nukedisks_ to "true" as in the example below, before installing.
+A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_. On first install, all installing backend disks automatically have _nukedisks_ set to _true_. If you've added backend nodes via spreadsheet, you must set _nukedisks_ to _true_ as in the example below, before installing.
 
 As an example, to set the _nukedisks_ attribute for host _backend-0-0_, execute:
 
@@ -126,7 +126,7 @@ You can view your storage controller configuration by executing:
 # stack list storage controller
 ```
 
-### The _nukecontroller_ Attribute
+### The _nukecontroller_ attribute
 
 A host's hardware RAID controller will only be reconfigured if the _nukecontroller_ attribute is set to _true_.
 As an example, to set the _nukecontroller_ attribute for host _backend-0-0_, execute:
@@ -136,6 +136,8 @@ As an example, to set the _nukecontroller_ attribute for host _backend-0-0_, exe
 ```
 
 Then, the next time _backend-0-0_ is installed, it will remove the current hardware RAID controller configuration, then configure it as you specified in your spreadsheet.
+
+Unlike the _nukedisks_ attribute, _nukecontroller_ is not set to _true_ on the initial installation of a backend node. If you or someone you've paid, has configured the RAID controller with a keyboard and monitor, that work won't be wiped out unless you specifically request it with _nukecontroller_.
 
 While a host is installing, after it configures its controller, it will send a message to the frontend to instruct it to set the  _nukecontroller_ attribute back to _false_.
 This ensures that the controller will not be reconfigured on the next installation.
