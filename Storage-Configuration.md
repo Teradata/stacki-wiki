@@ -48,7 +48,7 @@ You can view your storage partition configuration by executing:
 
 ### The _nukedisks_ Attribute
  
-A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_. In Discovery mode, all installing backend disks automatically have _nukedisks_ set to true. If you've added backend nodes via spreadsheet, you must set _nukedisks_ to "true" as in the example below, before installing.
+A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_. On first install, all installing backend disks automatically have _nukedisks_ set to true. If you've added backend nodes via spreadsheet, you must set _nukedisks_ to "true" as in the example below, before installing.
 
 As an example, to set the _nukedisks_ attribute for host _backend-0-0_, execute:
 
