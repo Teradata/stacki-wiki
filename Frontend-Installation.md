@@ -1,4 +1,4 @@
-Stacki requires a single dedicated server that will host all 
+Stacki requires a single server that will host all 
 the software and services used to build out other servers. We 
 call this server the **frontend**, and the first step to running 
 Stacki is to build a frontend. 
