@@ -4,7 +4,7 @@ Welcome to **Stacki**.
 
 Automation and consistency across Linux infrastructure is hard. Our goal is to make Linux installations of heterogeneous hardware across 10s to 1000s of machines fast, flexible, and absolutely consistent.
 
-The Stacki default installation process will bring bare metal infrastructure (or VMs) to a ping and a prompt. The frontend machine has password-less SSH access to the backend machines on first boot, and the distribution on the frontend acts as the YUM repository for all backend machines. All machines will be at the latest kernel and RPM revisions of the OS installed applications.
+The Stacki default installation process will bring bare metal infrastructure (or VMs) to a ping and a prompt. The frontend machine has password-less SSH access to the backend machines on first boot, and the distribution on the frontend acts as the YUM repository for all backend machines. All machines will be at the latest kernel and RPM revisions of the OS and installed applications.
 
 Stacki initial installations are relatively fast and simple, but may not completely reflect site-specific desired state. Configuration can be layered on using advanced features to customize local environments. The speed of installation/reinstallation Stacki provides allows convergence to a known/desired configuration of resources that reflect local needs. Deployed across the infrastructure, you've just made the complex simple and repeatable for existing or new infrastructure.
 
