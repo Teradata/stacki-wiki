@@ -6,11 +6,11 @@ Additionally, if your site-specific requirements are complex and can't be easily
 
 RPM-only pallets are the simplest to create. We'll show you how to do that. However, there are a few pieces missing from the current stacki-1.0-I release we'll have to add.
 
-#### Fix the build environment part I
+##### Fix the build environment part I
 
 
 
-#### RPM-only Pallet
+##### RPM-only Pallet
 
 
 
