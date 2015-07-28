@@ -51,7 +51,32 @@ Now you can make RPM pallets from the web.
 
 Creating an RPM-only pallet is the same for both stacki 6 and 7. Only the URLs and repos are going to be different. 
 
-One very common thing I do is to grab the updates from CentOS for my particular CentOS version.
+One very common thing I do is to grab the updates from CentOS for my particular CentOS version. We'll create a mirror of the updates two ways. The first is the simplest and most direct. You're going to use the "stack create mirror" command. 
 
+"stack create mirror" does a reposync from a url or a repoid AND creates an ISO from the downloaded RPMs, which makes it a pallet. I know, awesome, right?
+
+So let's build the command line to do this:
+
+You'll cd to your largest partition, default partitioning makes /export or /state/partition1 the largest partition.
+```
+# cd /export
+```
+
+Let's see what our options are:
+```
+# stack create mirror
+
+[root@stackitest ~]# stack create mirror
+error - must supply a URL argument or a "repoid"
+{path} [arch=string] [name=string] [newest=boolean] [repoconfig=string] [repoid=string] [urlonly=boolean] [version=string]
+```
+
+Since we know our path is http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ we'll just use the path.
+
+We only want the newest RPMs so we'll set newest to true.
+```
+# cd /export
+# stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ newest=true
+```
 
 
