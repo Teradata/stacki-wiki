@@ -49,8 +49,9 @@ Now you can make RPM pallets from the web.
 
 ##### RPM-only Pallet
 
-Creating an RPM-only pallet is the same for both stacki 6 and 7. Only the URLs and repos are going to be different. 
+Creating an RPM-only pallet is the same for both stacki 6 and 7. Only the URLs and repos are going to be different. This assumes your frontend has access to the internet. If not, put up a VirtualBox frontend on your desktop/laptop and create the pallets there and then put them on the real frontend. If you can't get outside access you are likely in one of the Dakotas or working at a large multi-national bank. Either way, I'm sorry.
 
+###### Creating pallet from a path.
 One very common thing I do is to grab the updates from CentOS for my particular CentOS version. We'll create a mirror of the updates two ways. The first is the simplest and most direct. You're going to use the "stack create mirror" command. 
 
 "stack create mirror" does a reposync from a url or a repoid AND creates an ISO from the downloaded RPMs, which makes it a pallet. I know, awesome, right?
@@ -70,13 +71,57 @@ Let's see what our options are:
 error - must supply a URL argument or a "repoid"
 {path} [arch=string] [name=string] [newest=boolean] [repoconfig=string] [repoid=string] [urlonly=boolean] [version=string]
 ```
+(You can add a "help" on the end of "stack create mirror" for more detail.)
 
-Since we know our path is http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ we'll just use the path.
+Since we know our path is http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ we'll just use the path. (The "path" can be a local directory. If you have a pile of RPMs and using the "contrib" directory doesn't turn your prop, dump the rpms into a directory and do a "stack create mirror" on them.
+```
+# stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/
+```
 
 We only want the newest RPMs so we'll set newest to true.
 ```
-# cd /export
 # stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ newest=true
 ```
 
+If you want to see what you're going to get you can set urlonly=true, and you'll get an RPM listing and no downloads:
 
+```
+# stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ newest=true urlonly=true
+```
+
+Default "name" is updates and default "version" is the version of the stacki pallet. So we'll change them to be descriptive. I usually set the version to the date I make the pull, and I'll set the name so you can see an example:
+```
+# stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ newest=true name=CentOS-updates version=`date +%m%d%Y`
+```
+
+And now you wait. Depending on your site bandwidth, this could be a while for very large repositories. This is probably a good time to go to lunch. 
+
+Once the download finishes, you'll have an ISO appropriately named in the directory you ran this command in, just add, enable, and create the distribution.
+```
+# stack add pallet CentOS-updates-07282015-0.x86_64.disk1.iso
+# stack enable pallet CentOS-Updates
+# stack create distribution
+```
+
+###### Creating pallet from a repoid.
+
+Sometimes there's an application you want to install, and a repoconfig file exists for it. You can always pull the RPMs with yumdownloader or yum --downloadonly and put them in the /export/stack/contrib/default/1.0/x86_64/RPMS/. They'll be available after a "stack create distribution" but there's no versioning and your team may not know you've put them there. So let's make it explicit but pulling them from the repo provided by the application vendor.
+
+For this example we'll use Datastax Cassandra.
+
+Go to the [Cassandra](http://docs.datastax.com/en/cassandra/2.1/cassandra/install/installRHEL_t.html) install docs. You'll notice about half-way down they give you the repoconfig you'll need to get this from yum. 
+
+Copy that and put it in a file. I've put it in /export/datastax.repo, only I've disabled it.
+```
+# cat /export/datastax.repo
+
+[datastax]
+name = DataStax Repo for Apache Cassandra
+baseurl = http://rpm.datastax.com/community
+enabled = 0
+gpgcheck = 0
+```
+
+I'm going to feed this to "stack create mirror" to get all the needed Cassandra RPMs. The version is "2.1" because that's what Datastax is feeding it. 
+```
+# stack create mirror name=datastax-cassandra version=2.1 repoconfig=/export/datastax.repo repoid=datastax newest=true
