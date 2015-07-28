@@ -9,6 +9,7 @@
   * [Manage Distributions](Manage-Distributions) 
   * [Manage Pallets](Manage-Pallets)
   * [Extend Backend Nodes](Extend-Backend-Nodes)
+  * [Creating Pallets](Creating-Pallets)
 * Reference
   * [Command Line](Command-Line-Reference) 
   * [Wire Reference](Wire-Reference)
