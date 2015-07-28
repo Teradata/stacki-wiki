@@ -122,6 +122,30 @@ enabled = 0
 gpgcheck = 0
 ```
 
-I'm going to feed this to "stack create mirror" to get all the needed Cassandra RPMs. The version is "2.1" because that's what Datastax is feeding it. 
+Let's do a few things:
+* I'm going to feed the name of this file to "repoconfig" parameter to get all the needed Cassandra RPMs. 
+* The version is "2.1" because that's this version of Cassandra from Datastax. 
+* I only want the newest RPMs because who knows what people dump into their repositories so "newest=true". 
+* The "repoid", in this case "datastax," tells "create mirror" the repo to pull from. Some repoconfigs might have more than one stanza. For example, if Datstax had included a [datastax-extras] or [datastax-updates], stanzas you could pull those RPMs by setting repoid to the correct name.
 ```
 # stack create mirror name=datastax-cassandra version=2.1 repoconfig=/export/datastax.repo repoid=datastax newest=true
+```
+
+Now breathe. In/out. Long deep breaths. Or, hell, just go get another cup of coffee. When it's done you should see something like this:
+```
+root@stackitest export]# ls /export/datastax
+datastax-cassandra-2.1-0.x86_64.disk1.iso  i386  noarch  roll-datastax-cassandra.xml  x86_64
+```
+Note, the directory is the name of the "repoid" and the newly created file is in this directory.
+
+Do the pallet dance:
+```
+# stack add pallet /export/datastax/datastax-cassandra-2.1-0.x86_64.disk1.iso 
+# stack enable pallet datastax-cassandra
+# stack create distribution
+```
+Now you can use the Datastax Cassandra RPMs on backend node.
+
+Some things to be aware of: you can add the datastax.repo file to /etc/yum.repos.d and the same thing will work. In this case you do not have to supply the "repoconfig" parameter to the 
+
+So why did I do it this way? Well, 
