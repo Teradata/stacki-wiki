@@ -13,7 +13,6 @@ RPM-only pallets are the simplest to create. We'll show you how to do that. Howe
 The default OS pallet is not the full CentOS distribution. You're going to need a couple packages that are only in the full version of CentOS. Download the full CentOS 6.6 ISO(s) from a CentOS 6.6 [mirror](http://isoredirect.centos.org/centos/6/isos/x86_64/). I usually torrent the whole thing and put CentOS disk1 and disk2 on the frontend. Dis1 is probably sufficient though.
 
 Either way, once they're downloaded, add it/them:
-
 '''
 # stack add pallet CentOS-6.6-x86_64-bin-DVD*iso
 '''
