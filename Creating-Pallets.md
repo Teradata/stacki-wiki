@@ -148,7 +148,14 @@ Now you can use the Datastax Cassandra RPMs on the cluster. Use the extend-backe
 
 Some things to be aware of: you can add the datastax.repo file to /etc/yum.repos.d and the same thing will work. In this case you do not have to supply the "repoconfig" parameter to the "stack create mirror" command.
 
-So why did I do it this way? Well, from a management stand-point, I don't want someone enabling a repo in /etc/yum.repos.d I don't want enabled. I use the frontend as the fulcrum point to my cluster. I don't put any services on it other than installation and monitoring. All elements of an application are run on backend nodes because they are usually better protected (private network), and the application should keep running even if the Stacki frontend goes down. 
+So why did I do it this way? Well, from a management stand-point, I don't want someone enabling a repo in /etc/yum.repos.d I don't want enabled. I use the frontend as the fulcrum point to my cluster. I don't put any services on it other than installation and monitoring. All elements of an application are run on backend nodes because they are usually better protected (private network), and the application should keep running even if the Stacki frontend goes down. If I have a repo that may inadvertently be enabled, I may end up with an application on my frontend I don't want. In my mind it's good cluster hygiene, yes, a little paranoid and neurotic, buy hygiene nonetheless. It may be, however, you have limited machines and you don't want to waste the frontend, then use it. Rocks does it. StackIQ initially did it. It saves having to set up all the keys SSH access from a backend node acting as the frontend for an application to the rest of the cluster. Just know what you're getting. 
 
-So, that.
+So yeah, all that.
+
+##### Application Pallet
+Ohhhhhh, this is gonna get complicated. To create an application pallet, you'll have to set-up the development environment and tools to create it. It also means you're going to get an introduction to the graph and customizing your own node xml files. If you are not familiar with Makefiles, this is gonna hurt. Be prepared to Google stuff and ask questions on the Stacki list. It is not for the faint of heart. 
+
+##### Configuration only Pallet
+
+Ohhhhhh, this is gonna get complicated. To create a site-specific pallet, you'll have to set-up the development environment and tools to create it. It also means you're going to get an introduction to the graph and customizing your own node xml files. If you are not familiar with Makefiles, you are in for some brain pain. Are you sure you want to do this? If there is any way for you to use the site-profiles and contrib directory structures, I highly recommend using them or, at the very least, doing your development of the configuration that will eventually become your pallet. 
 
