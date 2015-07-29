@@ -144,8 +144,11 @@ Do the pallet dance:
 # stack enable pallet datastax-cassandra
 # stack create distribution
 ```
-Now you can use the Datastax Cassandra RPMs on backend node.
+Now you can use the Datastax Cassandra RPMs on the cluster. Use the extend-backend.xml to add the appropriate RPMs and configuration settings per the Datastax install document. 
 
-Some things to be aware of: you can add the datastax.repo file to /etc/yum.repos.d and the same thing will work. In this case you do not have to supply the "repoconfig" parameter to the 
+Some things to be aware of: you can add the datastax.repo file to /etc/yum.repos.d and the same thing will work. In this case you do not have to supply the "repoconfig" parameter to the "stack create mirror" command.
 
-So why did I do it this way? Well, 
+So why did I do it this way? Well, from a management stand-point, I don't want someone enabling a repo in /etc/yum.repos.d I don't want enabled. I use the frontend as the fulcrum point to my cluster. I don't put any services on it other than installation and monitoring. All elements of an application are run on backend nodes because they are usually better protected (private network), and the application should keep running even if the Stacki frontend goes down. 
+
+So, that.
+
