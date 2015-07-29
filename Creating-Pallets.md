@@ -155,6 +155,8 @@ So yeah, all that.
 ##### Application Pallet
 Ohhhhhh, this is gonna get complicated. To create an application pallet, you'll have to set-up the development environment and tools to create it. It also means you're going to get an introduction to the graph and customizing your own node xml files. If you are not familiar with Makefiles, this is gonna hurt. Be prepared to Google stuff and ask questions on the Stacki list. It is not for the faint of heart. 
 
+We'll use SLURM as an example.
+
 ##### Configuration only Pallet
 
 Ohhhhhh, this is gonna get complicated. To create a site-specific pallet, you'll have to set-up the development environment and tools to create it. It also means you're going to get an introduction to the graph and customizing your own node xml files. If you are not familiar with Makefiles, you are in for some brain pain. Are you sure you want to do this? If there is any way for you to use the site-profiles and contrib directory structures, I highly recommend using them or, at the very least, doing your development of the configuration that will eventually become your pallet. 
