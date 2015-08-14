@@ -137,8 +137,7 @@ So backend-0-[1-4] will be slaves, and backend-0-0 is a master.
 
 Like any good mathematical proof, we’ll erase all the work I did to get to the following steps and just present the solution. It looks like magic, it’s not. It's a lot of duckduckgoing and stackoverflowing (and yes, I'm coining those words) because I found the actual Mesos and Marathon docs a little opaque when it came to RHEL/CentOS. (Can someone please explain Ubuntu to me? I've used it; I just don't get it.)
 
-I based this basic configuration off of this blogpost. 
-`http://manfrix.blogspot.com/2015/02/apache-mesos-when-all-becomes-one.html`. Basically it just gets it up and running, nothing fancy. Fancy is later.
+I based this basic configuration off of this [blogpost](http://manfrix.blogspot.com/2015/02/apache-mesos-when-all-becomes-one.html) by Daniel Yeap. Basically it gets Mesos up and running, nothing fancy. Fancy is later.
 
 This was all kinds of awesome because the Mesos and Marathon docs just don’t really help much.
 
@@ -238,7 +237,7 @@ EOF
 ```
 
 (The &hostaddr; entity maps to the installing node's ip address in the same way &hostname; maps to the 
-installing node'ss hostname. We’ve defined those for you, because we’re awesome like that. [No sorry, really,
+installing node's hostname. We’ve defined those for you, because we’re awesome like that. [No sorry, really,
 we needed a shortcut, you just get to benefit.])
 ```
 <file name="/etc/mesos-master/ip">
@@ -331,7 +330,7 @@ as final output. You're likely good. If your compute nodes stall at the "Choose 
 % Reboot ‘em to install ‘em
 ```
 # stack run host backend “reboot"
-Breathe/coffee/tai chi/doughnuts
+# breathe/coffee/tai chi/doughnuts
 ```
 
 When you come back from the above, you should be able to go to http://masternodeip:5050 and you’ll have a mesos cluster. Should be a few slaves, there should be a marathon framework under “Frameworks."
@@ -352,12 +351,14 @@ If you want to control the cluster from the frontend, Mesos supplies some script
 % Disable both the master and the slave configuration as in the above extend-base.xml so it doesn’t start on boot. 
 
 Now you can use:
+```
 /usr/sbin/mesos-start-cluster.sh
 /usr/sbin/mesos-start-masters.sh
 /usr/sbin/mesos-start-slaves.sh
 /usr/sbin/mesos-stop-cluster.sh
 /usr/sbin/mesos-stop-masters.sh
 /usr/sbin/mesos-stop-slaves.sh
+```
 
 To manage the cluster/master/slaves. 
 
