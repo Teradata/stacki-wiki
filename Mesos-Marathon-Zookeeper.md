@@ -1,18 +1,21 @@
 This is an example of deploying Mesos/Marathon/Zookeeper using attributes vs. using appliances. You will:
-* Download the Mesos, Marathon, and Zookeeper repositories. (We'll throw in the updates for free.)
+* Download the Mesos, Marathon, and Zookeeper repositories. (We'll throw in the CentOS updates for free.)
 * Define attributes (key/value pairs) to segment roles within the Mesos cluster.
 * Configure extend-base.xml to deploy a Mesos, Zookeeper, and Marathon master using the attributes.
 * Configure extend-base.xml to deploy Mesos slaves. 
 
-This document was initially started from a user question on the Stacki User list. There are number of ways to flay the cluster beast. A pallet is one of them. A pallet is good if you know you're going to be deploying the same configuration to multiple clusters that may not have connectivity to your initial frontend. It comes packaged as an ISO so it's easier to pass around to data centers rather than rsync files. Pallets, however, take longer to develop and require knowledge of Makefiles and other such stuff. Not everyone has that experience so the method I'll explain here is pretty accessible to everyone.
+This document was initially started from a user question on the Stacki User list. There are number of ways to flay the cluster beast. A pallet is one of them. A pallet is good if you know you're going to be deploying the same application and configuration to multiple clusters that may not have connectivity to your initial frontend. It comes packaged as an ISO so it's easier to pass around to data centers rather than rsync files. Pallets, however, take longer to develop and require knowledge of Makefiles and other such shtuff. Not everyone has that experience so the method I'll explain here is pretty accessible to everyone.
 
-Generally, with a first time install, I don't want to do a pallet because I don't know the full configuration tweaking I will have to do in order to get what I want. So I'm going to do configuration and installation at it's most basic level using an extend-base.xml in the site-profiles directory.  Well sort of basic, I'm actually going to cheat a little because I'm going to pull the Mesosphere, Zookeeper, and Marathon RPMs down as a pallet. You'll see what I mean in a minute.This sort of configuration and testing is really the first step in creating a pallet. Once you have a configuration you're pretty sure abstracts to various usage models, creating a pallet is a good thing to do. This configuration only takes into account the backend. If there are set-up steps required on the frontend, you'll have to do that by hand. A pallet would take care of both server (i.e. frontend and backend set-up).
+Generally, with a first time install, I don't want to do a pallet because I don't know the full configuration tweaking I will have to do in order to get what I want. So I'm going to do configuration and installation at it's most basic level using an extend-base.xml in the site-profiles directory.  Well sort of basic, I'm actually going to cheat a little because I'm going to pull the Mesosphere, Zookeeper, and Marathon RPMs down as pallets. You'll see what I mean in a minute.This sort of configuration and testing is really the first step in creating a pallet. Once you have a configuration you're pretty sure abstracts to various usage models, creating a pallet is a good thing to do. This configuration only takes into account the backend. If there are set-up steps required on the frontend, you'll have to do that by hand. A pallet would take care of both server (i.e. frontend and backend set-up).
 
-I'm doing this on VirtualBox, a stacki-1.0 frontend and 5 backend nodes. 
+I'm doing this on VirtualBox with a stacki-1.0 frontend and 5 backend nodes. 
 
-I actually replace my "os" pallet with the full CentOS DVD1 and DVD2 and then I mirror the updates. So that, you'll be happier. I know I'll be happier so do it for me. 
+##### Get full CentOS and updates
 
-% Download the CentOS DVD1 and DVD1 (I don't have to do that for you do I?)
+I replace my "os" pallet with the full CentOS DVD1 and DVD2 and then I mirror the updates. Do that, you'll be happier. I know I'll be happier, so if you don't do it for you, do it for me.
+
+% Download the CentOS DVD1 and DVD1 (I don't have to actually show you how to do that do I?)
+(Put them in /export. It's probably the largest partition. If you chose "Automatic" for partitioning, it is the larges partition.)
 
 % Add/enable them and disable "os" pallet
 ```
@@ -25,11 +28,13 @@ I actually replace my "os" pallet with the full CentOS DVD1 and DVD2 and then I 
 (Just in case, do a "yum -y install genisoimage" to make sure you have it.)
 ```
 # yum -y install genisoimage
+```
 
-Now mirror
+% Now mirror
+```
 # stack create mirror http://vault.centos.org/6.6/updates/x86_64/Packages/ newest=yes version=<date?>
-(It's going to take awhile.)
-# breathe/coffee/wake boarding/doughnut
+(It's going to take awhile. "version=" should be something that makes sense to you. I use dates, some people use names.)
+# breathe/coffee/wake boarding/doughnuts (lots of doughnuts for this one)
 (Add it)
 # stack add pallet updates*.iso
 (Enable it)
@@ -82,9 +87,11 @@ Now mirror
 % Mirror Zookeeper
 ```
 # cd /export
-# stack create mirror repoid=cloudera-cdh4 newest=true urlonly=true /* to see what you’re getting */
-# stack create mirror repoid=cloudera-cdh4 newest=true /* to actually get it */
-# breathe/coffee/tai chi/doughnut
+(To see what you’re getting without actually downloading.)
+# stack create mirror repoid=cloudera-cdh4 newest=true urlonly=true
+(To actually download.)
+# stack create mirror repoid=cloudera-cdh4 newest=true
+# breathe/coffee/tai chi/doughnuts (Max probably 2 unless you eat fast then 3.)
 ```
 
 % Add the pallets when it’s done
@@ -105,11 +112,11 @@ You already have it. It's in the Mesosphere repo.
 
 Now the meso/marathon/chronos rpms should be available to all nodes. But I want to make a distinction between masters and slaves.
 
-There are two approaches. In Greg's response to Michael, he recommended appliances. Mesos is ripe for that kind of logical construct, but I'll go the other way and just use attributes from the database, i.e. key/value pairs because I want it up and working with a minimal understanding of the app. I'll get more experience and can reflect that in better configuration later.
+There are two approaches. In Greg's response to Michael, he recommended appliances. Mesos is ripe for that kind of logical construct, but I'll go the other way and just use attributes from the database, i.e. key/value pairs because I want it up and working with a minimal understanding of the app. I'll get more experience and can reflect that in better configuration later, something I'll more likely use in a pallet.
 
-I also have to decide if I want to involve the frontend. There is an advantage here because the frontend is the only machine that has full password-less ssh access to every other machine. But the disadvantage is, if you lose the frontend, what happens to the cluster? HPC typically uses the frontend as a login/job submission host and batch manager so with those applications, using the frontend as an integral part of the cluster can make sense. In the past 4-5 years, we've moved away from that model, and view the frontend as the fulcrum for lifting applications into the cluster. I does the heavy lifting at install time, but is tertiary to the running of the actual application. But, if you're short on machines, do you really want to leave out an available one. Only you can decide. 
+I also have to decide if I want to involve the frontend. There is an advantage here because the frontend is the only machine that has full password-less ssh access to every other machine. (You can configure another machine for full password-less access but it's a more advanced set-up.) But the disadvantage is: if you lose the frontend, what happens to the cluster? HPC typically uses the frontend as a login/job submission host and batch manager so with those applications, using the frontend as an integral part of the cluster can make sense. In the past 4-5 years, we've moved away from that model, and view the frontend as the fulcrum for lifting applications into the cluster. It does the heavy lifting at install time, but is tertiary to the running of the actual application. However, if you're short on machines, you may not want to leave an available one out. Only you can decide. 
 
-In this instance I'm going to bypass using the frontend in the Mesos cluster, because, well, I can. If you want to control the cluster from the frontend, please see the footnote below.* If you want to include the frontend as a Mesos master or slave, ping me on the Stacki users list, and I/we can help with that. 
+In this instance I'm going to bypass using the frontend in the Mesos cluster, because, well, I can. If you want to control the cluster from the frontend, there is some info at the end of this article. If you want to include the frontend as a Mesos master or slave, ping me on the Stacki users list, and I/we can help with that. 
 
 Onward: We’ll need to create some key/value pairs to use in the extend-backend.xml to configure the cluster, some will be global and some host level. Remember, key/values go in order of G(lobal) A(ppliance) and H(host). Last one wins. 
 
@@ -131,7 +138,7 @@ So backend-0-[1-4] will be slaves, and backend-0-0 is a master.
 Like any good mathematical proof, we’ll erase all the work I did to get to the following steps and just present the solution. It looks like magic, it’s not. It's a lot of duckduckgoing and stackoverflowing (and yes, I'm coining those words) because I found the actual Mesos and Marathon docs a little opaque when it came to RHEL/CentOS. (Can someone please explain Ubuntu to me? I've used it; I just don't get it.)
 
 I based this basic configuration off of this blogpost. 
-`http://manfrix.blogspot.com/2015/02/apache-mesos-when-all-becomes-one.html`. Basically it just get's it up and running, nothing fancy. Fancy is later.
+`http://manfrix.blogspot.com/2015/02/apache-mesos-when-all-becomes-one.html`. Basically it just gets it up and running, nothing fancy. Fancy is later.
 
 This was all kinds of awesome because the Mesos and Marathon docs just don’t really help much.
 
@@ -143,11 +150,11 @@ So we need a couple of other key/value pairs we’re going to use:
 # stack add attr attr=mesos_cluster_name value=MesosCluster
 ```
 
-Now set-up our extend-backend.xml to install mesos and add themselves to the appropriate file on the frontend.
+##### Set-up the extend-backend.xml to install Mesos/Marathon/Zookeeper.
 
 Following are the contents of my extend-base.xml. (I know, I said extend-backend.xml but it turns out if you want to have your code be the absolute last thing to run for a backend node [and I usually do, will go to great lengths to assure that it does], you should extend the base.xml and not the backend.xml. The rest of the engineering team will probably yell at me. It’s okay, I have a thick skin and it never lasts long because I’m so damn adorable.) 
 
-So this is from my /export/stack/site-profiles/default/1.0/nodes/extend-base.xml
+So this is from my /export/stack/site-profiles/default/1.0/nodes/extend-base.xml:
 
 ```
 <?xml version="1.0" standalone="no"?>
@@ -200,19 +207,21 @@ But lets go through it:
 
 The fun starts at the package tags:
 
-(Everything has to have mesos so we’ll put it everywhere.)
+(Everything has to have the Mesos so we’ll put it everywhere.)
 ```
 <package>mesos</package>
 ```
 
 (Only the mesos master needs marathon and zookeeper, we can do more complex
-setup with zookeeper, but for now we’ll just put it on the master. The "cond=" says only add this package if the is_mesos_master value is true.
+setup with zookeeper, but for now we’ll just put it on the Mesos master. 
+The "cond=" says only add this package if the "is_mesos_master" value is true so these rpms won't be on the slaves.
+
 ```
 <package cond="is_mesos_master">marathon</package>
 <package cond="is_mesos_master">zookeeper-server</package>
 ```
 
-Now the <post></post> tags which map to the %post part of a kickstart file.
+% Now the <post></post> tags which map to the %post part of a kickstart file.
 
 If the is_mesos_master evaluates to “True” we’re going to do the following:
 ```
@@ -221,7 +230,7 @@ If the is_mesos_master evaluates to “True” we’re going to do the following
 mv /etc/init/mesos-slave.conf /etc/init/mesos-slave.conf.disabled
 ```
 
-(Set the master ip the <file></file> tags essentially wrap the syntax everyone uses everywhere):
+(Set the master ip. The <file></file> tags essentially wrap the syntax everyone uses everywhere):
 ```
 cat >> somefile << EOF
 stuff
@@ -229,7 +238,7 @@ EOF
 ```
 
 (The &hostaddr; entity maps to the installing node's ip address in the same way &hostname; maps to the 
-installing nodes hostname. We’ve defined those for you, because we’re awesome like that. [No sorry, really,
+installing node'ss hostname. We’ve defined those for you, because we’re awesome like that. [No sorry, really,
 we needed a shortcut, you just get to benefit.])
 ```
 <file name="/etc/mesos-master/ip">
@@ -254,7 +263,7 @@ chkconfig zookeeper-server on
 ```
 
 The slave post config:
-Same stuff, only do this is is_mesos_slave evalutes to True.
+Same stuff, only do this if is_mesos_slave evalutes to True.
 ```
 <post cond="is_mesos_slave">
 <!— dont’ start a master here —>
@@ -283,14 +292,14 @@ If I were to put this in a pallet, I would create appliances and configuration f
 
 Okay, more:
 
-% Check your extend-base.xml
+% Check your extend-base.xml for errors.
 ```
 # xmllint extend-base.xml
 ```
 
-You should only see Entity errors because the parser doesn’t resolve key/value pairs. 
+You should only see Entity errors because the parser doesn’t resolve key/value pairs. Parsing errors or syntax errors need to be fixed.
 
-% So now that you have your extend-base. xml recreate the distribution:
+% So now that you have your extend-base.xml, recreate the distribution:
 ```
 # stack create distribution
 ```
