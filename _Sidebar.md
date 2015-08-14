@@ -15,4 +15,6 @@
   * [Wire Reference](Wire-Reference)
 * Developer
   * [Building From Source](Building-From-Source)
+* Examples of Stacki Principles
+  * [Installing Mesos/Marathon/Zookeeper using Attributes](Mesos-Marathon-Zookeeper)
   
