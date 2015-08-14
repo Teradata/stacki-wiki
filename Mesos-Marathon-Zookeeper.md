@@ -1,9 +1,14 @@
 This is an example of deploying Mesos/Marathon/Zookeeper using attributes vs. using appliances. You will:
-* 
+* Download the Mesos, Marathon, and Zookeeper repositories. (We'll throw in the updates for free.)
+* Define attributes (key/value pairs) to segment roles within the Mesos cluster.
+* Configure extend-base.xml to deploy a Mesos, Zookeeper, and Marathon master using the attributes.
+* Configure extend-base.xml to deploy Mesos slaves. 
 
-I don't want to do a pallet because I don't know the full configuration tweaking I will have to do in order to get what I want. So I'm going to do configuration and installation at it's most basic level. Well sort of, I'm actually going to cheat a little because I'm going to pull the Mesosphere RPMs down as a pallet. You'll see what I mean in a minute.
+This document was initially started from a user question on the Stacki User list. There are number of ways to flay the cluster beast. A pallet is one of them. A pallet is good if you know you're going to be deploying the same configuration to multiple clusters that may not have connectivity to your initial frontend. It comes packaged as an ISO so it's easier to pass around to data centers rather than rsync files.
 
-I'm doing this on VirtualBox, a stacki-1.0 frontend and 4 backend nodes. 
+Generally, with a first time install, I don't want to do a pallet because I don't know the full configuration tweaking I will have to do in order to get what I want. So I'm going to do configuration and installation at it's most basic level using an extend-base.xml in the site-profiles directory.  Well sort of basic, I'm actually going to cheat a little because I'm going to pull the Mesosphere, Zookeeper, and Marathon RPMs down as a pallet. You'll see what I mean in a minute.
+
+I'm doing this on VirtualBox, a stacki-1.0 frontend and 5 backend nodes. 
 
 % Mirror Mesos and all that stuff.
 
