@@ -4,49 +4,98 @@ This is an example of deploying Mesos/Marathon/Zookeeper using attributes vs. us
 * Configure extend-base.xml to deploy a Mesos, Zookeeper, and Marathon master using the attributes.
 * Configure extend-base.xml to deploy Mesos slaves. 
 
-This document was initially started from a user question on the Stacki User list. There are number of ways to flay the cluster beast. A pallet is one of them. A pallet is good if you know you're going to be deploying the same configuration to multiple clusters that may not have connectivity to your initial frontend. It comes packaged as an ISO so it's easier to pass around to data centers rather than rsync files.
+This document was initially started from a user question on the Stacki User list. There are number of ways to flay the cluster beast. A pallet is one of them. A pallet is good if you know you're going to be deploying the same configuration to multiple clusters that may not have connectivity to your initial frontend. It comes packaged as an ISO so it's easier to pass around to data centers rather than rsync files. Pallets, however, take longer to develop and require knowledge of Makefiles and other such stuff. Not everyone has that experience so the method I'll explain here is pretty accessible to everyone.
 
-Generally, with a first time install, I don't want to do a pallet because I don't know the full configuration tweaking I will have to do in order to get what I want. So I'm going to do configuration and installation at it's most basic level using an extend-base.xml in the site-profiles directory.  Well sort of basic, I'm actually going to cheat a little because I'm going to pull the Mesosphere, Zookeeper, and Marathon RPMs down as a pallet. You'll see what I mean in a minute.
+Generally, with a first time install, I don't want to do a pallet because I don't know the full configuration tweaking I will have to do in order to get what I want. So I'm going to do configuration and installation at it's most basic level using an extend-base.xml in the site-profiles directory.  Well sort of basic, I'm actually going to cheat a little because I'm going to pull the Mesosphere, Zookeeper, and Marathon RPMs down as a pallet. You'll see what I mean in a minute.This sort of configuration and testing is really the first step in creating a pallet. Once you have a configuration you're pretty sure abstracts to various usage models, creating a pallet is a good thing to do. This configuration only takes into account the backend. If there are set-up steps required on the frontend, you'll have to do that by hand. A pallet would take care of both server (i.e. frontend and backend set-up).
 
 I'm doing this on VirtualBox, a stacki-1.0 frontend and 5 backend nodes. 
 
-% Mirror Mesos and all that stuff.
+I actually replace my "os" pallet with the full CentOS DVD1 and DVD2 and then I mirror the updates. So that, you'll be happier. I know I'll be happier so do it for me. 
+
+% Download the CentOS DVD1 and DVD1 (I don't have to do that for you do I?)
+
+% Add/enable them and disable "os" pallet
+```
+# stack add pallet CentOS*.iso
+# stack enable pallet CentOS
+# stack disable pallet os
+```
+
+% Get the updates
+(Just in case, do a "yum -y install genisoimage" to make sure you have it.)
+```
+# yum -y install genisoimage
+
+Now mirror
+# stack create mirror http://vault.centos.org/6.6/updates/x86_64/Packages/ newest=yes version=<date?>
+(It's going to take awhile.)
+# breathe/coffee/wake boarding/doughnut
+(Add it)
+# stack add pallet updates*.iso
+(Enable it)
+# stack enable pallet updates
+```
+
+% Recreate distribution
+```
+# stack create distribution
+```
+
+##### Mirror Mesos/Zookeeper/Marathon and all that stuff.
 
 % Install the repo
+```
 # rpm -Uvh http://repos.mesosphere.io/el/6/noarch/RPMS/mesosphere-el-repo-6-2.noarch.rpm
+```
 
 % Disable it
+```
 # yum-config-manager --disable mesosphere
-(I'm disabling it because I'm just going to get the RPMs as a pallet, this way it's not in my yum cache.)
+```
+(I'm disabling it because I'm just going to get the RPMs as a pallet, this way it's not in my yum repo until I add it as a pallet or my yum cache.)
 
 % Mirror it
+
 # cd /export
-
+```
 (There are two repoids in the mesosphere.repo file. I'll get them both because, hey, why not.)
-
 # stack create mirror repoid=mesosphere newest=true
 # stack create mirror repoid=mesosphere-noarch newest=true
+```
 
 % Add them as pallets
-
+```
 # stack add pallet mesosphere/mesosphere-1.0-0.x86_64.disk1.iso mesosphere-noarch/mesosphere-noarch-1.0-0.x86_64.disk1.iso
+```
 
 % Enable them
-
+```
 # stack enable pallet mesosphere mesosphere-noarch
+```
 
-You also need Zookeeper. We’ll get that from the cloudera-cdh4 because we know that works with CentOS/RedHat 6.6.
+% Get Zookeeper. 
+(We’ll get that from the cloudera-cdh4 because we know that works with CentOS/RedHat 6.6.)
+```
+# wget http://archive.cloudera.com/cdh4/one-click-install/redhat/6/x86_64/cloudera-cdh-4-0.x86_64.rpm
+# rpm -ivh cloudera-cdh-4-0.x86_64.rpm
+```
 
-wget http://archive.cloudera.com/cdh4/one-click-install/redhat/6/x86_64/cloudera-cdh-4-0.x86_64.rpm
-rpm -ivh cloudera-cdh-4-0.x86_64.rpm
-cd /export
-stack create mirror repoid=cloudera-cdh4 newest=true urlonly=true # to see what you’re getting
-stack create mirror repoid=cloudera-cdh4 newest=true # to get it
-breathe/coffee/exercise/doughnut
-when it’s done
-stack add pallet cloudera-cdh4/cloudera*.iso
-stack enable pallet cloudera-cdh4
-stack create distribution
+% Mirror Zookeeper
+```
+# cd /export
+# stack create mirror repoid=cloudera-cdh4 newest=true urlonly=true /* to see what you’re getting */
+# stack create mirror repoid=cloudera-cdh4 newest=true /* to actually get it */
+# breathe/coffee/tai chi/doughnut
+```
+
+% Add the pallets when it’s done
+```
+# stack add pallet cloudera-cdh4/cloudera*.iso
+# stack enable pallet cloudera-cdh4
+```
+
+% Get Marathon
+
 
 % Create distribution
 
@@ -223,7 +272,7 @@ set your nodes to install
 reboot ‘em to install ‘em
 # stack run host backend “reboot"
 
-Breathe/coffee/exercise/doughnut
+Breathe/coffee/tai chi/doughnut
 
 When you come back from the above, you should be able to go to http://masternodeip:5050 and you’ll have a mesos cluster. Should be a few slaves, there should be a marathon framework under “Frameworks"
 
