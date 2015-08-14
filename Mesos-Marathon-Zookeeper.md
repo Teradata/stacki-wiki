@@ -312,7 +312,7 @@ __EOF__
 </profile>
 ```
 
-as final output. You're likely good. If your compute nodes stall at the "Choose A Language" screen. Something is wrong with your xml. No, really, something is wrong with your xml. 
+as final output. You're likely good. If your compute nodes stall at the "Choose A Language" screen, something is wrong with your xml. No, really, something is wrong with your xml. 
 
 % Set your nodes to install
 ```
