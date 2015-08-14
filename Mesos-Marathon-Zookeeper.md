@@ -246,7 +246,7 @@ use the xml entity tag syntax to do this)
 ```
 
 (Initialize zookeeper and make sure it starts at boot.)
-
+```
 service zookeeper-server init
 echo 1 &gt; /var/lib/zookeeper/myid
 chkconfig zookeeper-server on
