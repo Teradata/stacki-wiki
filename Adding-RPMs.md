@@ -15,7 +15,7 @@ And then do:
 
 If you want to add them on the fly, i.e. you don't want to reinstall your machines then do:
 ```
-# stack run host "yum clean all && yum -y install <rpm name>"  
+# stack run host "yum clean all && yum -y install <rpmname>" \*
 ```
 
 on the backend nodes. 
@@ -78,9 +78,12 @@ Before any \<post>\</post> tags, add a package tag:
 
 Install/reinstall machines. 
 
-Please note the RPM name is usually the text before any versions of the full package name. So cloudera-manager-agent-5.4.5-1.cm545.p0.5.el6.x86_64.rpm is "cloudera-manager-agent." If you don't know the correct name, do any of the following:
+\* Please note the RPM name is usually the text before any versions of the full package name. So cloudera-manager-agent-5.4.5-1.cm545.p0.5.el6.x86_64.rpm is "cloudera-manager-agent." If you don't know the correct name, do any of the following:
 ```
-# yum info cloudera-manager-scm
+# yum info cloudera-manager-scm*
+(Or, on the file you downloaded)
 # rpm -qpl cloudera-manager-agent* 
-(on the file you downloaded)
+# rpm -qp --qf  %{NAME} cloudera-manager-agent-5.4.5-1.cm545.p0.5.el6.x86_64.rpm **
 ```
+
+** Old guy command.
