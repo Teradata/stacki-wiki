@@ -8,9 +8,9 @@
 * Customization
   * [Extend Backend Nodes](Extend-Backend-Nodes)
   * [Extending Your Scripts](Extend-Your-Scripts)
-  * [Managing With Distributions](Manage-Distributions) 
   * [Manage Pallets](Manage-Pallets)
   * [Creating Simple Pallets](Creating-Simple-Pallets)
+  * [Managing With Distributions](Manage-Distributions) 
 * Reference
   * [Command Line](Command-Line-Reference) 
   * [Wire Reference](Wire-Reference)
