@@ -76,7 +76,11 @@ Before any \<post>\</post> tags, add a package tag:
 # stack create distribution
 ```
 
-Install/reinstall machines. 
+% Install/reinstall machines. 
+```
+# stack set host boot backend action=install
+# stack run host "reboot"
+```
 
 \* Please note the RPM name is usually the text before any versions of the full package name. So cloudera-manager-agent-5.4.5-1.cm545.p0.5.el6.x86_64.rpm is "cloudera-manager-agent." If you don't know the correct name, do any of the following:
 ```
