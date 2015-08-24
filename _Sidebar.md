@@ -7,6 +7,7 @@
   * [Storage](Storage-Configuration)
 * Customization
   * [Extend Backend Nodes](Extend-Backend-Nodes)
+  * [Adding RPMs](Adding-RPMs)
   * [Extending Your Scripts](Extend-Your-Scripts)
   * [Manage Pallets](Manage-Pallets)
   * [Creating Simple Pallets](Creating-Simple-Pallets)
