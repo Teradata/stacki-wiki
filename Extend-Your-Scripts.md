@@ -1,3 +1,5 @@
+Whatever you can do in a shell, you can do during kickstart.
+
 Our assumption is that when a machine comes up, it should be exactly the way you want at first boot. This way you're certain your stuff is going to run once you hit the install/reinstall button because you've already done the hard configuration scripting to make it so. 
 
 Which means you probably don't want to recreate all of that work just because you've started using a new tool. You've already figured it out, you don't want to do it again, and you probably can't remember why you do some of the things you do in those scripts. We'll discuss how to use extend-backend.xml to:
@@ -168,7 +170,7 @@ There are two ways to add/run scripts:
 * Adding them in a file and then running them
 * Running them in a \<post>\</post> tags.
 
-###### Add a script to be run
+##### Add a script to be run
 
 ```
 <post>
@@ -202,7 +204,7 @@ Run a long bash script.
 /full/path/of/script/dothis.sh &gt; /root/joebob.log
 </post>
 ```
-Notice the &gt;. The >, <, and & are not interpreted by the xml parser so to use them in kickstart file you need to use the entities: &gt; &lt; &amp;
+Notice the \&gt;. The >, <, and & are not interpreted by the xml parser so to use them in kickstart file you need to use the entities: \&gt; \&lt; \&amp;
 
 But what if you have a big script that has a bunch of characters that don't escape easily?
 
@@ -228,8 +230,7 @@ fi
 </post>
 ```
 
-This is a more complex example. Note that only script part of sethadoopenv.sh is contained in the <![CDATA[ ]]>
-constructions
+This is a more complex example. Note that only the script part of sethadoopenv.sh is contained in the <![CDATA[ ]]> construction.
 
 ```
 <post cond="has_mapr">
@@ -270,7 +271,7 @@ fi
 </post>
 ```
 
-Note the cond="has_mapr" in the opening post tag of the example. I've defined an attribute (key-value pair) called has_mapr as True. If a machine has this attribute set to true, then the script will be put on the machine. If it doesn't have has_mapr set to true, then this doesn't make it into the XML.
+Also note, the cond="has_mapr" in the opening post tag of the example. I've defined an attribute (key-value pair) called "has_mapr" as True. If a machine has this attribute set to True, then the script will be put on the machine. If it doesn't have "has_mapr" set to true, then this doesn't make it into the XML.
 
 If your scripts need full network and services, then you can run them at first boot:
 
@@ -282,14 +283,26 @@ after all your \<post>\</post> tags you can do:
 ```
 The output of that will be in /root/rocks-post.log after an install. 
 
-There is another thing you can do and I worked on with someone today. He had a a script that was bash executable zippy thingy, so script plus payload. Due to versioning issues (frontend installed with os, backends with older Oracle linux) doing a "stack create package" to make an rpm out of them wasn't going to work. (Right, and then you're going to ask me how to do that. I'll answer that if you've actually read this far and ask me that question.) 
+Here is an example where we call a legacy script from Cobbler.
+
+```
+<boot order="post">
+cd /opt/cobbler/config_ldap_mysite/
+./main.sh
+</boot>
+```
+
+There is another thing you can do and I worked on with someone today. He had a a script that was bash executable zippy thingy, so script plus payload. Due to versioning issues (frontend installed with os, backends with older Oracle linux) doing a ```"stack create package"``` to make an rpm out of them wasn't going to work. (Right, and then you're going to ask me how to do that. I'll answer that if you've actually read this far and ask me that question.) 
 
 So we just dumped the actual scripts in contrib.
-
+```
 # cp myscript.sh /export/stack/contrib/default/1.0/x86_64/RPMS/
-
+```
 Dirty secret is that this can be gotten from the frontend during the install even though it's not an RPM. So yeah, accidentally awesome. 
 
+This is how we ran it.
+
+```
 <post>
 cd /tmp
 wget http://&Kickstart_PrivateAddress;/install/distributions/default/x86_64/RedHat/RPMS/myscript.sh
@@ -297,3 +310,63 @@ wget http://&Kickstart_PrivateAddress;/install/distributions/default/x86_64/RedH
 chmod 755 /tmp/myscript.sh
 /tmp/myscript.sh
 </post>
+```
+
+And since it needed full network access to run, it was setting up authentication mechanisms required by their security team, we ran it during first boot.
+```
+<boot order="post">
+/tmp/myscript.sh
+</boot>
+```
+
+**Remember**: \<boot>\</boot> go after all \<post>\</post> tags. Not in-between them.
+
+
+##### Run a script in the \<post>\</post> tags.
+
+Really whenever you create a set of \<post>\</post> tags, you're running with the bash interpreter. You can do more difficult scripts during installation by switching interpreters, python, perl, ksh, csh, tcsh, javascript.
+
+Do it like this:
+
+```
+<post interpreter="/usr/bin/python">
+import os
+
+tlvs = ["portDesc", "sysName", "sysDesc", "sysCap",
+	"mngAddr", "macPhyCfg", "powerMdi", "linkAgg",
+	"MTU", "LLDP-MED", "medCap", "medPolicy",
+	"medLoc", "medPower", "medHwRev", "medFwRev",
+	"medSwRev", "medSerNum", "medManuf", "medModel",
+	"medAssetID", "CIN-DCBX", "CEE-DCBX", "evbCfg",
+	"vdp", "IEEE-DCBX", "ETS-CFG", "ETS-REC",
+	"PFC", "APP", "PVID", "PPVID", "vlanName",
+	"ProtoID", "vidUsage", "mgmtVID", "linkAggr", "uPoE"]
+
+lldp='/usr/sbin/lldptool'
+
+def setLLDP(iface):
+	os.system("%s -L -i %s adminStatus=rxtx" % (lldp,iface))
+	os.system("%s -i %s -T -V chassisID " % (lldp,iface) +
+		"subtype=CHASSIS_ID_NETWORK_ADDRESS")
+	for tlv in tlvs:
+		cmd = "%s -T -i %s -V %s " % (lldp,iface,tlv)
+		cmd += "-c enableTx=yes &gt;&gt; /root/lldp.log 2&gt;&amp;1"
+		os.system(cmd)
+
+ifaces = os.listdir("/sys/class/net")
+ifaces.remove('lo')
+for iface in ifaces:
+	setLLDP(iface)
+</post>
+```
+
+I'm setting up lldp, and I want to initialize the interfaces. I don't know what capabilities they have, so I'm just going to enable everything and whatever happens, happens. I could be more exact about this if I really wanted to. I'm using the 'interpreter="/usr/bin/python"' to tell the post tag to use python. 
+
+It's the equivalent of this:
+```
+#!/usr/bin/python
+```
+
+in a regular python script. So if you have perl scripts you've written or someone else has, use a perl interpreter line, and put the script in-between \<post>\</post> tags.
+
+Send questions to the list.
