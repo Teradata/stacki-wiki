@@ -324,7 +324,7 @@ And since it needed full network access to run, it was setting up authentication
 
 ##### Run a script in the \<post>\</post> tags.
 
-Really whenever you create a set of \<post>\</post> tags, you're running with the bash interpreter. You can do more difficult scripts during installation by switching interpreters, python, perl, ksh, csh, tcsh, javascript.
+Really whenever you create a set of \<post>\</post> tags, you're running with the bash interpreter. You can do more difficult scripts during installation by switching interpreters, python, perl, ksh, csh, tcsh, javascript,ruby,on and on and on.
 
 Do it like this:
 
