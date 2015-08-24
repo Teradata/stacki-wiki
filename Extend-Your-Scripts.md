@@ -65,13 +65,108 @@ Contents
 
 This will drop the file on the node on the path you've indicated.
 
+Here's a real example:
+
+```
+<post>
+<file name="/etc/security/limits.d/90-nproc.conf">
+# Default limit for number of user's processes to prevent
+# accidental fork bombs.
+# See rhbz #432903 for reasoning.
+
+*          soft    nproc     64000
+</file>
+</post>
+```
+
+Here is a more complicated example:
+
+```
+<post>
+<file name="/etc/security/limits.conf">
+<![CDATA[
+# /etc/security/limits.conf
+#
+#Each line describes a limit for a user in the form:
+#
+#<domain>        <type>  <item>  <value>
+#
+#Where:
+#<domain> can be:
+#        - an user name
+#        - a group name, with @group syntax
+#        - the wildcard *, for default entry
+#        - the wildcard %, can be also used with %group syntax,
+#                 for maxlogin limit
+#
+#<type> can have the two values:
+#        - "soft" for enforcing the soft limits
+#        - "hard" for enforcing hard limits
+#
+#<item> can be one of the following:
+#        - core - limits the core file size (KB)
+#        - data - max data size (KB)
+#        - fsize - maximum filesize (KB)
+#        - memlock - max locked-in-memory address space (KB)
+#        - nofile - max number of open files
+#        - rss - max resident set size (KB)
+#        - stack - max stack size (KB)
+#        - cpu - max CPU time (MIN)
+#        - nproc - max number of processes
+#        - as - address space limit (KB)
+#        - maxlogins - max number of logins for this user
+#        - maxsyslogins - max number of logins on the system
+#        - priority - the priority to run user process with
+#        - locks - max number of file locks the user can hold
+#        - sigpending - max number of pending signals
+#        - msgqueue - max memory used by POSIX message queues (bytes)
+#        - nice - max nice priority allowed to raise to values: [-20, 19]
+#        - rtprio - max realtime priority
+#
+#<domain>      <type>  <item>         <value>
+#
+
+#*               soft    core            0
+#*               hard    rss             10000
+#@student        hard    nproc           20
+#@faculty        soft    nproc           20
+#@faculty        hard    nproc           50
+#ftp             hard    nproc           0
+#@student        -       maxlogins       4
+*       soft    nproc   64000
+*       hard    nproc   64000
+*       soft    nofile  65536
+*       hard    nofile  65536
+# End of file
+mapr - memlock unlimited
+mapr - core unlimited
+mapr - nofile 32768
+mapr - nproc unlimited
+mapr - nice -10
+mapr - renice -10
+]]>
+</file>
+</post>
+````
+
+Note the "<![CDATA[ ]]>" construction. It allows you to run a script or create a config file with special characters (special to the xml parser anyway) without having to work out XML entity issues. Issues that can fubar your kickstart file. Use it if in doubt, and if you have scripts with redirection or init-style scripts, this is a valuable tool to have to use work you've done wholesale.
+
+The CDATA contruction goes like this:
+```
+<post>
+<![CDATA[
+whole bunch of stuff I don't want to escape
+]]>
+</post>
+```
+
 ##### Scripts
+
+Scripts are similar to config files, except you might want to run them during installation or after first boot.
 
 There are two ways to add/run scripts:
 * Adding them in a file and then running them
 * Running them in a \<post>\</post> tags.
-
-Adding scripts is pretty much the same thing. Add the contents of the script to a file, and then call the script during install or at first boot depending on what applications have to be running when it's called.
 
 ###### Add a script to be run
 
@@ -111,7 +206,7 @@ Notice the &gt;. The >, <, and & are not interpreted by the xml parser so to use
 
 But what if you have a big script that has a bunch of characters that don't escape easily?
 
-You can use the <![CDATA[ construction to bypass having to escape anything.
+Again you can use the <![CDATA[ ]]> construction to bypass having to escape anything.
 
 Like this example:
 
@@ -133,19 +228,61 @@ fi
 </post>
 ```
 
+This is a more complex example. Note that only script part of sethadoopenv.sh is contained in the <![CDATA[ ]]>
+constructions
+
+```
+<post cond="has_mapr">
+<file name="/etc/profile.d/sethadoopenv.sh">
+export HADOOP_HOME=/opt/mapr/hadoop/hadoop-0.20.2
+export SQOOP_HOME=/opt/mapr/sqoop/sqoop-1.4.4
+export MAHOUT_HOME=/opt/mapr/mahout/mahout-0.8
+export HBASE_HOME=/opt/mapr/hbase/hbase-0.94.9
+export HIVE_HOME=/opt/mapr/hive/hive-0.11
+export PIG_HOME=/opt/mapr/pig/pig-0.11
+export PIG_CLASSPATH=$HADOOP_HOME/conf
+export PATH=$PATH:$HADOOP_HOME/bin:$MAHOUT_HOME/bin:$SQOOP_HOME/bin:$HBASE_HOME/bin:$HIVE_HOME/bin:$PIG_HOME/bin
+export CLASSPATH=$HADOOP_HOME/conf
+export PIG_OPTS="-Dhbase.zookeeper.property.clientPort=5181 -Dhbase.zookeeper.quorum=&mapr.zookeeper.servers;"
+<![CDATA[
+LOGNAME=`whoami`
+if [ $LOGNAME == root ]
+then
+        break
+else
+        if [[ -f ~/.my_queue && `cat ~/.my_queue | grep [a-z] |wc -l` -gt 0 ]] &&  [[ $(echo  "`date +%s` - `stat -L --format %Y ~/.my_queue`" | bc) -lt 86400 ]];
+        then
+                export MY_QUEUE=`cat ~/.my_queue`;
+                echo -e "\n Using Existing Queue Info";
+        else
+                `$HADOOP_HOME/bin/hadoop queue -showacls 2> /dev/null | grep -v "default" | grep submit-job | awk '{print $1}' | head -1 > ~/.my_queue`;
+                export MY_QUEUE=`cat ~/.my_queue`;
+                echo -e "\n Creating Queue Info";
+        fi
+        if [ "`echo ${MY_QUEUE:-null}`" == "null" ];then
+                echo -e "\n ! Error : Unable to set MY_QUEUE; Please check if you are a member of any queue other than \"default\"";
+        else
+                echo -e "\n Defined MY_QUEUE=$MY_QUEUE\n";
+        fi
+fi
+]]>
+</file>
+</post>
+```
+
+Note the cond="has_mapr" in the opening post tag of the example. I've defined an attribute (key-value pair) called has_mapr as True. If a machine has this attribute set to true, then the script will be put on the machine. If it doesn't have has_mapr set to true, then this doesn't make it into the XML.
+
 If your scripts need full network and services, then you can run them at first boot:
 
-after all your <post></post> tags you can do:
-
+after all your \<post>\</post> tags you can do:
+```
 <boot order="post">
-/full/path/of/script/or/file.sh
+/full/path/of/script/dothis.sh
 </boot>
-
+```
 The output of that will be in /root/rocks-post.log after an install. 
 
-Let's say we have an application called "killerapp." It comes in an RPM that I've added to the contrib directory, and I'm adding it in package tags. There's a config file for it call /etc/killerapp/killerapp.conf, and I want to create my config file for it:
-
-There is another thing you can do and I worked with someone today. He had a a script that was bash executable zippy thingy, so script plus payload. Due to versioning issues (frontend installed with os, backends with older Oracle linux) doing a "stack create package" to make an rpm out of them wasn't going to work. (Right, and then you're going to ask me how to do that. I'll answer that if you've actually read this far and ask me that question.) 
+There is another thing you can do and I worked on with someone today. He had a a script that was bash executable zippy thingy, so script plus payload. Due to versioning issues (frontend installed with os, backends with older Oracle linux) doing a "stack create package" to make an rpm out of them wasn't going to work. (Right, and then you're going to ask me how to do that. I'll answer that if you've actually read this far and ask me that question.) 
 
 So we just dumped the actual scripts in contrib.
 
