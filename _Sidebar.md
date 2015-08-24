@@ -10,7 +10,7 @@
   * [Extending Your Scripts](Extend-Your-Scripts)
   * [Managing With Distributions](Manage-Distributions) 
   * [Manage Pallets](Manage-Pallets)
-  * [Creating Simple Pallets](Creating-Pallets)
+  * [Creating Simple Pallets](Creating-Simple-Pallets)
 * Reference
   * [Command Line](Command-Line-Reference) 
   * [Wire Reference](Wire-Reference)
