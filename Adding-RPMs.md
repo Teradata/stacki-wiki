@@ -1,5 +1,7 @@
 One of the easiest ways to add functionality and customization is to add RPMs to the distribution. There are couple ways to do this - this is the no-brainer, gottagetitworkingrightnow, easy way.
 
+(If you want a bunch of RPMs and they live in a repository somewhere, go to [Creating Simple Pallets](https://github.com/StackIQ/stacki/wiki/Creating-Simple-(Package-based)-Pallets))
+
 ##### Adding RPMs
 
 Download the RPM for the application you want.
