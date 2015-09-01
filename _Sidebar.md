@@ -19,6 +19,8 @@
   * [Wire Reference](Wire-Reference)
 * Developer
   * [Building From Source](Building-From-Source)
+
 ***
+
 * Previous Releases
   * [1.x](Home-1.x)
