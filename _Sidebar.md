@@ -1,4 +1,5 @@
-### Previous Releases
+### Releases
+* [2.x](Home)
 * [1.x](Home-1.x)
 
 ***
