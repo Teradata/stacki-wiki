@@ -1,6 +1,6 @@
 ### Releases
 * [2.x](Home)
-* [1.x](1.x/Home-1.x)
+* [1.x](Home-(v1.x))
 
 ***
 
