@@ -155,7 +155,7 @@ Following are the contents of my extend-base.xml. (I know, I said extend-backend
 
 So this is from my /export/stack/site-profiles/default/1.0/nodes/extend-base.xml:
 
-```
+```xml
 <?xml version="1.0" standalone="no"?>
 
 <kickstart>
