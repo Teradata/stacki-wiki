@@ -23,4 +23,4 @@
 
 ***
 * Previous Releases
-  * [1.x](1.x/Concepts)
+  * [1.x](Home-1.x)
