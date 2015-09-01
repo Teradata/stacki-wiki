@@ -1,0 +1,43 @@
+## iterate host
+
+### Usage
+
+`stack iterate host [host]... [command] [command=string]`
+
+### Description
+
+Iterate sequentially over a list of hosts.  This is used to run 
+	a shell command on the frontend with with '%' wildcard expansion for
+	every host specified.
+
+### Arguments
+
+* `[host]`
+
+   Zero, one or more host names. If no host names are supplied iterate over
+	all hosts except the frontend.
+
+* `[command]`
+
+   The shell command to be run for each host.  The '%' character is used as
+	a wildcard to indicate the hostname.  Quoting of the '%' to expand to a 
+	literal is accomplished with '%%'.
+
+
+### Parameters
+* `[command=string]`
+
+   Can be used in place of the command argument.
+
+### Examples
+
+* `stack iterate host compute "scp file %:/tmp/"`
+
+   Copies file to the /tmp directory of every compute node
+
+* `stack iterate host compute command="scp file %:/tmp/"`
+
+   Same as above
+
+
+
