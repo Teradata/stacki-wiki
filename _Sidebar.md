@@ -1,3 +1,8 @@
+#Previous Releases
+* [1.x](Home-1.x)
+
+***
+
 * [Home](Home)
 * [Concepts](Concepts)
 * Installation
@@ -20,7 +25,3 @@
 * Developer
   * [Building From Source](Building-From-Source)
 
-***
-
-* Previous Releases
-  * [1.x](Home-1.x)
