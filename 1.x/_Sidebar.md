@@ -15,21 +15,11 @@
 * Examples of Stacki Customization
   * [Installing Mesos/Marathon/Zookeeper using Attributes](Mesos-Marathon-Zookeeper)
 * Reference
-> 1.x
-***
-
-
-***
-
   * [Command Line](Command-Line-Reference) 
   * [Wire Reference](Wire-Reference)
 * Developer
   * [Building From Source](Building-From-Source)
 
-  
 
 ***
-
-***
-
-***
+1.x
