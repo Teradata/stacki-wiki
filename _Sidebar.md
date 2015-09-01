@@ -1,8 +1,11 @@
-### Releases
-* [2.x](Home)
+### Releases 
+
+* [2.x](Home) 
 * [1.x](1.x-Home)
 
 ***
+
+### Content
 
 * [Home](Home)
 * [Concepts](Concepts)
@@ -19,7 +22,7 @@
   * [Creating Simple Pallets](Creating-Simple-(Package-based)-Pallets)
   * [Managing With Distributions](Manage-Distributions) 
 * Use Cases
-  * [Installing Mesos/Marathon/Zookeeper using Attributes](Mesos-Marathon-Zookeeper)
+  * [Mesos/Marathon/Zookeeper](Mesos-Marathon-Zookeeper)
 * Reference
   * [Command Line](Command-Line-Reference) 
   * [Wire Reference](Wire-Reference)
