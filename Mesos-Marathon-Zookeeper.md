@@ -207,7 +207,7 @@ But lets go through it:
 The fun starts at the package tags:
 
 (Everything has to have the Mesos so we’ll put it everywhere.)
-```
+```xml
 <package>mesos</package>
 ```
 
@@ -215,7 +215,7 @@ The fun starts at the package tags:
 setup with zookeeper, but for now we’ll just put it on the Mesos master. 
 The "cond=" says only add this package if the "is_mesos_master" value is true so these rpms won't be on the slaves.
 
-```
+```xml
 <package cond="is_mesos_master">marathon</package>
 <package cond="is_mesos_master">zookeeper-server</package>
 ```
@@ -223,14 +223,14 @@ The "cond=" says only add this package if the "is_mesos_master" value is true so
 % Now the <post></post> tags which map to the %post part of a kickstart file.
 
 If the is_mesos_master evaluates to “True” we’re going to do the following:
-```
+```xml
 <post cond="is_mesos_master">
 <!— get rid of the mesos.slave —>
 mv /etc/init/mesos-slave.conf /etc/init/mesos-slave.conf.disabled
 ```
 
 (Set the master ip. The <file></file> tags essentially wrap the syntax everyone uses everywhere):
-```
+```xml
 cat >> somefile << EOF
 stuff
 EOF
