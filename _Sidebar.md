@@ -25,7 +25,7 @@
   * [Mesos/Marathon/Zookeeper](Mesos-Marathon-Zookeeper)
 * Reference
   * [Command Line](Command-Line-Reference) 
-  * [Wire Reference](Wire-Reference)
+  * [Wire](Wire-Reference)
 * Developer
   * [Building From Source](Building-From-Source)
 
