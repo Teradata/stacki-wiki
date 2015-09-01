@@ -7,8 +7,8 @@
 
 ### Content
 
-#### [Home](Home)
-#### [Concepts](Concepts)
+* [Home](Home)
+* [Concepts](Concepts)
 * Installation
   * [Frontend](Frontend-Installation)
   * [Backend](Backend-Installation)
