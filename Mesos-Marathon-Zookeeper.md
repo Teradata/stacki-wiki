@@ -230,7 +230,7 @@ mv /etc/init/mesos-slave.conf /etc/init/mesos-slave.conf.disabled
 ```
 
 (Set the master ip. The <file></file> tags essentially wrap the syntax everyone uses everywhere):
-```xml
+```
 cat >> somefile << EOF
 stuff
 EOF
@@ -239,7 +239,7 @@ EOF
 (The &hostaddr; entity maps to the installing node's ip address in the same way &hostname; maps to the 
 installing node's hostname. We’ve defined those for you, because we’re awesome like that. [No sorry, really,
 we needed a shortcut, you just get to benefit.])
-```
+```xml
 <file name="/etc/mesos-master/ip">
 &hostaddr;
 </file>
@@ -247,14 +247,14 @@ we needed a shortcut, you just get to benefit.])
 
 (Give the cluster a name and call it from the key/value pair we defined
 use the xml entity tag syntax to do this)
-```
+```xml
 <file name="/etc/mesos-master/cluster">
 &mesos_cluster_name;
 </file>
 ```
 
 (Initialize zookeeper and make sure it starts at boot.)
-```
+```xml
 service zookeeper-server init
 echo 1 &gt; /var/lib/zookeeper/myid
 chkconfig zookeeper-server on
@@ -263,7 +263,7 @@ chkconfig zookeeper-server on
 
 The slave post config:
 Same stuff, only do this if is_mesos_slave evalutes to True.
-```
+```xml
 <post cond="is_mesos_slave">
 <!— dont’ start a master here —>
 mv /etc/init/mesos-master.conf /etc/init/mesos-master.conf.disabled
@@ -276,7 +276,7 @@ mv /etc/init/mesos-master.conf /etc/init/mesos-master.conf.disabled
 ```
 
 The following is for both the master and the slave so we don’t put a conditional on it:
-```
+```xml
 <post>
 <!— set where the zookeeper runs currently is the mesos master too —>
 <file name="/etc/mesos/zk">
@@ -308,7 +308,7 @@ Test the profile:
 # stack list host profile backend-0-0 
 ```
 Which should not give you errors. It's usually something vomitous if it does error out. If you see this:
-```
+```xml
 cat >> /etc/sysconfig/stack-post << '__EOF__'
 
 rm -f /tmp/ks-script*
@@ -364,7 +364,7 @@ To manage the cluster/master/slaves.
 
 But to do that you need to create /usr/etc/mesos/masters and /usr/etc/mesos/slaves. Here’s a basic python script that does it, using the Stacki api. Not pretty but works and gives you a small idea of the kind of thing you can do as standalone scripts or within kickstart to get information you need.
 
-```
+```python
 #!/opt/stack/bin/python
 
 import stack.api
