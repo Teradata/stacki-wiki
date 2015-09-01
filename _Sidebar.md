@@ -18,7 +18,7 @@
   * [Manage Pallets](Manage-Pallets)
   * [Creating Simple Pallets](Creating-Simple-(Package-based)-Pallets)
   * [Managing With Distributions](Manage-Distributions) 
-* Examples of Stacki Customization
+* Use Cases
   * [Installing Mesos/Marathon/Zookeeper using Attributes](Mesos-Marathon-Zookeeper)
 * Reference
   * [Command Line](Command-Line-Reference) 
