@@ -22,7 +22,7 @@
   * [Creating Simple Pallets](Creating-Simple-(Package-based)-Pallets)
   * [Managing With Distributions](Manage-Distributions) 
 * Use Cases
-  * [Mesos/Marathon/Zookeeper](Mesos-Marathon-Zookeeper)
+  * [Mesos/Marathon/Zookeeper](Mesos-Marathon-Zookeeper-Use-Case)
 * Reference
   * [Command Line](Command-Line-Reference) 
   * [Wire](Wire-Reference)
