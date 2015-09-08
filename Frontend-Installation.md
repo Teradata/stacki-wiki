@@ -9,7 +9,7 @@ networking information.
 
 ## Requirements 
  
-A frontend has the following hardware requirements.  
+A frontend has the following hardware requirements.
 
 **Resource** | Minimum | Recommended  
 --- | --- | ---
@@ -20,31 +20,22 @@ A frontend has the following hardware requirements.
  
 BIOS _boot order_
  
-1. CD/DVD Device  
-2. Hard Disk  
- 
-Stacki allows you to place only the frontend on your public network
-and to then deploy all backend servers on an isolated private network.
-This recommended setup is shown below.
+1. CD/DVD Device
+2. Hard Disk
 
-![](images/cluster-architecture-two-networks.png)
+In the simplest configuration Stacki assume a single network for all
+servers.
+Stacki refers to the single network as the _private_ network, 
+and often this will be an isolated network.
+This default setup in shown below.
 
-You may also place all backend nodes on the public network and use
-only a single network interface from the Stacki frontend, as shown
-below.
-If you choose to run in this configuration there are two additional
-requirements.
-First, the public network cannot have a DHCP server that would answer
-a DHCP request from a backend server. (This is the frontend's job.)
-Second, when in the installation wizard, you will still need to
-configure both interfaces.
-But in this case, simply configure the _public_ and _private_ with the
-same network information but only cable the _private_ one (yes this is
-odd, but it is required when you only have one interface for the frontend, and hey, _it works_).
+![](images/cluster-architecture-network.png)  
 
-![](images/cluster-architecture-one-network.png) 
+The private network cannot have a DHCP server that would answer 
+a DHCP request from a backend server, as this is the resposibility of
+the frontend.
 
-
+> Stacki 1.x requires a _public_ and _private_ network
 
 ## New or Existing
 
