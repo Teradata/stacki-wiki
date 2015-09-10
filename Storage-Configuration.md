@@ -19,7 +19,7 @@ A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/1nukh3bwcgwhxXn1czhDawog_-srlXgCy7arh2m71-so/edit?usp=sharing) 
 is shown below. 
 
-![](images/sample-partition-configuration-csv.png) 
+![](images/lvm_example.png) 
  
 The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
 Appliance type (e.g., _backend_) or it can be set to _global_.  
