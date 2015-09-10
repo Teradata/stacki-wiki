@@ -31,13 +31,14 @@ The ``/var`` partition is an ext4 partition and it is 80 GB.
 The ``swap`` partition is 16 GB.
 Lastly, ``/scratch`` is an xfs partition and it will be the remainder of ``sda``.
  
-The configuration for _backend-0-0_ has a similar configuration for ``sda`` as the _global_ configuration except for the ``/scratch partition``. The maximum size of ``/scratch`` partition is set to 4 GB.
+The configuration for _backend-0-0_ has a similar configuration for ``sda`` as the _global_ configuration except for the ``/scratch partition``. The maximum size of ``/scratch`` partition is set to 4 GB via the Options column.
 Additionally, ``sdb`` and ``sdc`` will be configured for _backend-0-0_ as single partitions that span the entire disk.
 
 ### LVM
 
-Stacki 2.0 supports specifying LVM configuration via a spreadsheet. ``pv.01`` is physical volume on ``sdb`` with size as 8GB. The value of **lvm** in the type column specifies that this physical volume needs to be setup via LVM.
-``volgrp01`` is a volgroup comprising of ``pv.01``. The keyword **volgroup** indicates that its a logical volume group. ``/extra`` is mounted as an lvm partition on volgroup ``volgrp01``.
+Stacki 2.0 supports specifying LVM configuration via a spreadsheet. **lvm**, **volgroup** are keywords that indicate that the partition needs to be setup via LVM. In the configuration for ``backend-0-1``,
+``pv.01`` is configured as a physical volume on ``sdb`` with size as 8GB. 
+``volgrp01`` is a volgroup comprising of ``pv.01``. ``/extra`` is mounted as an lvm partition on volgroup ``volgrp01``.
 
 When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend.
 Then, load the CSV file into the database on the frontend by executing:
