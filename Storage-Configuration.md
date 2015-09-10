@@ -31,8 +31,13 @@ The ``/var`` partition is an ext4 partition and it is 80 GB.
 The ``swap`` partition is 16 GB.
 Lastly, ``/scratch`` is an xfs partition and it will be the remainder of ``sda``.
  
-The configuration for _backend-0-0_ has a similar configuration for ``sda`` as the _global_ configuration.
+The configuration for _backend-0-0_ has a similar configuration for ``sda`` as the _global_ configuration except for the ``/scratch partition``. The maximum size of ``/scratch`` partition is set to 4 GB.
 Additionally, ``sdb`` and ``sdc`` will be configured for _backend-0-0_ as single partitions that span the entire disk.
+
+### LVM
+
+Stacki 2.0 supports specifying LVM configuration via a spreadsheet. ``pv.01`` is physical volume on ``sdb`` with size as 8GB. The value of **lvm** in the type column specifies that this physical volume needs to be setup via LVM.
+``volgrp01`` is a volgroup comprising of ``pv.01``. The keyword **volgroup** indicates that its a logical volume group. ``/extra`` is mounted as an lvm partition on volgroup ``volgrp01``.
 
 When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend.
 Then, load the CSV file into the database on the frontend by executing:
@@ -61,13 +66,6 @@ Then, the next time _backend-0-0_ is installed, it will remove all partitions fo
  
 While a host is installing, after it partitions its disks, it will send a message to the frontend to instruct it to set the  _nukedisks_ attribute back to _false_.
 This ensures that the disks will not be reconfigured on the next installation.
-
-### LVM
- 
-Currently, there is no support to configure logical volumes via spreadsheets. This feature is in development.
- 
-LVM configuration is supported in Stacki. Please contact us for assistance.
-
 
 
 ## RAID Controller
