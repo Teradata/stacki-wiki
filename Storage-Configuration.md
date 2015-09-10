@@ -12,10 +12,11 @@ spreadsheet with the following columns:
 1. **Device**. The Linux disk device name (e.g., ``sda``, ``sdb``). 
 1. **Mountpoint**. Where the partition should be mounted on the file system. 
 1. **Size**. The size of the partition in megabytes. 
-1. **Type**. How the partition should be formatted (e.g., xfs, swap). 
+1. **Type**. How the partition should be formatted (e.g., xfs, swap).
+1. **Options**. Free form string of options that can be used to create a partition.
  
 A 
-[sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=16332552&single=true) 
+[sample spreadsheet](https://docs.google.com/spreadsheets/d/1nukh3bwcgwhxXn1czhDawog_-srlXgCy7arh2m71-so/edit?usp=sharing) 
 is shown below. 
 
 ![](images/sample-partition-configuration-csv.png) 
@@ -141,5 +142,4 @@ Unlike the _nukedisks_ attribute, _nukecontroller_ is not set to _true_ on the i
 
 While a host is installing, after it configures its controller, it will send a message to the frontend to instruct it to set the  _nukecontroller_ attribute back to _false_.
 This ensures that the controller will not be reconfigured on the next installation.
-
 
