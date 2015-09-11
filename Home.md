@@ -73,7 +73,7 @@ clients both large and small:
 * HPC: Torque, Slurm, MOAB, MPI, UGE/OGS/SGE, PBS, CUDA, LSF, PGI
 * Filesystems: Ceph, GPFS, GlusterFS
 * Hardware: Intel, Supermicro, Dell, IBM, HP, Cisco UCS, white box
-* Good Stuff: CoreOS, ESXI, Puppet, Ansible, Chef, Salt, CFEngine, Intel Developer Tools, VirtualBox, Docker
+* Good Stuff: Puppet, Ansible, Chef, Salt, CFEngine, Intel Developer Tools, VirtualBox, Docker
 
 If you can do it in Linux, Stacki can automate it and deploy it over thousands
 of machines. 
