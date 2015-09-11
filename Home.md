@@ -69,7 +69,7 @@ The following is a list of some of the applications we've installed for
 clients both large and small:
 
 * Big Data: Cloudera, Hortonworks, MapR, Pivotal, BigInsights, Spark, Storm, Cassandra, MongoDB, RabbitMQ, R, Mesos, Splunk
-* Cloud: OpenStack (RHEL-OSP, community OpenStack, RDO), CloudStack, VMWare
+* Cloud: OpenStack (RHEL-OSP, community OpenStack, RDO), CloudStack
 * HPC: Torque, Slurm, MOAB, MPI, UGE/OGS/SGE, PBS, CUDA, LSF, PGI
 * Filesystems: Ceph, GPFS, GlusterFS
 * Hardware: Intel, Supermicro, Dell, IBM, HP, Cisco UCS, white box
