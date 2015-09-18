@@ -102,55 +102,33 @@ the [Installation Wizard](#installation-wizard).
 
 ## Installation Wizard
 
-### Cluster Information
+### Timezone
 
-The first screen will appear and you will be prompted to enter the following
-info:
+The first screen will appear and you will be prompted to enter your timezone:
 
-1. _Cluster Name_ - for example "Demo"
-2. _Fully Qualified Host Name_ of the frontend (i.e., name.yourdomain.com)
-3. _Email_ - Administrator Email
-4. _Timezone_ of the cluster.
+![](images/2.x/stacki_config_step_1b.png)
 
-![](images/stacki_config_step_1b.png)
+### Network
 
-### Public Network
+The network configuration screen allows you to set up the network that will
+be used by the frontend to install backend hosts.
 
-The public cluster network configuration screen allows you to set up the
-networking parameters for the ethernet network that connects the frontend to the
-outside network (e.g., the Internet).
-
-1. Choose from the network _Devices_ to select the public network.
-2. _IP_ address of the public interface.
-3. _Netmask_.
-4. _Gateway_.
+1. _Fully Qualified Host Name_ - Input the FQDN for the frontend.
+2. Choose from the network _Devices_ to select the frontend's network interface.
+3. _IP_ address of the interface.
+4. _Netmask_.
+5. _Gateway_.
 5. _DNS Servers_ - More than one DNS Server can be entered as a comma-separated list (i.e., 8.8.8.8, 4.2.2.2, 8.8.4.4).
 
 Click _Continue_ to configure the network interface. 
 
-![](images/stacki_config_step_2b.png)
-
-### Private Network
-
-The private network configuration screen configures the
-networking parameters for the ethernet network that
-connects the frontend to the backend nodes.
-
-1. Choose from the network _Devices_ to select the private network.
-2. _IP_ address of the private interface.
-3. _Netmask_.
-
-Click _Continue_ to configure the network interface.
- 
-
-![](images/stacki_config_step_3b.png)
+![](images/2.x/stacki_config_step_2b.png)
 
 ### Password
 
 Enter the password for the **root** account on the frontend.  
-(Something better than "bob" is recommended, and no, "12345" is not better than "bob".)
 
-![](images/stacki_config_step_4.png)
+![](images/2.x/stacki_config_step_4.png)
 
 ### Choose Partition
 
@@ -178,26 +156,22 @@ screen after the wizard exits. In this mode, specify at least 16 GB
 for the root partition and a separate /export partition. You should add
 a swap partition, and /var if you have made / only 16GB.
 
-![](images/stacki_config_step_5.png)
+![](images/2.x/stacki_config_step_5.png)
 
 ### Add Pallets
 
 Choose the _Pallets_ you want to install.
 Booting from a DVD, pallets should automatically load onto the list for you to choose.
 
-![](images/stacki_config_step_6a_2.png)
-
-The _Id_ column denotes pallets loaded from a DVD and the _Network_ column denotes pallets from a network.
-
 Select _stacki_ and _os_ pallets to install.
 
-![](images/stacki_config_step_6b_2.png)
+![](images/2.x/stacki_config_step_6a_2.png)
 
 ### Review
 
 Review the installation parameters and click _Continue_ to proceed.
 
-![](images/stacki_config_step_7_2.png) 
+![](images/2.x/stacki_config_step_7_2.png) 
 
 #### New
 
