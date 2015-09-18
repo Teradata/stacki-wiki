@@ -69,13 +69,9 @@ frontend installation will begin, and you will soon see the
 A Stacki frontend can be installed on top of an existing Red Hat based server.
 The server must be running the x86_64 version of CentOS 6.x or RHEL 6.x.
 
-To perform this installation, log into the Gnome (or generic X11)
-environment on the servers console as root.
-You must be root and X11 is required.
+To perform this installation, log into the frontend and download two ISOs:
 
-To start the installation, download two ISOs and put them on your server:
-
-1. **Stacki**. The Stacki ISO can be found [here](http://stacki.s3.amazonaws.com/1.0/stacki-1.0-I.x86_64.disk1.iso).
+1. **Stacki**. The Stacki ISO can be found [here](http://stacki.s3.amazonaws.com/2.0/stacki-2.0-6.x.x86_64.disk1.iso).
 
 2. **CentOS** or **RHEL** installation ISO. A CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
 
@@ -83,18 +79,17 @@ To start the installation, download two ISOs and put them on your server:
 
 Mount the Stacki ISO:
 
-    # mount -o loop stacki*iso /media
+    # mount -o loop stacki-2.0-6.x.x86_64.disk1.iso /media
 
 Copy frontend-install.py from the ISO to your local disk:
 
-
     # cp /media/frontend-install.py /tmp
-
 
 Execute frontend-install.py:
 
+    # /tmp/frontend-install.py --stacki-name=stacki --stacki-version=2.0 --stacki-iso=stacki-2.0-6.x.x86_64.disk1.iso --os-name=CentOS --os-version=6.7 --os-iso=CentOS-6.7-x86_64-bin-DVD1.iso,CentOS-6.7-x86_64-bin-DVD2.iso
 
-    # /tmp/frontend-install.py /path/to/stacki*iso stacki 1.0 /path/to/CentOS*iso CentOS 6.6
+> If you use CentOS 6.7, you are required to supply both DVDs as shown above.
 
 The above step will run several commands and will eventually display
 the [Installation Wizard](#installation-wizard).
