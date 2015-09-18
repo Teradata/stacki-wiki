@@ -46,7 +46,7 @@ section labeled [existing](#existing).
 
 ### New
 
-Download the Stacki jumbo DVD [here](https://s3.amazonaws.com/stacki/1.0/stacki-os-1.0.x86_64.disk1.iso) and burn the file to a DVD or
+Download the Stacki jumbo DVD [here](http://stacki.s3.amazonaws.com/2.0/stacki-os-2.0-6.x.x86_64.disk1.iso) and burn the file to a DVD or
 mount it on the virtual media for the server to be installed.
 Installing a frontend will completely erase and reformat the hard disks in the
 server, so be careful which server you decide to become your frontend.
@@ -54,7 +54,7 @@ server, so be careful which server you decide to become your frontend.
 Boot the server with the DVD (or virtual media mounted) and the
 following screen will appear after the BIOS is initialized:
 
-![](images/stack-iso-boot.png)
+![](images/2.x/stack-iso-boot.png)
 
 If you don't see the above screen, go back to
 the [requirements](#requirements) section and
