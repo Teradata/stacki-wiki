@@ -122,9 +122,9 @@ information from the configuration database.
 # stack list host
 HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
 frontend-0-0: 0     0   1    frontend  default      os        install      
-backend-0-0:  0     0   2    backend   default      os        install      
-backend-0-1:  0     1   4    backend   default      os        install      
-backend-0-2:  0     2   4    backend   default      os        install
+backend-0-0:  1     1   2    backend   default      os        install      
+backend-0-1:  1     2   4    backend   default      os        install      
+backend-0-2:  1     3   4    backend   default      os        install
 ```
 
 By default number of CPUs on every backend node is set to 1.
@@ -198,5 +198,3 @@ To do all backend hosts at once, give the appliance name:
 After the backend re-installs, it will reset the value of the attribute
 to _false_ so the next time you re-install, it will do the default and
 only reformat the ```/var``` and ```/``` partitions.
-
-We hate losing data also.
