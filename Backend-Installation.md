@@ -99,13 +99,13 @@ The Host CSV file needs to have the following columns:
 1. **IP** Network address.
 1. **MAC** Ethernet address.
 1. **Interface** Ethernet device name (e.g. em1)
-1. **Subnet** Subnet name for the interface (e.g. private)
+1. **Network** Network name for the interface (e.g. private)
 
 A 
-[sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=142297572&single=true)
+[sample spreadsheet](https://docs.google.com/spreadsheets/d/19xk_tlvD5dYgLxfZpQVuVtAUGdKi3KCoqRVFVMTJA7w/edit?usp=sharing)
 is shown below. 
 
-![](images/sample-host-configuration-csv.png) 
+![](images/2.x/sample-host-configuration-csv.png) 
 
 
 Once the CSV file is created and copied to the frontend it can be

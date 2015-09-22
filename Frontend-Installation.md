@@ -89,7 +89,7 @@ Execute frontend-install.py:
 
     # /tmp/frontend-install.py --stacki-name=stacki --stacki-version=2.0 --stacki-iso=stacki-2.0-6.x.x86_64.disk1.iso --os-name=CentOS --os-version=6.7 --os-iso=CentOS-6.7-x86_64-bin-DVD1.iso,CentOS-6.7-x86_64-bin-DVD2.iso
 
-> If you use CentOS 6.7, you are required to supply both DVDs as shown above.
+> If you use CentOS 6.7, you are required to supply both CentOS DVDs as shown above.
 
 The above step will run several commands and will eventually display
 the [Installation Wizard](#installation-wizard).
