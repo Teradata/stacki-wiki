@@ -31,7 +31,7 @@ The ``/var`` partition is an ext4 partition and it is 80 GB.
 The ``swap`` partition is 16 GB.
 Lastly, ``/scratch`` is an xfs partition and it will be the remainder of ``sda``.
  
-The configuration for _backend-0-0_ has a similar configuration for ``sda`` as the _global_ configuration except for the ``/scratch partition``. The maximum size of ``/scratch`` partition is set to 4 GB via the Options column.
+The configuration for _backend-0-0_ has a similar configuration for ``sda`` as the _global_ configuration except for the ``/scratch`` partition. The maximum size of ``/scratch`` partition is set to 1 GB via the Options column.
 Additionally, ``sdb`` and ``sdc`` will be configured for _backend-0-0_ as single partitions that span the entire disk.
 
 ### LVM
@@ -44,7 +44,7 @@ When you are finished editing your spreadsheet, save it as a CSV file, then copy
 Then, load the CSV file into the database on the frontend by executing:
 
 ``` 
-# stack load storage partition file=your-controller.csv
+# stack load storage partition file=partition.csv
 ```
  
 You can view your storage partition configuration by executing:
@@ -55,7 +55,7 @@ You can view your storage partition configuration by executing:
 
 ### The _nukedisks_ Attribute
  
-A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_. On first install, all installing backend disks automatically have _nukedisks_ set to _true_. If you've added backend nodes via spreadsheet, you must set _nukedisks_ to _true_ as in the example below, before installing.
+A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_. On first install, all installing backend disks automatically have _nukedisks_ set to _false_. If you've added backend nodes via spreadsheet, you must set _nukedisks_ to _true_ as in the example below, before installing.
 
 As an example, to set the _nukedisks_ attribute for host _backend-0-0_, execute:
 
@@ -117,7 +117,7 @@ When you are finished editing your spreadsheet, save it as a CSV file, then copy
 Then, load the CSV file into the database on the frontend by executing:
 
 ```
-# stack load storage controller file=your-controller.csv
+# stack load storage controller file=controller.csv
 ```
 
 You can view your storage controller configuration by executing:

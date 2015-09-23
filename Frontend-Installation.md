@@ -14,7 +14,7 @@ A frontend has the following hardware requirements.
 **Resource** | Minimum | Recommended  
 --- | --- | ---
 **System Memory** | 2 GB | 16 GB  
-**Network Interfaces** | 2 | 2  
+**Network Interfaces** | 1 | 1  
 **Disk Capacity** | 64 GB | 200GB  
 **CD/DVD Device** | 1 | 1  
  
@@ -23,7 +23,7 @@ BIOS _boot order_
 1. CD/DVD Device
 2. Hard Disk
 
-In the simplest configuration Stacki assume a single network for all
+In the simplest configuration, Stacki assumes a single network for all
 servers.
 Stacki refers to the single network as the _private_ network, 
 and often this will be an isolated network.
@@ -174,7 +174,7 @@ If this was a [new](#new) installation, the frontend will now format
 its filesystems and copy the pallets from the DVD onto its hard disk.
 Next, it will install all the packages and then run post configuration
 scripts.
-When this is complete, the frontend will reboot.
+When this completes, the frontend will reboot.
 Your Stacki frontend is now ready to install backend servers.
 
 #### Existing

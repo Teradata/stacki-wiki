@@ -18,8 +18,8 @@ BIOS _boot order_
 
 ## Discovery or SpreadSheet
 
-To install a new backend node, stacki needs to add information about
-the server (ip address, mac address, appliance type, etc) to the
+To install a new backend node, Stacki needs to add information about
+the server (IP address, MAC address, appliance type, etc) to the
 configuration database.
 Choose between the [Discovery](#discovery) or [SpreadSheet](#spreadsheet) procedure to install
 your new backend nodes.
@@ -93,13 +93,13 @@ someone's eyeballs.
 The Host CSV file needs to have the following columns:
 
 1. **Name**. A hostname.
-1. **Appliance** The appliance name for the host (e.g. backend).
-1. **Rack** The rack number for the host.
-1. **Rank** The position in the rack for the host.
-1. **IP** Network address.
-1. **MAC** Ethernet address.
-1. **Interface** Ethernet device name (e.g. em1)
-1. **Network** Network name for the interface (e.g. private)
+1. **Appliance**. The appliance name for the host (e.g. backend).
+1. **Rack**. The rack number for the host.
+1. **Rank**. The position in the rack for the host.
+1. **IP**. Network address.
+1. **MAC**. Ethernet address.
+1. **Interface**. Ethernet device name (e.g. em1).
+1. **Network**. Network name for the interface (e.g. private).
 
 A 
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/19xk_tlvD5dYgLxfZpQVuVtAUGdKi3KCoqRVFVMTJA7w/edit?usp=sharing)
@@ -132,7 +132,7 @@ This value will be updated automatically once a backend node
 is installed.
 
 Every time a backend node boots, it will send a PXE request to the
-frontend. The frontend will tell the backend node to either boot its os or to
+frontend. The frontend will tell the backend node to either boot its OS or to
 install. The default boot action is always _os_ as you can see below.
 
 ```
@@ -195,6 +195,6 @@ To do all backend hosts at once, give the appliance name:
 # stack run host backend "reboot"
 ```
 
-After the backend re-installs, it will reset the value of the attribute
-to _false_ so the next time you re-install, it will do the default and
-only reformat the ```/var``` and ```/``` partitions.
+After the backend re-installs, it will automaticaly reset the value of the
+attribute to _false_ so the next time you re-install, it will do the default
+and only reformat the ```/var``` and ```/``` partitions.
