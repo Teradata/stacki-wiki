@@ -137,7 +137,7 @@ As an example, to set the _nukecontroller_ attribute for host _backend-0-0_, exe
 
 Then, the next time _backend-0-0_ is installed, it will remove the current hardware RAID controller configuration, then configure it as you specified in your spreadsheet.
 
-Unlike the _nukedisks_ attribute, _nukecontroller_ is not set to _true_ on the initial installation of a backend node. If you or someone you've paid, has configured the RAID controller with a keyboard and monitor, that work won't be wiped out unless you specifically request it with _nukecontroller_.
+Like the _nukedisks_ attribute, _nukecontroller_ is set to _false on the initial installation of a backend node. If you or someone you've paid, has configured the RAID controller with a keyboard and monitor, that work won't be wiped out unless you specifically request it with _nukecontroller_.
 
 While a host is installing, after it configures its controller, it will send a message to the frontend to instruct it to set the  _nukecontroller_ attribute back to _false_.
 This ensures that the controller will not be reconfigured on the next installation.
