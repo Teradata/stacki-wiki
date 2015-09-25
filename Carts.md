@@ -47,9 +47,7 @@ We'll call this the *apache* cart.
 
 First, we'll need to add the *apache* cart to the frontend:
 
-```
-stack add cart apache
-```
+	# stack add cart apache
 
 This will create the directory */export/stack/carts/apache* and populate it
 with the following files and directories:
@@ -130,9 +128,7 @@ and it is called the *default* distribution.
 To see what pallets and carts are included in the default distribution,
 execute:
 
-```
-stack list distribution
-```
+	# stack list distribution
 
 And you'll see:
 
@@ -146,9 +142,7 @@ This tells us that the default distribution is currently composed of the
 
 We can associate our *apache* cart to the default distribution by executing:
 
-```
-stack enable cart apache
-```
+	# stack enable cart apache
 
 And now *stack list distribution* shows us:
 
@@ -160,18 +154,14 @@ default: redhat default os-6.7-6.x stacki-2.0-6.x apache
 The last step is to execute a command that binds the *apache* cart into the
 default distribution:
 
-```
-stack create distribution
-```
+	# stack create distribution
 
 After the distribution is created, we can verify that our changes will be
 applied to a backend host when it installs.
 We can create a kickstart file for a backend host (in the command below,
 the backend host's name is *backend-0-0*), by executing:
 
-```
-stack list host profile backend-0-0 > /tmp/ks.cfg	
-```
+	# stack list host profile backend-0-0 > /tmp/ks.cfg	
 
 If you open the file */tmp/ks.cfg*, you'll see that *httpd* is listed in the
 *packages* section:
@@ -213,14 +203,12 @@ Copy the RPM(s) into:
 ```
 
 And then execute:
-```
-# stack create distribution
-```
+
+	# stack create distribution
 
 If you want to add them on the fly, i.e. you don't want to reinstall your machines then execute:
-```
-# stack run host backend "yum clean all && yum -y install <rpmname>" \*
-```
+
+	# stack run host backend "yum clean all && yum -y install <rpmname>" \*
 
 The above command will add *rpmname* to all your backend nodes.
 

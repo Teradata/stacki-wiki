@@ -10,8 +10,8 @@ We'll deal with two types of files: configuration files and scripts that have to
 
 ##### Configuration files
 
-In the [Introduction to Carts](#introduction-to-carts) section, we used the
-*apache* cart as an example cart -- we'll continue to use it here.
+In the [Introduction to Carts](/Carts/#introduction-to-carts) section,
+we used the *apache* cart as an example cart -- we'll continue to use it here.
 
 Go to the *nodes* directory of your cart:
 
