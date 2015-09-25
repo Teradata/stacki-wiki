@@ -16,7 +16,7 @@
   * [Storage](Storage-Configuration)
 * Customization
   * [Carts](Carts)
-  * [Extending Your Scripts](Extend-Your-Scripts)
+  * [Carts: Extending Your Scripts](Extend-Your-Scripts)
   * [Manage Pallets](Manage-Pallets)
   * [Creating Simple Pallets](Creating-Simple-(Package-based)-Pallets)
   * [Managing With Distributions](Manage-Distributions) 

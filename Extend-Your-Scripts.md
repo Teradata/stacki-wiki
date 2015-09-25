@@ -2,27 +2,24 @@ Whatever you can do in a shell, you can do during kickstart.
 
 Our assumption is that when a machine comes up, it should be exactly the way you want at first boot. This way you're certain your stuff is going to run once you hit the install/reinstall button because you've already done the hard configuration scripting to make it so. 
 
-Which means you probably don't want to recreate all of that work just because you've started using a new tool. You've already figured it out, you don't want to do it again, and you probably can't remember why you do some of the things you do in those scripts. We'll discuss how to use extend-backend.xml to:
+Which means you probably don't want to recreate all of that work just because you've started using a new tool. You've already figured it out, you don't want to do it again, and you probably can't remember why you do some of the things you do in those scripts. We'll discuss how to modify a cart to:
 * Not lose work you've already done.
 * Put your already existing config files or scripts where they belong: on the installing node.
-
-The scope of this document uses the extend-backend.xml to create your customizations. There are more complicated ways to do this that lead to shorter xml, and subsequently less complex looking, kickstart files. If you want details on that, email the list, and we'll be happy to document. 
 
 We'll deal with two types of files: configuration files and scripts that have to run.
 
 ##### Configuration files
 
-% Go to the site-profiles directory
+In the [Introduction to Carts](#introduction-to-carts) section, we used the
+*apache* cart as an example cart -- we'll continue to use it here.
+
+Go to the *nodes* directory of your cart:
+
 ```
-# cd /export/stack/site-profiles/default/1.0/nodes/
+# cd /export/stack/carts/apache/nodes
 ```
 
-% Create extend-backend.xml
-If you don't already have an extend-backend.xml file, create one:
-```
-# cp skeleton.xml extend-backend.xml
-```
-Feel free to remove all the commenting. I do. It drives me crazy.
+Edit *cart-apache-backend.xml*.
 
 We are most concerned with what goes on between \<post>\</post> tags. Remember, this runs during the post-install configuration. It maps to the %post stanza in kickstart.
 
@@ -37,7 +34,8 @@ These are the contents of my file
 </post>
 ```
 
-% But if I need to make it executable I'll set the permissions:
+But if you need to make it executable, you can set the permissions:
+
 ```
 <post>
 <file name="/full/path/of/file.conf" perms="0755">
@@ -45,7 +43,9 @@ Contents
 </file>
 </post>
 ```
-% If I need to change owner/group:
+
+And, if you need to change owner/group:
+
 ```
 <post>
 <file name="/full/path/of/file.conf" perms="0660" owner="bob:jobob">
@@ -53,9 +53,11 @@ Contents
 </file>
 </post>
 ```
+
 (Default perms are 0644, i.e. rw-r--r-- for the numerically challenged.)
 
-% If I want to append to a file: 
+If you want to append to a file: 
+
 ```
 <post>
 <file name="/full/path/of/file.conf" perms="0400" owner="bob:jobob" mode="append">
@@ -81,7 +83,13 @@ Here's a real example:
 </post>
 ```
 
-Here is a more complicated example:
+And remember, after you modify any files in your cart, you must execute:
+
+	# stack create distribution
+
+To apply the changes to the default distribution.
+
+Ok, back to the *file* tag -- here is a more complicated example:
 
 ```
 <post>
@@ -151,9 +159,10 @@ mapr - renice -10
 </post>
 ````
 
-Note the "<![CDATA[ ]]>" construction. It allows you to run a script or create a config file with special characters (special to the xml parser anyway) without having to work out XML entity issues. Issues that can fubar your kickstart file. Use it if in doubt, and if you have scripts with redirection or init-style scripts, this is a valuable tool to have to use work you've done wholesale.
+Note the "<![CDATA[ ]]>" construction. It allows you to run a script or create a config file with special characters (special to the XML parser anyway) without having to work out XML entity issues. Issues that can fubar your kickstart file. Use it if in doubt, and if you have scripts with redirection or init-style scripts, this is a valuable tool to have to use work you've done wholesale.
 
-The CDATA contruction goes like this:
+The CDATA contruction looks like this:
+
 ```
 <post>
 <![CDATA[
@@ -204,7 +213,8 @@ Run a long bash script.
 /full/path/of/script/dothis.sh &gt; /root/joebob.log
 </post>
 ```
-Notice the \&gt;. The >, <, and & are not interpreted by the xml parser so to use them in kickstart file you need to use the entities: \&gt; \&lt; \&amp;
+
+Notice the \&gt;. The >, <, and & are not interpreted by the XML parser so to use them in kickstart file you need to use the entities: \&gt; \&lt; \&amp;
 
 But what if you have a big script that has a bunch of characters that don't escape easily?
 
@@ -292,35 +302,7 @@ cd /opt/cobbler/config_ldap_mysite/
 </boot>
 ```
 
-There is another thing you can do and I worked on with someone today. He had a a script that was bash executable zippy thingy, so script plus payload. Due to versioning issues (frontend installed with os, backends with older Oracle linux) doing a ```"stack create package"``` to make an rpm out of them wasn't going to work. (Right, and then you're going to ask me how to do that. I'll answer that if you've actually read this far and ask me that question.) 
-
-So we just dumped the actual scripts in contrib.
-```
-# cp myscript.sh /export/stack/contrib/default/1.0/x86_64/RPMS/
-```
-Dirty secret is that this can be gotten from the frontend during the install even though it's not an RPM. So yeah, accidentally awesome. 
-
-This is how we ran it.
-
-```
-<post>
-cd /tmp
-wget http://&Kickstart_PrivateAddress;/install/distributions/default/x86_64/RedHat/RPMS/myscript.sh
-
-chmod 755 /tmp/myscript.sh
-/tmp/myscript.sh
-</post>
-```
-
-And since it needed full network access to run, it was setting up authentication mechanisms required by their security team, we ran it during first boot.
-```
-<boot order="post">
-/tmp/myscript.sh
-</boot>
-```
-
 **Remember**: \<boot>\</boot> go after all \<post>\</post> tags. Not in-between them.
-
 
 ##### Run a script in the \<post>\</post> tags.
 
@@ -369,4 +351,3 @@ It's the equivalent of this:
 
 in a regular python script. So if you have perl scripts you've written or someone else has, use a perl interpreter line, and put the script in-between \<post>\</post> tags.
 
-Send questions to the list.
