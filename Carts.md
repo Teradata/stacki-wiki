@@ -37,7 +37,7 @@ applications.
 For more information about the available XML tags, refer to the
 [Wire Reference Guide](Wire-Reference)
 
-### Carts
+### Introduction to Carts
 
 Carts are created by end users in order to customize the configuration of
 backend nodes.
@@ -47,20 +47,20 @@ We'll call this the *apache* cart.
 
 First, we'll need to add the *apache* cart to the frontend:
 
-	```
-	stack add cart apache
-	```
+```
+stack add cart apache
+```
 
 This will create the directory */export/stack/carts/apache* and populate it
 with the following files and directories:
 
-	```
-	RPMS/
-	nodes/
-	nodes/cart-apache-backend.xml
-	graph/
-	graph/cart-apache.xml
-	```
+```
+RPMS/
+nodes/
+nodes/cart-apache-backend.xml
+graph/
+graph/cart-apache.xml
+```
 
 In Stacki, backend node configuration is controlled by a collection of XML
 files.
@@ -92,13 +92,13 @@ see:
 To add the *httpd* package, change the line:
 
 ```
-        <!-- <package></package> -->
+<!-- <package></package> -->
 ```
 
 To:
 
 ```
-        <package>httpd</package>
+<package>httpd</package>
 ```
 
 Next, we need to add code that runs in the *post* section (the section that
@@ -121,7 +121,7 @@ To:
 ```
 
 Now we need to associate the *apache* cart with the default distribution.
-This makes sure our modifications that we did above will be executed when
+This makes sure our modifications will be executed when
 backend nodes are installed.
 
 A distribution is collection of *pallets* and *carts*.
@@ -130,9 +130,9 @@ and it is called the *default* distribution.
 To see what pallets and carts are included in the default distribution,
 execute:
 
-	```
-	stack list distribution
-	```
+```
+stack list distribution
+```
 
 And you'll see:
 
@@ -146,9 +146,9 @@ This tells us that the default distribution is currently composed of the
 
 We can associate our *apache* cart to the default distribution by executing:
 
-	```
-	stack enable cart apache
-	```
+```
+stack enable cart apache
+```
 
 And now *stack list distribution* shows us:
 
@@ -157,21 +157,21 @@ NAME     OS     GRAPH   PALLETS                   CARTS
 default: redhat default os-6.7-6.x stacki-2.0-6.x apache
 ```
 
-The last step is to execute a command that bind the *apache* cart into the
+The last step is to execute a command that binds the *apache* cart into the
 default distribution:
 
-	```
-	stack create distribution
-	```
+```
+stack create distribution
+```
 
 After the distribution is created, we can verify that our changes will be
 applied to a backend host when it installs.
 We can create a kickstart file for a backend host (in the command below,
 the backend host's name is *backend-0-0*), by executing:
 
-	```
-	stack list host profile backend-0-0 > /tmp/ks.cfg	
-	```
+```
+stack list host profile backend-0-0 > /tmp/ks.cfg	
+```
 
 If you open the file */tmp/ks.cfg*, you'll see that *httpd* is listed in the
 *packages* section:
@@ -198,4 +198,42 @@ And that our *post* section is in one of the post sections:
 
 Now when a backend host is reinstalled, the Apache web server will
 automatically be up and running.
+
+
+### Adding New RPMS to a Cart
+
+Download the RPM(s) for the application you want.
+Then you'll want to copy them into your cart.
+
+For this example, we'll still be using the *apache* cart that we created above.
+Copy the RPM(s) into:
+
+```
+/export/stack/carts/apache/RPMS
+```
+
+And then execute:
+```
+# stack create distribution
+```
+
+If you want to add them on the fly, i.e. you don't want to reinstall your machines then execute:
+```
+# stack run host backend "yum clean all && yum -y install <rpmname>" \*
+```
+
+The above command will add *rpmname* to all your backend nodes.
+
+To automatically apply the RPM *rpmname* to a backend node during installation,
+just add another *package* line as described above.
+For example, add the following line to your *cart-apache-backend.xml* node XML
+file:
+
+```
+<package>rpmname</package>
+```
+
+Remember, after you modify any file or directory in your cart, you must
+execute `stack create distribution` in order to apply that change to the
+default distribution.
 

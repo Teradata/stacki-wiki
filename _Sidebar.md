@@ -16,7 +16,6 @@
   * [Storage](Storage-Configuration)
 * Customization
   * [Carts](Carts)
-  * [Adding RPMs](Adding-RPMs)
   * [Extending Your Scripts](Extend-Your-Scripts)
   * [Manage Pallets](Manage-Pallets)
   * [Creating Simple Pallets](Creating-Simple-(Package-based)-Pallets)
