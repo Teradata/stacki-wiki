@@ -2,7 +2,7 @@ There may come a point where it makes sense to create your own pallets. There ar
 
 Pallets allow you to install and configure applications you have created or downloaded. It's a simple way to keep multiple versions or to do patching/upgrading.
 
-Additionally, if your site-specific requirements are complex and can't be easily captured using the "extend/replace" methods found in the [Extend Backend Nodes](https://github.com/StackIQ/stacki/wiki/Extend-Backend-Nodes) documentation, a site-specific pallet is one of the ways to capture all the required configuration and site-specific RPMS.
+Additionally, if your site-specific requirements are complex and can't be easily captured using [Carts](https://github.com/StackIQ/stacki/wiki/Carts), a site-specific pallet is one of the ways to capture all the required configuration and site-specific RPMS.
 
 These commands work with RHEL as well. CentOS is the example. But, really, why are you paying Red Hat?
 

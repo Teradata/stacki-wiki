@@ -15,7 +15,7 @@
 * Configuration
   * [Storage](Storage-Configuration)
 * Customization
-  * [Extend Backend Nodes](Extend-Backend-Nodes)
+  * [Carts](Carts)
   * [Adding RPMs](Adding-RPMs)
   * [Extending Your Scripts](Extend-Your-Scripts)
   * [Manage Pallets](Manage-Pallets)
