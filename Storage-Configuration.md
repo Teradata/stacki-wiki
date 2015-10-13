@@ -96,25 +96,24 @@ is shown below.
 The _Name_ column can contain a specific host name (e.g., _backend-hp-0-2_), an
 appliance type (e.g., _backend_) or it can be set to _global_.
 
-In the sample spreadsheet, we see the default configuration (_global_) is to
-configure the disks in slot 0 and 1 as a RAID 1 mirror and make them the
-first logical disk (the Linux kernel will see this as ```sda```). 
-The remaining disks (the disks in slots 2 and up) will be configured as individual RAID 0 disks. This is analogous to setting up the controller in JBOD mode. 
-We specify this with the wildcard symbol "*" for the _Slot_ and _Array Id_ cells.
-Wildcards are useful when your backend hosts have different number of disks drives.
+1. In the sample spreadsheet, the default configuration is _global_
+   1. The first logical disk (the Linux kernel will see this as ```sda```) is a RAID 1 mirror composed of the disks in slot 0 and 1
+   1. The remaining disks (the disks in slots 2 and up) will be configured as individual RAID 0 disks.
+      This is analogous to setting up the controller in JBOD mode.
+      We specify this with the wildcard symbol "*" for the _Slot_ and _Array Id_ cells.
+      Wildcards are useful when your backend hosts have different number of disks drives.
+1. The next configuration is for all _backend_ hosts.
+   1. The first logical disk (```sda```) will be a RAID 1 and it will be constructed with the disk in slot 5 and the disk in slot 15.
+   1. The second logical disk (```sdb```) will be a RAID 5 composed of the disks in slots 0 through 4.
+   1. The third logical disk (```sdc```) will be a RAID 5 composed of the disks in slots 16 through 21.
+   1. The fourth logical disk (```sdd```) will be a RAID 6 composed of the disks in slots 6 through 12 and the disks in slots 13 and 14 will be hot spares associated with only this array.
+   1. The disks in slots 22 and 23 are designated as hot spares that can be used as replacements for any failed drive in any array.
 
-The next configuration is for all _backend_ hosts.
-The first logical disk (```sda```) will be a RAID 1 and it will be constructed with the disk in slot 5 and the disk in slot 15.
-The second logical disk (```sdb```) will be a RAID 5 composed of the disks in slots 0 through 4.
-The third logical disk (```sdc```) will be a RAID 5 composed of the disks in slots 16 through 21.
-The fourth logical disk (```sdd```) will be a RAID 6 composed of the disks in slots 6 through 12 and the disks in slots 13 and 14 will be hot spares associated with only this array.
-The disks in slots 22 and 23 are designated as hot spares that can be used as replacements for any failed drive in any array.
-
-The third configuration is for the host named _backend-hp-0-2_.
-The first logical disk (```sda```) is a RAID 10 set composed of disks 1 through 4.
-The second logical disk(```sdb```) is a RAID 1 set composed of disks 5 and 6 with a size of 232 GB.
-The third logical disk(```sdc```) is a RAID 1 set, also composed of disks 5 and 6, using up the remainder of the disks.
-The remaining disks (the disks in slots 7 and up) will be configured as individual RAID 0 disks.
+1. The third configuration is for the host named _backend-hp-0-2_.
+   1. The first logical disk (```sda```) is a RAID 10 set composed of disks 1 through 4.
+   1. The second logical disk(```sdb```) is a RAID 1 set composed of disks 5 and 6 with a size of 232 GB.
+   1. The third logical disk(```sdc```) is a RAID 1 set, also composed of disks 5 and 6, using up the remainder of the disks.
+   1. The remaining disks (the disks in slots 7 and up) will be configured as individual RAID 0 disks.
 
 The last configuration (for host _backend-hp-0-2_) is considered advanced configuration. This is due to slots 5 and 6 being listed multiple times in the spreadsheet.
  
