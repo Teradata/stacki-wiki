@@ -83,11 +83,12 @@ spreadsheet with the following columns:
   
 1. **Name**. A host name, appliance type or global.  
 1. **Slot**. The slot of a specific disk in the array.  
-1. **Raid Level**. The RAID level for the disks. This can be 0, 1, 5 or 6.  
-1. **Array Id**. The order in which the RAID groups will be constructed.  
- 
+1. **Raid Level**. The RAID level for the disks. This can be 0, 1, 10, 5, 6, 50, 60.  
+1. **Array Id**. The order in which the RAID groups will be constructed. 
+1. **Options**. Any additional options to be passed on to the ```storcli``` or ```hpssacli``` command.
+
 A
-[sample spreadsheet](https://docs.google.com/spreadsheets/d/1C9XA1lNt15Ylnmq86bLoQ8Su_axByHH4IqCig30LVf4/pubhtml?gid=1529833735&single=true)
+[sample spreadsheet](https://docs.google.com/spreadsheets/d/1o2ZxQUN5ZLAnOxs-A8wiWIzJ0TVLU3uQ2zKGpIs4CU0/pubhtml)
 is shown below.
 
 ![](images/sample-controller-configuration-csv.png) 
@@ -141,4 +142,3 @@ Like the _nukedisks_ attribute, _nukecontroller_ is set to _false on the initial
 
 While a host is installing, after it configures its controller, it will send a message to the frontend to instruct it to set the  _nukecontroller_ attribute back to _false_.
 This ensures that the controller will not be reconfigured on the next installation.
-
