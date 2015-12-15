@@ -105,7 +105,7 @@ A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/19xk_tlvD5dYgLxfZpQVuVtAUGdKi3KCoqRVFVMTJA7w/edit?usp=sharing)
 is shown below. 
 
-![](images/2.x/sample-host-configuration-csv.png) 
+![](images/sample-host-configuration-csv.png) 
 
 
 Once the CSV file is created and copied to the frontend it can be

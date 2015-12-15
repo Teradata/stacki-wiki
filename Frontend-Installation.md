@@ -54,7 +54,7 @@ server, so be careful which server you decide to become your frontend.
 Boot the server with the DVD (or virtual media mounted) and the
 following screen will appear after the BIOS is initialized:
 
-![](images/2.x/stack-iso-boot.png)
+![](images/stack-iso-boot.png)
 
 If you don't see the above screen, go back to
 the [requirements](#requirements) section and
@@ -101,7 +101,7 @@ the [Installation Wizard](#installation-wizard).
 
 The first screen will appear and you will be prompted to enter your timezone:
 
-![](images/2.x/stacki_config_step_1b.png)
+![](images/stacki_config_step_1b.png)
 
 ### Network
 
@@ -117,13 +117,13 @@ be used by the frontend to install backend hosts.
 
 Click _Continue_ to configure the network interface. 
 
-![](images/2.x/stacki_config_step_2b.png)
+![](images/stacki_config_step_2b.png)
 
 ### Password
 
 Enter the password for the **root** account on the frontend.  
 
-![](images/2.x/stacki_config_step_4.png)
+![](images/stacki_config_step_4.png)
 
 ### Choose Partition
 
@@ -151,7 +151,7 @@ screen after the wizard exits. In this mode, specify at least 16 GB
 for the root partition and a separate /export partition. You should add
 a swap partition, and /var if you have made / only 16GB.
 
-![](images/2.x/stacki_config_step_5.png)
+![](images/stacki_config_step_5.png)
 
 ### Add Pallets
 
@@ -160,13 +160,13 @@ Booting from a DVD, pallets should automatically load onto the list for you to c
 
 Select _stacki_ and _os_ pallets to install.
 
-![](images/2.x/stacki_config_step_6a_2.png)
+![](images/stacki_config_step_6a_2.png)
 
 ### Review
 
 Review the installation parameters and click _Continue_ to proceed.
 
-![](images/2.x/stacki_config_step_7_2.png) 
+![](images/stacki_config_step_7_2.png) 
 
 #### New
 
