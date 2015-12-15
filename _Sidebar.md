@@ -1,7 +1,7 @@
 ### Releases 
 
 * [2.x](Home) 
-* [1.x](https://github.com/StackIQ/stacki-doc-1.x/wiki)
+* [1.x](https://github.com/StackIQ/stacki-documentation-1.x/wiki)
 
 ***
 
