@@ -1,3 +1,6 @@
+
+TODO: Document Boxes, Distributions are dead.
+
 Stacki enables you to create a **distribution** which holds the Pallets a
 particular machine will use for its software configuration.
 The _default_ distribution consists of the _stacki_ and _OS_ pallets
