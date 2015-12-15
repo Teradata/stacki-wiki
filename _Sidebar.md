@@ -1,10 +1,3 @@
-### Releases 
-
-* [2.x](https://github.com/StackIQ/stacki-documentation-2.x/wiki)
-* [1.x](https://github.com/StackIQ/stacki-documentation-1.x/wiki)
-
-***
-
 ### Content
 
 * [Home](Home)
@@ -27,4 +20,12 @@
   * [Wire](Wire-Reference)
 * Developer
   * [Building From Source](Building-From-Source)
+
+***
+
+### Previous Releases 
+
+* [2.x](https://github.com/StackIQ/stacki-documentation-2.x/wiki)
+* [1.x](https://github.com/StackIQ/stacki-documentation-1.x/wiki)
+
 
