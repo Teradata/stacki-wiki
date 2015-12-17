@@ -16,7 +16,7 @@ We call this server the **frontend**, and the servers it builds we call
 **backend** nodes.
 
 The Stacki frontend includes a configuration database coupled with software
-distributions that are used to completely define backend node software
+repositories that are used to completely define backend node software
 footprints (from OS kernel to application).
 Backend nodes can be identical or completely unique hardware and software -
 Stacki has been designed to dynamically install and configure heterogeneous
@@ -50,15 +50,15 @@ day, but with peer-to-peer package sharing, installation takes only minutes.
 
 We use the term **appliance** to refer to a group of servers,
 usually with related functionality.
-The Stacki [pallet](#pallets--distributions) includes only the backend
+The Stacki [pallet](#pallets--boxes) includes only the backend
 appliance,
 other pallets define additional appliance types. Appliances can be useful for segmenting hardware or application roles within your infrastructure. They are logical constructs and can be arbitrarily defined. If customization of the base appliance becomes unnecessarily complex for your organization, appliances are one way to reduce the complexity.
 
-## Pallets & Distributions
+## Pallets & Boxes
 
-A **pallet** is a set of software packages and
+A **pallet** is a set of software packages (repository) and
 [Wire](#wire) to specify how servers should be configured.
-A **distribution** is a composition of pallets that serves as the package source during backend installation. It is also an installed host's primary YUM repository.
+A **box** is a collection of pallets that serve as the package source during backend installation. It is also an installed host's primary YUM repositories.
 
 ## Wire
 
