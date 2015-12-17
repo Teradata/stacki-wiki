@@ -83,12 +83,6 @@ Here's a real example:
 </post>
 ```
 
-And remember, after you modify any files in your cart, you must execute:
-
-	# stack create distribution
-
-To apply the changes to the default distribution.
-
 Ok, back to the *file* tag -- here is a more complicated example:
 
 ```
