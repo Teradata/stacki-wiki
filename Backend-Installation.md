@@ -120,7 +120,7 @@ information from the configuration database.
 
 ```
 # stack list host
-HOST          RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
+HOST          RACK RANK CPUS APPLIANCE BOX          RUNACTION INSTALLACTION
 frontend-0-0: 0     0   1    frontend  default      os        install      
 backend-0-0:  1     1   2    backend   default      os        install      
 backend-0-1:  1     2   4    backend   default      os        install      
