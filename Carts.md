@@ -134,7 +134,7 @@ And you'll see:
 
 ```
 NAME     OS     PALLETS                   CARTS
-default: redhat os-6.7-6.x stacki-2.0-6.x -----
+default: redhat os-6.7-6.x stacki-3.0-6.x -----
 ```
 
 This tells us that the default box is currently composed of the
@@ -148,7 +148,7 @@ And now *stack list box* shows us:
 
 ```
 NAME     OS     PALLETS                   CARTS 
-default: redhat os-6.7-6.x stacki-2.0-6.x apache
+default: redhat os-6.7-6.x stacki-3.0-6.x apache
 ```
 
 After the apache cart is associated with the default box, we can verify that
@@ -206,7 +206,7 @@ In the above command, *hostname* is a name of one of your backend nodes.
 
 Then to add *rpmname* to all your backend nodes.
 
-	# stack run host backend "yum clean all && yum -y install <rpmname>" \*
+	# stack run host backend "yum clean all && yum -y install <rpmname>"
 
 To automatically apply the RPM *rpmname* to a backend node during installation,
 just add another *package* line as described above.
