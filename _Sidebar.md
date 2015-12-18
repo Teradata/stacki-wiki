@@ -16,7 +16,7 @@
 * Use Cases
   * [Mesos/Marathon/Zookeeper](Mesos-Marathon-Zookeeper-Use-Case)
 * Reference
-  * [Command Line](Command-Line-Reference) 
+  * [Command Line](CLI-documentation) 
   * [Wire](Wire-Reference)
 * Developer
   * [Building From Source](Building-From-Source)
