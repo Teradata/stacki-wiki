@@ -41,10 +41,6 @@ I replace my "os" pallet with the full CentOS DVD1 and DVD2 and then I mirror th
 # stack enable pallet updates
 ```
 
-% Recreate distribution
-```
-# stack create distribution
-```
 
 ##### Mirror Mesos/Zookeeper/Marathon and all that stuff.
 
@@ -105,10 +101,6 @@ I replace my "os" pallet with the full CentOS DVD1 and DVD2 and then I mirror th
 You already have it. It's in the Mesosphere repo.
 ```
 
-% Create distribution
-```
-# stack create distribution
-```
 
 Now the meso/marathon/chronos rpms should be available to all nodes. But I want to make a distinction between masters and slaves.
 
@@ -297,11 +289,6 @@ Okay, more:
 ```
 
 You should only see Entity errors because the parser doesn’t resolve key/value pairs. Parsing errors or syntax errors need to be fixed.
-
-% So now that you have your extend-base.xml, recreate the distribution:
-```
-# stack create distribution
-```
 
 Test the profile:
 ```
