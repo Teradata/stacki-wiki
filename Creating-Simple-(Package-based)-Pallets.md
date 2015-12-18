@@ -4,18 +4,18 @@ Pallets allow you to install and configure applications you have created or down
 
 Additionally, if your site-specific requirements are complex and can't be easily captured using [Carts](https://github.com/StackIQ/stacki/wiki/Carts), a site-specific pallet is one of the ways to capture all the required configuration and site-specific RPMS.
 
-These commands work with RHEL as well. CentOS is the example. But, really, why are you paying Red Hat?
+These commands work with RHEL as well. CentOS is the example.
 
-RPM-only pallets are the simplest to create. We'll show you how to do that. However, there are a few pieces missing from the current stacki-1.0-I release we'll have to add. These changes will not be needed in the next release. 
+RPM-only pallets are the simplest to create. We'll show you how to do that.
 
 ##### Fix the build environment part I
 
-The default OS pallet is not the full CentOS distribution. You're going to need a couple packages that are only in the full version of CentOS. Download the full CentOS 6.6 ISO(s) from a CentOS 6.6 [mirror](http://isoredirect.centos.org/centos/6/isos/x86_64/). I usually torrent the whole thing and put CentOS disk1 and disk2 on the frontend. Dis1 is probably sufficient though.
+The default OS pallet is not the full CentOS distribution. You're going to need a couple packages that are only in the full version of CentOS. Download the full CentOS 6.7 ISOs from a CentOS [mirror](http://isoredirect.centos.org/centos/6/isos/x86_64/). I usually torrent the whole thing and put CentOS disk1 and disk2 on the frontend.
 
-Either way, once they're downloaded, scp the ISOs to the frontend (/export should be the biggest partition, that' where I usually dump mine), and add it/them:
+Once they're downloaded, scp the ISOs to the frontend and add them:
 
 ```
-# stack add pallet CentOS-6.6-x86_64-bin-DVD*iso
+# stack add pallet CentOS-6.7-x86_64-bin-DVD*iso
 ```
 
 List pallets:
@@ -33,14 +33,8 @@ Disable the OS pallet (because it's minimal CentOS and now we want the whole thi
 # stack disable pallet os
 ```
 
-Create the distribution:
-```
-# stack create distribution
-```
+We need to add the *genisoimage* RPM for the build environment to work:
 
-Again we need to add a couple RPMs for the build environment to work, so now we can add them to yum since the "create distribution" creates a central repository for all RPMs in all pallets in the distribution. You won't have to do this at the next release. 
-
-Add genisoimage
 ```
 # yum -y install genisoimage
 ```
@@ -49,14 +43,14 @@ Now you can make RPM pallets from the web.
 
 ##### RPM-only Pallet
 
-Creating an RPM-only pallet is the same for both stacki 6 and 7. Only the URLs and repos are going to be different. This assumes your frontend has access to the internet. If not, put up a VirtualBox frontend on your desktop/laptop and create the pallets there and then put them on the real frontend. If you can't get outside access you are likely in one of the Dakotas or working at a large multi-national bank. Either way, I'm sorry.
+Creating an RPM-only pallet is the same for both stacki 6 and 7. Only the URLs and repos are going to be different. This assumes your frontend has access to the internet. If not, put up a VirtualBox frontend on your desktop/laptop and create the pallets there and then put them on the real frontend.
 
 ###### Creating pallet from a path.
 One very common thing I do is to grab the updates from CentOS for my particular CentOS version. We'll create a mirror of the updates two ways. The first is the simplest and most direct. You're going to use the "stack create mirror" command. 
 
-"stack create mirror" does a reposync from a url or a repoid AND creates an ISO from the downloaded RPMs, which makes it a pallet. I know, awesome, right?
+"stack create mirror" does a reposync from a URL or a repoid AND creates an ISO from the downloaded RPMs, which makes it a pallet.
 
-So let's build the command line to do this:
+So let's build the command line to do this.
 
 You'll cd to your largest partition, default partitioning makes /export or /state/partition1 the largest partition.
 ```
@@ -73,7 +67,8 @@ error - must supply a URL argument or a "repoid"
 ```
 (You can add a "help" on the end of "stack create mirror" for more detail.)
 
-Since we know our path is http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ we'll just use the path. (The "path" can be a local directory. If you have a pile of RPMs and using the "contrib" directory doesn't turn your prop, dump the rpms into a directory and do a "stack create mirror" on them.
+Since we know our path is http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ we'll just use the path.
+ 
 ```
 # stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/
 ```
@@ -96,16 +91,17 @@ Default "name" is updates and default "version" is the version of the stacki pal
 
 And now you wait. Depending on your site bandwidth, this could be a while for very large repositories. This is probably a good time to go to lunch. 
 
-Once the download finishes, you'll have an ISO appropriately named in the directory you ran this command in, just add, enable, and create the distribution.
+Once the download finishes, you'll have an ISO appropriately named in the directory you ran this command in, just add and enable it.
+
 ```
 # stack add pallet CentOS-updates-07282015-0.x86_64.disk1.iso
 # stack enable pallet CentOS-Updates
-# stack create distribution
 ```
 
 ###### Creating pallet from a repoid.
 
-Sometimes there's an application you want to install, and a repoconfig file exists for it. You can always pull the RPMs with yumdownloader or yum --downloadonly and put them in the /export/stack/contrib/default/1.0/x86_64/RPMS/. They'll be available after a "stack create distribution" but there's no versioning and your team may not know you've put them there. So let's make it explicit but pulling them from the repo provided by the application vendor.
+Sometimes there's an application you want to install, and a repoconfig file
+exists for it.
 
 For this example we'll use Datastax Cassandra.
 
@@ -139,25 +135,15 @@ datastax-cassandra-2.1-0.x86_64.disk1.iso  i386  noarch  roll-datastax-cassandra
 Note, the directory is the name of the "repoid" and the newly created file is in this directory.
 
 Do the pallet dance:
+
 ```
 # stack add pallet /export/datastax/datastax-cassandra-2.1-0.x86_64.disk1.iso 
 # stack enable pallet datastax-cassandra
-# stack create distribution
 ```
+
 Now you can use the Datastax Cassandra RPMs on the cluster. Use the extend-backend.xml to add the appropriate RPMs and configuration settings per the Datastax install document. 
 
 Some things to be aware of: you can add the datastax.repo file to /etc/yum.repos.d and the same thing will work. In this case you do not have to supply the "repoconfig" parameter to the "stack create mirror" command.
 
 So why did I do it this way? Well, from a management stand-point, I don't want someone enabling a repo in /etc/yum.repos.d I don't want enabled. I use the frontend as the fulcrum point to my cluster. I don't put any services on it other than installation and monitoring. All elements of an application are run on backend nodes because they are usually better protected (private network), and the application should keep running even if the Stacki frontend goes down. If I have a repo that may inadvertently be enabled, I may end up with an application on my frontend I don't want. In my mind it's good cluster hygiene, yes, a little paranoid and neurotic, buy hygiene nonetheless. It may be, however, you have limited machines and you don't want to waste the frontend, then use it. Rocks does it. StackIQ initially did it. It saves having to set up all the keys SSH access from a backend node acting as the frontend for an application to the rest of the cluster. Just know what you're getting. 
-
-So yeah, all that.
-
-##### Application Pallet
-Ohhhhhh, this is gonna get complicated. To create an application pallet, you'll have to set-up the development environment and tools to create it. It also means you're going to get an introduction to the graph and customizing your own node xml files. If you are not familiar with Makefiles, this is gonna hurt. Be prepared to Google stuff and ask questions on the Stacki list. It is not for the faint of heart. 
-
-We'll use SLURM as an example.
-
-##### Configuration only Pallet
-
-Ohhhhhh, this is gonna get complicated. To create a site-specific pallet, you'll have to set-up the development environment and tools to create it. It also means you're going to get an introduction to the graph and customizing your own node xml files. If you are not familiar with Makefiles, you are in for some brain pain. Are you sure you want to do this? If there is any way for you to use the site-profiles and contrib directory structures, I highly recommend using them or, at the very least, doing your development of the configuration that will eventually become your pallet. 
 
