@@ -12,7 +12,7 @@
   * [Carts: Extending Your Scripts](Extend-Your-Scripts)
   * [Manage Pallets](Manage-Pallets)
   * [Creating Simple Pallets](Creating-Simple-(Package-based)-Pallets)
-  * [Managing With Distributions](Manage-Distributions) 
+  * [Boxes](Boxes) 
 * Use Cases
   * [Mesos/Marathon/Zookeeper](Mesos-Marathon-Zookeeper-Use-Case)
 * Reference
