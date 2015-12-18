@@ -2,19 +2,11 @@
 
 ### Usage
 
-`stack list network [network]...`
+`stack list network [network ...]`
 
 ### Description
 
 List the defined networks for this system.
-
-### Arguments
-
-* `[network]`
-
-   Zero, one or more network names. If no network names are supplied,
-	info about all the known networks is listed.
-
 
 ### Examples
 

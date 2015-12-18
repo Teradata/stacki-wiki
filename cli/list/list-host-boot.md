@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack list host boot [host]...`
+`stack list host boot [host ...]`
 
 ### Description
 
@@ -10,14 +10,6 @@ Lists the current bot action for hosts. For each host supplied on the
 	command line, this command prints the hostname and boot action for
 	that host. The boot action describes what the host will do the next
 	time it is booted.
-
-### Arguments
-
-* `[host]`
-
-   Zero, one or more host names. If no host names are supplied, info about
-	all the known hosts is listed.
-
 
 ### Examples
 

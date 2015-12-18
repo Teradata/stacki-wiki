@@ -2,19 +2,12 @@
 
 ### Usage
 
-`stack report host network {host}`
+`stack report host network {host ...}`
 
 ### Description
 
 Outputs the network configuration file for a host (on RHEL-based
 	machines, this is the contents of the file /etc/sysconfig/network).
-
-### Arguments
-
-* `{host}`
-
-   One host name.
-
 
 ### Examples
 

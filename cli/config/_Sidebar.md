@@ -1,6 +1,7 @@
-[Home](Home)
+[Command Line Interface](CLI-documentation)
 
 * [add](add-commands)
+* [compile](compile-commands)
 * [config](config-commands)
   * [config host interface](config-host-interface)
 * [create](create-commands)
@@ -11,7 +12,6 @@
 * [iterate](iterate-commands)
 * [list](list-commands)
 * [load](load-commands)
-* [open](open-commands)
 * [remove](remove-commands)
 * [report](report-commands)
 * [run](run-commands)

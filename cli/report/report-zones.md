@@ -8,7 +8,7 @@
 
 Prints out all the named zone.conf and reverse-zone.conf files in XML.
 	To actually create these files, run the output of the command through
-	"rocks report script"
+	"stack report script"
 
 ### Examples
 
@@ -16,7 +16,7 @@ Prints out all the named zone.conf and reverse-zone.conf files in XML.
 
    Prints contents of all the zone config files
 
-* `stack report zones | rocks report script`
+* `stack report zones | stack report script`
 
    Creates zone config files in /var/named
 

@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack list host xml [host]...`
+`stack list host xml [host ...]`
 
 ### Description
 
@@ -11,14 +11,6 @@ Lists the monolithic XML configuration file for hosts. For each host
 	XML file configuration for that host. This is the same XML
 	configuration file that is sent back to a host when a host begins
 	it's installation procedure.
-
-### Arguments
-
-* `[host]`
-
-   Zero, one or more host names. If no host names are supplied, info about
-	all the known hosts is listed.
-
 
 ### Examples
 

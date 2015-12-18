@@ -2,58 +2,23 @@
 
 ### Usage
 
-`stack add host {host} [cpus=int] [distribution=string] [membership=string] [rack=int] [rank=int]`
+`stack add host {host} [box=string] [cpus=string] [membership=string] [rack=string] [rank=string]`
 
 ### Description
 
 Add an new host to the cluster.
 
-### Arguments
-
-* `{host}`
-
-   A single host name.  If the hostname is of the standard form of
-	basename-rack-rank the default values for the appliance, rack,
-	and rank parameters are taken from the hostname.
-
-
-### Parameters
-* `[cpus=int]`
-
-   Number of CPUs (cores) in the given host.  If not provided the
-	default of 1 CPU is inserted into the database.
-* `[distribution=string]`
-
-   The distribution name for the host. The default is: "default".
-* `[membership=string]`
-
-   Appliance membership name.  If not provided and the host name is of
-	the standard form the membership is taken from the basename of 
-	the host.
-* `[rack=int]`
-
-   The number of the rack where the machine is located. The convention
-	in Rocks is to start numbering at 0. If not provided and the host
-	name is of the standard form the rack number is taken from the host
-	name.
-* `[rank=int]`
-
-   The position of the machine in the rack. The convention in Rocks
-	is to number from the bottom of the rack to the top starting at 0.
-	If not provided and the host name is of the standard form the rank
-	number is taken from the host name.
-
 ### Examples
 
-* `stack add host compute-0-1`
+* `stack add host backend-0-1`
 
-   Adds the host "compute-0-0" to the database with 1 CPU, a membership
-	name of "compute", a rack number of 0, and rank of 1.
+   Adds the host "backend-0-1" to the database with 1 CPU, a membership
+	name of "backend", a rack number of 0, and rank of 1.
 
-* `stack add host frontend rack=0 rank=0 membership=Frontend`
+* `stack add host backend rack=0 rank=1 membership=Backend`
 
-   Adds the host "frontend" to the database with 1 CPU, a membership name
-	of "Frontend", a rack number of 0, and rank of 1.
+   Adds the host "backend" to the database with 1 CPU, a membership name
+	of "Backend", a rack number of 0, and rank of 1.
 
 
 ### Related

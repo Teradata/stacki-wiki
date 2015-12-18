@@ -2,38 +2,15 @@
 
 ### Usage
 
-`stack add environment attr {environment} {attr} {value} [attr=string] [value=string]`
+`stack add environment attr {environment ...} {attr=string} {value=string} [shadow=boolean]`
 
 ### Description
 
-Adds an attribute to an environment and sets the associated values
-
-### Arguments
-
-* `{environment}`
-
-   Name of environment
-
-* `{attr}`
-
-   Name of the attribute
-
-* `{value}`
-
-   Value of the attribute
-
-
-### Parameters
-* `[attr=string]`
-
-   same as attr argument
-* `[value=string]`
-
-   same as value argument
+Sets an attribute to an environment and sets the associated values
 
 ### Examples
 
-* `stack add environment attr test sge False`
+* `stack set environment attr test sge False`
 
    Sets the sge attribution to False for test nodes
 

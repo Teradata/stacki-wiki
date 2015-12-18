@@ -8,13 +8,6 @@
 
 Lists the set of attributes for environments.
 
-### Arguments
-
-* `[environment]`
-
-   Name of environment (e.g. "test")
-
-
 ### Examples
 
 * `stack list environment attr test`

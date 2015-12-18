@@ -8,13 +8,6 @@
 
 Output the storage controller configuration for a specific host
 
-### Arguments
-
-* `{host}`
-
-   One host name.
-
-
 ### Examples
 
 * `stack report host storage controller compute-0-0`

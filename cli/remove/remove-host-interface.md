@@ -2,38 +2,21 @@
 
 ### Usage
 
-`stack remove host interface {host} {iface} [iface=string]`
+`stack remove host interface [host ...] [interface=string] [mac=string]`
 
 ### Description
 
 Remove a network interface definition for a host.
 
-### Arguments
-
-* `{host}`
-
-   One or more named hosts.
-
-* `{iface}`
-
-   Interface that should be removed. This may be a logical interface or 
- 	the mac address of the interface.
-
-
-### Parameters
-* `[iface=string]`
-
-   Can be used in place of the iface argument.
-
 ### Examples
 
-* `stack remove host interface compute-0-0 eth1`
+* `stack remove host interface backend-0-0 interface=eth1`
 
-   Removes the interface eth1 on host compute-0-0.
+   Removes the interface eth1 on host backend-0-0.
 
-* `stack remove host interface compute-0-0 compute-0-1 iface=eth1`
+* `stack remove host interface backend-0-0 backend-0-1 interface=eth1`
 
-   Removes the interface eth1 on hosts compute-0-0 and compute-0-1.
+   Removes the interface eth1 on hosts backend-0-0 and backend-0-1.
 
 
 

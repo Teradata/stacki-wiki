@@ -2,40 +2,10 @@
 
 ### Usage
 
-`stack add os attr {os} {attr} {value} [attr=string] [value=string]`
+`stack add os attr [os ...] {attr=string} {value=string} [shadow=boolean]`
 
 ### Description
 
 Adds an attribute to an os and sets the associated values
-
-### Arguments
-
-* `{os}`
-
-   Name of os
-
-* `{attr}`
-
-   Name of the attribute
-
-* `{value}`
-
-   Value of the attribute
-
-
-### Parameters
-* `[attr=string]`
-
-   same as attr argument
-* `[value=string]`
-
-   same as value argument
-
-### Examples
-
-* `stack add os attr redhat sge False`
-
-   Sets the sge attribution to False for redhat nodes
-
 
 

@@ -9,23 +9,4 @@
 Get a list of MAC addresses for all the hosts that are associated
 	with a virtual cluster.
 
-### Arguments
-
-* `{host}`
-
-   Host name of machine. This host name should be the name of the
-	virtual frontend for the virtual cluster that you want the MAC
-	addresses for.
-
-
-### Parameters
-* `[key=string]`
-
-   A private key that will be used to authenticate the request. This
-	should be a file name that contains the private key.
-* `[status=bool]`
-
-   If true, then for each VM-based cluster node, output the VM's status
-	(e.g., 'active', 'paused', etc.).
-
 

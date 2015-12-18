@@ -2,29 +2,21 @@
 
 ### Usage
 
-`stack set access [command=None] [group=None]`
+`stack set access {command=string} {group=string}`
 
 ### Description
 
 Sets an Access control pattern.
 
-### Parameters
-* `[command=None]`
-
-   Command Pattern.
-* `[group=None]`
-
-   Group name / ID for access.
-
 ### Examples
 
-* `stack set access "*" apache`
+* `stack set access command="*" group=apache`
 
-   Give "apache" group access to all "rocks" commands
+   Give "apache" group access to all "stack" commands
 
-* `stack set access command="list*" group="wheel"`
+* `stack set access command="list*" group=wheel`
 
-   Give "wheel" group access to all "rocks list" commands
+   Give "wheel" group access to all "stack list" commands
 
 
 

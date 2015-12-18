@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack list node xml [attrs=string] [basedir=string] [eval=bool] [gen=string] [missing-check=bool] [roll=string]`
+`stack list node xml [attrs=string] [eval=bool] [gen=string] [missing-check=bool] [pallet=string]`
 
 ### Description
 
@@ -11,31 +11,6 @@ Lists the XML configuration information for a host. The graph
 	specified by the 'node' argument. This command executes the first
 	pre-processor pass on the configuration graph, performs all
 	variable substitutions, and runs all eval sections.
-
-### Parameters
-* `[attrs=string]`
-
-   A list of attributes. This list must be in python dictionary form,
-	e.g., attrs="{ 'os': 'redhat', 'arch' : 'x86_64' }"
-* `[basedir=string]`
-
-   If specified, the location of the XML node files.
-* `[eval=bool]`
-
-   If set to 'no', then don't execute eval sections. If not
-	supplied, then execute all eval sections.
-* `[gen=string]`
-
-   If set, the use the supplied argument as the program for the
-	2nd pass generator. If not supplied, then use 'kgen'.
-* `[missing-check=bool]`
-
-   If set to 'no', then disable errors regarding missing nodes.
-	If not supplied, then print messages about missing nodes.
-* `[roll=string]`
-
-   If set, only expand nodes from the named roll. If not
-	supplied, then the all rolls are used.
 
 ### Examples
 

@@ -8,13 +8,6 @@
 
 List the static routes that are assigned to a host.
 
-### Arguments
-
-* `[host]`
-
-   Host name of machine
-
-
 ### Examples
 
 * `stack list host route compute-0-0`

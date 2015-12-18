@@ -8,13 +8,6 @@
 
 Lists the set of attributes for appliances.
 
-### Arguments
-
-* `[appliance]`
-
-   Name of appliance
-
-
 ### Examples
 
 * `stack list appliance attr compute`

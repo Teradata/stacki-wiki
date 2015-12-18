@@ -2,20 +2,11 @@
 
 ### Usage
 
-`stack unload hostfile [file=string] [processor=string]`
+`stack unload hostfile {file=string} [processor=string]`
 
 ### Description
 
 Unload (remove) hosts from the database
-
-### Parameters
-* `[file=string]`
-
-   The file that contains the host data to be removed from the database.
-* `[processor=string]`
-
-   The processor used to parse the file and to remove the data into the
-	database. Default: default.
 
 ### Examples
 

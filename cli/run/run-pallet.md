@@ -2,19 +2,11 @@
 
 ### Usage
 
-`stack run pallet [pallet]...`
+`stack run pallet [pallet ...]`
 
 ### Description
 
 Installs a pallet on the fly
-
-### Arguments
-
-* `[pallet]`
-
-   List of pallets. This should be the pallet base name (e.g., base, hpc,
-	kernel).
-
 
 ### Examples
 

@@ -11,29 +11,6 @@ Create a RedHat or Solaris package from a given directory.  The
 	directory, or a combination of the directory basename and the
 	provided prefix.
 
-### Parameters
-* `[dir=string]`
-
-   The source directory of the files used to create the OS-specific
-	package.
-* `[name=string]`
-
-   The name of the package
-* `[prefix=string]`
-
-   The prefix pathname prepended to the base name of the source
-	directory.
-* `[release=string]`
-
-   Release number of the created package (default is '1')
-* `[rpmextra=string]`
-
-   Extra RPM directives. These are comma-seperated values that
-	are put into the spec files when the RPM is created
-* `[version=string]`
-
-   Version number of the created package (default is current version of Rocks+)
-
 ### Examples
 
 * `stack create package dir=/opt/stream name=stream`

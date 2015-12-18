@@ -2,20 +2,12 @@
 
 ### Usage
 
-`stack list host partition [host]...`
+`stack list host partition [host ...]`
 
 ### Description
 
 Lists the partitions for hosts. For each host supplied on the command
 	line, this command prints the hostname and partitions for that host.
-
-### Arguments
-
-* `[host]`
-
-   Zero, one or more host names. If no host names are supplied, info about
-	all the known hosts is listed.
-
 
 ### Examples
 

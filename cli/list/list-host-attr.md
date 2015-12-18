@@ -8,13 +8,6 @@
 
 Lists the set of attributes for hosts.
 
-### Arguments
-
-* `[host]`
-
-   Host name of machine
-
-
 ### Examples
 
 * `stack list host attr compute-0-0`

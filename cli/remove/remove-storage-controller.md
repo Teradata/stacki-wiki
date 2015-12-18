@@ -8,29 +8,6 @@
 
 Remove a storage controller configuration from the database.
 
-### Arguments
-
-* `{scope}`
-
-   Zero or one argument. The argument is the scope: a valid os (e.g.,
-	'redhat'), a valid appliance (e.g., 'compute') or a valid host
-	(e.g., 'compute-0-0). No argument means the scope is 'global'.
-
-
-### Parameters
-* `[adapter=int]`
-
-   Adapter address. If adapter is '*', enclosure/slot address applies to
-	all adapters.
-* `[enclosure=int]`
-
-   Enclosure address. If enclosure is '*', adapter/slot address applies
-	to all enclosures.
-* `[slot=int]`
-
-   Slot address(es). This can be a comma-separated list. If slot is '*',
-	adapter/enclosure address applies to all slots.
-
 ### Examples
 
 * `stack remove storage controller compute-0-0 slot=1`

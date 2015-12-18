@@ -2,28 +2,17 @@
 
 ### Usage
 
-`stack set network zone {network} {zone} [zone=string]`
+`stack set network zone {network} {zone=string}`
 
 ### Description
 
-Set the zone/domain name associated with a subnet
+Sets the DNS zone (domain name) for a network.
 
-### Arguments
+### Examples
 
-* `{network}`
+* `stack set network zone ipmi zone=ipmi`
 
-   Network Name
+   Sets the "ipmi" network zone to "ipmi".
 
-* `{zone}`
-
-   Zone / Domain that the network belongs to.
-	Example: optiputer.net
-
-
-### Parameters
-* `[zone=string]`
-
-   Zone / Domain that the network belongs to.
-	Example: optiputer.net
 
 

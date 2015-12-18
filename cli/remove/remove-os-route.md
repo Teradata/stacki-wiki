@@ -2,30 +2,15 @@
 
 ### Usage
 
-`stack remove os route {os} [address=string] [address=string]`
+`stack remove os route {os ...} {address=string}`
 
 ### Description
 
 Remove a static route for an OS type.
 
-### Arguments
-
-* `{os}`
-
-   The OS type (e.g., 'linux', 'sunos', etc.). This argument is required.
-
-
-### Parameters
-* `[address=string]`
-
-   Can be used in place of the 'address' argument.
-* `[address=string]`
-
-   The address of the static route to remove. This argument is required.
-
 ### Examples
 
-* `stack remove os route linux 1.2.3.4`
+* `stack remove os route linux address=1.2.3.4`
 
    Remove the static route for the OS 'linux' that has the
 	network address '1.2.3.4'.

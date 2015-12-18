@@ -2,36 +2,17 @@
 
 ### Usage
 
-`stack add attr {attr} {value} [attr=string] [value=string]`
+`stack add attr {attr=string} {value=string} [shadow=boolean]`
 
 ### Description
 
 Adds a global attribute for all nodes
 
-### Arguments
-
-* `{attr}`
-
-   Name of the attribute
-
-* `{value}`
-
-   Value of the attribute
-
-
-### Parameters
-* `[attr=string]`
-
-   same as attr argument
-* `[value=string]`
-
-   same as value argument
-
 ### Examples
 
-* `stack add attr sge False`
+* `stack add attr attr=sge value=False`
 
-   Adds the sge attribution and sets it to False.
+   Sets the sge attribute to False
 
 
 ### Related

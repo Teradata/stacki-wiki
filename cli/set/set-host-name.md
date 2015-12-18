@@ -2,37 +2,17 @@
 
 ### Usage
 
-`stack set host name {host} {name} [name=string]`
+`stack set host name {host} {name=string}`
 
 ### Description
 
 Rename a host.
 
-### Arguments
-
-* `{host}`
-
-   The current name of the host.
-
-* `{name}`
-
-   The new name for the host.
-
-
-### Parameters
-* `[name=string]`
-
-   Can be used in place of the 'name' argument.
-
 ### Examples
 
-* `stack set host name compute-0-0 new-compute-0-0`
+* `stack set host name backend-0-0 name=new-backend-0-0`
 
-   Changes the name of compute-0-0 to new-compute-0-0.
-
-* `stack set host cpus compute-0-0 name=new-compute-0-1`
-
-   Same as above.
+   Changes the name of backend-0-0 to new-backend-0-0.
 
 
 

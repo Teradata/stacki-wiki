@@ -11,13 +11,6 @@ Remove an appliance definition from the system. This can be
 	qualified by supplying the root XML node name and/or the
 	graph XML file name.
 
-### Arguments
-
-* `{name}`
-
-   The name of the appliance.
-
-
 ### Examples
 
 * `stack remove appliance compute`

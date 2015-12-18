@@ -2,18 +2,11 @@
 
 ### Usage
 
-`stack list appliance [appliance]...`
+`stack list appliance [appliance ...]`
 
 ### Description
 
 Lists the appliances defined in the cluster database.
-
-### Arguments
-
-* `[appliance]`
-
-   Optional list of appliance names.
-
 
 ### Examples
 

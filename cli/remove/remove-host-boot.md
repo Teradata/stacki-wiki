@@ -2,18 +2,11 @@
 
 ### Usage
 
-`stack remove host boot {host}...`
+`stack remove host boot {host ...}`
 
 ### Description
 
 Removes the boot configuration for a host
-
-### Arguments
-
-* `{host}`
-
-   One or more named hosts.
-
 
 ### Examples
 

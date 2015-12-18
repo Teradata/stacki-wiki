@@ -2,56 +2,19 @@
 
 ### Usage
 
-`stack set host interface name {host} {iface} {name} [iface=string] [name=string]`
+`stack set host interface name {host} {name=string} [interface=string] [mac=string]`
 
 ### Description
 
 Sets the logical name of a network interface on a particular host.
 
-### Arguments
-
-* `{host}`
-
-   Host name.
-
-* `{iface}`
-
-   Interface that should be updated. This may be a logical interface or 
- 	the MAC address of the interface.
-
-* `{name}`
-
-   Name of this interface (e.g. newname). This is only the
-	name associated with a certain interface. FQDNs are disallowed.
-	To set the domain or zone for an interface, use the
-	"rocks add network" command, and then associate the interface
-	with the network
-
-
-### Parameters
-* `[iface=string]`
-
-   Can be used in place of the iface argument.
-* `[name=string]`
-
-   Can be used in place of the name argument.
-
 ### Examples
 
-* `stack set host interface name compute-0-0 eth1 cluster-0-0`
+* `stack set host interface name backend-0-0 interface=eth1 name=cluster-0-0`
 
-   Sets the name for the eth1 device on host compute-0-0 to
+   Sets the name for the eth1 device on host backend-0-0 to
 	cluster-0-0.zonename. The zone is decided by the subnet that the
 	interface is attached to.
 
-* `stack set host interface name compute-0-0 iface=eth1 name=c0-0`
-
-   Same as above.
-
-
-### Related
-[add host](add-host)
-
-[add network](add-network)
 
 

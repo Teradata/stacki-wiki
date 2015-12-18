@@ -8,13 +8,6 @@
 
 Dump the set of attributes for appliances.
 
-### Arguments
-
-* `[appliance]`
-
-   Name of appliance
-
-
 ### Examples
 
 * `stack dump appliance attr compute`

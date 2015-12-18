@@ -8,22 +8,6 @@
 
 Report the set of attributes for hosts.
 
-### Arguments
-
-* `[host]`
-
-   Host name of machine
-
-
-### Parameters
-* `[attr=string]`
-
-   Output just the value of a particular attribute
-* `[pydict=bool]`
-
-   Output as a python-formatted dictionary. Defaults to false.
-	Only valid if attr parameter is not specified.
-
 ### Examples
 
 * `stack report host attr compute-0-0`

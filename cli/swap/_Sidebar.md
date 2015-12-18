@@ -1,6 +1,7 @@
-[Home](Home)
+[Command Line Interface](CLI-documentation)
 
 * [add](add-commands)
+* [compile](compile-commands)
 * [config](config-commands)
 * [create](create-commands)
 * [disable](disable-commands)
@@ -10,7 +11,6 @@
 * [iterate](iterate-commands)
 * [list](list-commands)
 * [load](load-commands)
-* [open](open-commands)
 * [remove](remove-commands)
 * [report](report-commands)
 * [run](run-commands)

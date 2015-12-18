@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack list host profile [host]...`
+`stack list host profile [host ...]`
 
 ### Description
 
@@ -11,14 +11,6 @@ Outputs a XML wrapped Kickstart/Jumpstart profile for the given hosts.
 	fed from STDIN via a pipe, the argument list is ignored and XML is
 	read from STDIN.  This command is used for debugging the Rocks
 	configuration graph.
-
-### Arguments
-
-* `[host]`
-
-   Zero, one or more host names. If no host names are supplied, info about
-	all the known hosts is listed.
-
 
 ### Examples
 

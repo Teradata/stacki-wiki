@@ -8,13 +8,6 @@
 
 Reconfigure and optionally restart the network for the named hosts.
 
-### Parameters
-* `[restart=boolean]`
-
-   If "yes", then restart the network after the configuration files are
-	applied on the host.
-	The default is: yes.
-
 ### Examples
 
 * `stack sync host network compute-0-0`
