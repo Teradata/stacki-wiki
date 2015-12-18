@@ -9,10 +9,10 @@ These two pallets are the minimum pallets required to install a backend host.
 Backend hosts are assigned the _default_ box automatically.
 
 Different backend hosts can be assigned to different boxes which gives you
-a great deal of latitude when decided what software stacks should go on what
+a great deal of latitude when deciding what software stacks should go on which
 backend hosts.
 
-A few examples:
+A few examples of the utility of boxes:
 
 * Maintaining different versions of the OS:
 
@@ -26,8 +26,8 @@ backend hosts to the new box.
 
 Pallets can be created by mirroring any publicly available repo (or
 subscribed repo if using RHEL).
-Adding an _updates_ pallet to any box will make available to
-yum all updated RPMS.
+Adding an _updates_ pallet to any box will make the updated RPMs
+to hosts via yum.
 
 * Maintaining dev/test/production environments:
 
@@ -41,8 +41,9 @@ box and reinstall.
 
 ## Create a new box
 
-This example will create a new distribution using RHEL 6.7 instead of
-CentOS 6.7. We'll then assign a machine to the new box.
+This example will create a new box that incorporates RHEL 6.7 instead of
+CentOS 6.7.
+Then we'll then assign a machine to the new box.
 
 List boxes:
 
@@ -58,7 +59,8 @@ default: redhat stacki-3.0-6.x CentOS-6.7 -----
 ```
 
 In the above output, the _default_ box contains two pallets (_stacki_
-version _3.0-6.x_ and _CentOS_ version _6.7) and it contains no carts (denoted by `-----`).
+version _3.0-6.x_ and _CentOS_ version _6.7_) and it contains no
+carts (denoted by `-----`).
 
 Let's look at all the available pallets:
 
@@ -126,7 +128,7 @@ dev:     redhat stacki-3.0-6.x RHEL-6.7   -----
 
 We see that the _dev_ box contains the _RHEL_ and _stacki_ pallets.
 
-Now let's assign a backend host to the _dev_ distribution.
+Now let's assign a backend host to the _dev_ box.
 First, let's look at what the backend hosts are currently set to:
 
 ```
@@ -163,7 +165,7 @@ _RHEL_ pallet (repository) at its disposal rather than the _CentOS_ packages.
 
 To remove a box, do the following:
 
-Reset the backend nodes to a valid distribution.
+Reset the backend nodes to a valid box:
 
 ```
 # stack set host box node214 box=default
