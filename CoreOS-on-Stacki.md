@@ -152,12 +152,11 @@ PXE config files are dynamically generated when you set the host to boot from ei
 
 ```
 # cat /tftpboot/pxelinux/pxelinux.cfg/0A02FFFE
-
 default stack
 prompt 0
 label stack
-	kernel vmlinuz.coreos
-	append cloud-config-url=http://10.2.1.1/install/coreos/cloud-config-bootstrap.sh console=tty0 console=ttyS0,115200n8 initrd=initrd.coreos
+	com32 chain.c32
+	append hd0
 ```
 
 Oh look, it failed! (There’s no coreos bootaction in that file.) We’ll unset and reset the boot flag to fix it:
@@ -174,8 +173,8 @@ Now look:
 default stack
 prompt 0
 label stack
-    coreos_production_pxe.vmlinuz
-    append cloud-config-url=https://10.2.1.1/install/coreos/pxe-cloud-config.y console=tty0 console=ttyS0,115200
+	kernel vmlinuz.coreos
+	append cloud-config-url=http://10.2.1.1/install/coreos/cloud-config-bootstrap.sh console=tty0 console=ttyS0,115200n8 initrd=initrd.coreos
 ```
 
 Much better. So now we can power cycle our machines and expect them to install.
@@ -204,7 +203,7 @@ Let’s create a coreos directory because we’ll probably do some other cool sh
 ```
 
 Put the following file in as pxe-cloud-config.y (copied from the website)
-(I'm using a ".y" file because I use vim for editing. The yaml code for vim is really really slow. So I use ".y" files to edit and then sometimes copy them to their ".yaml" counterparts for actual running. I do that later in this doc. Just don't edit ".yaml" files in vim, you'll disharmonize your chi.)
+(I'm using a ".y" file because I use vim for editing. The yaml code for vim is really really slow. So I use ".y" files to edit and then sometimes copy them to their ".yaml" counterparts for actual running. Just don't edit ".yaml" files in vim, you'll disharmonize your chi.)
 
 ```
 #cloud-config
@@ -233,7 +232,7 @@ https://github.com/coreos/coreos-cloudinit.git, and build it, but for the purpos
 
 Once validated, reboot your machines and watch them install or breathe sufficiently long enough so that one installs, about 5 minutes. Once installed, you can go to the last part of this and use Docker.
 
-The key you put in the config file is for the user “core” not “root”. So you should have passwordless access for user “core."
+The key you put in the config file is for the user “core” not “root”. So you should have password-less access for user “core."
 
 We’ll add a “root” user in the next more advanced section.
 
@@ -247,7 +246,7 @@ Or, you can just install it to disk. That works too. So we’ll do that by adjus
 
 We’re going to adjust our boot url to call a script that will install our cloud configuration and install everything to disk. So let’s do that:
 
-To install to disk you need the production images and they also need to be available from the webserver.
+To install to disk you need the production images and they also need to be available from the web server.
 
 Here is the code to do that:
 
@@ -410,10 +409,17 @@ There is so much more to CoreOS than this basic tutorial, and I’m sure there a
 
 These things include:
 
-- Clusterin: We haven't setup fleet, flannel, or etcd2 here.
-- Kubernetes and Mesos
+- Clustering: We haven't really set-up fleet, flannel, or etcd2 here.
+- Kubernetes and Mesos.
 - Running without outside access (most of this tutorial requires it.)
 - Running an internal (to your network) Docker registry.
 - Using other container technologies other than Docker.
+- CoreOS doesn't always install things in a predictable manner.
+- Networking issues. I have a weird network, with two DHCP servers, so odd things happen to my CoreOS instances.
+- Using OEM facility to provide attributes from the Stacki database for use. 
 
 Let us know if exploring those issues will be useful.
+
+Thanks,
+
+Joe
