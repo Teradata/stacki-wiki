@@ -64,7 +64,7 @@ So let’s add the CoreOS bootaction.
 List the bootactions to see examples:
 
 ```
-[root@stacki7 ~]# stack list bootaction
+# stack list bootaction
 ```
 
 ```
@@ -121,7 +121,7 @@ We’re just going to do all of them. If I explain the next command to you, it w
 
 ```
 # stack set host installaction backend action=coreos
-``
+```
 
 Now set all the machines to install coreos:
 
@@ -132,7 +132,7 @@ Now set all the machines to install coreos:
 Verify:
 
 ```
-[root@stacki7 pxelinux]# stack list host
+# stack list host
 
 HOST         RACK RANK CPUS APPLIANCE DISTRIBUTION RUNACTION INSTALLACTION
 stacki7:     0    0    1    frontend  default      os        install
