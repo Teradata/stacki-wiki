@@ -21,7 +21,7 @@ In this tutorial, we’ll install CoreOS on a Stacki server, set-up TFTP/PXE/DHC
 - Run docker.
 - More advanced shit.
 
-1. Get the software:
+### 1. Get the software:
 
 You can find the latest and greatest CoreOS here:
 
