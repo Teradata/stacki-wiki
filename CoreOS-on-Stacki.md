@@ -156,9 +156,8 @@ PXE config files are dynamically generated when you set the host to boot from ei
 default stack
 prompt 0
 label stack
-    kernel vmlinuz-2.0-x86_64
-    append ip=bootif:dhcp inst.ks=https://10.2.1.1/install/sbin/kickstart.cgi inst.geoloc=0 inst.noverifyssl inst.ks.sendmac console=tty0 console=ttyS0,115200n8 initrd=initrd.img-2.0-x86_64
-    ipappend 2
+	kernel vmlinuz.coreos
+	append cloud-config-url=http://10.2.1.1/install/coreos/cloud-config-bootstrap.sh console=tty0 console=ttyS0,115200n8 initrd=initrd.coreos
 ```
 
 Oh look, it failed! (There’s no coreos bootaction in that file.) We’ll unset and reset the boot flag to fix it:
