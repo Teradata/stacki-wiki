@@ -28,7 +28,7 @@ So in /export/stack/site-profiles/default/1.0/nodes/extend-backend.xml
 ```
 <package>myrpmname</package>
 ```
-_Before_ any \<post>\</post\> tags.
+_Before_ any `<post> </post>` tags.
 
 ##### Example
 
@@ -68,7 +68,7 @@ Now it's available.
 
 Add it to /export/stack/site-profiles/default/1.0/nodes/extend-backend.xml:
 
-Before any \<post>\</post> tags, add a package tag:
+Before any `<post> </post>` tags, add a package tag:
 ```
 <package>cloudera-manager-agent</package>
 ```

@@ -14,30 +14,26 @@ backend hosts.
 
 A few examples of the utility of boxes:
 
-* Maintaining different versions of the OS:
+* **Maintaining different versions of the OS**:
+  If you want CentOS 6.6 on one set of backend hosts and CentOS 6.7 on another
+  set of backend hosts.
+  You can download the 6.7 CentOS ISOs, add them to the frontend (with `stack
+  add pallet`), create a new box with the CentOS 6.7 pallet, then assign
+  backend hosts to the new box.
 
-If you want CentOS 6.6 on one set of backend hosts and CentOS 6.7 on another
-set of backend hosts.
-You can download the 6.7 CentOS ISOs, add them to the frontend (with `stack
-add pallet`), create a new box with the CentOS 6.7 pallet, then assign
-backend hosts to the new box.
+* **Maintaining updates**:
+  Pallets can be created by mirroring any publicly available repo (or
+  subscribed repo if using RHEL).
+  Adding an _updates_ pallet to any box will make the updated RPMs
+  to hosts via yum.
 
-* Maintaining updates:
-
-Pallets can be created by mirroring any publicly available repo (or
-subscribed repo if using RHEL).
-Adding an _updates_ pallet to any box will make the updated RPMs
-to hosts via yum.
-
-* Maintaining dev/test/production environments:
-
-Again, having created dev, test,
-and production boxes with the appropriate pallets, assign machines to
-each of those boxes.
-Install/reinstall the machines.
-When you want to
-promote machines to a new environment, reassign the machine's
-box and reinstall.
+* **Maintaining dev/test/production environments**:
+  Again, having created dev, test,
+  and production boxes with the appropriate pallets,
+  assign machines to each of those boxes.
+  Install/reinstall the machines.
+  When you want to promote machines to a new environment,
+  reassign the machine's box and reinstall.
 
 ## Create a new box
 

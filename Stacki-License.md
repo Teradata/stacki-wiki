@@ -1,4 +1,4 @@
-# www.stacki.com
+### www.stacki.com
 ### v1.0
 ### Copyright (c) 2006 - 2015 StackIQ Inc. All rights reserved.
 

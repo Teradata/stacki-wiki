@@ -35,7 +35,7 @@ Actually getting the software:
 
 Put this into a script a file and run it with bash, or run each command by hand with cut and paste. Whatever blisses your joy.
 
-````
+```
 cd /tftpboot/pxelinux
 wget http://stable.release.core-os.net/amd64-usr/current/coreos_production_pxe.vmlinuz
 wget http://stable.release.core-os.net/amd64-usr/current/coreos_production_pxe.vmlinuz.sig

@@ -21,7 +21,7 @@ Go to the *nodes* directory of your cart:
 
 Edit *cart-apache-backend.xml*.
 
-We are most concerned with what goes on between \<post>\</post> tags. Remember, this runs during the post-install configuration. It maps to the %post stanza in kickstart.
+We are most concerned with what goes on between `<post> </post>` tags. Remember, this runs during the post-install configuration. It maps to the %post stanza in kickstart.
 
 So in post tags:
 ```
@@ -171,7 +171,7 @@ Scripts are similar to config files, except you might want to run them during in
 
 There are two ways to add/run scripts:
 * Adding them in a file and then running them
-* Running them in a \<post>\</post> tags.
+* Running them in a `<post> </post>` tags.
 
 ##### Add a script to be run
 
@@ -279,7 +279,7 @@ Also note, the cond="has_mapr" in the opening post tag of the example. I've defi
 
 If your scripts need full network and services, then you can run them at first boot:
 
-after all your \<post>\</post> tags you can do:
+after all your `<post> </post>` tags you can do:
 ```
 <boot order="post">
 /full/path/of/script/dothis.sh
@@ -296,11 +296,11 @@ cd /opt/cobbler/config_ldap_mysite/
 </boot>
 ```
 
-**Remember**: \<boot>\</boot> go after all \<post>\</post> tags. Not in-between them.
+**Remember**: `<boot> </boot>` go after all `<post> </post>` tags. Not in-between them.
 
-##### Run a script in the \<post>\</post> tags.
+##### Run a script in the `<post> </post>` tags.
 
-Really whenever you create a set of \<post>\</post> tags, you're running with the bash interpreter. You can do more difficult scripts during installation by switching interpreters, python, perl, ksh, csh, tcsh, javascript,ruby,on and on and on.
+Really whenever you create a set of `<post> </post>` tags, you're running with the bash interpreter. You can do more difficult scripts during installation by switching interpreters, python, perl, ksh, csh, tcsh, javascript,ruby,on and on and on.
 
 Do it like this:
 
@@ -343,5 +343,5 @@ It's the equivalent of this:
 #!/usr/bin/python
 ```
 
-in a regular python script. So if you have perl scripts you've written or someone else has, use a perl interpreter line, and put the script in-between \<post>\</post> tags.
+in a regular python script. So if you have perl scripts you've written or someone else has, use a perl interpreter line, and put the script in-between ```<post> </post>``` tags.
 

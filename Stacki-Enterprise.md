@@ -6,7 +6,7 @@ Stacki Enterprise can be installed on top of Stacki v3.  Once you have a Stacki 
 
 ### Boss Pallet
 
-[Download] (http://www.stackiq.com/compare-stacki-editions/register-stacki-enterprise/) the Boss Pallet and copy the file to your Frontend.  Next add and enable the pallet like so:
+[Download](http://www.stackiq.com/compare-stacki-editions/register-stacki-enterprise/) the Boss Pallet and copy the file to your Frontend.  Next add and enable the pallet like so:
 
         # stack add pallet boss*.iso
         # stack enable pallet boss

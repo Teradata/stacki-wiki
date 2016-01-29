@@ -9,15 +9,15 @@ networking information.
 
 ## Requirements 
  
-A frontend has the following hardware requirements.
+A frontend has the following hardware requirements
 
-**Resource** | Minimum | Recommended  
---- | --- | ---
-**System Memory** | 2 GB | 16 GB  
-**Network Interfaces** | 1 | 1  
-**Disk Capacity** | 64 GB | 200GB  
-**CD/DVD Device** | 1 | 1  
- 
+ | Resource | Minimum | Recommended |
+ | -------- | ------- | ----------- |
+ | System Memory | 2 GB | 16 GB |
+ | Network Interfaces | 1 | 1 |
+ | Disk Capacity | 64 GB | 200 GB |
+ | CD/DVD Device | 1 | 1 |
+
 BIOS _boot order_
  
 1. CD/DVD Device
@@ -133,7 +133,7 @@ that is connected to the frontend. All other drives
 connected to the frontend will be left untouched.
 
 | Partition Name | Size |
-| --------------- | ---- |
+| -------------- | ---- |
 |       /        | 16GB |
 |       /var     | 16GB |
 |       swap     |  1GB | 
