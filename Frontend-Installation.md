@@ -11,12 +11,12 @@ networking information.
  
 A frontend has the following hardware requirements
 
- | Resource | Minimum | Recommended |
- | -------- | ------- | ----------- |
- | System Memory | 2 GB | 16 GB |
- | Network Interfaces | 1 | 1 |
- | Disk Capacity | 64 GB | 200 GB |
- | CD/DVD Device | 1 | 1 |
+| Resource | Minimum | Recommended |
+| -------- | ------- | ----------- |
+| System Memory | 2 GB | 16 GB |
+| Network Interfaces | 1 | 1 |
+| Disk Capacity | 64 GB | 200 GB |
+| CD/DVD Device | 1 | 1 |
 
 BIOS _boot order_
  
