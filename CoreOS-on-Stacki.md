@@ -126,7 +126,7 @@ We’re just going to do all of them. If I explain the next command to you, it w
 Now set all the machines to install coreos:
 
 ```
-# stack set host installaction backend action=coreos
+# stack set host boot backend action=coreos
 ```
 
 Verify:
