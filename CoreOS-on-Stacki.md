@@ -123,10 +123,10 @@ We’re just going to do all of them. If I explain the next command to you, it w
 # stack set host installaction backend action=coreos
 ```
 
-Now set all the machines to install coreos:
+Now set all the machines to install with the boot "install" flag. When they install, they'll get the installaction we just assigned "coreos."
 
 ```
-# stack set host boot backend action=coreos
+# stack set host boot backend action=install
 ```
 
 Verify:
