@@ -94,7 +94,7 @@ error - "action" parameter is required
 Add the bootaction to reflect what CoreOS requires:
 
 ```
-# stack add bootaction action=coreos kernel=vmlinuz.coreos ramdisk=initrd.coreos args="cloud-config-url=https://10.2.1.1/install/coreos/pxe-cloud-config.y console=tty0 console=ttyS0,115200"
+# stack add bootaction action=coreos kernel=vmlinuz.coreos ramdisk=initrd.coreos args="cloud-config-url=http://10.2.1.1/install/coreos/pxe-cloud-config.y console=tty0 console=ttyS0,115200"
 ```
 
 Check it:
@@ -102,7 +102,7 @@ Check it:
 ```
 # stack list bootaction | grep coreos
 
-coreos:                     vmlinuz.coreos        initrd.coreos         cloud-config-url=https://10.2.1.1/install/coreos/pxe-cloud-config.y console=tty0 console=ttyS0,115200
+coreos:                     vmlinuz.coreos        initrd.coreos         cloud-config-url=http://10.2.1.1/install/coreos/pxe-cloud-config.y console=tty0 console=ttyS0,115200
 ```
 
 Some things to note:
@@ -321,15 +321,22 @@ add the following to cloud-config-example.y. The first part is from our original
 It should look like this:
 
 ```
-#cloud-confie
+#cloud-config
 coreos:
   units:
     - name: etcd2.service
       command: start
     - name: fleet.service
       command: start
+
 ssh_authorized_keys:
   - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEB28SB7N6EECT56UOSRk5MQ1ovfoR32vWQT1GOZgPDQveFwvHbCBNS0JY7J5tc+X7P70YPLUe8enZu92GFOoSpyj0uOJaMXzh321QglorSTS9AAvTVgiAEbnIiWEvfiSZ5RBUeTlCJJkt/f8+xxyGYAuCrE+/2VwQThQUlPlaiZ0kij+6LIxD/nLXy/VpEoLf7PsDYjSBpMx/VzzY9g7esJvjOCc32oAzqcyDX1ClrlGb9GkN8j+zsX+N7wdlCh30WTt4V+LMq+d4i6kiBW5eC1zDPqsdYXjp7J3pp3uunIrWxNfgLNyRAzSIMD1zKgaSclbX5ioXdqB4A7Gai5Z1 root@stacki7.jkloud.com
+
+users:
+  - name: root
+    passwd: $1$iF0SrUT5$0hzvbXUJfZnMtkecfzoCp/
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEB28SB7N6EECT56UOSRk5MQ1ovfoR32vWQT1GOZgPDQveFwvHbCBNS0JY7J5tc+X7P70YPLUe8enZu92GFOoSpyj0uOJaMXzh321QglorSTS9AAvTVgiAEbnIiWEvfiSZ5RBUeTlCJJkt/f8+xxyGYAuCrE+/2VwQThQUlPlaiZ0kij+6LIxD/nLXy/VpEoLf7PsDYjSBpMx/VzzY9g7esJvjOCc32oAzqcyDX1ClrlGb9GkN8j+zsX+N7wdlCh30WTt4V+LMq+d4i6kiBW5eC1zDPqsdYXjp7J3pp3uunIrWxNfgLNyRAzSIMD1zKgaSclbX5ioXdqB4A7Gai5Z1 root@stacki7.jkloud.com
 ```
 
 To start the network, we’re just going to turn on DHCP for the public network, and since this is already in the Stacki database, each machine will get it’s correct IP and gateway info. There are ways to do this in cloud-config, but this is the simplest way to do it on a Stacki frontend.
