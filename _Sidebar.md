@@ -23,7 +23,7 @@
   * [Building From Source](Building-From-Source)
 * Answers to Burning questions
   * [Kickstart Customizations](Kickstart-Customizations)
-    * [Adding Multiple RPMS](adding-multiple-rpms)
+    * [One Package tag Multiple RPMS](One-package-tag-for-multiple-rpms)
 
 ***
 
