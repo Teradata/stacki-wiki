@@ -22,7 +22,8 @@
 * Developer
   * [Building From Source](Building-From-Source)
 * Answers to Burning questions
-  [Kickstart Customizations](Kickstart-Customizations)
+  * [Kickstart Customizations](Kickstart-Customizations)
+    * [Adding Multiple Packages](adding-multiple-packages)
 
 ***
 
