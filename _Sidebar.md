@@ -24,6 +24,7 @@
 * Answers to Burning questions
   * [Kickstart Customizations](Kickstart-Customizations)
     * [One Package tag Multiple RPMS](One-package-tag-for-multiple-rpms)
+    * [%include directive](include-directive)
 
 ***
 
