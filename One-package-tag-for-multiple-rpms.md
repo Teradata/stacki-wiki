@@ -24,7 +24,7 @@ tmux
 </package>
 ```
 
-Because, well, it works and it's less typing, and if a human only has a certain number of keystrokes in their wrists and fingers before debilitating injury. I have two keystrokes left.
+Because, well, it works and it's less typing, and if a human only has a certain number of keystrokes in their wrists and fingers before debilitating injury, I have two keystrokes left.
 
 You should still be able to use conditionals too:
 
