@@ -18,6 +18,14 @@ and it would be included during install.
 
 I'll give a solid example based on a site customization cart, which is typically where I need to put changes that are local to the client I'm working with or a set of systems I'm working with. The above example is for doing this globally. This example does it localized to a cart. You can use either one, or both if you must. We'll probably develop something that's easier post v3.0 so stay tuned. 
 
+If you go this route, make sure you do a:
+
+```
+chgrp -R apache /export/stack/<new dir> 
+```
+
+Or the kickstart won't pull the files you've indicated. 
+
 ##### Using %include in cart.
 
 When you create a cart with:
