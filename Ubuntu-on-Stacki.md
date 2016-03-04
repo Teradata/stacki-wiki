@@ -15,6 +15,6 @@ Installing Ubuntu, much like the installation of CoreOS, is a Phase 1 project. <
 
 <sup name="f2">[2](#a2)</sup> Cue thunderous applause.
 
-<sup name="f3">[3](#a3)</sup> And, I, might add, left it on the mat, put my heart an soul into it, laughed, cried, became a part of it, spilt my life's blood, cursed the Gods on your behalf all while wondering how anyone has been able to install an entire cluster of this OS - for you, yes you, that guy who always asks me: "Can I install Ubuntu?"
+<sup name="f3">[3](#a3)</sup> And, I, might add, left it on the mat, put my heart and soul into it, laughed, cried, became a part of it, spilt my life's blood, cursed the Gods on your behalf all while wondering how anyone has been able to install an entire cluster of this OS in a timely fashion - for you, yes you, that guy who always asks me: "Can I install Ubuntu?"
 
 <sup name="f4">[4](#a4)</sup> Meaning, that it's going to work, it will have some special sauce, but the two whole beef patties will be missing, which means you can eat it but you'll be wondering where the beef is.
