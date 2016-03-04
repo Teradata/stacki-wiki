@@ -10,6 +10,19 @@ Installing Ubuntu, much like the installation of CoreOS, is a Phase 1 project. <
 
 Phase 1 does not have any of the special things we do for CentOS/RHEL variants: disk controller configuration<sup name="f5">[5](#a5)</sup>, parallel disk partitioning, automatic kickstart generation, parallel file-sharing of packages, and the use of attributes to dynamically populate values in kickstart or preseed. Those pieces are for Phase 2, assuming there is sufficient sturm und drang to push us to get there.
 
+This tutorial will follow the same basic outline as CoreOS. It is essentially the same procedure we use for prototyping any new OS or application we are automating:
+
+- Get the software.
+- Set up the bootaction.
+- Put the files into tftp.
+- Create a preseed.cfg
+- Set machines to boot from the bootaction.
+- Install
+- Validate
+- Bask in Ubuntuness
+- Turning it to 11
+- Future directions.
+
 
 <h5>Future Directions</h5>
 
