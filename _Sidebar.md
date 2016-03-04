@@ -16,7 +16,7 @@
 * Use Cases
   * [Mesos/Marathon/Zookeeper](Mesos-Marathon-Zookeeper-Use-Case)
   * [CoreOS on Stacki] (CoreOS-on-Stacki)
-  * [Installing Ubuntu on Stacki] (Stacki-Ubuntu)
+  * [Installing Ubuntu] (Installing-Ubuntu)
 * Reference
   * [Command Line](CLI-documentation) 
   * [Wire](Wire-Reference)
