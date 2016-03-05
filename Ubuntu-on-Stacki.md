@@ -38,6 +38,6 @@ This tutorial will follow the same basic outline as CoreOS. Both are effectively
 
 <sup name="f5">[5](#a5)</sup> Okay, so disk controller set-up is a killer problem. If you really want the RAID setup correctly, import the controller setup in a spreadsheet, install the backend nodes with CentOS/RHEL, and then reinstall them with this procedure for Ubuntu. Magic. You have your controllers set-up and you have Ubuntu. The Ubuntu install takes longer but you'll have the RAID set-up the way you expect with the small constraint of having an extra install. But that takes what, 10-15 minutes for as many nodes as you have?
 
-<h5>Footnotes to the Footnotes</h5>
+<h7>Footnotes to the Footnotes</h7>
 
 <sup name="f1">[1](#g1)</sup> Once the check has cleared.
