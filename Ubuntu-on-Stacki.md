@@ -28,7 +28,7 @@ This tutorial will follow the same basic outline as CoreOS. Both are effectively
 
 <h6>Footnotes</h6>
 
-<sup name="f1">[1](#a1)</sup> One of you is going to say "What about SUSE?", and I'm going to say that when I drive by the Novell campus there are coyotes chasing tumbleweeds where a company used to be, and I've never been to Germany. Make an argument for the need, and we'll start a Phase 1 and see how far it goes. Or we'll help you start a Phase 1 project and see how far it goes. Or, write us a check, and it'll happen. <sup name="b1">[1](#g1)</sup>
+<sup name="f1">[1](#a1)</sup> One of you is going to say "What about SUSE?", and I'm going to say that when I drive by the Novell campus there are coyotes chasing tumbleweeds where a company used to be, and I've never been to Germany. Make an argument for the need, and we'll start a Phase 1 and see how far it goes. Or we'll help you start a Phase 1 project and see how far it goes. Or, write us a check, and we'll have you believing in magic again.<sup name="b1">[1](#g1)</sup>
 
 <sup name="f2">[2](#a2)</sup> Cue thunderous applause.
 
