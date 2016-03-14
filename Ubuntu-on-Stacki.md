@@ -1,12 +1,12 @@
 <h5>The Guide to Installing Ubuntu with Stacki</h5>
 
-In almost every meet-up and conference one of us has spoken at in the last 6 months, there is always at least one guy who asks "Can you install Ubuntu"? And the answer for the past 6 months has been "No, we don't." <sup name="a1">[1](#f1)</sup>
+In almost every meet-up and conference one of us has spoken at in the last 6 months, there is always at least one guy who asks "Can you install Ubuntu"? And the answer for the past 6 months has been "No, we don't."<sup name="a1">[1](#f1)</sup>
 
-Until today. <sup name="a2">[2](#f2)</sup>
+Until today.<sup name="a2">[2](#f2)</sup>
 
-Okay, well mostly. I'm going to give you all the caveats first, and then if you really want to go down this road, it's less painful now because I walked it for you.<sup name="a3">[3](#f3)</sup> And I would be really excited to work on making it great with any community members who would like to spend some time on it. 
+Okay, well mostly. I'm going to give you all the caveats first, and then if you really want to go down this road, it's less painful now because I walked it for you.<sup name="a3">[3](#f3)</sup> And Aish and I (Joe) would be really excited to work on making it great with any community members who would like to spend some time on it. 
 
-Installing Ubuntu, much like the installation of CoreOS, is a Phase 1 project. <sup name="a4">[4](#f4)</sup> A Phase 1 project for us means: it's going to work, at least as good as what you have, possibly simpler or better than what you have, but it will work. You'll be able to install backend nodes with the version of Ubuntu you want, while still maintaining your CentOS/RHEL stack.
+Installing Ubuntu, much like the installation of CoreOS, is a Phase 1 project.<sup name="a4">[4](#f4)</sup> A Phase 1 project for us means: it's going to work, at least as good as what you have, possibly simpler or better than what you have, but it will work. You'll be able to install backend nodes with the version of Ubuntu you want, while still maintaining your CentOS/RHEL stack.
 
 Phase 1 does not have any of the special things we do for CentOS/RHEL variants: disk controller configuration<sup name="a5">[5](#f5)</sup>, parallel disk partitioning, automatic kickstart generation, parallel file-sharing of packages, and the use of attributes to dynamically populate values in kickstart or preseed. Those pieces are for Phase 2, assuming there is sufficient sturm und drang to push us to get there.
 
@@ -351,9 +351,11 @@ If you didn't do the previous ISO install and just jumped to here, find the vmli
 <h5>Future Directions</h5>
 As a Phase 1 project, this has a bunch of things you have to do by hand. We don't like that. When managing machines, you want your command line actions and set-up to be ones that will affect the entire cluster. It's the fulcrum on which you lever your machines to a standard. 
 
-Phase 2 would explore the following:
+Phase 2 would explore the following in no apparent order:
 * Automatic kickstart/preseed generation
-* Auto partitioning
+* Use of Stacki attributes (key/value pairs) in preseed.cfg and kickstart.
+* Auto partitioning. 
+* Disk controller configuration.
 * Creating Ubuntu ISOS as a pallet (we can actually add Ubuntu as a pallet now, but the code has yet to be checked in.)
 * Creating the ability to mirror Ubuntu repos automatically from the frontend.
 * Integrating the Ubuntu installer to pull deb packages via the peer-to-peer installer.
