@@ -4,7 +4,7 @@ In almost every meet-up and conference one of us has spoken at in the last 6 mon
 
 Until today.<sup name="a2">[2](#f2)</sup>
 
-Okay, well mostly. I'm going to give you all the caveats first, and then if you really want to go down this road, it's less painful now because I walked it for you.<sup name="a3">[3](#f3)</sup> And Aish and I (Joe) would be really excited to work on making it great with any community members who would like to spend some time on it. 
+Okay, well mostly. I'm going to give you all the caveats first, and then if you really want to go down this road, it's less painful now because I walked it for you.<sup name="a3">[3](#f3)</sup> And we would be really excited to work on making it great with any community members who would like to spend some time on it. 
 
 Installing Ubuntu, much like the installation of CoreOS, is a Phase 1 project.<sup name="a4">[4](#f4)</sup> A Phase 1 project for us means: it's going to work, at least as good as what you have, possibly simpler or better than what you have, but it will work. You'll be able to install backend nodes with the version of Ubuntu you want, while still maintaining your CentOS/RHEL stack.
 
@@ -25,15 +25,15 @@ This tutorial will follow the same basic outline as CoreOS. Both are effectively
 
 <h5>Get the software.</h5>
 
-I've only tried this for Trusty Tahr and Wiley Weasel<sup name="a6">[6](#f6)</sup>, so I don't know if older versions work. We'll do Trusty Tahr since that's what I currently have set up on in the lab. 
+I've only tried this for Trusty Tahr and Wiley Weasel<sup name="a6">[6](#f6)</sup>, so I don't know if older versions work. We'll do Trusty Tahr since that's what is currently have set up on in the lab. 
 
-Ubuntu has a very complete (i.e. somewhat crazy) distribution set-up. If you want absolutely every piece of software from Ubuntu, you can mirror it to your drive. However, it's about 680G of data so you better a) have a big drive and b) have a lot of time or an great bandwidth. I tried mirroring the whole thing, but it took approximately 3 days to get about 260G. 
+Ubuntu has a very complete (i.e. somewhat crazy) distribution set-up. If you want absolutely every piece of software from Ubuntu, you can mirror it to your drive. However, it's about 680G of data so you better a) have a big drive and b) have a lot of time and/or great bandwidth. I tried mirroring the whole thing, but it took approximately 3 days to get about 260G. 
 
 I'm not a patient person, so I figured that was the wrong way to go. 
 
 I then just started pulling the distribution iso that I wanted, much simpler, and mirroring that. The only problem with this is that you're strictly limited to the software on the ISO. Unless your backend nodes have internet access (most don't if you're running a real cluster), getting other packages can be tricky. There is a middle way to pull in more packages available in any given Ubuntu distro. I'll give details for that in the "Turning it to 11" section of this document. 
 
-So really, let's get the software. On some internet connected machine, get the Ubuntu ISO of the distribution you want. Get the Ubuntu x86_64 server version. I guess you could use Desktop also; I just haven't done it.
+So really, let's get the software. On some internet connected machine, get the Ubuntu ISO of the distribution you want. Use the Ubuntu x86_64 server version. I guess you could use Desktop also; I just haven't done it.
 
 I either use the torrents from the [Ubuntu Alternative Downloads](http://www.ubuntulinux.org/download/alternative-downloads)
 
@@ -42,7 +42,7 @@ Or just download it directly like this:
 wget http://releases.ubuntu.com/14.04.4/ubuntu-14.04.4-server-amd64.iso
 ```
 
-Scp or sftp or Filezilla this to your frontend if you didn't just pull it directly there. I usually dump this sort of thing into /export (or /state/partition1 which export is symlinked to) and do stuff to it from there. 
+Scp or sftp or Filezilla this to your frontend if you didn't just pull it directly there. I usually dump this sort of thing into /export (or /state/partition1 which /export is symlinked to) and do stuff to it from there. 
 
 Mount it:
 ```
@@ -63,7 +63,7 @@ It should look like this when you're done:
 boot  dists  doc  EFI  install  isolinux  md5sum.txt  pics  pool  preseed  README.diskdefines  ubuntu
 ```
 
-Now you have an Ubuntu distribution of Trusty Tahr available for installing an Ubuntu server style OS. We'll set-up a bootaction to set a machine to install Ubuntu.
+Now you have an Ubuntu distribution of Trusty Tahr available for installing an Ubuntu server style OS. We'll set-up tftp to set a machine to install Ubuntu.
 
 <h5>Put the necessary files into tftp.</h5>
 
@@ -83,9 +83,11 @@ cp install/initrd.gz /tftpboot/pxelinux/initrd.trusty
 cp install/vmlinuz /tftpboot/pxelinux/vmlinuz.trusty
 ```
 
-I've give the two files a ".trusty" so it's easier to know which one I'm pointing to and what I'm going to get. There are other ways to arrange this that are likely more intelligent. But this is Phase 1 so getting it up and working is the paramount goal. 
+I've given the two files a ".trusty" suffix so it's easier to know which one I'm pointing to and what I'm going to get. There are other ways to arrange this that are likely more intelligent. But this is Phase 1 so getting it up and working is the paramount goal. 
 
 Remember also, that we expect the kernel and ramdisk to start with "vmlinuz" and "initrd" respectively. When we set a bootaction, the code needs those two names at the beginning.<sup name="a7">[7](#f7)</sup>
+
+Next we need a bootaction we can assign to machines. 
 
 <h5>Set up the bootaction.</h5>
 
@@ -95,13 +97,13 @@ Let's create the bootaction from the command line. Note, there is some stuff in 
 stack add bootaction action=ubuntu kernel=vmlinuz.trusty ramdisk=initrd.trusty args="install auto=true url=http://10.1.1.1/install/ubuntu/preseed.cfg console=tty0 console=ttyS0,115200n8 ksdevice=bootif biosdevname=0 hostname=unassigned locale=en_US.UTF-8 keyboard-configuration/layout=us live-installer/net-image=http://10.1.1.1/install/ubuntu/install/filesystem.squashfs ramdisk_size=16392 nousb interface=auto netcfg/get_nameservers=10.1.1.1 priority=critical"
 ```
 
-Note that in the arguments there is an awful lot of hard-coded stuff. The IP address of the frontend, the url, the nameservers. Horrible by my standards. This sort of thing improves in Phase 2 stages. Also note that we are using a preseed.cfg to do the auto install. There may be a combination of kickstart and preseed that may be more conducive to Stacki style autoinstallations, but that's for further exploration. 
+Note that in the arguments there is an awful lot of hard-coded stuff. The IP address of the frontend, the url, the nameservers. Horrible by my standards. This sort of thing improves in Phase 2 stages. Also note that we are using a preseed.cfg to do the auto install. There may be a combination of kickstart and preseed that may be more conducive to Stacki style auto-installations, but that's for further exploration. 
 
 You don't need the serial console lines. The lab here requires it because I refuse to turn around, get out of my chair, and walk the 12 feet necessary to hook up a console and a monitor to see what a machine is doing. Hey, call me lazy, but laziness is the system administrator's raison d'etre for creating automation. 
 
 <h5>Create a preseed.cfg</h5>
 
-The preseed.cfg is the file we'll use to do the automation. As phase 1 project, this is the minimal amount that will get you what you want. This took a lot of time and playing around to get it right. It doesn't do anything fancy other than install a machine with a basic filesystem (per Ubuntu's choices) and installs ssh so we can get to the machine from the frontend.
+The preseed.cfg is the file we'll use to do the automation. As a Phase 1 project, this is the minimal amount that will get you what you want. This took a lot of time and playing around to get it right. It doesn't do anything fancy other than install a machine with a basic filesystem (per Ubuntu's choices) and installs ssh so we can get to the machine from the frontend.
 
 Here is the preseed.cfg we'll be using. It lives in the /export/stack/ubuntu directory as "preseed.cfg."
 
@@ -190,7 +192,7 @@ d-i grub-installer/only_debian boolean true
 d-i finish-install/reboot_in_progress note
 ```
 
-Note again all the hard-coded IPs. We would fix that in Phase 2. Also note at the bottom, I'm pulling in the authorized_keys from the webserver. This is probably bad. We'll figure out a better way to do this. In the meantime:
+Note again all the hard-coded IPs and the drive. We would fix that in Phase 2. Also note at the bottom, I'm pulling in the authorized_keys from the webserver. This is probably bad. We'll figure out a better way to do this. In the meantime:
 
 ```
 cp /root/.ssh/id_rsa.pu /export/stack/ubuntu/authorized_keys
@@ -198,7 +200,7 @@ chown root:apache /export/stack/ubuntu/authorized_keys
 chmod 644 /export/stack/ubuntu/authorized_keys
 ```
 
-Will make that part work. We also run the setPxeBoot.cgi to change the boot flag to "os" so that it boots from local disk after installation. This is similar to what we've done for CoreOS. This file comes with the "Well, it works on my machine," caveat. 
+Will make that part work. We also run the setPxeBoot.cgi to change the boot flag to "os" so that it boots from local disk after installation. This is similar to what we've done for CoreOS. The above file comes with the "Well, it works on my machine," caveat. 
 
 <h5>Set machines to boot from the bootaction.</h5>
 
@@ -215,7 +217,7 @@ backend-0-3: 0    3    2    backend   kilo os        install serial
 backend-0-4: 0    4    2    backend   kilo os        install serial
 ```
 
-Oh that's messed up. So we'll set them back to the "default" box and the "ubuntu" installaction. (Yours are probably already in the "default" box. So you probably don't have to change it. "ubuntu" is the name of the bootaction we created above. 
+Oh that's messed up. So we'll set them back to the "default" box and the "ubuntu" installaction. (Yours are probably already in the "default" box. So you probably don't have to change the box. "ubuntu" is the name of the bootaction we created above. 
 
 ```
 stack set host box backend box=default
@@ -235,7 +237,7 @@ backend-0-4: 0    4    2    backend   default os        ubuntu
 That looks good.
 
 <h5>Install</h5>
-We'll set these to boot. They have the correct installaction so we'll set the thing they do on the next boot to be "install" and they'll start intalling Ubuntu. This is going to wipe out your disk partitioning and formatting. 
+We'll set the boot flag for these to install. They have the correct installaction so we'll set the thing they do on the next boot to be "install" and they'll start installing Ubuntu. This is going to wipe out your disk partitioning and formatting, but shouldn't mess with your controller configuration.
 
 ```
 stack set host boot backend action=install
@@ -255,7 +257,7 @@ label stack
 	ipappend 2
 ```
 
-Tip them over. If you have ssh access right now:
+Kick them over. If you have ssh access right now:
 
 ```
 stack run host command="reboot"
@@ -275,7 +277,7 @@ or
 ```
 stack run host command="uname -a"
 ```
-Which should give you an idea of what they are running. Should be a Trusty Tahr kernel. 
+Which should give you an idea of what they are running. Should be a Trusty Tahr kernel. You might have to clean out the /root/.ssh/known_hosts file to get these commands to run cleanly. If you you get a password prompt, something aint right.  
 
 <h5>Bask in Ubuntuness</h5>
 Ubuntu is up. Bask in pure Ubuntu awesomeness. Give the machines to a developer, when they've thoroughly broken it, reinstall it and scold them with a proper sysadmin scowl.
@@ -351,7 +353,7 @@ If you didn't do the previous ISO install and just jumped to here, find the vmli
 <h5>Future Directions</h5>
 As a Phase 1 project, this has a bunch of things you have to do by hand. We don't like that. When managing machines, you want your command line actions and set-up to be ones that will affect the entire cluster. It's the fulcrum on which you lever your machines to a standard. 
 
-Phase 2 would explore the following in no apparent order:
+Phase 2 would explore the following (in no apparent order):
 * Automatic kickstart/preseed generation
 * Use of Stacki attributes (key/value pairs) in preseed.cfg and kickstart.
 * Auto partitioning. 
@@ -369,15 +371,15 @@ Which direction Ubuntu takes will be driven by our community. So if you have any
 
 <sup name="f2">[2](#a2)</sup> Cue thunderous applause.
 
-<sup name="f3">[3](#a3)</sup> And, I, might add, left it on the mat, put my heart and soul into it, laughed, cried, became a part of it, spilt my life's blood, cursed the Gods on your behalf all while wondering how anyone has been able to install an entire cluster of this OS in a timely fashion - for you, yes you, that guy who always asks me: "Can I install Ubuntu?"
+<sup name="f3">[3](#a3)</sup> And, I, might add, left it on the mat, put my heart and soul into it, laughed, cried, became a part of it, spilt my life's blood, cursed the Gods on your behalf, all while wondering how anyone has been able to install an entire cluster of this OS in a timely fashion - for you, yes you, that guy who always asks me: "Can I install Ubuntu?"
 
 <sup name="f4">[4](#a4)</sup> Meaning, that it's going to work, it will have some special sauce, but the two whole beef patties will be missing, which means you can eat it but you'll be wondering where the beef is.
 
-<sup name="f5">[5](#a5)</sup> Okay, so disk controller set-up is a killer problem. If you really want the RAID setup correctly, import the controller setup in a spreadsheet, install the backend nodes with CentOS/RHEL, and then reinstall them with this procedure for Ubuntu. Magic. You have your controllers set-up and you have Ubuntu. The Ubuntu install takes longer but you'll have the RAID set-up the way you expect with the small constraint of having an extra install. But that takes what, 10-15 minutes for as many nodes as you have?
+<sup name="f5">[5](#a5)</sup> Okay, so disk controller set-up is a killer problem. If you really want the RAID setup correctly using this procedure, import the controller setup in a spreadsheet, install the backend nodes with CentOS/RHEL, and then reinstall them with this procedure for Ubuntu. Magic. You have your controllers set-up and you have Ubuntu. The Ubuntu install takes longer but you'll have the RAID set-up the way you expect with the small constraint of having an extra install. But that takes what, 10-15 minutes for as many nodes as you have?
 
-<sup name="f6">[6](#a6)</sup> That might be "Wiley:" "Walrus" or "Woodchuck" or "Werewolf" even so don't quote me on that.
+<sup name="f6">[6](#a6)</sup> That might be "Wiley " "Walrus" or "Woodchuck" or "Werewolf" even, so don't quote me on that.
  
-<sup name="f7">[7](#a7)</sup>Don't ask me why, I don't know. Don't let it disharmonize your wa or disrupt your chi. Accept that it is and be one with it. Until some one fixes it. Which someone will, any day now, really, any.day.someone.
+<sup name="f7">[7](#a7)</sup> Don't ask me why, I don't know. Don't let it disharmonize your wa or disrupt your chi. Accept that it is and be one with it. Until some one fixes it. Which someone will, any day now, really, someone.any.day.now.
 
 <h7>Footnotes to the Footnotes</h7>
 
