@@ -103,7 +103,7 @@ You don't need the serial console lines. The lab here requires it because I refu
 
 The preseed.cfg is the file we'll use to do the automation. As phase 1 project, this is the minimal amount that will get you what you want. This took a lot of time and playing around to get it right. It doesn't do anything fancy other than install a machine with a basic filesystem (per Ubuntu's choices) and installs ssh so we can get to the machine from the frontend.
 
-Here is the preseed.cfg we'll be using:
+Here is the preseed.cfg we'll be using. It lives in the /export/stack/ubuntu directory as "preseed.cfg."
 
 ```
 d-i debian-installer/locale string en_US
@@ -222,7 +222,7 @@ stack set host box backend box=default
 stack set host installaction backend action=ubuntu
 
 stack list host
-```
+
 HOST         RACK RANK CPUS APPLIANCE BOX     RUNACTION INSTALLACTION
 stacki37:    0    0    1    frontend  kilo    os        install
 backend-0-0: 0    0    2    backend   default os        ubuntu
@@ -245,8 +245,10 @@ They should now be set to boot from the preseed.cfg and install. If you're neuro
 
 ```
 cat /tftpboot/pxelinux/pxelinux.cfg/0*
+```
 
 Will show something like this for the machines getting Ubuntu:
+```
 label stack
 	kernel vmlinuz.trusty
 	append install auto=true url=http://10.1.1.1/install/ubuntu/preseed.cfg console=tty0 console=ttyS0,115200n8 ksdevice=bootif biosdevname=0 hostname=unassigned locale=en_US.UTF-8 keyboard-configuration/layout=us live-installer/net-image=http://10.1.1.1/install/ubuntu/install/filesystem.squashfs ramdisk_size=16392 nousb interface=auto netcfg/get_nameservers=10.1.1.1 priority=critical ip=10.1.255.254 gateway=10.1.1.1 netmask=255.255.0.0 dns=10.1.1.1 nextserver=10.1.1.1 initrd=initrd.trusty
@@ -259,27 +261,105 @@ Tip them over. If you have ssh access right now:
 stack run host command="reboot"
 ```
 
-Or powercycle/reboot them by whatever means are available to you.
+Or power cycle/reboot them by whatever means are available to you.
 
 <h5>Validate</h5>
 Once they've installed, check that you can get to them. We installed ssh with the id_rsa.pub from root on the frontend, so do that. (Oh yeah, the preseed creates a "root" user, not recommended by Ubuntu.)
 
 ```
 stack run host command="uptime"
+```
 
 or 
 
+```
 stack run host command="uname -a"
-
 ```
 Which should give you an idea of what they are running. Should be a Trusty Tahr kernel. 
 
-
-
 <h5>Bask in Ubuntuness</h5>
+Ubuntu is up. Bask in pure Ubuntu awesomeness. Give the machines to a developer, when they've thoroughly broken it, reinstall it and scold them with a proper sysadmin scowl.
+
+The apt repositories for this machine are the frontend. If you need to change that, you can add them through the preseed file, or after the fact. Or install from a known apt-repository, which sort of defeats the purpose of this.
+
 <h5>Turning it to 11</h5>
-<h5>Future directions.</h5>
+Okay, so this gets you one release and then it's only the software on that iso. What if you want more? I always want more, but the entire Ubuntu repo is too much. So let's get just enough. 
+
+You can mirror the full repository for one release of Ubuntu. We'll do Trusty Tahr. This is my explanation of a process delineated [by another guy named Joe.](https://sjoeboo.github.io/blog/2012/01/26/mirroring-ubuntu-on-centos/) so I can't take credit for it. Here it is adapted for Stacki.
+
+You're gonna need these:
+```
+ yum -y install perl-LockFile-Simple.noarch perl-Net-INET6Glue.noarch
+```
+
+Get mirroring software. I created a /export/stack/umirror and did everything in that directory.
+
+```
+wget http://archive.ubuntu.com/ubuntu/pool/universe/d/debmirror/debmirror_2.16ubuntu1.tar.gz
+```
+
+Untar in some directory and change to the "debmirror" directory:
+```
+tar -xzvf debmirror_2.16ubuntu1.tar.gz
+
+cd debmirror-2.16ubuntu1
+```
+
+Use the following script file stolen and adapted from the blog post above:
+
+```
+#!/bin/bash
+arch=amd64
+section=main,restricted,universe,multiverse
+release=trusty,wily
+server=us.archive.ubuntu.com
+inPath=/ubuntu
+proto=rsync
+#proxy=http://proxy.local:8888
+outpath=/export/stack/ubuntu
+
+debmirror       -a $arch \
+                --no-source \
+                -s $section \
+                -h $server \
+                -d $release \
+                -r $inPath \
+                --progress \
+                --ignore-release-gpg \
+                --no-check-gpg \
+                -e $proto \
+                $outpath
+```
+
+Note that we are getting trusty and wily, you can do both, or one or the other. Each distro is about 60G, and has the software packages in main, multiverse, restricted, and universe.
+
+Our output directory is /export/stack/ubuntu. If you did the previous procedure, this will overwrite your ubuntu install from ISO. If you don't want that, make sure your output directory is named differently but still under /export/stack so it's available via HTTP.
+
+Run the mirror.sh code.
+```
+chmod 755 mirror.sh
+
+./mirror.sh
+```
+
+Wait and wait and wait. Wait some more depending on your bandwidth, or wait less. Godot really is coming, he's just not here yet. 
+
+When it's downloaded, you can adjust your bootaction and preseed.cfg to point to this directory. This will now be the directory of choice in the apt sources list for your backend machines, giving you a greater number of packages to be consumed. 
+
+If you didn't do the previous ISO install and just jumped to here, find the vmlinuz and initrd.gz and copy them to the /tftpboot/pxelinux directory as above before proceeding with the rest of the install. 
+
 <h5>Future Directions</h5>
+As a Phase 1 project, this has a bunch of things you have to do by hand. We don't like that. When managing machines, you want your command line actions and set-up to be ones that will affect the entire cluster. It's the fulcrum on which you lever your machines to a standard. 
+
+Phase 2 would explore the following:
+* Automatic kickstart/preseed generation
+* Auto partitioning
+* Creating Ubuntu ISOS as a pallet (we can actually add Ubuntu as a pallet now, but the code has yet to be checked in.)
+* Creating the ability to mirror Ubuntu repos automatically from the frontend.
+* Integrating the Ubuntu installer to pull deb packages via the peer-to-peer installer.
+* Figuring out how to do parallel partitioning of disks. 
+
+Which direction Ubuntu takes will be driven by our community. So if you have any ideas about the direction you would like us to go, please let us know on the mailing list.
 
 <h6>Footnotes</h6>
 
