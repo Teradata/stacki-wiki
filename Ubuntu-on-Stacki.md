@@ -204,12 +204,78 @@ Will make that part work. We also run the setPxeBoot.cgi to change the boot flag
 
 We want to actually install Ubuntu, so we have to set the installaction for some of our machines to the "ubuntu" bootaction:
 
+What are they now?
+```
+HOST         RACK RANK CPUS APPLIANCE BOX  RUNACTION INSTALLACTION
+stacki37:    0    0    1    frontend  kilo os        install
+backend-0-0: 0    0    2    backend   kilo os        install serial
+backend-0-1: 0    1    2    backend   kilo os        install serial
+backend-0-2: 0    2    2    backend   kilo os        install serial
+backend-0-3: 0    3    2    backend   kilo os        install serial
+backend-0-4: 0    4    2    backend   kilo os        install serial
 ```
 
+Oh that's messed up. So we'll set them back to the "default" box and the "ubuntu" installaction. (Yours are probably already in the "default" box. So you probably don't have to change it. "ubuntu" is the name of the bootaction we created above. 
 
+```
+stack set host box backend box=default
+stack set host installaction backend action=ubuntu
+
+stack list host
+```
+HOST         RACK RANK CPUS APPLIANCE BOX     RUNACTION INSTALLACTION
+stacki37:    0    0    1    frontend  kilo    os        install
+backend-0-0: 0    0    2    backend   default os        ubuntu
+backend-0-1: 0    1    2    backend   default os        ubuntu
+backend-0-2: 0    2    2    backend   default os        ubuntu
+backend-0-3: 0    3    2    backend   default os        ubuntu
+backend-0-4: 0    4    2    backend   default os        ubuntu
+```
+
+That looks good.
 
 <h5>Install</h5>
+We'll set these to boot. They have the correct installaction so we'll set the thing they do on the next boot to be "install" and they'll start intalling Ubuntu. This is going to wipe out your disk partitioning and formatting. 
+
+```
+stack set host boot backend action=install
+```
+
+They should now be set to boot from the preseed.cfg and install. If you're neurotic (I am) and don't believe it (I don't) check the pxe cfg file for your machines:
+
+```
+cat /tftpboot/pxelinux/pxelinux.cfg/0*
+
+Will show something like this for the machines getting Ubuntu:
+label stack
+	kernel vmlinuz.trusty
+	append install auto=true url=http://10.1.1.1/install/ubuntu/preseed.cfg console=tty0 console=ttyS0,115200n8 ksdevice=bootif biosdevname=0 hostname=unassigned locale=en_US.UTF-8 keyboard-configuration/layout=us live-installer/net-image=http://10.1.1.1/install/ubuntu/install/filesystem.squashfs ramdisk_size=16392 nousb interface=auto netcfg/get_nameservers=10.1.1.1 priority=critical ip=10.1.255.254 gateway=10.1.1.1 netmask=255.255.0.0 dns=10.1.1.1 nextserver=10.1.1.1 initrd=initrd.trusty
+	ipappend 2
+```
+
+Tip them over. If you have ssh access right now:
+
+```
+stack run host command="reboot"
+```
+
+Or powercycle/reboot them by whatever means are available to you.
+
 <h5>Validate</h5>
+Once they've installed, check that you can get to them. We installed ssh with the id_rsa.pub from root on the frontend, so do that. (Oh yeah, the preseed creates a "root" user, not recommended by Ubuntu.)
+
+```
+stack run host command="uptime"
+
+or 
+
+stack run host command="uname -a"
+
+```
+Which should give you an idea of what they are running. Should be a Trusty Tahr kernel. 
+
+
+
 <h5>Bask in Ubuntuness</h5>
 <h5>Turning it to 11</h5>
 <h5>Future directions.</h5>
