@@ -8,7 +8,7 @@ Okay, well mostly. I'm going to give you all the caveats first, and then if you 
 
 Installing Ubuntu, much like the installation of CoreOS, is a Phase 1 project. <sup name="a4">[4](#f4)</sup> A Phase 1 project for us means: it's going to work, at least as good as what you have, possibly simpler or better than what you have, but it will work. You'll be able to install backend nodes with the version of Ubuntu you want, while still maintaining your CentOS/RHEL stack.
 
-Phase 1 does not have any of the special things we do for CentOS/RHEL variants: disk controller configuration<sup name="f5">[5](#a5)</sup>, parallel disk partitioning, automatic kickstart generation, parallel file-sharing of packages, and the use of attributes to dynamically populate values in kickstart or preseed. Those pieces are for Phase 2, assuming there is sufficient sturm und drang to push us to get there.
+Phase 1 does not have any of the special things we do for CentOS/RHEL variants: disk controller configuration<sup name="a5">[5](#f5)</sup>, parallel disk partitioning, automatic kickstart generation, parallel file-sharing of packages, and the use of attributes to dynamically populate values in kickstart or preseed. Those pieces are for Phase 2, assuming there is sufficient sturm und drang to push us to get there.
 
 This tutorial will follow the same basic outline as CoreOS. Both are effectively the same procedure we use for prototyping any new OS or application we are automating:
 
@@ -85,7 +85,7 @@ cp install/vmlinuz /tftpboot/pxelinux/vmlinuz.trusty
 
 I've give the two files a ".trusty" so it's easier to know which one I'm pointing to and what I'm going to get. There are other ways to arrange this that are likely more intelligent. But this is Phase 1 so getting it up and working is the paramount goal. 
 
-Remember also, that we expect the kernel and ramdisk to start with "vmlinuz" and "initrd" respectively. When we set a bootaction, the code needs those two names at the beginning.<sup name="f7">[7](#a7)</sup>
+Remember also, that we expect the kernel and ramdisk to start with "vmlinuz" and "initrd" respectively. When we set a bootaction, the code needs those two names at the beginning.<sup name="a7">[7](#f7)</sup>
 
 <h5>Set up the bootaction.</h5>
 
