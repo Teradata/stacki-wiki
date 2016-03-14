@@ -307,7 +307,7 @@ tar -xzvf debmirror_2.16ubuntu1.tar.gz
 cd debmirror-2.16ubuntu1
 ```
 
-Use the following script file stolen and adapted from the blog post above:
+Use the following script file stolen and adapted from the blog post above (save as mirror.sh):
 
 ```
 #!/bin/bash
