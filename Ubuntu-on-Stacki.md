@@ -67,25 +67,32 @@ Now you have an Ubuntu distribution of Trusty Tahr available for installing an U
 
 <h5>Put the necessary files into tftp.</h5>
 
-We need to boot from the Ubuntu vmlinuz and initrd.gz files in order to get the Ubuntu installer (based on busybox). Let's go to the /export/stack/ubuntu directory and get those files. We'll put them in /tftpboot/pxelinux since that's where we drive the pxe/dhcp call response from.
+We need to boot from the Ubuntu vmlinuz and initrd.gz files in order to get the Ubuntu installer (based on busybox). Let's go to the /export/stack/ubuntu directory and get those files from the "netboot" directory. We'll put them in /tftpboot/pxelinux since that's where we drive the pxe/dhcp call response from.
 
 ```
 # cd /export/stack/ubuntu
 
-ls install
+ls install/netboot/ubuntu-installer/amd64/
 
-filesystem.manifest  filesystem.size  filesystem.squashfs  initrd.gz  mt86plus  netboot  README.sbm  sbm.bin  vmlinuz
+boot-screens  initrd.gz  linux  pxelinux.0  pxelinux.cfg
 ```
 
-Copy vmlinuz and initrd.gz to /tftpboot/pxelinux to something we can use:
+Copy linux and initrd.gz to /tftpboot/pxelinux to something we can use:
 ```
-cp install/initrd.gz /tftpboot/pxelinux/initrd.trusty
-cp install/vmlinuz /tftpboot/pxelinux/vmlinuz.trusty
+cp install/netboot/ubuntu-installer/amd64/initrd.gz /tftpboot/pxelinux/initrd.trusty
+cp install/netboot/ubuntu-installer/amd64/linux /tftpboot/pxelinux/vmlinuz.trusty
 ```
 
 I've given the two files a ".trusty" suffix so it's easier to know which one I'm pointing to and what I'm going to get. There are other ways to arrange this that are likely more intelligent. But this is Phase 1 so getting it up and working is the paramount goal. 
 
 Remember also, that we expect the kernel and ramdisk to start with "vmlinuz" and "initrd" respectively. When we set a bootaction, the code needs those two names at the beginning.<sup name="a7">[7](#f7)</sup>
+
+You also have to make "vmlinuz.trusty" executable, so do that:
+```
+chmod 755 /tftpboot/pxelinux/vmlinuz.trusty
+```
+
+
 
 Next we need a bootaction we can assign to machines. 
 
@@ -257,7 +264,15 @@ label stack
 	ipappend 2
 ```
 
-Kick them over. If you have ssh access right now:
+There's one last thing, we have to change group permissions on some (or all) of the files in /export/stack/ubuntu to the "apache" group, or the installer won't pull them.
+
+It's easiest to use the 64000ft method:
+
+```
+chgrp -R apache /export/stack/ubuntu
+```
+
+Now kick the machines over. If you have ssh access right now:
 
 ```
 stack run host command="reboot"
@@ -283,6 +298,14 @@ Which should give you an idea of what they are running. Should be a Trusty Tahr 
 Ubuntu is up. Bask in pure Ubuntu awesomeness. Give the machines to a developer, when they've thoroughly broken it, reinstall it and scold them with a proper sysadmin scowl.
 
 The apt repositories for this machine are the frontend. If you need to change that, you can add them through the preseed file, or after the fact. Or install from a known apt-repository, which sort of defeats the purpose of this.
+
+You should be able to ssh into any of these machines as root if you've followed the instructions here. Alternatively, since we have created a root user you should be able to do use the stack command line to communicate with them.
+
+```
+stack run command backend command="uptime"
+```
+
+You may have to remove the nodes from your /root/.ssh/known_hosts file to get them to not show the error headers. 
 
 <h5>Turning it to 11</h5>
 Okay, so this gets you one release and then it's only the software on that iso. What if you want more? I always want more, but the entire Ubuntu repo is too much. So let's get just enough. 
