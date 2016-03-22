@@ -313,7 +313,7 @@ In /export/stack/coreos create a new file called cloud-config-example.y and soft
 
 ```
 # rm -f cloud-config.yaml
-# ln -s cloud-config-example.yaml
+# ln -s cloud-config-example.yaml cloud-config.yaml
 ```
 
 add the following to cloud-config-example.y. The first part is from our original pxe-cloud-config.y
