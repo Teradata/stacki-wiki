@@ -23,7 +23,7 @@ In this tutorial, we’ll install CoreOS on a Stacki server, set-up TFTP/PXE/DHC
 
 ### 1. Get the software:
 
-You can find the latest and greatest CoreOS at [http://coreos.com](http://coreos.com)http://coreos.com
+You can find the latest and greatest CoreOS at [http://coreos.com](http://coreos.com).
 
 I’m essentially following these instructions: https://coreos.com/os/docs/latest/booting-with-pxe.html
 
