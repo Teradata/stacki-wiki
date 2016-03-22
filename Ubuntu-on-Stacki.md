@@ -144,27 +144,24 @@ d-i apt-setup/security_path string /install/ubuntu
 d-i mirror/country string manual
 d-i live-installer/net-image string http://10.1.1.1/install/ubuntu/install/filesystem.squashfs
 ## start of partitioning configuration
+## order is critical here or you'll get asked questions
 d-i partman-auto/init_automatically_partition select entire_disk
 d-i partman-auto/choose_recipe select All files in one partition (recommended for new users)
 d-i partman-auto/disk string /dev/sda
-d-i partman/default_filesystem string ext4
 d-i partman-auto/method string lvm
-## Clean all volume informations
 d-i partman-auto/purge_lvm_from_device boolean true
 d-i partman-lvm/device_remove_lvm boolean true
+d-i partman-lvm/device_remove_lvm_span boolean true
 d-i partman-lvm/confirm boolean true
+d-i partman/choose_partition select finish
+d-i partman-lvm/menu/finish select finish
 d-i partman-auto-lvm/guided_size string max
 d-i partman-auto/choose_recipe select atomic
-d-i partman/choose_partition select finish
-d-i partman-lvm/confirm_nooverwrite boolean true
-d-i partman-md/confirm_nooverwrite boolean true
-d-i partman-lvm/menu/finish select finish
-d-i partman-partitioning/confirm_write_new_label boolean true
-d-i partman-lvm/device_remove_lvm boolean true
-d-i partman-lvm/device_remove_lvm_span boolean true
+d-i partman/default_filesystem string ext4
 d-i partman/confirm_write_new_label boolean true
 d-i partman/confirm boolean true
 d-i partman-lvm/confirm boolean true
+d-i partman-lvm/confirm_nooverwrite boolean true
 #d-i passwd/root-login boolean false
 d-i passwd/root-login boolean true
 d-i passwd/root-password-crypted password $1$gq/i3vdY$OPGoAlRURKPIEZo/mvOm/.
@@ -189,11 +186,11 @@ tasksel tasksel/first   select  OpenSSH server
 d-i pkgsel/include string curl
 # last commands
 d-i preseed/late_command string in-target /usr/bin/curl -s -k -o /dev/null \
-	https://10.1.1.1/install/sbin/public/setPxeboot.cgi?params='\{"action":"os"\}' ; \
-	in-target mkdir -p /root/.ssh ; \
-	in-target wget -O /root/.ssh/authorized_keys http://10.1.1.1/install/ubuntu/authorized_keys
-	in-target chmod 600 /root/.ssh/authorized_keys ; \
-	in-target chmod 700 /root/.ssh ;
+    https://10.1.1.1/install/sbin/public/setPxeboot.cgi?params='\{"action":"os"\}' ; \
+    in-target mkdir -p /root/.ssh ; \
+    in-target wget -O /root/.ssh/authorized_keys http://10.1.1.1/install/ubuntu/authorized_keys
+    in-target chmod 600 /root/.ssh/authorized_keys ; \
+    in-target chmod 700 /root/.ssh ;
 # finish
 d-i grub-installer/only_debian boolean true
 d-i finish-install/reboot_in_progress note
@@ -202,7 +199,7 @@ d-i finish-install/reboot_in_progress note
 Note again all the hard-coded IPs and the drive. We would fix that in Phase 2. Also note at the bottom, I'm pulling in the authorized_keys from the webserver. This is probably bad. We'll figure out a better way to do this. In the meantime:
 
 ```
-cp /root/.ssh/id_rsa.pu /export/stack/ubuntu/authorized_keys
+cp /root/.ssh/id_rsa.pub /export/stack/ubuntu/authorized_keys
 chown root:apache /export/stack/ubuntu/authorized_keys
 chmod 644 /export/stack/ubuntu/authorized_keys
 ```
