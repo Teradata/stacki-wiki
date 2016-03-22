@@ -203,7 +203,7 @@ Let’s create a coreos directory because we’ll probably do some other cool sh
 ```
 
 Put the following file in as pxe-cloud-config.y (copied from the website)
-(I'm using a ".y" file because I use vim for editing. The yaml code for vim is really really slow. So I use ".y" files to edit and then sometimes copy them to their ".yaml" counterparts for actual running. Just don't edit ".yaml" files in vim, you'll disharmonize your chi.)
+(I'm using a ".y" file because I use vim for editing. The yaml code for vim is really really slow. So I use ".y" files to edit and then sometimes copy them to their ".yaml" counterparts for actual running. Just don't edit ".yaml" files in vim, you'll disrupt your chi.)
 
 ```
 #cloud-config
