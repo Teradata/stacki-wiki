@@ -192,7 +192,7 @@ To do all backend hosts at once, give the appliance name:
 ```
 # stack set host boot backend action=install
 # stack set host attr backend attr=nukedisks value=true
-# stack run host backend "reboot"
+# stack run host backend command=reboot
 ```
 
 After the backend re-installs, it will automaticaly reset the value of the
