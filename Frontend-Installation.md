@@ -79,7 +79,7 @@ To perform this installation, log into the frontend and download two ISOs:
 
 Mount the Stacki ISO:
 
-    # mount -o loop stacki-3.0.1-6.x.x86_64.disk1.iso /media
+    # mount -o loop stacki-3.1-6.x.x86_64.disk1.iso /media
 
 Copy frontend-install.py from the ISO to your local disk:
 
@@ -87,7 +87,13 @@ Copy frontend-install.py from the ISO to your local disk:
 
 Execute frontend-install.py:
 
-    # /tmp/frontend-install.py --stacki-name=stacki --stacki-version=2.0 --stacki-iso=stacki-3.0.1-6.x.x86_64.disk1.iso --os-name=CentOS --os-version=6.7 --os-iso=CentOS-6.7-x86_64-bin-DVD1.iso,CentOS-6.7-x86_64-bin-DVD2.iso
+    # /tmp/frontend-install.py \
+    --stacki-name=stacki \
+    --stacki-version=3.1 \
+    --stacki-iso=stacki-3.1-6.x.x86_64.disk1.iso \
+    --os-name=CentOS \
+    --os-version=6.7 \
+    --os-iso=CentOS-6.7-x86_64-bin-DVD1.iso,CentOS-6.7-x86_64-bin-DVD2.iso
 
 > If you use CentOS 6.7, you are required to supply both CentOS DVDs as shown above.
 
