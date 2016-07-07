@@ -19,7 +19,33 @@ A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/1nukh3bwcgwhxXn1czhDawog_-srlXgCy7arh2m71-so/edit?usp=sharing) 
 is shown below. 
 
-![](images/lvm_example.png) 
+| Name | Device | Mountpoint | Size | Type | Options|
+| ---- |------ |---------- |---- |---- |------- |
+| global | sda | / | 50000 | ext4 |  |
+|  | sda | /var | 80000 | ext4 |  |
+|  | sda | swap | 16000 | swap |  |
+|  | sda | /scratch | 0 | xfs |  |
+| backend-0-0 | sda | / | 50000 | ext4 |  |
+|  | sda | /var | 10000 | ext4 |  |
+|  | sda | swap | 16000 | swap |  |
+|  | sda | /scratch | 1 | xfs | --grow --maxsize=4000 |
+|  | sdb | /hadoop01 | 0 | xfs |  |
+|  | sdc | /hadoop02 | 0 | xfs |  |
+| backend-0-1 | sda | biosboot | 1 | biosboot |  |
+|  | sda | / | 10000 | ext4 |  |
+|  | sda | swap | 1000 | swap |  |
+|  | sdb | pv.01 | 8000 | lvm |  |
+|  | pv.01 | volgrp01 | 6000 | volgroup |  |
+|  | volgrp01 | /extra | 4000 | ext4 | --name=extra |
+| backend-0-2 | md0 | / | 0 | ext4 | --level=RAID1 raid.01 raid.02 |
+|  | md1 | /var | 0 | xfs | --level=RAID0 raid.03 raid.04 |
+|  | md2 | /export | 0 | xfs | --level=RAID1 raid.05 raid.06 |
+|  | sda | raid.01 | 16000 | raid |  |
+|  | sdb | raid.02 | 16000 | raid |  |
+|  | sda | raid.03 | 16000 | raid |  |
+|  | sdb | raid.04 | 16000 | raid |  |
+|  | sda | raid.05 | 0 | raid |  |
+|  | sdb | raid.06 | 0 | raid |  |
  
 The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
 Appliance type (e.g., _backend_) or it can be set to _global_.  
@@ -91,7 +117,50 @@ A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/1o2ZxQUN5ZLAnOxs-A8wiWIzJ0TVLU3uQ2zKGpIs4CU0/pubhtml)
 is shown below.
 
-![](images/sample-controller-configuration-csv.png) 
+| Name | Slot | Raid Level | Array Id | Options|
+| ---- |---- |---------- |-------- |------- |
+| global | 0 | 1 | 1 |  |
+|  | 1 | 1 | 1 |  |
+|  | * | 0 | * |  |
+| backend | 0 | 5 | 2 |  |
+|  | 1 | 5 | 2 |  |
+|  | 2 | 5 | 2 |  |
+|  | 3 | 5 | 2 |  |
+|  | 4 | 5 | 2 |  |
+|  | 5 | 1 | 1 |  |
+|  | 6 | 6 | 4 |  |
+|  | 7 | 6 | 4 |  |
+|  | 8 | 6 | 4 |  |
+|  | 9 | 6 | 4 |  |
+|  | 10 | 6 | 4 |  |
+|  | 11 | 6 | 4 |  |
+|  | 12 | 6 | 4 |  |
+|  | 13 | Hotspare | 4 |  |
+|  | 14 | Hotspare | 4 |  |
+|  | 15 | 1 | 1 |  |
+|  | 16 | 5 | 3 |  |
+|  | 17 | 5 | 3 |  |
+|  | 18 | 5 | 3 |  |
+|  | 19 | 5 | 3 |  |
+|  | 20 | 5 | 3 |  |
+|  | 21 | 5 | 3 |  |
+|  | 22 | Hotspare | global |  |
+|  | 23 | Hotspare | global |  |
+| backend-hp-0-2 | 1 | 10 | 1 |  |
+|  | 2 | 10 | 1 |  |
+|  | 3 | 10 | 1 |  |
+|  | 4 | 10 | 1 |  |
+|  | 5 | 1 | 2 | size=232000 forced |
+|  | 6 | 1 | 2 |  |
+|  | 5 | 1 | 3 |  |
+|  | 6 | 1 | 3 |  |
+|  | * | 0 | * |  |
+| backend-lsi-0-1 | 0 | 10 | 1 | pdperarray=2 |
+|  | 1 | 10 | 1 |  |
+|  | 2 | 10 | 1 |  |
+|  | 3 | 10 | 1 |  |
+|  | 4 | 1 | 2 |  |
+|  | 5 | 1 | 2 |  |
 
 The _Name_ column can contain a specific host name (e.g., _backend-hp-0-2_), an
 appliance type (e.g., _backend_) or it can be set to _global_.
