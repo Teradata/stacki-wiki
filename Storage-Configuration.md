@@ -19,33 +19,33 @@ A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/1nukh3bwcgwhxXn1czhDawog_-srlXgCy7arh2m71-so/edit?usp=sharing) 
 is shown below. 
 
-| Name | Device | Mountpoint | Size | Type | Options|
-| ---- |------ |---------- |---- |---- |------- |
-| global | sda | / | 50000 | ext4 |  |
-|  | sda | /var | 80000 | ext4 |  |
-|  | sda | swap | 16000 | swap |  |
-|  | sda | /scratch | 0 | xfs |  |
-| backend-0-0 | sda | / | 50000 | ext4 |  |
-|  | sda | /var | 10000 | ext4 |  |
-|  | sda | swap | 16000 | swap |  |
-|  | sda | /scratch | 1 | xfs | --grow --maxsize=4000 |
-|  | sdb | /hadoop01 | 0 | xfs |  |
-|  | sdc | /hadoop02 | 0 | xfs |  |
-| backend-0-1 | sda | biosboot | 1 | biosboot |  |
-|  | sda | / | 10000 | ext4 |  |
-|  | sda | swap | 1000 | swap |  |
-|  | sdb | pv.01 | 8000 | lvm |  |
-|  | pv.01 | volgrp01 | 6000 | volgroup |  |
-|  | volgrp01 | /extra | 4000 | ext4 | --name=extra |
-| backend-0-2 | md0 | / | 0 | ext4 | --level=RAID1 raid.01 raid.02 |
-|  | md1 | /var | 0 | xfs | --level=RAID0 raid.03 raid.04 |
-|  | md2 | /export | 0 | xfs | --level=RAID1 raid.05 raid.06 |
-|  | sda | raid.01 | 16000 | raid |  |
-|  | sdb | raid.02 | 16000 | raid |  |
-|  | sda | raid.03 | 16000 | raid |  |
-|  | sdb | raid.04 | 16000 | raid |  |
-|  | sda | raid.05 | 0 | raid |  |
-|  | sdb | raid.06 | 0 | raid |  |
+| <sub>Name</sub> | <sub>Device</sub> | <sub>Mountpoint</sub> | <sub>Size</sub> | <sub>Type</sub> | <sub>Options</sub> | 
+| ---- | ------ | ---------- | ---- | ---- | ------- | 
+<sub>global</sub> | <sub>sda</sub> | <sub>/</sub> | <sub>50000</sub> | <sub>ext4</sub> |  | 
+ | <sub>sda</sub> | <sub>/var</sub> | <sub>80000</sub> | <sub>ext4</sub> |  | 
+ | <sub>sda</sub> | <sub>swap</sub> | <sub>16000</sub> | <sub>swap</sub> |  | 
+ | <sub>sda</sub> | <sub>/scratch</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
+<sub>backend-0-0</sub> | <sub>sda</sub> | <sub>/</sub> | <sub>50000</sub> | <sub>ext4</sub> |  | 
+ | <sub>sda</sub> | <sub>/var</sub> | <sub>10000</sub> | <sub>ext4</sub> |  | 
+ | <sub>sda</sub> | <sub>swap</sub> | <sub>16000</sub> | <sub>swap</sub> |  | 
+ | <sub>sda</sub> | <sub>/scratch</sub> | <sub>1</sub> | <sub>xfs</sub> | <sub>--grow --maxsize=4000</sub> | 
+ | <sub>sdb</sub> | <sub>/hadoop01</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
+ | <sub>sdc</sub> | <sub>/hadoop02</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
+<sub>backend-0-1</sub> | <sub>sda</sub> | <sub>biosboot</sub> | <sub>1</sub> | <sub>biosboot</sub> |  | 
+ | <sub>sda</sub> | <sub>/</sub> | <sub>10000</sub> | <sub>ext4</sub> |  | 
+ | <sub>sda</sub> | <sub>swap</sub> | <sub>1000</sub> | <sub>swap</sub> |  | 
+ | <sub>sdb</sub> | <sub>pv.01</sub> | <sub>8000</sub> | <sub>lvm</sub> |  | 
+ | <sub>pv.01</sub> | <sub>volgrp01</sub> | <sub>6000</sub> | <sub>volgroup</sub> |  | 
+ | <sub>volgrp01</sub> | <sub>/extra</sub> | <sub>4000</sub> | <sub>ext4</sub> | <sub>--name=extra</sub> | 
+<sub>backend-0-2</sub> | <sub>md0</sub> | <sub>/</sub> | <sub>0</sub> | <sub>ext4</sub> | <sub>--level=RAID1 raid.01 raid.02</sub> | 
+ | <sub>md1</sub> | <sub>/var</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--level=RAID0 raid.03 raid.04</sub> | 
+ | <sub>md2</sub> | <sub>/export</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--level=RAID1 raid.05 raid.06</sub> | 
+ | <sub>sda</sub> | <sub>raid.01</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
+ | <sub>sdb</sub> | <sub>raid.02</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
+ | <sub>sda</sub> | <sub>raid.03</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
+ | <sub>sdb</sub> | <sub>raid.04</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
+ | <sub>sda</sub> | <sub>raid.05</sub> | <sub>0</sub> | <sub>raid</sub> |  | 
+ | <sub>sdb</sub> | <sub>raid.06</sub> | <sub>0</sub> | <sub>raid</sub> |  |
  
 The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
 Appliance type (e.g., _backend_) or it can be set to _global_.  
@@ -117,50 +117,50 @@ A
 [sample spreadsheet](https://docs.google.com/spreadsheets/d/1o2ZxQUN5ZLAnOxs-A8wiWIzJ0TVLU3uQ2zKGpIs4CU0/pubhtml)
 is shown below.
 
-| Name | Slot | Raid Level | Array Id | Options|
-| ---- |---- |---------- |-------- |------- |
-| global | 0 | 1 | 1 |  |
-|  | 1 | 1 | 1 |  |
-|  | * | 0 | * |  |
-| backend | 0 | 5 | 2 |  |
-|  | 1 | 5 | 2 |  |
-|  | 2 | 5 | 2 |  |
-|  | 3 | 5 | 2 |  |
-|  | 4 | 5 | 2 |  |
-|  | 5 | 1 | 1 |  |
-|  | 6 | 6 | 4 |  |
-|  | 7 | 6 | 4 |  |
-|  | 8 | 6 | 4 |  |
-|  | 9 | 6 | 4 |  |
-|  | 10 | 6 | 4 |  |
-|  | 11 | 6 | 4 |  |
-|  | 12 | 6 | 4 |  |
-|  | 13 | Hotspare | 4 |  |
-|  | 14 | Hotspare | 4 |  |
-|  | 15 | 1 | 1 |  |
-|  | 16 | 5 | 3 |  |
-|  | 17 | 5 | 3 |  |
-|  | 18 | 5 | 3 |  |
-|  | 19 | 5 | 3 |  |
-|  | 20 | 5 | 3 |  |
-|  | 21 | 5 | 3 |  |
-|  | 22 | Hotspare | global |  |
-|  | 23 | Hotspare | global |  |
-| backend-hp-0-2 | 1 | 10 | 1 |  |
-|  | 2 | 10 | 1 |  |
-|  | 3 | 10 | 1 |  |
-|  | 4 | 10 | 1 |  |
-|  | 5 | 1 | 2 | size=232000 forced |
-|  | 6 | 1 | 2 |  |
-|  | 5 | 1 | 3 |  |
-|  | 6 | 1 | 3 |  |
-|  | * | 0 | * |  |
-| backend-lsi-0-1 | 0 | 10 | 1 | pdperarray=2 |
-|  | 1 | 10 | 1 |  |
-|  | 2 | 10 | 1 |  |
-|  | 3 | 10 | 1 |  |
-|  | 4 | 1 | 2 |  |
-|  | 5 | 1 | 2 |  |
+| <sub>Name</sub> | <sub>Slot</sub> | <sub>Raid Level</sub> | <sub>Array Id</sub> | <sub>Options</sub> | 
+| ---- | ---- | ---------- | -------- | ------- | 
+<sub>global</sub> | <sub>0</sub> | <sub>1</sub> | <sub>1</sub> |  | 
+ | <sub>1</sub> | <sub>1</sub> | <sub>1</sub> |  | 
+ | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> |  | 
+<sub>backend</sub> | <sub>0</sub> | <sub>5</sub> | <sub>2</sub> |  | 
+ | <sub>1</sub> | <sub>5</sub> | <sub>2</sub> |  | 
+ | <sub>2</sub> | <sub>5</sub> | <sub>2</sub> |  | 
+ | <sub>3</sub> | <sub>5</sub> | <sub>2</sub> |  | 
+ | <sub>4</sub> | <sub>5</sub> | <sub>2</sub> |  | 
+ | <sub>5</sub> | <sub>1</sub> | <sub>1</sub> |  | 
+ | <sub>6</sub> | <sub>6</sub> | <sub>4</sub> |  | 
+ | <sub>7</sub> | <sub>6</sub> | <sub>4</sub> |  | 
+ | <sub>8</sub> | <sub>6</sub> | <sub>4</sub> |  | 
+ | <sub>9</sub> | <sub>6</sub> | <sub>4</sub> |  | 
+ | <sub>10</sub> | <sub>6</sub> | <sub>4</sub> |  | 
+ | <sub>11</sub> | <sub>6</sub> | <sub>4</sub> |  | 
+ | <sub>12</sub> | <sub>6</sub> | <sub>4</sub> |  | 
+ | <sub>13</sub> | <sub>Hotspare</sub> | <sub>4</sub> |  | 
+ | <sub>14</sub> | <sub>Hotspare</sub> | <sub>4</sub> |  | 
+ | <sub>15</sub> | <sub>1</sub> | <sub>1</sub> |  | 
+ | <sub>16</sub> | <sub>5</sub> | <sub>3</sub> |  | 
+ | <sub>17</sub> | <sub>5</sub> | <sub>3</sub> |  | 
+ | <sub>18</sub> | <sub>5</sub> | <sub>3</sub> |  | 
+ | <sub>19</sub> | <sub>5</sub> | <sub>3</sub> |  | 
+ | <sub>20</sub> | <sub>5</sub> | <sub>3</sub> |  | 
+ | <sub>21</sub> | <sub>5</sub> | <sub>3</sub> |  | 
+ | <sub>22</sub> | <sub>Hotspare</sub> | <sub>global</sub> |  | 
+ | <sub>23</sub> | <sub>Hotspare</sub> | <sub>global</sub> |  | 
+<sub>backend-hp-0-2</sub> | <sub>1</sub> | <sub>10</sub> | <sub>1</sub> |  | 
+ | <sub>2</sub> | <sub>10</sub> | <sub>1</sub> |  | 
+ | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> |  | 
+ | <sub>4</sub> | <sub>10</sub> | <sub>1</sub> |  | 
+ | <sub>5</sub> | <sub>1</sub> | <sub>2</sub> | <sub>size=232000 forced</sub> | 
+ | <sub>6</sub> | <sub>1</sub> | <sub>2</sub> |  | 
+ | <sub>5</sub> | <sub>1</sub> | <sub>3</sub> |  | 
+ | <sub>6</sub> | <sub>1</sub> | <sub>3</sub> |  | 
+ | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> |  | 
+<sub>backend-lsi-0-1</sub> | <sub>0</sub> | <sub>10</sub> | <sub>1</sub> | <sub>pdperarray=2</sub> | 
+ | <sub>1</sub> | <sub>10</sub> | <sub>1</sub> |  | 
+ | <sub>2</sub> | <sub>10</sub> | <sub>1</sub> |  | 
+ | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> |  | 
+ | <sub>4</sub> | <sub>1</sub> | <sub>2</sub> |  | 
+ | <sub>5</sub> | <sub>1</sub> | <sub>2</sub> |  |
 
 The _Name_ column can contain a specific host name (e.g., _backend-hp-0-2_), an
 appliance type (e.g., _backend_) or it can be set to _global_.
