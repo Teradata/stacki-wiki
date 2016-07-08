@@ -32,8 +32,9 @@ This default setup in shown below.
 ![](images/cluster-architecture-network.png)  
 
 The private network cannot have a DHCP server that would answer 
-a DHCP request from a backend server, as this is the resposibility of
-the frontend.
+a DHCP request from a backend server. The frontend provides DHCP
+services on the private network, and any additional DHCP server
+would cause conflicts on the network.
 
 > Stacki 1.x requires a _public_ and _private_ network
 
@@ -46,7 +47,8 @@ section labeled [existing](#existing).
 
 ### New
 
-Download the Stacki jumbo DVD [here](http://stacki.s3.amazonaws.com/3.0/stacki-os-3.0.1-6.x.x86_64.disk1.iso) and burn the file to a DVD or
+Download the Stacki jumbo DVD [here](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-os-3.2-6.x.x86_64.disk1.iso
+) and burn the file to a DVD or
 mount it on the virtual media for the server to be installed.
 Installing a frontend will completely erase and reformat the hard disks in the
 server, so be careful which server you decide to become your frontend.
@@ -71,7 +73,8 @@ The server must be running the x86_64 version of CentOS 6.x or RHEL 6.x.
 
 To perform this installation, log into the frontend and download two ISOs:
 
-1. **Stacki**. The Stacki ISO can be found [here](http://stacki.s3.amazonaws.com/3.0/stacki-3.0.1-6.x.x86_64.disk1.iso). **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO. This ISO must be stacki-3.0.1-6.x.x86_64.disk1.iso.
+1. **Stacki**. The Stacki ISO can be found [here](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso
+). **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO. This ISO must be stacki-3.2-6.x.x86_64.disk1.iso.
 
 2. **CentOS** or **RHEL** installation ISO. A CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
 
@@ -79,7 +82,7 @@ To perform this installation, log into the frontend and download two ISOs:
 
 Mount the Stacki ISO:
 
-    # mount -o loop stacki-3.1-6.x.x86_64.disk1.iso /media
+    # mount -o loop stacki-3.2-6.x.x86_64.disk1.iso /media
 
 Copy frontend-install.py from the ISO to your local disk:
 
@@ -89,13 +92,13 @@ Execute frontend-install.py:
 
     # /tmp/frontend-install.py \
     --stacki-name=stacki \
-    --stacki-version=3.1 \
-    --stacki-iso=stacki-3.1-6.x.x86_64.disk1.iso \
+    --stacki-version=3.2 \
+    --stacki-iso=stacki-3.2-6.x.x86_64.disk1.iso \
     --os-name=CentOS \
-    --os-version=6.7 \
-    --os-iso=CentOS-6.7-x86_64-bin-DVD1.iso,CentOS-6.7-x86_64-bin-DVD2.iso
+    --os-version=6.8 \
+    --os-iso=CentOS-6.8-x86_64-bin-DVD1.iso,CentOS-6.8-x86_64-bin-DVD2.iso
 
-> If you use CentOS 6.7, you are required to supply both CentOS DVDs as shown above.
+> If you use CentOS 6.8, you are required to supply both CentOS DVDs as shown above.
 
 The above step will run several commands and will eventually display
 the [Installation Wizard](#installation-wizard).
