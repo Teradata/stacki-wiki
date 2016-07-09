@@ -73,8 +73,9 @@ The server must be running the x86_64 version of CentOS 6.x or RHEL 6.x.
 
 To perform this installation, log into the frontend and download two ISOs:
 
-1. **Stacki**. The Stacki ISO can be found [here](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso
-). **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO. This ISO must be stacki-3.2-6.x.x86_64.disk1.iso.
+1. **Stacki**. The Stacki ISO can be found [here](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso).
+   
+   **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO. This ISO must be stacki-3.2-6.x.x86_64.disk1.iso.
 
 2. **CentOS** or **RHEL** installation ISO. A CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
 
