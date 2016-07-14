@@ -1,4 +1,4 @@
-# Stacki REST API
+# Stacki Pro - REST API
 
 ## Installing Stacki REST API
 
