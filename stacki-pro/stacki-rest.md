@@ -5,8 +5,7 @@ Stack Command-Line interface through a
 web service - with one exception - which
 we will explain later.
 
-The Stacki REST API provides 1 endpoint.
-**/stack**
+The Stacki REST API provides 1 endpoint - **/stack**
 
 ### PROTOCOL
 
