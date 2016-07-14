@@ -6,6 +6,6 @@
 
 ### Description
 
-
+Set or unset admin privileges of a user.
 
 

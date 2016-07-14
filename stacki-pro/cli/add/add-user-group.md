@@ -8,4 +8,11 @@
 
 Add users to an existing group
 
+### Examples
+
+* `stack add user group greg group=staff`
+
+   Adds user 'greg' to the 'staff' group
+
+
 

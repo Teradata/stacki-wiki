@@ -6,6 +6,6 @@
 
 ### Description
 
-
+Add a group to the REST API Group list
 
 
