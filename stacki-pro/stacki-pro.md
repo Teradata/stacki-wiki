@@ -28,6 +28,11 @@ admin credentials are placed in `/root/stacki-ws.cred`
 To test the web service client, run
 ```shell
 # wsclient list host
+```
+
+This should print a JSON string that contains output
+from the command.
+```json
 [{"box": "default", "status": "up", "installaction":
 "install", "appliance": "frontend", "runaction": "os",
 "cpus": 1, "rank": "0", "environment": "", "host":
@@ -53,7 +58,4 @@ To test the web service client, run
 "cpus": 4, "rank": "6", "environment": "", "host":
 "node217", "rack": "0"}]
 ```
-
-This should print a JSON string that contains output
-from the command.
 
