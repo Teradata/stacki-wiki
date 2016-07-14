@@ -86,4 +86,4 @@ necessary. To create the username/key pair, command-line
 tools are made available.
 
 The stacki commands that are available are listed in
-(cli/restapi-cmd.md)
+[ReST API Command Line](restapi-cmd)
