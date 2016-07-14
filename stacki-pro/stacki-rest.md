@@ -6,7 +6,7 @@ web service - with one exception - which
 we will explain later.
 
 The Stacki REST API provides 1 endpoint.
-** /stack **
+**/stack**
 
 ### PROTOCOL
 
@@ -77,6 +77,13 @@ The Stacki REST API provides 1 endpoint.
 ]
    ```
 
+### API RESTRICTIONS
+
+The Stacki REST API does not allow **"run host"** commands,
+since this exposes arbitrary shell execution.
+
+The Stacki REST API allows only an administrator to run
+**"sync"** commands
 
 ### REST API ADMINISTRATION
 
@@ -87,3 +94,58 @@ tools are made available.
 
 The stacki commands that are available are listed in
 [ReST API Command Line](restapi-cmd)
+
+1. To add a user to the API, run
+
+   ```# stack add user greg group=default admin=False```
+
+   This adds a user with username **greg** belonging to the
+   **default** group. The **admin** flag for this user is
+   set to false. This means that the user **greg** will be
+   able to query the stacki api, but will not be able to
+   change the state of the system.
+
+   The output of this command will be a json string, that
+   contains the username, API key, and hostname of the API
+   server.
+   ```json
+{
+  "username": "greg", 
+  "hostname": "node234-002.stacki.com", 
+  "key": "NFdl45R_JoQEQUs8RMtpnHmwAmI8UQHQGRuBL0OI2mQ"
+}
+   ```
+   To allow user **greg** to access the API, use the
+   username/key pair listed.
+   
+   To run the `wsclient` application with this key pair,
+   copy the entire JSON output into `stacki-ws.cred` file in
+   the users home directory.
+
+1. To add a group, run
+
+   ```# stack add group staff```
+
+   This adds a group called **staff** to the system.
+
+1. To set permissions on a group, run
+
+   ```# stack add group perms staff perms="list.*"```
+
+   This allows users in group **staff** to run any "list"
+   commands.
+
+1. To set permissions for a user, run
+
+   ```# stack add user perms greg perms="report.*"```
+
+   This allows user **greg** to run any "report" command in
+   addition to all the commands allowed by the "default"
+   group.
+
+1. To set admin privileges for a user, run
+
+   ```# stack set user admin greg admin=True```
+
+   This will allow user **greg** to run any command on the
+   system.
