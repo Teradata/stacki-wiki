@@ -29,10 +29,10 @@ The Stacki REST API provides 1 endpoint.
 
    The **username** and **password** must be sent to the URL
    as follows
-   * Set header 'csrftoken' to the CSRFToken from the CSRF Cookie
-   * Set header 'X-CSRFToken' to the CSRFToken from the CSRF Cookie
-   * Set Content-Type to 'application/x-www-form-urlencoded'
-   * Set Data to USERNAME=\<username\>\&PASSWORD=\<password\>
+   * Set header `csrftoken` to the CSRFToken from the CSRF Cookie
+   * Set header `X-CSRFToken` to the CSRFToken from the CSRF Cookie
+   * Set Content-Type to `application/x-www-form-urlencoded`
+   * Set Data to `USERNAME=\<username\>\&PASSWORD=\<password\>`
 
    Upon successful login, the response headers will include the following.
    * **CSRFToken cookie** - This is different from the csrftoken cookie obtained
@@ -83,7 +83,7 @@ The Stacki REST API does not allow **"run host"** commands,
 since this exposes arbitrary shell execution.
 
 The Stacki REST API allows only an administrator to run
-**"sync"** commands
+**sync** commands
 
 ### REST API ADMINISTRATION
 
@@ -92,8 +92,8 @@ To access the REST API, a username, and API key is
 necessary. To create the username/key pair, command-line
 tools are made available.
 
-The stacki commands that are available are listed in
-[ReST API Command Line](restapi-cmd)
+The complete list of stacki commands that manipulate access
+to the ReST API are available here - [ReST API Command Line](restapi-cmd)
 
 1. To add a user to the API, run
 
