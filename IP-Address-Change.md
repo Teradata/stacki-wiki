@@ -24,15 +24,15 @@
 
    ```csv
    NETWORK,ADDRESS,MASK,GATEWAY,MTU,ZONE,DNS,PXE
-   private,1.2.1.8.1..0,255.255.240.0,1.2.1.8.1..1.1.00,stacki.com,False,True
+   private,192.168.16.0,255.255.240.0,192.168.16.1,1500,stacki.com,False,True
    ```
    
    to
 
    ```csv
    NETWORK,ADDRESS,MASK,GATEWAY,MTU,ZONE,DNS,PXE
-   private,1..2.0.0,255.255.255.0,1..2.0.1.1.00,stacki.com,False,True
-   oldprivate,1.2.1.8.1..0,255.255.240.0,1.2.1.8.1..1.1.00,stacki.com,False,False
+   private,10.2.0.0,255.255.255.0,10.2.0.1,1500,stacki.com,False,True
+   oldprivate,192.168.16.0,255.255.240.0,192.168.16.1,1500,stacki.com,False,False
    ```
 
    Note that this moved original **private** to **oldprivate**.
@@ -110,11 +110,19 @@ from original to new.
    ```sh
    # stack run host backend command="service network restart"
    ```
-
    This will change the IP address of backend hosts, and the
    command will lose connectivity, and will not return.
    After about a minute, hit `Ctrl-C` to kill the `stack run host`
    command.
+
+
+   If you have console access to all backend hosts, instead of
+   running the `stack run host` command, log into each hosts'
+   console, and run
+
+   ```sh
+   # service network restart
+   ```
 
 1. Reset the networking for the frontend.
    > **IMPORTANT**<br>
