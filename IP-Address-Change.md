@@ -1,18 +1,18 @@
 ## Changing the IP address space across a Cluster.
 
 ### Save existing network information
-1. [] Dump the hostfile
+1. Dump the hostfile
    
    ```
    # stack report hostfile > stacki.hosts.csv
    ```
 
-1. [] Dump /etc/hosts
+1. Dump /etc/hosts
    
    ```
    # stack report host > hosts.stacki
    ```
-1. [] Dump network config
+1. Dump network config
 
    ```
    # stack report networkfile > networks.stacki
@@ -20,37 +20,37 @@
 
 ### Change CSV Files
 
-1. [] Open network file, and add a new line. Change the file from
+1. Open network file, and add a new line. Change the file from
 
    ```csv
    NETWORK,ADDRESS,MASK,GATEWAY,MTU,ZONE,DNS,PXE
-   private,1. []2.1. []8.1. [].0,255.255.240.0,1. []2.1. []8.1. [].1. []1. []00,stacki.com,False,True
+   private,1.2.1.8.1..0,255.255.240.0,1.2.1.8.1..1.1.00,stacki.com,False,True
    ```
    
    to
 
    ```csv
    NETWORK,ADDRESS,MASK,GATEWAY,MTU,ZONE,DNS,PXE
-   private,1. [].2.0.0,255.255.255.0,1. [].2.0.1. []1. []00,stacki.com,False,True
-   oldprivate,1. []2.1. []8.1. [].0,255.255.240.0,1. []2.1. []8.1. [].1. []1. []00,stacki.com,False,False
+   private,1..2.0.0,255.255.255.0,1..2.0.1.1.00,stacki.com,False,True
+   oldprivate,1.2.1.8.1..0,255.255.240.0,1.2.1.8.1..1.1.00,stacki.com,False,False
    ```
 
    Note that this moved original **private** to **oldprivate**.
    The private line now contains new network information,
    including new Address, Mask, and Gateway
 
-1. [] Open `hosts.csv` file, and change the IP addresses of the hosts
+1. Open `hosts.csv` file, and change the IP addresses of the hosts
 from original to new. 
 
 ## Apply the change
 
-1. [] Import the `network.csv` file into the database
+1. Import the `network.csv` file into the database
 
    ```sh
    # stack load networkfile file=networks.csv
    ```
 
-1. [] Import the `hosts.csv` file.
+1. Import the `hosts.csv` file.
 
    ```sh
    # stack load hostfile file=hosts.csv
@@ -63,7 +63,7 @@ from original to new.
    recorded in the database, and IP address of the NIC itself.
    It's OK to ignore this error message for now.
 
-1. [] Open the /etc/hosts file.
+1. Open the /etc/hosts file.
 
    You should see old IP addresses for all hosts. This is
    currently showing incorrect information since, all the
@@ -76,10 +76,10 @@ from original to new.
    > of the nodes. This might cause network connectivity  issues.
 
 
-1. [] The /etc/hosts file has old IP addresses for all hosts.
+1. The /etc/hosts file has old IP addresses for all hosts.
    Move this to another location.
-1. [] Copy over the ORIGINAL /etc/hosts file that was backed up.
-1. [] In this file, change only the IP address of the frontend
+1. Copy over the ORIGINAL /etc/hosts file that was backed up.
+1. In this file, change only the IP address of the frontend
    to the new IP address. Leave all the others IP addresses
    still pointing to the old IP addresses.
    > **NOTE**<br>
@@ -89,7 +89,7 @@ from original to new.
    Copy this version of `/etc/hosts` file to a safe location.
    this will need to be used again. Call it `/tmp/etc.hosts.unstable`
    
-1. [] Next, change the networking files on the backend nodes.
+1. Next, change the networking files on the backend nodes.
    
    ```sh
    # stack sync host network backend restart=no
@@ -103,9 +103,9 @@ from original to new.
    > files have information in them, that is inconsistent
    > with the running configuration of the hosts.
 
-1. [] The previous step will have rewritten the `/etc/hosts` file.
+1. The previous step will have rewritten the `/etc/hosts` file.
    Copy over the `/tmp/etc.hosts.unstable` file back to `/etc/hosts`
-1. [] Reset the networking of all hosts, by running
+1. Reset the networking of all hosts, by running
 
    ```sh
    # stack run host backend command="service network restart"
@@ -116,7 +116,7 @@ from original to new.
    After about a minute, hit `Ctrl-C` to kill the `stack run host`
    command.
 
-1. [] Reset the networking for the frontend.
+1. Reset the networking for the frontend.
    > **IMPORTANT**<br>
    > Make sure that you have console access
    > to the frontend. Do not run these commands over SSH.
@@ -127,7 +127,7 @@ from original to new.
    # service network restart
    ```
 
-1. [] Reset the bootactions of all hosts.
+1. Reset the bootactions of all hosts.
 
    ```sh
    # stack set host boot backend action=os
@@ -135,9 +135,9 @@ from original to new.
    # stack sync host config
    ```
 
-1. [] Your networks, for backends and the frontend, should
+1. Your networks, for backends and the frontend, should
    be fully configured, and accessible over the new IP space.
-1. [] Test to see if you have connectivity between frontend and
+1. Test to see if you have connectivity between frontend and
    backend hosts
-1. [] Test to see if you have connectivity to the frontend from
+1. Test to see if you have connectivity to the frontend from
    an external host.
