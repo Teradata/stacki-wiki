@@ -105,16 +105,7 @@ from original to new.
 
 1. The previous step will have rewritten the `/etc/hosts` file.
    Copy over the `/tmp/etc.hosts.unstable` file back to `/etc/hosts`
-1. Reset the networking of all hosts, by running
-
-   ```sh
-   # stack run host backend command="service network restart"
-   ```
-   This will change the IP address of backend hosts, and the
-   command will lose connectivity, and will not return.
-   After about a minute, hit `Ctrl-C` to kill the `stack run host`
-   command.
-
+1. Reset the networking of all hosts.
 
    If you have console access to all backend hosts, instead of
    running the `stack run host` command, log into each hosts'
@@ -123,6 +114,18 @@ from original to new.
    ```sh
    # service network restart
    ```
+
+   If you don't have console access to the hosts, or if you
+   have a large number of hosts, you can try to run the
+   following -
+
+   ```sh
+   # stack run host backend command="service network restart"
+   ```
+   This will change the IP address of backend hosts, and the
+   command will lose connectivity, and will not return.
+   After about a minute, hit `Ctrl-C` to kill the `stack run host`
+   command.
 
 1. Reset the networking for the frontend.
    > **IMPORTANT**<br>
