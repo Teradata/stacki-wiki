@@ -63,6 +63,14 @@ from original to new.
    recorded in the database, and IP address of the NIC itself.
    It's OK to ignore this error message for now.
 
+1. Reset the bootactions of all hosts.
+
+   ```sh
+   # stack set host boot backend action=os
+   # stack sync config
+   # stack sync host config
+   ```
+
 1. Open the /etc/hosts file.
 
    You should see old IP addresses for all hosts. This is
@@ -136,14 +144,6 @@ from original to new.
    ```sh
    # stack sync host network <frontend> restart=no
    # service network restart
-   ```
-
-1. Reset the bootactions of all hosts.
-
-   ```sh
-   # stack set host boot backend action=os
-   # stack sync config
-   # stack sync host config
    ```
 
 1. Your networks, for backends and the frontend, should
