@@ -28,7 +28,7 @@ Reinstall all backend machines:
 
 ```
 # stack set host boot backend action=install
-# stack run host backend reboot
+# stack run host backend command=reboot
 ```
 
 ## Adding a pallet from an existing ISO:
