@@ -58,7 +58,7 @@ Make sure you are choosing the right NIC and setting "Redirection After Boot" to
 
 Now lets tweak the iDRAC settings. Enable "Communication Pass Through" as below.
 
-![](ipmi/images/idrac-enable-comm-pass-through)
+![](ipmi/images/idrac-enable-comm-pass-through.png)
 
 Enable the NIC. Select the LOM for you NIC. Make sure it’s the "Active NIC Interface".
 
