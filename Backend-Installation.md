@@ -6,7 +6,7 @@ A backend has the following hardware requirements.
 
 **Resource** | Minimum | Recommended
 --- | --- | ---
-**System Memory** | 2 GB | 8 GB
+**System Memory** | 3 GB | 8 GB
 **Network Interfaces** | 1 (PXE-Capable) | 1 or more (PXE-Capable)
 **Disk Capacity** | 40 GB | 100 GB
 
