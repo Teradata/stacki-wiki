@@ -23,6 +23,9 @@ Once your frontend reboots, the Stacki REST API is available.
 By default, Stacki includes a webservice client, and creates
 admin credentials to help validate the API.
 
+## Testing the ReST API
+
+Stacki-pro comes with a build in webservice client.
 The webservice client is called **wsclient**. The webservice
 admin credentials are placed in `/root/stacki-ws.cred`
 
