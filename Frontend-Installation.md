@@ -69,37 +69,27 @@ frontend installation will begin, and you will soon see the
 ### Existing
 
 A Stacki frontend can be installed on top of an existing Red Hat based server.
-The server must be running the x86_64 version of CentOS 6.x or RHEL 6.x.
+The server must be running the x86_64 version of CentOS or RHEL version 6.x or
+7.x.
 
-To perform this installation, log into the frontend and download two ISOs:
+To perform this installation, log into the frontend and download two files:
 
-1. **Stacki**. The Stacki ISO can be found [here](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso).
+1. **Stacki ISO**. The Stacki ISO can be found [here - 6.x version](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso) or
+[here - 7.x version](
+https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-7.x.x86_64.disk1.iso).
    
-   **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO. This ISO must be stacki-3.2-6.x.x86_64.disk1.iso.
+   **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO.
 
-2. **CentOS** or **RHEL** installation ISO. A CentOS installation ISO can be found [here](http://isoredirect.centos.org/centos/6/isos/x86_64/).
+2. **stacki-fab RPM**. The RPM can be found [here](http://stacki.s3.amazonaws.com/public/pallets/3.2/open-source/stacki-fab-3.x-all.x86_64.rpm)
 
-(If using RHEL, a DVD ISO should be available through your Red Hat subscription.)
+Install the `stacki-fab` RPM:
 
-Mount the Stacki ISO:
-
-    # mount -o loop stacki-3.2-6.x.x86_64.disk1.iso /media
-
-Copy frontend-install.py from the ISO to your local disk:
-
-    # cp /media/frontend-install.py /tmp
+    # rpm -i stacki-fab-3.x-all.x86_64.rpm
 
 Execute frontend-install.py:
 
-    # /tmp/frontend-install.py \
-    --stacki-name=stacki \
-    --stacki-version=3.2 \
-    --stacki-iso=stacki-3.2-6.x.x86_64.disk1.iso \
-    --os-name=CentOS \
-    --os-version=6.8 \
-    --os-iso=CentOS-6.8-x86_64-bin-DVD1.iso,CentOS-6.8-x86_64-bin-DVD2.iso
-
-> If you use CentOS 6.8, you are required to supply both CentOS DVDs as shown above.
+    # /opt/stack/bin/frontend-install.py \
+        --stacki-iso=stacki-3.2-6.x.x86_64.disk1.iso
 
 The above step will run several commands and will eventually display
 the [Installation Wizard](#installation-wizard).
@@ -194,5 +184,28 @@ _frontend-install.py_ program completes, you must reboot the frontend:
 
     # reboot
 
-Your Stacki frontend is now ready to install backend servers.
+After the server reboots, you need to add an **OS** pallet.
+This OS pallet will be used as the base OS to install onto the backend nodes.
+This will be either the CentOS installation DVD(s) or the Red Hat installation
+DVD.
+
+For example, to add the CentOS 6.8 DVDs to the Stacki frontend, first download the
+CentOS DVDs to the frontend then execute:
+
+    # stack add pallet CentOS-6.8-x86_64-bin-DVD1.iso
+    # stack add pallet CentOS-6.8-x86_64-bin-DVD2.iso
+
+Then _enable_ the CentOS pallet (this makes the CentOS repository on the Stacki
+frontend available for backend installs):
+
+    # stack enable pallet CentOS
+    # stack list pallet
+
+Should produce output similar to:
+
+```
+NAME    VERSION RELEASE ARCH   OS     BOXES  
+stacki: 3.2     6.x     x86_64 redhat default
+CentOS: 6       6.x     x86_64 redhat default
+```
 
