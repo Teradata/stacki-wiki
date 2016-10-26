@@ -74,13 +74,12 @@ The server must be running the x86_64 version of CentOS or RHEL version 6.x or
 
 To perform this installation, log into the frontend and download two files:
 
-1. **Stacki ISO**. The Stacki ISO can be found [here - 6.x version](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso) or
-[here - 7.x version](
-https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-7.x.x86_64.disk1.iso).
+1. **Stacki ISO**. Download the Stacki ISO ([6.x version](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso) or [7.x version](
+https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-7.x.x86_64.disk1.iso)) and put it on your server you want to tranform into a Stacki frontend.
    
    **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO.
 
-2. **stacki-fab RPM**. The RPM can be found [here](http://stacki.s3.amazonaws.com/public/pallets/3.2/open-source/stacki-fab-3.x-all.x86_64.rpm)
+2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/3.2/open-source/stacki-fab-3.x-all.x86_64.rpm) and put it on your server you want to tranform into a Stacki frontend.
 
 Install the `stacki-fab` RPM:
 
