@@ -87,8 +87,7 @@ Install the `stacki-fab` RPM:
 
 Execute frontend-install.py:
 
-    # /opt/stack/bin/frontend-install.py \
-        --stacki-iso=stacki-3.2-6.x.x86_64.disk1.iso
+    # /opt/stack/bin/frontend-install.py --stacki-iso=stacki-3.2-6.x.x86_64.disk1.iso
 
 The above step will run several commands and will eventually display
 the [Installation Wizard](#installation-wizard).
@@ -183,7 +182,7 @@ _frontend-install.py_ program completes, you must reboot the frontend:
 
     # reboot
 
-After the server reboots, you need to add an **OS** pallet.
+After the server reboots, you need to add an **OS pallet**.
 This OS pallet will be used as the base OS to install onto the backend nodes.
 This will be either the CentOS installation DVD(s) or the Red Hat installation
 DVD.
