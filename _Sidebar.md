@@ -26,6 +26,7 @@
   * [Kickstart Customizations](Kickstart-Customizations)
     * [One Package tag Multiple RPMS](One-package-tag-for-multiple-rpms)
     * [%include directive](include-directive)
+  * [Cart Order](Setting Cart Order)
 
 ***
 
