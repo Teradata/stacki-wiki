@@ -4,9 +4,9 @@ branches:
 script:
 - |
   if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
-    bash pullrequest.sh
+    bash CI_scripts/pullrequest.sh
   else
-    bash merge.sh
+    bash CI_scripts/merge.sh
   fi
 env:
   matrix:
