@@ -8,7 +8,7 @@ Stacki manages storage at both the [Partition](#partition) level and the hardwar
 The configuration of disk partitions can be specified in a
 spreadsheet with the following columns:
   
-1. **Name**. A host name, appliance type or global. 
+1. **Name**. A host name, appliance type or 'global'. 
 1. **Device**. The Linux disk device name (e.g., ``sda``, ``sdb``). 
 1. **Mountpoint**. Where the partition should be mounted on the file system. 
 1. **Size**. The size of the partition in megabytes. '0' will instruct the installer to use the remaining available space of the device.
