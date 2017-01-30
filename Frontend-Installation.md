@@ -79,7 +79,7 @@ https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-7.x.x8
    
    **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO.
 
-2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/3.2/open-source/stacki-fab-3.x-all.x86_64.rpm) and put it on your server you want to transform into a Stacki frontend.
+2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/3.2/open-source/stacki-fab-3.x-all.x86_64.rpm) and put it on the server you want to transform into a Stacki frontend.
 
 Install the `stacki-fab` RPM:
 
