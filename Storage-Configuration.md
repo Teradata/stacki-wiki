@@ -62,7 +62,7 @@ Additionally, ``sdb`` and ``sdc`` will be configured for _backend-0-0_ as single
 
 ### LVM
 
-Stacki 2.0 supports specifying LVM configuration via a spreadsheet. **lvm**, **volgroup** are keywords that indicate that the partition needs to be setup via LVM. In the configuration for ``backend-0-1``,
+Stacki supports specifying LVM configuration via a spreadsheet. **lvm**, **volgroup** are keywords that indicate that the partition needs to be setup via LVM. In the configuration for ``backend-0-1``,
 ``pv.01`` is configured as a physical volume on ``sdb`` with size as 8GB. 
 ``volgrp01`` is a volgroup comprising of ``pv.01``. ``/extra`` is mounted as an lvm partition on volgroup ``volgrp01``.
 
