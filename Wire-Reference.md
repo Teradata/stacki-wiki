@@ -104,7 +104,7 @@ Examples:
   python code.
 
   ```xml
-  <post interpreter="/opt/rocks/bin/python">
+  <post interpreter="/opt/stack/bin/python">
   import os, sys
   import subprocess
   p = subprocess.Popen(['/sbin/chkconfig','--enable','httpd'])
