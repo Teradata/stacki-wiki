@@ -11,7 +11,7 @@ spreadsheet with the following columns:
 1. **Name**. A host name, appliance type or global. 
 1. **Device**. The Linux disk device name (e.g., ``sda``, ``sdb``). 
 1. **Mountpoint**. Where the partition should be mounted on the file system. 
-1. **Size**. The size of the partition in megabytes. 
+1. **Size**. The size of the partition in megabytes. '0' will instruct the installer to use the remaining available space of the device.
 1. **Type**. How the partition should be formatted (e.g., xfs, swap).
 1. **Options**. Free form string of options that can be used to create a partition.
  
