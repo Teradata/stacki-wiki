@@ -70,7 +70,7 @@ frontend installation will begin, and you will soon see the
 
 A Stacki frontend can be installed on top of an existing Red Hat based server.
 The server must be running the x86_64 version of CentOS or RHEL version 6.x or
-7.x.
+7.x.  **IMPORTANT**: During the Stacki installation it is possible that Stacki will overwrite certain system files.  Please don't install onto an existing production server without prior testing.
 
 To perform this installation, log into the frontend and download two files:
 
