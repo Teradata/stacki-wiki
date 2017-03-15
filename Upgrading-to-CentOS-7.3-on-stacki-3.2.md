@@ -1,4 +1,4 @@
-<h2>tl;dr</h2>
+<h3>tl;dr</h3>
 I highly recommend doing this in your largest partition which should be /export or /state/partition1. Technically these should be the same directory.
 
 Download [CentOS 7.3 Everything DVD](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1611.iso)
@@ -39,7 +39,7 @@ If updates are too old for you, update your updates.
 ```
 Then do the **add pallet** to **reboot** again.
 
-<h2>Upgrading to CentOS 7.3 on Stacki-3.2</h2>
+<h3>Upgrading to CentOS 7.3 on Stacki-3.2</h3>
 
 Are you sure you want to do this?
 
@@ -63,9 +63,9 @@ You can also get it from us [here.](https://s3.amazonaws.com/stacki/public/os/ce
 
 Get updates from us here.
 
-These are recent as a of 3/15/2017. If you want to update your updates, see below.
+These are recent as a of 3/15/2017. If you want to update your updates, see Updating Your Updates below.
 
-Before you do anything after you've downloaded, do The Fix.
+Before you do anything after you've downloaded, do **The Fix**.
 
 <h3>The Fix</h3>
 Before you do a <b>stack add pallet</b>, there's something you should know and something you should fix. CentOS/RedHat changed the disc information on their isos, which causes the <b>add pallet</b> command to read the CentOS-7.3 iso as BaseOS, which is a bald-faced lie, and we don't lie here anymore because all of our salespeople are gone and we don't remember how. 
@@ -107,16 +107,96 @@ Change line 128 to be this:
 
 Save it, write it, now you should be good to finish the rest. 
 
-<h3>Adding the Updates</h3>
+Do this on a large partition, wherever you've downloaded the ISOs to.
+
+```
+# stack add pallet CentOS-7-x86_64-Everything-1611.iso CentOS-Updates-7.3-7.x.x86_64.disk1.iso
+
+breathe or whatever
+
+# stack enable pallet CentOS CentOS-Updates
+# stack disable pallet os
+```
+
+If you are not going to updated your frontend, then stop here and reinstall your nodes or update them with:
+
+```
+# stack run host command="yum -y update && chmod 755 /root && reboot"
+```
+You want the new kernel right. You gotta reboot to get it. I hope it works. You could always try it on one machine first before you do all 328.
+
+If you're going to upgrade your frontend, cross fingers, then do the following before installing or updating machines:
+
+```
+# yum update -y
+# mkdir /export/repos
+# mv /etc/yum.repos.d/CentOS* /export/repos
+# reboot
+
+when up:
+# chmod 755 /root 
+```
+
+The chmod on /root is necessary because the update to 7.3 changes the perms to 555, which makes it so the backend nodes don't get the id_rsa.pub in their authorized_keys files, which breaks SSH. Considered generally bad by everyone.
+
+With the frontend upgraded, rebooted, and chmoded:
+
+Install nodes.
+
+Or:
+
+If you already have nodes and just want to update: 
+
+```
+# stack run host command="yum -y update && chmod 755 && reboot"
+```
+
+If updates are too old for you, update your updates.
+```
+# stack create mirror name=CentOS-Updates newest=true repoconfig=/export/repos/CentOS-Base.repo repoid=updates version=7.3
+```
+Then do the **add pallet** to **reboot** again.
+
+
+<h3>Updating the Updates</h3>
 There are two ways to get the Updates from that repository. Download it from us here.
 
 Or do a ```stack create mirror``` command. That's a little more complicated, so let's add an actual html header for it.
 
 <h3>Mirroring CentOS 7 updates.</h3>
 
+If you've updated your frontend, this is easy. The centos-release rpm was updated and they dropped a bunch of repo files in /etc/yum.repos.d. You want to use those to get the updates, but you also want them out of the way of your stacki.repo in that directory.
 
+So:
+```
+# mkdir /export/repos
+# mv /etc/yum.repos.d/CentOS* /export/repos
+```
+Now we can make the mirror:
+```
+# stack create mirror name=CentOS-Updates newest=true repoconfig=/export/repos/CentOS-Base.repo repoid=updates version=7.3
+```
+This will be saved in the current directory in the updates dir. Just add the ISO file from the ./updates directory. Then it's just as above: add, enable, yum update, chmod, reboot or update nodes.
 
+If you don't update your frontend then you need to update the centos-release rpm.
 
+```
+# updatedb
+
+# locate centos-release | grep rpm
+/state/partition1/stack/pallets/CentOS/7/redhat/x86_64/Packages/centos-release-7-3.1611.el7.centos.x86_64.rpm
+/state/partition1/stack/pallets/os/7.2/redhat/x86_64/RPMS/centos-release-7-2.1511.el7.centos.2.10.x86_64.rpm
+```
+
+add the 7.3 one:
+
+```
+rpm -ivh --force /state/partition1/stack/pallets/CentOS/7/redhat/x86_64/Packages/centos-release-7-3.1611.el7.centos.x86_64.rpm
+```
+
+Now you can move the repo files and create the mirror.
+
+Now you have an updated 7.3. Aren't you happy?
 
 <h6>Footnotes</h6>
 
