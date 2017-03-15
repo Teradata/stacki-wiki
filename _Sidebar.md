@@ -15,8 +15,8 @@
   * [Boxes](Boxes) 
 * Use Cases
   * [Mesos/Marathon/Zookeeper](Mesos-Marathon-Zookeeper-Use-Case)
-  * [CoreOS on Stacki] (CoreOS-on-Stacki)
-  * [Ubuntu on Stacki] (Ubuntu-on-Stacki)
+  * [CoreOS on Stacki](CoreOS-on-Stacki)
+  * [Ubuntu on Stacki](Ubuntu-on-Stacki)
 * Reference
   * [Command Line](CLI-documentation) 
   * [Wire](Wire-Reference)
