@@ -1,3 +1,44 @@
+<h2>tl;dr</h2>
+I highly recommend doing this in your largest partition which should be /export or /state/partition1. Technically these should be the same directory.
+
+Download [CentOS 7.3 Everything DVD](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1611.iso)
+
+Download [CentOS 7.3 Updates ISO]
+
+```
+Do The Fix below, first, before you do anything else.
+
+# stack add pallet CentOS-7-x86_64-Everything-1611.iso CentOS-Updates-7.3-7.x.x86_64.disk1.iso
+
+breathe or whatever
+
+# stack enable pallet CentOS CentOS-Updates
+# stack disable pallet os
+# yum update -y
+# mkdir /export/repos
+# mv /etc/yum.repos.d/CentOS* /export/repos
+# reboot
+
+when up:
+# chmod 755 /root 
+(Don't ask why, this is the tl;dr you lazy bum.)
+```
+Install nodes.
+
+Or:
+
+If you already have nodes and just want to update: 
+
+```
+# stack run host command="yum -y update && reboot"
+```
+
+If updates are too old for you, update your updates.
+```
+# stack create mirror name=CentOS-Updates newest=true repoconfig=/export/repos/CentOS-Base.repo repoid=updates version=7.3
+```
+Then do the **add pallet** to **reboot** again.
+
 <h2>Upgrading to CentOS 7.3 on Stacki-3.2</h2>
 
 Are you sure you want to do this?
@@ -20,10 +61,16 @@ Download the [CentOS 7.3 Everything DVD](http://isoredirect.centos.org/centos/7/
 
 You can also get it from us [here.](https://s3.amazonaws.com/stacki/public/os/centos/7/CentOS-7-x86_64-Everything-1611.iso)
 
-<h3>Some things to fix</h3>
+Get updates from us here.
+
+These are recent as a of 3/15/2017. If you want to update your updates, see below.
+
+Before you do anything after you've downloaded, do The Fix.
+
+<h3>The Fix</h3>
 Before you do a <b>stack add pallet</b>, there's something you should know and something you should fix. CentOS/RedHat changed the disc information on their isos, which causes the <b>add pallet</b> command to read the CentOS-7.3 iso as BaseOS, which is a bald-faced lie, and we don't lie here anymore because all of our salespeople are gone and we don't remember how. 
 
-This means we gonna fix it and be "we" I mean "you." Which means you're going to have to write some python code. You, yes, you have to open up an editor and get your fingers on. Do the following:
+This means we're gonna fix it and by "we" I mean "you." Which means you're going to have to write some python code. You, yes, you have to open up an editor and get your fingers on. Do the following:
 
 ```
 # cd /opt/stack/lib/python2.6/site-packages/stack/commands/add/pallet
