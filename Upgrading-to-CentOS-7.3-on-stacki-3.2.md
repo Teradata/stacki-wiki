@@ -1,13 +1,13 @@
+<h2>Upgrading to CentOS 7.3 on Stacki-3.2</h2>
+
 <h3>tl;dr</h3>
 I highly recommend doing this in your largest partition which should be /export or /state/partition1. Technically these should be the same directory.
 
-Download [CentOS 7.3 Everything DVD](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1611.iso)
-
-Download [CentOS 7.3 Updates ISO]
+* Download [CentOS 7.3 Everything DVD](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1611.iso)
+* Download [CentOS 7.3 Updates ISO](https://s3.amazonaws.com/stacki/public/os/centos/7/CentOS-Updates-7.3-7.x.x86_64.disk1.iso)
+* Do **The Fix** below, first, before you do anything else.
 
 ```
-Do The Fix below, first, before you do anything else.
-
 # stack add pallet CentOS-7-x86_64-Everything-1611.iso CentOS-Updates-7.3-7.x.x86_64.disk1.iso
 
 breathe or whatever
@@ -23,11 +23,11 @@ when up:
 # chmod 755 /root 
 (Don't ask why, this is the tl;dr you lazy bum.)
 ```
-Install nodes.
+* Install nodes.
 
 Or:
 
-If you already have nodes and just want to update: 
+* If you already have nodes and just want to update: 
 
 ```
 # stack run host command="yum -y update && reboot"
@@ -39,7 +39,7 @@ If updates are too old for you, update your updates.
 ```
 Then do the **add pallet** to **reboot** again.
 
-<h3>Upgrading to CentOS 7.3 on Stacki-3.2</h3>
+<h3> ! tl;dr </h3>
 
 Are you sure you want to do this?
 
@@ -61,9 +61,7 @@ Download the [CentOS 7.3 Everything DVD](http://isoredirect.centos.org/centos/7/
 
 You can also get it from us [here.](https://s3.amazonaws.com/stacki/public/os/centos/7/CentOS-7-x86_64-Everything-1611.iso)
 
-Get updates from us here.
-
-These are recent as a of 3/15/2017. If you want to update your updates, see Updating Your Updates below.
+Get updates from us [here](https://s3.amazonaws.com/stacki/public/os/centos/7/CentOS-Updates-7.3-7.x.x86_64.disk1.iso). These are recent as a of 3/15/2017. If you want to update your updates, see Updating Your Updates below.
 
 Before you do anything after you've downloaded, do **The Fix**.
 
