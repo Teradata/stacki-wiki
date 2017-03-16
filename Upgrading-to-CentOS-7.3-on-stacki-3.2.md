@@ -151,21 +151,10 @@ If you already have nodes and just want to update:
 # stack run host command="yum -y update && chmod 755 && reboot"
 ```
 
-If updates are too old for you, update your updates.
-```
-# stack create mirror name=CentOS-Updates newest=true repoconfig=/export/repos/CentOS-Base.repo repoid=updates version=7.3
-```
-Then do the **add pallet** to **reboot** again.
+<h4>Updating the Updates</h4>
+There are two ways to get the Updates from that repository. Download it from us or do a **stack create mirror** command. That's a little more complicated, but works fine if you have internet access on your frontend.
 
-
-<h3>Updating the Updates</h3>
-There are two ways to get the Updates from that repository. Download it from us here.
-
-Or do a ```stack create mirror``` command. That's a little more complicated, so let's add an actual html header for it.
-
-<h3>Mirroring CentOS 7 updates.</h3>
-
-If you've updated your frontend, this is easy. The centos-release rpm was updated and they dropped a bunch of repo files in /etc/yum.repos.d. You want to use those to get the updates, but you also want them out of the way of your stacki.repo in that directory.
+If you've updated your frontend, the mirror is easy. The centos-release rpm was updated and they dropped a bunch of repo files in /etc/yum.repos.d. You want to use those to get the updates, but you also want them out of the way of your stacki.repo in that directory.
 
 So:
 ```
@@ -196,7 +185,7 @@ rpm -ivh --force /state/partition1/stack/pallets/CentOS/7/redhat/x86_64/Packages
 
 Now you can move the repo files and create the mirror.
 
-Now you have an updated 7.3. Aren't you happy?
+Now you have an updated 7.3. 
 
 <h6>Footnotes</h6>
 
