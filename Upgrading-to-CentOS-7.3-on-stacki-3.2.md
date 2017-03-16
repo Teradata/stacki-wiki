@@ -68,7 +68,7 @@ Before you do anything after you've downloaded, do **The Fix**.
 <h3>The Fix</h3>
 Before you do a <b>stack add pallet</b>, there's something you should know and something you should fix. CentOS/RedHat changed the disc information on their isos, which causes the <b>add pallet</b> command to read the CentOS-7.3 iso as BaseOS, which is a bald-faced lie, and we don't lie here anymore because all of our salespeople are gone and we don't remember how. 
 
-This means we're gonna fix it and by "we" I mean "you." Which means you're going to have to write some python code. You, yes, you have to open up an editor and get your fingers on. Do the following:
+This means we're gonna fix it, and by "we" I mean "you." Which means you're going to have to write some python code. You, yes, you, have to open up an editor and get your fingers on. Do the following:
 
 ```
 # cd /opt/stack/lib/python2.6/site-packages/stack/commands/add/pallet
@@ -79,7 +79,7 @@ imp_foreign_redhat.pyc  imp_mount_redhat.py    imp_native_redhat.py  imp_umount_
 
 ```
 
-The file we care about is "imp_foreign_redhat.py." Open this in your favorite editor. I use vi because everything else is unmitigated garbage. Go to line 128. (Bolded for instructive purposes.)
+The file we care about is "imp_foreign_redhat.py." Open this in your favorite editor. I use **vi** because everything else is unmitigated garbage. Go to line 128. (Double-starred for instructive purposes.)
 
 ```
 # vi imp_foreign_redhat.py
@@ -105,7 +105,7 @@ Change line 128 to be this:
 
 Save it, write it, now you should be good to finish the rest. 
 
-Do this on a large partition, wherever you've downloaded the ISOs to.
+Do the following on a large partition, wherever you've downloaded the ISOs to.
 
 ```
 # stack add pallet CentOS-7-x86_64-Everything-1611.iso CentOS-Updates-7.3-7.x.x86_64.disk1.iso
@@ -116,12 +116,12 @@ breathe or whatever
 # stack disable pallet os
 ```
 
-If you are not going to updated your frontend, then stop here and reinstall your nodes or update them with:
+If you are not going to update your frontend, then stop here and reinstall your nodes or update them with:
 
 ```
 # stack run host command="yum -y update && chmod 755 /root && reboot"
 ```
-You want the new kernel right. You gotta reboot to get it. I hope it works. You could always try it on one machine first before you do all 328.
+You want the new kernel right? You gotta reboot to get it. I hope it works. You could always try it on one machine first before you do all 328, which is what I would do, but then hey, I'm not you.
 
 If you're going to upgrade your frontend, cross fingers, then do the following before installing or updating machines:
 
@@ -135,11 +135,13 @@ when up:
 # chmod 755 /root 
 ```
 
+The moving the of CentOS repo files is needed so the stacki.repo is used. Otherwise yum gets confused.
+
 The chmod on /root is necessary because the update to 7.3 changes the perms to 555, which makes it so the backend nodes don't get the id_rsa.pub in their authorized_keys files, which breaks SSH. Considered generally bad by everyone.
 
 With the frontend upgraded, rebooted, and chmoded:
 
-Install nodes.
+Install nodes. I assume you know how to do this. If you don't want to lose data, don't throw the "nukedisks" flag. You'll essentially get the a refreshed OS.
 
 Or:
 
