@@ -22,30 +22,30 @@ is shown below.
 | <sub>Name</sub> | <sub>Device</sub> | <sub>Mountpoint</sub> | <sub>Size</sub> | <sub>Type</sub> | <sub>Options</sub> | 
 | ---- | ------ | ---------- | ---- | ---- | ------- | 
 <sub>global</sub> | <sub>sda</sub> | <sub>/</sub> | <sub>50000</sub> | <sub>ext4</sub> |  | 
- | <sub>sda</sub> | <sub>/var</sub> | <sub>80000</sub> | <sub>ext4</sub> |  | 
- | <sub>sda</sub> | <sub>swap</sub> | <sub>16000</sub> | <sub>swap</sub> |  | 
- | <sub>sda</sub> | <sub>/scratch</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
+| | <sub>sda</sub> | <sub>/var</sub> | <sub>80000</sub> | <sub>ext4</sub> |  | 
+| | <sub>sda</sub> | <sub>swap</sub> | <sub>16000</sub> | <sub>swap</sub> |  | 
+| | <sub>sda</sub> | <sub>/scratch</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
 <sub>backend-0-0</sub> | <sub>sda</sub> | <sub>/</sub> | <sub>50000</sub> | <sub>ext4</sub> |  | 
- | <sub>sda</sub> | <sub>/var</sub> | <sub>10000</sub> | <sub>ext4</sub> |  | 
- | <sub>sda</sub> | <sub>swap</sub> | <sub>16000</sub> | <sub>swap</sub> |  | 
- | <sub>sda</sub> | <sub>/scratch</sub> | <sub>1</sub> | <sub>xfs</sub> | <sub>--grow --maxsize=4000</sub> | 
- | <sub>sdb</sub> | <sub>/hadoop01</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
- | <sub>sdc</sub> | <sub>/hadoop02</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
+| | <sub>sda</sub> | <sub>/var</sub> | <sub>10000</sub> | <sub>ext4</sub> |  | 
+| | <sub>sda</sub> | <sub>swap</sub> | <sub>16000</sub> | <sub>swap</sub> |  | 
+| | <sub>sda</sub> | <sub>/scratch</sub> | <sub>1</sub> | <sub>xfs</sub> | <sub>--grow --maxsize=4000</sub> | 
+| | <sub>sdb</sub> | <sub>/hadoop01</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
+| | <sub>sdc</sub> | <sub>/hadoop02</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
 <sub>backend-0-1</sub> | <sub>sda</sub> | <sub>biosboot</sub> | <sub>1</sub> | <sub>biosboot</sub> |  | 
- | <sub>sda</sub> | <sub>/</sub> | <sub>10000</sub> | <sub>ext4</sub> |  | 
- | <sub>sda</sub> | <sub>swap</sub> | <sub>1000</sub> | <sub>swap</sub> |  | 
- | <sub>sdb</sub> | <sub>pv.01</sub> | <sub>8000</sub> | <sub>lvm</sub> |  | 
- | <sub>pv.01</sub> | <sub>volgrp01</sub> | <sub>6000</sub> | <sub>volgroup</sub> |  | 
- | <sub>volgrp01</sub> | <sub>/extra</sub> | <sub>4000</sub> | <sub>ext4</sub> | <sub>--name=extra</sub> | 
+| | <sub>sda</sub> | <sub>/</sub> | <sub>10000</sub> | <sub>ext4</sub> |  | 
+| | <sub>sda</sub> | <sub>swap</sub> | <sub>1000</sub> | <sub>swap</sub> |  | 
+| | <sub>sdb</sub> | <sub>pv.01</sub> | <sub>8000</sub> | <sub>lvm</sub> |  | 
+| | <sub>pv.01</sub> | <sub>volgrp01</sub> | <sub>6000</sub> | <sub>volgroup</sub> |  | 
+| | <sub>volgrp01</sub> | <sub>/extra</sub> | <sub>4000</sub> | <sub>ext4</sub> | <sub>--name=extra</sub> | 
 <sub>backend-0-2</sub> | <sub>md0</sub> | <sub>/</sub> | <sub>0</sub> | <sub>ext4</sub> | <sub>--level=RAID1 raid.01 raid.02</sub> | 
- | <sub>md1</sub> | <sub>/var</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--level=RAID0 raid.03 raid.04</sub> | 
- | <sub>md2</sub> | <sub>/export</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--level=RAID1 raid.05 raid.06</sub> | 
- | <sub>sda</sub> | <sub>raid.01</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
- | <sub>sdb</sub> | <sub>raid.02</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
- | <sub>sda</sub> | <sub>raid.03</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
- | <sub>sdb</sub> | <sub>raid.04</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
- | <sub>sda</sub> | <sub>raid.05</sub> | <sub>0</sub> | <sub>raid</sub> |  | 
- | <sub>sdb</sub> | <sub>raid.06</sub> | <sub>0</sub> | <sub>raid</sub> |  |
+| | <sub>md1</sub> | <sub>/var</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--level=RAID0 raid.03 raid.04</sub> | 
+| | <sub>md2</sub> | <sub>/export</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--level=RAID1 raid.05 raid.06</sub> | 
+| | <sub>sda</sub> | <sub>raid.01</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
+| | <sub>sdb</sub> | <sub>raid.02</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
+| | <sub>sda</sub> | <sub>raid.03</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
+| | <sub>sdb</sub> | <sub>raid.04</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
+| | <sub>sda</sub> | <sub>raid.05</sub> | <sub>0</sub> | <sub>raid</sub> |  | 
+| | <sub>sdb</sub> | <sub>raid.06</sub> | <sub>0</sub> | <sub>raid</sub> |  |
  
 The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
 Appliance type (e.g., _backend_) or it can be set to _global_.  
