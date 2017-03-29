@@ -206,7 +206,7 @@ In the above command, *hostname* is a name of one of your backend nodes.
 
 Then to add *rpmname* to all your backend nodes.
 
-	# stack run host backend comand="yum clean all && yum -y install <rpmname>"
+	# stack run host backend command="yum clean all && yum -y install <rpmname>"
 
 To automatically apply the RPM *rpmname* to a backend node during installation,
 just add another *package* line as described above.
