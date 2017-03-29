@@ -190,7 +190,7 @@ Oh yeah, you might need a "mkdir -p /full/path/of/script" before you can put the
 
 ```
 <post>
-mkdir -p /full/path/of/sccript
+mkdir -p /full/path/of/script
 
 <file name="/full/path/of/script/dothis.sh" perms="755">
 #!/bin/bash
