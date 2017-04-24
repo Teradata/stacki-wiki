@@ -47,8 +47,8 @@ section labeled [existing](#existing).
 
 ### New
 
-Download the Stacki jumbo DVD [here](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-os-3.2-6.x.x86_64.disk1.iso
-) and burn the file to a DVD or
+Download the Stacki jumbo DVD [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stackios-4.0_c4aff2a-7.x.x86_64.disk1.iso)
+ and burn the file to a DVD or
 mount it on the virtual media for the server to be installed.
 Installing a frontend will completely erase and reformat the hard disks in the
 server, so be careful which server you decide to become your frontend.
@@ -74,20 +74,19 @@ The server must be running the x86_64 version of CentOS or RHEL version 6.x or
 
 To perform this installation, log into the frontend and download two files:
 
-1. **Stacki ISO**. Download the Stacki ISO ([6.x version](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso) or [7.x version](
-https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-7.x.x86_64.disk1.iso)) and put it on your server you want to transform into a Stacki frontend.
+1. **Stacki ISO**. Download the Stacki ISO ([6.x version](https://s3.amazonaws.com/stacki/public/pallets/3.2/open-source/stacki-3.2-6.x.x86_64.disk1.iso) or [7.x version](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-4.0_20170414_c4aff2a-7.x.x86_64.disk1.iso) and put it on your server you want to transform into a Stacki frontend.
    
-   **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stacki-os_ ISO.
+   **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stackios_ ISO.
 
-2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/3.2/open-source/stacki-fab-3.x-all.x86_64.rpm) and put it on the server you want to transform into a Stacki frontend.
+2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-fab-4.x-all.x86_64.rpm) and put it on the server you want to transform into a Stacki frontend.
 
 Install the `stacki-fab` RPM:
 
-    # rpm -i stacki-fab-3.x-all.x86_64.rpm
+    # rpm -i stacki-fab-4.x-all.x86_64.rpm
 
 Execute frontend-install.py:
 
-    # /opt/stack/bin/frontend-install.py --stacki-iso=stacki-3.2-6.x.x86_64.disk1.iso
+    # /opt/stack/bin/frontend-install.py --stacki-iso=stacki-4.0_20170414_c4aff2a-7.x.x86_64.disk1.iso
 
 The above step will run several commands and will eventually display
 the [Installation Wizard](#installation-wizard).
