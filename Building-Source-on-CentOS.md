@@ -15,16 +15,16 @@
 Checkout the Stacki repository from github.com. It is about
 1.6 GB in size. To build the repo, youll need another 12 GB
 of usable space.
-    ```
-    # mkdir /export/src
-    # cd /export/src
-    # git clone git@github.com:StackIQ/stacki.git
-    ```
+
+```
+# mkdir /export/src
+# cd /export/src
+# git clone git@github.com:StackIQ/stacki.git
+```
 
 ### Bootstrap
 1. Run Bootstrap
-    ```
-    # cd /export/src/stacki
+    ```# cd /export/src/stacki
     # make bootstrap
     ```
 
@@ -95,5 +95,20 @@ of usable space.
    # reboot
    ```
 
+### Add OS pallets
+1. Download the CentOS DVDs.
+   **Note**:
+   1. For CentOS 7, download the CentOS-7 everything ISO
+   1. For CentOS 6, download the CentOS-6 Bin DVD1 and DVD2 ISO files
 
+1. Add the ISO to the machine
+    ```
+    # stack add pallet CentOS-*.iso
+    # stack enable pallet CentOS
+    ```
 
+### Rebuild the Stacki Pallet
+```
+# cd /export/src/stacki
+# make roll
+```
