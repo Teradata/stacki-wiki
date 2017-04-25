@@ -78,7 +78,7 @@ of usable space.
    # boss_config_snack.py --no-net-reconfig
    ```
    > **Note**: For information on how to configure your stacki installation,
-     refer to [Installation Wizard](#installation-wizard)
+     refer to [Installation Wizard](Frontend-Installation#installation-wizard)
 
 1. Create the installation script
     ```
