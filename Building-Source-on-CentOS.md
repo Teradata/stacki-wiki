@@ -15,11 +15,12 @@
 Checkout the Stacki repository from github.com. It is about
 1.6 GB in size. To build the repo, youll need another 12 GB
 of usable space.
-    ```
-    # mkdir /export/src
-    # cd /export/src
-    # git clone git@github.com:StackIQ/stacki.git
-    ```
+
+```
+# mkdir /export/src
+# cd /export/src
+# git clone git@github.com:StackIQ/stacki.git
+```
 
 ### Bootstrap
 1. Run Bootstrap
@@ -78,7 +79,7 @@ of usable space.
    # boss_config_snack.py --no-net-reconfig
    ```
    > **Note**: For information on how to configure your
-   > stacki installation, refer to [Installation Wizard](Frontend-Installation#installation-wizard)
+   > stacki installation, refer to [Installation Wizard](Frontend-Installation.md#installation-wizard)
 
 1. Create the installation script
     ```
