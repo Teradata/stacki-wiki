@@ -20,6 +20,7 @@
 * Reference
   * [Command Line](CLI-documentation) 
   * [Wire](Wire-Reference)
+  * [Example CSV Files](examples-csvs)
 * Developer
   * [Building From Source](Building-From-Source)
 * Answers to Burning questions
