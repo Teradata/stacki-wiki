@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Remove a boot action specification from the system.
+
+
 
 ### Parameters
 * `{action=string}`

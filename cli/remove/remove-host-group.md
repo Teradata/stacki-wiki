@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Removes a group from or more hosts.
+
+
 
 ### Arguments
 

@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Reconfigure and optionally restart the network for the named hosts.
+
+
 
 ### Parameters
 * `{restart=boolean}`

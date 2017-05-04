@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Remove a storage controller configuration from the database.
+
+
 
 ### Arguments
 

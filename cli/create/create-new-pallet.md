@@ -6,16 +6,19 @@
 
 ### Description
 
+
 Create a skeleton directory structure for a pallet
-	source.
+source.
 
-	This command is to be used mainly by pallet developers.
+This command is to be used mainly by pallet developers.
 
-	This command creates a directory structure from
-	templates that can be then be populated with required
-	software and configuration.
+This command creates a directory structure from
+templates that can be then be populated with required
+software and configuration.
 
-	Refer to Pallet Developer Guide for more information.
+Refer to Pallet Developer Guide for more information.
+
+
 
 ### Parameters
 * `[name=string]`

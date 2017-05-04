@@ -6,10 +6,13 @@
 
 ### Description
 
+
 Enables or Disables PXE for one of more networks.
 
-        All hosts must be connected to atleast one network that has
-        PXE enabled.
+All hosts must be connected to atleast one network that has
+PXE enabled.
+
+
 
 ### Arguments
 

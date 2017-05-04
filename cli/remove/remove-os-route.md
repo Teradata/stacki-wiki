@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Remove a static route for an OS type.
+
+
 
 ### Arguments
 

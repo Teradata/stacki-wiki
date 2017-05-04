@@ -6,9 +6,12 @@
 
 ### Description
 
+
 Prints out all the named zone.conf and reverse-zone.conf files in XML.
-	To actually create these files, run the output of the command through
-	"stack report script"
+To actually create these files, run the output of the command through
+"stack report script"
+
+
 
 ### Examples
 

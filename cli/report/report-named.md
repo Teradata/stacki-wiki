@@ -6,8 +6,11 @@
 
 ### Description
 
+
 Prints the nameserver daemon configuration file
-	for the system.
+for the system.
+
+
 
 ### Examples
 

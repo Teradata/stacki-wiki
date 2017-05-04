@@ -6,8 +6,11 @@
 
 ### Description
 
+
 Remove a host from the database. This command will remove all
-	related database rows for each specified host.
+related database rows for each specified host.
+
+
 
 ### Arguments
 

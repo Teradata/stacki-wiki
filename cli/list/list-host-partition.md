@@ -6,8 +6,11 @@
 
 ### Description
 
+
 Lists the partitions for hosts. For each host supplied on the command
-	line, this command prints the hostname and partitions for that host.
+line, this command prints the hostname and partitions for that host.
+
+
 
 ### Arguments
 

@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Reconfigure and optionally restart firewall for named hosts.
+
+
 
 ### Parameters
 * `{restart=boolean}`

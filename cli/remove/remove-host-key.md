@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Remove a public key for a host.
+
+
 
 ### Arguments
 

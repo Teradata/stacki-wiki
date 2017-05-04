@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Remove a pallet from both the database and filesystem.
+
+
 
 ### Arguments
 

@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Remove a cart from both the database and filesystem.
+
+
 
 ### Arguments
 

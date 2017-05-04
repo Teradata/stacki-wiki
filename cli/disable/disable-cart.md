@@ -6,8 +6,11 @@
 
 ### Description
 
+
 Disables a cart. The cart must already be copied on the
-	system using the command "stack add cart".
+system using the command "stack add cart".
+
+
 
 ### Arguments
 

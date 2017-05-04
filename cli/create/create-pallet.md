@@ -6,8 +6,11 @@
 
 ### Description
 
-Create a pallet.  You may specify either a single XML file or git URL 
-	to build one pallet or a list of ISO files to build a Meta pallet.
+
+Create a pallet.  You may specify either a single XML file or git URL
+to build one pallet or a list of ISO files to build a Meta pallet.
+
+
 
 ### Arguments
 

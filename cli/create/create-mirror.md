@@ -6,16 +6,19 @@
 
 ### Description
 
+
 Create a pallet ISO image from the packages found in the
-	repository located at 'URL'.
+repository located at 'URL'.
 
-	Mirroring RHEL repositories works with a subscribed Red Hat frontend.
-	Direct access via a url, will not work.
+Mirroring RHEL repositories works with a subscribed Red Hat frontend.
+Direct access via a url, will not work.
 
-	All other public repositories can use a repoid or url.
+All other public repositories can use a repoid or url.
 
-	If using a url, "newest" and "urlonly" have no effect. The entire
-	repo will be downloaded.
+If using a url, "newest" and "urlonly" have no effect. The entire
+repo will be downloaded.
+
+
 
 ### Parameters
 * `{arch=string}`

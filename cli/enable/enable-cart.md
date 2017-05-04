@@ -6,8 +6,11 @@
 
 ### Description
 
+
 Enable an available cart. The cart must already be initialized on the
-	system using the command "stack add cart".
+system using the command "stack add cart".
+
+
 
 ### Arguments
 

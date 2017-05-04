@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Rebuild the DNS configuration files, then restart named.
+
+
 
 ### Examples
 

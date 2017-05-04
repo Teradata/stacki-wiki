@@ -6,8 +6,11 @@
 
 ### Description
 
+
 Process an XML-based installation file and output an OS-specific
-	installation file (e.g., a kickstart or jumpstart file).
+installation file (e.g., a kickstart or jumpstart file).
+
+
 
 ### Parameters
 * `{chapter=string}`

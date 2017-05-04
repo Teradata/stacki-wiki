@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Removes the boot configuration for a host
+
+
 
 ### Arguments
 

@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Create a report that outputs the firewall rules for a host.
+
+
 
 ### Arguments
 

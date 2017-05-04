@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Remove a box specification from the database.
+
+
 
 ### Arguments
 

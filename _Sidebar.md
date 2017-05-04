@@ -24,7 +24,6 @@
   * [Building From Source](Building-From-Source)
 * Answers to Burning questions
   * [Kickstart Customizations](Kickstart-Customizations)
-    * [One Package tag Multiple RPMS](One-package-tag-for-multiple-rpms)
     * [%include directive](include-directive)
   * [Cart Order](Setting-Cart-Order)
   * [Upgrading to CentOS 7.3 on stacki-3.2](Upgrading-to-CentOS-7.3-on-stacki-3.2)

@@ -216,4 +216,26 @@ file:
 ```
 <package>rpmname</package>
 ```
-
+You can also add multiple RPMS between a single pair of package tags, separated
+by newlines.
+For example, instead of
+```
+<package>mlocate</package>
+<package>pciutils</package>
+<package>yum-utils</package>
+<package>foundation-wget</package>
+<package>screen</package>
+<package>tmux</package>
+```
+you can use
+```
+<package>
+mlocate
+pciutils
+yum-utils
+foundation-wget
+screen
+tmux
+</package>
+```
+This would achieve the same effect.

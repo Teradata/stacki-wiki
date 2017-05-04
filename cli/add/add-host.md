@@ -6,7 +6,10 @@
 
 ### Description
 
+
 Add an new host to the cluster.
+
+
 
 ### Arguments
 
