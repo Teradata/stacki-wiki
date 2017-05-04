@@ -1,8 +1,8 @@
-| NAME | DEVICE | MOUNTPOINT | SIZE | TYPE | OPTIONS |
+| <sub>NAME</sub> | <sub>DEVICE</sub> | <sub>MOUNTPOINT</sub> | <sub>SIZE</sub> | <sub>TYPE</sub> | <sub>OPTIONS</sub> |
 | ---- | ------ | ---------- | ---- | ---- | ------- |
-| node207 | sda | swap | 8192 | swap |  |
-|  | sda | biosboot | 1 | biosboot |  |
-|  | sda | / | 0 | ext4 |  |
-|  | sdb | pv.01 | 1 | lvm | --grow |
-|  | pv.01 | volgrp01 | 0 | volgroup |  |
-|  | volgrp01 | /var/lib/mysql | 0 | xfs | --name=mysql_libs |
+| <sub>node207</sub> | <sub>sda</sub> | <sub>swap</sub> | <sub>8192</sub> | <sub>swap</sub> | <sub></sub> |
+| <sub></sub> | <sub>sda</sub> | <sub>biosboot</sub> | <sub>1</sub> | <sub>biosboot</sub> | <sub></sub> |
+| <sub></sub> | <sub>sda</sub> | <sub>/</sub> | <sub>0</sub> | <sub>ext4</sub> | <sub></sub> |
+| <sub></sub> | <sub>sdb</sub> | <sub>pv.01</sub> | <sub>1</sub> | <sub>lvm</sub> | <sub>--grow</sub> |
+| <sub></sub> | <sub>pv.01</sub> | <sub>volgrp01</sub> | <sub>0</sub> | <sub>volgroup</sub> | <sub></sub> |
+| <sub></sub> | <sub>volgrp01</sub> | <sub>/var/lib/mysql</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--name=mysql_libs</sub> |

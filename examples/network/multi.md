@@ -1,8 +1,8 @@
-| NAME | DEFAULT | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | NETWORK | CHANNEL | OPTIONS | VLAN |
+| <sub>NAME</sub> | <sub>DEFAULT</sub> | <sub>APPLIANCE</sub> | <sub>RACK</sub> | <sub>RANK</sub> | <sub>IP</sub> | <sub>MAC</sub> | <sub>INTERFACE</sub> | <sub>NETWORK</sub> | <sub>CHANNEL</sub> | <sub>OPTIONS</sub> | <sub>VLAN</sub> |
 | ---- | ------- | --------- | ---- | ---- | -- | --- | --------- | ------- | ------- | ------- | ---- |
-| node239 |  | backend | 1 | 9 |  | 24:6e:96:05:68:f8 | eno1 |  |  |  |  |
-| node239 |  |  |  |  |  | 24:6e:96:05:68:fa | eno2 |  |  |  |  |
-| node239 | TRUE |  |  |  | 10.1.2.239 | 24:6e:96:05:68:fc | eno3 | private |  |  |  |
-| node239 |  |  |  |  | 192.168.18.239 | 24:6e:96:05:68:fd | eno4 | public |  |  |  |
-| node240 | TRUE | backend | 1 | 7 | 10.1.2.240 | ec:f4:bb:d6:c3:a8 | em1 | private |  |  |  |
-| node240 |  |  |  |  | 192.168.18.240 | ec:f4:bb:d6:c3:a9 | em2 | public |  |  |  |
+| <sub>node239</sub> | <sub></sub> | <sub>backend</sub> | <sub>1</sub> | <sub>9</sub> | <sub></sub> | <sub>24:6e:96:05:68:f8</sub> | <sub>eno1</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node239</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>24:6e:96:05:68:fa</sub> | <sub>eno2</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node239</sub> | <sub>TRUE</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>10.1.2.239</sub> | <sub>24:6e:96:05:68:fc</sub> | <sub>eno3</sub> | <sub>private</sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node239</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>192.168.18.239</sub> | <sub>24:6e:96:05:68:fd</sub> | <sub>eno4</sub> | <sub>public</sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node240</sub> | <sub>TRUE</sub> | <sub>backend</sub> | <sub>1</sub> | <sub>7</sub> | <sub>10.1.2.240</sub> | <sub>ec:f4:bb:d6:c3:a8</sub> | <sub>em1</sub> | <sub>private</sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node240</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>192.168.18.240</sub> | <sub>ec:f4:bb:d6:c3:a9</sub> | <sub>em2</sub> | <sub>public</sub> | <sub></sub> | <sub></sub> | <sub></sub> |

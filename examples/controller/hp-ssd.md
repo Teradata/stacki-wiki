@@ -1,12 +1,12 @@
-| NAME | SLOT | RAID LEVEL | ARRAY ID | OPTIONS |
+| <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
 | ---- | ---- | ---------- | -------- | ------- |
-| global | 1 | 10 | 1 | size=200000 forced |
-|  | 2 | 10 | 1 |  |
-|  | 3 | 10 | 1 |  |
-|  | 4 | 10 | 1 |  |
-|  | 1 | 10 | 2 |  |
-|  | 2 | 10 | 2 |  |
-|  | 3 | 10 | 2 |  |
-|  | 4 | 10 | 2 |  |
-|  | 5 | 0 | 3 | ssdoverprovisioningoptimization=on forced |
-|  | 6 | 0 | 3 | ssdoverprovisioningoptimization=on forced |
+| <sub>global</sub> | <sub>1</sub> | <sub>10</sub> | <sub>1</sub> | <sub>size=200000 forced</sub> |
+| <sub></sub> | <sub>2</sub> | <sub>10</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>4</sub> | <sub>10</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>1</sub> | <sub>10</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>2</sub> | <sub>10</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>3</sub> | <sub>10</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>4</sub> | <sub>10</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>5</sub> | <sub>0</sub> | <sub>3</sub> | <sub>ssdoverprovisioningoptimization=on forced</sub> |
+| <sub></sub> | <sub>6</sub> | <sub>0</sub> | <sub>3</sub> | <sub>ssdoverprovisioningoptimization=on forced</sub> |

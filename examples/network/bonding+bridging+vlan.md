@@ -1,16 +1,16 @@
-| NAME | DEFAULT | APPLIANCE | RACK | RANK | IP | MAC | INTERFACE | NETWORK | CHANNEL | OPTIONS | VLAN |
+| <sub>NAME</sub> | <sub>DEFAULT</sub> | <sub>APPLIANCE</sub> | <sub>RACK</sub> | <sub>RANK</sub> | <sub>IP</sub> | <sub>MAC</sub> | <sub>INTERFACE</sub> | <sub>NETWORK</sub> | <sub>CHANNEL</sub> | <sub>OPTIONS</sub> | <sub>VLAN</sub> |
 | ---- | ------- | --------- | ---- | ---- | -- | --- | --------- | ------- | ------- | ------- | ---- |
-| node219 | TRUE | backend | 1 | 9 | 10.1.2.219 | 90:b1:1c:09:eb:af | eno1 | private |  |  |  |
-| node219 |  |  |  |  |  | 90:b1:1c:09:eb:b0 | eno2 |  |  |  |  |
-| node219 |  |  |  |  |  | 90:b1:1c:09:eb:b1 | eno3 |  | bond0 |  |  |
-| node219 |  |  |  |  |  | 90:b1:1c:09:eb:b2 | eno4 |  | bond0 |  |  |
-| node219 |  |  |  |  |  |  | bond0 |  | br0 | bonding-opts="mode=1 primary=eno3" |  |
-| node219 |  |  |  |  |  |  | br0 |  |  | bridge |  |
-| node219 |  |  |  |  | 10.11.2.219 |  | br0.77 | vlad |  |  | 77 |
-| node240 | TRUE | backend | 1 | 7 | 10.1.2.240 | ec:f4:bb:d6:c3:a8 | em1 | private |  |  |  |
-| node240 |  |  |  |  |  | ec:f4:bb:d6:c3:a9 | em2 |  |  |  |  |
-| node240 |  |  |  |  |  | ec:f4:bb:d6:c3:aa | em3 |  | bond0 |  |  |
-| node240 |  |  |  |  |  | ec:f4:bb:d6:c3:ab | em4 |  | bond0 |  |  |
-| node240 |  |  |  |  |  |  | bond0 |  | br0 | bonding-opts="mode=1 primary=em3" |  |
-| node240 |  |  |  |  |  |  | br0 |  |  | bridge |  |
-| node240 |  |  |  |  | 10.11.2.240 |  | br0.77 | vlad |  |  | 77 |
+| <sub>node219</sub> | <sub>TRUE</sub> | <sub>backend</sub> | <sub>1</sub> | <sub>9</sub> | <sub>10.1.2.219</sub> | <sub>90:b1:1c:09:eb:af</sub> | <sub>eno1</sub> | <sub>private</sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node219</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>90:b1:1c:09:eb:b0</sub> | <sub>eno2</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node219</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>90:b1:1c:09:eb:b1</sub> | <sub>eno3</sub> | <sub></sub> | <sub>bond0</sub> | <sub></sub> | <sub></sub> |
+| <sub>node219</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>90:b1:1c:09:eb:b2</sub> | <sub>eno4</sub> | <sub></sub> | <sub>bond0</sub> | <sub></sub> | <sub></sub> |
+| <sub>node219</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>bond0</sub> | <sub></sub> | <sub>br0</sub> | <sub>bonding-opts="mode=1 primary=eno3"</sub> | <sub></sub> |
+| <sub>node219</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>br0</sub> | <sub></sub> | <sub></sub> | <sub>bridge</sub> | <sub></sub> |
+| <sub>node219</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>10.11.2.219</sub> | <sub></sub> | <sub>br0.77</sub> | <sub>vlad</sub> | <sub></sub> | <sub></sub> | <sub>77</sub> |
+| <sub>node240</sub> | <sub>TRUE</sub> | <sub>backend</sub> | <sub>1</sub> | <sub>7</sub> | <sub>10.1.2.240</sub> | <sub>ec:f4:bb:d6:c3:a8</sub> | <sub>em1</sub> | <sub>private</sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node240</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>ec:f4:bb:d6:c3:a9</sub> | <sub>em2</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> |
+| <sub>node240</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>ec:f4:bb:d6:c3:aa</sub> | <sub>em3</sub> | <sub></sub> | <sub>bond0</sub> | <sub></sub> | <sub></sub> |
+| <sub>node240</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>ec:f4:bb:d6:c3:ab</sub> | <sub>em4</sub> | <sub></sub> | <sub>bond0</sub> | <sub></sub> | <sub></sub> |
+| <sub>node240</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>bond0</sub> | <sub></sub> | <sub>br0</sub> | <sub>bonding-opts="mode=1 primary=em3"</sub> | <sub></sub> |
+| <sub>node240</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>br0</sub> | <sub></sub> | <sub></sub> | <sub>bridge</sub> | <sub></sub> |
+| <sub>node240</sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub></sub> | <sub>10.11.2.240</sub> | <sub></sub> | <sub>br0.77</sub> | <sub>vlad</sub> | <sub></sub> | <sub></sub> | <sub>77</sub> |

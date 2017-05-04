@@ -1,10 +1,10 @@
-| NAME | SLOT | RAID LEVEL | ARRAY ID | OPTIONS |
+| <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
 | ---- | ---- | ---------- | -------- | ------- |
-| node216 | 1 | 1 | 1 |  |
-|  | 2 | 1 | 1 |  |
-|  | 3 | 6 | 2 |  |
-|  | 4 | 6 | 2 |  |
-|  | 5 | 6 | 2 |  |
-|  | 6 | 6 | 2 |  |
-|  | 7 | 6 | 2 |  |
-|  | 8 | 6 | 2 |  |
+| <sub>node216</sub> | <sub>1</sub> | <sub>1</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>2</sub> | <sub>1</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>3</sub> | <sub>6</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>4</sub> | <sub>6</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>5</sub> | <sub>6</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>6</sub> | <sub>6</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>7</sub> | <sub>6</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>8</sub> | <sub>6</sub> | <sub>2</sub> | <sub></sub> |

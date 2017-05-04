@@ -1,8 +1,8 @@
-| NAME | DEVICE | MOUNTPOINT | SIZE | TYPE | OPTIONS |
+| <sub>NAME</sub> | <sub>DEVICE</sub> | <sub>MOUNTPOINT</sub> | <sub>SIZE</sub> | <sub>TYPE</sub> | <sub>OPTIONS</sub> |
 | ---- | ------ | ---------- | ---- | ---- | ------- |
-| node207 | sda | biosboot | 1 | biosboot |  |
-|  | sda | swap | 8192 | swap |  |
-|  | sda | /var/lib/docker | 0 | xfs | --mkfsoptions="-n ftype=1" |
-|  | sda | /boot | 1024 | xfs |  |
-|  | sda | / | 16000 | xfs |  |
-|  | sda | /var | 26000 | xfs |  |
+| <sub>node207</sub> | <sub>sda</sub> | <sub>biosboot</sub> | <sub>1</sub> | <sub>biosboot</sub> | <sub></sub> |
+| <sub></sub> | <sub>sda</sub> | <sub>swap</sub> | <sub>8192</sub> | <sub>swap</sub> | <sub></sub> |
+| <sub></sub> | <sub>sda</sub> | <sub>/var/lib/docker</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--mkfsoptions="-n ftype=1"</sub> |
+| <sub></sub> | <sub>sda</sub> | <sub>/boot</sub> | <sub>1024</sub> | <sub>xfs</sub> | <sub></sub> |
+| <sub></sub> | <sub>sda</sub> | <sub>/</sub> | <sub>16000</sub> | <sub>xfs</sub> | <sub></sub> |
+| <sub></sub> | <sub>sda</sub> | <sub>/var</sub> | <sub>26000</sub> | <sub>xfs</sub> | <sub></sub> |

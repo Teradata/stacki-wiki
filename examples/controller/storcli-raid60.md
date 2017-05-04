@@ -1,10 +1,10 @@
-| NAME | SLOT | RAID LEVEL | ARRAY ID | OPTIONS |
+| <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
 | ---- | ---- | ---------- | -------- | ------- |
-| node217 | 0 | 60 | 1 | pdperarray=4 |
-|  | 1 | 60 | 1 |  |
-|  | 2 | 60 | 1 |  |
-|  | 3 | 60 | 1 |  |
-|  | 4 | 60 | 1 |  |
-|  | 5 | 60 | 1 |  |
-|  | 6 | 60 | 1 |  |
-|  | 7 | 60 | 1 |  |
+| <sub>node217</sub> | <sub>0</sub> | <sub>60</sub> | <sub>1</sub> | <sub>pdperarray=4</sub> |
+| <sub></sub> | <sub>1</sub> | <sub>60</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>2</sub> | <sub>60</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>3</sub> | <sub>60</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>4</sub> | <sub>60</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>5</sub> | <sub>60</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>6</sub> | <sub>60</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>7</sub> | <sub>60</sub> | <sub>1</sub> | <sub></sub> |

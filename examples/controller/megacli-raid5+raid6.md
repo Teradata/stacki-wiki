@@ -1,25 +1,25 @@
-| NAME | SLOT | RAID LEVEL | ARRAY ID | OPTIONS |
+| <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
 | ---- | ---- | ---------- | -------- | ------- |
-| node219 | 0 | 1 | 1 |  |
-|  | 1 | 1 | 1 |  |
-|  | 2 | Hotspare | 1 |  |
-|  | 3 | 0 | 2 |  |
-|  | 4 | 0 | 3 |  |
-|  | 5 | 0 | 4 |  |
-|  | 6 | 0 | 5 |  |
-|  | 7 | 0 | 6 |  |
-|  | 8 | 5 | 7 |  |
-|  | 9 | 5 | 7 |  |
-|  | 10 | 5 | 7 |  |
-|  | 11 | 5 | 7 |  |
-|  | 12 | 5 | 7 |  |
-|  | 13 | Hotspare | 7 |  |
-|  | 14 | 6 | 8 |  |
-|  | 15 | 6 | 8 |  |
-|  | 16 | 6 | 8 |  |
-|  | 17 | 6 | 8 |  |
-|  | 18 | 6 | 8 |  |
-|  | 19 | 6 | 8 |  |
-|  | 20 | Hotspare | 8 |  |
-|  | 21 | Hotspare | global |  |
-|  | * | 0 | * |  |
+| <sub>node219</sub> | <sub>0</sub> | <sub>1</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>1</sub> | <sub>1</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>2</sub> | <sub>Hotspare</sub> | <sub>1</sub> | <sub></sub> |
+| <sub></sub> | <sub>3</sub> | <sub>0</sub> | <sub>2</sub> | <sub></sub> |
+| <sub></sub> | <sub>4</sub> | <sub>0</sub> | <sub>3</sub> | <sub></sub> |
+| <sub></sub> | <sub>5</sub> | <sub>0</sub> | <sub>4</sub> | <sub></sub> |
+| <sub></sub> | <sub>6</sub> | <sub>0</sub> | <sub>5</sub> | <sub></sub> |
+| <sub></sub> | <sub>7</sub> | <sub>0</sub> | <sub>6</sub> | <sub></sub> |
+| <sub></sub> | <sub>8</sub> | <sub>5</sub> | <sub>7</sub> | <sub></sub> |
+| <sub></sub> | <sub>9</sub> | <sub>5</sub> | <sub>7</sub> | <sub></sub> |
+| <sub></sub> | <sub>10</sub> | <sub>5</sub> | <sub>7</sub> | <sub></sub> |
+| <sub></sub> | <sub>11</sub> | <sub>5</sub> | <sub>7</sub> | <sub></sub> |
+| <sub></sub> | <sub>12</sub> | <sub>5</sub> | <sub>7</sub> | <sub></sub> |
+| <sub></sub> | <sub>13</sub> | <sub>Hotspare</sub> | <sub>7</sub> | <sub></sub> |
+| <sub></sub> | <sub>14</sub> | <sub>6</sub> | <sub>8</sub> | <sub></sub> |
+| <sub></sub> | <sub>15</sub> | <sub>6</sub> | <sub>8</sub> | <sub></sub> |
+| <sub></sub> | <sub>16</sub> | <sub>6</sub> | <sub>8</sub> | <sub></sub> |
+| <sub></sub> | <sub>17</sub> | <sub>6</sub> | <sub>8</sub> | <sub></sub> |
+| <sub></sub> | <sub>18</sub> | <sub>6</sub> | <sub>8</sub> | <sub></sub> |
+| <sub></sub> | <sub>19</sub> | <sub>6</sub> | <sub>8</sub> | <sub></sub> |
+| <sub></sub> | <sub>20</sub> | <sub>Hotspare</sub> | <sub>8</sub> | <sub></sub> |
+| <sub></sub> | <sub>21</sub> | <sub>Hotspare</sub> | <sub>global</sub> | <sub></sub> |
+| <sub></sub> | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> | <sub></sub> |
