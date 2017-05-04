@@ -8,6 +8,20 @@
 
 Remove a partition definitions from a host.
 
+### Arguments
+
+* `[host]`
+
+   A list of one or more host names.
+
+
+### Parameters
+* `{device=string}`
+* `{partition=string}`
+* `{uuid=string}`
+
+   UUID of the mountpoint to be removed.
+
 ### Examples
 
 * `stack remove host partition compute-0-0`

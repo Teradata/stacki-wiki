@@ -8,6 +8,13 @@
 
 Remove a box specification from the database.
 
+### Arguments
+
+* `[box]`
+
+   Box name.
+
+
 ### Examples
 
 * `stack remove box test`

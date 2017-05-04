@@ -10,4 +10,11 @@
 	Generate host specific configuration files
 	on the frontend
 
+### Arguments
+
+* `[hostname]`
+
+   Hostname(s)
+
+
 

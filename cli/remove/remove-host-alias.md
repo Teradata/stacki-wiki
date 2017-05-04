@@ -8,6 +8,18 @@
 
 Remove an alias from a host(s).
 
+### Arguments
+
+* `{host}`
+
+   One hosts.
+
+
+### Parameters
+* `{alias=string}`
+
+   The alias name that should be removed.
+
 ### Examples
 
 * `stack remove host alias backend-0-0 alias=c-0-0`

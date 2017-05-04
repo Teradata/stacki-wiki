@@ -8,6 +8,21 @@
 
 Adds an attribute to a host and sets the associated values
 
+### Arguments
+
+* `{host}`
+
+   Host name of machine
+
+
+### Parameters
+* `[attr=string]`
+* `[value=string]`
+* `{shadow=boolean}`
+
+   If set to true, then set the 'shadow' value (only readable by root
+	and apache).
+
 ### Examples
 
 * `stack set host attr backend-0-0 attr=cpus value=2`

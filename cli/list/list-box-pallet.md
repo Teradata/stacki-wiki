@@ -8,6 +8,13 @@
 
 List the pallets enabled in each box.
 
+### Arguments
+
+* `{box}`
+
+   List of boxes.
+
+
 ### Examples
 
 * `stack list box pallet default`

@@ -10,6 +10,23 @@ Add pallet ISO images to this machine's pallet directory. This command
 	copies all files in the ISOs to the local machine. The default location
 	is a directory under /export/stack/pallets.
 
+### Arguments
+
+* `{pallet}`
+
+   A list of pallet ISO images to add to the local machine. If no list is
+	supplied, then if a pallet is mounted on /mnt/cdrom, it will be copied
+	to the local machine.
+
+
+### Parameters
+* `{clean=bool}`
+* `{dir=string}`
+* `{updatedb=string}`
+
+   Add the pallet info to the cluster database.
+	The default is: true.
+
 ### Examples
 
 * `stack add pallet clean=1 kernel*iso`

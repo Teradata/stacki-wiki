@@ -11,6 +11,13 @@ Lists the XML profile for a given appliance type. This is useful
 	variables. It cannot be used to pass into 'rocks list host profile'
 	to create a complete Kickstart/Jumpstart profile.
 
+### Arguments
+
+* `{appliance}`
+
+   Optional list of appliance names.
+
+
 ### Examples
 
 * `stack list appliance xml compute`

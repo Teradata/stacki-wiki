@@ -1,9 +1,10 @@
 # report commands
 
+  * [report attrfile](report-attrfile)
   * [report dbhost](report-dbhost)
   * [report dhcpd](report-dhcpd)
   * [report host](report-host)
-  * [report host attr](report-host-attr)
+  * [report host bootfile](report-host-bootfile)
   * [report host bootflags](report-host-bootflags)
   * [report host firewall](report-host-firewall)
   * [report host interface](report-host-interface)
@@ -12,6 +13,7 @@
   * [report host route](report-host-route)
   * [report host storage controller](report-host-storage-controller)
   * [report host storage partition](report-host-storage-partition)
+  * [report host time](report-host-time)
   * [report host yum](report-host-yum)
   * [report hostfile](report-hostfile)
   * [report named](report-named)

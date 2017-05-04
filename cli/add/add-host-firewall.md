@@ -8,6 +8,29 @@
 
 Add a firewall rule for the specified hosts.
 
+### Arguments
+
+* `[host]`
+
+   Host name of machine
+
+
+### Parameters
+* `{action=string}`
+* `{chain=string}`
+* `{comment=string}`
+* `{flags=string}`
+* `{network=string}`
+* `{output-network=string}`
+* `{protocol=string}`
+* `{rulename=string}`
+* `{service=string}`
+* `{table=string}`
+
+   The table to add the rule to. Valid values are 'filter',
+	'nat', 'mangle', and 'raw'. If this parameter is not
+	specified, it defaults to 'filter'
+
 ### Examples
 
 * `stack add host firewall localhost network=private service="all" protocol="all" action="ACCEPT" chain="FORWARD"`

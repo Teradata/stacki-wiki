@@ -2,11 +2,23 @@
 
 ### Usage
 
-`stack remove appliance attr {attr} [appliance ...]`
+`stack remove appliance attr [appliance ...] {attr=string}`
 
 ### Description
 
 Remove an attribute for an appliance.
+
+### Arguments
+
+* `{appliance}`
+
+   One or more appliances
+
+
+### Parameters
+* `[attr=string]`
+
+   The attribute name that should be removed.
 
 ### Examples
 

@@ -8,6 +8,15 @@
 
 List the status of available pallets.
 
+### Arguments
+
+* `{pallet}`
+
+   List of pallets. This should be the pallet base name (e.g., base, hpc,
+	kernel). If no pallets are listed, then status for all the pallets are
+	listed.
+
+
 ### Examples
 
 * `stack list pallet kernel`

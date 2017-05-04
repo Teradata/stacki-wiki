@@ -8,6 +8,26 @@
 
 Add a storage controller configuration to the database.
 
+### Arguments
+
+* `[scope]`
+
+   Zero or one argument. The argument is the scope: a valid os (e.g.,
+	'redhat'), a valid appliance (e.g., 'backend') or a valid host
+	(e.g., 'backend-0-0). No argument means the scope is 'global'.
+
+
+### Parameters
+* `{adapter=int}`
+* `{arrayid=string}`
+* `{enclosure=int}`
+* `{hotspare=int}`
+* `{raidlevel=int}`
+* `{slot=int}`
+
+   Slot address(es). This can be a comma-separated list meaning all disks
+	in the specified slots will be associated with the same array
+
 ### Examples
 
 * `stack add storage controller backend-0-0 slot=1 raidlevel=0 arrayid=1`

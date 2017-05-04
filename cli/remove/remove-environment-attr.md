@@ -8,6 +8,18 @@
 
 Remove an attribute for an Environment.
 
+### Arguments
+
+* `[environment]`
+
+   One or more Environment specifications (e.g., 'test').
+
+
+### Parameters
+* `[attr=string]`
+
+   The attribute name that should be removed.
+
 ### Examples
 
 * `stack remove environment attr test attr=sge`

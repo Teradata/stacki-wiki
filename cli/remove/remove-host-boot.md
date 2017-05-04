@@ -8,6 +8,13 @@
 
 Removes the boot configuration for a host
 
+### Arguments
+
+* `[host]`
+
+   One or more named hosts.
+
+
 ### Examples
 
 * `stack remove host boot compute-0-0`

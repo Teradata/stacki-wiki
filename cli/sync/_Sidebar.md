@@ -23,4 +23,5 @@
   * [sync host config](sync-host-config)
   * [sync host firewall](sync-host-firewall)
   * [sync host network](sync-host-network)
+  * [sync host yum](sync-host-yum)
 * [unload](unload-commands)

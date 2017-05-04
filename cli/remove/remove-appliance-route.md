@@ -8,6 +8,18 @@
 
 Remove a static route for an appliance type.
 
+### Arguments
+
+* `[appliance]`
+
+   Appliance name. This argument is required.
+
+
+### Parameters
+* `[address=string]`
+
+   The address of the static route to remove.
+
 ### Examples
 
 * `stack remove appliance route compute address=1.2.3.4`

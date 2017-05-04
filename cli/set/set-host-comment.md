@@ -8,6 +8,18 @@
 
 Set the comment field for a list of hosts.
 
+### Arguments
+
+* `[host]`
+
+   One or more host names.
+
+
+### Parameters
+* `[comment=string]`
+
+   The string to assign to the comment field for each host.
+
 ### Examples
 
 * `stack set host comment backend-0-0 comment="Fast Node"`

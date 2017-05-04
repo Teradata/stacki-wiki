@@ -8,6 +8,14 @@
 
 Add a bootaction specification to the system.
 
+### Parameters
+* `{action=string}`
+* `{args=string}`
+* `{kernel=string}`
+* `{ramdisk=string}`
+
+   The name of the ramdisk that is associated with this boot action.
+
 ### Examples
 
 * `stack add bootaction action=os kernel="localboot 0"`

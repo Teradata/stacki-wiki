@@ -8,6 +8,13 @@
 
 Lists the set of attributes for OSes.
 
+### Arguments
+
+* `{os}`
+
+   Name of OS (e.g. "linux", "sunos")
+
+
 ### Examples
 
 * `stack list os attr linux`

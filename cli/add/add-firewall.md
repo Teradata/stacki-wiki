@@ -8,6 +8,20 @@
 
 Add a global firewall rule for the all hosts in the cluster.
 
+### Parameters
+* `{action=string}`
+* `{chain=string}`
+* `{network=string}`
+* `{output-network=string}`
+* `{protocol=string}`
+* `{rulename=string}`
+* `{service=string}`
+* `{table=string}`
+
+   The table to add the rule to. Valid values are 'filter',
+	'nat', 'mangle', and 'raw'. If this parameter is not
+	specified, it defaults to 'filter'
+
 ### Examples
 
 * `stack add firewall network=public service="ssh" protocol="tcp" action="ACCEPT" chain="INPUT" flags="-m state --state NEW" table="filter" rulename="accept_public_ssh"`

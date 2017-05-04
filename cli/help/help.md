@@ -10,6 +10,13 @@ List help for the command line client.  With no arguments it lists
 	all the commands available.  Otherwise it will list the subset
 	of command with the specified string (see examples).
 
+### Arguments
+
+* `[command]`
+
+   The substring matched against all commands.
+
+
 ### Examples
 
 * `stack help`

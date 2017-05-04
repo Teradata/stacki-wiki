@@ -2,11 +2,25 @@
 
 ### Usage
 
-`stack remove host interface [host ...] [interface=string] [mac=string]`
+`stack remove host interface [host ...] [all=bool] [interface=string] [mac=string]`
 
 ### Description
 
 Remove a network interface definition for a host.
+
+### Arguments
+
+* `{host}`
+
+   One or more named hosts.
+
+
+### Parameters
+* `{all=bool}`
+* `{interface=string}`
+* `{mac=string}`
+
+   MAC address of the interface that should be removed.
 
 ### Examples
 

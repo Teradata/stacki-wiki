@@ -8,6 +8,13 @@
 
 Remove a cart from both the database and filesystem.
 
+### Arguments
+
+* `[cart]`
+
+   List of carts.
+
+
 ### Examples
 
 * `stack remove cart devel`

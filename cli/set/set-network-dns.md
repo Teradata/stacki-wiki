@@ -12,6 +12,19 @@ Enables or Disables DNS for one of more networks.
         will have their hostnames and IP addresses in a DNS server running
         on the Frontend.  This will serve both forward and reverse lookups.
 
+### Arguments
+
+* `{network}`
+
+   The names of zero of more networks. If no network is specified
+        the DNS is set for all existing networks.
+
+
+### Parameters
+* `[dns=boolean]`
+
+   Set to True to enable DNS for the given networks.
+
 ### Examples
 
 * `stack set network dns private dns=false`

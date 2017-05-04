@@ -9,6 +9,13 @@
 Take rows from a spreadsheet that describe how a host's disk partitions
 	should be configured and then place those values into the database.
 
+### Parameters
+* `{file=string}`
+* `{processor=string}`
+
+   The processor used to parse the file.
+	Default: default.
+
 ### Examples
 
 * `stack load storage partition file=partitions.csv`

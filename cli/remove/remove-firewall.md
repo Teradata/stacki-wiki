@@ -9,4 +9,9 @@
 Remove a global firewall rule. To remove a rule, you must supply
 	the name of the rule.
 
+### Parameters
+* `[rulename=string]`
+
+   Name of the rule
+
 

@@ -8,6 +8,12 @@
 
 Sets an Access control pattern.
 
+### Parameters
+* `[command=string]`
+* `[group=string]`
+
+   Group name / ID for access.
+
 ### Examples
 
 * `stack set access command="*" group=apache`

@@ -8,6 +8,18 @@
 
 Add a box specification to the database.
 
+### Arguments
+
+* `[box]`
+
+   Name of the new box.
+
+
+### Parameters
+* `{os=string}`
+
+   OS associated with the box. Default is 'redhat'
+
 ### Examples
 
 * `stack add box develop`

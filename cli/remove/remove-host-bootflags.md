@@ -8,6 +8,14 @@
 
 Remove the kernel boot flags for a list of hosts.
 
+### Arguments
+
+* `[host]`
+
+   List of hosts to remove kernel boot flag definitions. If no hosts are
+	listed, then the global definition is removed.
+
+
 ### Examples
 
 * `stack remove host bootflags backend-0-0`

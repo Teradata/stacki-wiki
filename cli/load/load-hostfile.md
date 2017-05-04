@@ -8,6 +8,13 @@
 
 Load host info into the database.
 
+### Parameters
+* `{file=string}`
+* `{processor=string}`
+
+   The processor used to parse the file and to load the data into the
+	database. Default: default.
+
 ### Examples
 
 * `stack load hostfile file=hosts.csv`

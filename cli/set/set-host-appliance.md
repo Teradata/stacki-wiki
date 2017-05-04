@@ -8,4 +8,16 @@
 
 Set the Appliance for a list of hosts.
 
+### Arguments
+
+* `[host]`
+
+   One or more host names.
+
+
+### Parameters
+* `[appliance=string]`
+
+   Appliance name (e.g. "backend").
+
 

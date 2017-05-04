@@ -8,6 +8,13 @@
 
 Create a report that contains the static routes for a host.
 
+### Arguments
+
+* `[host]`
+
+   Host name of machine
+
+
 ### Examples
 
 * `stack report host route compute-0-0`

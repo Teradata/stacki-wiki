@@ -9,6 +9,23 @@
 Enable an available pallet. The pallet must already be copied on the
 	system using the command "stack add pallet".
 
+### Arguments
+
+* `[pallet]`
+
+   List of pallets to enable. This should be the pallet base name (e.g.,
+	stacki, boss, os).
+
+
+### Parameters
+* `{arch=string}`
+* `{box=string}`
+* `{release=string}`
+* `{version=string}`
+
+   The version number of the pallet to be enabled. If no version number is
+	supplied, then all versions of a pallet will be enabled.
+
 ### Examples
 
 * `stack enable pallet kernel`

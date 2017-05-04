@@ -8,6 +8,18 @@
 
 Sets the DNS zone (domain name) for a network.
 
+### Arguments
+
+* `[network]`
+
+   The name of the network.
+
+
+### Parameters
+* `[zone=string]`
+
+   Zone that the named network should have.
+
 ### Examples
 
 * `stack set network zone ipmi zone=ipmi`

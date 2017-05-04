@@ -8,6 +8,11 @@
 
 Remove a global static route.
 
+### Parameters
+* `[address=string]`
+
+   The address of the static route to remove.
+
 ### Examples
 
 * `stack remove route address=1.2.3.4`

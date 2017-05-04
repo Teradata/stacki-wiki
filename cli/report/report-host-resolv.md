@@ -8,4 +8,11 @@
 
 Generate the /etc/resolv.conf for a host
 
+### Arguments
+
+* `[host]`
+
+   Host name of machine
+
+
 

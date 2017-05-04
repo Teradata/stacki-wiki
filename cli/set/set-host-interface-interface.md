@@ -8,6 +8,19 @@
 
 Sets the logical interface of a mac address for particular hosts.
 
+### Arguments
+
+* `[host]`
+
+   One or more named hosts.
+
+
+### Parameters
+* `[interface=string]`
+* `[mac=string]`
+
+   MAC address of the interface.
+
 ### Examples
 
 * `stack set host interface interface backend-0-0 00:0e:0c:a7:5d:ff eth1`

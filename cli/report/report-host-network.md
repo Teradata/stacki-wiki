@@ -9,6 +9,13 @@
 Outputs the network configuration file for a host (on RHEL-based
 	machines, this is the contents of the file /etc/sysconfig/network).
 
+### Arguments
+
+* `[host]`
+
+   Hostname.
+
+
 ### Examples
 
 * `stack report host network compute-0-0`

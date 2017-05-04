@@ -6,8 +6,16 @@
 
 ### Description
 
-List the membership, CPU count and physical position info for
+List the Appliance, CPU count and physical position info for
 	a list of hosts.
+
+### Arguments
+
+* `{host}`
+
+   Zero, one or more host names. If no host names are supplied, info about
+	all the known hosts is listed.
+
 
 ### Examples
 

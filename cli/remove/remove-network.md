@@ -11,6 +11,13 @@ Remove network definition from the system. If there are still nodes
 	are trying to remove, the command will not remove the network
 	definition and print a message saying it cannot remove the network.
 
+### Arguments
+
+* `[network]`
+
+   One or more network names.
+
+
 ### Examples
 
 * `stack remove network private`

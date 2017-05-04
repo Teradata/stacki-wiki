@@ -8,6 +8,20 @@
 
 Sets the channel for a named interface.
 
+### Arguments
+
+* `{host}`
+
+   One or more hosts.
+
+
+### Parameters
+* `[channel=string]`
+* `{interface=string}`
+* `{mac=string}`
+
+   MAC address of the interface.
+
 ### Examples
 
 * `stack set host interface channel backend-0-0 interface=eth1 channel="bond0"`

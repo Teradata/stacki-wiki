@@ -8,6 +8,27 @@
 
 Add a firewall rule for an appliance type.
 
+### Arguments
+
+* `[appliance]`
+
+   Appliance type (e.g., "backend").
+
+
+### Parameters
+* `{action=string}`
+* `{chain=string}`
+* `{network=string}`
+* `{output-network=string}`
+* `{protocol=string}`
+* `{rulename=string}`
+* `{service=string}`
+* `{table=string}`
+
+   The table to add the rule to. Valid values are 'filter',
+	'nat', 'mangle', and 'raw'. If this parameter is not
+	specified, it defaults to 'filter'
+
 ### Examples
 
 * `stack add appliance firewall login network=private service="all" protocol="all" action="ACCEPT" chain="FORWARD"`

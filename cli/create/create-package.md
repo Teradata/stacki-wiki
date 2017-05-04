@@ -11,6 +11,16 @@ Create a RedHat or Solaris package from a given directory.  The
 	directory, or a combination of the directory basename and the
 	provided prefix.
 
+### Parameters
+* `{dir=string}`
+* `{name=string}`
+* `{prefix=string}`
+* `{release=string}`
+* `{rpmextra=string}`
+* `{version=string}`
+
+   Version number of the created package (default is current version of Rocks+)
+
 ### Examples
 
 * `stack create package dir=/opt/stream name=stream`

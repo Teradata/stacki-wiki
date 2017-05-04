@@ -9,6 +9,22 @@
 List the storage partition configuration for one of the following:
 	global, os, appliance or host.
 
+### Arguments
+
+* `{host}`
+
+   This argument can be nothing, a valid 'os' (e.g., 'redhat'), a valid
+	appliance (e.g., 'compute') or a host.
+	If nothing is supplied, then the global storage partition
+	configuration will be output.
+
+
+### Parameters
+* `[globalOnly=bool]`
+
+   Flag that specifies if only the 'global' partition entries should
+	be displayed.
+
 ### Examples
 
 * `stack list storage partition compute-0-0`

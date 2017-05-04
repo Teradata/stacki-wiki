@@ -17,6 +17,19 @@ Create a pallet ISO image from the packages found in the
 	If using a url, "newest" and "urlonly" have no effect. The entire
 	repo will be downloaded.
 
+### Parameters
+* `{arch=string}`
+* `{name=string}`
+* `{newest=boolean}`
+* `{repoconfig=string}`
+* `{repoid=string}`
+* `{url=string}`
+* `{urlonly=boolean}`
+* `{version=string}`
+
+   The version number of the created pallet. (default = the version of 
+	Rocks running on this machine).
+
 ### Examples
 
 * `stack create mirror url=http://mirrors.kernel.org/centos/6.5/updates/x86_64/Packages name=updates version=6.5`

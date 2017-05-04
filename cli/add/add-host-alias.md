@@ -8,6 +8,18 @@
 
 Adds an alias to a host
 
+### Arguments
+
+* `[host]`
+
+   Host name of machine
+
+
+### Parameters
+* `[alias=string]`
+
+   Alias for the host.
+
 ### Examples
 
 * `stack add host alias backend-0-0 alias=b00`

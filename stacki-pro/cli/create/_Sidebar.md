@@ -1,0 +1,12 @@
+[Command Line Interface](CLI-documentation)
+
+* [add](add-commands)
+* [create](create-commands)
+  * [create spreadsheet hostfile](create-spreadsheet-hostfile)
+* [enable](enable-commands)
+* [list](list-commands)
+* [remove](remove-commands)
+* [report](report-commands)
+* [run](run-commands)
+* [set](set-commands)
+* [sync](sync-commands)

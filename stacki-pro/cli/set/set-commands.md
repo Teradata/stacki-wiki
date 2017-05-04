@@ -1,3 +1,3 @@
 # set commands
 
-  * [set user admin](set-user-admin)
+  * [set api user admin](set-api-user-admin)

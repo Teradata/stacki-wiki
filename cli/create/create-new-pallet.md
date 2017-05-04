@@ -17,6 +17,13 @@ Create a skeleton directory structure for a pallet
 
 	Refer to Pallet Developer Guide for more information.
 
+### Parameters
+* `[name=string]`
+* `{version=string}`
+
+   Version of the pallet. Typically the version of the
+	application to be palletized.
+
 ### Examples
 
 * `stack create new pallet name=valgrind version=3.10.1`

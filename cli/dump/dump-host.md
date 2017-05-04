@@ -8,6 +8,14 @@
 
 Dump the host information as rocks commands.
 
+### Arguments
+
+* `{host}`
+
+   Zero, one or more host names. If no host names are supplied, 
+	information for all hosts will be listed.
+
+
 ### Examples
 
 * `stack dump host compute-0-0`

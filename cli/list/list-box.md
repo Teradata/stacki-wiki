@@ -8,6 +8,13 @@
 
 Lists the pallets and carts that are associated with boxes.
 
+### Arguments
+
+* `{box}`
+
+   Optional list of box names.
+
+
 ### Examples
 
 * `stack list box`

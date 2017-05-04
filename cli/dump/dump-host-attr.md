@@ -8,6 +8,13 @@
 
 Dump the set of attributes for hosts.
 
+### Arguments
+
+* `{host}`
+
+   Host name of machine
+
+
 ### Examples
 
 * `stack dump host attr compute-0-0`

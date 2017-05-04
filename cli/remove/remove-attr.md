@@ -8,6 +8,11 @@
 
 Remove a global attribute.
 
+### Parameters
+* `[attr=string]`
+
+   The attribute name that should be removed.
+
 ### Examples
 
 * `stack remove attr attr=cpus`

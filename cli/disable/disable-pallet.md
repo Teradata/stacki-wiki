@@ -9,6 +9,22 @@
 Disable an available pallet. The pallet must already be copied on the
 	system using the command "stack add pallet".
 
+### Arguments
+
+* `[pallet]`
+
+   List of pallets to disable. This should be the pallet base name (e.g.,
+	base, hpc, kernel).
+
+
+### Parameters
+* `{arch=string}`
+* `{box=string}`
+* `{version=string}`
+
+   The version number of the pallet to be disabled. If no version number is
+	supplied, then all versions of a pallet will be disabled.
+
 ### Examples
 
 * `stack disable pallet kernel`

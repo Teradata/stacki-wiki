@@ -8,6 +8,24 @@
 
 Add a channel bonded interface for a host
 
+### Arguments
+
+* `[host]`
+
+   Host name of machine
+
+
+### Parameters
+* `{channel=string}`
+* `{interfaces=string}`
+* `{ip=string}`
+* `{name=string}`
+* `{network=string}`
+* `{options=string}`
+
+   Bonding Options. These are applied to the bonding device
+	as BONDING_OPTS in the ifcfg-bond* files.
+
 ### Examples
 
 * `stack add host bonded backend-0-0 channel=bond0   interfaces=eth0,eth1 ip=10.1.255.254 network=private`

@@ -8,6 +8,20 @@
 
 Sets the logical name of a network interface on a particular host.
 
+### Arguments
+
+* `[host]`
+
+   Host name.
+
+
+### Parameters
+* `[name=string]`
+* `{interface=string}`
+* `{mac=string}`
+
+   MAC address of the interface.
+
 ### Examples
 
 * `stack set host interface name backend-0-0 interface=eth1 name=cluster-0-0`

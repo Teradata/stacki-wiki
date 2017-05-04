@@ -9,6 +9,16 @@
 List the storage controller configuration for one of the following:
 	global, os, appliance or host.
 
+### Arguments
+
+* `{host}`
+
+   This argument can be nothing, a valid 'os' (e.g., 'redhat'), a valid
+	appliance (e.g., 'compute') or a host.
+	If nothing is supplied, then the global storage controller
+	configuration will be output.
+
+
 ### Examples
 
 * `stack list storage controller compute-0-0`

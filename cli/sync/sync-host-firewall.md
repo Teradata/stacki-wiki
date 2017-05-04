@@ -8,6 +8,13 @@
 
 Reconfigure and optionally restart firewall for named hosts.
 
+### Parameters
+* `{restart=boolean}`
+
+   If "yes", then restart iptables after the configuration files are
+	applied on the host.
+	The default is: yes.
+
 ### Examples
 
 * `stack sync host firewall compute-0-0`

@@ -8,6 +8,19 @@
 
 Set the install action for a list of hosts.
 
+### Arguments
+
+* `[host]`
+
+   One or more host names.
+
+
+### Parameters
+* `[action=string]`
+
+   The install action to assign to each host. To get a list of all actions,
+	execute: "stack list bootaction".
+
 ### Examples
 
 * `stack set host installaction backend-0-0 action=install`

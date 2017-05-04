@@ -8,6 +8,12 @@
 
 Remove Access control pattern.
 
+### Parameters
+* `[command=string]`
+* `[group=string]`
+
+   Group name / ID for access.
+
 ### Examples
 
 * `stack remove access command="*" group=apache`

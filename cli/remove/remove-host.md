@@ -9,6 +9,13 @@
 Remove a host from the database. This command will remove all
 	related database rows for each specified host.
 
+### Arguments
+
+* `[host]`
+
+   List of hosts to remove from the database.
+
+
 ### Examples
 
 * `stack remove host backend-0-0`

@@ -2,11 +2,30 @@
 
 ### Usage
 
-`stack add storage partition {scope} {options=string} [device=string] [mountpoint=string] [size=int] [type=string]`
+`stack add storage partition {scope} {options=string} [device=string] [mountpoint=string] [partid=string] [size=int] [type=string]`
 
 ### Description
 
 Add a partition configuration to the database.
+
+### Arguments
+
+* `[scope]`
+
+   Zero or one argument. The argument is the scope: a valid os (e.g.,
+	'redhat'), a valid appliance (e.g., 'compute') or a valid host
+	(e.g., 'compute-0-0). No argument means the scope is 'global'.
+
+
+### Parameters
+* `[options=string]`
+* `{device=string}`
+* `{mountpoint=string}`
+* `{partid=string}`
+* `{size=int}`
+* `{type=string}`
+
+   Type of partition E.g: ext4, ext3, xfs, raid, etc.
 
 ### Examples
 
