@@ -1,6 +1,6 @@
 ### Content
 
-* controller
+* Controller
     * [hp-raid1+raid10](hp-raid1+raid10)
     * [hp-raid10-advanced](hp-raid10-advanced)
     * [hp-raid5](hp-raid5)
@@ -17,13 +17,13 @@
     * [storcli-raid50](storcli-raid50)
     * [storcli-raid6](storcli-raid6)
     * [storcli-raid60](storcli-raid60)
-* partition
+* Partition
     * [lvm-complex](lvm-complex)
     * [lvm](lvm)
     * [quoted-options](quoted-options)
     * [sw-raid+lvm](sw-raid+lvm)
     * [sw-raid](sw-raid)
-* network
+* Network
     * [bonding+bridging+vlan](bonding+bridging+vlan)
     * [bonding+bridging](bonding+bridging)
     * [bonding+vlan](bonding+vlan)
