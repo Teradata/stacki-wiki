@@ -45,7 +45,7 @@ works great.
 To start discovery mode, log into the frontend as root and run the following:
 
 ```
-# insert-ethers
+# discover-nodes
 ```
 
 This will bring up a screen that shows a list of appliances available
@@ -77,7 +77,7 @@ to the hostname assigned to the new backend node.
 ![insert-ethers-5](images/insert-ethers/insert-ethers-5.png)
 
 Continue to turn on any other machines you want installed and hit _F8_
-when done to quit "insert-ethers."
+when done to quit "discover-nodes."
 
 ### Spreadsheet
 

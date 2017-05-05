@@ -186,11 +186,10 @@ This OS pallet will be used as the base OS to install onto the backend nodes.
 This will be either the CentOS installation DVD(s) or the Red Hat installation
 DVD.
 
-For example, to add the CentOS 6.8 DVDs to the Stacki frontend, first download the
-CentOS DVDs to the frontend then execute:
+For example, to add the CentOS 7.3 DVD to the Stacki frontend, first download the
+CentOS 7 Everything ISO (CentOS-7-x86_64-Everything-1611.iso) to the frontend then execute:
 
-    # stack add pallet CentOS-6.8-x86_64-bin-DVD1.iso
-    # stack add pallet CentOS-6.8-x86_64-bin-DVD2.iso
+    # stack add pallet CentOS-7-x86_64-Everything-1611.iso
 
 Then _enable_ the CentOS pallet (this makes the CentOS repository on the Stacki
 frontend available for backend installs):
@@ -201,8 +200,8 @@ frontend available for backend installs):
 Should produce output similar to:
 
 ```
-NAME    VERSION RELEASE ARCH   OS     BOXES  
-stacki: 3.2     6.x     x86_64 redhat default
-CentOS: 6       6.x     x86_64 redhat default
+NAME    VERSION                 RELEASE ARCH   OS     BOXES
+stacki: 4.0_20170414_c4aff2a    7.x     x86_64 redhat default
+CentOS: 7                       7.x     x86_64 redhat default
 ```
 
