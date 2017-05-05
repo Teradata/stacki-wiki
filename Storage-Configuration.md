@@ -113,54 +113,45 @@ spreadsheet with the following columns:
 1. **Array Id**. The order in which the RAID groups will be constructed. 
 1. **Options**. Any additional options to be passed on to the ```storcli``` or ```hpssacli``` command.
 
-A
-[sample spreadsheet](https://docs.google.com/spreadsheets/d/1o2ZxQUN5ZLAnOxs-A8wiWIzJ0TVLU3uQ2zKGpIs4CU0/pubhtml)
-is shown below.
-
-| <sub>Name</sub> | <sub>Slot</sub> | <sub>Raid Level</sub> | <sub>Array Id</sub> | <sub>Options</sub> | 
-| ---- | ---- | ---------- | -------- | ------- | 
-<sub>global</sub> | <sub>0</sub> | <sub>1</sub> | <sub>1</sub> |  | 
- | <sub>1</sub> | <sub>1</sub> | <sub>1</sub> |  | 
- | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> |  | 
-<sub>backend</sub> | <sub>0</sub> | <sub>5</sub> | <sub>2</sub> |  | 
- | <sub>1</sub> | <sub>5</sub> | <sub>2</sub> |  | 
- | <sub>2</sub> | <sub>5</sub> | <sub>2</sub> |  | 
- | <sub>3</sub> | <sub>5</sub> | <sub>2</sub> |  | 
- | <sub>4</sub> | <sub>5</sub> | <sub>2</sub> |  | 
- | <sub>5</sub> | <sub>1</sub> | <sub>1</sub> |  | 
- | <sub>6</sub> | <sub>6</sub> | <sub>4</sub> |  | 
- | <sub>7</sub> | <sub>6</sub> | <sub>4</sub> |  | 
- | <sub>8</sub> | <sub>6</sub> | <sub>4</sub> |  | 
- | <sub>9</sub> | <sub>6</sub> | <sub>4</sub> |  | 
- | <sub>10</sub> | <sub>6</sub> | <sub>4</sub> |  | 
- | <sub>11</sub> | <sub>6</sub> | <sub>4</sub> |  | 
- | <sub>12</sub> | <sub>6</sub> | <sub>4</sub> |  | 
- | <sub>13</sub> | <sub>Hotspare</sub> | <sub>4</sub> |  | 
- | <sub>14</sub> | <sub>Hotspare</sub> | <sub>4</sub> |  | 
- | <sub>15</sub> | <sub>1</sub> | <sub>1</sub> |  | 
- | <sub>16</sub> | <sub>5</sub> | <sub>3</sub> |  | 
- | <sub>17</sub> | <sub>5</sub> | <sub>3</sub> |  | 
- | <sub>18</sub> | <sub>5</sub> | <sub>3</sub> |  | 
- | <sub>19</sub> | <sub>5</sub> | <sub>3</sub> |  | 
- | <sub>20</sub> | <sub>5</sub> | <sub>3</sub> |  | 
- | <sub>21</sub> | <sub>5</sub> | <sub>3</sub> |  | 
- | <sub>22</sub> | <sub>Hotspare</sub> | <sub>global</sub> |  | 
- | <sub>23</sub> | <sub>Hotspare</sub> | <sub>global</sub> |  | 
-<sub>backend-hp-0-2</sub> | <sub>1</sub> | <sub>10</sub> | <sub>1</sub> |  | 
- | <sub>2</sub> | <sub>10</sub> | <sub>1</sub> |  | 
- | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> |  | 
- | <sub>4</sub> | <sub>10</sub> | <sub>1</sub> |  | 
- | <sub>5</sub> | <sub>1</sub> | <sub>2</sub> | <sub>size=232000 forced</sub> | 
- | <sub>6</sub> | <sub>1</sub> | <sub>2</sub> |  | 
- | <sub>5</sub> | <sub>1</sub> | <sub>3</sub> |  | 
- | <sub>6</sub> | <sub>1</sub> | <sub>3</sub> |  | 
- | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> |  | 
-<sub>backend-lsi-0-1</sub> | <sub>0</sub> | <sub>10</sub> | <sub>1</sub> | <sub>pdperarray=2</sub> | 
- | <sub>1</sub> | <sub>10</sub> | <sub>1</sub> |  | 
- | <sub>2</sub> | <sub>10</sub> | <sub>1</sub> |  | 
- | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> |  | 
- | <sub>4</sub> | <sub>1</sub> | <sub>2</sub> |  | 
- | <sub>5</sub> | <sub>1</sub> | <sub>2</sub> |  |
+A sample spreadsheet is shown below. This spreadsheet is also available on your frontend
+in `/opt/stack/share/examples/controller/`.
+| <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
+| ---- | ---- | ---------- | -------- | ------- |
+| <sub>global</sub> | <sub>0</sub> | <sub>1</sub> | <sub>1</sub> |  |
+|  | <sub>1</sub> | <sub>1</sub> | <sub>1</sub> |  |
+|  | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> |  |
+| <sub>backend-megaraid-0-0</sub> | <sub>0</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>1</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>2</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>3</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>4</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>5</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>6</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>7</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>8</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>9</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>10</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>11</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>12</sub> | <sub>Hotspare</sub> | <sub>1</sub> |  |
+| <sub>backend-lsi-0-1</sub> | <sub>0</sub> | <sub>1</sub> | <sub>2</sub> | <sub>size=136gb force</sub> |
+|  | <sub>13</sub> | <sub>1</sub> | <sub>2</sub> |  |
+|  | <sub>1</sub> | <sub>1</sub> | <sub>3</sub> |  |
+|  | <sub>2</sub> | <sub>1</sub> | <sub>3</sub> |  |
+|  | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> |  |
+|  | <sub>4</sub> | <sub>10</sub> | <sub>1</sub> |  |
+|  | <sub>5</sub> | <sub>10</sub> | <sub>1</sub> |  |
+|  | <sub>6</sub> | <sub>hotspare</sub> | <sub>1</sub> |  |
+|  | <sub>7</sub> | <sub>10</sub> | <sub>1</sub> |  |
+| <sub>backend-hp-0-2</sub> | <sub>1</sub> | <sub>10</sub> | <sub>1</sub> | <sub>size=200000 forced</sub> |
+|  | <sub>2</sub> | <sub>10</sub> | <sub>1</sub> |  |
+|  | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> |  |
+|  | <sub>4</sub> | <sub>10</sub> | <sub>1</sub> |  |
+|  | <sub>1</sub> | <sub>10</sub> | <sub>2</sub> |  |
+|  | <sub>2</sub> | <sub>10</sub> | <sub>2</sub> |  |
+|  | <sub>3</sub> | <sub>10</sub> | <sub>2</sub> |  |
+|  | <sub>4</sub> | <sub>10</sub> | <sub>2</sub> |  |
+|  | <sub>5</sub> | <sub>0</sub> | <sub>3</sub> | <sub>ssdoverprovisioningoptimization=on forced</sub> |
+|  | <sub>6</sub> | <sub>0</sub> | <sub>3</sub> | <sub>ssdoverprovisioningoptimization=on forced</sub> |
 
 The _Name_ column can contain a specific host name (e.g., _backend-hp-0-2_), an
 appliance type (e.g., _backend_) or it can be set to _global_.

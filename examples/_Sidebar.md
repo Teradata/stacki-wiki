@@ -17,6 +17,7 @@
     * [storcli-raid50](storcli-raid50)
     * [storcli-raid6](storcli-raid6)
     * [storcli-raid60](storcli-raid60)
+    * [simpleraid1](simpleraid1)
 * Partition
     * [lvm-complex](lvm-complex)
     * [lvm](lvm)
