@@ -115,6 +115,7 @@ spreadsheet with the following columns:
 
 A sample spreadsheet is shown below. This spreadsheet is also available on your frontend
 in `/opt/stack/share/examples/controller/`.
+
 | <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
 | ---- | ---- | ---------- | -------- | ------- |
 | <sub>global</sub> | <sub>0</sub> | <sub>1</sub> | <sub>1</sub> |  |
