@@ -32,3 +32,4 @@
 * [multi](multi)
 * [vlan](vlan)
 * [networkfile](networkfile)
+* [basic](basic)
