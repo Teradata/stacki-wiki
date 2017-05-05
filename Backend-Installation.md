@@ -100,13 +100,15 @@ The Host CSV file needs to have the following columns:
 1. **MAC**. Ethernet address.
 1. **Interface**. Ethernet device name (e.g. em1).
 1. **Network**. Network name for the interface (e.g. private).
+1. **Default**. Refers to the default interface for hostname assignment and default routing
 
-A 
-[sample spreadsheet](https://docs.google.com/spreadsheets/d/19xk_tlvD5dYgLxfZpQVuVtAUGdKi3KCoqRVFVMTJA7w/edit?usp=sharing)
-is shown below. 
+A simple, basic spreadsheet is shown below.
 
-![](images/sample-host-configuration-csv.png) 
-
+| <sub>NAME</sub> | <sub>INTERFACE HOSTNAME</sub> | <sub>DEFAULT</sub> | <sub>APPLIANCE</sub> | <sub>RACK</sub> | <sub>RANK</sub> | <sub>IP</sub> | <sub>MAC</sub> | <sub>INTERFACE</sub> | <sub>NETWORK</sub> | <sub>CHANNEL</sub> | <sub>OPTIONS</sub> | <sub>VLAN</sub> | <sub>INSTALLACTION</sub> | <sub>RUNACTION</sub> | <sub>GROUPS</sub> | <sub>BOX</sub> |
+| ---- | ------------------ | ------- | --------- | ---- | ---- | -- | --- | --------- | ------- | ------- | ------- | ---- | ------------- | --------- | ------ | --- |
+| <sub>backend-0-0</sub> |  | <sub>True</sub> | <sub>backend</sub> | <sub>1</sub> | <sub>1</sub> | <sub>192.168.19.1</sub> | <sub>08:00:27:fc:07:45</sub> | <sub>eth0</sub> | <sub>private</sub> |  |  |  | <sub>install</sub> | <sub>os</sub> |  | <sub>default</sub> |
+| <sub>backend-0-1</sub> |  | <sub>True</sub> | <sub>backend</sub> | <sub>1</sub> | <sub>2</sub> | <sub>192.168.19.2</sub> | <sub>08:00:27:ed:dc:3e</sub> | <sub>eth0</sub> | <sub>private</sub> |  |  |  | <sub>install</sub> | <sub>os</sub> |  | <sub>default</sub> |
+| <sub>backend-0-2</sub> |  | <sub>True</sub> | <sub>backend</sub> | <sub>1</sub> | <sub>3</sub> | <sub>192.168.19.3</sub> | <sub>08:00:27:2f:72:29</sub> | <sub>eth0</sub> | <sub>private</sub> |  |  |  | <sub>install</sub> | <sub>os</sub> |  | <sub>default</sub> |
 
 Once the CSV file is created and copied to the frontend it can be
 loaded by root.
