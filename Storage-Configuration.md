@@ -113,8 +113,7 @@ spreadsheet with the following columns:
 1. **Array Id**. The order in which the RAID groups will be constructed. 
 1. **Options**. Any additional options to be passed on to the ```storcli``` or ```hpssacli``` command.
 
-A sample spreadsheet is shown below. This spreadsheet is also available on your frontend
-in `/opt/stack/share/examples/controller/`.
+A sample spreadsheet is shown below.
 
 | <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
 | ---- | ---- | ---------- | -------- | ------- |
@@ -154,6 +153,10 @@ in `/opt/stack/share/examples/controller/`.
 |  | <sub>5</sub> | <sub>0</sub> | <sub>3</sub> | <sub>ssdoverprovisioningoptimization=on forced</sub> |
 |  | <sub>6</sub> | <sub>0</sub> | <sub>3</sub> | <sub>ssdoverprovisioningoptimization=on forced</sub> |
 
+
+> **Note**:  Example spreadsheets for controller configuraion are also available
+  on your frontend in `/opt/stack/share/examples/controller/`.
+
 The _Name_ column can contain a specific host name (e.g., _backend-hp-0-2_), an
 appliance type (e.g., _backend_) or it can be set to _global_.
 
@@ -178,10 +181,10 @@ appliance type (e.g., _backend_) or it can be set to _global_.
    > configuration utility.
 
 1. The next configuration is for the host named _backend-hp-0-2_.
-   1. The first logical disk (```sda```) is a RAID 10 set composed of disks 1 through 4.
-   1. The second logical disk(```sdb```) is a RAID 1 set composed of disks 5 and 6 with a size of 232 GB.
-   1. The third logical disk(```sdc```) is a RAID 1 set, also composed of disks 5 and 6, using up the remainder of the disks.
-   1. The remaining disks (the disks in slots 7 and up) will be configured as individual RAID 0 disks.
+   1. The first logical disk (```sda```) is a RAID 10 set composed of disks 1 through 4 with size set to 200 GB
+   1. The second logical disk(```sdb```) is a RAID 10 set composed of disks 1 and 4 using remainder of the disks.
+   1. The third logical disk(```sdc```) is a RAID 0 set, with disks 5 and 6, which happen to be SSD drives, and so require
+      the `ssdoverprovisioningoptimization=on forced` option.
    > **Note**: This configuration is for an HP controller that uses `hpssacli` as the primary
    > configuration utility.
 
