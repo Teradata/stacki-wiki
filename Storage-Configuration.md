@@ -121,7 +121,7 @@ in `/opt/stack/share/examples/controller/`.
 | <sub>global</sub> | <sub>0</sub> | <sub>1</sub> | <sub>1</sub> |  |
 |  | <sub>1</sub> | <sub>1</sub> | <sub>1</sub> |  |
 |  | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> |  |
-| <sub>backend-megaraid-0-0</sub> | <sub>0</sub> | <sub>60</sub> | <sub>1</sub> |  |
+| <sub>backend</sub> | <sub>0</sub> | <sub>60</sub> | <sub>1</sub> |  |
 |  | <sub>1</sub> | <sub>60</sub> | <sub>1</sub> |  |
 |  | <sub>2</sub> | <sub>60</sub> | <sub>1</sub> |  |
 |  | <sub>3</sub> | <sub>60</sub> | <sub>1</sub> |  |
@@ -170,11 +170,20 @@ appliance type (e.g., _backend_) or it can be set to _global_.
    1. The fourth logical disk (```sdd```) will be a RAID 6 composed of the disks in slots 6 through 12 and the disks in slots 13 and 14 will be hot spares associated with only this array.
    1. The disks in slots 22 and 23 are designated as hot spares that can be used as replacements for any failed drive in any array.
 
-1. The third configuration is for the host named _backend-hp-0-2_.
+1. The next configuration is for the host named _backend-lsi-0-1_.
+   1. This first logical disk(```sda```) is a RAID 10 set composed of disks 3 through 7
+   1. The second logical disk(```sdb```) is a RAID 1 set with disks 0, and 13 with a size of 136 GB.
+   1. The third logical disk(```sdc```) is a RAID 1 set with disks 1, and 2.
+   > **Note**: This configuration is for an LSI controller that uses `storcli` as the primary
+   > configuration utility.
+
+1. The next configuration is for the host named _backend-hp-0-2_.
    1. The first logical disk (```sda```) is a RAID 10 set composed of disks 1 through 4.
    1. The second logical disk(```sdb```) is a RAID 1 set composed of disks 5 and 6 with a size of 232 GB.
    1. The third logical disk(```sdc```) is a RAID 1 set, also composed of disks 5 and 6, using up the remainder of the disks.
    1. The remaining disks (the disks in slots 7 and up) will be configured as individual RAID 0 disks.
+   > **Note**: This configuration is for an HP controller that uses `hpssacli` as the primary
+   > configuration utility.
 
 The last configuration (for host _backend-hp-0-2_) is considered advanced configuration. This is due to slots 5 and 6 being listed multiple times in the spreadsheet.
  
