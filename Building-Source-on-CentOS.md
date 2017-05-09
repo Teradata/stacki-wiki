@@ -32,9 +32,9 @@ of usable space.
     ```
     # rm src/order-stacki.mk
     ```
-1. Source /etc/profile.d/stacki-binaries.sh file
+1. Source /etc/profile.d/stack-build.sh file
     ```
-    # source /etc/profile.d/stacki-binaries.sh
+    # source /etc/profile.d/stack-build.sh
     ```
 1.  Make RPMS for all packages
     > **Note**: Some packages may fail to build.
