@@ -49,14 +49,14 @@ of usable space.
    all the built RPMS in it. The next step is to create a
    yum-compatible repository.
    ```
-   # createrepo -o build-stacki-master build-stacki-master/RPMS
+   # createrepo build-stacki-master/RPMS
    ```
 
 1. Write `/etc/yum.repos.d/buildstacki.repo` file with the following content.
     ```
     [buildstacki]
     name=Build Stacki
-    baseurl=file:///export/src/stacki/build-stacki-master
+    baseurl=file:///export/src/stacki/build-stacki-master/RPMS/
     enabled=1
     gpgcheck=0
     ```
