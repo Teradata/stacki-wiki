@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Rename a host.
-
-
 
 ### Arguments
 

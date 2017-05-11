@@ -7,9 +7,7 @@
 ### Description
 
 The Help Command print the usage of all the registered
-Commands.
-
-
+	Commands.
 
 ### Parameters
 * `{subdir=string}`

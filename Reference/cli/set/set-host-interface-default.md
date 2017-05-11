@@ -6,11 +6,8 @@
 
 ### Description
 
-
 Designates one network as the default route for a set of hosts.
-Either the interface or network paramater is required.
-
-
+        Either the interface or network paramater is required.
 
 ### Arguments
 

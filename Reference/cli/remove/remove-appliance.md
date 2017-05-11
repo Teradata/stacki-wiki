@@ -6,13 +6,10 @@
 
 ### Description
 
-
 Remove an appliance definition from the system. This can be
-called with just the appliance or it can be further
-qualified by supplying the root XML node name and/or the
-graph XML file name.
-
-
+	called with just the appliance or it can be further
+	qualified by supplying the root XML node name and/or the
+	graph XML file name.
 
 ### Arguments
 

@@ -6,12 +6,9 @@
 
 ### Description
 
-
-Iterate sequentially over a list of hosts.  This is used to run
-a shell command on the frontend with with '%' wildcard expansion for
-every host specified.
-
-
+Iterate sequentially over a list of hosts.  This is used to run 
+	a shell command on the frontend with with '%' wildcard expansion for
+	every host specified.
 
 ### Arguments
 

@@ -6,11 +6,8 @@
 
 ### Description
 
-
 List the storage controller configuration for one of the following:
-global, os, appliance or host.
-
-
+	global, os, appliance or host.
 
 ### Arguments
 

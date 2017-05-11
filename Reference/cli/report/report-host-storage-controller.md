@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Output the storage controller configuration for a specific host
-
-
 
 ### Arguments
 

@@ -6,13 +6,11 @@
 
 ### Description
 
-
 Adds Group.
-Groups are generic sets of hosts, they have no semantics other
-than enforcing a common group membership. Hosts may belong to
-zero or more groups, and by default belong to none.
 
-
+        Groups are generic sets of hosts, they have no semantics other
+        than enforcing a common group membership. Hosts may belong to
+        zero or more groups, and by default belong to none.
 
 ### Arguments
 

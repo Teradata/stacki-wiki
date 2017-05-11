@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets an Access control pattern.
-
-
 
 ### Parameters
 * `[command=string]`

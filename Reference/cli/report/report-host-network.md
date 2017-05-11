@@ -6,11 +6,8 @@
 
 ### Description
 
-
 Outputs the network configuration file for a host (on RHEL-based
-machines, this is the contents of the file /etc/sysconfig/network).
-
-
+	machines, this is the contents of the file /etc/sysconfig/network).
 
 ### Arguments
 

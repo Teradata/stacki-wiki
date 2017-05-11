@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Add a partition configuration to the database.
-
-
 
 ### Arguments
 

@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Lists the set of global attributes.
-
-
 
 ### Parameters
 * `{attr=string}`

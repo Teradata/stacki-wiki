@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Set the install action for a list of hosts.
-
-
 
 ### Arguments
 

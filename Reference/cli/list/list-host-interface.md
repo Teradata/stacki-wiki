@@ -6,12 +6,9 @@
 
 ### Description
 
-
 Lists the interface definitions for hosts. For each host supplied on
-the command line, this command prints the hostname and interface
-definitions for that host.
-
-
+	the command line, this command prints the hostname and interface
+	definitions for that host.
 
 ### Arguments
 

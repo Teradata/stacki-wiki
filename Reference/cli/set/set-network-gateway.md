@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets the network gateway of a network.
-
-
 
 ### Arguments
 

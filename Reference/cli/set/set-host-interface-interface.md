@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets the logical interface of a mac address for particular hosts.
-
-
 
 ### Arguments
 

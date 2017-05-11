@@ -6,11 +6,8 @@
 
 ### Description
 
-
 Take rows from a spreadsheet that describe how a host's disk controller
-should be configured and then place those values into the database.
-
-
+	should be configured and then place those values into the database.
 
 ### Parameters
 * `{file=string}`

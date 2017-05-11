@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Remove an OS definition from the system.
-
-
 
 ### Arguments
 

@@ -6,9 +6,7 @@
 
 ### Description
 
-
 Add Partitioning information to the database.
-
 
 ### Arguments
 

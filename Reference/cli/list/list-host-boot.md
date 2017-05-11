@@ -6,13 +6,10 @@
 
 ### Description
 
-
 Lists the current bot action for hosts. For each host supplied on the
-command line, this command prints the hostname and boot action for
-that host. The boot action describes what the host will do the next
-time it is booted.
-
-
+	command line, this command prints the hostname and boot action for
+	that host. The boot action describes what the host will do the next
+	time it is booted.
 
 ### Arguments
 

@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets an attribute to an appliance and sets the associated values
-
-
 
 ### Arguments
 

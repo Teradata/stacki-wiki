@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Remove an alias from a host(s).
-
-
 
 ### Arguments
 

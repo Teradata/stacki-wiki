@@ -6,12 +6,9 @@
 
 ### Description
 
-
 Specifies an Environment for the gives hosts.  Environments are
-used to add another level to attribute resolution.  This is commonly
-used to partition a single Frontend into managing multiple clusters.
-
-
+        used to add another level to attribute resolution.  This is commonly
+        used to partition a single Frontend into managing multiple clusters.
 
 ### Arguments
 

@@ -6,10 +6,7 @@
 
 ### Description
 
-
 List the commands provided by a pallet.
-
-
 
 ### Arguments
 

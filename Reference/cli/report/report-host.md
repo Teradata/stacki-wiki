@@ -6,11 +6,8 @@
 
 ### Description
 
-
 Report the host to IP address mapping in the form suitable for
-/etc/hosts.
-
-
+	/etc/hosts.
 
 ### Examples
 

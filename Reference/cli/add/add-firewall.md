@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Add a global firewall rule for the all hosts in the cluster.
-
-
 
 ### Parameters
 * `{action=string}`

@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Remove an attribute for an Environment.
-
-
 
 ### Arguments
 

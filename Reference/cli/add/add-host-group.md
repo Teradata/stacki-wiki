@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Adds a group to one or more hosts.
-
-
 
 ### Arguments
 

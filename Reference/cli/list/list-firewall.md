@@ -6,8 +6,6 @@
 
 ### Description
 
-
 List the global firewall rules.
-
 
 

@@ -6,11 +6,8 @@
 
 ### Description
 
-
 List the Appliance, CPU count and physical position info for
-a list of hosts.
-
-
+	a list of hosts.
 
 ### Arguments
 

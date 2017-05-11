@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets the network mask for one or more networks.
-
-
 
 ### Arguments
 

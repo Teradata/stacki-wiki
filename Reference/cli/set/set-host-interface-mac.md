@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets the mac address for named interface on host.
-
-
 
 ### Arguments
 

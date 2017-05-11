@@ -163,6 +163,7 @@
   * [report host firewall](report-host-firewall)
   * [report host interface](report-host-interface)
   * [report host network](report-host-network)
+  * [report host pxefile](report-host-pxefile)
   * [report host resolv](report-host-resolv)
   * [report host route](report-host-route)
   * [report host storage controller](report-host-storage-controller)

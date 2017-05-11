@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Add a channel bonded interface for a host
-
-
 
 ### Arguments
 

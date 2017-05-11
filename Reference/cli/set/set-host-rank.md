@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Set the rank number for a list of hosts.
-
-
 
 ### Arguments
 

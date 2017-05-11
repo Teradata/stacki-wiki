@@ -6,14 +6,11 @@
 
 ### Description
 
-
 !!! STACKIQ INTERNAL COMMAND ONLY !!!
 
-Configures host interfaces in the database.
-This command should only be called from a post section in a kickstart
-file.
-
-
+	Configures host interfaces in the database.
+	This command should only be called from a post section in a kickstart
+	file.
 
 ### Arguments
 

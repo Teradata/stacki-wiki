@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Generate the /etc/resolv.conf for a host
-
-
 
 ### Arguments
 

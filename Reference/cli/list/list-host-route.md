@@ -6,10 +6,7 @@
 
 ### Description
 
-
 List the static routes that are assigned to a host.
-
-
 
 ### Arguments
 

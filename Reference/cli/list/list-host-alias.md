@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Lists the aliases for a host.
-
-
 
 ### Arguments
 

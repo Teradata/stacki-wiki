@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Unload (remove) attributes from the database
-
-
 
 ### Parameters
 * `[file=string]`

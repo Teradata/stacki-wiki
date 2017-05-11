@@ -6,12 +6,9 @@
 
 ### Description
 
-
 Add pallet ISO images to this machine's pallet directory. This command
-copies all files in the ISOs to the local machine. The default location
-is a directory under /export/stack/pallets.
-
-
+	copies all files in the ISOs to the local machine. The default location
+	is a directory under /export/stack/pallets.
 
 ### Arguments
 

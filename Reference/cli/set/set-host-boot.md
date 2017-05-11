@@ -6,11 +6,8 @@
 
 ### Description
 
-
-Set a bootaction for a host. A hosts action can be set to 'install'
-or to 'os' (also, 'run' is a synonym for 'os').
-
-
+Set a bootaction for a host. A hosts action can be set to 'install' 
+	or to 'os' (also, 'run' is a synonym for 'os').
 
 ### Arguments
 

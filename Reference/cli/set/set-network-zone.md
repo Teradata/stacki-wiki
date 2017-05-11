@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets the DNS zone (domain name) for a network.
-
-
 
 ### Arguments
 

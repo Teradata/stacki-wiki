@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Dump the host interface information as stack commands.
-
-
 
 ### Arguments
 

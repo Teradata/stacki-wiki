@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets the MTU for one or more networks.
-
-
 
 ### Arguments
 

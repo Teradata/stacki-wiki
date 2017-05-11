@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets a global attribute for all nodes
-
-
 
 ### Parameters
 * `[attr=string]`

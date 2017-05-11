@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Remove a partition definitions from a host.
-
-
 
 ### Arguments
 

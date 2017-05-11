@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Add a bootaction specification to the system.
-
-
 
 ### Parameters
 * `{action=string}`

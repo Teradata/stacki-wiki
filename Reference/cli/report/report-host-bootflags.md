@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Output the kernel boot flags for a specific host
-
-
 
 ### Arguments
 

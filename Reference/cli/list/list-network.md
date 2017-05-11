@@ -6,10 +6,7 @@
 
 ### Description
 
-
 List the defined networks for this system.
-
-
 
 ### Arguments
 

@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets the channel for a named interface.
-
-
 
 ### Arguments
 

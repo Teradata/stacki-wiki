@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Unload (remove) hosts from the database
-
-
 
 ### Parameters
 * `[file=string]`

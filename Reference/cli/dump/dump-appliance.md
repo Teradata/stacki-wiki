@@ -6,11 +6,8 @@
 
 ### Description
 
-
 Outputs info (as rocks commands) about the appliances defined in the
-cluster database.
-
-
+	cluster database.
 
 ### Arguments
 

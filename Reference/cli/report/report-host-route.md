@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Create a report that contains the static routes for a host.
-
-
 
 ### Arguments
 

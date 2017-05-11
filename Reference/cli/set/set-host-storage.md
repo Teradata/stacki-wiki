@@ -6,11 +6,8 @@
 
 ### Description
 
-
 Set state for a storage device for hosts (e.g., to change the state
-of a disk from 'offline' to 'online').
-
-
+	of a disk from 'offline' to 'online').
 
 ### Arguments
 

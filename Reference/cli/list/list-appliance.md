@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Lists the appliances defined in the cluster database.
-
-
 
 ### Arguments
 

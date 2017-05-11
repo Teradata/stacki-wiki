@@ -6,11 +6,8 @@
 
 ### Description
 
-
 Disable an available pallet. The pallet must already be copied on the
-system using the command "stack add pallet".
-
-
+	system using the command "stack add pallet".
 
 ### Arguments
 

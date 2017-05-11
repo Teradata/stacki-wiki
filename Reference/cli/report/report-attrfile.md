@@ -6,10 +6,8 @@
 
 ### Description
 
-
 This command outputs all the attributes
-of a system in a CSV format.
-
+	of a system in a CSV format.
 
 ### Parameters
 * `{filter=string}`

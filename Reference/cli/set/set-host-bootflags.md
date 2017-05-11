@@ -6,13 +6,10 @@
 
 ### Description
 
-
 Set the boot flags for a host. The boot flags will applied to the
-configuration file that a host uses to boot the running kernel. For
-example, if a node uses GRUB as its boot loader, the boot flags will
-part of the 'append' line.
-
-
+	configuration file that a host uses to boot the running kernel. For
+	example, if a node uses GRUB as its boot loader, the boot flags will 
+	part of the 'append' line.
 
 ### Arguments
 

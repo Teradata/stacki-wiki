@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Load host info into the database.
-
-
 
 ### Parameters
 * `{file=string}`

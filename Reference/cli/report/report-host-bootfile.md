@@ -6,9 +6,7 @@
 
 ### Description
 
-
 Output the PXE file for a host
-
 
 ### Arguments
 

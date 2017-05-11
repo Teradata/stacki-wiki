@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Dump the set of attributes for appliances.
-
-
 
 ### Arguments
 

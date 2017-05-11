@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Remove a storage partition configuration from the database.
-
-
 
 ### Arguments
 

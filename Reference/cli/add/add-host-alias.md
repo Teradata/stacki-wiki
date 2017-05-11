@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Adds an alias to a host
-
-
 
 ### Arguments
 

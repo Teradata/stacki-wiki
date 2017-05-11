@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Add a firewall rule for the specified hosts.
-
-
 
 ### Arguments
 

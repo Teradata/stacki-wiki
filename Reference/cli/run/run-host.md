@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Run a command for each specified host.
-
-
 
 ### Arguments
 

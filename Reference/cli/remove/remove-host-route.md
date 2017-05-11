@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Remove a static route for a host.
-
-
 
 ### Arguments
 

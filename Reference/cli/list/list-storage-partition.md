@@ -6,11 +6,8 @@
 
 ### Description
 
-
 List the storage partition configuration for one of the following:
-global, os, appliance or host.
-
-
+	global, os, appliance or host.
 
 ### Arguments
 

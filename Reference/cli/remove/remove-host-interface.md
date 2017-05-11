@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Remove a network interface definition for a host.
-
-
 
 ### Arguments
 

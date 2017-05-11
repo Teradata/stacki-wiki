@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Set the Appliance for a list of hosts.
-
-
 
 ### Arguments
 

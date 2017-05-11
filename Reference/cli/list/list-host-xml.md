@@ -6,12 +6,9 @@
 
 ### Description
 
-
 Lists the monolithic XML configuration file for a host.
-Tis is the same XML configuration file that is sent back to a
-host when a host begins its installation procedure.
-
-
+	Tis is the same XML configuration file that is sent back to a 
+        host when a host begins its installation procedure.
 
 ### Arguments
 

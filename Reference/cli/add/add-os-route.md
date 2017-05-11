@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Add a route for an OS type
-
-
 
 ### Arguments
 

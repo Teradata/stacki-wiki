@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Set the number of CPUs for a list of hosts.
-
-
 
 ### Arguments
 

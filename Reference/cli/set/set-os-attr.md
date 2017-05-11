@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Sets an attribute to an os and sets the associated values
-
-
 
 ### Arguments
 

@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Dump the host information as rocks commands.
-
-
 
 ### Arguments
 

@@ -6,8 +6,6 @@
 
 ### Description
 
-
 Outputs a host file in CSV format.
-
 
 

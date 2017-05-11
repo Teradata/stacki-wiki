@@ -6,11 +6,8 @@
 
 ### Description
 
-
 Sets the options for a device module for a named interface. On Linux,
-this will get translated to an entry in /etc/modprobe.conf.
-
-
+	this will get translated to an entry in /etc/modprobe.conf.
 
 ### Arguments
 

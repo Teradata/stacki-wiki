@@ -6,10 +6,7 @@
 
 ### Description
 
-
 Add a route for all hosts in the cluster
-
-
 
 ### Parameters
 * `[address=string]`
