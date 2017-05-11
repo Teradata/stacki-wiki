@@ -1,0 +1,13 @@
+branches:
+  only:
+  - master
+script:
+- |
+  if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
+    bash CI_scripts/pullrequest.sh
+  else
+    bash CI_scripts/merge.sh
+  fi
+env:
+  matrix:
+    secure: EagvD8BJ6We72U7uw91rcbOmHXQW1MeNEZYqF8BbFEZGMZX6omoLdVf3c/uuu2XfZHO3ADC1t4r+x6zariIyLXpfGOyOI6ohurzFC85GCUFiGFUipIXAbLMmNuSprdf65Bayi1vozAbOTZbgtVGudHJWucEV7+i3KUDBxFgyl/J7lKUPMzXRAovuPoAGSCMPovsK3l1hE97/bp7yxdTKDt1STx4OiYIpgA7hDhiZqknYQngUfPzesC080I3aUXmzyPxZpEcHjC4rT1BQYipmINLAEIe+5ZJqL5l5WgwY9IFyu74O+Kx8kUMLzsdtwTHFMhJofNpxea1qRVFl/GEQMBN6Jlm93cAfTeYwt5z++UCqu8+auoxhkWgw42BO7BEbex3SCNcAVMx4U3fVlFpUWBsCbR1rG7Kq4WaMjyS/agp4gQV7OWkCxbDC58ie8+Eb5MTzg2GaW/aZHVsyYamubyrY4CKDtPC3mEwhFYDKTEhBRZP2yXyFliMrDFO9/nEvN+CquNygPiaP9ddwzCSG11scg1l9r831XkfSRAoVjXj5CDPk83tASJne/dTueLq8mt+SslCGzGDvfA42AdAuj0y8B2zGnChCN+yoZTYG7LwvQ6HG4vXQEHPdpLW3U4r1DEZOETp8t75ZfeTyXjlNWVNDA2vNiMyXgSniTDOzH3Y=
