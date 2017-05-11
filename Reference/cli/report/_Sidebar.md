@@ -1,4 +1,5 @@
-stacki report CLI[Home](Home)
+### stacki report CLI[Home](Home)
+
 [Command Line Interface](stacki-CLI-documentation)
 
 * [add](add-commands)

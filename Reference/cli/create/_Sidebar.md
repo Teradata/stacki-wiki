@@ -1,4 +1,5 @@
-stacki create CLI[Home](Home)
+### stacki create CLI[Home](Home)
+
 [Command Line Interface](stacki-CLI-documentation)
 
 * [add](add-commands)

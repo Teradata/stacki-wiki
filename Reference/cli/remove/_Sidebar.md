@@ -1,4 +1,5 @@
-stacki remove CLI[Home](Home)
+### stacki remove CLI[Home](Home)
+
 [Command Line Interface](stacki-CLI-documentation)
 
 * [add](add-commands)

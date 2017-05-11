@@ -1,4 +1,5 @@
-stacki sync CLI[Home](Home)
+### stacki sync CLI[Home](Home)
+
 [Command Line Interface](stacki-CLI-documentation)
 
 * [add](add-commands)

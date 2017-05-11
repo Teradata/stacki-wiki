@@ -1,4 +1,5 @@
-stacki help CLI[Home](Home)
+### stacki help CLI[Home](Home)
+
 [Command Line Interface](stacki-CLI-documentation)
 
 * [add](add-commands)

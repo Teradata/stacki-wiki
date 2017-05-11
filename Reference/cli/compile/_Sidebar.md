@@ -1,4 +1,5 @@
-stacki compile CLI[Home](Home)
+### stacki compile CLI[Home](Home)
+
 [Command Line Interface](stacki-CLI-documentation)
 
 * [add](add-commands)

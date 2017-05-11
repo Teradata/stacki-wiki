@@ -1,4 +1,4 @@
-# stacki Command Line Interface Reference
+### stacki Command Line Interface Reference
 
 * [add](add-commands)
   * [add appliance](add-appliance)
