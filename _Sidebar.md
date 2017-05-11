@@ -18,7 +18,7 @@
   * [CoreOS on Stacki](CoreOS-on-Stacki)
   * [Ubuntu on Stacki](Ubuntu-on-Stacki)
 * Reference
-  * [Command Line](CLI-documentation) 
+  * [Command Line](cli/CLI-documentation) 
   * [Wire](Wire-Reference)
   * [Example CSV Files](Example-CSV-Files)
 * Developer
