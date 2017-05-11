@@ -23,11 +23,11 @@
   * [Example CSV Files](Example-CSV-Files)
 * Developer
   * [Building From Source](Building-From-Source)
-* Answers to Burning questions
+  * [Building Source on CentOS](Building-Source-on-CentOS)
+* Frequently Asked Questions
   * [Kickstart Customizations](Kickstart-Customizations)
-    * [%include directive](include-directive)
+  * [%include directive](include-directive)
   * [Cart Order](Setting-Cart-Order)
-***
 
 ### Previous Releases 
 
