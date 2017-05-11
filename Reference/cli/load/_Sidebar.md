@@ -1,4 +1,4 @@
-### stacki load CLI[Home](Home)
+[Home](Home)
 
 [Command Line Interface](stacki-CLI-documentation)
 
