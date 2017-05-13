@@ -1,4 +1,58 @@
-# Writing a REST API Client
+# Stacki ReST API
+
+## Installing Stacki REST API
+
+The Stacki REST API is distributed as a web service
+running as a Django Application. To install the API
+you will need to install the stacki-pro pallet.
+
+Refer to the [Stacki Pro Installation Guide](stacki-pro-install) for information about how to install the stacki-pro pallet.
+
+After the installation, the Stacki REST API is available.
+By default, Stacki includes a webservice client, and creates
+admin credentials to help validate the API.
+
+## Testing the ReST API
+
+Stacki-pro comes with a build in webservice client.
+The webservice client is called **wsclient**. The webservice
+admin credentials are placed in `/root/stacki-ws.cred`
+
+To test the web service client, run
+```shell
+# wsclient list host
+```
+
+This should print a JSON string that contains output
+from the command.
+```json
+[{"box": "default", "status": "up", "installaction":
+"install", "appliance": "frontend", "runaction": "os",
+"cpus": 1, "rank": "0", "environment": "", "host":
+"node234-002", "rack": "0"},
+{"box": "default", "status": "up", "installaction":
+"install", "appliance": "backend", "runaction": "os",
+"cpus": 2, "rank": "25", "environment": "", "host":
+"node211", "rack": "0"},
+{"box": "default", "status": "up", "installaction":
+"install", "appliance": "backend", "runaction": "os",
+"cpus": 2, "rank": "26", "environment": "", "host":
+"node210", "rack": "0"},
+{"box": "default", "status": "up", "installaction":
+"install", "appliance": "backend", "runaction": "os",
+"cpus": 4, "rank": "28", "environment": "", "host":
+"node209", "rack": "0"},
+{"box": "default", "status": "up", "installaction":
+"install", "appliance": "backend", "runaction": "os",
+"cpus": 4, "rank": "30", "environment": "", "host":
+"node207", "rack": "0"},
+{"box": "default", "status": "up", "installaction":
+"install", "appliance": "backend", "runaction": "os",
+"cpus": 4, "rank": "6", "environment": "", "host":
+"node217", "rack": "0"}]
+```
+
+## Writing a REST API Client
 
 The Stacki REST API provides the entire
 Stack Command-Line interface through a
