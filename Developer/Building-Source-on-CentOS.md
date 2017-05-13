@@ -24,10 +24,10 @@ of usable space.
 
 ### Bootstrap
 1. Run Bootstrap
-    ```# cd /export/src/stacki
+    ```
+    # cd /export/src/stacki
     # make bootstrap
     ```
-
 1. Remove the src/order-stacki.mk file
     ```
     # rm src/order-stacki.mk
@@ -37,13 +37,12 @@ of usable space.
     # source /etc/profile.d/stack-build.sh
     ```
 1.  Make RPMS for all packages
-    > **Note**: Some packages may fail to build.
-    > This is OK, since we're still in the bootstrap
-    > stage.
     ```
     # make -C src rpm 
     ```
     > **Note**: This step will take a very long time.
+    > Some packages may fail to build. This is OK,
+    > since we're still in the bootstrap stage.
 
 1. The above command will create a build directory and place
    all the built RPMS in it. The next step is to create a
