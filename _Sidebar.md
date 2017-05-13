@@ -1,4 +1,4 @@
-### Content
+### Contents
 
 * [Home](Home)
 * [Concepts](Concepts)
