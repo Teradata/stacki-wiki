@@ -1,0 +1,40 @@
+---
+layout: page
+title: stacki add commands
+permalink: /stacki-add-commands
+sidebarloc: /Reference/cli/add
+---
+
+# add commands
+
+  * [add appliance](add-appliance)
+  * [add appliance attr](add-appliance-attr)
+  * [add appliance firewall](add-appliance-firewall)
+  * [add appliance route](add-appliance-route)
+  * [add attr](add-attr)
+  * [add bootaction](add-bootaction)
+  * [add box](add-box)
+  * [add cart](add-cart)
+  * [add copyright](add-copyright)
+  * [add environment attr](add-environment-attr)
+  * [add firewall](add-firewall)
+  * [add group](add-group)
+  * [add host](add-host)
+  * [add host alias](add-host-alias)
+  * [add host attr](add-host-attr)
+  * [add host bonded](add-host-bonded)
+  * [add host bridge](add-host-bridge)
+  * [add host firewall](add-host-firewall)
+  * [add host group](add-host-group)
+  * [add host interface](add-host-interface)
+  * [add host key](add-host-key)
+  * [add host partition](add-host-partition)
+  * [add host route](add-host-route)
+  * [add network](add-network)
+  * [add os attr](add-os-attr)
+  * [add os firewall](add-os-firewall)
+  * [add os route](add-os-route)
+  * [add pallet](add-pallet)
+  * [add route](add-route)
+  * [add storage controller](add-storage-controller)
+  * [add storage partition](add-storage-partition)

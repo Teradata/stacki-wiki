@@ -1,0 +1,49 @@
+---
+layout: page
+title: stacki pro CLI documentation
+permalink: /stacki-pro-CLI-documentation
+sidebarloc: /stacki-pro/cli
+---
+
+### stacki-pro Command Line Interface Reference
+
+* [add](stacki-pro-add-commands)
+  * [add api blacklist command](add-api-blacklist-command)
+  * [add api group](add-api-group)
+  * [add api group perms](add-api-group-perms)
+  * [add api user](add-api-user)
+  * [add api user group](add-api-user-group)
+  * [add api user perms](add-api-user-perms)
+  * [add host message](add-host-message)
+  * [add pallet multiversion](add-pallet-multiversion)
+* [create](stacki-pro-create-commands)
+  * [create spreadsheet hostfile](create-spreadsheet-hostfile)
+* [disable](stacki-pro-disable-commands)
+  * [disable host channel](disable-host-channel)
+* [enable](stacki-pro-enable-commands)
+  * [enable host channel](enable-host-channel)
+* [list](stacki-pro-list-commands)
+  * [list api blacklist command](list-api-blacklist-command)
+  * [list api group](list-api-group)
+  * [list api group perms](list-api-group-perms)
+  * [list api user](list-api-user)
+  * [list api user perms](list-api-user-perms)
+  * [list host channel](list-host-channel)
+  * [list host message](list-host-message)
+  * [list license](list-license)
+* [remove](stacki-pro-remove-commands)
+  * [remove api blacklist command](remove-api-blacklist-command)
+  * [remove api group](remove-api-group)
+  * [remove api group perms](remove-api-group-perms)
+  * [remove api user](remove-api-user)
+  * [remove api user group](remove-api-user-group)
+  * [remove api user perms](remove-api-user-perms)
+* [report](stacki-pro-report-commands)
+  * [report host mq](report-host-mq)
+  * [report host salt](report-host-salt)
+* [run](stacki-pro-run-commands)
+  * [run host saltmod](run-host-saltmod)
+* [set](stacki-pro-set-commands)
+  * [set api user admin](set-api-user-admin)
+* [sync](stacki-pro-sync-commands)
+  * [sync host state](sync-host-state)

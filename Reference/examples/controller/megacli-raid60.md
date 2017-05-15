@@ -1,0 +1,22 @@
+---
+layout: page
+title: megacli raid60
+permalink: /megacli-raid60
+---
+
+| <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
+| ---- | ---- | ---------- | -------- | ------- |
+| <sub>node219</sub> | <sub>0</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>1</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>2</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>3</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>4</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>5</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>6</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>7</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>8</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>9</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>10</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>11</sub> | <sub>60</sub> | <sub>1</sub> |  |
+|  | <sub>12</sub> | <sub>Hotspare</sub> | <sub>1</sub> |  |
+|  | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> |  |
