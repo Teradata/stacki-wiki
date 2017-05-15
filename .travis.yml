@@ -15,7 +15,7 @@ script:
   fi
 
 after_success:
-- CI_Scripts/convert_to_pages.sh
+- CI_scripts/convert_to_pages.sh
 
 env:
   matrix:
@@ -23,7 +23,7 @@ env:
 
 deploy:
   provider: pages
-  github_token: "$GITHUB_API_TOKEN"
+  github_token: "$GITHUB_API_KEY"
   skip_cleanup: true
   local_dir: docs
   target_branch: gh-pages
