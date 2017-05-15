@@ -29,4 +29,4 @@ deploy:
   skip_cleanup: true
   local_dir: docs
   repo: stackiq/stackiq.github.io
-  target_branch: gh-pages
+  target_branch: master
