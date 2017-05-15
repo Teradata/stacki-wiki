@@ -1,0 +1,10 @@
+<div class="sidebar">
+{% if page.sidebarloc %}
+	{% include {{page.sidebarloc}}/_Sidebar.html %}
+{% else %}
+	{% include _Sidebar.html %}
+{% endif %}
+
+{% include page-footer.html %}
+</div>
+
