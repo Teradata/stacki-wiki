@@ -65,7 +65,7 @@ for i in `find wiki -type f`; do
 			# YAML front matter. If there's a sidebar file
 			# in the same directory, as the markdown file
 			# make sure to create a pointer to it
-			[ -f $d/_Sidebar.md ] && sidebar="$leaddir"
+			[ -f $d/_Sidebar.md ] && sidebar="$leaddir" || sidebar=""
 			annotate_file $name $i "${title}" "${sidebar}" > "docs/$leaddir/$fname"
 		esac
 	# All other files (images, etc) are copied over
