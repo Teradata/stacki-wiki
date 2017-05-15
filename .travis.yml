@@ -26,4 +26,5 @@ deploy:
   github_token: "$GITHUB_API_KEY"
   skip_cleanup: true
   local_dir: docs
+  repo: stackiq/stackiq.github.io
   target_branch: gh-pages
