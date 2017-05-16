@@ -26,34 +26,19 @@ and then clone from your fork.
 ## Setup Yum for CentOS and Updates
 
 Building Stacki requires several packages not included in the base install of the frontend, so we
-must configure yum to have access to the complete and updated CentOS packages.
-Create the following two files:
+must configure yum to have access to the complete and updated CentOS packages.  The easiest way to do this is to grab the [latest CentOS "Everything" ISO](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1611.iso), and the [latest CentOS-Updates pallet](http://stacki.s3.amazonaws.com/public/os/centos/7/CentOS-Updates-7.3_20170503-7.x.x86_64.disk1.iso) provided by Stacki.
+
+Add and enable the pallets:
 
 ```
-# cat /etc/yum.repos.d/centos.repo
-[centos]
-name=centos
-baseurl=http://mirror.lax.hugeserver.com/centos/6/os/x86_64
-assumeyes=1
-```
-
-```
-# cat /etc/yum.repos.d/updates.repo 
-[updates]
-name=updates
-baseurl=http://mirror.lax.hugeserver.com/centos/6/updates/x86_64
-assumeyes=1
-```
-
-After these files are in place clean out the yum cache with:
-
-```
-yum clean all
+# stack add pallet CentOS-7-x86_64-Everything-1611.iso
+# stack add pallet CentOS-Updates-7.3_20170503-7.x.x86_64.disk1.iso
+# stack enable pallet CentOS CentOS-Updates
 ```
 
 ## Bootstrap the Pallet
 
-Now with access to any missing RPMs we can prepare to compile the entire Stacki pallet by bootstrapping it.
+Now with access to any missing RPMs we can prepare to compile the entire Stacki pallet by bootstrapping it.  This will take a long time.
 
 ```
 # cd /export/src/stacki
@@ -82,6 +67,5 @@ This will report any packages that failed to build.
 
 ## Contribute Code
 
-If you've made changes that you want to share with all of Stacki send a pull request to
-StackIQ/stacki.
+If you've made changes that you want to share with all of Stacki [send us a pull request](https://github.com/StackIQ/stacki/pulls).
 
