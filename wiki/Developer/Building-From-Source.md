@@ -28,12 +28,13 @@ and then clone from your fork.
 Building Stacki requires several packages not included in the base install of the frontend, so we
 must configure yum to have access to the complete and updated CentOS packages.  The easiest way to do this is to grab the [latest CentOS "Everything" ISO](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1611.iso), and the [latest CentOS-Updates pallet](http://stacki.s3.amazonaws.com/public/os/centos/7/CentOS-Updates-7.3_20170503-7.x.x86_64.disk1.iso) provided by Stacki.
 
-Add and enable the pallets:
+Add and enable the pallets, disabling the OS pallet, if necessary:
 
 ```
 # stack add pallet CentOS-7-x86_64-Everything-1611.iso
-# stack add pallet CentOS-Updates-7.3_20170503-7.x.x86_64.disk1.iso
+# stack add pallet CentOS-Updates-7.3*.iso
 # stack enable pallet CentOS CentOS-Updates
+# stack disable pallet os
 ```
 
 ## Bootstrap the Pallet
