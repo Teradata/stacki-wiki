@@ -27,7 +27,7 @@ function annotate_file(){
 (cd content; find . -type f | cpio -pud ../docs)
 
 # Copy template, and CSS files
-(cd images; find . -type f | cpio -pud ../docs)
+find images -type f | cpio -pud ../docs
 
 # Separate on newlines instead of on spaces. See "man 1 bash"
 # for more info about using IFS

@@ -46,27 +46,27 @@ For functionality such as mounting virtual media, please install vendor specific
 Serial console access involves setting up console redirection via the BIOS Sytem setup setting and enabling IPMI over LAN in the iDRAC or iLO settings. Below are the steps showing how this can be setup on a Dell iDRAC 7 server.
 
 The System Setup screen is shown below.
-![](ipmi/images/system-setup.png)
+![](images/ipmi/system-setup.png)
 
 Let's look at the BIOS setup first. Choose the "Serial Communication" option as shown below.
 
-![](ipmi/images/system-bios-settings-menu.png)
+![](images/ipmi/system-bios-settings-menu.png)
 
 Make sure you are choosing the right NIC and setting "Redirection After Boot" to Enabled. Sometimes this step will require testing against different "Serial Communication" options until you find the combination that works for your machine.
 
-![](ipmi/images/bios-serial-comm-settings.png)
+![](images/ipmi/bios-serial-comm-settings.png)
 
 Now lets tweak the iDRAC settings. Enable "Communication Pass Through" as below.
 
-![](ipmi/images/idrac-enable-comm-pass-through.png)
+![](images/ipmi/idrac-enable-comm-pass-through.png)
 
 Enable the NIC. Select the LOM for you NIC. Make sure it’s the "Active NIC Interface".
 
-![](ipmi/images/enable-lom2.png)
+![](images/ipmi/enable-lom2.png)
 
 Lastly make sure IPMI over LAN is enabled.
 
-![](ipmi/images/enable-ipmi-over-lan.png)
+![](images/ipmi/enable-ipmi-over-lan.png)
 
 ##### Watching Installs over serial console
 Machines need to be notified that they are going to pipe output to serial console. We do that by adding a "console=tty0 console=ttyS0,115200n8" to the bootaction line.
