@@ -126,7 +126,7 @@
 
 * { box-sizing: border-box; }
 
-body { padding: 0; margin: 0; font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.7; color: #666666; }
+body { padding: 0; margin: 0; font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; color: #666666; }
 
 a { color: #07889b; text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -191,6 +191,6 @@ a:hover { text-decoration: underline; }
 
 .site-footer-credits { color: #819198; }
 
-.main { float: left; width: 70%; height: 100% ; text-align: justify; padding-right: 3rem; }
+.main { float: left; width: 70%; height: 100% ; text-align: justify; padding-right: 3rem; font-size: 14px; }
 .main-content { width: 100%; }
 .sidebar { float: right; width: 30%; height: 100% ; font-size: 12px; text-align: left; }
