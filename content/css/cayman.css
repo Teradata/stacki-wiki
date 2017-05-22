@@ -192,5 +192,5 @@ a:hover { text-decoration: underline; }
 .site-footer-credits { color: #819198; }
 
 .main { float: left; width: 70%; height: 100% ; text-align: justify; padding-right: 3rem; }
-.main-content { width: 100% }
+.main-content { width: 100%; font-color: #dddddd; }
 .sidebar { float: right; width: 30%; height: 100% ; font-size: 10px; text-align: left; }
