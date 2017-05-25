@@ -1,5 +1,5 @@
 _site/
 docs/
-Gemfile.lock
+Gemfile*.lock
 .DS_Store
 .sass-cache/
