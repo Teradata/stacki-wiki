@@ -187,10 +187,10 @@ a:hover { text-decoration: underline; }
 @media screen and (min-width: 42em) and (max-width: 64em) { .site-footer { font-size: 1rem; } }
 @media screen and (max-width: 42em) { .site-footer { font-size: 0.9rem; } }
 
-.site-footer-owner { display: block; font-weight: bold; }
+.site-footer-owner { display: block; }
 
 .site-footer-credits { color: #819198; }
 
-.main { float: left; width: 70%; height: 100% ; text-align: justify; padding-right: 3rem; font-size: 14px; }
+.main { float: left; width: 70%; height: 100% ; text-align: justify; padding-right: 3rem; font-size: 18px; }
 .main-content { width: 100%; }
 .sidebar { float: right; width: 30%; height: 100% ; font-size: 12px; text-align: left; }
