@@ -82,11 +82,11 @@ To perform this installation, log into the frontend and download two files:
     * Stacki 4.0 (built for CentOS 7.x) is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-4.0_20170414_c4aff2a-7.x.x86_64.disk1.iso)
    **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stackios_ ISO.
 
-2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-fab-4.x-all.x86_64.rpm) and put it on the server you want to transform into a Stacki frontend.
+2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-fab-4.x_aa3f77e-all.x86_64.rpm) and put it on the server you want to transform into a Stacki frontend.
 
 Install the `stacki-fab` RPM:
 
-    # rpm -i stacki-fab-4.x-all.x86_64.rpm
+    # rpm -i stacki-fab-4.x_*-all.x86_64.rpm
 
 Execute frontend-install.py:
 
