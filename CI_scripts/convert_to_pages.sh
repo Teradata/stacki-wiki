@@ -13,10 +13,16 @@ function annotate_file(){
 	file=$2
 	title=$3
 	sidebar=$4
+	author=$5
+	commitdate=$6
+	commithash=$7
 	echo "---"
 	echo "layout: page"
 	echo "title: $title"
 	echo "permalink: /$name"
+	echo "author: $author"
+	echo "commitdate: $commitdate"
+	echo "commithash: $commithash"
 	[ -z $sidebar ] || echo "sidebarloc: $sidebar"
 	echo "---"
 	echo ""
@@ -69,7 +75,10 @@ for i in `find wiki -type f`; do
 			# in the same directory, as the markdown file
 			# make sure to create a pointer to it
 			[ -f $d/_Sidebar.md ] && sidebar="$leaddir" || sidebar=""
-			annotate_file $name $i "${title}" "${sidebar}" > "docs/$leaddir/$fname"
+			commithash=`git log --format="%h" -n 1 --abbrev-commit -- $i`
+			commitdate=`git log --format="%ad" -n 1 --abbrev-commit -- $i`
+			author=`git log --format="%an" -n 1 --abbrev-commit -- $i`
+			annotate_file $name $i "${title}" "${sidebar}" "${author}" "${commitdate}" "${commithash}" > "docs/$leaddir/$fname"
 		esac
 	# All other files (images, etc) are copied over
 	else
