@@ -7,12 +7,14 @@
     {% include page-header.html %}
 
     <section class="main-content">
-      <h2 class="page-title">{{ page.title }}</h2>
       <div class="main">
       {{ content }}
       </div>
       {% include sidebar.html %}
     </section>
     </body>
+    <footer>
+      {% include footer.html %}
+    </footer>
 
 </html>

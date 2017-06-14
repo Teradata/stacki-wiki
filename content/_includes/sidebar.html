@@ -1,4 +1,10 @@
 <div class="sidebar">
+	<div id="tfheader">
+								 <form id="tfnewsearch" method="get" action="http://docs.stacki.com/">
+												 <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+								 </form>
+				 <div class="tfclear"></div>
+				 </div>
 {% if page.sidebarloc %}
 	{% include {{page.sidebarloc}}/_Sidebar.html %}
 {% else %}
@@ -7,4 +13,3 @@
 
 {% include sidebar-footer.html %}
 </div>
-

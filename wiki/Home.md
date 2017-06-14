@@ -1,4 +1,3 @@
-![stacki logo](https://github.com/StackIQ/stacki/blob/master/logo.png?raw=true)
 
 Welcome to **Stacki**.
 
@@ -30,13 +29,13 @@ What it does is simple:
 5. Leave you to be productive, to focus on more interesting problems.
 
 With Stacki, machines are disposable.
-Everything is built from the ground up programmatically so recovering from disasters just means rebuilding your servers. 
+Everything is built from the ground up programmatically so recovering from disasters just means rebuilding your servers.
 
-Machines are disposable but data is not. After the initial installation, data is preserved across reinstalls. Data drives are reformatted only by deliberate action. A reinstall is a refresh of the OS and/or application software while data on disk is preserved. 
+Machines are disposable but data is not. After the initial installation, data is preserved across reinstalls. Data drives are reformatted only by deliberate action. A reinstall is a refresh of the OS and/or application software while data on disk is preserved.
 
 Stacki delivers certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Our goal is to keep you from having to configure individual servers and always knowing the answer to: "What state are my servers in?"
 
-Once your servers are installed with Stacki, augment them with your favorite configuration toolset - be it shell scripts, Salt, Chef, Puppet, CFEngine, Ansible, or homegrown - you don't have throw away work already done. (Although, once you see what it can do, some of that post-install configuration management may be easily replaced during installation.) 
+Once your servers are installed with Stacki, augment them with your favorite configuration toolset - be it shell scripts, Salt, Chef, Puppet, CFEngine, Ansible, or homegrown - you don't have throw away work already done. (Although, once you see what it can do, some of that post-install configuration management may be easily replaced during installation.)
 
 ## Origins
 
@@ -76,5 +75,4 @@ clients both large and small:
 * Good Stuff: Puppet, Ansible, Chef, Salt, CFEngine, Intel Developer Tools, VirtualBox, Docker
 
 If you can do it in Linux, Stacki can automate it and deploy it over thousands
-of machines. 
-
+of machines.
