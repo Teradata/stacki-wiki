@@ -20,7 +20,6 @@ This tutorial will follow the same basic outline as CoreOS. Both are effectively
 - Install
 - Validate
 - Bask in Ubuntuness
-- Turning it to 11
 - Future directions.
 
 <h5>Get the software.</h5>
@@ -31,7 +30,7 @@ Ubuntu has a very complete (i.e. somewhat crazy) distribution set-up. If you wan
 
 I'm not a patient person, so I figured that was the wrong way to go. 
 
-I then just started pulling the distribution iso that I wanted, much simpler, and mirroring that. The only problem with this is that you're strictly limited to the software on the ISO. Unless your backend nodes have internet access (most don't if you're running a real cluster), getting other packages can be tricky. There is a middle way to pull in more packages available in any given Ubuntu distro. I'll give details for that in the "Turning it to 11" section of this document. 
+I then just started pulling the distribution iso that I wanted, much simpler, and mirroring that. The only problem with this is that you're strictly limited to the software on the ISO. Unless your backend nodes have internet access (most don't if you're running a real cluster), getting other packages can be tricky. There is a middle way to pull in more packages available in any given Ubuntu distro. 
 
 So really, let's get the software. On some internet connected machine, get the Ubuntu ISO of the distribution you want. Use the Ubuntu x86_64 server version. I guess you could use Desktop also; I just haven't done it.
 
@@ -303,72 +302,6 @@ stack run command backend command="uptime"
 ```
 
 You may have to remove the nodes from your /root/.ssh/known_hosts file to get them to not show the error headers. 
-
-<h5>Turning it to 11</h5>
-Okay, so this gets you one release and then it's only the software on that iso. What if you want more? I always want more, but the entire Ubuntu repo is too much. So let's get just enough. 
-
-You can mirror the full repository for one release of Ubuntu. We'll do Trusty Tahr. This is my explanation of a process delineated [by another guy named Joe.](https://sjoeboo.github.io/blog/2012/01/26/mirroring-ubuntu-on-centos/) so I can't take credit for it. Here it is adapted for Stacki.
-
-You're gonna need these:
-```
- yum -y install perl-LockFile-Simple.noarch perl-Net-INET6Glue.noarch
-```
-
-Get mirroring software. I created a /export/stack/umirror and did everything in that directory.
-
-```
-wget http://archive.ubuntu.com/ubuntu/pool/universe/d/debmirror/debmirror_2.16ubuntu1.tar.gz
-```
-
-Untar in some directory and change to the "debmirror" directory:
-```
-tar -xzvf debmirror_2.16ubuntu1.tar.gz
-
-cd debmirror-2.16ubuntu1
-```
-
-Use the following script file stolen and adapted from the blog post above (save as mirror.sh):
-
-```
-#!/bin/bash
-arch=amd64
-section=main,restricted,universe,multiverse
-release=trusty,wily
-server=us.archive.ubuntu.com
-inPath=/ubuntu
-proto=rsync
-#proxy=http://proxy.local:8888
-outpath=/export/stack/ubuntu
-
-debmirror       -a $arch \
-                --no-source \
-                -s $section \
-                -h $server \
-                -d $release \
-                -r $inPath \
-                --progress \
-                --ignore-release-gpg \
-                --no-check-gpg \
-                -e $proto \
-                $outpath
-```
-
-Note that we are getting trusty and wily, you can do both, or one or the other. Each distro is about 60G, and has the software packages in main, multiverse, restricted, and universe.
-
-Our output directory is /export/stack/ubuntu. If you did the previous procedure, this will overwrite your ubuntu install from ISO. If you don't want that, make sure your output directory is named differently but still under /export/stack so it's available via HTTP.
-
-Run the mirror.sh code.
-```
-chmod 755 mirror.sh
-
-./mirror.sh
-```
-
-Wait and wait and wait. Wait some more depending on your bandwidth, or wait less. Godot really is coming, he's just not here yet. 
-
-When it's downloaded, you can adjust your bootaction and preseed.cfg to point to this directory. This will now be the directory of choice in the apt sources list for your backend machines, giving you a greater number of packages to be consumed. 
-
-If you didn't do the previous ISO install and just jumped to here, find the vmlinuz and initrd.gz and copy them to the /tftpboot/pxelinux directory as above before proceeding with the rest of the install. 
 
 <h5>Future Directions</h5>
 As a Phase 1 project, this has a bunch of things you have to do by hand. We don't like that. When managing machines, you want your command line actions and set-up to be ones that will affect the entire cluster. It's the fulcrum on which you lever your machines to a standard. 

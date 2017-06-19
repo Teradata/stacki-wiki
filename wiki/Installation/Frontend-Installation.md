@@ -40,16 +40,17 @@ would cause conflicts on the network.
 
 ## New or Existing
 
-Stacki can build a [new](#new) frontend from bare metal or it can be added on
-top of an existing server.
+The Stacki frontend runs on top of a CentOS 6.x or 7.x base.  You can either build a [new](#new) frontend from bare metal with Stacki and the required CentOS bits (which we call "Stackios") or it can be added on top of an existing EnterpriseLinux (CentOS, RedHat, etc) server.
 If you wish to install Stacki on top of an existing system, skip to the
 section labeled [existing](#existing).
 
 ### New
 
-Download the Stacki jumbo ISO file.
-   * Stacki 6.x version is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stackios-4.0-6.x.x86_64.disk1.iso)
-   * Stacki 7.x version is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stackios-4.0_c4aff2a-7.x.x86_64.disk1.iso)
+It is of course, recommended that you use the newest release when testing or building new clusters, but 6.x may be required for some environments.
+
+Download the Stackios ISO file.
+   * Stackios 4.0 (based on CentOS 6.x) is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stackios-4.0-6.x.x86_64.disk1.iso)
+   * Stackios 4.0 (based on CentOS 7.x) is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stackios-4.0_c4aff2a-7.x.x86_64.disk1.iso)
 
 Burn the file to a DVD or mount it on the virtual media for the server to be installed.
 Installing a frontend will completely erase and reformat the hard disks in the
@@ -77,15 +78,15 @@ The server must be running the x86_64 version of CentOS or RHEL version 6.x or
 To perform this installation, log into the frontend and download two files:
 
 1. **Stacki ISO**. Download the Stacki ISO and put it on your server you want to transform into a Stacki frontend.
-    * Stacki 6.x version is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-4.0_20170427-6.x.x86_64.disk1.iso)
-    * Stacki 7.x version is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-4.0_20170414_c4aff2a-7.x.x86_64.disk1.iso)   
+    * Stacki 4.0 (built for CentOS 6.x) is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-4.0_20170427-6.x.x86_64.disk1.iso)
+    * Stacki 4.0 (built for CentOS 7.x) is available [here](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-4.0_20170414_c4aff2a-7.x.x86_64.disk1.iso)
    **IMPORTANT**: It is important that you supply the _stacki_ ISO and not the _stackios_ ISO.
 
-2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-fab-4.x-all.x86_64.rpm) and put it on the server you want to transform into a Stacki frontend.
+2. **stacki-fab RPM**. Download the [stacki-fab RPM](http://stacki.s3.amazonaws.com/public/pallets/4.0/open-source/stacki-fab-4.x_aa3f77e-all.x86_64.rpm) and put it on the server you want to transform into a Stacki frontend.
 
 Install the `stacki-fab` RPM:
 
-    # rpm -i stacki-fab-4.x-all.x86_64.rpm
+    # rpm -i stacki-fab-4.x_*-all.x86_64.rpm
 
 Execute frontend-install.py:
 

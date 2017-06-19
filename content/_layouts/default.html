@@ -9,6 +9,11 @@
     <section class="main-content">
       <div class="main">
       {{ content }}
+      <hr />
+      <div class="history">
+      <p>Edited by: {{ page.author }} on {{ page.commitdate }}<br>
+      Commit: {{ page.commithash }}</p>
+      </div>
       </div>
       {% include sidebar.html %}
     </section>
