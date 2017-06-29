@@ -81,8 +81,8 @@ of usable space.
 
 1. Create the installation script
     ```
-    # stack list node xml basedir=. attrs=/tmp/site.attrs | \
-      stack list host profile chapter=bash profile=shell > /tmp/frontend.sh" 
+    # stack list node xml server basedir=. attrs=/tmp/site.attrs | \
+      stack list host profile chapter=bash profile=shell > /tmp/frontend.sh
     ```
 1. Run /tmp/frontend.sh
    ```
