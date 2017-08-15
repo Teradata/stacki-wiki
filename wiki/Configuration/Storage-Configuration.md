@@ -170,8 +170,12 @@ appliance type (e.g., _backend_) or it can be set to _global_.
    1. The first logical disk (```sda```) will be a RAID 1 and it will be constructed with the disk in slot 5 and the disk in slot 15.
    1. The second logical disk (```sdb```) will be a RAID 5 composed of the disks in slots 0 through 4.
    1. The third logical disk (```sdc```) will be a RAID 5 composed of the disks in slots 16 through 21.
-   1. The fourth logical disk (```sdd```) will be a RAID 6 composed of the disks in slots 6 through 12 and the disks in slots 13 and 14 will be hot spares associated with only this array.
+   1. The fourth logical disk (```sdd```) will be a RAID 6 composed of the disks in slots 6 through 12 and
+      the disks in slots 13 and 14 will be hot spares associated with only this array.
    1. The disks in slots 22 and 23 are designated as hot spares that can be used as replacements for any failed drive in any array.
+   > **Note**: When using RAID 10, the MegaRAID controller has a span limit of 8 spans.
+   > By default, Stacki configures each span to be 2 drives wide. This will limit the
+   > total number of disks in a RAID10 to 16 disks.
 
 1. The next configuration is for the host named _backend-lsi-0-1_.
    1. This first logical disk(```sda```) is a RAID 10 set composed of disks 3 through 7
