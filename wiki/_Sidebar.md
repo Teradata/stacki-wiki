@@ -23,7 +23,6 @@
   * [Example CSV Files](Example-CSV-Files)
 * Developer
   * [Building From Source](Building-From-Source)
-  * [Building Source on CentOS](Building-Source-on-CentOS)
 * Frequently Asked Questions
   * [Kickstart Customizations](Kickstart-Customizations)
   * [%include directive](include-directive)
