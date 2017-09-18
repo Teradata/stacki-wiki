@@ -12,9 +12,11 @@ Log into your Frontend and checkout the repository somewhere in /export (its a l
 # git clone git@github.com:Teradata/stacki.git
 ```
 
-These instructions assume you have commit access to the Teradata/stacki.git repository, if you do not
-please [fork](https://help.github.com/articles/fork-a-repo/) the repository first,
-and then clone from your fork.
+These instructions assume you have commit access to the
+[Teradata/stacki.git](https://github.com/Teradata/stacki) repository,
+if you do not please
+[fork](https://help.github.com/articles/fork-a-repo/) the repository
+first, and then clone from your fork.
 
 ```
 # cd /export/src/stacki
@@ -27,7 +29,7 @@ and then clone from your fork.
 If you are using a Stacki Frontend as your build host you will need to
 add an OS pallet to configure the local software repositories.  This
 is required as a default Stacki install will build a Frontend with
-only a mininal OS pallet missing many of the prerequisites for
+only a minimal OS pallet missing many of the prerequisites for
 building Stacki.
 
 #### CentOS
