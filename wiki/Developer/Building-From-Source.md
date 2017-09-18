@@ -12,7 +12,7 @@ Log into your Frontend and checkout the repository somewhere in /export (its a l
 # git clone git@github.com:Teradata/stacki.git
 ```
 
-These instructions assume you have commit access to the Stacki/stacki.git repository, if you do not
+These instructions assume you have commit access to the Teradata/stacki.git repository, if you do not
 please [fork](https://help.github.com/articles/fork-a-repo/) the repository first,
 and then clone from your fork.
 
@@ -25,16 +25,14 @@ and then clone from your fork.
 ### Frontend Server
 
 If you are using a Stacki Frontend as your build host you will need to
-add an OS pallet to configure the local software repositories.  
-This is required as a default Stacki install will build a Frontend
-with only a mininal OS pallet missing many of the prerequisites for
+add an OS pallet to configure the local software repositories.  This
+is required as a default Stacki install will build a Frontend with
+only a mininal OS pallet missing many of the prerequisites for
 building Stacki.
 
 #### CentOS
 
-To add a complete OS yum repositories grab the [latest CentOS "Everything" ISO]
-(http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1708.iso).
-Add and enable the pallet, disabling the OS pallet, if necessary:
+Download [CentOS 7.4](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1708.iso).
 
 ```
 # stack add pallet CentOS-7-x86_64-Everything-1708.iso
@@ -44,19 +42,23 @@ Add and enable the pallet, disabling the OS pallet, if necessary:
 
 #### SLES
 
-add instructions
+```
+# ?
+```
 
 
 ### Freshly Installed Server
 
 #### CentOS
 
-Start with a fresh install of CentOS 7.4 using the "minimal" package selection. 
-This is the default for CentOS, you should also configure the network to have access to remote yum repositories.
+Start with a fresh install of [CentOS
+7.4](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1708.iso)
+using the default "minimal" package selection. You should also
+configure the network to have access to remote yum repositories.
 
 #### SLES
 
-add instructions
+?
 
 
 ## Bootstrap and Build
