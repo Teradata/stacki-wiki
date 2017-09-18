@@ -30,7 +30,7 @@ of usable space.
     ```
 1. Remove the src/order-stacki.mk file
     ```
-    # rm src/order-stacki.mk
+    # rm centos/src/order-stacki.mk common/src/order-stacki.mk
     ```
 1. Source /etc/profile.d/stack-build.sh file
     ```
@@ -38,7 +38,8 @@ of usable space.
     ```
 1.  Make RPMS for all packages
     ```
-    # make -C src rpm 
+    # cd centos
+    # make preroll
     ```
     > **Note**: This step will take a very long time.
     > Some packages may fail to build. This is OK,
@@ -48,14 +49,14 @@ of usable space.
    all the built RPMS in it. The next step is to create a
    yum-compatible repository.
    ```
-   # createrepo build-stacki-master/RPMS
+   # createrepo centos/build-stacki-master/RPMS
    ```
 
 1. Write `/etc/yum.repos.d/buildstacki.repo` file with the following content.
     ```
     [buildstacki]
     name=Build Stacki
-    baseurl=file:///export/src/stacki/build-stacki-master/RPMS/
+    baseurl=file:///export/src/stacki/centos/build-stacki-master/RPMS/
     enabled=1
     gpgcheck=0
     ```
@@ -69,7 +70,7 @@ of usable space.
 1. Install the stack-wizard package. This will allow us to create a site.attrs file
    that may then be used to create the frontend installation file
    ```
-   # yum install -y stack-wizard foundation-redhat foundation-py-ipaddress
+   # yum install -y stack-wizard
    ```
 
 1. Create /tmp/site.attrs file by running the wizard
@@ -82,8 +83,10 @@ of usable space.
 1. Create the installation script
     ```
     # stack list node xml server basedir=. attrs=/tmp/site.attrs | \
-      stack list host profile chapter=bash profile=shell > /tmp/frontend.sh
+      stack list host profile chapter=main profile=bash > /tmp/frontend.sh
     ```
+   > **Note**: You must run this command in your source directory (for example, /export/src/stacki/centos)
+
 1. Run /tmp/frontend.sh
    ```
    # sh -x /tmp/frontend.sh 2>&1 | tee /tmp/frontend-install.log
