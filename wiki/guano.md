@@ -45,6 +45,17 @@ __Con__:
 __Contra-con__: 
 
 
+## Idea: Add callbacks to the message queue
+
+__Motivation:__ Currently doing things like monitoring the state of the installing nodes requires polling, either via CLI or REST API.
+
+__Detail:__ We could add an optional callback URL to the message queue.  Something along of the lines of providing a REST endpoint (and optional data?) that the frontend would POST to once it received the message.
+
+__Con__: 
+
+__Contra-con__: 
+
+
 
 ## Idea: 
 
