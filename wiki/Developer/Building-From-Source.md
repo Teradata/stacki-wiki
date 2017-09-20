@@ -18,10 +18,6 @@ if you do not please
 [fork](https://help.github.com/articles/fork-a-repo/) the repository
 first, and then clone from your fork.
 
-```
-# cd /export/src/stacki
-```
-
 ## Prepare the Server
 
 ### Frontend Server
@@ -66,14 +62,14 @@ configure the network to have access to remote yum repositories.
 ## Bootstrap and Build
 
 ```
-# cd /export/src/stacki/centos
+# cd /export/src/stacki/centos (or sles)
 # make bootstrap
 ```
 
 This will complete and tell you to log out and log in again, follow the directions and then restart the bootstrap.
 
 ```
-# cd /export/src/stacki/centos
+# cd /export/src/stacki/centos (or sles)
 # make bootstrap
 # make
 # make manifest-check
