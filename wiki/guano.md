@@ -1,7 +1,7 @@
 This page serves as a collection for ideas that may (and in some cases should?!) never, ever be implemented in Stacki, or as an add-on to Stacki, but are interesting enough that they should be written down and kept somewhere.  Certainly, nothing written here should be read as a commitment, or even a plan.
 
 
-### Idea: Replace the frontend's install wizard with a web-app
+## Idea: Replace the frontend's install wizard with a web-app
 
 __Motivation:__ Removing WxPython would have a large impact on the build size and build time of the Stacki pallet.  It would also decrease the number of dependencies in the installer.  Finally, the wizard's code needs an overhaul.
 
@@ -12,7 +12,7 @@ __Con__: This webapp would probably be written in JS -- this reduces code reuse
 __Contra-con__: There really isn't a ton of code needed to be reused here.
 
 
-### Idea: Replace tfptd with the fbtftp library
+## Idea: Replace tfptd with the fbtftp library
 
 __Motivation:__ We have had users in the past bottlenecked by access to the TFTP server.
 
@@ -23,7 +23,7 @@ __Con__:
 __Contra-con__: 
 
 
-### Idea: Online interactive doc search
+## Idea: Online interactive doc search
 
 __Motivation:__ The number of stack commands is growing over time, and users discovering stack commands is now a common issue.
 
@@ -34,7 +34,7 @@ __Con__: Where to host?  Is live documentation useful?
 __Contra-con__: 
 
 
-### Idea: stack report system
+## Idea: stack report system
 
 __Motivation:__ Most stacki troubleshooting starts with the same half-dozen questions '`stack list pallet`, `stack list host boot`, etc'.  In some cases these are pasted in forums without any attempt at maintaining formatting, or worse are screenshots.
 
@@ -46,7 +46,7 @@ __Contra-con__:
 
 
 
-### Idea: 
+## Idea: 
 
 __Motivation:__ 
 
