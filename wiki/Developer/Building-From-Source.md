@@ -34,7 +34,7 @@ configure the network to have access to remote yum repositories.
 
 #### SLES
 
-Start with a fresh install of SLES 12, using the default desktop/workstation pattern.  If you do not have access to the remote SLES zypper repositories, you need to add the install ISO and the first SDK ISO as repos.
+Start with a fresh install of SLES 12, using the default desktop/workstation "system role".  If you do not have access to the remote SLES zypper repositories, you need to add the install ISO and the first SDK ISO as repos.
 
 ```
 zypper ar iso:/?iso=/export/SLE-12-SP2-Server-DVD-x86_64-GM-DVD1.iso install_dvd
@@ -51,14 +51,16 @@ Log into your build server and checkout the repository somewhere in /export (its
 # git clone git@github.com:Teradata/stacki.git
 ```
 
-Note: These instructions assume you have commit access to the
+*Note: These instructions assume you have commit access to the
 [Teradata/stacki.git](https://github.com/Teradata/stacki) repository,
 if you do not please
 [fork](https://help.github.com/articles/fork-a-repo/) the repository
-first, and then clone from your fork.
+first, and then clone from your fork.*
 
 
 ## Bootstrap and Build
+
+*Note: Make and our build system are very sensitive to time.  Ensure your build server's time is set correctly before starting these steps.*
 
 ```
 # cd /export/src/stacki/centos (or sles)
