@@ -5,7 +5,7 @@ This page serves as a collection for ideas that may (and in some cases should?!)
 
 __Motivation:__ Removing WxPython would have a large impact on the build size and build time of the Stacki pallet.  It would also decrease the number of dependencies in the installer.  Finally, the wizard's code needs an overhaul.
 
-__Detail:__ Rather than embedding a full web browser (or a doing it half-way via something like Electron), the installer would start a server-side JS server and annouce via console connectivity information.
+__Detail:__ Rather than embedding a full web browser (or a doing it half-way via something like Electron), the installer would start a server-side JS server and annouce via console connectivity information.  We could even do the frontend in Covalent.
 
 __Con__: This webapp would probably be written in JS -- this reduces code reuse
 
@@ -55,6 +55,16 @@ __Con__:
 
 __Contra-con__: 
 
+
+## Idea: Stacki FedUp as a Service (FUaaS)
+
+__Motivation:__ For some, setting up a Stacki frontend for the first time is a large hurdle.  We could have instructions/extra functionality for setting up a master Stacki Frontend.  Internal to Teradata, this would be very useful.
+
+__Detail:__ Stacki FedUp, to an extent allows for this.  However, PXE-booting the actual frontend may not be plausible.  This tool could allow for making that accessible over a LAN and capable of creating an attrfile and palletfile, as well as ensuring the pallets are accessible.  The node-to-be-provisioned would need to boot off of some media (to work around the DHCP issues) and then be pointed to (or know how to contact via another service/protocol such as Bonjour/mDNS?) the FedUp server.
+
+__Con__: I don't know anything about Bonjour, but there are Apache licensed versions.
+
+__Contra-con__: 
 
 
 ## Idea: 
