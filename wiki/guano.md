@@ -12,7 +12,7 @@ __Con__: This webapp would probably be written in JS -- this reduces code reuse
 __Contra-con__: There really isn't a ton of code needed to be reused here.
 
 
-## Idea: Replace tfptd with the fbtftp library
+## Idea: ~~Replace tfptd with the fbtftp library~~
 
 __Motivation:__ We have had users in the past bottlenecked by access to the TFTP server.
 
@@ -65,6 +65,16 @@ __Motivation:__ For some, setting up a Stacki frontend for the first time is a l
 __Detail:__ Stacki FedUp, to an extent allows for this.  However, PXE-booting the actual frontend may not be plausible.  This tool could allow for making that accessible over a LAN and capable of creating an attrfile and palletfile, as well as ensuring the pallets are accessible.  The node-to-be-provisioned would need to boot off of some media (to work around the DHCP issues) and then be pointed to (or know how to contact via another service/protocol such as Bonjour/mDNS?) the FedUp server.
 
 __Con__: I don't know anything about Bonjour, but there are Apache licensed versions.
+
+__Contra-con__: 
+
+## Idea: Run a cart on a backend node after the node has been installed.
+
+__Motivation:__ If you're of the mind-set that makes worst-case scenario inferences from implied questions, then some guy on the list asked for this.
+
+__Detail:__ You install a machine. You add a cart. Now you want to put the stuff in the cart on the backend node. You're too lazy to reinstall. Do "stack run host cart <cartname> backend-0-0" and the cart runs.  
+
+__Con__: This is insane. Rerun the install.
 
 __Contra-con__: 
 
