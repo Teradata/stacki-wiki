@@ -18,9 +18,11 @@ __Motivation:__ We have had users in the past bottlenecked by access to the TFTP
 
 __Detail:__ fbtftp was built to be scalable, and is actually a python library allowing for potentially a CGI-like response to tftp requests.
 
-__Con__: 
+__Con__: Greg suffers from 80s nostalgia.
 
-__Contra-con__: 
+__Contra-con__: He needs to get over it.
+
+__Status__: Done. In stacki 5.0 as foundation-fbtftp. Installed on CentOS and not enabled. Not currently installed on SLES.
 
 
 ## Idea: Online interactive doc search
