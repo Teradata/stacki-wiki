@@ -153,7 +153,7 @@ mapr - renice -10
 </post>
 ````
 
-Note the "<![CDATA[ ]]>" construction. It allows you to run a script or create a config file with special characters (special to the XML parser anyway) without having to work out XML entity issues. Issues that can fubar your kickstart file. Use it if in doubt, and if you have scripts with redirection or init-style scripts, this is a valuable tool to have to use work you've done wholesale.
+Note the "&lt;![CDATA[ ]]>" construction. It allows you to run a script or create a config file with special characters (special to the XML parser anyway) without having to work out XML entity issues. Issues that can fubar your kickstart file. Use it if in doubt, and if you have scripts with redirection or init-style scripts, this is a valuable tool to have to use work you've done wholesale.
 
 The CDATA contruction looks like this:
 
