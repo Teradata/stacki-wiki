@@ -36,15 +36,19 @@ __Con__: Where to host?  Is live documentation useful?
 __Contra-con__: 
 
 
-## Idea: stack report system
+## Idea: ~~stack report system~~
+
+This has been done. Use "stack report system"
+
+It probably needs more stuff to report. 
 
 __Motivation:__ Most stacki troubleshooting starts with the same half-dozen questions '`stack list pallet`, `stack list host boot`, etc'.  In some cases these are pasted in forums without any attempt at maintaining formatting, or worse are screenshots.
 
 __Detail:__ We could create a single report command that performed a series of these commands (along with some others, like the output of `df`, etc), already formatted in some way.  This would not invalidate the need for further questions, and collecting the whole database is infeasible anyway.
 
-__Con__: 
+__Con__: O.J. Simpson (now ex)
 
-__Contra-con__: 
+__Contra-con__: Oliver North (also ex)
 
 
 ## Idea: Add callbacks to the message queue
