@@ -63,20 +63,19 @@ first, and then clone from your fork.*
 *Note: Make and our build system are very sensitive to time.  Ensure your build server's time is set correctly before starting these steps.*
 
 ```
-# cd /export/src/stacki/centos (or sles)
+# cd /export/src/stacki/
 # make bootstrap
 ```
 
-This will complete and tell you to log out and log in again, follow the directions and then restart the bootstrap.  You can skip the log out/log in by running `source /etc/profile.d/stack-build.sh`.
+This will complete quickly and tell you to log out and log in again, follow the directions and then restart the bootstrap.  You can skip the log out/log in by running `source /etc/profile.d/stack-build.sh`.
 
 ```
-# cd /export/src/stacki/centos (or sles)
 # make bootstrap
 # make
 # make manifest-check
 ```
 
-This should leave you with a .iso file in the build directory, and the
+This should leave you with a .iso file in the ./build-stacki-$BRANCH_NAME directory, and the
 manifest-check should report all the packages were built.
 
 
