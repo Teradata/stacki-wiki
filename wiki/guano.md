@@ -9,7 +9,7 @@ __Detail:__ Rather than embedding a full web browser (or a doing it half-way via
 
 We could also just use the built-in Python [http.server.SimpleHTTPRequestHandler](https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler) for the web server.
 
-__Con__: This webapp would probably be written in JS -- this reduces code reuse
+__Con__: This webapp would probably be written in JS -- this reduces code reuse. Also, how do we get networking up so the person doing the install can connect to the HTTP server?
 
 __Contra-con__: There really isn't a ton of code needed to be reused here.
 
