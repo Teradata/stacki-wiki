@@ -5,7 +5,9 @@ This page serves as a collection for ideas that may (and in some cases should?!)
 
 __Motivation:__ Removing WxPython would have a large impact on the build size and build time of the Stacki pallet.  It would also decrease the number of dependencies in the installer.  Finally, the wizard's code needs an overhaul.
 
-__Detail:__ Rather than embedding a full web browser (or a doing it half-way via something like Electron), the installer would start a server-side JS server and annouce via console connectivity information.  We could even do the frontend in Covalent.
+__Detail:__ Rather than embedding a full web browser (or a doing it half-way via something like Electron), the installer would start a server-side JS server and announce via console connectivity information.  We could even do the frontend in Covalent.
+
+We could also just use the built-in Python [http.server.SimpleHTTPRequestHandler](https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler) for the web server.
 
 __Con__: This webapp would probably be written in JS -- this reduces code reuse
 
