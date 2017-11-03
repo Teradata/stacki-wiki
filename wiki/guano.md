@@ -7,9 +7,9 @@ __Motivation:__ Removing WxPython would have a large impact on the build size an
 
 __Detail:__ Rather than embedding a full web browser (or a doing it half-way via something like Electron), the installer would start a server-side JS server and announce via console connectivity information.  We could even do the frontend in Covalent.
 
-We could also just use the built-in Python [http.server.SimpleHTTPRequestHandler](https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler) for the web server.
+We could also just use the built-in Python [http.server.SimpleHTTPRequestHandler](https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler) for the web server. We can render the web form using a [WebkitGtk](https://webkitgtk.org/) in a fullscreen window.
 
-__Con__: This webapp would probably be written in JS -- this reduces code reuse. Also, how do we get networking up so the person doing the install can connect to the HTTP server?
+__Con__: This webapp would probably be written in JS -- this reduces code reuse.
 
 __Contra-con__: There really isn't a ton of code needed to be reused here.
 
