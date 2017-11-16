@@ -34,12 +34,22 @@ configure the network to have access to remote yum repositories.
 
 #### SLES
 
+##### 12SP2
+
 Start with a fresh install of SLES 12, using the default desktop/workstation "system role".  If you do not have access to the remote SLES zypper repositories, you need to add the install ISO and the first SDK ISO as repos.
 
 ```
 zypper ar iso:/?iso=/export/SLE-12-SP2-Server-DVD-x86_64-GM-DVD1.iso install_dvd
 zypper ar iso:/?iso=/export/SLE-12-SP2-SDK-DVD-x86_64-GM-DVD1.iso sdk_dvd
 ```
+
+#### 11SP3
+
+Start with a fresh install of SLES 11, using the default package set. By default you will not be connected to external repositories and you must add the install ISO and SDK ISO as repos.
+
+```
+zypper ar iso:/?iso=/export/SLES-11-SP3-DVD-x86_64-GM-DVD1.iso install_dvd
+zypper ar iso:/?iso=/export/SLE-11-SP3-SDK-DVD-x86_64-GM-DVD1.iso sdk_dvd
 
 ## Grab the Source
 
