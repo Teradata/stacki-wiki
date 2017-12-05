@@ -18,22 +18,23 @@ We call this server the **frontend**, and the servers it builds we call
 The Stacki frontend includes a configuration database coupled with software
 repositories that are used to completely define backend node software
 footprints (from OS kernel to application).
+
 Backend nodes can be identical or completely unique hardware and software -
 Stacki has been designed to dynamically install and configure heterogeneous
 server environments.
 
-## Kickstart 
+## Kickstart
 
 Stacki is built on top of Red Hat's installation tool (known as: anaconda) and
 dynamically creates kickstart files to install machines from bare
 metal.
 Because we use a framework built on top of kickstart,
 Stacki systems are managed at a much higher (and simpler) level
-than systems using disk imaging or virtual machine images. 
+than systems using disk imaging or virtual machine images.
 Seemingly complex actions such as swapping an OS between minor versions,
-or updating a kernel, become trivial operations. 
+or updating a kernel, become trivial operations.
 This is a consequence of managing a description of the
-machine rather than the image of a machine. 
+machine rather than the image of a machine.
 
 ## Parallel Installation
 
@@ -70,7 +71,7 @@ The power comes from two ideas:
 2. The collection of XML files defines a complete kickstart profile.
 
 (Don't let XML freak you out. It's more like "HTML with extra tags," and those tags map to kickstart structure you should be familiar with: pre, post, main etc.)
- 
+
 ## Attributes
 
 One of the most useful items in the frontend's configuration database are **attributes**.
