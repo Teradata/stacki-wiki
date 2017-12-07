@@ -50,7 +50,7 @@ Start with a fresh install of SLES 11, using the default package set. By default
 ```
 zypper ar iso:/?iso=/export/SLES-11-SP3-DVD-x86_64-GM-DVD1.iso install_dvd
 zypper ar iso:/?iso=/export/SLE-11-SP3-SDK-DVD-x86_64-GM-DVD1.iso sdk_dvd
-```
+
 ## Grab the Source
 
 Log into your build server and checkout the repository somewhere in /export (its a large repo).  Install `git`, if it isn't already on your system.
