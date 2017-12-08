@@ -1,7 +1,7 @@
 ### Contents
 
 * [Overview](Overview)
-* [QuickStart](Quickstart)
+* [Quickstart](Quickstart)
 * [Definitions](Terms)
 * Installation
   * [Frontend Installation From Iso](Frontend-Installation-From-Iso)
