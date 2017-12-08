@@ -191,9 +191,9 @@ a:hover { text-decoration: underline; }
 
 .site-footer-credits { color: #819198; }
 
-.main { float: left; width: 80%; height: 100% ; text-align: justify; padding-right: 3rem; background-color: #ffffff; padding: 40px; border-radius: 10px; }
+.main { float: right; width: 80%; height: 100% ; text-align: justify; padding-right: 3rem; background-color: #ffffff; padding: 40px; border-radius: 10px; }
 .main-content { width: 100%; }
-.sidebar { float: right; width: 18%; height: 100% ; font-weight: lighter ; font-size: smaller; text-align: left; color: #dddddd; font-size: 14px;  }
+.sidebar { float: left; width: 18%; height: 100% ; font-weight: lighter ; font-size: smaller; text-align: left; color: #dddddd; font-size: 14px;  }
 .sidebar a { color: #ffffff; text-decoration: none; font-size: 13px; }
 .sidebar a.active { color: #13b2c6; }
 .sidebar a:hover { color: #13b2c6; }

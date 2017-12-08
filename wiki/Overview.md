@@ -2,7 +2,16 @@
 
 ## Putting real electrons on real silicon.
 
-Stacki is the fastest data center bare metal installer on the planet and is now part of the Teradata family of open source projects. Developed and supported by the Shared Services team at Teradata.
+Stacki is an extremly fast and scalable data center bare metal installer and is part of 
+the Teradata family of open source projects - developed and supported by the 
+Shared Services team at Teradata.
+
+"Stacki" = Stack Installer
+
+We install all your stack. 
+
+And it's pronounced "Stack-ee" not "Stack-eye."
+
 
 ### Yeah, whatever - what is it?
 
@@ -24,10 +33,11 @@ What it does is simple:
 
 What it produces is complex:
 
-1. Machines as disposable. Everything is built from the ground up programmatically - recovering from disasters just means rebuilding your servers.
-2. Data is not disposable. After initial installation, data is preserved across reinstalls. Data drives are reformatted only by deliberate action. A reinstall is a refresh of the OS and/or application software while data on disk is preserved.
-3. Certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Our goal stop configuring individual servers and always know the state of your data center.
-4. DevOps integration. Servers are installed with Stacki and can be augmented them with DevOps infrastructure - be it shell scripts, Salt, Chef, Puppet, CFEngine, Ansible, or homegrown. Don't throw away work already done.
+1. One source of truth for the data center - a stacki frontend.
+2. Disposable machines, just like VMs Everything is built from the ground up programmatically - recovering from disasters just means rebuilding your servers.
+3. Doesn't dispose of data. After initial installation, data is preserved across reinstalls. Data drives are reformatted only by deliberate action. A reinstall is a refresh of the OS and/or application software while data on disk is preserved.
+4. Certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Stacki allows you to stop configuring individual servers and always know the state of your data center.
+5. DevOps integration. Servers are installed with Stacki and can be augmented them with DevOps infrastructure - be it shell scripts, Salt, Chef, Puppet, CFEngine, Ansible, or homegrown. Don't throw away work already done.
 
 ### Origins
 
