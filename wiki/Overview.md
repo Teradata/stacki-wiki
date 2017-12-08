@@ -10,14 +10,13 @@ Shared Services team at Teradata.
 
 We install all your stack. 
 
-And it's pronounced "Stack-ee" not "Stack-eye."
-
+And it's pronounced "Stack-ee" not "Stack-eye" or "Stuh-kai."
 
 ### Yeah, whatever - what is it?
 
 Stacki is a CentOS/RHEL/Ubuntu/SLES bare metal install tool that takes servers from bare hardware (or virtual hardware) to working Linux, ready to install applications. It doesn't install images of OSs, it installs the OS with native kickstart, preseed or autoyast.
 
-Stacki parallelizes at scale, so deploying 1000+ servers is no more complex than deploying one.
+Stacki parallelizes at scale, so deploying 1000+ servers is no slower or complex than deploying one.
 
 Advanced users can use Stacki to install applications (Hadoop, OpenStack, HPC, Docker, Kubernetes ad nauseum).
 
