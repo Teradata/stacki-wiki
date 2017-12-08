@@ -34,7 +34,9 @@
   * [Rocks License](Rocks-License)
   * [Stacki License](Stacki-License)
 * Reference
-  * [Wire Reference](Wire-Reference)
+  * [Command Line](stacki-CLI-documentation) 
+  * [Wire](Wire-Reference)
+  * [Example CSV Files](Example-CSV-Files)
 * [Guano](Guano)
 
 ### Previous Releases 
