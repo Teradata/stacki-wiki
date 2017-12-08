@@ -87,7 +87,7 @@ for i in `find wiki -type f`; do
 	fi
 done
 
-# Github pages requires an index file. Our main index file in Home.md
+# Github pages requires an index file. Our main index file in Overview.md
 # Copy this over, but filter out the permalink.
-sed '/permalink: \/Home/d' docs/Home.md > docs/index.md
+sed '/permalink: \/Overview/d' docs/Overview.md > docs/index.md
 
