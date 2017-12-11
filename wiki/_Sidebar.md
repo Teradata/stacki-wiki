@@ -2,9 +2,10 @@
 
 * [Home](Home)
 * [Overview](Overview)
-* [Quickstart](Quickstart)
+* [Getting Started](Getting Started)
 * [Definitions](Terms)
 * Installation
+  * [Quickstart](Quickstart)
   * [Frontend Installation From Iso](Frontend-Installation-From-Iso)
   * [Frontend Installation On Preinstalled System](Frontend-Installation-On-Preinstalled-System)
   * [Backend Installation Via Discovery](Backend-Installation-Via-Discovery)
@@ -32,19 +33,18 @@
 * Developer
   * [Building From Source](Building-From-Source)
 * Licenses
+  * [Overview Licenses]Licenses.md
   * [Rocks License](Rocks-License)
   * [Stacki License](Stacki-License)
 * Reference
-  * [Command Line](stacki-CLI-documentation) 
+  * [Command Line](stacki-CLI-documentation)
   * [Wire](Wire-Reference)
   * [Example CSV Files](Example-CSV-Files)
 * [Guano](Guano)
 
-### Previous Releases 
+### Previous Releases
 
 * [4.x](https://github.com/Teradata/stacki-documentation-4.x/wiki)
 * [3.x](https://github.com/Teradata/stacki-documentation-3.x/wiki)
 * [2.x](https://github.com/Teradata/stacki-documentation-2.x/wiki)
 * [1.x](https://github.com/Teradata/stacki-documentation-1.x/wiki)
-
-

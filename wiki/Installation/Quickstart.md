@@ -28,7 +28,7 @@ Actually, I lied, it's four steps.
 
 Don't do any of this if you haven't checked your machine/VM against the requirements.
 
-If you ask for help, it's the first thing we're going to ask you, and you will sense our mockery in our Slack responses like a silent acid rain.
+If you ask for help, it's the first thing we're going to ask you, and you will sense the silent acid rain of mockery of our Slack responses.
 
 ### 1. Check Requirements
 Frontend:
@@ -44,7 +44,7 @@ The current version is Stacki 5.0.
 
 [stackios-5.0_20171128_b0ed4e3-redhat7.x86_64.disk1.iso](http://teradata-stacki.s3.amazonaws.com/release/stacki/5.x/stackios-5.0_20171128_b0ed4e3-redhat7.x86_64.disk1.iso) (md5: 06a32c320cf8ed546c01d6f5cbe9d31c)
 
-Check the md5sum. Yeah, no, check the md5sum. Remember the silent acid rain of mockery.
+Check the md5sum. Yeah, no, check the md5sum. Remember, silent acid rain of mockery.
 
 ### 3. (formerly 2.) Install the frontend.
 
