@@ -1,6 +1,6 @@
 ## Getting Started
 
-Stacki is an extremly fast and scalable data center bare metal installer and is part of the Teradata family of open source projects - developed and supported by the Shared Services team at Teradata (formerly the wacky bunch of engineers from StackIQ).
+Stacki is an extremely fast and scalable data center bare metal installer and is part of the Teradata family of open source projects - developed and supported by the Shared Services team at Teradata (formerly the wacky bunch of engineers from StackIQ).
 
 So yeah, there's that.
 
