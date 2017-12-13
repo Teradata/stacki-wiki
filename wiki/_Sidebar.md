@@ -1,18 +1,14 @@
-### Contents
-
-* [Home](Home)
+### Stacki 5.0 Documentation
+* [Getting Started](Home)
 * [Overview](Overview)
-* [Getting Started](Getting Started)
 * [Definitions](Terms)
+* [Release Notes for 5.0](ReleaseNotes)
 * Installation
   * [Quickstart](Quickstart)
   * [Frontend Installation From Iso](Frontend-Installation-From-Iso)
   * [Frontend Installation On Preinstalled System](Frontend-Installation-On-Preinstalled-System)
   * [Backend Installation Via Discovery](Backend-Installation-Via-Discovery)
   * [Backend Installation Via Spreadsheet](Backend-Installation-Via-Spreadsheet)
-* Configuration
-  * [IP Address Change](IP-Address-Change)
-  * [Storage Configuration](Storage-Configuration)
 * Customization
   * [Adding RPMs](Adding-RPMs)
   * [Boxes](Boxes)
@@ -23,6 +19,9 @@
   * [Manage Pallets](Manage-Pallets)
   * [Network Configuration](Network-Configuration)
   * [Stacki Universal XML](Stacki-Universal-XML)
+* Common Configurations
+  * [IP Address Change](IP-Address-Change)
+  * [Storage Configuration](Storage-Configuration)
 * Workflows
   * [Workflows Overview](Workflows-Overview)
   * [Basic Workflows](Basic-Workflows)
@@ -33,7 +32,7 @@
 * Developer
   * [Building From Source](Building-From-Source)
 * Licenses
-  * [Overview Licenses]Licenses.md
+  * [Overview Licenses](Licenses)
   * [Rocks License](Rocks-License)
   * [Stacki License](Stacki-License)
 * Reference

@@ -89,5 +89,5 @@ done
 
 # Github pages requires an index file. Our main index file in Overview.md
 # Copy this over, but filter out the permalink.
-sed '/permalink: \/Overview/d' docs/Overview.md > docs/index.md
+sed '/permalink: \/Home/d' docs/Home.md > docs/index.md
 

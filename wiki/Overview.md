@@ -1,10 +1,6 @@
-# Stacki Overview
+## Stacki Overview
 
-## Putting real electrons on real silicon.
-
-Stacki is an extremly fast and scalable data center bare metal installer and is part of
-the Teradata family of open source projects - developed and supported by the
-Shared Services team at Teradata.
+## Putting real electrons on real silicon since 199....a long time.
 
 "Stacki" = Stack Installer
 
@@ -36,7 +32,7 @@ What it produces is complex:
 2. Disposable machines, just like VMs Everything is built from the ground up programmatically - recovering from disasters just means rebuilding your servers.
 3. Doesn't dispose of data. After initial installation, data is preserved across reinstalls. Data drives are reformatted only by deliberate action. A reinstall is a refresh of the OS and/or application software while data on disk is preserved.
 4. Certainty. If you're configuring individual machines on a daily basis without automation, you're losing. Stacki allows you to stop configuring individual servers and always know the state of your data center.
-5. DevOps integration. Servers are installed with Stacki and can be augmented them with DevOps infrastructure - be it shell scripts, Salt, Chef, Puppet, CFEngine, Ansible, or homegrown. Don't throw away work already done.
+5. DevOps integration. Servers are installed with Stacki and can be augmented with DevOps infrastructure - be it shell scripts, Salt, Chef, Puppet, CFEngine, Ansible, or homegrown. Don't throw away work already done.
 
 ## Linux
 
@@ -48,8 +44,7 @@ We generally develop on SLES since it is Teradata's focus, but we always test on
 Every application from big data to cloud requires real electrons on real
 silicon.
 
-The following is a list of some of the applications that stack is used to deploy.
-
+The following is a list of some of the applications that stacki is used to deploy:
 
 * Big Data: Cloudera, Hortonworks, MapR, Pivotal, BigInsights, Spark, Storm, Cassandra, MongoDB, RabbitMQ, R, Mesos, Splunk
 * Cloud: OpenStack (RHEL-OSP, community OpenStack, RDO), CloudStack
