@@ -10,9 +10,11 @@ Follow this guide if you are:
 * Have never done this before.
 
 Do not follow this guide if:
-* You've done it many many times before. It's all just the same.
-* You want Ubuntu or SLES. These are not currently supported on Stacki 5.0.
-* You want CentOS/RHEL 6.x - not supported yet. (Really? 7.x beckons.)
+1. You've done it many many times before. It's all just the same.
+2. You want Ubuntu or SLES. These are not currently supported on Stacki 5.0.
+3. You want CentOS/RHEL 6.x - not supported yet. (Really? 7.x beckons.)
+
+(If you really, really, really...really, need 2 or 3, use [Stacki-4.0](https://github.com/Teradata/stacki-documentation-4.x/wiki).
 
 ### Default cluster install
 
@@ -52,7 +54,7 @@ Check the md5sum. Yeah, no, check the md5sum. Remember, silent acid rain of mock
 
 ### 3. Install the frontend (formerly Step 2)
 
-Put the ISO in the DVD. This can be external, internal, or virtual media.
+Burn the ISO to a DVD. Then put the just burned DVD into an external, internal, or virtual DVD drive.
 
 I proceed with pictures from a VirtualBox install. The actions are the same on bare metal or other virtual environments. If you can't extrapolate from one platform to the next, are you certain you have chosen the correct career?
 
@@ -113,6 +115,8 @@ Looks good! Let's go!
 
 ### 4. Install backend(s) (formerly Step 3)
 
+** Please note: Installing laptops as backends is not supported. Ever. Eeeeeeeevveeeeer. Don't write, don't call, don't text if you're trying to install a laptop as a backend server. Our most acidic mockery is reserved for you. (pH level = 0 = battery acid) If you're successful, great, don't tell us, we don't want to know.
+
 You have a frontend. It's useless if it's not managing backend nodes.
 
 You can add backend hosts either with a spreadsheet or discovery.
@@ -137,15 +141,25 @@ You now have a blank screen waiting to receive DHCP requests.
 
 These two pictures show the minimal requirement for a backend node. It's just an example.
 
-Backend nodes have to have PXE set first. A must. An absolute requirement. A categorical imperative (Yeaaah, you know your Kant). You're not installing anything automated or at scale if you're not doing this. Don't argue. I have 15 years of arguments waiting to be used.
+Backend nodes have to have PXE set first in the BIOS boot order. A must. An absolute requirement. A categorical imperative (Yeaaah, you know your Kant). You're not installing anything automated or at scale if you're not doing this. Don't argue. I have 15 years of arguments waiting to be used.
 
-Set PXE first.
+If the vendor does not set PXE first on your machines, you have to go do it.
 
-![backend_install_vbox_7](images/backend/backend_install_vbox_7.png)
+* Boot the machine.
+* Select BIOS Setup.
+* Enable PXE on the NIC wired to the installation network.
+* In the boot order set that NIC to the first boot device.
+* Save settings and exit.
+
+On a VM it looks like this:
+
+![backend_install_vbox_8](images/backend/backend_install_vbox_8.png)
 
 The frontend and backend have to be on the same network to talk to each other. It doesn't have to be the same network as your apps or storage or whatever. But the wires where the backends make requests and the frontend gives answers has to be the same set of wires.
 
-![backend_install_vbox_8](images/backend/backend_install_vbox_8.png)
+In this VM example, we're putting both networks on a "local" network. They can only talk to each other. It looks like this:
+
+![backend_install_vbox_7](images/backend/backend_install_vbox_7.png)
 
 Now power on the backend machine.
 
@@ -162,7 +176,6 @@ The node patiently waiting for its configuration file:
 The node with its configuration file and the kickstart started. Note the '*' that tells you this:
 
 ![backend_install_vbox_6](images/backend/backend_install_vbox_6.png)
-
 
 You can quit out of the discover-nodes application at this point.
 

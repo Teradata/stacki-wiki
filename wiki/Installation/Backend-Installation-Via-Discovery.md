@@ -1,3 +1,12 @@
+---
+layout: page
+title: Backend Installation Via Discovery
+permalink: /Backend-Installation-Via-Discovery
+author: Joe Kaiser
+commitdate: Thu Dec 7 21:36:35 2017 -0800
+commithash: 7f2d2e5
+---
+
 After the frontend is up and running, backend nodes can be installed.
 
 ## Requirements 
