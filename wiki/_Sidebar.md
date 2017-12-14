@@ -10,8 +10,8 @@
   * [Frontend Install - New](Frontend-Install-New)
   * [Frontend Install - Existing](Frontend-Install-Existing)
   * [Backend Install - Basics](Backend-Installation)
-  * [Backend Install - Discovery](Backend-Installation-Via-Discovery)
-  * [Backend Install - Spreadsheet](Backend-Installation-Via-Spreadsheet)
+  * [Backend Install - Discovery](Backend-Install-Discovery)
+  * [Backend Install - Spreadsheet](Backend-Install-Spreadsheet)
 * Customization
   * [Adding RPMs](Adding-RPMs)
   * [Boxes](Boxes)
