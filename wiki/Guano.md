@@ -85,6 +85,17 @@ __Con__: This is insane. Rerun the install.
 __Contra-con__: 
 
 
+## Idea: stack add/remove monkeypatch
+
+__Motivation:__ Testing and delivering features and bugfixes is annoying.
+
+__Detail:__ Add a new set of stack commands.  The premise is to allow you to manage patches to the stack commandline.  `stack add monkeypatch $SHA` would allow you to add functionality from the patch, `stack remove monkeypatch $SHA` would revert the patch.  `stack list monkeypatch` would show you patches on the system.  Perhaps `stack create monkeypatch` could identify changes to the existing system and prepare a diff suitable for consuming in `git apply`.  I don't think this would be usable outside of the stack CLI.
+
+__Con__: This is complicated and potentially dangerous to implement.  How do you handle merge conflicts?
+
+__Contra-con__: Git could do the heavy lifting here.  We could prevent adding conflicting patches.
+
+
 ## Idea: 
 
 __Motivation:__ 
