@@ -3,7 +3,7 @@
 * [Overview](Overview)
 * [Definitions](Terms)
 * [Release Notes for 5.0](ReleaseNotes)
-* [Diffs from Stacki 4.0](DiffsFrom40.md)
+* [Diffs from Stacki 4.0](DiffsFrom40)
 * Installation
   * [Quickstart](Quickstart)
   * [Frontend Install - Basics](Frontend-Installation)
@@ -25,6 +25,7 @@
 * Common Configurations
   * [IP Address Change](IP-Address-Change)
   * [Storage Configuration](Storage-Configuration)
+  * [UEFI](UEFI)
 * Workflows
   * [Workflows Overview](Workflows-Overview)
   * [Basic Workflows](Basic-Workflows)

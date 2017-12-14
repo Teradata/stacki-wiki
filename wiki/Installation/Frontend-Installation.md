@@ -45,13 +45,13 @@ The Stacki frontend runs on top of a CentOS/RHEL 7.x base.
 
 You have two options:
 
-1. ** Building on new server **
+** Building on new server **
 
   If you don't have an already existing vanilla CentOS or RedHat 7.4 system, build a new server from bare metal with Stacki and the required CentOS bits (which we call "stackios").
 
   Follow the [Fronted Install - New](Frontend-Install-New) doc.
 
-2. ** Building on an existing server **
+** Building on an existing server **
 
   If you wish to install Stacki on top of an existing vanilla CentOS or RedHat 7.4 system,
 

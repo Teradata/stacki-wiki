@@ -105,8 +105,6 @@ Review the installation parameters and click _Continue_ to proceed.
 
 ![frontend_install_vbox_14](images/frontend/frontend_install_vbox_14.png)
 
-#### New
-
 If this was a new frontend installation, the frontend will now format
 its filesystems and copy the pallets from the DVD onto its hard disk.
 Next, it will install all the packages and then run post configuration

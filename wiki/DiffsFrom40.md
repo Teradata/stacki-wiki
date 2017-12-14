@@ -1,5 +1,51 @@
 This describes some changes between Stacki 4.0 and Stacki 5.0 for those who are needing some translation.
 
+### Spreadsheet headers have changed
+
+Be aware. Spreadsheet headers have changed for "hostfile" and "networkfile".
+
+In most instances, old spreadsheets will work, but you'll have to change a couple things in your hostfile spreadsheet.
+
+RUNACTION is now "OS ACTION"
+
+and the individual nodes need RUNACTION or OS ACTION to be set to default, or whatever bootaction is still there.
+
+### Bootaction
+
+### Saving Carts
+
+### Cart syntax
+
+Syntax for XML nodes files in carts has changed. To make immediate changes to make sure the kickstart builds, check your files for this:
+
+<?xml version="1.0" standalone="no"?>
+<kickstart>
+.stuff
+..stuff
+...more stuff
+....lots of stuff
+</kickstart>
+
+Take out the "xml version" line.
+
+and change the kickstart tags to:
+
+<stack:stack>
+.stuff
+..stuff
+...more stuff
+....lots of stuff
+</stack:stack>
+
+Make sure a:
+
+```
+stack list host profile somenodename
+```
+
+Completes without syntax errors.
+
+To see further changes go to [Stacki Universal XML](SUX) documentation.
 
 ### Command Line
 
