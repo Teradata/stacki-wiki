@@ -18,6 +18,7 @@ and the individual nodes need RUNACTION or OS ACTION to be set to default, or wh
 
 Syntax for XML nodes files in carts has changed. To make immediate changes to make sure the kickstart builds, check your files for this:
 
+```
 <?xml version="1.0" standalone="no"?>
 <kickstart>
 .stuff
@@ -25,17 +26,20 @@ Syntax for XML nodes files in carts has changed. To make immediate changes to ma
 ...more stuff
 ....lots of stuff
 </kickstart>
+```
 
 Take out the "xml version" line.
 
 and change the kickstart tags to:
 
+```
 <stack:stack>
 .stuff
 ..stuff
 ...more stuff
 ....lots of stuff
 </stack:stack>
+```
 
 Make sure a:
 

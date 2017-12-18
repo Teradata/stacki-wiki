@@ -20,7 +20,7 @@ we’re going to look at the simplest case. Assumptions are:
 1. The application to be installed is available as an RPM
 2. The application can be configured using simple shell command
    or a script.
-3. The developer is has a basic knowledge of editing HTML-like syntax.
+3. The developer has a basic knowledge of editing HTML-like syntax.
 
 Stacki uses a collection of XML files that provide the definition
 of a system, and the instructions for installing a backend node.
@@ -29,19 +29,19 @@ the XML framework to accommodate the extra functionality
 required.
 
 The XML structure is not complicated - think of it as HTML with extra
-tags. The tags Stacki incorporates, map to kickstart elements you 
+tags. The tags Stacki incorporates, map to kickstart elements you
 should already be familiar with: pre, post, main, package. From there
 it's mostly adding shell commands and scripts to install and configure
 applications.
 
 For more information about the available XML tags, refer to the
-[Wire Reference Guide](Wire-Reference)
+[Stacki Universal XML guide](SUX)
 
 ### Introduction to Carts
 
 Carts are created by end users in order to customize the configuration of
 backend nodes.
-For this section, we will walk through an example of creating a cart to 
+For this section, we will walk through an example of creating a cart to
 add an Apache web server to backend nodes.
 We'll call this the *apache* cart.
 
@@ -147,7 +147,7 @@ We can associate our *apache* cart to the default box by executing:
 And now *stack list box* shows us:
 
 ```
-NAME     OS     PALLETS                   CARTS 
+NAME     OS     PALLETS                   CARTS
 default: redhat os-6.7-6.x stacki-3.0-6.x apache
 ```
 
@@ -156,7 +156,7 @@ our changes will be applied to a backend host when it installs.
 We can create a kickstart file for a backend host (in the command below,
 the backend host's name is *backend-0-0*), by executing:
 
-	# stack list host profile backend-0-0 > /tmp/ks.cfg	
+	# stack list host profile backend-0-0 > /tmp/ks.cfg
 
 If you open the file */tmp/ks.cfg*, you'll see that *httpd* is listed in the
 *packages* section:
@@ -199,7 +199,7 @@ Copy the RPM(s) into:
 
 If you want to add them on the fly, i.e. you don't want to reinstall your machines then execute:
 
-	# stack compile cart apache	
+	# stack compile cart apache
 	# stack report host yum "hostname" | stack report script | ssh -T "hostname"
 
 In the above command, *hostname* is a name of one of your backend nodes.
