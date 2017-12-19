@@ -34,3 +34,11 @@ NETWORK ADDRESS     MASK          GATEWAY      MTU  ZONE   DNS   PXE
 private 10.3.1.0    255.255.255.0 10.3.1.1     1500 local  True  True
 public  192.168.0.0 255.255.0.0   192.168.10.1 1500 jkloud False False
 ```
+
+### Can I change the private network after installation?
+
+No, not possible. Don't get that bit wrong. If you get it wrong, reinstall the frontend.
+
+This warning was in the frontend installation documentation. Did you not heed it?
+
+_**Do not get this network wrong! Changing it after the fact means a REINSTALL of the frontend.**_

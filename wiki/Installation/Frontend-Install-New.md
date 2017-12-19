@@ -36,6 +36,8 @@ The first screen will appear and you will be prompted to enter your timezone:
 
 ### Network
 
+_**Do not get this network wrong! Changing it after the fact means a REINSTALL of the frontend.**_
+
 The network configuration screen allows you to set up the network that will
 be used by the frontend to install backend hosts.
 
@@ -63,12 +65,12 @@ repartition and reformat the first discovered hard drive
 that is connected to the frontend. All other drives
 connected to the frontend will be left untouched.
 
-| Partition Name | Size |
-| -------------- | ---- |
-|       /        | 16GB |
-|       /var     | 16GB |
-|       swap     |  1GB |
-| /export (symbolically linked to /state/partition1)|remainder of root disk|
+| Partition Name                                     | Size                   |
+|:---------------------------------------------------|:-----------------------|
+| /                                                  | 16GB                   |
+| /var                                               | 16GB                   |
+| swap                                               | 1GB                    |
+| /export (symbolically linked to /state/partition1) | remainder of root disk |
 
 When using automatic partitioning, the installer repartitions
 and reformats the first hard drive (e.g. _sda_) that the installer

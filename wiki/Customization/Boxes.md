@@ -1,24 +1,25 @@
+### BOXES
+
 Stacki enables you to create a **box** which is a composition of pallets
 and (optionally) carts.
-The contents of a box is the entire set of RPMs and configuration scripts that
-are available to a backend host when it installs.
+
+The contents of a box is the entire set of RPMs and configuration scripts that are available to a backend host when it installs.
 
 The _default_ box consists of the _stacki_ and _os_ pallets (and no carts).
 The _os_ pallet is a stripped down version of CentOS.
+
 These two pallets are the minimum pallets required to install a backend host.
+
 Backend hosts are assigned the _default_ box automatically.
 
 Different backend hosts can be assigned to different boxes which gives you
-a great deal of latitude when deciding what software stacks should go on which
-backend hosts.
+a great deal of latitude when deciding what software stacks should go on which backend hosts.
 
 A few examples of the utility of boxes:
 
 * **Maintaining different versions of the OS**:
-  If you want CentOS 6.6 on one set of backend hosts and CentOS 6.7 on another
-  set of backend hosts.
-  You can download the 6.7 CentOS ISOs, add them to the frontend (with `stack
-  add pallet`), create a new box with the CentOS 6.7 pallet, then assign
+  If you want CentOS 6.6 on one set of backend hosts and CentOS 6.7 on another set of backend hosts.
+  You can download the 6.7 CentOS ISOs, add them to the frontend (with `stack add pallet`), create a new box with the CentOS 6.7 pallet, then assign
   backend hosts to the new box.
 
 * **Maintaining updates**:
@@ -180,4 +181,3 @@ Which shows that we only now have the _default_ box defined:
 NAME     OS     PALLETS                   CARTS
 default: redhat stacki-3.0-6.x CentOS-6.7 -----
 ```
-

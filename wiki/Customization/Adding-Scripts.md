@@ -1,6 +1,8 @@
-Whatever you can do in a shell, you can do during kickstart.
+### Adding configuration scripts to carts
 
-Our assumption is that when a machine comes up, it should be exactly the way you want at first boot. This way you're certain your stuff is going to run once you hit the install/reinstall button because you've already done the hard configuration scripting to make it so. 
+Whatever you can do in a shell, you can do during install.
+
+Our assumption is that when a machine comes up, it should be exactly the way you want at first boot. This way you're certain your stuff is going to run once you hit the install/reinstall button because you've already done the hard configuration scripting to make it so.
 
 Which means you probably don't want to recreate all of that work just because you've started using a new tool. You've already figured it out, you don't want to do it again, and you probably can't remember why you do some of the things you do in those scripts. We'll discuss how to modify a cart to:
 * Not lose work you've already done.
@@ -10,8 +12,12 @@ We'll deal with two types of files: configuration files and scripts that have to
 
 ##### Configuration files
 
-In the [Introduction to Carts](Carts) section,
-we used the *apache* cart as an example cart -- we'll continue to use it here.
+
+
+
+### Apache example continued.
+
+In the [Adding RPMS](Adding-RPMS) section, we started configuring an*apache* cart as an example -- we'll continue to use it here.
 
 Go to the *nodes* directory of your cart:
 
@@ -21,19 +27,26 @@ Go to the *nodes* directory of your cart:
 
 Edit *cart-apache-backend.xml*.
 
-We are most concerned with what goes on between `<post> </post>` tags. Remember, this runs during the post-install configuration. It maps to the %post stanza in kickstart.
+We are most concerned with what goes on between the:
 
-So in post tags:
+  ```<stack:script stack:stage="install-post"> </stack:script>``` tags.
+
+Remember, this runs during the post-install configuration. It maps to the %post stanza in kickstart.
+
+So in a script tag with the stage set to "install-post" we are going to add a file to the /etc/httpd/conf.d/http.conf file.
+
 ```
-<post>
+<stack:script stack:stage="install-post">
 
-<file name="/full/path/of/file.conf">
-These are the contents of my file
-</file>
+<stack:file stack:name="/etc/httpd/conf.d/site-http.conf">
 
-</post>
+</stack:file>
+
+</stack:script>
 ```
 
+
+### Other options
 But if you need to make it executable, you can set the permissions:
 
 ```
@@ -56,7 +69,7 @@ Contents
 
 (Default perms are 0644, i.e. rw-r--r-- for the numerically challenged.)
 
-If you want to append to a file: 
+If you want to append to a file:
 
 ```
 <post>
@@ -186,7 +199,7 @@ Run a long bash script.
 </post>
 ```
 
-Oh yeah, you might need a "mkdir -p /full/path/of/script" before you can put the file in the directory. 
+Oh yeah, you might need a "mkdir -p /full/path/of/script" before you can put the file in the directory.
 
 ```
 <post>
@@ -285,7 +298,7 @@ after all your `<post> </post>` tags you can do:
 /full/path/of/script/dothis.sh
 </boot>
 ```
-The output of that will be in /root/rocks-post.log after an install. 
+The output of that will be in /root/rocks-post.log after an install.
 
 Here is an example where we call a legacy script from Cobbler.
 
@@ -336,7 +349,7 @@ for iface in ifaces:
 </post>
 ```
 
-I'm setting up lldp, and I want to initialize the interfaces. I don't know what capabilities they have, so I'm just going to enable everything and whatever happens, happens. I could be more exact about this if I really wanted to. I'm using the 'interpreter="/usr/bin/python"' to tell the post tag to use python. 
+I'm setting up lldp, and I want to initialize the interfaces. I don't know what capabilities they have, so I'm just going to enable everything and whatever happens, happens. I could be more exact about this if I really wanted to. I'm using the 'interpreter="/usr/bin/python"' to tell the post tag to use python.
 
 It's the equivalent of this:
 ```
@@ -345,3 +358,6 @@ It's the equivalent of this:
 
 in a regular python script. So if you have perl scripts you've written or someone else has, use a perl interpreter line, and put the script in-between ```<post> </post>``` tags.
 
+### Further Reading
+
+We have touched the surface of what you can do to configure backend machines. See the [Stacki Universal XML](SUX) documentation for a more complete listing of cart XML syntax. There are further examples at someplace to be named.

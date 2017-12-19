@@ -14,9 +14,9 @@
   * [Backend Install - Spreadsheet](Backend-Install-Spreadsheet)
 * Customization
   * [Carts](Carts)
-    * [Adding RPMs](Adding-RPMs)
-    * [Extend Backend Nodes](Extend-Backend-Nodes)
-    * [Extend Your Scripts](Extend-Your-Scripts)
+    * [Adding Software](Adding-RPMs)
+    * [Adding Install Scripts](Adding-Scripts)
+    * [Extending/Replacing Stacki XML defaults](Extending-Replacing-Stacki-XML)
   * [Boxes](Boxes)
     * [Creating Simple Pallets](Creating-Simple-Pallets)
     * [Manage Pallets](Manage-Pallets)

@@ -71,6 +71,8 @@ It will bring you to choose your Timezone. So do that and hit Continue.
 
 The next screen is network set-up. Input the information for the network that the frontend and backend share. After installation, you can add more networks and interfaces.
 
+_**Do not get this network wrong! Changing it after the fact means a REINSTALL of the frontend.**_
+
 ![frontend_install_vbox_10](images/frontend/frontend_install_vbox_10.png)
 
 Choose a password, but better than the one in this png. Seriously, your career will thank me later.
