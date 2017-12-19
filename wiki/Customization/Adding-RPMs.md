@@ -201,6 +201,9 @@ Then to add *rpmname* to all your backend nodes.
 
 	# stack run host a:backend command="yum clean all && yum -y install <rpmname>"
 
+### Creating your own RPMS.
+
+Stacki has the ability to create rudimentary RPMS from directories to allow installing site specific software. Putting those applications in RPMS is recommended because it allows you to add them to a cart and take advantage of the peer-to-peer installer duing installation. You can find details in [Creating Site RPMS](Creating-Site-RPMS)
 
 Frequently, there are configuration requirements for the service you have installed with an RPM. We will continue with the **site-custom** cart example in the [Adding Files](Adding-Files) and [Adding Scripts](Adding-Scripts) scripts sections to demonstrate.
 
