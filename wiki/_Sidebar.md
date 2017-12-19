@@ -15,10 +15,10 @@
 * Customization
   * [Carts](Carts)
     * [Adding Software](Adding-RPMs)
+    * [Adding Files](Adding-Files)
     * [Adding Install Scripts](Adding-Scripts)
-    * [Extending/Replacing Stacki XML defaults](Extending-Replacing-Stacki-XML)
   * [Boxes](Boxes)
-    * [Creating Simple Pallets](Creating-Simple-Pallets)
+    * [Creating Software Pallets](Creating-Software-Pallets)
     * [Manage Pallets](Manage-Pallets)
   * [Network Configuration](Network-Configuration)
   * [Stacki Universal XML](Stacki-Universal-XML)
@@ -30,6 +30,7 @@
   * [Workflows Overview](Workflows-Overview)
   * [Basic Workflows](Basic-Workflows)
   * [Advanced Workflows](Advanced-Workflows)
+* [How to Shoot Your Foot](Shooting-Your-Foot)
 * Frequently Asked Questions
   * [Kickstart Customizations](Kickstart-Customizations)
   * [Setting Cart Order](Setting-Cart-Order)

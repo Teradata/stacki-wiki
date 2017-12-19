@@ -49,12 +49,10 @@ A *node XML file* is written in [Stacki Universal Language](SUX), which is a way
 
 SUX consists of html tags that map to Linux installation targets: pre, post, main, packages, and first boot.
 
-Seeing how this works is best done through examples. The two most common use cases are, adding software and configuring that same software.
+Seeing how this works is best done through examples. The most common use cases are, adding software, adding files, and adding scripts to configure the software.
 
-Follow these two examples in order to get started with **Adding Carts**
+Follow these examples to futher customize your cart.
 
 * [Adding RPMS](Adding-RPMS)
 * [Adding Files](Adding-Files)
 * [Adding Installation Scripts](Adding-Scripts)
-
-You can change the default Stacki install configuration by extending or replacing what is provided. Take a look at [Extending and Replacing Stacki XML](Extending-Replacing-Stacki-XML)
