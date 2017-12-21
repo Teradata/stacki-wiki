@@ -154,7 +154,7 @@ It's the equivalent of a shebang at the beginning of a python script file.
 #!/usr/bin/python
 ```
 
-So if you have perl/python/lua/rust scripts you've written or someone else has, call the interpreter you need, and put the script in-between ```<stack:script>``` tags with `<stack:interpreter=/path/to/perl>```.
+So if you have perl/python/lua/ruby scripts you've written or someone else has, call the interpreter you need, and put the script in-between `<stack:script>` tags with `<stack:interpreter=/path/to/perl>`.
 
 ### Further Reading
 
