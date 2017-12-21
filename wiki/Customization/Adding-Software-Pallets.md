@@ -8,166 +8,100 @@ All pallets come in the ISO format. They can be pulled form the web for OS distr
 
 RPM-only pallets are the simplest to create.
 
-The default OS pallet that comes with stackios a minimal CentOS distribution - designed to get you a basic frontend that installs basic backends. If you're looking for a minimal distribution, this is it.
-
-If you have heavier software needs, additional software can be added in the form of pallets. Typically, the full CentOS distribution plus updates are added to a frontend to extend the software available.
-
-### Adding an OS pallet
-
-These commands work with all OSs, but CentOS is the example.
-
-Download the full CentOS 7.4 ISOs from a CentOS mirror.
-
-You can use: [CentOS-7-x86_64-DVD-1708.iso](http://mirror.rackspace.com/CentOS/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso)
-
-but I usually use:
-
-[CentOS-7-x86_64-Everything-1708.iso](http://mirror.rackspace.com/CentOS/7/isos/x86_64/CentOS-7-x86_64-Everything-1708.iso)
-
-Once they're downloaded, scp the ISOs to the frontend and add them. /export is usually the largest disk partition so I usually put them there.:
-
-
-
-```
-scp CentOS*.iso root@10.1.1.1:/export
-
-ssh root@10.1.1.1
-
-cd /export
-
-# stack add pallet CentOS-7-x86_64-Everything-1708.iso
-```
-
-List pallets:
-```
-# stack list pallet
-NAME           VERSION      RELEASE ARCH   OS     BOXES
-stacki         5.0          redhat7 x86_64 redhat default
-os             7.4          redhat7 x86_64 redhat defaults
-CentOS         7            redhat7 x86_64 redhat
-```
-
-There can be only one OS pallet for a given box. So enable the CentOS pallet and disable the "os" pallets
-
-Enable the CentOS pallet:
-```
-# stack enable pallet CentOS
-```
-
-Disable the OS pallet and listing it to make sure:
-
-```
-# stack disable pallet os
-
-NAME           VERSION      RELEASE ARCH   OS     BOXES
-stacki         5.0          redhat7 x86_64 redhat default
-os             7.4          redhat7 x86_64 redhat
-CentOS         7            redhat7 x86_64 redhat default
-```
-
-
 ##### RPM-only Pallet
 
 Creating an RPM-only pallet is the same for both stacki 6 and 7. Only the URLs and repos are going to be different. This assumes your frontend has access to the internet. If not, put up a VirtualBox frontend on your desktop/laptop and create the pallets there and then put them on the real frontend.
 
-###### Creating pallet from a path.
-One very common thing I do is to grab the updates from CentOS for my particular CentOS version. We'll create a mirror of the updates two ways. The first is the simplest and most direct. You're going to use the "stack create mirror" command.
+###### Creating pallet from a URL.
 
-"stack create mirror" does a reposync from a URL or a repoid AND creates an ISO from the downloaded RPMs, which makes it a pallet.
+Let's say I want all of EPEL. (This is actually easier to do with repoconfig/repoid from EPEL but I want an example.)
 
-So let's build the command line to do this.
+If I have a url, I can use that with my `create mirror` command to get the packages.
 
-You'll cd to your largest partition, default partitioning makes /export or /state/partition1 the largest partition.
+Here's the epel url:
+Again, go to your biggest directory:
 ```
 # cd /export
 ```
 
-Let's see what our options are:
-```
-# stack create mirror
+Mirror using the url=https://mirrors.sonic.net/epel/7/x86_64/Packages/
 
-[root@stackitest ~]# stack create mirror
-error - must supply a URL argument or a "repoid"
-{path} [arch=string] [name=string] [newest=boolean] [repoconfig=string] [repoid=string] [urlonly=boolean] [version=string]
-```
-(You can add a "help" on the end of "stack create mirror" for more detail.)
-
-Since we know our path is http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ we'll just use the path.
+*Note:* When you use a "url=" parameter `stack create mirror` uses "wget" and NOT reposync. Use the "url" for RPMS not in actual repositories with a repoconf/repoid.
 
 ```
-# stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/
+# stack create mirror url=https://mirrors.sonic.net/epel/7/x86_64/Packages/ name=epel version=20171128 quiet=false
 ```
 
-We only want the newest RPMs so we'll set newest to true.
+Wait a looonnnnnggggg time.
+
+At some point you'll see this output:
 ```
-# stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ newest=true
+Creating disk1 (0.00MB)...
+Writing repo data
+Spawning worker 0 with 883 pkgs
+Workers Finished
+Saving Primary metadata
+Saving file lists metadata
+Saving other metadata
+Generating sqlite DBs
+Sqlite DBs complete
+Copying graph and node XML files
+Building ISO image for disk1
 ```
 
-If you want to see what you're going to get you can set urlonly=true, and you'll get an RPM listing and no downloads:
-
-```
-# stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ newest=true urlonly=true
-```
-
-Default "name" is updates and default "version" is the version of the stacki pallet. So we'll change them to be descriptive. I usually set the version to the date I make the pull, and I'll set the name so you can see an example:
-```
-# stack create mirror http://mirror.centos.org/centos-6/6.6/updates/x86_64/Packages/ newest=true name=CentOS-updates version=`date +%m%d%Y`
-```
-
-And now you wait. Depending on your site bandwidth, this could be a while for very large repositories. This is probably a good time to go to lunch.
-
-Once the download finishes, you'll have an ISO appropriately named in the directory you ran this command in, just add and enable it.
-
-```
-# stack add pallet CentOS-updates-07282015-0.x86_64.disk1.iso
-# stack enable pallet CentOS-Updates
-```
+Which means the ISO is built.
 
 ###### Creating pallet from a repoid.
+
 
 Sometimes there's an application you want to install, and a repoconfig file
 exists for it.
 
-For this example we'll use Datastax Cassandra.
+For this example we'll use Apache Cassandra.
 
-Go to the [Cassandra](http://docs.datastax.com/en/cassandra/2.1/cassandra/install/installRHEL_t.html) install docs. You'll notice about half-way down they give you the repoconfig you'll need to get this from yum.
+Go to the [Cassandra](https://cassandra.apache.org/download/) install docs. You'll notice about half-way down they give you the repoconfig you'll need to get this from yum.
 
-Copy that and put it in a file. I've put it in /export/datastax.repo, only I've disabled it.
+Cut and paste that and put it in a file. I've put it in /export/cassandra.repo.
+
 ```
-# cat /export/datastax.repo
+# cat /export/cassandra.repo
 
-[datastax]
-name = DataStax Repo for Apache Cassandra
-baseurl = http://rpm.datastax.com/community
-enabled = 0
-gpgcheck = 0
+[cassandra]
+name=Apache Cassandra
+baseurl=https://www.apache.org/dist/cassandra/redhat/311x/
+gpgcheck=1
+repo_gpgcheck=1cat
+gpgkey=https://www.apache.org/dist/cassandra/KEYS
 ```
 
 Let's do a few things:
 * I'm going to feed the name of this file to "repoconfig" parameter to get all the needed Cassandra RPMs.
-* The version is "2.1" because that's this version of Cassandra from Datastax.
-* I only want the newest RPMs because who knows what people dump into their repositories so "newest=true".
-* The "repoid", in this case "datastax," tells "create mirror" the repo to pull from. Some repoconfigs might have more than one stanza. For example, if Datstax had included a [datastax-extras] or [datastax-updates], stanzas you could pull those RPMs by setting repoid to the correct name.
+* The version is "311x" because that's the lastest version of Cassandra.
+* The "repoid", in this case "cassandra," tells "create mirror" the repo to pull from. Some repoconfigs might have more than one stanza - CentOS-Base.repo is a good example.
 ```
-# stack create mirror name=datastax-cassandra version=2.1 repoconfig=/export/datastax.repo repoid=datastax newest=true
+# stack create mirror name=apache-cassandra version=311x repoconfig=/export/cassandra.repo repoid=cassandra quiet=false
 ```
 
 Now breathe. In/out. Long deep breaths. Or, hell, just go get another cup of coffee. When it's done you should see something like this:
 ```
-root@stackitest export]# ls /export/datastax
-datastax-cassandra-2.1-0.x86_64.disk1.iso  i386  noarch  roll-datastax-cassandra.xml  x86_64
+# ls cassandra
+apache-cassandra-311x-redhat7.x86_64.disk1.iso  cassandra-3.11.1-1.noarch.rpm  cassandra-tools-3.11.1-1.noarch.rpm  roll-apache-cassandra.xml
 ```
+
 Note, the directory is the name of the "repoid" and the newly created file is in this directory.
 
-Do the pallet dance:
+Do the add/enable pallet dance:
 
 ```
-# stack add pallet /export/datastax/datastax-cassandra-2.1-0.x86_64.disk1.iso
-# stack enable pallet datastax-cassandra
+# stack add pallet cassandra/apache-cassandra-311x-redhat7.x86_64.disk1.iso
+Copying apache-cassandra 311x-redhat7 to pallets ...
+
+# stack enable pallet apache-cassandra
+Cleaning repos: CentOS-7-redhat7 CentOS-Updates-7.4_20171128-redhat7 apache-cassandra-311x-redhat7 epel stacki-5.0_20171128_b0ed4e3-redhat7
+Cleaning up everything
+Maybe you want: rm -rf /var/cache/yum, to also free up space taken by orphaned data from disabled or removed repos
 ```
 
-Now you can use the Datastax Cassandra RPMs on the cluster. Use the extend-backend.xml to add the appropriate RPMs and configuration settings per the Datastax install document.
+Now you can use the Apache Cassandra RPMs on the cluster. Use a cart and `<stack:package>` tags to add the software and `<stack:file>` tags to add config files, and `<stack:script>` tags to enable the service and configure any other dependences.
 
-Some things to be aware of: you can add the datastax.repo file to /etc/yum.repos.d and the same thing will work. In this case you do not have to supply the "repoconfig" parameter to the "stack create mirror" command.
-
-So why did I do it this way? Well, from a management stand-point, I don't want someone enabling a repo in /etc/yum.repos.d I don't want enabled. I use the frontend as the fulcrum point to my cluster. I don't put any services on it other than installation and monitoring. All elements of an application are run on backend nodes because they are usually better protected (private network), and the application should keep running even if the Stacki frontend goes down. If I have a repo that may inadvertently be enabled, I may end up with an application on my frontend I don't want. In my mind it's good cluster hygiene, yes, a little paranoid and neurotic, buy hygiene nonetheless. It may be, however, you have limited machines and you don't want to waste the frontend, then use it. Rocks does it. StackIQ initially did it. It saves having to set up all the keys SSH access from a backend node acting as the frontend for an application to the rest of the cluster. Just know what you're getting.
+All this set-up can be found in the Apache Cassandra docs and can be converted to your cart xml. 

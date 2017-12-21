@@ -8,11 +8,6 @@ Which means you probably don't want to recreate all of that work just because yo
 * Not lose work you've already done.
 * Put your already existing config files where they belong: on the installing node.
 
-### Configuration files
-
-
-
-
 ####  *site-custom* cart example continued
 
 In the [Adding RPMS](Adding-RPMS) section, we started configuring an *site-custom* cart as an example -- we'll continue to use it here.
@@ -60,8 +55,8 @@ If you need to make it executable, you can set the permissions:
 <stack:file stack:name="/etc/profile.d/fortune.sh" perms="0755">
 #!/bin/bash
 fortune
-</file>
-</post>
+</stack:file>
+</stack:script>
 ```
 
 And, if you need to change owner/group:
@@ -189,8 +184,8 @@ whole bunch of stuff I don't want to escape
 </stack:script>
 ```
 
-We did it for this file because in the comments you'll notice there are &lt;domain&gt;, &lt;item&gt;, and &lt;type&gt; comments. The brackets would otherwise need to be escaped in XML with ```&lt; or &gt;```. But we're lazy because we're good system administrators so just throw into the CDATA construction.
+We did it for this file because in the comments you'll notice there are &lt;domain&gt;, &lt;item&gt;, and &lt;type&gt; comments. The brackets would otherwise need to be escaped in XML with ```&lt; or &gt;```. But we're lazy because we're good system administrators so just throw it all into the CDATA construction.
 
 We have touched on the surface of what can be done with files in Stacki UXML. Please see [Stacki Universal XML](SUX) for further details.
 
-Getting applications to run and adding scripts can also be added and enabled during installation. Read [Adding-Scripts](Adding-Scripts) for further detail.
+Adding scripts to enable start-up scripts and modify configuration can also be done during installation. Read [Adding-Scripts](Adding-Scripts) for further detail.

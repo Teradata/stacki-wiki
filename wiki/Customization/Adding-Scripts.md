@@ -101,13 +101,13 @@ echo "Installed in ${installed} minutes" &gt;&gt; /etc/motd
 This script runs during first-boot *after* all the network and other services are up.
 
 Note a few things:
-* The "stack:stage" is now "boot-post" rather than "install-post"
+* The "stack:stage" is now "boot-post" rather than "install-post" - it runs at first boot.
 * There is a mix of shell commands plus adding a file to be run.
-* Echo some things into /etc/motd. Note the "date" commands, it's just shell.
+* Echo some things into /etc/motd. Note the "date" commands - it's just shell.
 * Append to a time.sh script that will do some math for me.
 * Run the file.
 
-This produces output that tell me how long it takes to install a backend node. This mix and matching of tags, tell the installer how to behave.
+This produces output that tell me how long it takes to install a backend node. This mix and matching of tags tells the installer how to behave.
 
 ##### Run a different shell interpreter
 
@@ -154,8 +154,8 @@ It's the equivalent of a shebang at the beginning of a python script file.
 #!/usr/bin/python
 ```
 
-So if you have perl scripts you've written or someone else has, use a perl interpreter line, and put the script in-between ```<stack:script>``` tags with `<stack:interpreter=/path/to/perl>```.
+So if you have perl/python/lua/rust scripts you've written or someone else has, call the interpreter you need, and put the script in-between ```<stack:script>``` tags with `<stack:interpreter=/path/to/perl>```.
 
 ### Further Reading
 
-We have touched the surface of what you can do to configure backend machines. See the [Stacki Universal XML](SUX) documentation for a more complete listing of Stacki UXML syntax. 
+We have touched the surface of what you can do to configure backend machines. See the [Stacki Universal XML](SUX) documentation for a more complete listing of Stacki UXML syntax.

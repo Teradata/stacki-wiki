@@ -130,7 +130,7 @@ At this point you can update your frontend: `yum update` and either update alrea
 # stack run host command="yum clean all; yum -y update"
 ```
 
-Or reinstall without "nukedisks" set to true which just refreshes the OS.
+Or reinstall without "nukedisks" set to "True" which just refreshes the OS.
 
 ```
 # stack set host boot a:backend action=install
