@@ -13,4 +13,6 @@ You can collect various pallets into [Boxes](Boxes) and assign hosts to boxes to
 
 So, really, start with [Carts](Carts). It will get you 90% of what you need.
 
+If you need more software than just the minimal OS that comes with the Stacki default install. Got to [Creating Software Pallets](Creating-Software-Pallets) to download more of the CentOS distribution that you need.
+
 If you have a customization questions, feel free to ask on stacki@googlegroups.com or our Slack channel.

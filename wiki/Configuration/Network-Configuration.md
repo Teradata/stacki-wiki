@@ -2,7 +2,7 @@ Adding a second installation network
 
 ```
 # stack list network
-NETWORK  ADDRESS  MASK        GATEWAY      MTU   ZONE       DNS  PXE 
+NETWORK  ADDRESS  MASK        GATEWAY      MTU   ZONE       DNS  PXE
 private: 10.1.0.0 255.255.0.0 192.168.16.1 1500  stacki.com True True
 ```
 
@@ -12,7 +12,7 @@ private: 10.1.0.0 255.255.0.0 192.168.16.1 1500  stacki.com True True
 
 ```
 # stack list network
-NETWORK    ADDRESS  MASK        GATEWAY      MTU   ZONE       DNS   PXE 
+NETWORK    ADDRESS  MASK        GATEWAY      MTU   ZONE       DNS   PXE
 private:   10.1.0.0 255.255.0.0 192.168.16.1 1500  stacki.com True  True
 corporate: 10.2.0.0 255.255.0.0 10.2.2.201   1500  corporate  False True
 ```
@@ -31,3 +31,11 @@ Listening on LPF/em2/54:9f:35:10:1b:9a
 Sending on   LPF/em2/54:9f:35:10:1b:9a
 Sending on   Socket/fallback
 ```
+
+### setting MTU
+
+### setting bridges
+
+### bonding
+
+### vlan

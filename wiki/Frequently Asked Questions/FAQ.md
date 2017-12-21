@@ -42,3 +42,5 @@ No, not possible. Don't get that bit wrong. If you get it wrong, reinstall the f
 This warning was in the frontend installation documentation. Did you not heed it?
 
 _**Do not get this network wrong! Changing it after the fact means a REINSTALL of the frontend.**_
+
+### how do I updated or add an rpm to a node?

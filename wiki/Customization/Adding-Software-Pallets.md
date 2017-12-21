@@ -4,44 +4,67 @@ There may come a point where it makes sense to create your own pallets. There ar
 
 Pallets allow you to install and configure applications you have created or downloaded. It's a simple way to keep multiple versions or to do patching/upgrading.
 
-Additionally, if your site-specific requirements are complex and can't be easily captured using [Carts](Carts), a site-specific pallet is one of the ways to capture all the required configuration and site-specific RPMS.
-
-These commands work with all OSs, but CentOS is the example.
+All pallets come in the ISO format. They can be pulled form the web for OS distributions, or created from a directory or remote yum/zypper repository by mirroring.
 
 RPM-only pallets are the simplest to create.
 
-##### Fix the build environment part I
+The default OS pallet that comes with stackios a minimal CentOS distribution - designed to get you a basic frontend that installs basic backends. If you're looking for a minimal distribution, this is it.
 
-The default OS pallet is not the full CentOS distribution. You're going to need a couple packages that are only in the full version of CentOS. Download the full CentOS 6.7 ISOs from a CentOS [mirror](http://isoredirect.centos.org/centos/6/isos/x86_64/). I usually torrent the whole thing and put CentOS disk1 and disk2 on the frontend.
+If you have heavier software needs, additional software can be added in the form of pallets. Typically, the full CentOS distribution plus updates are added to a frontend to extend the software available.
 
-Once they're downloaded, scp the ISOs to the frontend and add them:
+### Adding an OS pallet
+
+These commands work with all OSs, but CentOS is the example.
+
+Download the full CentOS 7.4 ISOs from a CentOS mirror.
+
+You can use: [CentOS-7-x86_64-DVD-1708.iso](http://mirror.rackspace.com/CentOS/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso)
+
+but I usually use:
+
+[CentOS-7-x86_64-Everything-1708.iso](http://mirror.rackspace.com/CentOS/7/isos/x86_64/CentOS-7-x86_64-Everything-1708.iso)
+
+Once they're downloaded, scp the ISOs to the frontend and add them. /export is usually the largest disk partition so I usually put them there.:
+
+
 
 ```
-# stack add pallet CentOS-6.7-x86_64-bin-DVD*iso
+scp CentOS*.iso root@10.1.1.1:/export
+
+ssh root@10.1.1.1
+
+cd /export
+
+# stack add pallet CentOS-7-x86_64-Everything-1708.iso
 ```
 
 List pallets:
 ```
 # stack list pallet
+NAME           VERSION      RELEASE ARCH   OS     BOXES
+stacki         5.0          redhat7 x86_64 redhat default
+os             7.4          redhat7 x86_64 redhat defaults
+CentOS         7            redhat7 x86_64 redhat
 ```
+
+There can be only one OS pallet for a given box. So enable the CentOS pallet and disable the "os" pallets
 
 Enable the CentOS pallet:
 ```
 # stack enable pallet CentOS
 ```
 
-Disable the OS pallet (because it's minimal CentOS and now we want the whole thing)
+Disable the OS pallet and listing it to make sure:
+
 ```
 # stack disable pallet os
+
+NAME           VERSION      RELEASE ARCH   OS     BOXES
+stacki         5.0          redhat7 x86_64 redhat default
+os             7.4          redhat7 x86_64 redhat
+CentOS         7            redhat7 x86_64 redhat default
 ```
 
-We need to add the *genisoimage* RPM for the build environment to work:
-
-```
-# yum -y install genisoimage
-```
-
-Now you can make RPM pallets from the web.
 
 ##### RPM-only Pallet
 
