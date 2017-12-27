@@ -42,3 +42,5 @@ exclude:
   - Gemfile.lock
   - CI_Scripts
   - stacki-wiki
+  - vendor
+  - content

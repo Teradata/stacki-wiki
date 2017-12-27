@@ -21,16 +21,16 @@ pallet is ideal for the majority of you.
 
 If you're an experiential learner and don't need/want explanations follow the [Quickstart](Quickstart).
 
-If you have already installed a CentOS/RHEL/some variant and don't want to rebuild that server, follow: [Frontend Installation on Preinstalled System](Frontend-Installation-On-Preinstalled-Systemd).
+If you have already installed a CentOS/RHEL/some variant and don't want to rebuild that server, follow: [Frontend Install - Existing System](Frontend-Install-Existing).
 
-If you don't have an installed frontend and need painfully detailed instructions, potentially HR-violating side commentary, and general ranting and railing, start with the full stackios iso and use: [Frontend Installation From ISO](Frontend-Installation-From-Iso).
+If you don't have an installed frontend and need painfully detailed instructions, potentially HR-violating side commentary, and general ranting and railing, start with the full stackios iso and use: [Frontend Install - New](Frontend-Install-New).
 
 If you don't actually have an internal or external DVD, use  [Frontend Installation From USB](Frontend-Installation-From-USB).
 
 Then install backends. Either continue using the [Quickstart](Quickstart) or:
 
-* If you control your installing network and you're lazy follow: [Backend Installation Via Discovery](Backend-Installation-Via-Discovery)
-* If you have enterprise-y needs, i.e. you have neurotic, paranoid, and/or obstreperous security or network teams who require you to map hostname/ip/mac address to limit the DHCP queries to a subnet, use: [Backend Installation Via Spreadsheet](Backend-Installation-Via-Spreadsheet)
+* If you control your installing network and you're lazy, follow: [Backend Install - Discovery](Backend-Install-Discovery)
+* If you have enterprise-y needs, i.e. you have neurotic, paranoid, and/or obstreperous security or network teams who require you to map hostname/ip/mac address to limit the DHCP queries to a specific subnet, use: [Backend Install -  Spreadsheet](Backend-Install-Spreadsheet)
 
 ### Customization
 
@@ -41,7 +41,7 @@ Once you've done all that and have a default frontend and a default backend up, 
 The general work flow is:
 
 * Create a Cart
-* Add packages and kickstart config
+* Add packages and kickstart config (partitions, controllers, scripts)
 * Reinstall backend(s)
 * Check/test.
 * Fix or do more configuration.
@@ -74,7 +74,7 @@ You need CentOS-Updates pallet if you're going to use UEFI. Don't come crying to
 
 If you're installing on a pre-installed CentOS/RHEL machine you'll need the frontend-install.py script as well:
 
-[frontend-install.py](http://teradata-stacki.s3.amazonaws.com/release/stacki/5.x/frontend-install.py)(md5: f64fc40d45eee0c8f2538b4aeb769011)
+[frontend-install.py](http://teradata-stacki.s3.amazonaws.com/release/stacki/5.x/frontend-install.py) (md5: f64fc40d45eee0c8f2538b4aeb769011)
 
 Easier to read md5 sums:
 

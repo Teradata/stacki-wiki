@@ -64,9 +64,7 @@ A **box** is a collection of pallets that serve as the package source during bac
 
 We use the term **appliance** to refer to a group of servers,
 usually with related functionality.
-The Stacki [pallet](#pallets--boxes) includes only the backend
-appliance,
-other pallets define additional appliance types. Appliances can be useful for segmenting hardware or application roles within your infrastructure. They are logical constructs and can be arbitrarily defined. If customization of the base appliance becomes unnecessarily complex for your organization, appliances are one way to reduce the complexity.
+The Stacki pallet includes only the backend appliance, and you can create your own. Appliances can be useful for segmenting hardware or application roles within your infrastructure. They are logical constructs and can be arbitrarily defined. If customization of the base appliance becomes unnecessarily complex for your organization, appliances are one way to reduce the complexity.
 
 ### Stacki Universal XML - SUX (but less than YAML)
 
