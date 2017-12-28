@@ -4,6 +4,7 @@
 * [Definitions](Terms)
 * [Release Notes for 5.0](ReleaseNotes)
 * [Diffs from Stacki 4.0](DiffsFrom40)
+* [Stacki 5.0 Cheat Sheet](CheatSheet)
 * Installation
   * [Quickstart](Quickstart)
   * [Frontend Install - Basics](Frontend-Installation)
@@ -14,13 +15,14 @@
   * [Backend Install - Spreadsheet](Backend-Install-Spreadsheet)
 * Customization
   * [Carts](Carts)
-    * [Adding Software](Adding-RPMs)
+    * [Adding Packages](Adding-RPMs)
     * [Adding Files](Adding-Files)
     * [Adding Install Scripts](Adding-Scripts)
   * [Pallets](Pallets)
     * [Adding OS Pallets](Adding-OS-Pallets)
     * [Adding Software Pallets](Adding-Software-Pallets)
   * [Boxes](Boxes)
+  * [Creating Jumbo Pallets](Creating-Jumbo-Pallets)
   * [Network Configuration](Network-Configuration)
   * [Stacki Universal XML](Stacki-Universal-XML)
 * Common Configurations

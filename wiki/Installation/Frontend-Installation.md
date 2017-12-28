@@ -13,12 +13,12 @@ networking information.
 
 A frontend has the following hardware requirements
 
-| Resource | Minimum | Recommended |
-| -------- | ------- | ----------- |
-| System Memory | 8 GB | 16 GB |
-| Network Interfaces | 1 | 1 |
-| Disk Capacity | 100 GB | 200 GB |
-| CD/DVD Device | 1 | 1 |
+| Resource           | Minimum | Recommended |
+|:-------------------|:--------|:------------|
+| System Memory      | 8 GB    | 16 GB       |
+| Network Interfaces | 1       | 1           |
+| Disk Capacity      | 100 GB  | 200 GB      |
+| CD/DVD Device      | 1       | 1           |
 
 BIOS _boot order_
 
@@ -33,15 +33,14 @@ This default setup in shown below.
 
 ![](images/cluster-architecture-network.png)  
 
-The private network cannot have a DHCP server that would answer
+The private network cannot have another DHCP server that would answer
 a DHCP request from a backend server. The frontend provides DHCP
 services on the private network, and any additional DHCP server
-would cause conflicts on the network.
-
+would cause conflicts on the network. (Two+ DHCP servers can co-exist if the Stacki frontend answers ONLY for the backend nodes on the shared subnet and the other DHCP server(s) does not.)
 
 ## New or Existing
 
-The Stacki frontend runs on top of a CentOS/RHEL 7.x base.  
+The Stacki frontend runs on top of a CentOS/RHEL flavored 7.x base.  
 
 You have two options:
 
@@ -49,10 +48,20 @@ You have two options:
 
   If you don't have an already existing vanilla CentOS or RedHat 7.4 system, build a new server from bare metal with Stacki and the required CentOS bits (which we call "stackios").
 
-  Follow the [Fronted Install - New](Frontend-Install-New) doc.
+  Follow the [Frontend Install - New](Frontend-Install-New) doc.
+
+  You can also install a frontend by:
+
+  * [Creating and using a "jumbo" pallet](Create-Jumbo-Pallets)
+
+or try:
+
+  * [Installing an OS from a web server](Install-OS-Webserver)
+
+These are more advanced options, however.
 
 ** Building on an existing server **
 
-  If you wish to install Stacki on top of an existing vanilla CentOS or RedHat 7.4 system,
+  If you wish to install Stacki on top of an existing vanilla CentOS or RedHat 7.4 system, follow the document labeled [Frontend Install - Existing](Frontend-Install-Existing).
 
-  Follow the document labeled [Frontend Install - Existing](Frontend-Install-Existing).
+This procedure works for any CentOS/RHEL system including Oracle and Scientific Linux.  

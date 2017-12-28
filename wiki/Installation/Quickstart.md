@@ -117,7 +117,7 @@ Looks good! Let's go!
 
 ### 4. Install backend(s) (formerly Step 3)
 
-** Please note: Installing laptops as backends is not supported. Ever. Eeeeeeeevveeeeer. Don't write, don't call, don't text if you're trying to install a laptop as a backend server. Our most acidic mockery is reserved for you. (pH level = 0 = battery acid) If you're successful, great, don't tell us, we don't want to know.
+** Please note: Installing laptops as backends is not supported. Ever. Evvvvvvvverrrrrrrrrr. Don't write, don't call, don't text if you're trying to install a laptop as a backend server. Our most acidic mockery is reserved for you. (pH level = 0 = battery acid) If you're successful, great, don't tell us, we don't care.
 
 You have a frontend. It's useless if it's not managing backend nodes.
 
@@ -165,13 +165,13 @@ In this VM example, we're putting both networks on a "local" network. They can o
 
 Now power on the backend machine.
 
-Breath.
+Breathe.
 
 Back on the frontend you should see the backend node gets discovered:
 
 ![backend_install_vbox_4](images/backend/backend_install_vbox_4.png)
 
-The node patiently waiting for its configuration file:
+The node, patiently waiting for its configuration file:
 
 ![backend_install_vbox_5](images/backend/backend_install_vbox_5.png)
 
@@ -179,7 +179,7 @@ The node with its configuration file and the kickstart started. Note the '*' tha
 
 ![backend_install_vbox_6](images/backend/backend_install_vbox_6.png)
 
-You can quit out of the discover-nodes application at this point.
+You can quit out of the discover-nodes application at this point. Or discover more machines. It stops when you stop booting backends. 
 
 If you want to see the status of the node as it installs you can do:
 
