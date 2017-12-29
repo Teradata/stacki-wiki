@@ -6,7 +6,10 @@
 
 ### Description
 
-List the status of available pallets.
+
+	List the status of available pallets.
+	
+	
 
 ### Arguments
 

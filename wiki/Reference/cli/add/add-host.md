@@ -2,11 +2,14 @@
 
 ### Usage
 
-`stack add host {host} [box=string] [cpus=string] [environment=string] [longname=string] [rack=string] [rank=string]`
+`stack add host {host} [box=string] [environment=string] [longname=string] [rack=string] [rank=string]`
 
 ### Description
 
-Add an new host to the cluster.
+
+	Add an new host to the cluster.
+
+	
 
 ### Arguments
 
@@ -19,7 +22,6 @@ Add an new host to the cluster.
 
 ### Parameters
 * `{box=string}`
-* `{cpus=string}`
 * `{environment=string}`
 * `{longname=string}`
 * `{rack=string}`

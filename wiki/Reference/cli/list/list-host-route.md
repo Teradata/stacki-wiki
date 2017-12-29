@@ -6,7 +6,10 @@
 
 ### Description
 
-List the static routes that are assigned to a host.
+
+	List the static routes that are assigned to a host.
+
+	
 
 ### Arguments
 
@@ -17,9 +20,9 @@ List the static routes that are assigned to a host.
 
 ### Examples
 
-* `stack list host route compute-0-0`
+* `stack list host route backend-0-0`
 
-   List the static routes assigned to compute-0-0.
+   List the static routes assigned to backend-0-0.
 
 
 

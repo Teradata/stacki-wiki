@@ -6,7 +6,10 @@
 
 ### Description
 
-List the firewall rules for a given appliance type.
+
+	List the firewall rules for a given appliance type.
+
+	
 
 ### Arguments
 

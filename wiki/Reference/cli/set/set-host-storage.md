@@ -6,8 +6,11 @@
 
 ### Description
 
-Set state for a storage device for hosts (e.g., to change the state
+
+	Set state for a storage device for hosts (e.g., to change the state
 	of a disk from 'offline' to 'online').
+
+	
 
 ### Arguments
 
@@ -26,9 +29,9 @@ Set state for a storage device for hosts (e.g., to change the state
 
 ### Examples
 
-* `stack set host storage compute-0-0 enclosure=32 slot=5  action=online`
+* `stack set host storage backend-0-0 enclosure=32 slot=5  action=online`
 
-   Set the storage device located at '32:5' to "online" for compute-0-0.
+   Set the storage device located at '32:5' to "online" for backend-0-0.
 
 
 

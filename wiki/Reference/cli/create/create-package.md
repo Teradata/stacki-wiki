@@ -6,10 +6,13 @@
 
 ### Description
 
-Create a RedHat or Solaris package from a given directory.  The
+
+	Create a RedHat or Solaris package from a given directory.  The
 	package will install files in either the same location as the given
 	directory, or a combination of the directory basename and the
 	provided prefix.
+
+	
 
 ### Parameters
 * `{dir=string}`

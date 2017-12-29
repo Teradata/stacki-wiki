@@ -6,7 +6,10 @@
 
 ### Description
 
-Remove a static route for an appliance type.
+
+	Remove a static route for an appliance type.
+
+	
 
 ### Arguments
 
@@ -22,9 +25,9 @@ Remove a static route for an appliance type.
 
 ### Examples
 
-* `stack remove appliance route compute address=1.2.3.4`
+* `stack remove appliance route backend address=1.2.3.4`
 
-   Remove the static route for the 'compute' appliance that has the
+   Remove the static route for the 'backend' appliance that has the
 	network address '1.2.3.4'.
 
 

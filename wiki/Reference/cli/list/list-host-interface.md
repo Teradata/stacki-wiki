@@ -6,9 +6,12 @@
 
 ### Description
 
-Lists the interface definitions for hosts. For each host supplied on
+
+	Lists the interface definitions for hosts. For each host supplied on
 	the command line, this command prints the hostname and interface
 	definitions for that host.
+
+	
 
 ### Arguments
 
@@ -20,9 +23,9 @@ Lists the interface definitions for hosts. For each host supplied on
 
 ### Examples
 
-* `stack list host interface compute-0-0`
+* `stack list host interface backend-0-0`
 
-   List network interface info for compute-0-0.
+   List network interface info for backend-0-0.
 
 * `stack list host interface`
 

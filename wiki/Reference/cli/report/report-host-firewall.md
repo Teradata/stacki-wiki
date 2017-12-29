@@ -6,7 +6,10 @@
 
 ### Description
 
-Create a report that outputs the firewall rules for a host.
+
+	Create a report that outputs the firewall rules for a host.
+
+	
 
 ### Arguments
 
@@ -17,9 +20,9 @@ Create a report that outputs the firewall rules for a host.
 
 ### Examples
 
-* `stack report host firewall compute-0-0`
+* `stack report host firewall backend-0-0`
 
-   Create a report of the firewall rules for compute-0-0.
+   Create a report of the firewall rules for backend-0-0.
 
 
 

@@ -6,13 +6,16 @@
 
 ### Description
 
-Output the version of Rocks.
+
+	Output the version of Stacki.
+
+	
 
 ### Examples
 
 * `stack report version`
 
-   Output the current Rocks version.
+   Output the current Stacki version.
 
 
 

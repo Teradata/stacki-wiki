@@ -6,9 +6,12 @@
 
 ### Description
 
-Lists the monolithic XML configuration file for a host.
+
+	Lists the monolithic XML configuration file for a host.
 	Tis is the same XML configuration file that is sent back to a 
-        host when a host begins its installation procedure.
+	host when a host begins its installation procedure.
+
+	
 
 ### Arguments
 
@@ -19,9 +22,9 @@ Lists the monolithic XML configuration file for a host.
 
 ### Examples
 
-* `stack list host xml compute-0-0`
+* `stack list host xml backend-0-0`
 
-   List the XML configuration file for compute-0-0.
+   List the XML configuration file for backend-0-0.
 
 
 

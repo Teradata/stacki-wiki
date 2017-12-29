@@ -6,14 +6,17 @@
 
 ### Description
 
-Sets the MTU for one or more networks.
+
+	Sets the MTU for one or more networks.
+
+	
 
 ### Arguments
 
 * `{network}`
 
    The names of zero of more networks. If no network is specified
-        the MTU is set for all existing networks.
+	the MTU is set for all existing networks.
 
 
 ### Parameters

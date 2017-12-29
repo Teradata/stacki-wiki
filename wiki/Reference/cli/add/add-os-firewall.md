@@ -6,7 +6,10 @@
 
 ### Description
 
-Add a firewall rule for an OS type.
+
+	Add a firewall rule for an OS type.
+
+	
 
 ### Arguments
 

@@ -6,8 +6,11 @@
 
 ### Description
 
-Remove a firewall rule for an OS type. To remove
+
+	Remove a firewall rule for an OS type. To remove
 	a rule, one must supply the name of the rule.
+
+	
 
 ### Arguments
 

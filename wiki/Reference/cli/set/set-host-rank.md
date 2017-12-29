@@ -6,7 +6,10 @@
 
 ### Description
 
-Set the rank number for a list of hosts.
+
+	Set the rank number for a list of hosts.
+	
+	
 
 ### Arguments
 
@@ -22,9 +25,9 @@ Set the rank number for a list of hosts.
 
 ### Examples
 
-* `stack set host rank compute-0-2 rank=2`
+* `stack set host rank backend-0-2 rank=2`
 
-   Set the rank number to 2 for compute-0-2.
+   Set the rank number to 2 for backend-0-2.
 
 
 

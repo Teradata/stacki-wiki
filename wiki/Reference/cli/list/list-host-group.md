@@ -6,7 +6,10 @@
 
 ### Description
 
-Lists the groups for a host.
+
+	Lists the groups for a host.
+
+	
 
 ### Arguments
 
@@ -20,7 +23,7 @@ Lists the groups for a host.
 * `{group=string}`
 
    Restricts the output to only members of a group. This can be a single
-        group name or a comma separated list of group names.
+	group name or a comma separated list of group names.
 
 ### Examples
 

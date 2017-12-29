@@ -6,10 +6,13 @@
 
 ### Description
 
-Lists the XML profile for a given appliance type. This is useful
+
+	Lists the XML profile for a given appliance type. This is useful
 	for high level debugging but will be missing any host specific
 	variables. It cannot be used to pass into 'rocks list host profile'
 	to create a complete Kickstart/Jumpstart profile.
+	
+	
 
 ### Arguments
 
@@ -20,9 +23,9 @@ Lists the XML profile for a given appliance type. This is useful
 
 ### Examples
 
-* `stack list appliance xml compute`
+* `stack list appliance xml backend`
 
-   Lists the XML profile for a compute appliance.
+   Lists the XML profile for a backend appliance.
 
 * `stack list appliance xml`
 

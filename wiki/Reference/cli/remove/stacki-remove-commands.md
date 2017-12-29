@@ -1,6 +1,12 @@
 # remove commands
 
   * [remove access](remove-access)
+  * [remove api blacklist command](remove-api-blacklist-command)
+  * [remove api group](remove-api-group)
+  * [remove api group perms](remove-api-group-perms)
+  * [remove api user](remove-api-user)
+  * [remove api user group](remove-api-user-group)
+  * [remove api user perms](remove-api-user-perms)
   * [remove appliance](remove-appliance)
   * [remove appliance attr](remove-appliance-attr)
   * [remove appliance firewall](remove-appliance-firewall)
@@ -9,6 +15,7 @@
   * [remove bootaction](remove-bootaction)
   * [remove box](remove-box)
   * [remove cart](remove-cart)
+  * [remove environment](remove-environment)
   * [remove environment attr](remove-environment-attr)
   * [remove firewall](remove-firewall)
   * [remove group](remove-group)

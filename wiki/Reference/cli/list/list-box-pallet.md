@@ -6,7 +6,10 @@
 
 ### Description
 
-List the pallets enabled in each box.
+
+	List the pallets enabled in each box.
+	
+	
 
 ### Arguments
 

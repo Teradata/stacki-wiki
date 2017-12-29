@@ -6,7 +6,10 @@
 
 ### Description
 
-Set the comment field for a list of hosts.
+
+	Set the comment field for a list of hosts.
+	
+	
 
 ### Arguments
 

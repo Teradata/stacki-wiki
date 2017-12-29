@@ -6,7 +6,10 @@
 
 ### Description
 
-Sets the VLAN ID for an interface on one of more hosts.
+
+	Sets the VLAN ID for an interface on one of more hosts. 
+
+	
 
 ### Arguments
 

@@ -6,7 +6,10 @@
 
 ### Description
 
-Reconfigure and optionally restart the network for the named hosts.
+
+	Reconfigure and optionally restart the network for the named hosts.
+
+	
 
 ### Parameters
 * `{restart=boolean}`
@@ -17,9 +20,9 @@ Reconfigure and optionally restart the network for the named hosts.
 
 ### Examples
 
-* `stack sync host network compute-0-0`
+* `stack sync host network backend-0-0`
 
-   Reconfigure and restart the network on compute-0-0.
+   Reconfigure and restart the network on backend-0-0.
 
 
 

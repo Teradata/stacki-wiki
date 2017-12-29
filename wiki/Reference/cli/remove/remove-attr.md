@@ -6,7 +6,10 @@
 
 ### Description
 
-Remove a global attribute.
+
+	Remove a global attribute.
+
+	
 
 ### Parameters
 * `[attr=string]`

@@ -2,15 +2,18 @@
 
 ### Usage
 
-`stack remove environment attr {environment ...} {attr=string}`
+`stack remove environment attr [environment ...] {attr=string}`
 
 ### Description
 
-Remove an attribute for an Environment.
+
+	Remove an attribute for an Environment.
+
+	
 
 ### Arguments
 
-* `[environment]`
+* `{environment}`
 
    One or more Environment specifications (e.g., 'test').
 

@@ -6,8 +6,11 @@
 
 ### Description
 
-Add a network to the database. By default,
+
+	Add a network to the database. By default,
 	the "private" network is already defined.
+
+	
 
 ### Arguments
 

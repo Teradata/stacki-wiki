@@ -13,6 +13,7 @@
 * [iterate](stacki-iterate-commands)
 * [list](stacki-list-commands)
 * [load](stacki-load-commands)
+* [pack](stacki-pack-commands)
 * [remove](stacki-remove-commands)
 * [report](stacki-report-commands)
 * [run](stacki-run-commands)
@@ -22,3 +23,4 @@
 * [unload](stacki-unload-commands)
   * [unload attrfile](unload-attrfile)
   * [unload hostfile](unload-hostfile)
+* [unpack](stacki-unpack-commands)

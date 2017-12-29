@@ -6,10 +6,13 @@
 
 ### Description
 
-Set the boot flags for a host. The boot flags will applied to the
+
+	Set the boot flags for a host. The boot flags will applied to the
 	configuration file that a host uses to boot the running kernel. For
 	example, if a node uses GRUB as its boot loader, the boot flags will 
 	part of the 'append' line.
+	
+	
 
 ### Arguments
 
@@ -26,9 +29,9 @@ Set the boot flags for a host. The boot flags will applied to the
 
 ### Examples
 
-* `stack set host bootflags compute-0-0 flags="mem=1024M"`
+* `stack set host bootflags backend-0-0 flags="mem=1024M"`
 
-   Apply the kernel boot flags "mem=1024M" to compute-0-0.
+   Apply the kernel boot flags "mem=1024M" to backend-0-0.
 
 
 

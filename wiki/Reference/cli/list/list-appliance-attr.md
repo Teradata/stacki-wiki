@@ -6,7 +6,10 @@
 
 ### Description
 
-Lists the set of attributes for appliances.
+
+	Lists the set of attributes for appliances.
+
+	
 
 ### Arguments
 
@@ -17,9 +20,9 @@ Lists the set of attributes for appliances.
 
 ### Examples
 
-* `stack list appliance attr compute`
+* `stack list appliance attr backend`
 
-   List the attributes for compute appliances
+   List the attributes for backend appliances
 
 
 

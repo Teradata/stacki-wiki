@@ -6,7 +6,14 @@
 
 ### Description
 
-Load attributes into the database
+
+	Load attributes into the database. The attribute csv file needs to have a mandatory 'target'
+	column with hostnames. There are 2 ways of specifying attribute name, value:
+	1. Add 'attrName', 'attrVal' columns  with attribute name and value respectively.
+	2. The attribute name can also be a column in the spreadsheet and the cell at the
+	intersection of a hostname row can contain the attribute value.
+	
+	
 
 ### Parameters
 * `{file=string}`

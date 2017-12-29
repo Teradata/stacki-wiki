@@ -6,7 +6,10 @@
 
 ### Description
 
-Dump the set of attributes for hosts.
+
+	Dump the set of attributes for hosts.
+
+	
 
 ### Arguments
 
@@ -17,9 +20,9 @@ Dump the set of attributes for hosts.
 
 ### Examples
 
-* `stack dump host attr compute-0-0`
+* `stack dump host attr backend-0-0`
 
-   Dump the attributes for compute-0-0.
+   Dump the attributes for backend-0-0.
 
 
 

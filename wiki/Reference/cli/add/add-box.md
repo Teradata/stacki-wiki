@@ -6,7 +6,10 @@
 
 ### Description
 
-Add a box specification to the database.
+
+	Add a box specification to the database.
+
+	
 
 ### Arguments
 
@@ -18,7 +21,7 @@ Add a box specification to the database.
 ### Parameters
 * `{os=string}`
 
-   OS associated with the box. Default is 'redhat'
+   OS associated with the box. Default is the native os (e.g., 'redhat', 'sles').
 
 ### Examples
 

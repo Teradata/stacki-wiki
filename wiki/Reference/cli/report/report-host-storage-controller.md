@@ -6,7 +6,10 @@
 
 ### Description
 
-Output the storage controller configuration for a specific host
+
+	Output the storage controller configuration for a specific host
+
+	
 
 ### Arguments
 
@@ -17,9 +20,9 @@ Output the storage controller configuration for a specific host
 
 ### Examples
 
-* `stack report host storage controller compute-0-0`
+* `stack report host storage controller backend-0-0`
 
-   Output the storage controller configuration for compute-0-0.
+   Output the storage controller configuration for backend-0-0.
 
 
 

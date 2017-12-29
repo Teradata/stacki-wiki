@@ -6,13 +6,16 @@
 
 ### Description
 
-Remove a box specification from the database.
+
+	Remove a box specification from the database.
+
+	
 
 ### Arguments
 
 * `[box]`
 
-   Box name.
+   A list of boxes to remove.  Boxes must not have any hosts assigned.
 
 
 ### Examples

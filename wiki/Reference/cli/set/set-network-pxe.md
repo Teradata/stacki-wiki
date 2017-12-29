@@ -6,17 +6,20 @@
 
 ### Description
 
-Enables or Disables PXE for one of more networks.
 
-        All hosts must be connected to atleast one network that has
-        PXE enabled.
+	Enables or Disables PXE for one of more networks.
+
+	All hosts must be connected to atleast one network that has
+	PXE enabled.
+
+	
 
 ### Arguments
 
 * `{network}`
 
    The names of zero of more networks. If no network is specified
-        the PXE is set for all existing networks.
+	the PXE is set for all existing networks.
 
 
 ### Parameters

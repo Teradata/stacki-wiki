@@ -2,11 +2,12 @@
 
 ### Usage
 
-`stack create new pallet {name=string} [version=string]`
+`stack create new pallet {name=string} [os=string] [version=string]`
 
 ### Description
 
-Create a skeleton directory structure for a pallet
+	
+	Create a skeleton directory structure for a pallet
 	source.
 
 	This command is to be used mainly by pallet developers.
@@ -17,8 +18,11 @@ Create a skeleton directory structure for a pallet
 
 	Refer to Pallet Developer Guide for more information.
 
+	
+
 ### Parameters
 * `[name=string]`
+* `{os=string}`
 * `{version=string}`
 
    Version of the pallet. Typically the version of the

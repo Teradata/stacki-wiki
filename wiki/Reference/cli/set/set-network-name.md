@@ -6,7 +6,10 @@
 
 ### Description
 
-Sets the network name of a network.
+
+	Sets the network name of a network.
+
+	
 
 ### Arguments
 

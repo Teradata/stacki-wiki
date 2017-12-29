@@ -6,7 +6,10 @@
 
 ### Description
 
-Remove a global static route.
+
+	Remove a global static route.
+
+	
 
 ### Parameters
 * `[address=string]`

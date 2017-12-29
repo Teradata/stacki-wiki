@@ -6,7 +6,10 @@
 
 ### Description
 
-Create a time configuration report (NTP or chrony).
+
+	Create a time configuration report (NTP or chrony).
+
+	
 
 ### Arguments
 

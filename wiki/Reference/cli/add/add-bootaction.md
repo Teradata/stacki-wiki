@@ -2,27 +2,39 @@
 
 ### Usage
 
-`stack add bootaction [action=string] [args=string] [kernel=string] [ramdisk=string]`
+`stack add bootaction {action} [args=string] [kernel=string] [os=string] [ramdisk=string] [type=string]`
 
 ### Description
 
-Add a bootaction specification to the system.
+
+	Add a bootaction specification to the system.
+	
+	
+
+### Arguments
+
+* `[action]`
+
+   Label name for the bootaction. You can see the bootaction label names by
+	executing: 'stack list bootaction [host(s)]'.
+
 
 ### Parameters
-* `{action=string}`
 * `{args=string}`
 * `{kernel=string}`
+* `{os=string}`
 * `{ramdisk=string}`
+* `{type=string}`
 
-   The name of the ramdisk that is associated with this boot action.
+   Type of bootaction. Either 'os' or 'install'.
 
 ### Examples
 
-* `stack add bootaction action=os kernel="localboot 0"`
+* `stack add bootaction os type=os kernel="localboot 0"`
 
    Add the 'os' bootaction.
 
-* `stack add bootaction action=memtest command="memtest"`
+* `stack add bootaction memtest type=os kernel="kernel memtest"`
 
    Add the 'memtest' bootaction.
 

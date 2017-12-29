@@ -6,7 +6,10 @@
 
 ### Description
 
-Add a route for an appliance type in the cluster
+
+	Add a route for an appliance type in the cluster
+
+	
 
 ### Arguments
 

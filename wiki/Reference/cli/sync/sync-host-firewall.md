@@ -6,7 +6,10 @@
 
 ### Description
 
-Reconfigure and optionally restart firewall for named hosts.
+
+	Reconfigure and optionally restart firewall for named hosts.
+
+	
 
 ### Parameters
 * `{restart=boolean}`
@@ -17,9 +20,9 @@ Reconfigure and optionally restart firewall for named hosts.
 
 ### Examples
 
-* `stack sync host firewall compute-0-0`
+* `stack sync host firewall backend-0-0`
 
-   Reconfigure and restart the firewall on compute-0-0.
+   Reconfigure and restart the firewall on backend-0-0.
 
 
 

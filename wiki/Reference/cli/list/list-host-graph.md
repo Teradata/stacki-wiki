@@ -6,9 +6,12 @@
 
 ### Description
 
-For each host, output a graphviz script to produce a diagram of the
+
+	For each host, output a graphviz script to produce a diagram of the
 	XML configuration graph. If no hosts are specified, a graph for every
 	known host is listed.
+
+	
 
 ### Arguments
 
@@ -26,9 +29,9 @@ For each host, output a graphviz script to produce a diagram of the
 
 ### Examples
 
-* `stack list host graph compute-0-0`
+* `stack list host graph backend-0-0`
 
-   Generates a graph for compute-0-0
+   Generates a graph for backend-0-0
 
 
 

@@ -6,8 +6,11 @@
 
 ### Description
 
-Add a public key for a host. One use of this public key is to 
+
+	Add a public key for a host. One use of this public key is to 
 	authenticate messages sent from remote services.
+
+	
 
 ### Arguments
 

@@ -6,7 +6,10 @@
 
 ### Description
 
-Lists the set of attributes for hosts.
+
+	Lists the set of attributes for hosts.
+
+	
 
 ### Arguments
 
@@ -19,7 +22,7 @@ Lists the set of attributes for hosts.
 * `{attr=string}`
 
    A shell syntax glob pattern to specify to attributes to
-        be listed.
+	be listed.
 
 ### Examples
 

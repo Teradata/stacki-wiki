@@ -6,14 +6,17 @@
 
 ### Description
 
-Lists the set of global attributes.
+
+	Lists the set of global attributes.
+
+	
 
 ### Parameters
 * `{attr=string}`
 * `{shadow=boolean}`
 
    Specifies is shadow attributes are listed, the default
-        is False.
+	is False.
 
 ### Examples
 

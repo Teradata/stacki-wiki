@@ -1,5 +1,11 @@
 # add commands
 
+  * [add api blacklist command](add-api-blacklist-command)
+  * [add api group](add-api-group)
+  * [add api group perms](add-api-group-perms)
+  * [add api user](add-api-user)
+  * [add api user group](add-api-user-group)
+  * [add api user perms](add-api-user-perms)
   * [add appliance](add-appliance)
   * [add appliance attr](add-appliance-attr)
   * [add appliance firewall](add-appliance-firewall)
@@ -9,6 +15,7 @@
   * [add box](add-box)
   * [add cart](add-cart)
   * [add copyright](add-copyright)
+  * [add environment](add-environment)
   * [add environment attr](add-environment-attr)
   * [add firewall](add-firewall)
   * [add group](add-group)
@@ -21,6 +28,7 @@
   * [add host group](add-host-group)
   * [add host interface](add-host-interface)
   * [add host key](add-host-key)
+  * [add host message](add-host-message)
   * [add host partition](add-host-partition)
   * [add host route](add-host-route)
   * [add network](add-network)

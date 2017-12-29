@@ -34,6 +34,7 @@
 * [iterate](stacki-iterate-commands)
 * [list](stacki-list-commands)
 * [load](stacki-load-commands)
+* [pack](stacki-pack-commands)
 * [remove](stacki-remove-commands)
 * [report](stacki-report-commands)
 * [run](stacki-run-commands)
@@ -41,3 +42,4 @@
 * [swap](stacki-swap-commands)
 * [sync](stacki-sync-commands)
 * [unload](stacki-unload-commands)
+* [unpack](stacki-unpack-commands)

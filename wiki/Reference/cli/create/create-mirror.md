@@ -2,11 +2,12 @@
 
 ### Usage
 
-`stack create mirror [arch=string] [name=string] [newest=boolean] [repoconfig=string] [repoid=string] [url=string] [urlonly=boolean] [version=string]`
+`stack create mirror [arch=string] [name=string] [newest=boolean] [quiet=boolean] [repoconfig=string] [repoid=string] [url=string] [urlonly=boolean] [version=string]`
 
 ### Description
 
-Create a pallet ISO image from the packages found in the
+	
+	Create a pallet ISO image from the packages found in the
 	repository located at 'URL'.
 
 	Mirroring RHEL repositories works with a subscribed Red Hat frontend.
@@ -17,10 +18,13 @@ Create a pallet ISO image from the packages found in the
 	If using a url, "newest" and "urlonly" have no effect. The entire
 	repo will be downloaded.
 
+	
+
 ### Parameters
 * `{arch=string}`
 * `{name=string}`
 * `{newest=boolean}`
+* `{quiet=boolean}`
 * `{repoconfig=string}`
 * `{repoid=string}`
 * `{url=string}`
@@ -41,6 +45,12 @@ Create a pallet ISO image from the packages found in the
 
    Creates a mirror for RHEL 6.5 based on the latest packages from cdn.redhat.com.
 	The pallet ISO will be named rhel-6-server-rpms-6.5-0.x86_64.disk1.iso.
+
+* `stack create mirror url=/tmp/ansible_deps name=ansible version=4.0`
+
+   Creates a pallet based on packages already collected in /tmp/ansible_deps
+	to install Ansible with dependencies.
+	The pallet ISO will be named ansible-4.0-7.x.x86_64.disk1.iso
 
 
 

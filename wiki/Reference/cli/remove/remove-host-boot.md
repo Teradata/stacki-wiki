@@ -6,7 +6,10 @@
 
 ### Description
 
-Removes the boot configuration for a host
+
+	Removes the boot configuration for a host
+
+	
 
 ### Arguments
 
@@ -17,14 +20,14 @@ Removes the boot configuration for a host
 
 ### Examples
 
-* `stack remove host boot compute-0-0`
+* `stack remove host boot backend-0-0`
 
-   Removes the boot configuration for host compute-0-0.
+   Removes the boot configuration for host backend-0-0.
 
-* `stack remove host boot compute-0-0 compute-0-1`
+* `stack remove host boot backend-0-0 backend-0-1`
 
-   Removes the boot configuration for hosts compute-0-0 and
-	compute-0-1.
+   Removes the boot configuration for hosts backend-0-0 and
+	backend-0-1.
 
 
 

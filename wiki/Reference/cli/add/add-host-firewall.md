@@ -6,7 +6,10 @@
 
 ### Description
 
-Add a firewall rule for the specified hosts.
+
+	Add a firewall rule for the specified hosts.
+
+	
 
 ### Arguments
 
@@ -41,7 +44,7 @@ Add a firewall rule for the specified hosts.
 	be translated as the following iptables rule:
 	"-A FORWARD -i eth0 -j ACCEPT".
 
-* `stack add host firewall localhost network=all service="40000"         protocol="tcp" action="REJECT" chain="INPUT"`
+* `stack add host firewall localhost network=all service="40000"  protocol="tcp" action="REJECT" chain="INPUT"`
 
    Reject TCP packets that are destined for port 40000 on all networks
 	on the INPUT chain.

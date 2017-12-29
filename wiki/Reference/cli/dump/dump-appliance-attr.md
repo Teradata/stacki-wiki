@@ -6,7 +6,10 @@
 
 ### Description
 
-Dump the set of attributes for appliances.
+
+	Dump the set of attributes for appliances.
+
+	
 
 ### Arguments
 
@@ -17,9 +20,9 @@ Dump the set of attributes for appliances.
 
 ### Examples
 
-* `stack dump appliance attr compute`
+* `stack dump appliance attr backend`
 
-   List the attributes for compute appliances
+   List the attributes for backend appliances
 
 
 

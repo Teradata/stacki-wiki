@@ -6,7 +6,10 @@
 
 ### Description
 
-Set the rack number for a list of hosts.
+
+	Set the rack number for a list of hosts.
+	
+	
 
 ### Arguments
 
@@ -22,9 +25,9 @@ Set the rack number for a list of hosts.
 
 ### Examples
 
-* `stack set host rack compute-2-0 rack=2`
+* `stack set host rack backend-2-0 rack=2`
 
-   Set the rack number to 2 for compute-2-0.
+   Set the rack number to 2 for backend-2-0.
 
 
 

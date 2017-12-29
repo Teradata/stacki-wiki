@@ -6,7 +6,10 @@
 
 ### Description
 
-Remove the kernel boot flags for a list of hosts.
+
+	Remove the kernel boot flags for a list of hosts.
+
+	
 
 ### Arguments
 

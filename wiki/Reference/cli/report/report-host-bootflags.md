@@ -6,7 +6,10 @@
 
 ### Description
 
-Output the kernel boot flags for a specific host
+
+	Output the kernel boot flags for a specific host
+
+	
 
 ### Arguments
 
@@ -18,9 +21,9 @@ Output the kernel boot flags for a specific host
 
 ### Examples
 
-* `stack report host bootflags compute-0-0`
+* `stack report host bootflags backend-0-0`
 
-   Output the kernel boot flags for compute-0-0.
+   Output the kernel boot flags for backend-0-0.
 
 
 

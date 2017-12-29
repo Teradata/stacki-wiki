@@ -6,8 +6,11 @@
 
 ### Description
 
-Sets the device module for a named interface. On Linux this will get
+
+	Sets the device module for a named interface. On Linux this will get
 	translated to an entry in /etc/modprobe.conf.
+
+	
 
 ### Arguments
 

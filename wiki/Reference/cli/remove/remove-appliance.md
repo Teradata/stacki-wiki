@@ -6,10 +6,13 @@
 
 ### Description
 
-Remove an appliance definition from the system. This can be
+
+	Remove an appliance definition from the system. This can be
 	called with just the appliance or it can be further
 	qualified by supplying the root XML node name and/or the
 	graph XML file name.
+
+	
 
 ### Arguments
 
@@ -20,9 +23,9 @@ Remove an appliance definition from the system. This can be
 
 ### Examples
 
-* `stack remove appliance compute`
+* `stack remove appliance backend`
 
-   Removes the compute appliance from the database.
+   Removes the backend appliance from the database.
 
 
 

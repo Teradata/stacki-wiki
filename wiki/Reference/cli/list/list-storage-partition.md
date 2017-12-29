@@ -6,15 +6,18 @@
 
 ### Description
 
-List the storage partition configuration for one of the following:
+
+	List the storage partition configuration for one of the following:
 	global, os, appliance or host.
+
+	
 
 ### Arguments
 
 * `{host}`
 
    This argument can be nothing, a valid 'os' (e.g., 'redhat'), a valid
-	appliance (e.g., 'compute') or a host.
+	appliance (e.g., 'backend') or a host.
 	If nothing is supplied, then the global storage partition
 	configuration will be output.
 
@@ -27,14 +30,14 @@ List the storage partition configuration for one of the following:
 
 ### Examples
 
-* `stack list storage partition compute-0-0`
+* `stack list storage partition backend-0-0`
 
-   List host-specific storage partition configuration for compute-0-0.
+   List host-specific storage partition configuration for backend-0-0.
 
-* `stack list storage partition compute`
+* `stack list storage partition backend`
 
    List appliance-specific storage partition configuration for all
-	compute appliances.
+	backend appliances.
 
 * `stack list storage partition`
 

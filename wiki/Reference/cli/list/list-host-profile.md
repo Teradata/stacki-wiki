@@ -6,13 +6,16 @@
 
 ### Description
 
-Outputs a XML wrapped installer profile for the given hosts.
 
-        If no hosts are specified the profiles for all hosts are listed.
+	Outputs a XML wrapped installer profile for the given hosts.
+
+	If no hosts are specified the profiles for all hosts are listed.
 	
-        If input is fed from STDIN via a pipe, the argument list is
+	If input is fed from STDIN via a pipe, the argument list is
 	ignored and XML is read from STDIN.  This command is used for
 	debugging the Stacki configuration graph.
+
+	
 
 ### Arguments
 

@@ -6,7 +6,10 @@
 
 ### Description
 
-Output the network configuration file for a host's interface.
+
+	Output the network configuration file for a host's interface.
+
+	
 
 ### Arguments
 
@@ -25,9 +28,9 @@ Output the network configuration file for a host's interface.
 
 ### Examples
 
-* `stack report host interface compute-0-0 interface=eth0`
+* `stack report host interface backend-0-0 interface=eth0`
 
-   Output a network configuration file for compute-0-0's eth0 interface.
+   Output a network configuration file for backend-0-0's eth0 interface.
 
 
 

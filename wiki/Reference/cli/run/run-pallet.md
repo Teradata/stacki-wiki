@@ -6,7 +6,10 @@
 
 ### Description
 
-Installs a pallet on the fly
+
+	Installs a pallet on the fly
+	
+	
 
 ### Arguments
 

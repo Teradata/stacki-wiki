@@ -6,11 +6,14 @@
 
 ### Description
 
-Lists the XML configuration information for a host. The graph
+
+	Lists the XML configuration information for a host. The graph
 	traversal for the XML output is rooted at the XML node file
 	specified by the 'node' argument. This command executes the first
 	pre-processor pass on the configuration graph, performs all
 	variable substitutions, and runs all eval sections.
+
+	
 
 ### Parameters
 * `{attrs=string}`
@@ -24,9 +27,9 @@ Lists the XML configuration information for a host. The graph
 
 ### Examples
 
-* `stack list node xml compute`
+* `stack list node xml backend`
 
-   Generate the XML graph starting at the XML node named 'compute.xml'.
+   Generate the XML graph starting at the XML node named 'backend.xml'.
 
 
 

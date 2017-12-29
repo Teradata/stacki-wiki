@@ -6,8 +6,11 @@
 
 ### Description
 
-Enable an available pallet. The pallet must already be copied on the
+
+	Enable an available pallet. The pallet must already be copied on the
 	system using the command "stack add pallet".
+
+	
 
 ### Arguments
 

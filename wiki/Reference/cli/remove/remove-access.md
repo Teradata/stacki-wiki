@@ -6,7 +6,10 @@
 
 ### Description
 
-Remove Access control pattern.
+
+	Remove Access control pattern.
+	
+	
 
 ### Parameters
 * `[command=string]`

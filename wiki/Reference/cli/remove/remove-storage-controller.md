@@ -6,15 +6,18 @@
 
 ### Description
 
-Remove a storage controller configuration from the database.
+
+	Remove a storage controller configuration from the database.
+
+	
 
 ### Arguments
 
 * `[scope]`
 
    Zero or one argument. The argument is the scope: a valid os (e.g.,
-	'redhat'), a valid appliance (e.g., 'compute') or a valid host
-	(e.g., 'compute-0-0). No argument means the scope is 'global'.
+	'redhat'), a valid appliance (e.g., 'backend') or a valid host
+	(e.g., 'backend-0-0). No argument means the scope is 'global'.
 
 
 ### Parameters
@@ -27,13 +30,13 @@ Remove a storage controller configuration from the database.
 
 ### Examples
 
-* `stack remove storage controller compute-0-0 slot=1`
+* `stack remove storage controller backend-0-0 slot=1`
 
-   Remove the disk array configuration for slot 1 on compute-0-0.
+   Remove the disk array configuration for slot 1 on backend-0-0.
 
-* `stack remove storage controller compute slot=1,2,3,4`
+* `stack remove storage controller backend slot=1,2,3,4`
 
-   Remove the disk array configuration for slots 1-4 for the compute
+   Remove the disk array configuration for slots 1-4 for the backend
 	appliance.
 
 
