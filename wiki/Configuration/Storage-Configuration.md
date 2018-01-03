@@ -1,8 +1,8 @@
 ## Storage Controller Configuration
 
-Stacki manages storage at both the [Partition](Partition-Configuration) level and the hardware RAID controller level.
+Stacki manages storage at both the [Partition](Partitioning-Configuration) level and the hardware RAID controller level.
 
-There are two ways to configure a storage controller: (using a spreadsheet)[#spreadsheet] and the [command line](#command line).
+There are two ways to configure a storage controller: using a spreadsheet and the command line.
 
 Using a spreadsheet is easier and a *Stacki best practice*, so, use a spreadsheet.
 
@@ -14,9 +14,9 @@ This allows you to not ever have to touch a keyboard/mouse/console to configure 
 
 All other controllers require proprietary CLI interfaces which we can no longer distribute because Stacki is now fully open source. Sorry about that?
 
-There are also a number of on-board RAID controllers that do "Fake Raid." We can't talk to those because, again, proprietary crap.
+There are also a number of on-board RAID controllers that do "Fake Raid." Stacki can't talk to those because, again, proprietary crap.
 
-"Fake Raid" is software raid done with a hardware BIOS config. If you're not dual booting Windows and Linus, then it's colossally stupid to enable it deliberately. Turn it off and do real Linux software raid, which we can do easily.
+"Fake Raid" is software raid done with a hardware BIOS config. If you're not dual booting Windows and Linux, then it's colossally stupid to enable it deliberately. Turn it off and do real Linux software raid, which we can do easily.
 
 ### Spreadsheet
 
@@ -59,7 +59,7 @@ A sample spreadsheet is shown below.
 |                            | <sub>6</sub>    | <sub>hotspare</sub>   | <sub>1</sub>        |                             |
 |                            | <sub>7</sub>    | <sub>10</sub>         | <sub>1</sub>        |                             |
 
-> **Note**:  Example spreadsheets for controller configuration are also available on your frontend in `/opt/stack/share/examples/controller/`.
+> **Note**:  Example spreadsheets for controller configuration are also available on your frontend in `/opt/stack/share/examples/spreadsheets`. Look for files with 'controller' in the name.
 
 The _Name_ column can contain a specific host name (e.g., _backend-lsi-0-1_), an
 appliance type (e.g., _backend_) or it can be set to _global_.

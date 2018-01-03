@@ -4,7 +4,7 @@ We use spreadsheets - CSV spreadsheets to be specific.
 
 You're laughing it up fuzzball.
 
-Let's imagine an almost universal, easy to understand, easy to use, relatively compact, explicitly structured way to represent data about all the stuff we have and how it should be configured that even the marketing idiot in the cubicle on A2 could create or load if we trusted him that much. (We don't, that's an example of hyperbole.) What comes to mind?
+Let's imagine an almost universal, easy to understand, easy to use, relatively compact, explicitly structured way to represent data about all the stuff we have and how it should be configured that even the marketing idiot in the cubicle on A2 could create or load if we trusted him that much. (We actually don't trust him, that's an example of hyperbole.) What comes to mind?
 
 Yeah, CSV - that's why we use spreadsheets.
 
@@ -17,7 +17,7 @@ There are examples and details in:
 * [Configure Additional Networks](Network-Configuration)
 * [Configure Partitioning](Partitioning-Configuration)
 * [Configure Storage Controller](Storage-Configuration)
-* [Adding Hosts](Backend-Intall-Spreadsheet)
+* [Adding Hosts](Backend-Install-Spreadsheet)
 
 Using a spreadsheet for specifying host, network, controller, and disk configuration is considered a *Stacki best practice*. You might hate them (I don't, I like commas.) but loading spreadsheets:
 

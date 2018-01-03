@@ -25,9 +25,10 @@
   * [Boxes](Boxes)
   * [Appliances](Appliances)
   * [Stacki Universal XML](SUX)
-* Common Configurations
+* Configuration
   * [Using Spreadsheets](Using-Spreadsheets)
-  * [Network Configuration](Network-Configuration)
+  * [Network Configuration - Frontend](Network-Configuration-Frontend)
+  * [Network Configuration - Backends](Network-Configuration-Backends)
   * [Partioning Configuration](Partitioning-Configuration)
   * [Storage Configuration](Storage-Configuration)
   * [UEFI](UEFI)
