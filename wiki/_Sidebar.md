@@ -13,6 +13,7 @@
   * [Backend Install - Basics](Backend-Installation)
   * [Backend Install - Discovery](Backend-Install-Discovery)
   * [Backend Install - Spreadsheet](Backend-Install-Spreadsheet)
+  * [Creating Jumbo Pallets](Create-Jumbo-Pallets)
 * Customization
   * [Carts](Carts)
     * [Adding Packages](Adding-RPMs)
@@ -22,11 +23,12 @@
     * [Adding OS Pallets](Adding-OS-Pallets)
     * [Adding Software Pallets](Adding-Software-Pallets)
   * [Boxes](Boxes)
-  * [Creating Jumbo Pallets](Creating-Jumbo-Pallets)
-  * [Network Configuration](Network-Configuration)
-  * [Stacki Universal XML](Stacki-Universal-XML)
+  * [Appliances](Appliances)
+  * [Stacki Universal XML](SUX)
 * Common Configurations
-  * [IP Address Change](IP-Address-Change)
+  * [Using Spreadsheets](Using-Spreadsheets)
+  * [Network Configuration](Network-Configuration)
+  * [Partioning Configuration](Partitioning-Configuration)
   * [Storage Configuration](Storage-Configuration)
   * [UEFI](UEFI)
 * Workflows
@@ -37,6 +39,7 @@
 * Frequently Asked Questions
   * [Kickstart Customizations](Kickstart-Customizations)
   * [Setting Cart Order](Setting-Cart-Order)
+  * [Changing Private Network](IP-Address-Change)
 * Developer
   * [Building From Source](Building-From-Source)
 * Licenses
@@ -45,7 +48,7 @@
   * [Stacki License](Stacki-License)
 * Reference
   * [Command Line](stacki-CLI-documentation)
-  * [Wire](Wire-Reference)
+  * [Stacki Universal XML](Stacki-Universal-XML)
   * [Example CSV Files](Example-CSV-Files)
 * [Guano](Guano)
 

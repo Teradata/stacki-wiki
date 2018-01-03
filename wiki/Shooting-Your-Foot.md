@@ -13,7 +13,11 @@ You're forewarned and apparently armed, your foot is down. Help is in Stacki Sla
 
 ### Don't decide you want a different private network
 
-You read the warnings right? Get the *private* network correct. The right answer is to reinstall if you didn't. Seriously, you'll be happier, and we'll support you if you do that. We won't if you decide to attempt to change everything on the frontend that would need to change in order to fix your private network.
+You read the warnings right? Get the *private* network correct. The right answer is to reinstall if you didn't. Seriously, you'll be happier, and we'll support you if you do that. All bets are off if you decide to attempt to change everything on the frontend that would need to change in order to fix your private network.
+
+All right fine.
+
+If you want to change this, go to the [Changing the Private Network](IP-Address-Change) docs.
 
 ### Don't change the /root/.ssh/id_rsa.pub key.
 
@@ -25,7 +29,7 @@ Don't. Do. It. Dammit.
 
 Using the Centos*.repo files are a recipe for disaster. If you feel you must use them, considering mirroring the repository and adding them as pallets as described in [Creating Software Pallet](Creating-Software-Pallets).
 
-If you don't want to do that, then Stacki is likely not the solution you are looking for. Do more research for something more suitable for your site. 
+If you don't want to do that, then Stacki is likely not the solution you are looking for. Do more research for something more suitable for your site.
 
 Try:
 * [Digital Rebar](http://rebar.digital/)

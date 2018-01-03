@@ -1,163 +1,67 @@
-Stacki manages storage at both the [Partition](#partition) level and the hardware
-[RAID Controller](#raid-controller) level.
+## Storage Controller Configuration
 
-## Partition
+Stacki manages storage at both the [Partition](Partition-Configuration) level and the hardware RAID controller level.
 
-### Spreadsheet
- 
-The configuration of disk partitions can be specified in a
-spreadsheet with the following columns:
-  
-1. **Name**. A host name, appliance type or 'global'. 
-1. **Device**. The Linux disk device name (e.g., ``sda``, ``sdb``). 
-1. **Mountpoint**. Where the partition should be mounted on the file system. 
-1. **Size**. The size of the partition in megabytes. '0' will instruct the installer to use the remaining available space of the device.
-1. **Type**. How the partition should be formatted (e.g., xfs, swap).
-1. **Options**. Free form string of options that can be used to create a partition.
- 
-A 
-[sample spreadsheet](https://docs.google.com/spreadsheets/d/1nukh3bwcgwhxXn1czhDawog_-srlXgCy7arh2m71-so/edit?usp=sharing) 
-is shown below. 
+There are two ways to configure a storage controller: (using a spreadsheet)[#spreadsheet] and the [command line](#command line).
 
-| <sub>Name</sub> | <sub>Device</sub> | <sub>Mountpoint</sub> | <sub>Size</sub> | <sub>Type</sub> | <sub>Options</sub> | 
-| ---- | ------ | ---------- | ---- | ---- | ------- | 
-<sub>global</sub> | <sub>sda</sub> | <sub>/</sub> | <sub>50000</sub> | <sub>ext4</sub> |  | 
-| | <sub>sda</sub> | <sub>/var</sub> | <sub>80000</sub> | <sub>ext4</sub> |  | 
-| | <sub>sda</sub> | <sub>swap</sub> | <sub>16000</sub> | <sub>swap</sub> |  | 
-| | <sub>sda</sub> | <sub>/scratch</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
-<sub>backend-0-0</sub> | <sub>sda</sub> | <sub>/</sub> | <sub>50000</sub> | <sub>ext4</sub> |  | 
-| | <sub>sda</sub> | <sub>/var</sub> | <sub>10000</sub> | <sub>ext4</sub> |  | 
-| | <sub>sda</sub> | <sub>swap</sub> | <sub>16000</sub> | <sub>swap</sub> |  | 
-| | <sub>sda</sub> | <sub>/scratch</sub> | <sub>1</sub> | <sub>xfs</sub> | <sub>--grow --maxsize=4000</sub> | 
-| | <sub>sdb</sub> | <sub>/hadoop01</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
-| | <sub>sdc</sub> | <sub>/hadoop02</sub> | <sub>0</sub> | <sub>xfs</sub> |  | 
-<sub>backend-0-1</sub> | <sub>sda</sub> | <sub>biosboot</sub> | <sub>1</sub> | <sub>biosboot</sub> |  | 
-| | <sub>sda</sub> | <sub>/</sub> | <sub>10000</sub> | <sub>ext4</sub> |  | 
-| | <sub>sda</sub> | <sub>swap</sub> | <sub>1000</sub> | <sub>swap</sub> |  | 
-| | <sub>sdb</sub> | <sub>pv.01</sub> | <sub>8000</sub> | <sub>lvm</sub> |  | 
-| | <sub>pv.01</sub> | <sub>volgrp01</sub> | <sub>6000</sub> | <sub>volgroup</sub> |  | 
-| | <sub>volgrp01</sub> | <sub>/extra</sub> | <sub>4000</sub> | <sub>ext4</sub> | <sub>--name=extra</sub> | 
-<sub>backend-0-2</sub> | <sub>md0</sub> | <sub>/</sub> | <sub>0</sub> | <sub>ext4</sub> | <sub>--level=RAID1 raid.01 raid.02</sub> | 
-| | <sub>md1</sub> | <sub>/var</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--level=RAID0 raid.03 raid.04</sub> | 
-| | <sub>md2</sub> | <sub>/export</sub> | <sub>0</sub> | <sub>xfs</sub> | <sub>--level=RAID1 raid.05 raid.06</sub> | 
-| | <sub>sda</sub> | <sub>raid.01</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
-| | <sub>sdb</sub> | <sub>raid.02</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
-| | <sub>sda</sub> | <sub>raid.03</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
-| | <sub>sdb</sub> | <sub>raid.04</sub> | <sub>16000</sub> | <sub>raid</sub> |  | 
-| | <sub>sda</sub> | <sub>raid.05</sub> | <sub>0</sub> | <sub>raid</sub> |  | 
-| | <sub>sdb</sub> | <sub>raid.06</sub> | <sub>0</sub> | <sub>raid</sub> |  |
- 
-The _Name_ column can contain a specific host name (e.g., _backend-0-0_), an
-Appliance type (e.g., _backend_) or it can be set to _global_.  
- 
-In the sample spreadsheet, we see the default configuration (_global_) is to
-only configure the partitions for the first disk (``sda``).
-The root partition ``/`` is an ext4 partition and it is 50 GB.
-The ``/var`` partition is an ext4 partition and it is 80 GB.
-The ``swap`` partition is 16 GB.
-Lastly, ``/scratch`` is an xfs partition and it will be the remainder of ``sda``.
- 
-The configuration for _backend-0-0_ has a similar configuration for ``sda`` as the _global_ configuration except for the ``/scratch`` partition. The maximum size of ``/scratch`` partition is set to 1 GB via the Options column.
-Additionally, ``sdb`` and ``sdc`` will be configured for _backend-0-0_ as single partitions that span the entire disk.
+Using a spreadsheet is easier and a *Stacki best practice*, so, use a spreadsheet.
 
-### LVM
+### Raid Controllers
 
-Stacki supports specifying LVM configuration via a spreadsheet. **lvm**, **volgroup** are keywords that indicate that the partition needs to be setup via LVM. In the configuration for ``backend-0-1``,
-``pv.01`` is configured as a physical volume on ``sdb`` with size as 8GB. 
-``volgrp01`` is a volgroup comprising of ``pv.01``. ``/extra`` is mounted as an lvm partition on volgroup ``volgrp01``.
+Stacki can automatically configure LSI MegaRAID controllers.
 
-When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend.
-Then, load the CSV file into the database on the frontend by executing:
+This allows you to not ever have to touch a keyboard/mouse/console to configure your LSI RAID card.
 
-``` 
-# stack load storage partition file=partition.csv
-```
- 
-You can view your storage partition configuration by executing:
+All other controllers require proprietary CLI interfaces which we can no longer distribute because Stacki is now fully open source. Sorry about that?
 
-```
-# stack list storage partition
-```
+There are also a number of on-board RAID controllers that do "Fake Raid." We can't talk to those because, again, proprietary crap.
 
-### The _nukedisks_ Attribute
- 
-A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_. On first install, all installing backend disks automatically have _nukedisks_ set to _false_. If you've added backend nodes via spreadsheet, you must set _nukedisks_ to _true_ as in the example below, before installing.
-
-As an example, to set the _nukedisks_ attribute for host _backend-0-0_, execute:
-
-``` 
-# stack set host attr backend-0-0 attr=nukedisks value=true
-```
- 
-Then, the next time _backend-0-0_ is installed, it will remove all partitions for all disks, then repartition the disks as you specified in your spreadsheet.
- 
-While a host is installing, after it partitions its disks, it will send a message to the frontend to instruct it to set the  _nukedisks_ attribute back to _false_.
-This ensures that the disks will not be reconfigured on the next installation.
-
-
-## RAID Controller
-
-Stacki can automatically configure two types of hardware RAID controllers:
-
-1. LSI MegaRAID
-2. HP Smart Array
+"Fake Raid" is software raid done with a hardware BIOS config. If you're not dual booting Windows and Linus, then it's colossally stupid to enable it deliberately. Turn it off and do real Linux software raid, which we can do easily.
 
 ### Spreadsheet
 
 The configuration of disk controllers can be specified in a
 spreadsheet with the following columns:
-  
+
 1. **Name**. A host name, appliance type or global.  
 1. **Slot**. The slot of a specific disk in the array.  
 1. **Raid Level**. The RAID level for the disks. This can be 0, 1, 10, 5, 6, 50, 60.  
-1. **Array Id**. The order in which the RAID groups will be constructed. 
-1. **Options**. Any additional options to be passed on to the ```storcli``` or ```hpssacli``` command.
+1. **Array Id**. The order in which the RAID groups will be constructed.
+1. **Options**. Any additional options to be passed on to the ```storcli``` or ```MegaRaid``` command.
 
 A sample spreadsheet is shown below.
 
-| <sub>NAME</sub> | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub> |
-| ---- | ---- | ---------- | -------- | ------- |
-| <sub>global</sub> | <sub>0</sub> | <sub>1</sub> | <sub>1</sub> |  |
-|  | <sub>1</sub> | <sub>1</sub> | <sub>1</sub> |  |
-|  | <sub>*</sub> | <sub>0</sub> | <sub>*</sub> |  |
-| <sub>backend</sub> | <sub>0</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>1</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>2</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>3</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>4</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>5</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>6</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>7</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>8</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>9</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>10</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>11</sub> | <sub>60</sub> | <sub>1</sub> |  |
-|  | <sub>12</sub> | <sub>Hotspare</sub> | <sub>1</sub> |  |
-| <sub>backend-lsi-0-1</sub> | <sub>0</sub> | <sub>1</sub> | <sub>2</sub> | <sub>size=136gb force</sub> |
-|  | <sub>13</sub> | <sub>1</sub> | <sub>2</sub> |  |
-|  | <sub>1</sub> | <sub>1</sub> | <sub>3</sub> |  |
-|  | <sub>2</sub> | <sub>1</sub> | <sub>3</sub> |  |
-|  | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> |  |
-|  | <sub>4</sub> | <sub>10</sub> | <sub>1</sub> |  |
-|  | <sub>5</sub> | <sub>10</sub> | <sub>1</sub> |  |
-|  | <sub>6</sub> | <sub>hotspare</sub> | <sub>1</sub> |  |
-|  | <sub>7</sub> | <sub>10</sub> | <sub>1</sub> |  |
-| <sub>backend-hp-0-2</sub> | <sub>1</sub> | <sub>10</sub> | <sub>1</sub> | <sub>size=200000 forced</sub> |
-|  | <sub>2</sub> | <sub>10</sub> | <sub>1</sub> |  |
-|  | <sub>3</sub> | <sub>10</sub> | <sub>1</sub> |  |
-|  | <sub>4</sub> | <sub>10</sub> | <sub>1</sub> |  |
-|  | <sub>1</sub> | <sub>10</sub> | <sub>2</sub> |  |
-|  | <sub>2</sub> | <sub>10</sub> | <sub>2</sub> |  |
-|  | <sub>3</sub> | <sub>10</sub> | <sub>2</sub> |  |
-|  | <sub>4</sub> | <sub>10</sub> | <sub>2</sub> |  |
-|  | <sub>5</sub> | <sub>0</sub> | <sub>3</sub> | <sub>ssdoverprovisioningoptimization=on forced</sub> |
-|  | <sub>6</sub> | <sub>0</sub> | <sub>3</sub> | <sub>ssdoverprovisioningoptimization=on forced</sub> |
+| <sub>NAME</sub>            | <sub>SLOT</sub> | <sub>RAID LEVEL</sub> | <sub>ARRAY ID</sub> | <sub>OPTIONS</sub>          |
+|:---------------------------|:----------------|:----------------------|:--------------------|:----------------------------|
+| <sub>global</sub>          | <sub>0</sub>    | <sub>1</sub>          | <sub>1</sub>        |                             |
+|                            | <sub>1</sub>    | <sub>1</sub>          | <sub>1</sub>        |                             |
+|                            | <sub>*</sub>    | <sub>0</sub>          | <sub>*</sub>        |                             |
+| <sub>backend</sub>         | <sub>0</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>1</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>2</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>3</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>4</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>5</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>6</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>7</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>8</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>9</sub>    | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>10</sub>   | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>11</sub>   | <sub>60</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>12</sub>   | <sub>Hotspare</sub>   | <sub>1</sub>        |                             |
+| <sub>backend-lsi-0-1</sub> | <sub>0</sub>    | <sub>1</sub>          | <sub>2</sub>        | <sub>size=136gb force</sub> |
+|                            | <sub>13</sub>   | <sub>1</sub>          | <sub>2</sub>        |                             |
+|                            | <sub>1</sub>    | <sub>1</sub>          | <sub>3</sub>        |                             |
+|                            | <sub>2</sub>    | <sub>1</sub>          | <sub>3</sub>        |                             |
+|                            | <sub>3</sub>    | <sub>10</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>4</sub>    | <sub>10</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>5</sub>    | <sub>10</sub>         | <sub>1</sub>        |                             |
+|                            | <sub>6</sub>    | <sub>hotspare</sub>   | <sub>1</sub>        |                             |
+|                            | <sub>7</sub>    | <sub>10</sub>         | <sub>1</sub>        |                             |
 
+> **Note**:  Example spreadsheets for controller configuration are also available on your frontend in `/opt/stack/share/examples/controller/`.
 
-> **Note**:  Example spreadsheets for controller configuraion are also available
-  on your frontend in `/opt/stack/share/examples/controller/`.
-
-The _Name_ column can contain a specific host name (e.g., _backend-hp-0-2_), an
+The _Name_ column can contain a specific host name (e.g., _backend-lsi-0-1_), an
 appliance type (e.g., _backend_) or it can be set to _global_.
 
 1. In the sample spreadsheet, the default configuration is _global_
@@ -184,23 +88,14 @@ appliance type (e.g., _backend_) or it can be set to _global_.
    > **Note**: This configuration is for an LSI controller that uses `storcli` as the primary
    > configuration utility.
 
-1. The next configuration is for the host named _backend-hp-0-2_.
-   1. The first logical disk (```sda```) is a RAID 10 set composed of disks 1 through 4 with size set to 200 GB
-   1. The second logical disk(```sdb```) is a RAID 10 set composed of disks 1 and 4 using remainder of the disks.
-   1. The third logical disk(```sdc```) is a RAID 0 set, with disks 5 and 6, which happen to be SSD drives, and so require
-      the `ssdoverprovisioningoptimization=on forced` option.
-   > **Note**: This configuration is for an HP controller that uses `hpssacli` as the primary
-   > configuration utility.
+When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend. Then, load the CSV file into the database on the frontend by executing:
 
-The last configuration (for host _backend-hp-0-2_) is considered advanced configuration. This is due to slots 5 and 6 being listed multiple times in the spreadsheet.
- 
-When you are finished editing your spreadsheet, save it as a CSV file, then copy the CSV file to your frontend.
-Then, load the CSV file into the database on the frontend by executing
 ```
 # stack load storage controller file=controller.csv
 ```
 
-If the controller spreadsheet contains advanced configuration (as demonstrated by the configuration for _backend-hp-0-2_), the ```force=y``` argument will need to be appended to the above command
+If the controller spreadsheet contains advanced configuration, the ```force=y``` argument will need to be appended to the above command:
+
 ```
 # stack load storage controller file=controller.csv force=y
 ```
@@ -226,3 +121,18 @@ Like the _nukedisks_ attribute, _nukecontroller_ is set to _false_ on the initia
 After the host has completed installation, _nukecontroller_ attribute for that host is reset to _false_.
 
 This ensures that the controller will not be reconfigured on the next installation.
+
+### Command line
+
+The command line tools can do that same thing that using a spreadsheet does. So if you prefer typing the same command over and over with only slight changes, look at the "storage controller" commands:
+
+```
+# stack | grep "storage controller"
+
+add storage controller {scope} [adapter=int] [arrayid=string] [enclosure=int] [hotspare=int] [raidlevel=int] [slot=int]
+dump storage controller
+list storage controller [host]
+load storage controller [file=string] [processor=string]
+remove storage controller {scope} [adapter=int] [enclosure=int] [slot=int]
+report host storage controller {host}
+```
