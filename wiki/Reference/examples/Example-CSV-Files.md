@@ -34,3 +34,6 @@
 * [vlan](vlan)
 * [networkfile](networkfile)
 * [basic](basic)
+### Attributes
+* [attrfile](attrfile)
+* [attrfile alternate format](https://github.com/Teradata/stacki/wiki/attrfile(alternate-format))
