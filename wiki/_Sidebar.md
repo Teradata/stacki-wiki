@@ -5,6 +5,7 @@
 * [Release Notes for 5.0](ReleaseNotes)
 * [Diffs from Stacki 4.0](DiffsFrom40)
 * [Stacki 5.0 Cheat Sheet](CheatSheet)
+* [Using the command line](Using-Command-Line)
 * Installation
   * [Quickstart](Quickstart)
   * [Frontend Install - Basics](Frontend-Installation)
@@ -49,7 +50,6 @@
   * [Stacki License](Stacki-License)
 * Reference
   * [Command Line](stacki-CLI-documentation)
-  * [Stacki Universal XML](Stacki-Universal-XML)
   * [Example CSV Files](Example-CSV-Files)
 * [Guano](Guano)
 
