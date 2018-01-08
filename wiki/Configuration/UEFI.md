@@ -1,7 +1,7 @@
 
 ### UEFI
 
-One of the most frequent questions we get is, "Can I do UEFI?" (We pronounce it "oofee" for the record.)
+One of the most frequent questions we get is, "Can I do UEFI?" (We pronounce it "oofee" for the record, because sounds funny that's why.)
 
 The answer is "Yes," and in Stacki 5.0 you don't have to do anything (see the [caveat](#Caveat) below). If your machines are set to use UEFI mode in the BIOS and are set to PXE first, they'll install UEFI correctly, and you'll be in compliance with whatever corporate gods have mandated on high that you use UEFI. No lightning for you.
 
