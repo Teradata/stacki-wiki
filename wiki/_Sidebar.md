@@ -33,10 +33,9 @@
   * [Partioning Configuration](Partitioning-Configuration)
   * [Storage Configuration](Storage-Configuration)
   * [UEFI](UEFI)
-* Workflows
-  * [Workflows Overview](Workflows-Overview)
-  * [Basic Workflows](Basic-Workflows)
-  * [Advanced Workflows](Advanced-Workflows)
+* [Interacting With Your Cluster][Interacting]
+  * [Command line](Command-line)
+  * [Stacki Rest API](stack-rest)
 * [How to Shoot Your Foot](Shooting-Your-Foot)
 * Frequently Asked Questions
   * [Kickstart Customizations](Kickstart-Customizations)
