@@ -3,18 +3,13 @@
 ## Installing Stacki REST API
 
 The Stacki REST API is distributed as a web service
-running as a Django Application. To install the API
-you will need to install the stacki-pro pallet.
-
-Refer to the [Stacki Pro Installation Guide](stacki-pro-install) for information about how to install the stacki-pro pallet.
-
-After the installation, the Stacki REST API is available.
+running as a Django Application. The Stacki REST API is available.
 By default, Stacki includes a webservice client, and creates
 admin credentials to help validate the API.
 
 ## Testing the ReST API
 
-Stacki-pro comes with a build in webservice client.
+Stacki comes with a build in webservice client.
 The webservice client is called **wsclient**. The webservice
 admin credentials are placed in `/root/stacki-ws.cred`
 
@@ -26,30 +21,7 @@ To test the web service client, run
 This should print a JSON string that contains output
 from the command.
 ```json
-[{"box": "default", "status": "up", "installaction":
-"install", "appliance": "frontend", "runaction": "os",
-"cpus": 1, "rank": "0", "environment": "", "host":
-"node234-002", "rack": "0"},
-{"box": "default", "status": "up", "installaction":
-"install", "appliance": "backend", "runaction": "os",
-"cpus": 2, "rank": "25", "environment": "", "host":
-"node211", "rack": "0"},
-{"box": "default", "status": "up", "installaction":
-"install", "appliance": "backend", "runaction": "os",
-"cpus": 2, "rank": "26", "environment": "", "host":
-"node210", "rack": "0"},
-{"box": "default", "status": "up", "installaction":
-"install", "appliance": "backend", "runaction": "os",
-"cpus": 4, "rank": "28", "environment": "", "host":
-"node209", "rack": "0"},
-{"box": "default", "status": "up", "installaction":
-"install", "appliance": "backend", "runaction": "os",
-"cpus": 4, "rank": "30", "environment": "", "host":
-"node207", "rack": "0"},
-{"box": "default", "status": "up", "installaction":
-"install", "appliance": "backend", "runaction": "os",
-"cpus": 4, "rank": "6", "environment": "", "host":
-"node217", "rack": "0"}]
+[{"host": "stacki-50", "rack": "0", "rank": "0", "appliance": "frontend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "default", "status": "up", "comment": null}, {"host": "backend-0-0", "rack": "0", "rank": "0", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}, {"host": "backend-0-1", "rack": "0", "rank": "1", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}, {"host": "backend-0-2", "rack": "0", "rank": "2", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}, {"host": "backend-0-3", "rack": "0", "rank": "3", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}, {"host": "backend-0-4", "rack": "0", "rank": "4", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}]
 ```
 
 ## Writing a REST API Client
@@ -72,7 +44,7 @@ The Stacki REST API provides 1 endpoint - **/stack**
    must be used to log in to the service.
 
 1. Login to the Service
-   
+
    HTTP POST **http://\<hostname\>/stack/login**
 
    By default, an admin user is created, and allowed
@@ -91,7 +63,7 @@ The Stacki REST API provides 1 endpoint - **/stack**
    * **CSRFToken cookie** - This is different from the csrftoken cookie obtained
      in the previous GET call
    * **Session Cookie** - This will keep the API session active.
-   
+
 
 1. Run API Call
 
@@ -110,21 +82,21 @@ The Stacki REST API provides 1 endpoint - **/stack**
 }
      ```
    * This will call the **list host** command, on the API server.
-   
+
    If the command is executed successfully, it will return
    a JSON string, that contains the output of the command execution.
    ```json
 [
     {
-        "appliance": "backend", 
-        "box": "default", 
-        "cpus": 2, 
-        "environment": "", 
-        "host": "node210", 
-        "installaction": "install", 
-        "rack": "0", 
-        "rank": "26", 
-        "runaction": "os", 
+        "appliance": "backend",
+        "box": "default",
+        "cpus": 2,
+        "environment": "",
+        "host": "backend-0-0",
+        "installaction": "install",
+        "rack": "0",
+        "rank": "0",
+        "runaction": "os",
         "status": "up"
     }
 ]
@@ -146,7 +118,7 @@ necessary. To create the username/key pair, command-line
 tools are made available.
 
 The complete list of stacki commands that manipulate access
-to the ReST API are available here - [ReST API Command Line](restapi-cmd)
+to the ReST API are available in the [CLI Reference](stacki-CLI-documentation)
 
 1. To add a user to the API, run
 
@@ -163,14 +135,14 @@ to the ReST API are available here - [ReST API Command Line](restapi-cmd)
    server.
    ```json
 {
-  "username": "greg", 
-  "hostname": "node234-002.stacki.com", 
+  "username": "greg",
+  "hostname": "node234-002.stacki.com",
   "key": "NFdl45R_JoQEQUs8RMtpnHmwAmI8UQHQGRuBL0OI2mQ"
 }
    ```
    To allow user **greg** to access the API, use the
    username/key pair listed.
-   
+
    To run the `wsclient` application with this key pair,
    copy the entire JSON output into `stacki-ws.cred` file in
    the users home directory.

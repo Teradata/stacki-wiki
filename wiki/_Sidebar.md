@@ -2,10 +2,7 @@
 * [Getting Started](Home)
 * [Overview](Overview)
 * [Definitions](Terms)
-* [Release Notes for 5.0](ReleaseNotes)
-* [Diffs from Stacki 4.0](DiffsFrom40)
 * [Stacki 5.0 Cheat Sheet](CheatSheet)
-* [Using the command line](Using-Command-Line)
 * Installation
   * [Quickstart](Quickstart)
   * [Frontend Install - Basics](Frontend-Installation)
@@ -33,12 +30,11 @@
   * [Partioning Configuration](Partitioning-Configuration)
   * [Storage Configuration](Storage-Configuration)
   * [UEFI](UEFI)
-* [Interacting With Your Cluster][Interacting]
-  * [Command line](Command-line)
-  * [Stacki Rest API](stack-rest)
-* [How to Shoot Your Foot](Shooting-Your-Foot)
-* Frequently Asked Questions
-  * [Kickstart Customizations](Kickstart-Customizations)
+* [Interacting With Your Cluster](Interacting)
+  * [Command line](Command-Line)
+  * [Stacki Rest API](Stacki-Rest)
+* [How to Shoot Your Foot - FAQ](Shooting-Your-Foot)
+  * [Using the %include Directive](include-directive)
   * [Setting Cart Order](Setting-Cart-Order)
   * [Changing Private Network](IP-Address-Change)
 * Developer
@@ -50,6 +46,8 @@
 * Reference
   * [Command Line](stacki-CLI-documentation)
   * [Example CSV Files](Example-CSV-Files)
+* [Release Notes for 5.0](ReleaseNotes)
+* [Diffs from Stacki 4.0](DiffsFrom40)
 * [Guano](Guano)
 
 ### Previous Releases

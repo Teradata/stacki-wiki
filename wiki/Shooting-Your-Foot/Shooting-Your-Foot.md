@@ -1,3 +1,52 @@
+### Things you can do but probably shouldn't..
+
+We have a sayin' 'round these parts. (Well, I have a saying.)
+
+_"Stacki gives you the gun, you have to find your foot."_
+
+There are some advanced techniques that we sometimes use and sometimes tell our users to use, because we want them to go away.
+
+These are not guaranteed to work for you. You should have fairly deep experience with Stacki and want to do something the Stacki doesn't currently do natively.
+
+You're forewarned, apparently armed, and your foot is down. Help is in Stacki Slack or Googlegroups, but man, are we gonna laugh.
+
+**tl;dr**
+
+[Using the Include Directive](Include-Directive) Relatively safe.
+[Setting Cart Order](Setting-Cart-Order) Relatively safe but confusing.
+[IP Address Change](IP-Address-Change)
+[Replacing and extending Stacki XML](Replacing-Extending-XML)
+
+### Don't decide you want a different private network
+
+You read the warnings right? Get the *private* network correct. The right answer is to reinstall if you didn't. Seriously, you'll be happier, and we'll support you if you do that. All bets are off if you decide to attempt to change everything on the frontend that would need to change in order to fix your private network.
+
+All right fine.
+
+If you want to change this, go to the [Changing the Private Network](IP-Address-Change) docs.
+
+### Don't change the /root/.ssh/id_rsa.pub key.
+
+Don't change the permissions on it. They should be 644 or rw-r--r--. This is what gets put into /root/.ssh/authorized_keys on the backend nodes. If you change the permissions to something more restrictive...Bang! no password-less ssh to the backends.
+
+Don't. Do. It. Dammit.
+
+# Using additional repositories
+
+Using the Centos*.repo files are a recipe for disaster. If you feel you must use them, considering mirroring the repository and adding them as pallets as described in [Creating Software Pallet](Creating-Software-Pallets).
+
+If you don't want to do that, then Stacki is likely not the solution you are looking for. Do more research for something more suitable for your site.
+
+Try:
+* [Cobbler](https://cobbler.github.io/) There is some question to Cobbler's viability.
+* [Spackewalk](https://spacewalkproject.github.io/)
+* [MaaS](https://maas.io/) Install all your base with images. Or, in other words: 1995 called and wants their technology back.
+* [Rocks](https://rocksclusters.org) Really good, especially for HPC.
+* [Satellite](https://access.redhat.com/products/red-hat-satellite) Install all your base, really, really slowly, using the most expensive software in existence for doing such a simple job.
+
+There may be others. Use Google.
+
+
 #### When I ssh into the frontend or the a backend node, ssh takes a lonnnggggg time.
 
 Usually this means DNS isn't resolving correctly.
@@ -34,14 +83,6 @@ NETWORK ADDRESS     MASK          GATEWAY      MTU  ZONE   DNS   PXE
 private 10.3.1.0    255.255.255.0 10.3.1.1     1500 local  True  True
 public  192.168.0.0 255.255.0.0   192.168.10.1 1500 jkloud False False
 ```
-
-#### Can I change the private network after installation?
-
-No, not possible. Don't get that bit wrong. If you get it wrong, reinstall the frontend.
-
-This warning was in the frontend installation documentation. Did you not heed it?
-
-_**Do not get this network wrong! Changing it after the fact means a REINSTALL of the frontend.**_
 
 #### How do I update or add an rpm to a node?
 
