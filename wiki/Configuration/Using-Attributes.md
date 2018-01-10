@@ -27,7 +27,7 @@ If you have set a global attribute default to "True" and it's set at an individu
 
 This allows us to program our cluster rather than keeping multiple files around for different scenarios. We can program different configuration based on a defined attribute.
 
-### Listing Attributes
+#### Listing Attributes
 
 To see what attributes you have, use the "stack list command."
 
@@ -51,11 +51,133 @@ Shows the attributes for a given host.
 
 An attribute list is concatenated from Global + Appliance + Host. With the layer below overwriting the layer if both layers define the same attribute.
 
-### Adding/Setting attributes
+#### Adding/Setting attributes
+
+Global:
+`stack set attr attr=[name] value=[new setting]`
+ 
+Appliance:
+`stack set appliance attr [appliance] attr=[name] value=[new setting]` 
+
+Single host:
+`stack set host attr [hostname] attr=[name] value=[new setting]`
+ 
+Setting an Attribute assigns value to the key name. It will create the attr if it does not exist.
+
+`stack add attr` commands do the same, but fail if the attribute already exists.
+
+#### Removing attributes
+
+This is actually fairly obvious.
+
+Global:
+`stack remove attr attr=[key]`
+
+Appliance:
+`stack remove appliance attr attr=[key]`
+
+Host:
+`stack remove host attr attr=[key]`
+
+### Using attributes in Carts.
+
+The real power of attributes comes when using them in carts. Attributes can be used for variable substitution and used in conditionals.
+
+There are more details in the [Carts](Carts) section of the documentation, but I'll give an example here.
+
+#### Variable substitution
+
+In a kickstart/autoyast/preseed file any attribute's key can be called by using an xml entity format which is `&<attrkey>;`. So
+
+Let's look at the resolv.xml file for an example. There is this bit of code snippet:
+
+```
+<stack:file stack:name="/etc/hosts">
+127.0.0.1	localhost.localdomain localhost
+&hostaddr;	&hostname;.&domainname; &hostname;
+</stack:file>
+```
+
+The stack:file tag says to put the following stuff in /etc/hosts on the installing machine (e.g. backend-0-0)
+
+The `&hostaddr;	&hostname;.&domainname; &hostname;` line gets compiled during the network file request to:
+
+10.5.255.254 backend-0-0.local backend-0-0
+
+So my file on the backend will look like this:
+
+```
+127.0.0.1       localhost.localdomain localhost
+10.5.255.254    backend-0-0.local backend-0-0
+```
+
+Any attribute key can be used in an XML entity structure to call the value of that key. Program your cluster.
 
 
-### Removing attributes
+#### Using an attribute as a conditional
+
+Attributes can also be to fire code if a condition is met.
+
+Take for example adding a prometheus server for monitoring to a cluster.
+
+I have created an attribute call "prometheus.firewall." I want to use it to add firewall rules to the host serving as my Prometheus server.
+
+So I define the attribute:
+
+```
+# stack set attr attr=prometheus.firewall value=False
+```
+
+But host backend-0-2 is my firewall so I'll set it to "True."
+
+```
+# stack set host attr backend-0-2 attr=prometheus.firewall value=True
+```
+
+Now when backend-0-2 installs, it will run the following commands:
+
+```
+<stack:script stack:stage="install-post" stack:cond="prometheus.firewall">
+/opt/stack/bin/stack add host firewall &hostname; network=all \
+        table=filter rulename=PROMETHEUS service="9090" \
+        protocol="tcp" action="ACCEPT" chain="INPUT" \
+        flags="-m state --state NEW" comment="Prometheus"
+
+/opt/stack/bin/stack add host firewall &hostname; network=all \
+        table=filter rulename=GRAFANA service="3000" \
+        protocol="tcp" action="ACCEPT" chain="INPUT" \
+        flags="-m state --state NEW" comment="Grafana"
+
+systemctl restart iptables
+</stack:script>
+```
+
+But no other machine will.
+
+In this way, you can have multiple configurations for a service in one cart file, dependent on attributes you have set.
+
+One thing I should mention: the 'stack:cond=' structure is python-esque in implementation so you can also use lists/and/or/not on that right side:
+
+These are all snipped:
+
+List:
+```
+stack:script stack:stage="install-post" stack:cond=" in ['CentOS', 'RHEL']"
+```
+And:
+```
+stack:script stack:stage="install-post" stack:cond="os == 'CentOS' and os == 'RHEL']"
+```
+
+Or:
+```
+stack:script stack:stage="install-post" stack:cond="os == 'CentOS' or os == 'RHEL']"
+```
 
 ### Using attributes in Spreadsheets
 
-### Using attributes in Carts.
+If you are defining lots of attributes for a particular application, then it's easier to pack these into an attribute file.
+
+There are lots of examples on a frontend in /opt/stack/share/examples/spreadsheets. Do an `ls *attr*` to see what's available.
+
+This is an example of what happens for the stacki-kubernetes pallet. It's large, but will give you a good idea of what's possible.
