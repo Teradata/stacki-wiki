@@ -178,6 +178,74 @@ stack:script stack:stage="install-post" stack:cond="os == 'CentOS' or os == 'RHE
 
 If you are defining lots of attributes for a particular application, then it's easier to pack these into an attribute file.
 
-There are lots of examples on a frontend in /opt/stack/share/examples/spreadsheets. Do an `ls *attr*` to see what's available.
 
 This is an example of what happens for the stacki-kubernetes pallet. It's large, but will give you a good idea of what's possible.
+
+```
+| target      | kube.domain      | kube.enable_dashboard | kube.insecure | kube.master | kube.master_ip | kube.minion | kube.pod_dir            | kube.pull_pods | kube.secure | docker.registry.external | docker.registry.local | etcd.cluster_member | etcd.prefix     |
+|:------------|:-----------------|:----------------------|:--------------|:------------|:---------------|:------------|:------------------------|:---------------|:------------|:-------------------------|:----------------------|:--------------------|:----------------|
+| global      | kubernetes.local | False                 | False         | False       | 10.5.255.254   | True        | install/kubernetes/pods | True           | True        | True                     | False                 | False               | /stacki/network |
+| backend-0-0 |                  | True                  |               | True        |                |             |                         |                |             |                          |                       | True                |                 |
+| backend-0-1 |                  |                       |               |             |                |             |                         |                |             |                          |                       | True                |                 |
+| backend-0-2 |                  |                       |               |             |                |             |                         |                |             |                          |                       | True                |                 |
+| backend-0-3 |                  |                       |               |             |                |             |                         |                |             |                          |                       |                     |                 |
+| backend-0-4 |                  |                       |               |             |                |             |                         |                |             |                          |                       |                     |                 |
+
+```
+
+In reality the csv file looks like this:
+```
+target,kube.domain,kube.enable_dashboard,kube.insecure,kube.master,kube.master_ip,kube.minion,kube.pod_dir,kube.pull_pods,kube.secure,docker.registry.external,docker.registry.local,etcd.cluster_member,etcd.prefix
+global,kubernetes.local,False,False,False,10.5.255.254,True,install/kubernetes/pods,True,True,True,False,False,/stacki/network
+backend-0-0,,True,,True,,,,,,,,True,
+backend-0-1,,,,,,,,,,,,True,
+backend-0-2,,,,,,,,,,,,True,
+backend-0-3,,,,,,,,,,,,,
+backend-0-4,,,,,,,,,,,,,
+```
+
+Let's unpack it a bit:
+
+The header line requires "target" followed by all the keys, comma delimited.
+
+The next lines state which "target" (global,appliance, or host) a value should be set for. You'll note, the global line has a value for every key. This is the default value.
+
+The individual hosts, change the default value. It's easier to define a global value that will be common, and change the exceptions at the host or appliance level.
+
+This attribute file, contains no appliance level targets.
+
+Load it:
+
+```
+# stack load attrfile file=kube-attrs.csv
+```
+
+Output:
+```
+Sync Config
+	       	       Sync DNS
+	       	       Sync Host
+	       	       Sync DHCP
+	       	       Sync Host Repo
+	       Sync Host Config
+	       	       Sync Host Boot
+	       Sync Host Config
+	       	       Sync Host Boot
+	       Sync Host Config
+	       	       Sync Host Boot
+	       Sync Host Config
+	       	       Sync Host Boot
+	       Sync Host Config
+	       	       Sync Host Boot
+/export/stack/spreadsheets/RCS/kube-attrs.csv,v  <--  /export/stack/spreadsheets/kube-attrs.csv
+file is unchanged; reverting to previous revision 1.1
+done
+date: write error: Broken pipe
+/export/stack/spreadsheets/RCS/kube-attrs.csv,v  -->  /export/stack/spreadsheets/kube-attrs.csv
+revision 1.1 (locked)
+done
+```
+
+Now every attribute we have defined, can be used for variable substitution or used as a conditional to implement scripts and files in a cart.
+
+Using attribute files is a *Stacki best practice*, they're easier to manage and communicate with other members of your infrastructure team. 
