@@ -1,4 +1,4 @@
-### Frontend Installation Basics
+## Frontend Installation Basics
 
 Stacki requires a single server that will host all
 the software and services used to build out other servers. We
@@ -9,7 +9,7 @@ The process is fairly simple and looks similar to a standard Linux
 build with the addition of a wizard to capture site-specific
 networking information.
 
-## Requirements
+### Requirements
 
 A frontend has the following hardware requirements
 
@@ -38,13 +38,13 @@ a DHCP request from a backend server. The frontend provides DHCP
 services on the private network, and any additional DHCP server
 would cause conflicts on the network. (Two+ DHCP servers can co-exist if the Stacki frontend answers ONLY for the backend nodes on the shared subnet and the other DHCP server(s) does not.)
 
-## New or Existing
+### New or Existing
 
 The Stacki frontend runs on top of a CentOS/RHEL flavored 7.x base.  
 
 You have two options:
 
-** Building on new server **
+**Building on new server**
 
   If you don't have an already existing vanilla CentOS or RedHat 7.4 system, build a new server from bare metal with Stacki and the required CentOS bits (which we call "stackios").
 
@@ -54,13 +54,8 @@ You have two options:
 
   * [Creating and using a "jumbo" pallet](Create-Jumbo-Pallets)
 
-or try:
 
-  * [Installing an OS from a web server](Install-OS-Webserver)
-
-These are more advanced options, however.
-
-** Building on an existing server **
+**Building on an existing server**
 
   If you wish to install Stacki on top of an existing vanilla CentOS or RedHat 7.4 system, follow the document labeled [Frontend Install - Existing](Frontend-Install-Existing).
 

@@ -61,13 +61,13 @@ If you:
 * Install machines once and then forget about them. (Unicorns)
 * Don't reinstall to get a known good state. (You don't like certainty.)
 * Don't provision/re-provision and marshal resources based on client need.
-* Already have configuration DevOps tools in place that do most of the work.
+* Already have configuration DevOps tools in place that does most of the work.
 * Are doing straight HPC ([Rocks](https://rocksclusters.org) is probably still best for that.)
 * Time is of no essence for you.
 
 Then we might not be what you need. Take a look at:
-* [Digital Rebar](http://rebar.digital/)
 * [Cobbler](https://cobbler.github.io/)
-* [Spackewalk](https://spacewalkproject.github.io/)
+* [Spacewalk](https://spacewalkproject.github.io/)
 * [MaaS](https://maas.io/)
-* [Rocks](https://rocksclusters.org) for HPC.
+* [Rocks](https://www.rocksclusters.org) for HPC.
+* [Satellite](https://access.redhat.com/products/red-hat-satellite)

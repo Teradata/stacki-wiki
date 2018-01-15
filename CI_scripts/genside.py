@@ -4,23 +4,28 @@ from pathlib import Path
 
 excludes = ['Reference', 'ipmi', 'stacki-pro', '.sass-cache']
 order = [
-        'Overview',
-        'QuickStart',
-        'Terms', 
-        'Installation',
-        'Configuration',
-        'Customization',
-        'Workflows',
-        'Frequently Asked Questions',
-        'Developer',
-        'Licenses',
-        'Reference',
-        'Guano',
+    'Overview',
+    'CheatSheet',
+    'History',
+    'ReleaseNotes',
+    'Configuration',
+    'Home',
+    'Shooting-Your-Foot',
+    'Customization',
+    'Installation',
+    'Troubleshooting',
+    'Definitions',
+    'Interacting',
+    'Developer',
+    'Licenses',
+    'DiffsFrom40',
+    'Guano',
+    'Reference'
         ]
 
 for o in order:
     p = Path('./%s' % o)
-    if p.is_dir(): #and p.name not in excludes:
+    if p.is_dir() and p.name not in excludes:
         print('* {}'.format(p))
         for x in p.iterdir():
             if x.is_file() and x.name.endswith('.md') \

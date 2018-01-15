@@ -1,7 +1,7 @@
 ### Stacki 5.0 Documentation
 * [Getting Started](Home)
 * [Overview](Overview)
-* [Definitions](Terms)
+* [Definitions](Definitions)
 * [Stacki 5.0 Cheat Sheet](CheatSheet)
 * Installation
   * [Quickstart](Quickstart)
@@ -24,6 +24,7 @@
   * [Appliances](Appliances)
   * [Stacki Universal XML](SUX)
 * Configuration
+  * [Using Attributes](Using-Attributes) 
   * [Using Spreadsheets](Using-Spreadsheets)
   * [Network Configuration - Frontend](Network-Configuration-Frontend)
   * [Network Configuration - Backends](Network-Configuration-Backends)

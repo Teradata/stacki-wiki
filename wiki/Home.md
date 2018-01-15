@@ -72,7 +72,7 @@ You need CentOS-Updates pallet if you're going to use UEFI. Don't come crying to
 
 [CentOS-Updates-7.4_20171128-redhat7.x86_64.disk1.iso](http://teradata-stacki.s3.amazonaws.com/release/stacki/5.x/CentOS-Updates-7.4_20171128-redhat7.x86_64.disk1.iso) (md5: b69f015c30f004a1ff27aed49931144e)
 
-If you're installing on a pre-installed CentOS/RHEL machine you'll need the frontend-install.py script as well:
+If you're installing on a pre-installed CentOS/RHEL machine you'll need the **frontend-install.py** script as well:
 
 [frontend-install.py](http://teradata-stacki.s3.amazonaws.com/release/stacki/5.x/frontend-install.py) (md5: f64fc40d45eee0c8f2538b4aeb769011)
 

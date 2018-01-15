@@ -54,13 +54,13 @@ Check the md5sum. Yeah, no, check the md5sum. Remember, silent acid rain of mock
 
 ### 3. Install the frontend (formerly Step 2)
 
-Burn the ISO to a DVD. Then put the just burned DVD into an external, internal, or virtual DVD drive.
+Burn the ISO to a DVD or USB. Then put the just burned DVD into an external, internal, or virtual DVD drive.
 
 I proceed with pictures from a VirtualBox install. The actions are the same on bare metal or other virtual environments. If you can't extrapolate from one platform to the next, are you certain you have chosen the correct career?
 
 This is just an average CentOS/RHEL install. Nothing new here.
 
-Put the DVD in and boot it. Pick the first option:
+Put the DVD in and boot it. Pick the first option if you have a DVD. The second if you're using a USB
 
 ![frontend_install_vbox_3](images/frontend/frontend_install_vbox_3.png)
 
@@ -71,7 +71,7 @@ It will bring you to choose your Timezone. So do that and hit Continue.
 
 The next screen is network set-up. Input the information for the network that the frontend and backend share. After installation, you can add more networks and interfaces.
 
-_**Do not get this network wrong! Changing it after the fact means a REINSTALL of the frontend.**_
+_**Do not get this network wrong! Changing it after the fact means a RE-INSTALL of the frontend.**_
 
 ![frontend_install_vbox_10](images/frontend/frontend_install_vbox_10.png)
 
@@ -102,14 +102,14 @@ You should end up here:
 
 Log-in and run the following to verify it worked:
 
-```
-stack list host
+```bash
+# stack list host
 ```
 
 ![frontend_install_vbox_28](images/frontend/frontend_install_vbox_28.png)
 
-```
-stack list pallet
+```bash
+# stack list pallet
 ```
 ![frontend_install_vbox_29](images/frontend/frontend_install_vbox_29.png)
 
@@ -179,26 +179,26 @@ The node with its configuration file and the kickstart started. Note the '*' tha
 
 ![backend_install_vbox_6](images/backend/backend_install_vbox_6.png)
 
-You can quit out of the discover-nodes application at this point. Or discover more machines. It stops when you stop booting backends. 
+You can quit out of the discover-nodes application at this point. Or discover more machines. It stops when you stop booting backends.
 
 If you want to see the status of the node as it installs you can do:
 
-```
-watch -n 2 "stack list host"
+```bash
+# watch -n 2 "stack list host"
 ```
 
 The "Status" column will periodically indicate what is happening.
 
 When the node says "up", it's installed, and you should be able to ssh to it without giving a password.
 
-```
-ssh backend-0-0
+```bash
+# ssh backend-0-0
 ```
 
 or run the cluster command:
 
-```
-stack run host command="uptime"
+```bash
+# stack run host command="uptime"
 ```
 
-Woohoo! Let's go  [Customize](Customization)!
+Woohoo! Let's go [Customize](Customization)!
