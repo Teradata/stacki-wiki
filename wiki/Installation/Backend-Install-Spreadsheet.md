@@ -10,7 +10,7 @@
 ### Spreadsheet
 
 You can specify all the information about a host before installation in a CSV (Comma Separated Value) file.
-The advantage of using CSV files, is that it gives fine-grained control over the configuration of the cluster. You also don't piss-off your networking and security teams.
+The advantage of using CSV files is that it gives fine-grained control over the configuration of the cluster. You also don't piss-off your networking and security teams.
 
 The disadvantage is you have to know the MAC addresses prior to installing backend nodes. If you didn't get a listing from the vendor, you'll have to harvest them with IPMI or use your, or someone else's, eyeballs.
 
@@ -65,10 +65,6 @@ backend-0-3 0    3    backend   redhat default ----------- default  default     
 backend-0-4 0    4    backend   redhat default ----------- default  default       ------
 ```
 
-By default number of CPUs on every backend node is set to 1.
-This value will be updated automatically once a backend node
-is installed.
-
 Every time a backend node boots, it will send a PXE request to the
 frontend. The frontend will tell the backend node to either boot its OS or to
 install. The default boot action is always _os_ as you can see below.
@@ -121,12 +117,11 @@ backend-0-3 install True      False
 backend-0-4 install True      False
 ```
 
-**Note:** You do NOT have to set "nukecontroller" at this point, especially if you are happy with the current hardware RAID controller configuration or your machines don't have hardware RAID controllers in the LSI family. If these machines are brand new, have LSI controllers, and you want to set them up, look at the [Storage Controller](Storage-Controller) configuration on how to set that up.
-
+**Note:** You do NOT have to set "nukecontroller" at this point, especially if you are happy with the current hardware RAID controller configuration or your machines don't have hardware RAID controllers in the LSI family. If these machines are brand new, have LSI controllers, and you want to set them up, look at the [Storage Controller](Storage-Configuration) configuration on how to set that up.
 
 Now power up the backend machines.
 The backend machines will first boot into the Stacki installer,
-install the OS, set its boot action back to _os_ and reboot.
+install the OS, set their boot action back to _os_, and reboot.
 
 You should be able to get status messages for the install by watching the output of
 "stack list host."
@@ -158,11 +153,11 @@ Customization is an iterative process. You will be re-installing your machines o
 
 ### Re-Installation
 
-Getting a machine to have a) known good state, b) a refresh of the os, or c) a complete reinstall including data disks, you'll want to reinstall.
+Getting a machine to have a.) a known good state, b.) a refresh of the os, or c.) a complete reinstall including data disks, you'll want to reinstall.
 
 Stacki manages the PXE boot of all of backend nodes. When a node has been installed, Stacki tells the PXE request to boot from local disk.
 
-If you want to reinstall, use the stack command line to tell it what to do the next time the machine reboots.
+If you want to reinstall, use the stack command line to tell the node what to do the next time the machine reboots.
 
 We call "telling the node what to do on next reboot," "setting the boot action.""
 
@@ -176,7 +171,7 @@ action back to _install_, for example:
 ```
 
 The next time you boot _backend-0-0_, it will rebuild itself.
-But a rebuild, by default, will only reformat the swap, ```/var```, and ```/``` partitions. This means all data in ```/export```, or any other data disks you've partitioned is maintained across re-installations.
+But a rebuild, by default, will only reformat the swap, ```/var```, and ```/``` partitions. This means all data in ```/state/partition1```, or any other data disks you've partitioned is maintained across re-installations.
 
 The install/reinstall also sets the boot action back to "os" which means "boot from local disk." It requires no human intervention.
 

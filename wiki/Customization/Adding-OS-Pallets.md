@@ -1,4 +1,4 @@
-### Creating OS Pallets
+## Creating OS Pallets
 
 If you need any software housed in the CentOS distribution, you'll want to add the full distribution as a pallet - along with the CentOS updates for that version.
 
@@ -85,9 +85,11 @@ The CentOS*.repo files are all saved in /etc/yum.repos.d/save because the main r
 # stack create mirror repoconfig=/etc/yum.repos.d/save/CentOS-Base.repo repoid=updates
 ```
 
-This produces an ISO file in the /export/updates directory called .
+This produces an ISO file in the /export/updates directory called *updates-5.0_20171128_b0ed4e3-redhat7.x86_64.disk1.iso.*
 
-You probably don't want that. This is what we use as our standard: giving the name CentOS-Updates and the date we pulled the updates as the version.
+This contains the release name and version of the stacki pallet. You probably don't want that.
+
+This is what we use as our standard: giving the name CentOS-Updates and the date we pulled the updates as the version, but you can use the version/release naming for your site.
 
 ```
 # stack create mirror repoconfig=/etc/yum.repos.d/save/CentOS-Base.repo repoid=updates name=CentOS-Updates version=20171220

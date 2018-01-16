@@ -1,4 +1,4 @@
-### Network Configuration for Backends
+## Network Configuration for Backends
 
 Stacki handles networking for frontends and backends which includes:
 * Discovering all available network interfaces on initial install.
@@ -14,11 +14,11 @@ Configuration can be done during installation or after a node is installed.
 
 ### Network Configuration for the frontend.
 
-Make sure you've created the network configuration for a frontend for any additional networks as per the [Network Configuration - Frontend](Network-Configuration-Frontend) docs.
+Make sure you've created the network configuration on the frontend for any additional networks as per the [Network Configuration - Frontend](Network-Configuration-Frontend) docs.
 
 ### Using the new network.
 
-The first installation of a backend node always discovers every NIC presented in the BIOS, whether it's actually wired or not. If it exists, Stacki finds.
+The first installation of a backend node always discovers every NIC presented in the BIOS, whether it's actually wired or not. If it exists, Stacki finds it and adds it to the database.
 
 This is why installing a minimal os is a great way to verify that you have the hardware you think you have.
 
@@ -62,18 +62,17 @@ backend-0-4,,,,,,,00:06:88:0f:74:d4,enp0s29u1u2,,,,,,,,,
 backend-0-4,,,,,,,80:00:02:08:fe:80:00:00:00:00:00:00:f4:52:14:03:00:1e:dc:41,ib0,,,,,,,,,
 ```
 
-I've got two on-board interfaces (em1,em2), one USB nic (enp0s29u1u2), and one Infiniband interface (ib0) on each of these nodes. I didn't have these listed in the database until after I had installed them. But now that I have them, I want to use them. (You could have add all of these from the command line with a `stack add host interface``` command, but man, that's work.)
+I've got two on-board interfaces (em1,em2), one USB nic (enp0s29u1u2), and one Infiniband interface (ib0) on each of these nodes. I didn't have these listed in the database until after I had installed them. But now that I have them, I want to use them. (You could have add all of these from the command line with a `stack add host interface` command, but man, that's work.)
 
 So I'll use my host spreadsheet as per above.
 
-Create CSV file for only the backends. We've handled the frontend NIC config previously.
+Create a CSV file for only the backends. We've handled the frontend NIC config previously.
 
 ```
 # stack report hostfile a:backend > hosts.csv
 ```
 
-
-Now I can open hosts.csv and edit it to have interfaces with the IP addressing scheme I want, dump it back into the database and then reinstall or sync the network. (If you have good eyes, use 'vi' or 'emacs'. If you're a real admin, you'll use 'vi'. If you like to stay sane, use Excel or Google Sheets and save your eyesight and sanity. Save it as CSV and dump it back in with the 'load' command)
+Now I can open hosts.csv and edit it to have interfaces with the IP addressing scheme I want, dump it back into the database, and then reinstall or sync the network. (If you have good eyes, use 'vi' or 'emacs'. If you're a real admin, you'll use 'vi'. If you like to stay sane, use Excel or Google Sheets and save your eyesight and sanity. Save it as CSV and dump it back in with the 'stack load hostfile' command.)
 
 I just threw a bunch of things at you so let's do a somewhat complicated example. Rarely will your network be this complex - we have Fortune 100 companies who do everything on a single corporate network. But we also have Fortune 100 companies whose network topology borders on the Gordian[^1]
 
@@ -126,26 +125,28 @@ backend-0-4,,,,,,,80:00:02:08:fe:80:00:00:00:00:00:00:f4:52:14:03:00:1e:dc:41,ib
 ```
 
 
-Crazy right? This is what I have:
+This is what I have:
 * My vland networks is on bond0 made up of em2 and enp0s29u1u2
 * My private network is still on em1, and is just my management network.
 * Infiniband is not configured.
 
-Now remember, this is not the network configuration on the currently installed hosts. There are two ways to get this network configuration on the backends.
+Now remember, this is not the network configuration on the currently installed hosts. This represents what you want to have.
 
-##### Command line
+There are two ways to get this network configuration on the backends.
+
+#### Command line
 
 ```
 # stack sync host network a:backend
 ```
 
-That's it. By default this SSHs (in parallel) to the backends and rewrites the configuration files for the interfaces, network, and resolv. It then restarts the network. (To not restart the network, set "retart=false" on the above command.)
+That's it. By default this SSHs (in parallel) to the backends and rewrites the configuration files for the interfaces, network, and resolv. It then restarts the network. (To not restart the network, set "restart=false" on the above command.)
 
 Now everything should be bonded and on the correct network.
 
-##### Reinstall
+#### Reinstall
 
-Certainty, it's a beautiful thing. The above is good for right now this minute and not having to reinstall. If you want certainty, reinstall the backends.
+Certainty, it's a beautiful thing. Syncing is good for "right now this minute" and not having to reinstall. If you want certainty, reinstall the backends.
 
 ```
 # stack set host boot a:backend action=install

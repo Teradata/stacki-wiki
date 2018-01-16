@@ -1,4 +1,4 @@
-### Boxes
+## Boxes
 
 Stacki enables you to create a **box** which is a composition of pallets
 and (optionally) carts.
@@ -22,14 +22,14 @@ A few examples of the utility of boxes:
 
 * **Maintaining different versions of the OS**:
   If you want CentOS 7.3 on one set of backend hosts and CentOS 7.4 on another set of backend hosts to test an upgrade.
-  You can download the 7.4 CentOS ISOs, add them to the frontend (with `stack add pallet`), create a new box with the CentOS 7.4 pallet, then assign
+  You can download the 7.4 CentOS ISOs, add them to the frontend (with `stack add pallet`), create a new box with the stacki and CentOS 7.4 pallets, then assign
   backend hosts to the new box.
 
 * **Maintaining updates**:
   Pallets can be created by mirroring any publicly available repo (or
   subscribed repo if using RHEL).
-  Adding an _updates_ pallet to any box will make the updated RPMs
-  to hosts via yum.
+  Adding an _updates_ pallet to any box will make the updated RPMs available
+  to hosts via yum/zypper/apt-get.
 
 * **Maintaining dev/test/production environments**:
   Again, having created dev, test,

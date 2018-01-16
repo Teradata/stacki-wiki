@@ -1,4 +1,4 @@
-### Adding Configuration Files to Carts
+## Adding Configuration Files to Carts
 
 Whatever you can do in a shell, you can do during install.
 
@@ -8,7 +8,7 @@ Which means you probably don't want to recreate all of that work just because yo
 * Not lose work you've already done.
 * Put your already existing config files where they belong: on the installing node.
 
-####  *site-custom* cart example continued
+###  *site-custom* cart example continued
 
 In the [Adding RPMS](Adding-RPMS) section, we started configuring an *site-custom* cart as an example -- we'll continue to use it here.
 

@@ -1,3 +1,5 @@
+## Using Carts
+
 **Carts** are the smallest increment of customization for backend nodes.
 
 Stacki allows the admin to customize the software
@@ -33,7 +35,7 @@ the XML framework to accommodate the extra functionality
 required.
 
 The XML structure is not complicated - think of it as HTML with extra
-tags. The tags Stacki incorporates, map to kickstart elements you
+tags. The tags Stacki incorporates map to kickstart elements you
 should already be familiar with: pre, post, main, package, and first boot. From there it's mostly adding shell commands and scripts to install and configure applications.
 
 For more information about the available XML tags, refer to the

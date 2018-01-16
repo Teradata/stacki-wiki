@@ -1,8 +1,8 @@
-## Adding networks
+## Adding networks - Frontend
 
 An initial installation defaults to having one network defined as "private." This is the network the frontend and the backend machines speak to each other on. Think of it as the "management network" which, apparently, is a thing.
 
-You can have one network. You can have many. You can serve dhcp for multiple subnets or one. Lots of variations, all get configured along a similar theme: spreadsheets or command line.
+You can have one network. You can have many. You can serve DHCP for multiple subnets or one. Lots of variations, all get configured along a similar theme: spreadsheets or command line.
 
 To use a network on backend nodes, you have to define it on the frontend. Make sure your network infrastructure is connected for any additional networks.
 
@@ -22,7 +22,7 @@ NETWORK ADDRESS  MASK        GATEWAY   MTU  ZONE  DNS   PXE
 private 10.5.0.0 255.255.0.0 10.5.1.10 1500 local False True
 ```
 
-I have one network, "private" which is the communication network for the backends to the frontend. You got this by default during the installation of the frontend.
+I have one network, "private" which is the communication network for the backends to the frontend. You get this by default during the installation of the frontend.
 
 Imma gonna add another network which is my "corporate" network.
 
@@ -35,7 +35,7 @@ Now list:
 ```
 # stack list network
 NETWORK    ADDRESS  MASK        GATEWAY      MTU   ZONE       DNS   PXE
-private:   10.1.0.0 255.255.0.0 192.168.16.1 1500  local      True  True
+private:   10.5.0.0 255.255.0.0 10.5.1.10    1500  local      True  True
 corporate: 10.2.0.0 255.255.0.0 10.2.2.201   1500  corporate  False True
 ```
 
@@ -49,7 +49,7 @@ Sometimes I'm just lazy and I would rather edit than type out the command for ad
 # stack report networkfile > nets.csv
 ```
 
-> **Note:** Most of the spreadsheets commands have a "report" that will generate a CSV from the current values in the database.
+> **Note:** Most of the spreadsheet commands have a "report" that will generate a CSV from the current values in the database.
 
 ```
 # cat nets.csv
@@ -102,7 +102,7 @@ corporate 10.2.0.0 255.255.0.0 10.2.2.201 1500 corporate False True
 private   10.5.0.0 255.255.0.0 10.5.1.10  1500 local     False True
 ```
 
-You'll note that we are answering PXE requests on either network. If we want to have additional interfaces for backend nodes, but are not installing on those interfaces then use the `stack set network pxe "networkname" pxe=False` command.
+You'll note that we are answering PXE requests on either network. If we want to have additional interfaces for backend nodes, but are not installing on those interfaces, then use the `stack set network pxe "networkname" pxe=False` command.
 
 ```stack set network help``` to see other network related commands.
 
@@ -138,7 +138,6 @@ done
 
 We get the saved message. I can now use these networks on the backend and frontend.
 
-
 #### Frontend NICs
 
 **tl;dr** for this section:
@@ -171,7 +170,7 @@ stacki-50,,,,,,172.16.20.1,,enp0s3:32,vland,,,32,,,,
 My host is "stacki-50" on a VirtualBox VM. By dumping in this spreadsheet file and then syncing the network, I'll get all my interfaces set-up for the defined network topology.
 
 Pay attention to a few things:
-* Only the private NIC has to most of the fields filled out. You can generate this before editing by doing a `# stack report hostfile > fe.csv` to kickstart your CSV file creation process.
+* Only the private NIC has most of the fields filled out. You can generate this before editing by doing a `# stack report hostfile > fe.csv` to kickstart your CSV file creation process.
 * I've set enp0s8 on the public subnet as my "default" interface. This means I can get out to the interwebzz. Usually, the private interface "enp0s3" is the default.
 * I have created two virtual interfaces: enp0s3:1 and enp0s3:32 because I want to access my ipmi network on enp0s3:1 and a VLAN that's tagged with id 32.
 
@@ -529,6 +528,6 @@ Our frontend should now be able to communicate will all these networks.
 
 Syncing the network configuration on backend nodes is much simpler.
 
-In [Backend Network Configuration](Network-Configuration-Backend) we'll extend this example to include backend network set-up.
+In [Backend Network Configuration](Network-Configuration-Backends) we'll extend this example to include backend network set-up.
 
 [^1]: For further discussion of attributes, please see [Using Attributes](Using-Attributes)

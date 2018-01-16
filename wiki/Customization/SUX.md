@@ -8,7 +8,7 @@ On the surface they are different, but underneath they have the same basic struc
 * Post installation.
 * First boot configuration.
 
-This is not rocket science, you can install a Linux system over a network  with shell-scripts. It's dumb, but you can.
+This is not rocket science, you can install a Linux system over a network with shell-scripts. It's dumb, but you can.
 
 Stacki has been used to install CentOS/RHEL variants, Ubuntu, SLES, and even CoreOS. We have a real good idea about how OS installation happens and what needs to happen in order to install all of these from the same frontend.
 
@@ -55,7 +55,7 @@ This is actually valid XML, a profile will be built from this. It just doesn't d
 
 Adding packages can be done in individual package tags:
 
-The format is &lt:stack:package&gt;package_name<l5;/stack:package>
+The format is &lt;stack:package&gt;package_name&lt;/stack:package>
 
 Just like html, there is an opening tag and a closing tag.
 
@@ -73,16 +73,20 @@ screen
 </stack_package>
 ```
 
-A fell representation of this file would be:
-
+A full representation of this file would be:
+```
 <stack:stack>
+
 <stack:package>teradata-citadel</stack:package>
+
 <stack:package>
 lsof
 socat
 screen
 </stack:package>
+
 </stack:stack>
+```
 
 ### Script tags
 
@@ -136,7 +140,7 @@ Alter behavior by adding the following:
 
 
 #### Script tag examples
-Script tags can be chroot or non-chroot. By default chroot is true, so a post install script sets up scripts/files/etc. in the environment being installed.
+"install-post" script tags can be chroot or non-chroot. By default chroot is true, so a post install script sets up scripts/files/etc. in the environment being installed.
 
 ##### A non-chroot script, i.e. chroot=false, runs in the installer environment.
 

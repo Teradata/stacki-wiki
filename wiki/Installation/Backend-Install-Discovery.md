@@ -90,11 +90,11 @@ Customization is an iterative process. You will be re-installing your machines o
 
 ### Re-Installation
 
-Getting a machine to have a) known good state, b) a refresh of the os, or c) a complete reinstall including data disks, you'll want to reinstall.
+Getting a machine to have a.) a known good state, b.) a refresh of the os (bugfixes, kernel updates), or c.) a complete reinstall including data disks, you'll want to reinstall.
 
 Stacki manages the PXE boot of all of backend nodes. When a node has been installed, Stacki tells the PXE request to boot from local disk.
 
-If you want to reinstall, use the stack command line to tell it what to do the next time the machine reboots.
+If you want to reinstall, use the stack command line to tell a node what to do the next time the machine reboots.
 
 We call "telling the node what to do on next reboot," "setting the boot action.""
 
@@ -108,7 +108,7 @@ action back to _install_, for example:
 ```
 
 The next time you boot _backend-0-0_, it will rebuild itself.
-But a rebuild, by default, will only reformat the swap, ```/var```, and ```/``` partitions. This means all data in ```/export```, or any other data disks you've partitioned is maintained across re-installations.
+But a rebuild, by default, will only reformat the swap, ```/var```, and ```/``` partitions. This means all data in ```/state/partition1```, or any other data disks you've partitioned is maintained across re-installations.
 
 The install/reinstall also sets the boot action back to "os" which means "boot from local disk." It requires no human intervention.
 
@@ -128,5 +128,5 @@ To do all backend hosts at once, give the appliance name:
 # stack run host backend command=reboot
 ```
 
-After the backend re-installs, it will automaticaly reset the value of the
+After the backend re-installs, it will automatically reset the value of the
 attribute to _false_ so the next time you re-install, it will do the default and only reformat the ```/var``` and ```/``` partitions.

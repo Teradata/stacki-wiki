@@ -4,7 +4,7 @@
 
 * Modify how a server works
 * Modify how Stacki works with a server
-* How Stacki relates to a cluster and the application running onit.
+* How Stacki relates to a cluster and the application running on it.
 * How a server is installed.
 
 Attributes are used in all facets of cluster management and are persistent across install/reinstall of a single or many servers.
@@ -21,13 +21,13 @@ The order is global -> appliance -> host.
 * Appliance: These values are added to or modified by those in the appliance list that this server belongs to.
 * Host: Host attributes assigned specifically to a given host are added or modified.
 
-This leaves us with a custom per-server list of attributes that will be used primarily for generating installation, but also for classification.
+This leaves us with a custom, per-server list of attributes that will be used primarily for generating installation, but also for classification.
 
-If you have set a global attribute default to "True" and it's set at an individual host level default to "False", during installation, when that attribute is called, it will evaluate to "False."
+If you have set a global attribute default to "True" and you've set the same attribute for an individual host to be "True," then during installation, when that attribute is called, it will evaluate to "False."
 
 This allows us to program our cluster rather than keeping multiple files around for different scenarios. We can program different configuration based on a defined attribute.
 
-#### Listing Attributes
+### Listing Attributes
 
 To see what attributes you have, use the "stack list command."
 
@@ -41,7 +41,7 @@ Shows attributes defined at the Global level. An initial frontend installation w
 stack list appliance attr [appliance]
 ```
 
-Shows the list of appliance defined attrs. An attribute list is concatenated from Global + Appliance + Host. With the layer below overwriting the layer if both layers define the same attribute.
+Shows the list of appliance defined attrs. An attribute list is concatenated from Global + Appliance + Host. With the layer below overwriting the layer above if both layers define the same attribute.
 
 ```
 stack list host attr [hostname]
@@ -51,7 +51,7 @@ Shows the attributes for a given host.
 
 An attribute list is concatenated from Global + Appliance + Host. With the layer below overwriting the layer if both layers define the same attribute.
 
-#### Adding/Setting attributes
+### Adding/Setting attributes
 
 Global:
 `stack set attr attr=[name] value=[new setting]`
@@ -62,7 +62,7 @@ Appliance:
 Single host:
 `stack set host attr [hostname] attr=[name] value=[new setting]`
  
-Setting an Attribute assigns value to the key name. It will create the attr if it does not exist.
+Setting an Attribute assigns the value to the key name. It will create the attr if it does not exist.
 
 `stack add attr` commands do the same, but fail if the attribute already exists.
 
@@ -87,7 +87,7 @@ There are more details in the [Carts](Carts) section of the documentation, but I
 
 #### Variable substitution
 
-In a kickstart/autoyast/preseed file any attribute's key can be called by using an xml entity format which is `&<attrkey>;`. So
+In a kickstart/autoyast/preseed file any attribute's key can be called by using an xml entity format which is `&<attrkey>;`.
 
 Let's look at the resolv.xml file for an example. There is this bit of code snippet:
 
@@ -111,10 +111,9 @@ So my file on the backend will look like this:
 10.5.255.254    backend-0-0.local backend-0-0
 ```
 
-Any attribute key can be used in an XML entity structure to call the value of that key. Program your cluster.
+Any attribute key can be used in an XML entity structure to call the value of that key.
 
-
-#### Using an attribute as a conditional
+### Using an attribute as a conditional
 
 Attributes can also be to fire code if a condition is met.
 
@@ -178,7 +177,6 @@ stack:script stack:stage="install-post" stack:cond="os == 'CentOS' or os == 'RHE
 
 If you are defining lots of attributes for a particular application, then it's easier to pack these into an attribute file.
 
-
 This is an example of what happens for the stacki-kubernetes pallet. It's large, but will give you a good idea of what's possible.
 
 ```
@@ -208,7 +206,7 @@ Let's unpack it a bit:
 
 The header line requires "target" followed by all the keys, comma delimited.
 
-The next lines state which "target" (global,appliance, or host) a value should be set for. You'll note, the global line has a value for every key. This is the default value.
+The next lines state which "target" (global,appliance, or host) a value should be set for. You'll note, the global line has a value for every key. This is the default value of the key.
 
 The individual hosts, change the default value. It's easier to define a global value that will be common, and change the exceptions at the host or appliance level.
 
@@ -246,6 +244,6 @@ revision 1.1 (locked)
 done
 ```
 
-Now every attribute we have defined, can be used for variable substitution or used as a conditional to implement scripts and files in a cart.
+Now every attribute we have defined can be used for variable substitution or used as a conditional to implement scripts and files in a cart.
 
-Using attribute files is a *Stacki best practice*, they're easier to manage and communicate with other members of your infrastructure team. 
+Using attribute files is a ***Stacki best practice***, they're easier to manage and communicate with other members of your infrastructure team.

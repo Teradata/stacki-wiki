@@ -1,3 +1,5 @@
+## Adding software
+
 One of the easiest ways to add functionality and customization is to add software to your backend nodes.
 
 There are couple ways to do this - this is the no-brainer, gottagetitworkingrightnow, easy way.
@@ -91,10 +93,9 @@ Take out the html commenting, and change it to:
 
 Now, when the backend nodes are installed, these three RPMS will be added.
 
-You can also add this as a losit.
 # Adding an RPM from the interwebzzz.
 
-Sometimes you want to download one or two or a few RPMS from the whirled-wide interwebzzz. (If it's more than three, you should seriously consider [Creating a software pallet](Creating-Simple-Pallets))
+Sometimes you want to download one or two or a few RPMS from the whirled-wide interwebzzz. (If it's more than three, you should seriously consider [adding a software pallet](Adding-Software-Pallets))
 
 "cd" to the */export/stack/carts/site-custom/RPMS directory. Get your wild and crazy package. We'll add [fortune-mod](https://centos.pkgs.org/7/puias-x86_64/fortune-mod-1.99.1-17.sdl7.x86_64.rpm.html). Describe-ed thusly:
 
@@ -128,8 +129,6 @@ fortune-mod
 ```
 
 Now we need to associate the *site-custom* cart with the default box so our changes will take effect when a machine is installed/reinstalled.
-
-To do that, associated the *site-custom* cart with a [Box](Boxes).
 
 A *box* is collection of *pallets* and *carts* that can be assigned to a machine or collection of machines.
 
@@ -203,7 +202,7 @@ Then to add *rpmname* to all your backend nodes.
 
 ### Creating your own RPMS.
 
-Stacki has the ability to create rudimentary RPMS from directories to allow installing site specific software. Putting those applications in RPMS is recommended because it allows you to add them to a cart and take advantage of the peer-to-peer installer duing installation. You can find details in [Creating Site RPMS](Creating-Site-RPMS)
+Stacki has the ability to create rudimentary RPMS from directories to allow installing site specific software. Putting those applications in RPMS is recommended because it allows you to add them to a cart and take advantage of the peer-to-peer installer during installation. You can find details in [Creating Site RPMS](Creating-Site-RPMS)
 
 Frequently, there are configuration requirements for the service you have installed with an RPM. We will continue with the **site-custom** cart example in the [Adding Files](Adding-Files) and [Adding Scripts](Adding-Scripts) scripts sections to demonstrate.
 

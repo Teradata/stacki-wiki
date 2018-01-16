@@ -4,13 +4,13 @@ There may come a point where it makes sense to create your own pallets. There ar
 
 Pallets allow you to install and configure applications you have created or downloaded. It's a simple way to keep multiple versions or to do patching/upgrading.
 
-All pallets come in the ISO format. They can be pulled form the web for OS distributions, or created from a directory or remote yum/zypper repository by mirroring.
+All pallets come in the ISO format. They can be pulled from the web for OS distributions or created from a directory or remote yum/zypper repository by mirroring.
 
 RPM-only pallets are the simplest to create.
 
 ##### RPM-only Pallet
 
-Creating an RPM-only pallet is the same for both stacki 6 and 7. Only the URLs and repos are going to be different. This assumes your frontend has access to the internet. If not, put up a VirtualBox frontend on your desktop/laptop and create the pallets there and then put them on the real frontend.
+Creating an RPM-only pallet is simple and assumes your frontend has access to the internet. If not, put up a VirtualBox frontend on your desktop/laptop and create the pallets there and then put them on the real frontend.
 
 ###### Creating pallet from a URL.
 
@@ -104,4 +104,4 @@ Maybe you want: rm -rf /var/cache/yum, to also free up space taken by orphaned d
 
 Now you can use the Apache Cassandra RPMs on the cluster. Use a cart and `<stack:package>` tags to add the software and `<stack:file>` tags to add config files, and `<stack:script>` tags to enable the service and configure any other dependences.
 
-All this set-up can be found in the Apache Cassandra docs and can be converted to your cart xml. 
+All this set-up can be found in the Apache Cassandra docs and can be converted to your cart xml.

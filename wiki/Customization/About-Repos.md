@@ -69,4 +69,4 @@ To sync a repository to backends, if you add a new cart  for example, then:
 
 ```stack sync host repo a:backend```
 
-and the packages you've added will now be available via yum/zypper/etc.
+and the packages you've added will now be available via yum/zypper/apt-get.

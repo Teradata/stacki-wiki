@@ -1,10 +1,10 @@
-### Adding Configuration Scripts to Carts
+## Adding Configuration Scripts to Carts
 
 Whatever you can do in Linux, you can do in a Cart across all your installs.
 
 When a machine comes up, it should be exactly the way you want at first boot. Stacki should be used to bring machines to a known state. One of the ways to do that is run the scripts and start the services that need to be available during the install. It's part of the secret to scaling: offload as much work to the individual machines themselves.
 
-#### Scripts
+### Scripts
 
 Scripts are similar to config files, except you might want to run them during installation or after first boot.
 
@@ -12,7 +12,7 @@ There are two ways to add/run scripts:
 * Adding them in a file and then running them
 * Running them in a `<stack:script> </stack:script>` tags.
 
-##### Starting/enabling services
+#### Starting/enabling services
 
 In CentOS/RHEL 7.x and SLES 12, systemd is the init script runner. If a service runs as a daemon, these can be enabled during installation and will start on first boot.
 
@@ -33,7 +33,7 @@ systemctl enable httpd
 </stack:stack>
 ```
 
-##### Add a script to be run during install.
+#### Add a script to be run during install.
 
 You can run scripts to take care of configuration during the install phase.
 
@@ -55,7 +55,7 @@ echo "%siteadmin ALL=(ALL) NOPASSWD: ALL" &gt; /etc/sudoers.d/siteadmin
 </stack:script>
 ```
 
-This just runs in bash in order. I could do this another way by adding it to a script in a stack:file tags and running the script:
+The scripts run bash in order they're compiled by Stacki. I could do this another way by adding it to a script in a stack:file tags and running the script:
 
 ```
 <stack:script stack:stage="install-post">
@@ -77,10 +77,11 @@ sed -i /"Defaults    requiretty"/\c"#Defaults    requiretty" /etc/sudoers
 </stack:script>
 ```
 
-So we put the code of adding admins into /tmp/addadmins.sh with executable permissions and then we run it. I also pulled the "echo" into a file into file tags. That is more Stacki idiomatic.
+So we put the code of adding admins into /tmp/addadmins.sh with executable permissions and then we run it. I also pulled the "echo" into file tags. That is more Stacki idiomatic.
 
 If a file or directory does not exist in a file tag, the directory and the file will be created without having to do additional "mkdirs"
 
+#### First boot scripts
 
 If your scripts need full network and services, then you can run them at first boot. Still using ```<stack:script>``` tags but changing the ```stack:stage``` in that tag.
 
@@ -109,9 +110,9 @@ Note a few things:
 
 This produces output that tell me how long it takes to install a backend node. This mix and matching of tags tells the installer how to behave.
 
-##### Run a different shell interpreter
+#### Run a different shell interpreter
 
-Really whenever you create a set of `<stack:script>` tags, you're running with the bash interpreter. You can do more difficult scripts during installation by switching interpreters, python, perl, ksh, csh, tcsh, javascript,ruby,on and on and on.
+Really whenever you create a set of `<stack:script>` tags, you're running with the bash interpreter. You can do more difficult scripts during installation by switching interpreters, python, perl, ksh, csh, tcsh, javascript,ruby, on and on and on.
 
 Do it like this:
 

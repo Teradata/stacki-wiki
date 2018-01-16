@@ -11,8 +11,9 @@
   * [Backend Install - Basics](Backend-Installation)
   * [Backend Install - Discovery](Backend-Install-Discovery)
   * [Backend Install - Spreadsheet](Backend-Install-Spreadsheet)
+  * [Backend Reinstall](Backend-Reinstall)
   * [Creating Jumbo Pallets](Create-Jumbo-Pallets)
-* Customization
+* [Customization](Customization)
   * [Carts](Carts)
     * [Adding Packages](Adding-RPMs)
     * [Adding Files](Adding-Files)
@@ -24,7 +25,7 @@
   * [Appliances](Appliances)
   * [Stacki Universal XML](SUX)
 * Configuration
-  * [Using Attributes](Using-Attributes) 
+  * [Using Attributes](Using-Attributes)
   * [Using Spreadsheets](Using-Spreadsheets)
   * [Network Configuration - Frontend](Network-Configuration-Frontend)
   * [Network Configuration - Backends](Network-Configuration-Backends)

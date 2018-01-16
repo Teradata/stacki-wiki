@@ -16,6 +16,6 @@ The decision to use an appliance as a way to express some kind of logic in a clu
 
 We use attributes as conditionals in SUX to determine configuration based on the attribute. In a cart xml file, this can get long and difficult to keep in your head.
 
-One way to handle this is to define an appliance, and use the appliance type as the conditional. We'll show an example of this in a moment.å
+One way to handle this is to define an appliance, and use the appliance type as the conditional. We'll show an example of this in a moment.
 
 ### Creating an appliance

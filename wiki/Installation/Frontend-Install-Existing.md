@@ -72,7 +72,7 @@ The first screen will appear and you will be prompted to enter your timezone:
 
 ### Network
 
-_**Do not get this network wrong! Changing it after the fact means a REINSTALL of the frontend.**_
+_**Do not get this network wrong! Changing it after the fact means a RE-INSTALL of the frontend.**_
 
 The network configuration screen allows you to set up the network that will
 be used by the frontend to install backend hosts.
@@ -117,16 +117,13 @@ select _Manual_ mode.
 
 In _Manual_ mode, the installer brings up a partition setup
 screen after the wizard exits. In this mode, specify at least 16 GB
-for the root partition and a separate /export partition. You should add
-a swap partition, and /var if you have made / only 16GB. Here's an example of [Manual Mode](Frontend-Manual-Mode).
-
-![frontend_install_vbox_12](images/frontend/frontend_install_vbox_12.png)
+for the root partition and a separate /export partition - which should be the largest partition. You should add a swap partition, and /var if you have made / only 16GB.
 
 ### Add Pallets
 
 Choose the _Pallets_ you want to install.
 
-Booting from a DVD, pallets should automatically load onto the list for you to choose.
+Booting from a DVD/USB, pallets should automatically load onto the list for you to choose.
 
 ** Please note:** In an Existing installation you will only see the stacki pallet - even if you have supplied the --extra-isos parameter.
 
@@ -191,7 +188,7 @@ To add an ISO pallet to the Stacki Frontend, using OS minimal, first download th
 # stack add pallet os-7.4_20171128-redhat7.x86_64.disk1.iso
 ```
 
-Then _enable_ the CentOS pallet (this makes the CentOS repository on the Stacki frontend available for backend installs):
+Then _enable_ the 'os' pallet. This makes the 'os' repository on the Stacki frontend available for backend installs:
 
 ```
 # stack enable pallet os

@@ -1,4 +1,4 @@
-### Pallets
+## Pallets
 
 Pallets are a fundamental unit of configuration in Stacki. They allow you to add additional software to install on backend nodes. Pallets provide a simple way to keep multiple versions or to do patching/upgrading.
 

@@ -1,4 +1,4 @@
-### Creating an RPM
+## Creating an RPM
 
 Stacki allows you to create a basic RPM for distribution in a cart repository with the ```stack create package``` command.
 
@@ -35,13 +35,13 @@ Give it a name:
 # stack create package dir=/opt/prometheus name=site-prometheus
 ```
 
-Tell it the top level prefeix this should live under:
+Tell it the top level prefix this should live under:
 
 ```
 # stack create package dir=/opt/prometheus name=site-prometheus prefix=/opt
 ```
 
-All the above optiosn are required. Anything else we add, is not.
+All the above options are required. Anything else we add, is not.
 
 Give it a version. Default is the current Stacki version, which has a hash in it. Ick. I'm using 2.0.0 because that's the version of prometheus ~~I stole~~ I'm using.
 

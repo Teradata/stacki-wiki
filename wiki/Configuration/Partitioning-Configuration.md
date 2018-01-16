@@ -5,9 +5,9 @@ Use a spreadsheet. Don't make me come over there.
 
 [Why Stacki Uses Spreadsheets](Using-Spreadsheets)
 
+Like a storage controller config, partitioning config done in a spreadsheet is a **Stacki best practice.** You can see it, play with it, and validate your partition config when it's loaded.
 
-Like a storage controller config, partitioning config done in a spreadsheet is a best practice. You can see it, play with it, and validate your partition config when it's loaded.
-
+> **Please note:** Partitioning is done in parallel. Stacki is the only installer that does this.
 
 ### Spreadsheet
 
@@ -71,7 +71,7 @@ Stacki supports specifying LVM configuration via a spreadsheet. **lvm**, **volgr
 
 ### Raid
 
-Software raid can also be defined easily in a partition file. Do this instead of the dumb software RAID defined in the hardware BIOS your equally cheap and dumb Supermicro box came with.
+Software raid can also be defined easily in a partition file. Do this instead of the dumb software RAID defined in the hardware BIOS your equally cheap and dumb white box or bottom of the line A-list vendor box came with.
 
 | NAME    | DEVICE | MOUNTPOINT     | SIZE  | TYPE     | OPTIONS                       |
 |:--------|:-------|:---------------|:------|:---------|:------------------------------|
@@ -136,3 +136,5 @@ Then, the next time _backend-0-0_ is installed, it will remove all partitions fo
 While a host is installing, after it partitions its disks, it will send a message to the frontend to instruct it to set the  _nukedisks_ attribute back to _false_.
 
 This ensures that the disks will not be reconfigured on the next installation.
+
+Its benefit is less obvious if you're using "xfs" but it's very obvious if you're still using "ext4." (Why are you still using ext4?)

@@ -6,7 +6,7 @@ The Stacki frontend can serve DNS or not. It can serve it for some networks and 
 
 If all your backends and frontends have hostnames served by your site DNS, you should be putting your site DNS servers in as the nameservers.
 
-If you don't have site nameservers, the frontend can act as the named server. Set any network you want to resolve to DNS True. You can also set the "zone" which is the domainname part of the FQDN.
+If you don't have site nameservers, the frontend can act as the named server. Set any network you want to resolve to DNS "True."" You can also set the "zone" which is the domainname part of the FQDN.
 
 So for example in my two networks: "corporate" and "private" I'll set the frontend to serve DNS.
 
@@ -106,7 +106,8 @@ Verify:
 
 10.18.15.3 ansible-tower.corporate ansible-tower
 ```       
-##### Syncing hosts to backend nodes
+
+#### Syncing hosts to backend nodes
 
 If you don't want to use DNS, or you have an application that requires an /etc/hosts with all the hosts in the cluster, sync /etc/hosts to the backends.
 
@@ -120,14 +121,13 @@ Install the machines. /etc/hosts will now have all the hosts managed by stacki, 
 
 If you don't know what this is about, skip to the next section.
 
-We come from the HPC space. Yearrrrrrs in the HPC space. We've never seen the use of jumbo frames or MTU have a positive effect on a cluster.
+We come from the HPC space. Yearrrrrrssss in the HPC space. We've never seen the use of jumbo frames or MTU have a positive effect on a cluster.
 
 But, we get it, someone asked for it. Or some stupid Hadoop distro has decided they need jumbo frames, and you have to give it to them.
 
 Easy, either in your networks csv file change the MTU field to the desired MTU (probably 9000, right?) or `stack set network mtu networkname> mtu=9000`.
 
 Any network interface of a backend host with an IP address on that network, will automatically get the desired MTU. Nothing else to do.
-
 
 ### Bonding, VLAN, Bridging, and virtual interfaces
 
@@ -137,6 +137,6 @@ I digress. Bonding for network interfaces is supported both on the command line 
 
 The proper ifcfg files are written with the bonding set-up - it's just typical Linux.
 
-The same thing is true of different VLANs, bridge interfaces, and virtual interfaces. If you have the wacky network config, we can probably enact it. We once helped someone creat multiple virtual interfaces against an bonded and bridged set of nics with multiple VLANs. It was a telco. They're crazy.
+The same thing is true of different VLANs, bridge interfaces, and virtual interfaces. If you have the wacky network config, we can probably enact it. We once helped someone create multiple virtual interfaces against a bonded and bridged set of nics with multiple VLANs. It was a telco. They're crazy.
 
 Please see the [Example CSV Files](Example-CSV-Files) for details and inspiration.

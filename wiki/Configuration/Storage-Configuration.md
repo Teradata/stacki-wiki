@@ -118,7 +118,7 @@ Then, the next time _backend-0-0_ is installed, it will remove the current hardw
 
 Like the _nukedisks_ attribute, _nukecontroller_ is set to _false_ on the initial installation of a backend node. If the RAID controller has been configured by hand with a keyboard and monitor, that configuration is safe unless the _nukecontroller_ attribute is set to _true_.
 
-After the host has completed installation, _nukecontroller_ attribute for that host is reset to _false_.
+After the host has completed installation, the _nukecontroller_ attribute for that host is reset to _false_.
 
 This ensures that the controller will not be reconfigured on the next installation.
 

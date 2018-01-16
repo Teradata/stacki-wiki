@@ -1,4 +1,4 @@
-### Jumbo Pallets
+## Jumbo Pallets
 
 A "Jumbo Pallet" is a pallet that consists of combining the Stacki pallet with the OS pallet of your choice to install a frontend.
 
@@ -8,7 +8,7 @@ If you're going to create and use a jumbo pallet, it's advised to install the fr
 
 This is only for a frontend so it contains the same OS that you want on the backends.
 
-####  Create a Jumbo pallet
+###  Create a Jumbo pallet
 
 You're going to have to start with a stacki frontend. Follow the [Frontend Install New](Frontend-Install-New) but do it on a virtual machine. This gives you a minimal frontend and allows you to create additional pallets.
 
@@ -16,7 +16,7 @@ Once you have the frontend, copy the [stacki 5.0 pallet](http://teradata-stacki.
 
 Then get whatever OS you want to use. In this example, we're using the rhel-server-7.4-x86_64-dvd.iso available from your RedHat subscription.
 
-cd to the larges directory on the frontend, usually /export.
+cd to the largest directory on the frontend, usually /export.
 scp or wget your OS iso to /export.
 
 ```
@@ -113,4 +113,4 @@ That could fit on a USB.
 
 And now you have a very large stacki+OS pallet you can install a new frontend with via virtual media.
 
-**Note:** We can no loger produce and host jumbo isos as we have done in the past. We are an open source project and don't have the right to distribute proprietary OSs (RHEL/Oracle) with Stacki.
+**Note:** We can no longer produce and host jumbo isos as we have done in the past. We are an open source project and don't have the right to distribute proprietary OSs (RHEL/Oracle) with Stacki.

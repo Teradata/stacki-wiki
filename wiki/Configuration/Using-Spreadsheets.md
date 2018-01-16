@@ -1,4 +1,4 @@
-### Stacki and Spreadsheets.
+## Stacki and Spreadsheets.
 
 We use spreadsheets - CSV spreadsheets to be specific.
 
