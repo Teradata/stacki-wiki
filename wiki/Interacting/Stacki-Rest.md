@@ -122,9 +122,9 @@ The complete list of stacki commands that manipulate access
 to the ReST API are available in the [CLI Reference](stacki-CLI-documentation)
 
 1. To add a user to the API, run
-
-   ```# stack add user greg group=default admin=False```
-
+   ```shell
+   # stack add user greg group=default admin=False
+   ```
    This adds a user with username **greg** belonging to the
    **default** group. The **admin** flag for this user is
    set to false. This means that the user **greg** will be
@@ -149,29 +149,29 @@ to the ReST API are available in the [CLI Reference](stacki-CLI-documentation)
    the users home directory.
 
 1. To add a group, run
-
-   ```# stack add group staff```
-
+   ```shell
+   # stack add group staff
+   ```
    This adds a group called **staff** to the system.
 
 1. To set permissions on a group, run
-
-   ```# stack add group perms staff perms="list.*"```
-
+   ```shell
+   # stack add group perms staff perms="list.*"
+   ```
    This allows users in group **staff** to run any "list"
    commands.
 
 1. To set permissions for a user, run
-
-   ```# stack add user perms greg perms="report.*"```
-
+   ```shell
+   # stack add user perms greg perms="report.*"
+   ```
    This allows user **greg** to run any "report" command in
    addition to all the commands allowed by the "default"
    group.
 
 1. To set admin privileges for a user, run
-
-   ```# stack set user admin greg admin=True```
-
+   ```shell
+   # stack set user admin greg admin=True
+   ```
    This will allow user **greg** to run any command on the
    system.
