@@ -38,7 +38,7 @@ The Stacki REST API provides 1 endpoint - **/stack**
 
 1. Get CSRF Token
 
-   HTTP GET **http://\<hostname\>/stack**
+   > HTTP GET `http://\<hostname\>/stack`
 
    Running a HTTP GET Command against the /stack
    endpoint, returns a CSRF cookie. This CSRF cookie
@@ -46,12 +46,12 @@ The Stacki REST API provides 1 endpoint - **/stack**
 
 1. Login to the Service
 
-   HTTP POST **http://\<hostname\>/stack/login**
+   > HTTP POST `http://\<hostname\>/stack/login`
 
    By default, an admin user is created, and allowed
    to log in and call API endpoints.
 
-   Send a HTTP POST Command to **/stack/login**.
+   Send a HTTP POST Command to `/stack/login`.
 
    The **username** and **password** must be sent to the URL
    as follows
@@ -68,7 +68,7 @@ The Stacki REST API provides 1 endpoint - **/stack**
 
 1. Run API Call
 
-   HTTP POST http://\<hostname\>/stack
+   > HTTP POST http://\<hostname\>/stack
 
    The API call syntax is very similar to the `stack` command line tool
    syntax.
@@ -77,17 +77,17 @@ The Stacki REST API provides 1 endpoint - **/stack**
    * Set header `sessionid` to sessionid value obtained after successful login
    * Set Content-Type to `application/json`
    * Set Data to JSON String in the following format:
-     ```
-{
-  "cmd": "list host"
-}
+     ```json
+     {
+     "cmd": "list host"
+     }
      ```
    * This will call the **list host** command, on the API server.
 
    If the command is executed successfully, it will return
    a JSON string, that contains the output of the command execution.
    ```json
-[
+   [
     {
         "appliance": "backend",
         "box": "default",
@@ -100,7 +100,7 @@ The Stacki REST API provides 1 endpoint - **/stack**
         "runaction": "os",
         "status": "up"
     }
-]
+   ]
    ```
 
 ### API RESTRICTIONS
@@ -135,11 +135,11 @@ to the ReST API are available in the [CLI Reference](stacki-CLI-documentation)
    contains the username, API key, and hostname of the API
    server.
    ```json
-{
-  "username": "greg",
-  "hostname": "node234-002.stacki.com",
-  "key": "NFdl45R_JoQEQUs8RMtpnHmwAmI8UQHQGRuBL0OI2mQ"
-}
+   {
+   "username": "greg",
+   "hostname": "node234-002.stacki.com",
+   "key": "NFdl45R_JoQEQUs8RMtpnHmwAmI8UQHQGRuBL0OI2mQ"
+   }
    ```
    To allow user **greg** to access the API, use the
    username/key pair listed.
