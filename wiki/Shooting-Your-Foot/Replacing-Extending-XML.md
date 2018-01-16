@@ -17,7 +17,8 @@ Example:
 
 If you want to do something for ssh on the backend nodes for instance. You can
 replace it by creating a replace-ssh-client.xml and put your own ssh set up there.
-Drop the file in the "nodes" directory under a cart and then
+
+Drop the file in the "nodes" directory under a cart and then:
 
 ```
 # stack list host profile backend-0-2 | less
@@ -35,4 +36,4 @@ info  - parsed pallets/stacki/5.0_20171128_b0ed4e3/redhat7/redhat/x86_64/nodes/s
 
 You can use the extend-ssh-client.xml in the same way if you just want to append or add to the ssh configuration on the clients. This works with any file in the graph provided by Stacki or provided by a cart someone at your site created.
 
-You can also use conditionals in graph files. But that's a topic I'll address only when someone asks me for it, twice.
+You can also use conditionals in graph files. But that's a topic I'll address only when someone asks me for it, twice and I'm able to move the jaguar sitting on top of my keyboard.

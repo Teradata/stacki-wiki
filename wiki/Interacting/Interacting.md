@@ -1,8 +1,8 @@
-### Interacting with your cluster
+## Interacting with your cluster
 
 There are two ways to interact with your cluster:
 
-#### ["stack" command line](Command-Line)
+### ["stack" command line](Command-Line)
 
 The stack command line provides commands to:
 * Run parallel commands on hosts
@@ -10,7 +10,7 @@ The stack command line provides commands to:
 * Generate information from hosts.
 
 
-#### [stack rest api](Stacki-Rest)
+### [stack rest api](Stacki-Rest)
 
 The rest api allows access to the stack command line. The Rest API is more limited in scope than the "stack" command line.
 

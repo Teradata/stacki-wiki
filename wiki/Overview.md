@@ -24,7 +24,7 @@ What it does is simple:
 2. Configure OS.
 3. Configure RAID controllers and partitioning (customizable - never touch a keyboard and monitor for RAID setup again)
 4. Configure networking (Including multiple interfaces, multiple network types: IB, 10G, 1G)
-5. Provides ower on to ping and a prompt with passwordless SSH access.
+5. Provides power on to ping and a prompt with password-less SSH access.
 
 What it produces is complex:
 

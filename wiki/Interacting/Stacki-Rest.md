@@ -3,13 +3,14 @@
 ## Installing Stacki REST API
 
 The Stacki REST API is distributed as a web service
-running as a Django Application. The Stacki REST API is available.
+running as a Django Application.
+
 By default, Stacki includes a webservice client, and creates
 admin credentials to help validate the API.
 
 ## Testing the ReST API
 
-Stacki comes with a build in webservice client.
+Stacki comes with a built in webservice client.
 The webservice client is called **wsclient**. The webservice
 admin credentials are placed in `/root/stacki-ws.cred`
 

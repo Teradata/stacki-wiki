@@ -12,10 +12,10 @@ You're forewarned, apparently armed, and your foot is down. Help is in Stacki Sl
 
 **tl;dr**
 
-[Using the Include Directive](Include-Directive) Relatively safe.
-[Setting Cart Order](Setting-Cart-Order) Relatively safe but confusing.
-[IP Address Change](IP-Address-Change)
-[Replacing and extending Stacki XML](Replacing-Extending-XML)
+* [Using the Include Directive](Include-Directive) - Relatively safe.
+* [Setting Cart Order](Setting-Cart-Order) - Relatively safe but confusing.
+* [IP Address Change](IP-Address-Change) - Here be Monsters.
+* [Replacing and extending Stacki XML](Replacing-Extending-XML) - Relatively safe.
 
 ### Don't decide you want a different private network
 
@@ -31,7 +31,7 @@ Don't change the permissions on it. They should be 644 or rw-r--r--. This is wha
 
 Don't. Do. It. Dammit.
 
-# Using additional repositories
+### Using additional repositories
 
 Using the Centos*.repo files are a recipe for disaster. If you feel you must use them, considering mirroring the repository and adding them as pallets as described in [Creating Software Pallet](Creating-Software-Pallets).
 
@@ -47,7 +47,7 @@ Try:
 There may be others. Use Google.
 
 
-#### When I ssh into the frontend or the a backend node, ssh takes a lonnnggggg time.
+### When I ssh into the frontend or the a backend node, ssh takes a lonnnggggg time.
 
 Usually this means DNS isn't resolving correctly.
 
@@ -84,7 +84,7 @@ private 10.3.1.0    255.255.255.0 10.3.1.1     1500 local  True  True
 public  192.168.0.0 255.255.0.0   192.168.10.1 1500 jkloud False False
 ```
 
-#### How do I update or add an rpm to a node?
+### How do I update or add an rpm to a node?
 
 You have ssh password-less access to all the backend nodes and a parallel command to run commands on all of those.
 
@@ -100,7 +100,7 @@ You'll want to put the RPM name in a cart between package tags so it's there for
 <stack:package>myrpmname</stack:package>
 ```
 
-#### Help, my stack commands no longer work!
+### Help, my stack commands no longer work!
 
 Yesterday things like "stack list host" worked. Today you have a horrible traceback error. What's wrong?
 
@@ -114,7 +114,7 @@ Reboot it. Really. I can wait. Try the command again.
 
 If you don't reboot, I have to give you a list of all the services that need to be restarted because you managed to not watch something so simple as the fullness of your partitions. No.
 
-#### How do i subscribe my machines. I'm using RedHat?
+### How do i subscribe my machines. I'm using RedHat?
 
 When was the last time you had a problem that could be traced back to the OS and not yours or someone else's code?
 
@@ -126,7 +126,7 @@ So this is me, showing you, how to throw your money away.
 
 ##### Subscribe a frontend connected to the wurld-wide-interwebzz.
 
-On the frontend, that has RHEL7.4 as it's base os. (Yeah, not gonna work if you don't. But that's a whole ['nother topic](CreateJumboPallets). )
+On the frontend, that has RHEL7.4 as it's base os. (Yeah, not gonna work if you don't. But that's a whole ['nother topic](Create-Jumbo-Pallets). )
 
 ```
 # yum -y install subscription-manager subscription-manager-migration-data

@@ -1,29 +1,29 @@
-### Stacki command line
+## Stacki command line
 
-The stacki command line is where you'll interact with your cluster for configuration and on-going management. The full details of every command are available in the [Reference CLI section][stacki-CLI-documentation].
+The stacki command line is where you'll interact with your cluster for configuration and on-going management. The full details of every command are available in the [Reference CLI section](stacki-CLI-documentation).
 
 This is a basic primer.
 
 The command line is English language sentence structure: subject+verb+object.
-(This is common for most CLI tools that the cool kidzz are using.)
+(This is common for most CLI tools that the kewl kdzz are using, but we used it first so git offa my lawn.)
 
 You're going to use the "stack" command always as the subject.
 
-A verb can be one of: add, compile, config, create, disable, dump, enable, help, iterate, list, load, pack, remove, report, run, set, swap, sync, unload, unpack.
+A verb can be one of: ***add, compile, config, create, disable, dump, enable, help, iterate, list, load, pack, remove, report, run, set, swap, sync, unload, unpack.***
 
-The verbs act on a number of objects: access, api, appliance, attr, attrfile, bootaction, box, cart, config, copyright, dbhost, dhcpd, dns, environment, firewall, group, help, host, hostfile, keys, mirror, named, network, networkfile, new, node, os, package, pallet, password, route, script, storage, system, version, zones.
+The verbs act on a number of objects: ***access, api, appliance, attr, attrfile, bootaction, box, cart, config, copyright, dbhost, dhcpd, dns, environment, firewall, group, help, host, hostfile, keys, mirror, named, network, networkfile, new, node, os, package, pallet, password, route, script, storage, system, version, zones.***
 
 This seems daunting, but you will not be using every one of these verbs against every one of these objects.
 
-The most common verbs you'll use are: list, add, set, load, enable, disable, report, run, and sync.
+The most common verbs you'll use are: ***list, add, set, load, enable, disable, report, run, and sync.***
 
-The most common objects those verbs will use are: host, cart, pallet, hostfile, attrfile, config, and box.
+The most common objects those verbs will use are: ***host, cart, pallet, hostfile, attrfile, config, and box.***
 
 Loading spreadsheets also short-cuts running many of these commands at the command line.
 
 This documentation has numerous examples of "stack" commands, and are the ones you will most commonly use. And many others are available at hand in the [Stacki 5.0 Cheat Sheet](CheatSheet).
 
-#### The most common command
+### The most common command
 
 The most common command for interacting with your backend machines on a daily basis is:
 
@@ -43,7 +43,7 @@ backend-0-3 11:28:20 up 2 min,  0 users,  load average: 3.00, 1.43, 0.55
 backend-0-4 11:28:19 up 4 min,  0 users,  load average: 1.32, 1.34, 0.64
 ```
 
-#### Ways to define hosts
+### Ways to define hosts
 
 When running a command on hosts you can do:
 

@@ -121,7 +121,7 @@ Copy over the ORIGINAL /etc/hosts file that was backed up to /etc/hosts.
    ```
    # systemctl network restart
    ```
-(Though this takes much longer than using a `stack run command.`)
+(Though this takes much longer than using a `stack run` command.)
 
    If you don't have console access to the hosts, or if you
    have a large number of hosts, you can try to run the
@@ -153,7 +153,7 @@ Fix the attributes you just broke, using the new ip you've assigned the frontend
 # stack set attr attr=Kickstart_PrivateNTPHost attr=172.16.20.1
 ```
 
-Reboot your frontend. No, really, reboot your frontend. Too many services.
+Reboot your frontend. No, really, reboot your frontend. Too many services need to be restarted for me to put them here.
 
 1. Your networks, for backends and the frontend, should
    be fully configured, and accessible over the new IP space
