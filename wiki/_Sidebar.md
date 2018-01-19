@@ -12,7 +12,7 @@
   * [Backend Install - Discovery](Backend-Install-Discovery)
   * [Backend Install - Spreadsheet](Backend-Install-Spreadsheet)
   * [Backend Reinstall](Backend-Reinstall)
-  * [Amazon Web Service](AWS)
+  * [Amazon Web Services](Amazon-Web-Services)
   * [Creating Jumbo Pallets](Create-Jumbo-Pallets)
 * [Customization](Customization)
   * [Carts](Carts)
@@ -24,7 +24,7 @@
     * [Adding Software Pallets](Adding-Software-Pallets)
   * [Boxes](Boxes)
   * [Appliances](Appliances)
-  * [Stacki Universal XML](SUX)
+  * [Stacki Universal XML](Stacki-Universal-XML)
 * Configuration
   * [Using Attributes](Using-Attributes)
   * [Using Spreadsheets](Using-Spreadsheets)
