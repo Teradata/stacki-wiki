@@ -1,4 +1,4 @@
-#### Installing preferred OS from webserver
+## Installing preferred OS from webserver
 
 If you have an ISO pallet hosted on another Stacki frontend within your infrastructure it's possible to pull that OS ISO from the web
 server, and any other pallets for that matter. (This is nice if you have a Stacki server in a VM and it's available.)

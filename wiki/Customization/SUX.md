@@ -1,8 +1,9 @@
-## Stacki Universal XML == SUX
+## Stacki Universal XML
 
 Every OS that's installed automatically over the network (NOT from images) has a shell like language to perform the install. For CentOS/RedHat this is kickstart. For SLES/SUSE this is autoyast. For Ubuntu/Debian this is preseed.
 
 On the surface they are different, but underneath they have the same basic structure:
+
 * Pre install actions before the system is installed.
 * Package installation.
 * Post installation.
@@ -14,28 +15,28 @@ Stacki has been used to install CentOS/RHEL variants, Ubuntu, SLES, and even Cor
 
 We used to write specific files for kickstart, autoyast, and preseed, but in Stacki 5.0, we've managed to abstract the installation steps so you only have to write the XML once. There should be minimal, if any changes, for a different OS.
 
-This "language" is Stacki Universal XML. (Affectionately known as "SUX.")
+This language is Stacki Universal XML (affectionately known as SUX).
 
-Don't freak out by the "XML." It's more like "HTML + extra tags" and those tags map to specific structures that are common to all auto-installation mechanisms.
+Don't freak out by the XML. It's more like HTML with extra tags and those tags map to specific structures that are common to all auto-installation mechanisms. If you've ever written an HTML document, you can write SUX. If you've ever written a kickstart/preseed/autoyast file, you can write SUX.
 
-If you've ever written an html document, you can write SUX.
+There are two things to note about SUX (and XML in general):
+1. SUX uses optional XML attributes pretty heavily. Don't confuse an XML attribute with what Stacki calls attributes. An XML attribute is a key-value pair that is added to the starting XML tag in a block. Further, what Stacki calls an attribute is called an entity in SUX (see [Using Attributes](Using-Attributes)).
 
-If you've ever written a kickstart/preseed/autoyast file, you can write SUX.
-
-So let's write SUX.
+1. All XML tags and attributes require the `stack` namespace this is why you need to write `stack:package` instead of just `package`. We have some good reasons for this (mostly because of autoyast), but it can be somewhat of a pain.
 
 The following goes into the configuration of a cart or pallet. You will almost always write carts and not pallets. So the following examples are what you write into your carts xml files.
 
-### Required XML.
-All tags need an opening and a closing tag, just like html.
+### Required XML
 
-Closing tags are not optional.
+All tags need an opening and a closing tag, just like HTML, but closing tags are not optional.
 
-When you create a cart it will be created under /export/stack/carts/&lt;cartname&gt;. There will be a file there called /export/stack/carts/&lt;cartname&gt;/nodes/cart-&lt;cartname&gt;-backend.xml
+When you create a cart it will be created under
+`/export/stack/carts/<cartname>`.
+There will be a file there called `/export/stack/carts/<cartname>/nodes/cart-<cartname>-backend.xml`
 
 This is file your are going to edit for your cart configuration.
 
-Every stacki xml file starts with an opening &lt;stack:stack&gt; tag and closes with the same tag only with a slash &lt;/stack:stack&gt;.
+Every stacki xml file starts with an opening `<stack:stack>` tag and closes with the same tag only with a slash `</stack:stack>`.
 
 Everything else goes in-between those two tags.
 
@@ -51,19 +52,19 @@ There is only one set of these in any XML file, but it's required.
 
 This is actually valid XML, a profile will be built from this. It just doesn't do anything.
 
-### Package tags
+### Packages
 
 Adding packages can be done in individual package tags:
 
-The format is &lt;stack:package&gt;package_name&lt;/stack:package>
+The format is `<stack:package>package_name</stack:package>`
 
-Just like html, there is an opening tag and a closing tag.
+Just like HTML, there is an opening tag and a closing tag.
 
 ```
 <stack:package>teradata-citadel</stack:package>
 ```
 
-Or as a list:
+Or as a list, where each package is on a line by itself.
 
 ```
 <stack:package>
@@ -88,69 +89,136 @@ screen
 </stack:stack>
 ```
 
-### Script tags
+#### Stages
 
-The script tags allow code to be run at various points during the installation: pre, post, and first boot.
+Depending on the operating system, package can be installed at two stages of the installation. All operating systems support installing packages during the system installer step (e.g. RedHat Anaconda). Stacki refers to this stage as `install`. Some operating systems (e.g. SLES) support installing packages on first boot after the system installer ran. This is helpful for packages that cannot correctly run there post sections inside the constrained installation environment. Stacki refers to this stage as `boot`.
 
-There are 4 types of scripts:
-* 2 pre-scripts: Install and Boot
+The package tag can be modified with either a `stack:stage="install"` or a `stage:stage="boot"` to indicate when the package should be installed.
+The default is `install`, so for most cases this never needs to be specified.
 
-Install: executed before partitioning
+An example of this would be:
 ```
-<stack:script stack:stage=“install-pre”>stuff</stack:script>
-```
+<stack:stack>
 
-First boot: executed before network is up.
-```
-<stack:script stack:stage=“boot-pre”>stuff</stack:script>
-```
+  <stack:package stack:stage="boot">badrpm</stack:package>
 
-* 2 post scripts: Install and Boot
-
-Install: executed after partitioning with new system mounted.
-```
-<stack:script stack:stage=“install-post”>stuff</stack:script>
+</stack:stack>
 ```
 
-First boot: after network and other services are up. This runs last before login.
+#### Disabling
+
+For the over optimizers with nothing better to do, you can also request the installer not install a package. Again operating systems handle this request differently and you will often find the installer declines your request when dependencies require it.
+
+To disable a package add the `stack:enable="false"` XML attribute to the package tag. The default, which does not need to be specified in `stack:enable="true"`.
+
+#### Patterns
+
+Most operating systems have a notion of package groups, for example in SLES these are call software patterns. You can use the package tag to install these as well but you need to add the `stack:meta="true"` attribute to the tag. The default is `stack:meta="false"`. There is no support for disabling meta packages.
+
+
+### Scripts
+
+Adding installation scripts is done with the `stack:script` tag.
+
+#### Stages
+
+Depending on the operating system scripts can be run at five different stages during installation. Just like the `stack:package` tag these are specified using XML attributes.  The different stages are:
+
+1. `stack:stage="install-pre"` : before disk partitioning
+1. `stack:stage="install-pre-package"` : before package installation
+1. `stack:stage="install-post"` : after package installation
+1. `stack:stage="boot-pre"` : after reboot before init scripts
+1. `stack:stage="boot-post"` : after init scripts
+
+The default stage is `stack:stage="install-post"`.
+
+Not all operating systems support all these stages. The following table shows if the stage is supported natively by the installers, is provided by stacki, and not supported.
+
+
+OS     | install-pre | install-pre-package | install-post | boot-pre | boot-post
+------ | ----------- | ------------------- | ------------ | -------- | ---------
+RedHat | native      |                     | native       | stacki   | stacki
+SLES   | native      | native              | native       | native   | native
+
+
+#### Chroot
+
+Scripts run in the `stack:stage="install-post"` have to option of running chrooted into the install image, or non-chrooted. It is extremely rare for a script to require the non-chrooted environment, but when needed add the `stack:chroot="false"` attribute to the script tag (default is `stack:chroot="false"`).
+
+#### Language
+
+Script are assumed to be written for the Bash shell, but can also be written in any language. To specify a different language use the `stack:shell` attribute and specify the complete system path to the interpreter. For example, to use the Stacki version of Python add the attribute `stack:shell="/opt/stack/bin/python"` to the script tag.
+
+#### Files
+
+You might want to add files, append to files, or create scripts to be run. The place to do that is in a `stack:file` tag.
+
+File tags can only be used within `stack:script` section, and will only work if the shell is Bash (or sh compatible). The tag is really just a helper function see you don't have to write shell here documents. You don't need to use it to create files but you should.
+
+For example, to modify the message of the day file do the following:
 
 ```
-<stack:script stack:stage=“boot-post”>stuff</stack:script>
+<stack:script>
+<stack:file stack:name=“/etc/motd”>
+Backend installed by Stacki: &hostname;</stack:file>
+</stack:script>
+
 ```
 
-#### Altering script tags
+In this example we are writing an motd that says "Backend installed by Stacki X", where X is going to look up the &hostname; host attribute substitute it. So the motd on backend-0-0 will read:
 
-Installation can be altered by providing parameters to script tags.
+```
+Backend installed by Stacki: backend-0-0
+```
 
-Alter behavior by adding the following:
-* **stack:shell=“python|bash|perl"**
-  - The code must be written in the language defined by “shell”
-  only use in `<stack:script>` tags.
+and on backend-0-2
+
+```
+Backend installed by Stacki: backend-0-2
+```
+
+See [Using Attributes](Using-Attributes) for more examples of how SUX uses XML entities for host attributes.
+
+You can alter the behavior of file tags by adding one or more of the following XML attributes.
+
+* `stack:mode="MODE"`   Where MODE is "append" or "create" (default is "create")
+
+* `stack:perms="PERMS"` Where PERMS is the UNIX numeric file permissions (e.g. "755")
+
+* `stack:owner="OWNER"` Where OWNER is either the UNIX user or the UNIX user:group for the file. These values can be numeric or text. For example `stack:owner="apache"` to set only the user, and `stack:owner="root:apache"` to set both the user and group.
+All operating system installers run as root and will create files owned as "root:root", this attribute is only needed to create non-root files.
+
+### Conditionals
+
+The `stack:cond` attribute can be added to any SUX tag to define a conditional section of the profile.  For example:
+
+```
+<stack:package stack:cond="False">tcpdump</stack:package>
+```
+
+SUX will parse the above XML and evaluate the conditional as false, and the tcpdump package will not be added to the installer's package list. Instead of just testing on True or False we can actually test on the Stacki host attributes.  To see what you can test on for a given host look at the output of `stack list host attr <hostname>`. Any attribute in the list is available for testing inside the conditional.
+
+For example to test if a machine is running is Amazon EC2 we can look at the `platform` attribute. Note, that at attribute does not have to exist to use it, if an attribute isn't there it will just evaulate to False.
+
+```
+<stack:package stack:cond="platform == 'aws'">tcpdump</stack:package>
+```
+
+In the above we replace the simple condition with the Python looking statement `platform == 'aws'`. This looks like Python because it is (sort of) but will the Stacki host attributes all defined as variables.
+
+The `stack:cond` XML attribute can be added to any SUX tag.
 
 
-* **stack:chroot=“false”** (or “true”)
-  - runs the script in a non-chroot environment (outside installing system)
-  only use for in `<stack:script stack:stage=install-pre|post>`
+### Examples
 
+#### non-chrooted script
 
-* **stack:cond=“database attribute”**
-  - Will run ONLY if the conditional is met. Python style syntax.
-  - e.g `<stack:script stack:stage=”install-post” stack:cond=“os.version == ‘12.x’”>`
-  - stack:cond can be used in all stack tags.
-
-
-#### Script tag examples
-"install-post" script tags can be chroot or non-chroot. By default chroot is true, so a post install script sets up scripts/files/etc. in the environment being installed.
-
-##### A non-chroot script, i.e. chroot=false, runs in the installer environment.
-
-This is a non-chroot example:
+In this example a script in the `stack:stage="install-post"` is run as `stack:chroot="false"` so we can copy a file from the installer ramdisk onto the system disk. Not the `stack:stage` attribute is not used here as that is the default stage for all scripts.
 
 ```
 <stack:stack>
 
-<stack:script stack:stage="install-post" stack:chroot="false">
-#!/bin/sh
+<stack:script stack:chroot="false">
 mkdir -p /mnt/tmp/stack_site
 cp /tmp/stack_site/__init__.py /mnt/tmp/stack_site/
 </stack:script>
@@ -158,97 +226,16 @@ cp /tmp/stack_site/__init__.py /mnt/tmp/stack_site/
 </stack:stack>
 ```
 
-##### Script with a conditional:
+#### conditional script
 
-Uses a conditional to fire if and only if the os.version is 12.x. Please see [Using Attributes](Using-Attributes) for more details.
-
-This is a chrooted script by default, so affects the environment being installed.
+In this example the disk label is modified only is the operating system version is "12.x" (which in this example refers to SLES 12.x). Here we specify the `stack:stage` even though it isn't required, and use a `stack:cond` that tests to `os.version` attribute.
 
 ```
-stack:stack>
+<stack:stack>
 
 <stack:script stack:cond="os.version == '12.x'" stack:stage="install-post">
 /usr/bin/mlabel x:BOOTEFI
 </stack:script>
 
 </stack:stack>
-```
-
-#####  A simple install-pre:
-
-This runs before partitioning in the environment being installed. There is no notion of chroot for pre scripts.
-
-```
-<stack:stack>
-
-<stack:script stack:stage="install-pre">
-if [ -d /sys/firmware/efi ]; then        
-	netboot=`efibootmgr | awk '/^BootCurrent:/{print $2;}'`        
-	[ ! -z $netboot ] &amp;&amp; echo $netboot/tmp/uefi_netbootfi
-</stack:script>
-
-</stack:stack>
-```
-
-##### First boot script.
-
-Sometimes configuration has to happen during the first boot after services are up. The "boot-post" stage will always be the last thing to be run during the first boot after installation. Anything that has to be done to make the machine ready that you can't do during install, do here.
-
-```
-<stack:stack>
-
-<stack:script stack:stage="boot-post”>
-systemctl enable uefi-boot-method
-systemctl start uefi-boot-method
-</stack:script>
-
-</stack:stack>
-```
-
-There is no boot-pre example. It's something that's rarely used.
-
-### File tags.
-
-You might want to add files, append to files, or create scripts to be run. The place to do that is in &lt;stack:file&gt;&lt;/stack:file&gt; tags.
-
-File tags always go between script tags. If you have a file tag outside of a stack:script tag, your install script will barf, prolifically.
-
-Here's a simple example:
-
-```
-<stack:script stack:stage=“install-post”>
-<stack:file name=“/etc/motd”>
-Backend installed by Stacki: &hostname;</stack:file>
-</stack:script>
-
-```
-
-I'm writing an motd  that says "Backend installed by Stacki ...." The ... is going to look up the &hostname; in the database and substitute it. So the motd on backend-0-0 will read:
-
-```Backend installed by Stacki: backend-0-0```
-
-and on backend-0-2
-
-```Backend installed by Stacki: backend-0-2```
-
-#### Altering file tags
-
-You can alter the behavior of file tags by adding one or more of the following parameters:
-
-* add stack:mode=“append” to append.
-* add “stack:perms="755”"" to set permissions (default is 644 or rw-r—r—)
-* add “stack:owner="prometheus:prometheus"” to set userid/gid
-
-##### File tag examples.
-
-Changing permissions and append to /etc/ssh/sshd_config
-
-```
-<stack:script stack:stage=“install-post”>
-
-<stack:file stack:name="/etc/ssh/sshd_config" stack:perms="640” stack:mode=“append”>
-ForwardX11 No
-</stack:file>
-
-</stack:script>
 ```

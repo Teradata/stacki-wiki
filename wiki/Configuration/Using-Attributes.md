@@ -15,10 +15,16 @@ By default, Stacki comes with a set of attributes that help direct the base inst
 
 There are three levels on which an attribute can be defined.
 
-The order is global -> appliance -> host.
+The order is global -> environment -> os -> appliance -> host.
 
 * Global: The top level attribute. Default designations should be put at a global level.
+
+* Environment: Second level for splitting a single cluster into multiple clusters. By default all hosts are in the same environment.
+
+* OS: Operating system specific attributes. By default Stacki supports just one operating system per Frontend.
+
 * Appliance: These values are added to or modified by those in the appliance list that this server belongs to.
+
 * Host: Host attributes assigned specifically to a given host are added or modified.
 
 This leaves us with a custom, per-server list of attributes that will be used primarily for generating installation, but also for classification.
@@ -87,7 +93,7 @@ There are more details in the [Carts](Carts) section of the documentation, but I
 
 #### Variable substitution
 
-In a kickstart/autoyast/preseed file any attribute's key can be called by using an xml entity format which is `&<attrkey>;`.
+In a kickstart/autoyast/preseed file any attribute's key can be called by using an xml entity format which is `&attrkey;`.
 
 Let's look at the resolv.xml file for an example. There is this bit of code snippet:
 
