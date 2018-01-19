@@ -1,13 +1,12 @@
-## Discover Nodes
 
-### Things to check
+## Things to check
 1. Node network cables are plugged in.
 2. Nodes are cabled to the same network as the frontend _private_ interface.
 3. Nodes are set to PXE first.
 4. Nodes have a system disk.
 5. Node is not a laptop.  
 
-### Discovery
+## Discovery
 
 In Discovery mode the frontend will listen for any host requesting a
 DHCP address and will respond with an address from its managed private
@@ -88,7 +87,7 @@ Very few people want the default settings you currently have, so now go to [Cust
 
 Customization is an iterative process. You will be re-installing your machines over and over until you're happy and you've got it right.
 
-### Re-Installation
+## Re-Installation
 
 Getting a machine to have a.) a known good state, b.) a refresh of the os (bugfixes, kernel updates), or c.) a complete reinstall including data disks, you'll want to reinstall.
 

@@ -1,5 +1,3 @@
-## Stacki command line
-
 The stacki command line is where you'll interact with your cluster for configuration and on-going management. The full details of every command are available in the [Reference CLI section](stacki-CLI-documentation).
 
 This is a basic primer.
@@ -23,7 +21,7 @@ Loading spreadsheets also short-cuts running many of these commands at the comma
 
 This documentation has numerous examples of "stack" commands, and are the ones you will most commonly use. And many others are available at hand in the [Stacki 5.0 Cheat Sheet](CheatSheet).
 
-### The most common command
+## The most common command
 
 The most common command for interacting with your backend machines on a daily basis is:
 
@@ -43,7 +41,7 @@ backend-0-3 11:28:20 up 2 min,  0 users,  load average: 3.00, 1.43, 0.55
 backend-0-4 11:28:19 up 4 min,  0 users,  load average: 1.32, 1.34, 0.64
 ```
 
-### Ways to define hosts
+## Ways to define hosts
 
 When running a command on hosts you can do:
 
@@ -74,7 +72,7 @@ backend-0-4 Complete!
 </snip>
 ```
 
-### Rule of thumb:
+## Rule of thumb
 
 If you don't know how to do something with the stack command line, we probably do, ask on the Slack list or Googlegroups.
 

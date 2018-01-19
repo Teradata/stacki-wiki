@@ -1,4 +1,3 @@
-### Creating Software Pallets
 
 There may come a point where it makes sense to create your own pallets. There are three types: RPM only, configuration only, and configuration + RPMS.
 
@@ -8,11 +7,11 @@ All pallets come in the ISO format. They can be pulled from the web for OS distr
 
 RPM-only pallets are the simplest to create.
 
-##### RPM-only Pallet
+## RPM-only Pallet
 
 Creating an RPM-only pallet is simple and assumes your frontend has access to the internet. If not, put up a VirtualBox frontend on your desktop/laptop and create the pallets there and then put them on the real frontend.
 
-###### Creating pallet from a URL.
+### Creating pallet from a URL.
 
 Let's say I want all of EPEL. (This is actually easier to do with repoconfig/repoid from EPEL but I want an example.)
 
@@ -51,7 +50,7 @@ Building ISO image for disk1
 
 Which means the ISO is built.
 
-###### Creating pallet from a repoid.
+### Creating pallet from a repoid.
 
 
 Sometimes there's an application you want to install, and a repoconfig file

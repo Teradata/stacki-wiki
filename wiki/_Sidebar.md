@@ -51,7 +51,7 @@
   * [Example CSV Files](Example-CSV-Files)
 * [Release Notes for 5.0](ReleaseNotes)
 * [Diffs from Stacki 4.0](DiffsFrom40)
-* [Guano](Guano)
+
 
 ### Previous Releases
 

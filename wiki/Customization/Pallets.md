@@ -1,5 +1,3 @@
-## Pallets
-
 Pallets are a fundamental unit of configuration in Stacki. They allow you to add additional software to install on backend nodes. Pallets provide a simple way to keep multiple versions or to do patching/upgrading.
 
 All pallets come in ISO format. They can be pulled from the web for OS distributions, created from a local directory, or pulled remotely from a  yum/zypper repository by mirroring.

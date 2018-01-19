@@ -1,10 +1,8 @@
-## Changing the IP address space across a Cluster.
-
 Reinstalling a frontend to change the private network is a *Stacki best practice*. The procedure you are now reading is a *Stacki non-best practice* and is documented to make you go away.
 
 You've been warned, but you persist in wanting what you want. You should know changing the private network on a frontend can raise the level of uncertainty about the validity of your configuration. If that is acceptable to you, then do the following. If it's not acceptable, reinstall the frontend.
 
-### Save existing network information
+## Save existing network information
 1. Dump the hostfile
 
    ```
@@ -22,7 +20,7 @@ You've been warned, but you persist in wanting what you want. You should know ch
    # stack report networkfile > networks.stacki
    ```
 
-### Change CSV Files
+## Change CSV Files
 
 1. Open network file, and add a new line. Change the file from
 

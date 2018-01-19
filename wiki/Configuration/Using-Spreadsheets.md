@@ -1,5 +1,3 @@
-## Stacki and Spreadsheets.
-
 We use spreadsheets - CSV spreadsheets to be specific.
 
 You're laughing it up fuzzball.

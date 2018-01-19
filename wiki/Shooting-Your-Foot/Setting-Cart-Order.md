@@ -1,5 +1,3 @@
-## Getting the Order You Want for Your Carts
-
 I've been asked the same question twice in the past month so I figured I would record it for posterity.
 
 If you add a couple of carts and enable them on a box, the cart will always run as one of the last installation snippets. Hoever, the carts themselves are picked up in random order. So when you add a cart with a sensible name, what if you want to run one before the other?

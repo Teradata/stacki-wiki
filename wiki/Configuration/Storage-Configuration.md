@@ -1,12 +1,10 @@
-## Storage Controller Configuration
-
 Stacki manages storage at both the [Partition](Partitioning-Configuration) level and the hardware RAID controller level.
 
 There are two ways to configure a storage controller: using a spreadsheet and the command line.
 
 Using a spreadsheet is easier and a *Stacki best practice*, so, use a spreadsheet.
 
-### Raid Controllers
+## Raid Controllers
 
 Stacki can automatically configure LSI MegaRAID controllers.
 
@@ -18,7 +16,7 @@ There are also a number of on-board RAID controllers that do "Fake Raid." Stacki
 
 "Fake Raid" is software raid done with a hardware BIOS config. If you're not dual booting Windows and Linux, then it's colossally stupid to enable it deliberately. Turn it off and do real Linux software raid, which we can do easily.
 
-### Spreadsheet
+## Spreadsheet
 
 The configuration of disk controllers can be specified in a
 spreadsheet with the following columns:
@@ -105,7 +103,7 @@ You can view your storage controller configuration by executing:
 # stack list storage controller
 ```
 
-### The _nukecontroller_ attribute
+## The _nukecontroller_ attribute
 
 A host's hardware RAID controller will only be reconfigured if the _nukecontroller_ attribute is set to _true_.
 As an example, to set the _nukecontroller_ attribute for host _backend-0-0_, execute:
@@ -122,7 +120,7 @@ After the host has completed installation, the _nukecontroller_ attribute for th
 
 This ensures that the controller will not be reconfigured on the next installation.
 
-### Command line
+## Command line
 
 The command line tools can do that same thing that using a spreadsheet does. So if you prefer typing the same command over and over with only slight changes, look at the "storage controller" commands:
 

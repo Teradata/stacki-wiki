@@ -1,4 +1,3 @@
-## Quick Start Guide
 
 The quickstart guide takes you through a frontend install with at least one backend.
 
@@ -16,7 +15,7 @@ Do not follow this guide if:
 
 (If you really, really, really...really, need 2 or 3, use [Stacki-4.0](https://github.com/Teradata/stacki-documentation-4.x/wiki).
 
-### Default cluster install
+## Default cluster install
 
 Three steps:
 1. Download the software
@@ -31,7 +30,7 @@ Don't do any of this if you haven't checked your machine/VM against the requirem
 
 If you ask for help, it's the first thing we're going to ask you, and you will sense the silent acid rain of mockery in our Slack responses.
 
-### 1. Check Requirements
+## 1. Check Requirements
 Frontend:
 * At least 4G of memory, especially for a VM.
 * A least 100G of system disk.
@@ -44,7 +43,7 @@ Backend:
 * At least one network that talks to the frontend.
 * PXE first!
 
-### 2. Download the software (formerly Step 1)
+## 2. Download the software (formerly Step 1)
 
 The current version is Stacki 5.0.
 
@@ -52,7 +51,7 @@ The current version is Stacki 5.0.
 
 Check the md5sum. Yeah, no, check the md5sum. Remember, silent acid rain of mockery.
 
-### 3. Install the frontend (formerly Step 2)
+## 3. Install the frontend (formerly Step 2)
 
 Burn the ISO to a DVD or USB. Then put the just burned DVD into an external, internal, or virtual DVD drive.
 
@@ -115,7 +114,7 @@ Log-in and run the following to verify it worked:
 
 Looks good! Let's go!
 
-### 4. Install backend(s) (formerly Step 3)
+## 4. Install backend(s) (formerly Step 3)
 
 ** Please note: Installing laptops as backends is not supported. Ever. Evvvvvvvverrrrrrrrrr. Don't write, don't call, don't text if you're trying to install a laptop as a backend server. Our most acidic mockery is reserved for you. (pH level = 0 = battery acid) If you're successful, great, don't tell us, we don't care.
 
@@ -139,7 +138,7 @@ You now have a blank screen waiting to receive DHCP requests.
 
 ![backend_install_vbox_3](images/backend/backend_install_vbox_3.png)
 
-### Set-up the backend(s)
+## Set-up the backend(s)
 
 These two pictures show the minimal requirement for a backend node. It's just an example.
 

@@ -1,5 +1,3 @@
-## Boxes
-
 Stacki enables you to create a **box** which is a composition of pallets
 and (optionally) carts.
 

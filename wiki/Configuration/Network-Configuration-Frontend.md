@@ -1,4 +1,3 @@
-## Adding networks - Frontend
 
 An initial installation defaults to having one network defined as "private." This is the network the frontend and the backend machines speak to each other on. Think of it as the "management network" which, apparently, is a thing.
 
@@ -10,7 +9,7 @@ To see how you use a defined network on the frontend for backend nodes, go to th
 
 > **Note:** The switch on the "private" network has to be have the ports set to Port Fast or have Spanning Tree off. If you're getting TFTP timeouts, the switch parts are likely not configured correctly.
 
-### Command line
+## Command line
 
 Networks on the command line are easy so I don't always use a spreadsheet. If you have a complicated network topology, a network spreadsheet helps a lot. If you have to replicate network setup across multiple clusters, use a spreadsheet.
 
@@ -41,7 +40,7 @@ corporate: 10.2.0.0 255.255.0.0 10.2.2.201   1500  corporate  False True
 
 Machines can now have interfaces on one or both networks.
 
-### Spreadsheet - simple example
+## Spreadsheet - simple example
 
 Sometimes I'm just lazy and I would rather edit than type out the command for adding a network. So I do this:
 

@@ -1,5 +1,3 @@
-## Adding Configuration Files to Carts
-
 Whatever you can do in a shell, you can do during install.
 
 Our assumption is that when a machine comes up, it should be exactly the way you want at first boot. This way you're certain your site specific customization is going to run once you hit the install/reinstall button, because you've already done the hard configuration scripting to make it so.
@@ -8,7 +6,7 @@ Which means you probably don't want to recreate all of that work just because yo
 * Not lose work you've already done.
 * Put your already existing config files where they belong: on the installing node.
 
-###  *site-custom* cart example continued
+##  *site-custom* cart example continued
 
 In the [Adding RPMS](Adding-RPMS) section, we started configuring an *site-custom* cart as an example -- we'll continue to use it here.
 

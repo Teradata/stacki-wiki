@@ -1,8 +1,6 @@
-## Creating OS Pallets
-
 If you need any software housed in the CentOS distribution, you'll want to add the full distribution as a pallet - along with the CentOS updates for that version.
 
-### Adding an OS pallet
+## Adding an OS pallet
 
 These commands work with all OSs, but CentOS is the example.
 

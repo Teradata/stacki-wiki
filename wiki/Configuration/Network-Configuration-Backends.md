@@ -1,6 +1,5 @@
-## Network Configuration for Backends
-
 Stacki handles networking for frontends and backends which includes:
+
 * Discovering all available network interfaces on initial install.
 * Setting up all NIC interfaces with the correct mac/ip/hostname.
 * Setting up bonding and vlans if configured.
@@ -12,11 +11,11 @@ If you define networks in the database, it will get set-up correctly on the back
 
 Configuration can be done during installation or after a node is installed.
 
-### Network Configuration for the frontend.
+## Network Configuration for the frontend.
 
 Make sure you've created the network configuration on the frontend for any additional networks as per the [Network Configuration - Frontend](Network-Configuration-Frontend) docs.
 
-### Using the new network.
+## Using the new network.
 
 The first installation of a backend node always discovers every NIC presented in the BIOS, whether it's actually wired or not. If it exists, Stacki finds it and adds it to the database.
 
@@ -89,7 +88,7 @@ vland,172.16.20.0,255.255.255.0,172.16.20.1,1500,vland,True,False
 
 I've taken care of the frontend NICs prior to this. Please see the [Frontend Network Configuration](Network-Configuration-Frontend) "Spreadsheet - more advanced example" section.
 
-### Configuring the backend NICs.
+## Configuring the backend NICs.
 
 I'm going to edit my hosts.csv. It should now look like this after an **_extensive_** Excel editing session.
 
@@ -134,7 +133,7 @@ Now remember, this is not the network configuration on the currently installed h
 
 There are two ways to get this network configuration on the backends.
 
-#### Command line
+### Command line
 
 ```
 # stack sync host network a:backend
@@ -144,7 +143,7 @@ That's it. By default this SSHs (in parallel) to the backends and rewrites the c
 
 Now everything should be bonded and on the correct network.
 
-#### Reinstall
+### Reinstall
 
 Certainty, it's a beautiful thing. Syncing is good for "right now this minute" and not having to reinstall. If you want certainty, reinstall the backends.
 

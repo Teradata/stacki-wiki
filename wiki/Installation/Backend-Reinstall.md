@@ -1,5 +1,3 @@
-## Reinstall backend nodes
-
 We are putting this here because it is a common task especially when getting your configuration correct.
 
 There are several reasons to reinstall a backend node.
@@ -8,7 +6,7 @@ There are several reasons to reinstall a backend node.
 * You added software or a cart and want to refresh the OS.
 * You want to nuke the whole thing and start over.
 
-### Reinstall to refresh
+## Reinstall to refresh
 
 ```
 # stack set host boot a:backend action=install
@@ -16,7 +14,7 @@ There are several reasons to reinstall a backend node.
 # stack run host command="reboot"
 ```
 
-### Reinstall to start over
+## Reinstall to start over
 
 Do this if:
 * Your level of certainty is no longer high.

@@ -1,5 +1,3 @@
-## Jumbo Pallets
-
 A "Jumbo Pallet" is a pallet that consists of combining the Stacki pallet with the OS pallet of your choice to install a frontend.
 
 It's possible to add additional pallets, but the size grows and can easily be larger than a DVD or even a smallish USB can hold.
@@ -8,7 +6,7 @@ If you're going to create and use a jumbo pallet, it's advised to install the fr
 
 This is only for a frontend so it contains the same OS that you want on the backends.
 
-###  Create a Jumbo pallet
+##  Create a Jumbo pallet
 
 You're going to have to start with a stacki frontend. Follow the [Frontend Install New](Frontend-Install-New) but do it on a virtual machine. This gives you a minimal frontend and allows you to create additional pallets.
 
@@ -56,7 +54,7 @@ This pallet can be used in a [Frontend Install - New](Frontend-Install-New) inst
 
 There are options to the 'stack create pallet' that allow you to name (rather than the stacki+whatever*.iso) the pallet or version it.
 
-### Another example
+## Another example
 
 This time we'll added the updates to CentOS 7.4 and the extras and name and version it. The CentOS-Updates and CentOS-Extras pallets were built with `stack create mirror` as per the following commands. (See the [Adding OS Pallets](Adding-OS-Pallets) for enlightenment.)
 

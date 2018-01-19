@@ -1,4 +1,3 @@
-# Stacki ReST API
 
 ## Installing Stacki REST API
 

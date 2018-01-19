@@ -1,10 +1,8 @@
-##### Kickstart has an %include directive to include files into the kickstart.
-
 **Note:** This is not verified for any other OS other than RHEL variants.
 
 Can I use the %include to use files I already have without having to rewrite them in Stacki xml format?
 
-##### Global kickstart directory
+## Global kickstart directory
 
 Typically with kickstart, you rebuild the initrd.img to include the files that you want to pull in the %pre or %post stanzas of the kickstart file. That's not practical with Stacki and is way more work than you probably want to do.  However, the %include directive allows you to use a url to pull files from the webserver, which you have. On the frontend.
 
@@ -28,7 +26,7 @@ chgrp -R apache /export/stack/<new dir>
 
 Or the kickstart won't pull the files you've indicated.
 
-##### Using %include in cart.
+## Using %include in cart.
 
 When you create a cart with:
 

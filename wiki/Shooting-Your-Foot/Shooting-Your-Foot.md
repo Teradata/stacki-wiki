@@ -1,4 +1,3 @@
-### Things you can do but probably shouldn't..
 
 We have a sayin' 'round these parts. (Well, I have a saying.)
 
@@ -17,7 +16,7 @@ You're forewarned, apparently armed, and your foot is down. Help is in Stacki Sl
 * [IP Address Change](IP-Address-Change) - Here be Monsters.
 * [Replacing and extending Stacki XML](Replacing-Extending-XML) - Relatively safe.
 
-### Don't decide you want a different private network
+## Don't decide you want a different private network
 
 You read the warnings right? Get the *private* network correct. The right answer is to reinstall if you didn't. Seriously, you'll be happier, and we'll support you if you do that. All bets are off if you decide to attempt to change everything on the frontend that would need to change in order to fix your private network.
 
@@ -25,13 +24,13 @@ All right fine.
 
 If you want to change this, go to the [Changing the Private Network](IP-Address-Change) docs.
 
-### Don't change the /root/.ssh/id_rsa.pub key.
+## Don't change the /root/.ssh/id_rsa.pub key.
 
 Don't change the permissions on it. They should be 644 or rw-r--r--. This is what gets put into /root/.ssh/authorized_keys on the backend nodes. If you change the permissions to something more restrictive...Bang! no password-less ssh to the backends.
 
 Don't. Do. It. Dammit.
 
-### Using additional repositories
+## Using additional repositories
 
 Using the Centos*.repo files are a recipe for disaster. If you feel you must use them, considering mirroring the repository and adding them as pallets as described in [Creating Software Pallet](Creating-Software-Pallets).
 
@@ -47,7 +46,7 @@ Try:
 There may be others. Use Google.
 
 
-### When I ssh into the frontend or the a backend node, ssh takes a lonnnggggg time.
+## When I ssh into the frontend or the a backend node, ssh takes a lonnnggggg time.
 
 Usually this means DNS isn't resolving correctly.
 
@@ -84,7 +83,7 @@ private 10.3.1.0    255.255.255.0 10.3.1.1     1500 local  True  True
 public  192.168.0.0 255.255.0.0   192.168.10.1 1500 jkloud False False
 ```
 
-### How do I update or add an rpm to a node?
+## How do I update or add an rpm to a node?
 
 You have ssh password-less access to all the backend nodes and a parallel command to run commands on all of those.
 
@@ -100,7 +99,7 @@ You'll want to put the RPM name in a cart between package tags so it's there for
 <stack:package>myrpmname</stack:package>
 ```
 
-### Help, my stack commands no longer work!
+## Help, my stack commands no longer work!
 
 Yesterday things like "stack list host" worked. Today you have a horrible traceback error. What's wrong?
 
@@ -114,7 +113,7 @@ Reboot it. Really. I can wait. Try the command again.
 
 If you don't reboot, I have to give you a list of all the services that need to be restarted because you managed to not watch something so simple as the fullness of your partitions. No.
 
-### How do i subscribe my machines. I'm using RedHat?
+## How do i subscribe my machines. I'm using RedHat?
 
 When was the last time you had a problem that could be traced back to the OS and not yours or someone else's code?
 

@@ -1,5 +1,3 @@
-## Attributes
-
 "Attributes" are **key/value pairs** stored in the database that allow users to:
 
 * Modify how a server works
@@ -33,7 +31,7 @@ If you have set a global attribute default to "True" and you've set the same att
 
 This allows us to program our cluster rather than keeping multiple files around for different scenarios. We can program different configuration based on a defined attribute.
 
-### Listing Attributes
+## Listing Attributes
 
 To see what attributes you have, use the "stack list command."
 
@@ -57,7 +55,7 @@ Shows the attributes for a given host.
 
 An attribute list is concatenated from Global + Appliance + Host. With the layer below overwriting the layer if both layers define the same attribute.
 
-### Adding/Setting attributes
+## Adding/Setting attributes
 
 Global:
 `stack set attr attr=[name] value=[new setting]`
@@ -72,7 +70,7 @@ Setting an Attribute assigns the value to the key name. It will create the attr 
 
 `stack add attr` commands do the same, but fail if the attribute already exists.
 
-#### Removing attributes
+### Removing attributes
 
 This is actually fairly obvious.
 
@@ -85,13 +83,13 @@ Appliance:
 Host:
 `stack remove host attr attr=[key]`
 
-### Using attributes in Carts.
+## Using attributes in Carts.
 
 The real power of attributes comes when using them in carts. Attributes can be used for variable substitution and used in conditionals.
 
 There are more details in the [Carts](Carts) section of the documentation, but I'll give an example here.
 
-#### Variable substitution
+### Variable substitution
 
 In a kickstart/autoyast/preseed file any attribute's key can be called by using an xml entity format which is `&attrkey;`.
 

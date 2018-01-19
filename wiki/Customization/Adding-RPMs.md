@@ -1,10 +1,8 @@
-## Adding software
-
 One of the easiest ways to add functionality and customization is to add software to your backend nodes.
 
 There are couple ways to do this - this is the no-brainer, gottagetitworkingrightnow, easy way.
 
-### Creating a Cart
+## Creating a Cart
 
 Carts are created by administrators in order to customize the configuration of backend nodes.
 
@@ -38,7 +36,7 @@ graph/cart-site-custom.xml
 
 Now edit cart-site-custom-backend.xml to make the changes you want to install on backend nodes.
 
-### Add already existing RPM.
+## Add already existing RPM.
 
 ***If:***
 * An RPM already exists in one of the pallets on the frontend.
@@ -187,7 +185,7 @@ tcpdump
 Now when a backend host is reinstalled, these RPMS will be on the installed hosts.
 
 
-### Add RPMS on the fly
+## Add RPMS on the fly
 If you want to add the RPMs on the fly, i.e. you don't want to reinstall your machines then execute:
 
 	# stack sync host repo a:backend
@@ -200,7 +198,7 @@ Then to add *rpmname* to all your backend nodes.
 
 	# stack run host a:backend command="yum clean all && yum -y install <rpmname>"
 
-### Creating your own RPMS.
+## Creating your own RPMS.
 
 Stacki has the ability to create rudimentary RPMS from directories to allow installing site specific software. Putting those applications in RPMS is recommended because it allows you to add them to a cart and take advantage of the peer-to-peer installer during installation. You can find details in [Creating Site RPMS](Creating-Site-RPMS)
 

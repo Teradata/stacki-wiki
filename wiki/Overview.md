@@ -1,6 +1,4 @@
-## Stacki Overview
-
-### Putting real electrons on real silicon since 199....a long time.
+## Putting real electrons on real silicon since 199....a long time.
 
 "Stacki" = Stack Installer
 
@@ -8,7 +6,7 @@ We install all your stack.
 
 And it's pronounced "Stack-ee" not "Stack-eye" or "Stuh-kai."
 
-### Yeah, whatever - what is it?
+## Yeah, whatever - what is it?
 
 Stacki is a CentOS/RHEL/Ubuntu/SLES bare metal install tool that takes servers from bare hardware (or virtual hardware) to working Linux, ready to install applications. It doesn't install images of OSs, it installs the OS with native kickstart, preseed or autoyast.
 
@@ -52,7 +50,7 @@ The following is a list of some of the applications that Stacki is used to deplo
 
 If you can do it in Linux, Stacki can automate it and deploy it over hundreds of machines.
 
-### Does Stacki fit?
+## Does Stacki fit?
 
 Look, Stacki isn't needed by everyone for everything. We're focused on installing clusters fast and at scale as part of the iterated data center.
 

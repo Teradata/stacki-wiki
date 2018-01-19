@@ -1,6 +1,4 @@
 
-## Partitioning
-
 Use a spreadsheet. Don't make me come over there.
 
 [Why Stacki Uses Spreadsheets](Using-Spreadsheets)
@@ -9,7 +7,7 @@ Like a storage controller config, partitioning config done in a spreadsheet is a
 
 > **Please note:** Partitioning is done in parallel. Stacki is the only installer that does this.
 
-### Spreadsheet
+## Spreadsheet
 
 The configuration of disk partitions can be specified in a
 spreadsheet with the following columns:
@@ -63,13 +61,13 @@ Additionally, ``sdb`` and ``sdc`` will be configured for all _backends_ as singl
 > **Note:** a "biosboot" partition must exist for any system disk on a CentOS/RHEL 7.x system. Make sure you define this.
 
 
-### LVM
+## LVM
 
 Stacki supports specifying LVM configuration via a spreadsheet. **lvm**, **volgroup** are keywords that indicate that the partition needs to be setup via LVM. In the configuration for ``backend-0-1``,
 ``pv.01`` is configured as a physical volume on ``sdb`` with size as 8GB.
 ``volgrp01`` is a volgroup comprising of ``pv.01``. ``/extra`` is mounted as an lvm partition on volgroup ``volgrp01``.
 
-### Raid
+## Raid
 
 Software raid can also be defined easily in a partition file. Do this instead of the dumb software RAID defined in the hardware BIOS your equally cheap and dumb white box or bottom of the line A-list vendor box came with.
 
@@ -116,7 +114,7 @@ You can view your storage partition configuration by executing:
 # stack list storage partition
 ```
 
-### The _nukedisks_ Attribute
+## The _nukedisks_ Attribute
 
 A host's disk partitions will only be reconfigured if the _nukedisks_ attribute is set to _true_. On first install, all installing backend disks automatically have _nukedisks_ set to _false_. If you've added backend nodes via spreadsheet, you must set _nukedisks_ to _true_ as in the example below, before installing.
 

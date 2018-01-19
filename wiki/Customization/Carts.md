@@ -1,5 +1,3 @@
-## Using Carts
-
 **Carts** are the smallest increment of customization for backend nodes.
 
 Stacki allows the admin to customize the software

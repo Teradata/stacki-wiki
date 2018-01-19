@@ -1,4 +1,3 @@
-## Install an existing frontend
 
 A Stacki frontend can be installed on top of an existing Red Hat based server. The server must be running the x86_64 version of CentOS or RHEL 7.x.
 
@@ -64,13 +63,13 @@ The Installation Wizard is the same for either the New or the Existing installat
 
 The Installation Wizard is now text-based, because, The 90s!
 
-### Timezone
+## Timezone
 
 The first screen will appear and you will be prompted to enter your timezone:
 
 ![frontend_install_vbox_8](images/frontend/frontend_install_vbox_8.png)
 
-### Network
+## Network
 
 _**Do not get this network wrong! Changing it after the fact means a RE-INSTALL of the frontend.**_
 
@@ -88,13 +87,13 @@ Click _Continue_ to configure the network interface.
 
 ![frontend_install_vbox_10](images/frontend/frontend_install_vbox_10.png)
 
-### Password
+## Password
 
 Enter the password for the **root** account on the frontend.  This is also the root password for the backend nodes. Choose a better one than shown here.
 
 ![frontend_install_vbox_11](images/frontend/frontend_install_vbox_11.png)
 
-### Choose Partition
+## Choose Partition
 
 If _Automated_ mode is selected, the installer will
 repartition and reformat the first discovered hard drive
@@ -119,7 +118,7 @@ In _Manual_ mode, the installer brings up a partition setup
 screen after the wizard exits. In this mode, specify at least 16 GB
 for the root partition and a separate /export partition - which should be the largest partition. You should add a swap partition, and /var if you have made / only 16GB.
 
-### Add Pallets
+## Add Pallets
 
 Choose the _Pallets_ you want to install.
 
@@ -134,7 +133,7 @@ If you want to add pallets from another Stacki frontend or from a webserver host
 ![frontend_install_vbox_13](images/frontend/frontend_install_vbox_13.png)
 
 
-### Summary
+## Summary
 
 Review the installation parameters and click _Continue_ to proceed.
 
@@ -145,7 +144,7 @@ Once the install is done, you will be prompted to reboot. Reboot.
 
     # reboot
 
-### Verify
+## Verify
 Once the frontend is up, check to make sure you have what you think you have:
 
 You should see one host:

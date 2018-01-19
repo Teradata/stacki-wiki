@@ -1,6 +1,4 @@
 
-### Open Source<a name="license"></a>
-
 Stacki is released as open source with a combination of licenses.
 
 StackIQ forked the Rocks project source code in 2010 and maintains the original copyright to this code.
