@@ -29,7 +29,7 @@ This command will remove any SSH keys, enable a barnacle service to run on next 
 
 ### Register the AMI
 
-Register a new AMI using the shutdown Barnacle instance as the source. For CentOS make sure the AMI is public, the SLES keep the AMI private.
+Register a new AMI using the shutdown Barnacle instance as the source. For CentOS make sure the AMI is public, but for SLES keep the AMI private.
 
 ## Backend AMI
 
