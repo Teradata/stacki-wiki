@@ -42,6 +42,7 @@
   * [Changing Private Network](IP-Address-Change)
 * Developer
   * [Building From Source](Building-From-Source)
+  * [Building For AWS](Building-For-AWS)
 * Licenses
   * [Overview Licenses](Licenses)
   * [Rocks License](Rocks-License)
