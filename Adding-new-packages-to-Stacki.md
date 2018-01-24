@@ -38,7 +38,7 @@ Add it in `common/src/foundation/python-packages/packages.json` and `common/src/
 
 3. In `$OS/`, add an entry in `3rdparty.json` and `3rdparty.md`.  Keeping the filenames the same is important!
 
-4. Upload the tarball source if possible - or the RPM if not - to S3 in the `baseurl` location from 3rdparty.json
+4. Upload the tarball source if possible - or the RPM if not - to S3 in the `baseurl` location from `3rdparty.json`
 
 # Whoever's code it is, making sure the build doesn't fail
 
