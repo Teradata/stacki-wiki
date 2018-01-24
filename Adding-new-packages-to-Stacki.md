@@ -4,7 +4,7 @@ Stacki developers (or pallet developers trying to follow best practices), keep r
 
 Adding a new package to stacki might appear confusing or daunting, but there's actually a few fairly simple rules.
 
-Is this someone else's code, or is it code that we wrote?  Does this package conflict with an OS-provided package?  Should this package be installed on the frontend, the backend, both?  And should it be installed by default, or simply available if the user wants it?  Should this package exist in the installation environment?  Is the package needed on multiple OSes?  Can it be installed via `pip`?  There's a lot of questions here, but they should almost always be simple to answer.
+Is this code that we wrote, or is it someone else's code?  Does this package conflict with an OS-provided package?  Should this package be installed on the frontend, the backend, both?  And should it be installed by default, or simply available if the user wants it?  Should this package exist in the installation environment?  Is the package needed on multiple OSes?  Can it be installed via `pip`?  There's a lot of questions here, but they should almost always be simple to answer.
 
 # Where do you put the code itself (and the build instructions)?
 
@@ -30,7 +30,7 @@ Add it in `common/src/foundation/python-packages/packages.json` and `common/src/
 
     1. Put a copy of the license called `LICENSE.txt`.
 
-    2. Create a symlink named after the tarball of the source (for example `mariadb-10.2.6.tar.gz`) which points to `../../../3rdparty/mariadb-10.2.6.tar.gz`.  This directory will be populated by make 3rdparty, which should be called before Stacki itself is built and will fetch the actual .
+    2. Create a symlink named after the tarball of the source (for example `mariadb-10.2.6.tar.gz`) which points to `../../../3rdparty/mariadb-10.2.6.tar.gz`.  This directory will be populated by `make 3rdparty`, which should be called before Stacki itself is built and will fetch the actual packages.
 
     3. Create a `makefile` which has the full instructions for how to go from tarball to built binary.  It's probably easiest to look around other foundation packages to find a makefile that builds a package the same way yours builds.
 
