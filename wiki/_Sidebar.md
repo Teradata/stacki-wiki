@@ -43,6 +43,7 @@
 * Developer
   * [Building From Source](Building-From-Source)
   * [Building For AWS](Building-For-AWS)
+  * [Adding new packages to Stacki](Adding-New-Packages-To-Stacki)
 * Licenses
   * [Overview Licenses](Licenses)
   * [Rocks License](Rocks-License)
