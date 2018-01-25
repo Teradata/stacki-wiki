@@ -1,3 +1,4 @@
+## Adding Software Pallets
 
 There may come a point where it makes sense to create your own pallets. There are three types: RPM only, configuration only, and configuration + RPMS.
 

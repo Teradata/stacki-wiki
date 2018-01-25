@@ -1,5 +1,4 @@
-## Stacki Repos
-
+## About Repos
 
 The Stacki frontend acts as the yum/zypper/ubuntu repository for all packages you might want on a system.
 

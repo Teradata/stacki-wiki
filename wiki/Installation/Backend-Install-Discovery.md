@@ -1,10 +1,12 @@
+## Install Backends with Discovery
 
 ## Things to check
 1. Node network cables are plugged in.
 2. Nodes are cabled to the same network as the frontend _private_ interface.
 3. Nodes are set to PXE first.
 4. Nodes have a system disk.
-5. Node is not a laptop.  
+5. The switch has spanning tree off or the switch ports are set to "edge"
+6. Node is not a laptop.  
 
 ## Discovery
 

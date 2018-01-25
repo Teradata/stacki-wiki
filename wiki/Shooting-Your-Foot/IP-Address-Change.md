@@ -1,6 +1,10 @@
+## Changing the frontend ip address and hostname.
+
 Reinstalling a frontend to change the private network is a *Stacki best practice*. The procedure you are now reading is a *Stacki non-best practice* and is documented to make you go away.
 
 You've been warned, but you persist in wanting what you want. You should know changing the private network on a frontend can raise the level of uncertainty about the validity of your configuration. If that is acceptable to you, then do the following. If it's not acceptable, reinstall the frontend.
+
+*** NOTE: This is deprecated. The next release of Stacki you won't be able to do this. Because it's dumb.***
 
 ## Save existing network information
 1. Dump the hostfile

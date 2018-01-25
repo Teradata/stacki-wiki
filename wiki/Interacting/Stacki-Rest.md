@@ -1,5 +1,5 @@
 
-## Installing Stacki REST API
+## Stacki REST API
 
 The Stacki REST API is distributed as a web service
 running as a Django Application.

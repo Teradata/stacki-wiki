@@ -1,4 +1,4 @@
-## Installing bakend nodes
+## Installing backend nodes
 
 After the frontend is up and running, backend nodes can be installed.
 

@@ -1,3 +1,5 @@
+## Amazon Web Services
+
 NOTE: This section is describing an unreleased feature of Stacki. The code isn't even on our git master branch. It works, it's cool, but it isn't released yet.
 
 Stacki can also be installed inside Amazon EC2, and behaves very similar to standard bare-metal deployments. This guide assumes you already have an AWS account and are familiar with the AWS console or command line tools. You will need to know how to start instances and how to modify there settings (specifically the user data).
@@ -6,10 +8,10 @@ Stacki uses EBS volumes and HVM so the cloud environment is nearly identical to 
 
 The following table show the AMI's that are required.
 
-OS     | Frontend     | Backend
------- | ------------ | -------
-CentOS | tbd          | ami-3e436044
-SLES   | ami-94507dee | ami-3e436044
+| OS     | Frontend     | Backend      |
+|:-------|:-------------|:-------------|
+| CentOS | tbd          | ami-3e436044 |
+| SLES   | ami-94507dee | ami-3e436044 |
 
 Note: the SLES Frontend AMI is not publicly available. The Backend AMIs are identical are derived from the Amazon Linux AMI.
 

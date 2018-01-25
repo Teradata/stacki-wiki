@@ -1,3 +1,5 @@
+## Frontend install new server
+
 It is of course, recommended that you use the newest release when testing or building new clusters.
 
 Download the Stackios ISO file.

@@ -133,10 +133,10 @@ The default stage is `stack:stage="install-post"`.
 Not all operating systems support all these stages. The following table shows if the stage is supported natively by the installers, is provided by stacki, and not supported.
 
 
-OS     | install-pre | install-pre-package | install-post | boot-pre | boot-post
------- | ----------- | ------------------- | ------------ | -------- | ---------
-RedHat | native      |                     | native       | stacki   | stacki
-SLES   | native      | native              | native       | native   | native
+| OS     | install-pre | install-pre-package | install-post | boot-pre | boot-post |
+|:-------|:------------|:--------------------|:-------------|:---------|:----------|
+| RedHat | native      |                     | native       | stacki   | stacki    |
+| SLES   | native      | native              | native       | native   | native    |
 
 
 ### Chroot
@@ -196,7 +196,7 @@ The `stack:cond` attribute can be added to any SUX tag to define a conditional s
 
 SUX will parse the above XML and evaluate the conditional as false, and the tcpdump package will not be added to the installer's package list. Instead of just testing on True or False we can actually test on the Stacki host attributes.  To see what you can test on for a given host look at the output of `stack list host attr <hostname>`. Any attribute in the list is available for testing inside the conditional.
 
-For example to test if a machine is running is Amazon EC2 we can look at the `platform` attribute. Note, that at attribute does not have to exist to use it, if an attribute isn't there it will just evaulate to False.
+For example to test if a machine is running is Amazon EC2 we can look at the `platform` attribute. Note, that an attribute does not have to exist to use it, if an attribute isn't there it will just evaluate to False.
 
 ```
 <stack:package stack:cond="platform == 'aws'">tcpdump</stack:package>

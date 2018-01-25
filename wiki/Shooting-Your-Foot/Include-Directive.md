@@ -1,3 +1,5 @@
+## Include directive
+
 **Note:** This is not verified for any other OS other than RHEL variants.
 
 Can I use the %include to use files I already have without having to rewrite them in Stacki xml format?

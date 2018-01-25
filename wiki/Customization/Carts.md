@@ -1,3 +1,5 @@
+## Carts
+
 **Carts** are the smallest increment of customization for backend nodes.
 
 Stacki allows the admin to customize the software
@@ -56,3 +58,5 @@ Follow these examples to futher customize your cart.
 * [Adding RPMS](Adding-RPMS)
 * [Adding Files](Adding-Files)
 * [Adding Installation Scripts](Adding-Scripts)
+
+To understand the difference between Carts and Pallets please see [Carts vs. Pallets](Carts-vs-Pallets).

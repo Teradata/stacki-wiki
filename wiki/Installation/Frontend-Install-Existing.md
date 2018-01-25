@@ -1,3 +1,4 @@
+## Frontend install of existing server
 
 A Stacki frontend can be installed on top of an existing Red Hat based server. The server must be running the x86_64 version of CentOS or RHEL 7.x.
 

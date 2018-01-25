@@ -1,3 +1,7 @@
+## Guano
+
+Shit we're thinking about.
+
 This page serves as a collection for ideas that may (and in some cases should?!) never, ever be implemented in Stacki, or as an add-on to Stacki, but are interesting enough that they should be written down and kept somewhere.  Certainly, nothing written here should be read as a commitment, or even a plan.
 
 
@@ -35,14 +39,14 @@ __Detail:__ A webapp could be created (and hosted... somewhere...?) that perform
 
 __Con__: Where to host?  Is live documentation useful?
 
-__Contra-con__: 
+__Contra-con__:
 
 
 ## Idea: ~~stack report system~~
 
 This has been done. Use "stack report system"
 
-It probably needs more stuff to report. 
+It probably needs more stuff to report.
 
 __Motivation:__ Most stacki troubleshooting starts with the same half-dozen questions '`stack list pallet`, `stack list host boot`, etc'.  In some cases these are pasted in forums without any attempt at maintaining formatting, or worse are screenshots.
 
@@ -59,9 +63,9 @@ __Motivation:__ Currently doing things like monitoring the state of the installi
 
 __Detail:__ We could add an optional callback URL to the message queue.  Something along of the lines of providing a REST endpoint (and optional data?) that the frontend would POST to once it received the message.
 
-__Con__: 
+__Con__:
 
-__Contra-con__: 
+__Contra-con__:
 
 
 ## Idea: Stacki FedUp as a Service (FUaaS)
@@ -72,7 +76,7 @@ __Detail:__ Stacki FedUp, to an extent allows for this.  However, PXE-booting th
 
 __Con__: I don't know anything about Bonjour, but there are Apache licensed versions.
 
-__Contra-con__: 
+__Contra-con__:
 
 ## Idea: Run a cart on a backend node after the node has been installed.
 
@@ -82,7 +86,7 @@ __Detail:__ You install a machine. You add a cart. Now you want to put the stuff
 
 __Con__: This is insane. Rerun the install.
 
-__Contra-con__: 
+__Contra-con__:
 
 
 ## Idea: stack add/remove monkeypatch
@@ -96,12 +100,12 @@ __Con__: This is complicated and potentially dangerous to implement.  How do you
 __Contra-con__: Git could do the heavy lifting here.  We could prevent adding conflicting patches.
 
 
-## Idea: 
+## Idea:
 
-__Motivation:__ 
+__Motivation:__
 
-__Detail:__ 
+__Detail:__
 
-__Con__: 
+__Con__:
 
-__Contra-con__: 
+__Contra-con__:

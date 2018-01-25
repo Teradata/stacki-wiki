@@ -1,3 +1,4 @@
+## UEFI (oof-ee)
 
 One of the most frequent questions we get is, "Can I do UEFI?" (We pronounce it "oofee" for the record because it sounds funny.)
 

@@ -1,3 +1,5 @@
+## Using Attributes
+
 "Attributes" are **key/value pairs** stored in the database that allow users to:
 
 * Modify how a server works

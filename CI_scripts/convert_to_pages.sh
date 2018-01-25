@@ -42,7 +42,8 @@ IFS=$'\n'
 ## Process the wiki directory. This is the a git submodule
 ## pointing to github.com:StackIQ/wiki sub directory
 
-for i in `find wiki -type f | grep -v Reference`; do
+#for i in `find wiki -type f | grep -v Reference`; do
+for i in `find wiki -type f `; do
 	# Get filename
 	fname=$(basename $i)
 	# Get directory name, and strip out wiki

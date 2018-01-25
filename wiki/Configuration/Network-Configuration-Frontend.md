@@ -1,4 +1,4 @@
-
+## Frontend Network Configuration
 An initial installation defaults to having one network defined as "private." This is the network the frontend and the backend machines speak to each other on. Think of it as the "management network" which, apparently, is a thing.
 
 You can have one network. You can have many. You can serve DHCP for multiple subnets or one. Lots of variations, all get configured along a similar theme: spreadsheets or command line.

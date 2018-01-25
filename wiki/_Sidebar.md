@@ -36,10 +36,12 @@
 * [Interacting With Your Cluster](Interacting)
   * [Command line](Command-Line)
   * [Stacki Rest API](Stacki-Rest)
-* [How to Shoot Your Foot - FAQ](Shooting-Your-Foot)
+* [FAQ/Shooting Your Foot](Shooting-Your-Foot)
+  * [Order of Intallation](Installation-Order)
+  * [Carts vs Pallets](Carts-vs-Pallets)
   * [Using the %include Directive](include-directive)
   * [Setting Cart Order](Setting-Cart-Order)
-  * [Changing Private Network](IP-Address-Change)
+  * [Changing Private Network](IP-Address-Change) **Deprecated**
 * Developer
   * [Building From Source](Building-From-Source)
   * [Building For AWS](Building-For-AWS)
@@ -49,7 +51,7 @@
   * [Rocks License](Rocks-License)
   * [Stacki License](Stacki-License)
 * Reference
-  * [Command Line](stacki-CLI-documentation)
+  * [CLI Reference](stacki-CLI-documentation)
   * [Example CSV Files](Example-CSV-Files)
 * [Release Notes for 5.0](ReleaseNotes)
 * [Diffs from Stacki 4.0](DiffsFrom40)

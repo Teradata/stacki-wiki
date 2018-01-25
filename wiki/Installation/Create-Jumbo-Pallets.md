@@ -1,3 +1,5 @@
+## Create Jumbo pallets
+
 A "Jumbo Pallet" is a pallet that consists of combining the Stacki pallet with the OS pallet of your choice to install a frontend.
 
 It's possible to add additional pallets, but the size grows and can easily be larger than a DVD or even a smallish USB can hold.

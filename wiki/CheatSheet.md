@@ -1,5 +1,7 @@
+## Cheatsheet
 
-## Reinstall backend nodes - preserve data
+
+### Reinstall backend nodes - preserve data
 
 ```
 # stack set host boot a:backend action=install
@@ -13,7 +15,7 @@
 (or powercycle - however your site does that)
 ```
 
-## Reinstall backend nodes - nuke data
+### Reinstall backend nodes - nuke data
 ```
 # stack set host attr a:backend attr=nukedisks value=True
 # stack set host boot a:backend action=install

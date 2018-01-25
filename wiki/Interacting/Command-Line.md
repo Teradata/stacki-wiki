@@ -1,3 +1,5 @@
+## Stacki command line
+
 The stacki command line is where you'll interact with your cluster for configuration and on-going management. The full details of every command are available in the [Reference CLI section](stacki-CLI-documentation).
 
 This is a basic primer.

@@ -1,3 +1,5 @@
+## Adding Files
+
 Whatever you can do in a shell, you can do during install.
 
 Our assumption is that when a machine comes up, it should be exactly the way you want at first boot. This way you're certain your site specific customization is going to run once you hit the install/reinstall button, because you've already done the hard configuration scripting to make it so.

@@ -1,8 +1,8 @@
-What's the difference between a cart and a pallet?
+## What's the difference between a cart and a pallet?
 
 There's a few differences, but they are subtle.  In general, most users will not need to create pallets, but will almost certainly want to create carts.  Pallets are more feature-full, but require more work to assemble.
 
-## Carts
+### Carts
 
 Carts were originally designed as a way of allowing administrators to make changes/additions to XML as well as adding packages to be installed on backend nodes.  Carts are intended to be site-specific ways to extend Stacki.
 
@@ -10,17 +10,17 @@ Carts can make packages available to backend nodes either during or after instal
 
 That's about it.
 
-## Pallets
+### Pallets
 
 Pallets are always shipped and consumed as ISO's.  Pallets have a superset of the features of carts; they can contain configuration and packages for backends, but also for frontends.  Pallets are also versioned whereas carts are not.
 
-### Native vs Foreign
+#### Native vs Foreign
 
 Pallets come in two flavors, native and foreign.  
 
 Native pallets are pallets which contain Stack configuration code and were built in Stacki.  Native pallets are usually created by the Stacki team, but all of the tools we use to do so are in Stacki itself, and available to use as a Stacki administrator.  A native pallet can contain code to run on any node managed by Stacki, including the Frontend.  This allows you to extend Stacki in ways that we did not originally plan.
 
-Foreign pallets are simply Linux distribution ISOs which Stacki has been written to understand.  The CentOS Everything DVD ISO, for example.  Code exists in Stacki that lets us parse their ISO to know where their packages are kept.  And yes, when a new OS version comes out, Stacki needs to be updated to understand any changes that have been made to the ISO disk-image layout.  Foreign pallets carry packages, but as they weren't built with Stacki in mind, they don't contain configuration information.  `stack create mirror` creates foreign pallets which contain RPM repository mirrors. 
+Foreign pallets are simply Linux distribution ISOs which Stacki has been written to understand.  The CentOS Everything DVD ISO, for example.  Code exists in Stacki that lets us parse their ISO to know where their packages are kept.  And yes, when a new OS version comes out, Stacki needs to be updated to understand any changes that have been made to the ISO disk-image layout.  Foreign pallets carry packages, but as they weren't built with Stacki in mind, they don't contain configuration information.  `stack create mirror` creates foreign pallets which contain RPM repository mirrors.
 
 ----
 

@@ -1,4 +1,4 @@
-#### Replacing and extending default XML.
+## Replacing and extending default XML.
 
 There may be times where you don't want or don't like or want to add to the configuration of a service Stacki takes care of.
 

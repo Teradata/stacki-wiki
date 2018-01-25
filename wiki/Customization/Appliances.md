@@ -1,3 +1,5 @@
+## Appliances
+
 An "appliance" in Stacki nomenclature is a way to group installation and configuration logic for a particular set of hosts.
 
 The "backend" appliance is the default appliance applied to all installing backend nodes.

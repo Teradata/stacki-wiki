@@ -1,3 +1,5 @@
+## Changes between Stacki 4.0 and Stacki 5.0
+
 This describes some changes between Stacki 4.0 and Stacki 5.0 for those who are needing some translation.
 
 ## Spreadsheet headers have changed

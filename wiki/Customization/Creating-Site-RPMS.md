@@ -1,4 +1,4 @@
-## Creating an RPM
+## Creating site RPMs
 
 Stacki allows you to create a basic RPM for distribution in a cart repository with the ```stack create package``` command.
 

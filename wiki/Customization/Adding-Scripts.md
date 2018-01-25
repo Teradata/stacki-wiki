@@ -1,3 +1,5 @@
+## Adding Scripts
+
 Whatever you can do in Linux, you can do in a Cart across all your installs.
 
 When a machine comes up, it should be exactly the way you want at first boot. Stacki should be used to bring machines to a known state. One of the ways to do that is run the scripts and start the services that need to be available during the install. It's part of the secret to scaling: offload as much work to the individual machines themselves.

@@ -10,7 +10,8 @@ These are not guaranteed to work for you. You should have fairly deep experience
 You're forewarned, apparently armed, and your foot is down. Help is in Stacki Slack or Googlegroups, but man, are we gonna laugh.
 
 **tl;dr**
-
+* [Installation Order](Install-Order)
+* [The difference between a Cart and a Pallet](Carts-vs-Pallets)
 * [Using the Include Directive](Include-Directive) - Relatively safe.
 * [Setting Cart Order](Setting-Cart-Order) - Relatively safe but confusing.
 * [IP Address Change](IP-Address-Change) - Here be Monsters.

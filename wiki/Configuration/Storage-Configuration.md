@@ -1,3 +1,5 @@
+## Storage Controller Configuration
+
 Stacki manages storage at both the [Partition](Partitioning-Configuration) level and the hardware RAID controller level.
 
 There are two ways to configure a storage controller: using a spreadsheet and the command line.

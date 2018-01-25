@@ -1,3 +1,4 @@
+## Licensing
 
 Stacki is released as open source with a combination of licenses.
 
