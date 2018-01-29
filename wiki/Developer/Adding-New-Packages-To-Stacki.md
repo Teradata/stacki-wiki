@@ -45,7 +45,7 @@ Add it in `common/src/foundation/python-packages/packages.json` and `common/src/
 
 ## Whoever's code it is, making sure the build doesn't fail
 
-Our build environment will double check it's work.  After building stacki, or any pallet, you can run `make manifest-check` (and our CD/CI server does exactly that) to make sure that all packages that were expected were built, and all packages that were built were expected.
+Our build environment will double check its work.  After building stacki, or any pallet, you can run `make manifest-check` (and our CD/CI server does exactly that) to make sure that all packages that were expected were built, and all packages that were built were expected.
 
 In order to generate that list, Stacki has a manifest.  If your thing is in `common`, then add the package name to `common/manifest.d/common.manifest`.  You'll probably also need to add a line subtracting it from `common/manifest.d/common.sles11`.  The same structure is in `sles/manifest.d` for SLES-only packages.  At the time of this writing, the RHEL-family is just `redhat/manifest`, but this may get moved over to the `manifest.d` style.
 
