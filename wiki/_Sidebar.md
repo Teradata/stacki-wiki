@@ -41,6 +41,7 @@
   * [Carts vs Pallets](Carts-vs-Pallets)
   * [Using the %include Directive](include-directive)
   * [Setting Cart Order](Setting-Cart-Order)
+  * [Use frontend for backend public access](Poking-Holes-Firewall)
   * [Changing Private Network](IP-Address-Change) **Deprecated**
 * Developer
   * [Building From Source](Building-From-Source)
