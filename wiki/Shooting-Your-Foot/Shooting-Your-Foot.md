@@ -15,7 +15,9 @@ You're forewarned, apparently armed, and your foot is down. Help is in Stacki Sl
 * [Using the Include Directive](Include-Directive) - Relatively safe.
 * [Setting Cart Order](Setting-Cart-Order) - Relatively safe but confusing.
 * [IP Address Change](IP-Address-Change) - Here be Monsters.
-* [Replacing and extending Stacki XML](Replacing-Extending-XML) - Relatively safe.
+* [Replacing and extending Stacki XML](Replacing-Extending-XML) - Relatively
+* [Use frontend for backend public access](Poking-Holes-Firewall)
+ safe.
 
 ## Don't decide you want a different private network
 
