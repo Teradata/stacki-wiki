@@ -167,16 +167,16 @@ These are all snipped:
 
 List:
 ```
-stack:script stack:stage="install-post" stack:cond=" in ['CentOS', 'RHEL']"
+<stack:script stack:cond="os in ['CentOS', 'RHEL']">
 ```
 And:
 ```
-stack:script stack:stage="install-post" stack:cond="os == 'CentOS' and os == 'RHEL']"
+<stack:script stack:cond="os == 'CentOS' and os == 'RHEL']">
 ```
 
 Or:
 ```
-stack:script stack:stage="install-post" stack:cond="os == 'CentOS' or os == 'RHEL']"
+<stack:script stack:cond="os == 'CentOS' or os == 'RHEL']">
 ```
 
 ### Using attributes in Spreadsheets
