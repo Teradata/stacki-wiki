@@ -37,9 +37,9 @@
   * [Command line](Command-Line)
   * [Stacki Rest API](Stacki-Rest)
 * [FAQ/Shooting Your Foot](Shooting-Your-Foot)
-  * [Order of Intallation](Installation-Order)
+  * [Order of Intallation](Install-Order)
   * [Carts vs Pallets](Carts-vs-Pallets)
-  * [Using the %include Directive](include-directive)
+  * [Using the %include Directive](Include-Directive)
   * [Setting Cart Order](Setting-Cart-Order)
   * [Use frontend for backend public access](Poking-Holes-Firewall)
   * [Changing Private Network](IP-Address-Change) **Deprecated**
