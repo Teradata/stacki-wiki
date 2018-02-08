@@ -167,16 +167,16 @@ These are all snipped:
 
 List:
 ```
-stack:script stack:stage="install-post" stack:cond=" in ['CentOS', 'RHEL']"
+<stack:script stack:cond="os in ['CentOS', 'RHEL']">
 ```
 And:
 ```
-stack:script stack:stage="install-post" stack:cond="os == 'CentOS' and os == 'RHEL']"
+<stack:script stack:cond="os == 'CentOS' and os == 'RHEL']">
 ```
 
 Or:
 ```
-stack:script stack:stage="install-post" stack:cond="os == 'CentOS' or os == 'RHEL']"
+<stack:script stack:cond="os == 'CentOS' or os == 'RHEL']">
 ```
 
 ### Using attributes in Spreadsheets
@@ -187,7 +187,7 @@ This is an example of what happens for the stacki-kubernetes pallet. It's large,
 
 ```
 | target      | kube.domain      | kube.enable_dashboard | kube.insecure | kube.master | kube.master_ip | kube.minion | kube.pod_dir            | kube.pull_pods | kube.secure | docker.registry.external | docker.registry.local | etcd.cluster_member | etcd.prefix     |
-|:------------|:-----------------|:----------------------|:--------------|:------------|:---------------|:------------|:------------------------|:---------------|:------------|:-------------------------|:----------------------|:--------------------|:----------------|
+|-------------|------------------|-----------------------|---------------|-------------|----------------|-------------|-------------------------|----------------|-------------|--------------------------|-----------------------|---------------------|-----------------|
 | global      | kubernetes.local | False                 | False         | False       | 10.5.255.254   | True        | install/kubernetes/pods | True           | True        | True                     | False                 | False               | /stacki/network |
 | backend-0-0 |                  | True                  |               | True        |                |             |                         |                |             |                          |                       | True                |                 |
 | backend-0-1 |                  |                       |               |             |                |             |                         |                |             |                          |                       | True                |                 |
