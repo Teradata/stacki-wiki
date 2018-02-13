@@ -159,7 +159,7 @@ Breathe.
 
 Nodes should come up with the proper networking. By not setting "nukedisks" to "true," you're just refreshing the OS and other configs. Partitioning and data disks will remain untouched.
 
-> **Note:** There are a lot of spreadsheet examples for setting up a host files for bonding, vlanning, bridging, etc. in /opt/stack/share/spreadsheets.
+> **Note:** There are a lot of spreadsheet examples for setting up a host files for bonding, vlanning, bridging, etc. in /opt/stack/share/examples/spreadsheets/.
 
 
 [^1]: There is an observation to be made here. The clients with the most complex network topologies also tend to be the clients with the most complex partitioning schemes. Nobody needs 21 partitions on an LVM volume. No.One.
