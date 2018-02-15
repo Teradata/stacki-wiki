@@ -11,3 +11,7 @@ So Legacy BIOS mode or UEFI Bios mode, both work fine, even mixed. If your bios 
 Really the issue is UEFI and Redhat. They shipped a bad grub2-efi rpm with the original 7.4 release. Which means you need an updates pallet. You can go to [Creating-Simple-Pallets](Creating-Simple-Pallets) to learn how to create your own updates ISO, or download the one we are distributing that has that fix in it.
 
 The stackios ISO already has the grub2-efi fix in it.
+
+***Caveat 2:*** UEFI and custom partitioning
+
+When a node boots in UEFI mode, it requires an MSDOS FAT32 partition mounted on /boot/efi to be present. The default partitioning scheme checks for UEFI mode, and includes the /boot/efi partition. However, when custom partitioning is used, it's the responsibility of the system administrator to include the /boot/efi partition. The minimum/recommended size requirement of this partition is 256M/512M.
