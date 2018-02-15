@@ -14,4 +14,8 @@ The stackios ISO already has the grub2-efi fix in it.
 
 ***Caveat 2:*** UEFI and custom partitioning
 
-When a node boots in UEFI mode, it requires an MSDOS FAT32 partition mounted on /boot/efi to be present. The default partitioning scheme checks for UEFI mode, and includes the /boot/efi partition. However, when custom partitioning is used, it's the responsibility of the system administrator to include the /boot/efi partition. The minimum/recommended size requirement of this partition is 256M/512M.
+When a node boots in UEFI mode, it requires an MSDOS FAT32 partition mounted on `/boot/efi` to be present.
+
+The default partitioning scheme checks for UEFI mode, and includes the `/boot/efi` partition.
+
+However, when custom partitioning is used, it's the responsibility of the system administrator to include the `/boot/efi` partition. The minimum/recommended size requirement of this partition is 256M/512M.
