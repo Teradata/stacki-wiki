@@ -39,7 +39,7 @@ tags. The tags Stacki incorporates map to kickstart elements you
 should already be familiar with: pre, post, main, package, and first boot. From there it's mostly adding shell commands and scripts to install and configure applications.
 
 For more information about the available XML tags, refer to the
-[Stacki Universal XML guide](SUX)
+[Stacki Universal XML guide](Stacki-Universal-XML)
 
 In Stacki, backend node configuration is controlled by a collection of XML
 files.
@@ -47,7 +47,7 @@ files.
 A *node XML file* contains the description of additional packages and
 configuration that should be applied to backend hosts.
 
-A *node XML file* is written in [Stacki Universal Language](SUX), which is a way to write cart configuration so it applies to multiple OSs.
+A *node XML file* is written in [Stacki Universal Language](Stacki-Universal-XML), which is a way to write cart configuration so it applies to multiple OSs.
 
 SUX consists of html tags that map to Linux installation targets: pre, post, main, packages, and first boot.
 

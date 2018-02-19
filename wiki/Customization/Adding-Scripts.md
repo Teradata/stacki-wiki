@@ -20,7 +20,7 @@ For example: Let's say we want to run a web-farm and httpd needs to be started o
 
 
 ```
-<stack:stack:
+<stack:stack>
 
 <!-- add httpd -->
 <stack:package>httpd</stack:package>
