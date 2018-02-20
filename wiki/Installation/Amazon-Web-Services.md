@@ -10,8 +10,8 @@ The following table show the AMI's that are required.
 
 | OS     | Frontend     | Backend      |
 |:-------|:-------------|:-------------|
-| CentOS | ami-674a451d | ami-3e436044 |
-| SLES   | ami-94507dee | ami-3e436044 |
+| CentOS | TBD | ami-3e436044 |
+| SLES   | ami-03ee087e | ami-3e436044 |
 
 Note: the SLES Frontend AMI is not publicly available. The Backend AMIs are identical are derived from the Amazon Linux AMI.
 
