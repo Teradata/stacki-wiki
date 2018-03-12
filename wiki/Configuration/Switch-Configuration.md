@@ -35,6 +35,8 @@ Adding an interface is exactly the same as with hosts. The important part here i
 
 `stack add switch interface private-switch interface=eth1 mac=00:11:22:33:44:55 ip=10.0.0.1 network=private`
 
+**Warning** If you do not add an interface name, the DHCP configuration will not include the switch's interface. 
+
 #### Adding hosts
 
 Adding hosts to be managed on the switch can be done two ways:
