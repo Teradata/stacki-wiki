@@ -23,13 +23,27 @@ To get up and running we just need to:
 
 #### Adding a switch
 
-Adding a switch is just like adding a host.
+Adding a switch is just like adding a host:
 
-`stack add switch private-switch rack=1 rank=1 model=x1052 username=admin password=admin`
+* `stack add switch private-switch rack=1 rank=1 model=x1052 username=admin password=admin`
+* `stack load switchfile file=switchfile.csv`
 
-If in the future you would like to change the model, username, or password you can use `stack set host attr`
+The `switchfile` example spreadsheet looks like this:
+
+```
+NAME,RACK,RANK,MODEL,INTERFACE,IP,MAC,NETWORK,USERNAME,PASSWORD
+private-switch,10,20,x1052,eth1,192.168.2.1,00:11:22:33:44:55,private,admin,admin
+```
+
+If in the future you would like to change the model, username, or password you can use `stack set host attr` and change the attrs:
+
+* switch_model
+* switch_username
+* switch_password
 
 #### Adding an interface
+
+***If you used the spreadsheet, you can skip this step***
 
 Adding an interface is exactly the same as with hosts. The important part here is that the network you assign to the interface has `pxe=true` if you plan on setting the ip address with dhcp.
 
