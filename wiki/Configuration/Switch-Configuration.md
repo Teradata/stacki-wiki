@@ -73,9 +73,9 @@ backend-0-4,primary-switch,4
 The VLAN ID that is used to configure the switch comes from the host's interface and can be updated using:
 
 * `stack set host interface vlan`
-* Updating the hostfile
+* Updating the host configuration spreadsheet (This is the same csv used in `stack load hostfile`)
 
-#### Updating the switch configuration
+#### Apply the switch configuration
 
 `stack sync switch`
 
