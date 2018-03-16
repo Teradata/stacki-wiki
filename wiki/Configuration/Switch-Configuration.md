@@ -61,11 +61,11 @@ Adding hosts to be managed on the switch can be done two ways:
 The `switch_hostfile` example spreadsheet looks like this:
 
 ```
-NAME,SWITCH,PORT
-backend-0-1,primary-switch,1
-backend-0-2,primary-switch,2
-backend-0-3,primary-switch,3
-backend-0-4,primary-switch,4
+NAME,SWITCH,PORT,INTERFACE
+backend-0-1,primary-switch,1,eth1
+backend-0-2,primary-switch,2,eth1
+backend-0-3,primary-switch,3,eth1
+backend-0-4,primary-switch,4,eth1
 ```
 
 #### Setting VLAN
