@@ -41,7 +41,7 @@ Every week (or more frequently) every developer with a completed
 feature will sit in a room together and merge their branches back onto
 develop, and immediately get develop back into the build and test system.
 
-* next merge party will document the process *
+	*next merge party will document the process*
 
 
 
