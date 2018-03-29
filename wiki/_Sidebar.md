@@ -44,6 +44,7 @@
   * [Use frontend for backend public access](Poking-Holes-Firewall)
   * [Changing Private Network](IP-Address-Change) **Deprecated**
 * Developer
+  * [Core Development](Development)
   * [Building From Source](Building-From-Source)
   * [Building For AWS](Building-For-AWS)
   * [Adding new packages to Stacki](Adding-New-Packages-To-Stacki)
