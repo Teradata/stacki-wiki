@@ -26,6 +26,9 @@ a style guide for Stacki, we will fight about it for a week or so and
 loose interest and we will be back to where we are now. All of this
 has happened before, and all of this will happen again.
 
+There is a `.flake8` (think `pep8` with more stuff) in the Stacki
+repository that turns off a lot of warnings related to whitespace. You
+should run `flake8` often and fix reported issues when possible.
 
 ### Source Control Model
 
