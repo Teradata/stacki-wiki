@@ -83,7 +83,7 @@ Every week or so every developer with a completed feature will sit in
 a room together and merge their branches back onto develop, and
 immediately get develop back into the build and test system.
 
-	*next merge party will document the process*
+	next merge party will document the process
 
 
 ### Release Branches
@@ -167,7 +167,7 @@ example the tag will be `stacki-5.1rc1`) which mean it will ask for a
 comment (same as doing a `git commit`). This message a stored and can
 be accessed with `git show stacki-5.1rc1`).
 
-The following will finish the release, or as we say "tag it, and bag it".
+The following will finish the release, or as we say *tag it, and bag it*.
 
 ```
 $ git flow release finish 5.1rc1
