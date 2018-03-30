@@ -60,6 +60,32 @@ $ cd stacki
 $ git checkout -b develop origin/develop
 ```
 
+You are also encouraged to use `git-flow` which requires you to
+initialize the repository after a fresh clone. But before you even do
+that you may need to install `git-flow` on your machine, which means
+grabbing the [source](http://github.com/nvie/gitflow). Yeah, it's an
+old project of crusty shell code.
+
+```
+$ git-flow init
+
+Which branch should be used for bringing forth production releases?
+   - develop
+   - master
+Branch name for production releases: [master]
+
+Which branch should be used for integration of the "next release"?
+   - develop
+Branch name for "next release" development: [develop]
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []
+```
+
 #### Feature Branches
 
 All development should be done on feature branches. Once a feature is
