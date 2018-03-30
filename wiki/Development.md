@@ -1,8 +1,8 @@
 ## Stacki Development
 
-This document is primarily for core Stacki developers, also applies to
-anyone contributing to Stacki, with the exception that external
-contribution should all be pull requests.
+This document is primarily for core Stacki developers, but it also
+applies to anyone contributing to Stacki, with the exception that
+external contributions should all be pull requests.
 
 ### Coding Standards
 
@@ -52,7 +52,7 @@ but everyone follows the [model](https://danielkummer.github.io/git-flow-cheatsh
 Which means the repository always has both a `master` and `develop`
 branch. So to checkout the code you will always have to checkout both
 branches. The idea is development happens in `develop` and only
-release code ever makes it to `master`.
+released code ever makes it to `master`.
 
 ```
 $ git clone git@github.com:Teradata/stacki.git
@@ -61,7 +61,7 @@ $ git checkout -b develop origin/develop
 ```
 
 You are also encouraged to use `git-flow` which requires you to
-initialize the repository after a fresh clone. But before you even do
+initialize the repository after a fresh clone. But, before you even do
 that you may need to install `git-flow` on your machine, which means
 grabbing the [source](http://github.com/nvie/gitflow). Yeah, it's an
 old project of crusty shell code.
@@ -91,7 +91,7 @@ Version tag prefix? []
 All development should be done on feature branches. Once a feature is
 ready to be shared with the team and has passed the nightly build and
 test system it can be added to the list of branches to be merged back
-onto develop during the team's weekly merge party. Exceptions will
+onto `develop` during the team's weekly merge party. Exceptions will
 happen but the general rule here is always stay on a feature branch,
 and merge back only as a group.
 
@@ -103,7 +103,7 @@ $ git flow feature start name-of-feature
 
 While you are developing on your feature branch remember to merge
 `develop` back onto your branch often. Failure to merge often will
-result in the amusement of you co-worker while you struggle with a
+result in the amusement of your co-workers while you struggle with a
 10,000 line merge conflict.
 
 #### Code Review
@@ -126,9 +126,10 @@ help. If you don't know if your code needs review, it needs review.
 
 Every week or so every developer with a completed feature will sit in
 a room together and discuss and merge their branches back onto
-develop, and immediately get develop back into the build and test
+`develop`, and immediately get `develop` back into the build and test
 system. Not all features invited to the party get merged, some get
-pushed back to code review, and some may get defered for a later party.
+pushed back to code review, and some may get defered for a later
+party.
 
 	next merge party will document the process
 
@@ -140,7 +141,7 @@ the `develop` branch and it has been tested in the nightly build and
 test system. The release process begins with a fresh clone on the
 Stacki repository, and since we are releasing from the `develop`
 branch that needs to be checked out as well. We know, it's perfectly
-safe to start from an existing repository.
+safe to start from an existing repository, but don't.
 
 ```
 $ git clone git@github.com:Teradata/stacki.git
@@ -193,9 +194,9 @@ $ git add version.mk
 $ git commit -m "starting release 5.1rc1"
 ```
 
-Once the release is started only bugfixes are allowed to be checked
+Once the release is started only bug fixes are allowed to be checked
 into the release branch. Development on feature branches and merge
-parties continue, and have no impact on the release branch. Bugfixes
+parties continue, and have no impact on the release branch. Bug fixes
 may be direct commits to the release branch or cherry-picked commits
 from other branches.
 
@@ -205,13 +206,13 @@ But first push the branch back to the origin so everyone sees it.
 $ git flow release publish 5.1rc1
 ```
 
-Once the all bugs are squashed and the code is ready to ship the
+Once all bugs are squashed and the code is ready to ship the
 branch is merge back onto both `develop` and `master`, this ensures
 any bugfixes applied only to the release branch go back into `develop`
 and that `master` only contains released code. Finishing the release
 will also create a an annotated tag based on the release name (in this
-example the tag will be `stacki-5.1rc1`) which mean it will ask for a
-comment (same as doing a `git commit`). This message a stored and can
+example the tag will be `stacki-5.1rc1`) which means it will ask for a
+comment (same as doing a `git commit`). This message is stored and can
 be accessed with `git show stacki-5.1rc1`).
 
 The following will finish the release, or as we say *tag it, and bag it*.
