@@ -23,8 +23,9 @@ We need a real consensus on this, but right now the rule is when you
 drop into a piece of code try to copy the existing style. For new code
 just keep it readable. Eventually someone will get bored and write up
 a style guide for Stacki, we will fight about it for a week or so and
-loose interest and we will be back to where we are now. All this has
-happened before, and will happen again.
+loose interest and we will be back to where we are now. All of this
+has happened before, and all of this will happen again.
+
 
 ### Source Control Model
 
@@ -76,12 +77,29 @@ While you are developing on your feature branch remember to merge
 result in the amusement of you co-worker while you struggle with a
 10,000 line merge conflict.
 
+#### Code Review
+
+The next step to getting your feature back into the `develop` branch
+is an optional code review, not everything will go through this but it
+is encouraged and sometimes required. Features will usually get
+identified an code review candidate during the Merge Party.
+
+If your feature branch requires a code review the group will identify
+the person to review and they are then responsible for going through
+the code and giving the all clear before the code makes it to the next
+Merge Party.
+
+If you think your code is more in the *works for me* state, you need a
+code review. It happens to all of us, own up to it and ask for
+help. If you don't know if your code needs review, it needs review.
 
 #### Merge Party
 
 Every week or so every developer with a completed feature will sit in
-a room together and merge their branches back onto develop, and
-immediately get develop back into the build and test system.
+a room together and discuss and merge their branches back onto
+develop, and immediately get develop back into the build and test
+system. Not all features invited to the party get merged, some get
+pushed back to code review, and some may get defered for a later party.
 
 	next merge party will document the process
 
