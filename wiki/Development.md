@@ -48,7 +48,7 @@ goes to github.com the cat is out of the bag.
 We follow the
 [git-flow](http://nvie.com/posts/a-successful-git-branching-model)
 branching model. This doesn't mean everyone actually uses `git-flow`,
-but everyone follows the [model](https://danielkummer.github.io/git-flow-cheatsheet).  
+but everyone follows the [model](https://danielkummer.github.io/git-flow-cheatsheet).
 Which means the repository always has both a `master` and `develop`
 branch. So to checkout the code you will always have to checkout both
 branches. The idea is development happens in `develop` and only
