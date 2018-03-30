@@ -111,7 +111,7 @@ result in the amusement of you co-worker while you struggle with a
 The next step to getting your feature back into the `develop` branch
 is an optional code review, not everything will go through this but it
 is encouraged and sometimes required. Features will usually get
-identified an code review candidate during the Merge Party.
+identified as code review candidates during the Merge Party.
 
 If your feature branch requires a code review the group will identify
 the person to review and they are then responsible for going through
