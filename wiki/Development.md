@@ -223,6 +223,37 @@ $ git push
 $ git push --tags
 ```
 
+#### Release Candidates vs Releases
+
+The above procedure walked through the process of building a *release
+candidate*, not a full blown release to open-source. Often times it
+will take several iterations of candidates to settle on a formal
+release. At this time the current candidate is promote to
+release. There are no code changes from the final release candidate to
+release. The only change is to clean up the version number so it
+doesn't say "rc", freak people out and generate email (or worse a Jira
+ticket).
+
+To do this we modify the `master` branch since that is where the
+current candidate code is, and `develop` already has new pre-release
+code in it.  Assume that `stacki-5.1rc4` was the final candidate and
+we want to promote it to release. This is done without `git-flow`.
+
+```
+$ git checkout master
+$ vi version.mk
+$ git commit -a -m "stacki-5.1 release"
+$ git tag stacki-5.1
+$ git push
+$ git push --tags
+$ git checkout develop
+$ git merge master
+$ git push
+```
+
+Now re-build it and release it into the wilderness.
+
+
 
 
 
