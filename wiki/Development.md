@@ -241,6 +241,16 @@ we want to promote it to release. This is done without `git-flow`.
 
 ```
 $ git checkout master
+$ git diff stacki-5.1rc4
+```
+
+If the `git diff` above showed that `master` is not the same as
+`stacki-5.1rc4` badness happened. Go figure out who messed up the
+`master` branch and start reverting (the commits and the
+developer). If everyone was good (or you fixed it), continue with the
+following:
+
+```
 $ vi version.mk
 $ git commit -a -m "stacki-5.1 release"
 $ git tag stacki-5.1
