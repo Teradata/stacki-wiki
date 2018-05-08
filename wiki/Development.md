@@ -122,6 +122,28 @@ If you think your code is more in the *works for me* state, you need a
 code review. It happens to all of us, own up to it and ask for
 help. If you don't know if your code needs review, it needs review.
 
+#### Merge Party Prep
+
+Your code needs to be revertible, which means a single commit ready to merge back into develop.
+You likely have more than one commit on your branch. 
+So there are two likely scenarios for getting back to a single commit:
+1. You were merging develop into your feature branch as develop changed, and you need to separate out develop commits from your branches' commits. Edit the commit message to be a reasonable summary of the work done for you feature branch.
+```
+$ git checkout develop
+$ git flow feature start staging-name-of-feature
+$ git merge --squash feature/name-of-feature
+$ git commit
+```
+2. You got your work done before develop changed and are okay with rewriting history. Do not rebase if someone else is using your branch. This can be dangerous and should only be used on an isolated branch:
+You can do a rebase and squash the commits through the interface. These steps will bring up a vim interface to edit your commits. If these commits are already on github.com, you will need to force push your changes. Do not rebase if someone else is using your branch. This can be dangerous and should only be used on an isolated branch. (Yes I intentionally repeated myself.)
+```
+$ git checkout feature/name-of-feature
+$ git rebase -i HEAD~10
+$ git push --force origin feature/name-of-feature
+```
+
+
+
 #### Merge Party
 
 Every week or so every developer with a completed feature will sit in
