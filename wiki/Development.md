@@ -124,10 +124,11 @@ help. If you don't know if your code needs review, it needs review.
 
 #### Merge Party Prep
 
-Your code needs to be revertible, which means a single commit ready to merge back into develop.
-You likely have more than one commit on your branch. 
-So there are two likely scenarios for getting back to a single commit:
-1. You were merging develop into your feature branch as develop changed, and you need to separate out develop commits from your branches' commits. Edit the commit message to be a reasonable summary of the work done for you feature branch.
+Your code needs to be revertible, which means a single commit ready to merge back into develop. 
+Additionally the single commit must match the [commit message format below](#commit-message-format)
+
+You likely have more than one commit on your branch. So there are two likely scenarios for getting back to a single commit:
+1. You were merging develop into your feature branch as develop changed, and you need to separate out develop commits from your branches' commits. Edit the commit message.
 ```
 $ git checkout develop
 $ git flow feature start staging-name-of-feature
@@ -142,7 +143,96 @@ $ git rebase -i HEAD~10
 $ git push --force origin feature/name-of-feature
 ```
 
+#### Commit Message Format
+In order to automate the building of *release docs* that has *New Features* and *Bug Fix*
+sections, we will now require the following format in your commit log prior to merging your
+code onto the develop branch.
 
+Bug fixes.
+
+Minimally, the commit log for a bug fix should look like:
+
+```
+BUGFIX: One line summary of the bug fix
+```
+
+If you’d like to provide more details, then supply one line summary, then a blank line, then
+your details:
+
+```
+BUGFIX: One line summary of the bug fix
+
+More info about the bug fix.
+And remember, this data is going to go into a document that is readable by humans.
+and even more data about the bug fix
+```
+
+If you’d like to refer to a Jira ticket in your summary, make sure you have *JIRA* somewhere
+in the body:
+
+```
+BUGFIX: one line summary of the bug fix
+
+more info about the bug fix
+and even more data about the bug fix
+
+This fixes JIRA: STACKI-###
+```
+
+If your commit will _break_ existing Stacki installations (e.g., a schema change), make sure
+to put *BREAKING CHANGE* in the body of the commit message.
+
+```
+BUGFIX: one line summary of the bug fix
+
+BREAKING CHANGE: 
+This commit breaks Stacki, and here is an explanation on how you can update your frontend
+so you can apply this commit and still have a functioning system.
+```
+
+All text after *BREAKING CHANGE* will not be included in the release docs.
+
+If you have text that you’d like to include in the commit message, but you don’t want the
+text to be in the release docs, then use *INTERNAL*:
+
+```
+BUGFIX: one line summary of the bug fix
+
+INTERNAL:
+All text from the line above and to the end of the commit message will not be included
+in the release docs.
+```
+
+You can also use *INTERNAL* in the one line summary:
+
+```
+INTERNAL: This commit log message should not be in the release docs.
+```
+
+If your commit is a new feature, then your commit logs will look like:
+
+```
+FEATURE: one line summary of the feature
+```
+
+or
+
+```
+FEATURE: one line summary of the feature
+
+more info about the commit
+
+INTERNAL:
+all the content after this is ignored and will not be put in the document
+```
+
+If your commit is related to documentation, use *DOCS*:
+
+```
+DOCS: A documentation commit
+
+More info goes here
+```
 
 #### Merge Party
 
