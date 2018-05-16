@@ -55,16 +55,19 @@ branches. The idea is development happens in `develop` and only
 released code ever makes it to `master`.
 
 ```
-$ git clone git@github.com:Teradata/stacki.git
+$ git clone git@github.com:Teradata/stacki
 $ cd stacki
 $ git checkout -b develop origin/develop
 ```
 
-You are also encouraged to use `git-flow` which requires you to
+You are also encouraged to use `git-flow-avh` which requires you to
 initialize the repository after a fresh clone. But, before you even do
-that you may need to install `git-flow` on your machine, which means
-grabbing the [source](http://github.com/nvie/gitflow). Yeah, it's an
-old project of crusty shell code.
+that you may need to
+[install](https://github.com/petervanderdoes/gitflow-avh/wiki/Installation)
+`git-flow-avh`. If you are already fimiliar with `git-flow` you know
+the project is dead, `git-flow-avh` has taken over the project and
+added thing like `bugfix` branches (analog to `feature` branches).
+
 
 ```
 $ git-flow init
@@ -72,23 +75,26 @@ $ git-flow init
 Which branch should be used for bringing forth production releases?
    - develop
    - master
-Branch name for production releases: [master]
+Branch name for production releases: [master] 
 
 Which branch should be used for integration of the "next release"?
    - develop
-Branch name for "next release" development: [develop]
+Branch name for "next release" development: [develop] 
 
 How to name your supporting branch prefixes?
-Feature branches? [feature/]
-Release branches? [release/]
-Hotfix branches? [hotfix/]
-Support branches? [support/]
-Version tag prefix? []
+Feature branches? [feature/] 
+Bugfix branches? [bugfix/] 
+Release branches? [release/] 
+Hotfix branches? [hotfix/] 
+Support branches? [support/] 
+Version tag prefix? [] 
+Hooks and filters directory? [~/stacki/.git/hooks] 
 ```
+
 
 #### Feature Branches
 
-All development should be done on feature branches. Once a feature is
+All development should be done on `feature` branches. Once a feature is
 ready to be shared with the team and has passed the nightly build and
 test system it can be added to the list of branches to be merged back
 onto `develop` during the team's weekly merge party. Exceptions will
@@ -101,10 +107,33 @@ To start a feature branch:
 $ git flow feature start name-of-feature
 ```
 
+This will create a new branch (and check it out) based on `develop`
+called `feature/name-of-feature`
+
 While you are developing on your feature branch remember to merge
 `develop` back onto your branch often. Failure to merge often will
 result in the amusement of your co-workers while you struggle with a
 10,000 line merge conflict.
+
+It is up to you if you want to rebase or merge `develop` onto your
+branch, but be aware that rebasing means you cannot share your feature
+branch with anyone.
+
+
+#### Bugfix Branches
+
+A `bugfix/` branch is exactly the same as `feature` branches but is
+for bugfixes.
+
+To start a bugfix branch:
+
+```
+$ git flow bugfix start name-of-bugfix
+```
+
+This will create a new branch (and check it out) based on `develop`
+called `bugfix/name-of-bugfix`
+
 
 #### Code Review
 
@@ -170,10 +199,12 @@ Branch name for "next release" development: [develop]
 
 How to name your supporting branch prefixes?
 Feature branches? [feature/]
+Bugfix branches? [bugfix/]
 Release branches? [release/]
 Hotfix branches? [hotfix/]
 Support branches? [support/]
 Version tag prefix? [] stacki-
+Hooks and filters directory? [/Users/mk186106/stacki/.git/hooks]
 ```
 
 Next we decide on the name for the release (e.g. 5.1rc1) and start the
