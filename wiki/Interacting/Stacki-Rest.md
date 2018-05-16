@@ -40,8 +40,9 @@ The Stacki REST API provides 1 endpoint - **/stack**
    > HTTP GET `http://\<hostname\>/stack`
 
    Running a HTTP GET Command against the /stack
-   endpoint, returns a CSRF cookie. This CSRF cookie
-   must be used to log in to the service.
+   endpoint, returns a CSRF cookie in the response
+   header. This CSRF cookie must be used to log
+   in to the service.
 
 1. Login to the Service
 

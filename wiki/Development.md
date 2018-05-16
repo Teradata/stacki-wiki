@@ -151,6 +151,131 @@ If you think your code is more in the *works for me* state, you need a
 code review. It happens to all of us, own up to it and ask for
 help. If you don't know if your code needs review, it needs review.
 
+#### Merge Party Prep
+
+Your code needs to be revertible, which means a single commit ready to
+merge back into develop.  Additionally the single commit must match
+the [commit message format below](#commit-message-format)
+
+To reduce your `feature` or `bugfix` changes to a single commit you
+will need to rebase you branch.
+
+```
+$ git checkout feature/name-of-feature
+$ git rebase -i develop
+```
+
+This will re-write your commit history and allow your to interactively
+use git's rebase feature to collapse all your commits into a single
+commit and update the log message to the correct format. You will need
+to `pick` the first commit in the list and change all the others to
+`squash`. Just like a merge a rebase may have conflict, you will need
+to manually resolve these and then type `git rebase --continue` to
+complete the operation. This may happen several times during the
+operation.
+
+Once you have rebased and are ready to merge you need to publish your
+changes using `--force`, this sounds dangerous but if the branch is
+ready to be merge it is going to be deleted right after the merge
+anyway.
+
+```
+$ git push --force origin feature/name-of-feature
+```
+
+#### Commit Message Format
+
+In order to automate the building of *release docs* that has *New
+Features* and *Bug Fix* sections, we will now require the following
+format in your commit log prior to merging your code onto the develop
+branch.
+
+Bug fixes.
+
+Minimally, the commit log for a bug fix should look like:
+
+```
+BUGFIX: One line summary of the bug fix
+```
+
+If you’d like to provide more details, then supply one line summary, then a blank line, then
+your details:
+
+```
+BUGFIX: One line summary of the bug fix
+
+More info about the bug fix.
+And remember, this data is going to go into a document that is readable by humans.
+and even more data about the bug fix
+```
+
+If you’d like to refer to a Jira ticket in your summary, make sure you have *JIRA* somewhere
+in the body:
+
+```
+BUGFIX: one line summary of the bug fix
+
+more info about the bug fix
+and even more data about the bug fix
+
+This fixes JIRA: STACKI-###
+```
+
+If your commit will _break_ existing Stacki installations (e.g., a schema change), make sure
+to put *BREAKING CHANGE* in the body of the commit message.
+
+```
+BUGFIX: one line summary of the bug fix
+
+BREAKING CHANGE: 
+This commit breaks Stacki, and here is an explanation on how you can update your frontend
+so you can apply this commit and still have a functioning system.
+```
+
+All text after *BREAKING CHANGE* will not be included in the release docs.
+
+If you have text that you’d like to include in the commit message, but you don’t want the
+text to be in the release docs, then use *INTERNAL*:
+
+```
+BUGFIX: one line summary of the bug fix
+
+INTERNAL:
+All text from the line above and to the end of the commit message will not be included
+in the release docs.
+```
+
+You can also use *INTERNAL* in the one line summary:
+
+```
+INTERNAL: This commit log message should not be in the release docs.
+```
+
+If your commit is a new feature, then your commit logs will look like:
+
+```
+FEATURE: one line summary of the feature
+```
+
+or
+
+```
+FEATURE: one line summary of the feature
+
+more info about the commit
+
+INTERNAL:
+all the content after this is ignored and will not be put in the document
+```
+
+If your commit is related to documentation, use *DOCS*:
+
+```
+DOCS: A documentation commit
+
+More info goes here
+```
+
 #### Merge Party
 
 Every week or so every developer with a completed feature will sit in
@@ -204,7 +329,7 @@ Release branches? [release/]
 Hotfix branches? [hotfix/]
 Support branches? [support/]
 Version tag prefix? [] stacki-
-Hooks and filters directory? [/Users/mk186106/stacki/.git/hooks]
+Hooks and filters directory? [~/stacki/.git/hooks]
 ```
 
 Next we decide on the name for the release (e.g. 5.1rc1) and start the
