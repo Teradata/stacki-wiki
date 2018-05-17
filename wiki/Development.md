@@ -161,6 +161,8 @@ To reduce your `feature` or `bugfix` changes to a single commit you
 will need to rebase you branch.
 
 ```
+$ # ensure develop is current
+$ git fetch origin develop
 $ git checkout feature/name-of-feature
 $ git rebase -i develop
 ```
