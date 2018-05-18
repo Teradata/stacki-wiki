@@ -320,13 +320,15 @@ DOCS: A documentation commit
 More info goes here
 ```
 
-#### Monday Merge Party
+#### Read Only Friday
 
 To qualify for merging on Monday, *your branch must be completely ready
 on Friday*.  This means clean commit history, passed automated and 
 manual testing, and code reviews complete by Friday morning.  The Branch
 Manager will take Friday to assemble a staging branch with all of the
 "Ready" branches, and run that through CI.
+
+#### Monday Merge Party
 
 For the merge party on Monday every developer with a completed feature
 will sit in a room together to discuss and merge their branches back
