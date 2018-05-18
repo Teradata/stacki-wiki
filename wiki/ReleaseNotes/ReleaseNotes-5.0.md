@@ -1,4 +1,3 @@
-## Release Notes - sum-up
 
 * Moved stacki code base to Python 3.6. You still don't have to learn it but you should.
 * XML syntax has changed to Stacki Universal XML. Write carts once, deploy on multiple OSs.

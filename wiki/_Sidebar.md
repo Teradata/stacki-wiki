@@ -48,20 +48,15 @@
   * [Building From Source](Building-From-Source)
   * [Building For AWS](Building-For-AWS)
   * [Adding new packages to Stacki](Adding-New-Packages-To-Stacki)
+* Reference
+  * [CLI Reference](stacki-CLI-documentation)
+  * [Example CSV Files](Example-CSV-Files)
+* Release Notes
+  * [Release Notes for 5.1](ReleaseNotes-5.1)
+  * [Release Notes for 5.0](ReleaseNotes-5.0)
+  * [Diffs from Stacki 4.0](ReleaseNote-DiffsFrom4.0)
 * Licenses
   * [Overview Licenses](Licenses)
   * [Rocks License](Rocks-License)
   * [Stacki License](Stacki-License)
-* Reference
-  * [CLI Reference](stacki-CLI-documentation)
-  * [Example CSV Files](Example-CSV-Files)
-* [Release Notes for 5.0](ReleaseNotes)
-* [Diffs from Stacki 4.0](DiffsFrom40)
 
-
-### Previous Releases
-
-* [4.x](https://github.com/Teradata/stacki-documentation-4.x/wiki)
-* [3.x](https://github.com/Teradata/stacki-documentation-3.x/wiki)
-* [2.x](https://github.com/Teradata/stacki-documentation-2.x/wiki)
-* [1.x](https://github.com/Teradata/stacki-documentation-1.x/wiki)
