@@ -155,7 +155,41 @@ help. If you don't know if your code needs review, it needs review.
 
 Your code needs to be revertible, which means a single commit ready to
 merge back into develop.  Additionally the single commit must match
-the [commit message format below](#commit-message-format)
+the [commit message format below](#commit-message-format).  Although not
+currently required, it is *highly suggested* that your branch also contain
+tests which exercise your code in a variety of ways.  Tools to
+facilitate/enforce (depending on your point of view ;) these requirements
+are on the horizon.
+
+Unless you know better, you should almost certainly be based off of
+develop.  Periodically, (and definitely just before the Merge Party)
+you should rebase your work on top of develop.  To do so:
+
+```
+# git fetch origin develop
+# git checkout my_branch
+# git rebase develop
+```
+
+This will grab the latest changes from develop and put them on your 
+branch, then automatically "replay" your commits.  To verify your 
+branch has all the commits:
+
+```
+git rev-list --count my_local_branch..origin/develop
+0
+# ^--- number of commits develop has that your branch does not.
+# You want this number to be exactly 0.
+```
+
+To see if your branch has too many commits:
+
+```
+# git rev-list --count origin/develop..my_branch
+1
+# ^--- the number of commits your branch has that develop does not.
+# You want this number to be exactly 1.
+```
 
 To reduce your `feature` or `bugfix` changes to a single commit you
 will need to rebase you branch.
@@ -183,6 +217,14 @@ anyway.
 
 ```
 $ git push --force origin feature/name-of-feature
+```
+
+Finally, verify that your local branch and the branch on GitHub are
+identical.
+
+```
+$ git diff --stat origin/$branch_name $branch_name
+$ 
 ```
 
 #### Commit Message Format
@@ -278,16 +320,45 @@ DOCS: A documentation commit
 More info goes here
 ```
 
-#### Merge Party
+#### Read Only Friday
 
-Every week or so every developer with a completed feature will sit in
-a room together and discuss and merge their branches back onto
-`develop`, and immediately get `develop` back into the build and test
-system. Not all features invited to the party get merged, some get
-pushed back to code review, and some may get defered for a later
-party.
+To qualify for merging on Monday, *your branch must be completely ready
+on Friday*.  This means clean commit history, passed automated and 
+manual testing, and code reviews complete by Friday morning.  The Branch
+Manager will take Friday to assemble a staging branch with all of the
+"Ready" branches, and run that through CI.
 
-	next merge party will document the process
+#### Monday Merge Party
+
+For the merge party on Monday every developer with a completed feature
+will sit in a room together to discuss and merge their branches back
+onto `develop`, and immediately get `develop` back into the build and
+test system.  Not all features invited to the party get merged, some get
+pushed back to code review, and some may get deferred for a later party.
+
+The Branch Manager will run the meeting, which involves going down the
+list of merge-ready branches and for each one, triple-checking the diff,
+the commit log, and (hopefully in the future) the test status.  For the
+sake of Sanity, start from a clean clone of Stacki.
+
+The Branch Manager will then ask the developer for a final confirmation
+before performing the merge onto the `develop` branch.
+
+To prevent "merge commits", the Branch Manager should perform a rebase
+on develop for each branch just before merging.  There is no need to
+push these rebased branches out, as we will be deleting them once
+merged.
+
+```
+# git rebase develop $next_branch_name
+# git checkout develop
+# git merge $next_branch_name
+# GOTO 10
+# Maybe there's a "git flow" way to do the above?
+```
+
+This will result in fast-forward merges except in the cases of actual
+merge conflicts, which obviously have to be resolved normally.
 
 
 ### Release Branches
