@@ -32,6 +32,7 @@
   * [Network Configuration - Backends](Network-Configuration-Backends)
   * [Partioning Configuration](Partitioning-Configuration)
   * [Storage Configuration](Storage-Configuration)
+  * [Switch Configuration](Switch-Configuration)
   * [UEFI](UEFI)
 * [Interacting With Your Cluster](Interacting)
   * [Command line](Command-Line)
