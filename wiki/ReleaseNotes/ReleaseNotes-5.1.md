@@ -116,9 +116,10 @@
 * Separate 'stack remove storage partition' into commands based on scope.
 
   Below commands have been introduced:
-  stack remove appliance storage partition
-  stack remove host storage partition
-  stack remove os storage partition
+
+  - stack remove appliance storage partition
+  - stack remove host storage partition
+  - stack remove os storage partition
   
   JIRA: STACKI-246
 
