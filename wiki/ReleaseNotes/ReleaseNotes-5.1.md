@@ -1,13 +1,112 @@
-# develop
+# 5.1rc4
 
 ## Feature
+
+* Add carts using URLs. Remove Unpack Carts
+
+  Add carts using URL.
+  Remove "unpack" cart command
+  Clean up docstrings. Use authentication for downloading
+  carts using URLS
+
+  Fixes JIRA: STACKI-503
+
+* Reject common hostnames ('frontend' and 'backend')
+
+  This fixes JIRA: STACKI-350
+
+* Add user settable host metadata
+
+  This is similar to the AWS meta-data, the idea being a container for
+  arbitrary data unique to a host. `stack set host metadata` is used
+  to set this and the data itself is made available from a read-only
+  host attribute called `metadata`.
+
+  The same thing could have been accomplished using a standard attribute,
+  but the intention is to have the semantics that this is unique to a host
+  and not subject to the standard attribute inheritance rules.
+
+  BREAKING CHANGE: schema addition
+  ```
+  $ mysql cluster
+  MariaDB [cluster]> alter table nodes add column MetaData text default NULL;
+  ```
+
+* Have the test-framework VMs use less RAM
+
+  Change all the VMs to be created with 1GB of RAM instead of 2GB. That
+  should still be enough for them to get their jobs done.
 
 * Generate Release Notes Automatically
 
   stack-releasenotes is installed on all nodes
-  
+
   This is generated from the Git Log and assumes the new nice
   format for commits. Ugly old git logs are also included (for now)
+
+## Bugfix
+
+* Cart permissions need to be recursively applied.
+
+  Cart permissions were only being applied at the top level, and
+  to the files in the directories. None of the directory permissions
+  changed. This commit fixes it so that directory permissions change
+  as well
+
+* Give backends 2GB each during tests
+
+  It turns out that the Centos 7 backends don't like to install into
+  anything with less than 2GB of RAM.
+
+* Don't install the stacki-releasenotes package on SLES11
+
+* `stack list os`
+
+  `list os` needs to trick the endOutput code to report only one column, all
+  other commands report multiple columns. Recent changes in endOutput broke
+  the trick. For `output-format=json` the was not broken, only for `text` output.
+
+* *stack list host* sorts hosts by rack/rank numerically then alphabetically
+
+  Hosts will be sorted by rack numerically first, then alphabetically. That is, all hosts with
+  numerical rack values will be listed first, then all hosts with non-numerical rack values will
+  be listed last.
+
+  Hosts with the same rack value, will be sorted numerically first, then alphabetically. Below
+  is an example output of *stack list host*:
+
+  | HOST            | RACK      | RANK       | APPLIANCE|
+  |-----------------|:---------:|:----------:|----------|
+  | stacki-2-1      | 0         | 0          | frontend |
+  | backend-0-0     | 1         | station-11 | backend  |
+  | ethernet-2-1    | 2         | 1          | switch   |
+  | stacki-2-10     | 2         | 10         | backend  |
+  | stacki-2-11     | 2         | 11         | backend  |
+  | stacki-2-12     | 2         | 12         | backend  |
+  | infiniband-2-18 | 2         | 18         | switch   |
+  | infiniband-2-20 | 2         | 20         | switch   |
+  | ethernet-2-43   | 2         | 43         | switch   |
+  | backend-0-1     | sector-42 | 2          | backend  |
+  | backend-0-2     | sector-42 | 3          | backend  |
+  | backend-0-3     | sector-42 | 4          | backend  |
+  | backend-0-4     | sector-42 | station-8  | backend  |
+
+* Ignore drop database warning
+
+  This fixes JIRA: STACKI-493
+
+* SLES11 doesn't have the stack-releasenotes package (currently)
+
+* Better handling for old pip wheel files
+
+  pip2src crashed on a package update because it of lazy parsing
+  of the METADATA file.
+
+* stack-releasenotes missing from manifest
+
+## Git
+
+* starting release 5.1rc4
 
 
 # 5.1rc3
