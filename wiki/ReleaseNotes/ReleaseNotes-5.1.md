@@ -66,14 +66,14 @@
   other commands report multiple columns. Recent changes in endOutput broke
   the trick. For `output-format=json` the was not broken, only for `text` output.
 
-* *stack list host* sorts hosts by rack/rank numerically then alphabetically
+* `stack list host` sorts hosts by rack/rank numerically then alphabetically
 
   Hosts will be sorted by rack numerically first, then alphabetically. That is, all hosts with
   numerical rack values will be listed first, then all hosts with non-numerical rack values will
   be listed last.
 
   Hosts with the same rack value, will be sorted numerically first, then alphabetically. Below
-  is an example output of *stack list host*:
+  is an example output of `stack list host`:
 
   | HOST            | RACK      | RANK       | APPLIANCE|
   |-----------------|:---------:|:----------:|----------|
@@ -113,7 +113,7 @@
 
 ## Feature
 
-* Separate 'stack remove storage partition' into commands based on scope.
+* Separate `stack remove storage partition` into commands based on scope.
 
   Below commands have been introduced:
 
@@ -165,15 +165,15 @@
   
   The above command adds a 'HASH' column with the status.
 
-* add ability to specify 'channel' as a parameter for 'add host interface'
+* add ability to specify 'channel' as a parameter for `add host interface`
 
 * Make table output format more consistent.
 
   `stack list` commands with NULL output in the last column will now have -'s printed
   up to the width of that column's header as in other columns.
   
-  This allows cell filling in the 'channel' column of 'stack list host interface',
-  without cluttering the output with lots of -'s in 'stack list host' if 'comment' is long.
+  This allows cell filling in the 'channel' column of `stack list host interface`,
+  without cluttering the output with lots of -'s in `stack list host` if 'comment' is long.
 
 * Add jmespath module
 
@@ -192,7 +192,7 @@
   udevsettle waits until the controller is done, before generating
   partitioning info
 
-* Remove 'stack run host test' since it requires salt
+* Remove `stack run host test` since it requires salt
 
   This was old code left over from StackIQ Enterprise. It's great stuff
   but beyond the mission of ping and prompt. It may come back again
@@ -249,14 +249,14 @@
   
   Make the SQL query cleaner, and context specific.
 
-* blank 'run host command=' no longer hangs
+* blank `run host command=` no longer hangs
 
   :runner:
   JIRA: STACKI-325
 
 * stack list host graph
 
-  Bring "stack list host graph" to the 21st century
+  Bring `stack list host graph` to the 21st century
 
 * Refer to the correct information
 
