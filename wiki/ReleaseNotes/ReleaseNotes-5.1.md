@@ -1,3 +1,33 @@
+# 5.1rc5
+
+## Feature
+
+* cleanup report attrfile
+
+  print each entry on a single line
+  ignore attrs with empty values; if loaded back these will erase attrs completely
+  unload attrfile updated for python 3
+
+* Add "chassis power" commands to control and list the power settings of hosts.
+
+  To set the power on a host, execute:
+
+  `stack set host power {host ...} command="on"|"off"|"reset"`
+
+  To list the power for a host, execute:
+
+  `stack list host power {host ...}`
+
+## Bugfix
+
+* SLES nukedisks=false is now functional :floppy_disk:
+
+  JIRA: STACKI-307
+
+## Git
+
+* starting release 5.1rc5
+
 # 5.1rc4
 
 ## Feature
