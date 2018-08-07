@@ -1,3 +1,219 @@
+# 5.1rc6
+
+## Feature
+
+* Add a check in 'stack report system' for named
+
+* Upgrade to Python 3.6.6
+
+* turn status field into a real feature
+
+  Enhanced the message queue status reporting to be hostid based (not
+  hostname) and added a ttl to all messages. The first part fixes issues
+  when hosts are renamed and the status gets lost, now everything is
+  keyed off the ID from the nodes table (permanent for lifetime of
+  host). The second allows us the age out messages at different rates.
+
+  Instrumented multiple parts of the installer to send more fine grained
+  status messages. The typical workflow of a system install will see the
+  following messages:
+
+  | message                   | ttl  |
+  | ------------------------- | ---- |
+  | install profile request   |   30 |
+  | install profile sent      |   30 |
+  | install profile           |  300 |
+  | install download          | 3600 |
+  | install stage=pre         | 3600 |
+  | install stage=pre-package | 3600 |
+  | install download          | 3600 |
+  | install stage=post        | 3600 |
+  | install reboot            |  300 |
+  | install stage=boot-pre    | 3600 |
+  | install stage=boot-post   | 3600 |
+  | online                    |  120 |
+
+  The `install download` is seen both before the second stage image
+  downloads and rpm tracker lookups. All `install *` messages should be
+  thought of as the previous `install` and the extra information is for
+  debugging and may change at any time.
+
+  The `online` state was previously called `up` and just meant that the
+  installer's first pass was done and the host was on the network. For
+  SuSe it could be seens even though the second pass of the installer
+  was active. To improve on this Stacki now tracks is `sshd` is running
+  as a seperate state (piggy-back on the existing health message). The
+  inspired a new command `stack list host status` which a `state` and
+  `ssh` fields. The `state` field is the previous health message as
+  described above. The `ssh` field is `up` IFF sshd is running, and None
+  if it is not (TTL same as the `state` health).
+
+  The new `stack list host status` command means:
+
+  - `stack list host` `status` field is now *deprecated* and will be
+    removed in the next release. Just still present to keep existing
+    consumers from crashing but it will always says *deprecated*.
+
+  - pluggins can be used to add move status (is service X runnning?)
+
+  Other stuff:
+
+          * update Redis to 4.0.11
+        * change rmq to smq
+        * health channel is now json payload (backwards compat with
+            old text - but will deprecate)
+        * stack-mq is now in the installer (SLES only)
+        * stack-publish.py is gone replaced by updated smq-publish
+        * fixed some leftover Python3 transition encode()/decode() bugs
+        * remove old processors related to StackIQ Enterprise
+        * changed `message` field in `Message` to `payload` (less confusing)
+        * added psutil to foundation-python-packages
+          * this requires refreshing version of all python code
+          * hard code PyMySQL to 0.8.1 (newer version require newer pip)
+
+  ToDo:
+
+        * Instrument RedHat installer
+        * Need a `install start` state (where to trigger it?)
+        * fix test_enable_discover.py
+* Added the ability to have 'auto' in the IP address field in a host configuration spreadsheet and 'set host interface' command.
+
+  Host IP address will be automatically assigned based on the network address, mask.
+
+  JIRA: STACKI-419
+
+* remove the dump command
+
+* Enhance `stack add pallet` to recognize and add SUSE Enterprise Storage media.
+
+* Add 'load hostfile' test for duplicate interfaces
+
+* add cart accepts url and credentials on the command line
+
+  BREAKING CHANGE:
+  ALTER TABLE carts ADD url TEXT;
+
+  list pallet expanded=true displays the url
+  generalize the download function of add pallet and place it in pylib
+  from stack.download import fetch
+  file = fetch(url, username="", password="")
+  username and password are optional
+
+* add ability to list supported switches
+
+* Split switch library into multiple files
+
+* Add vendor/make to output of 'stack list switch'
+
+* Add tests for 'stack add/remove host alias'
+
+  JIRA: STACKI-286
+
+* add a url column to the rolls table
+
+  BREAKING CHANGE:
+  ALTER TABLE rolls ADD url TEXT;
+
+  add an optional expanded parameter to list pallet to display the url
+  accept username and password parameters for downloading pallets
+
+* [add,list] storage [controller,partition] with 'os' scope
+
+  changed sql commands to the new format to prevent injection
+
+## Bugfix
+
+* Validation of host interface before entering them in etc/hosts file
+
+* `stack report ansible` remove padChar `------` from output
+
+  Also moved ansible into foundation-python-packages, and cleaned
+  up the code to use correct stacki-style argument parsing
+
+* when adding a new api group, if the group already exists, the command error that gets raised is malformed
+
+* Ensure `stack report host` only produces unique entries.
+
+* Update interface information with MAC addresses correctly
+
+  When installing a backend node, all the interfaces are reported
+  back by the installer. Any interfaces missing on the frontend,
+  will be added to the database.
+
+  The Bug is - when interfaces are specified in the database, with
+  all the information except the MAC address, this call fails to
+  update the MAC address.
+
+  This commit fixes that.
+
+  FIXES: JIRA STACKI-585
+
+* Set the frontend root password during frontend-install.py
+
+* minor tweak to make running set-up.sh more user-friendly
+
+* Plugins no longer run on a remove of an empty a:backend
+
+* Prevent syncing dhcpd with duplicate host interfaces
+
+* Fix database backup cronjob script
+
+* Major overhaul of the Dell x1052 ethernet switch configuration code.
+
+  BREAKING CHANGE: Apply 'ALTER TABLE switchports DROP PRIMARY KEY;' to database.
+
+* Prevent loading a hostfile with entries containing an IP but no network
+
+  This fixes JIRA: STACKI-551
+
+* In select(), we need to stringify the sql parameters to be able to join() them.
+
+* Prevent set host boot from throwing exception when given a valid-but-empty host specification.
+
+* add api user needs to return formatted output
+
+  This fixes JIRA: STACKI-536
+
+  When running ```stack add api user```, the code would print
+  the credentials of  the user that were just created.
+  This mean when this command was called through the ReST API,
+  it would fail, since it would print the output on standard out,
+  and not through stacki command line formatted output.
+
+  This commit fixes the above problem.
+
+  FEATURE: Calling "add api user" from the ReST API returns JSON
+
+  The following JSON
+```
+  [
+      {
+          "hostname": "front.end.name",
+          "key": "ran.dom.key",
+          "username": "user.name"
+      }
+  ]
+```
+
+  This can then be parsed by clients for future use.
+
+
+* fix typo in remove storage partition and prevent call/command list.firewall from printing other appliance rules as their own
+
+* 'sync host network' continues without backend's ssh available
+
+* Added more required input and error handling for "remove storage partition"
+
+  Now requires device="*" to remove all scope=global partitioning
+  Warns when using deprecated host input without scope=host
+  Warns when using a non-existent scope
+
+* Removed extra "." on PQDN
+
+## Git
+
+* starting release 5.1rc6
+
 # 5.1rc5
 
 ## Feature
