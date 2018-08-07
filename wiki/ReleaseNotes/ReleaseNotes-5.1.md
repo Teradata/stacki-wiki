@@ -58,24 +58,25 @@
 
   Other stuff:
 
-          * update Redis to 4.0.11
-        * change rmq to smq
-        * health channel is now json payload (backwards compat with
-            old text - but will deprecate)
-        * stack-mq is now in the installer (SLES only)
-        * stack-publish.py is gone replaced by updated smq-publish
-        * fixed some leftover Python3 transition encode()/decode() bugs
-        * remove old processors related to StackIQ Enterprise
-        * changed `message` field in `Message` to `payload` (less confusing)
-        * added psutil to foundation-python-packages
-          * this requires refreshing version of all python code
-          * hard code PyMySQL to 0.8.1 (newer version require newer pip)
+  * update Redis to 4.0.11
+  * change rmq to smq
+  * health channel is now json payload (backwards compat with
+    old text - but will deprecate)
+  * stack-mq is now in the installer (SLES only)
+  * stack-publish.py is gone replaced by updated smq-publish
+  * fixed some leftover Python3 transition encode()/decode() bugs
+  * remove old processors related to StackIQ Enterprise
+  * changed `message` field in `Message` to `payload` (less confusing)
+  * added psutil to foundation-python-packages
+    * this requires refreshing version of all python code
+    * hard code PyMySQL to 0.8.1 (newer version require newer pip)
 
   ToDo:
 
-        * Instrument RedHat installer
-        * Need a `install start` state (where to trigger it?)
-        * fix test_enable_discover.py
+  * Instrument RedHat installer
+  * Need a `install start` state (where to trigger it?)
+  * fix test_enable_discover.py
+
 * Added the ability to have 'auto' in the IP address field in a host configuration spreadsheet and 'set host interface' command.
 
   Host IP address will be automatically assigned based on the network address, mask.
