@@ -11,6 +11,7 @@
 * Add environment scope for routes and firewalls
 
   BREAKING CHANGE:
+```
   CREATE TABLE environment_routes (
     Environment   int(11) NOT NULL default '0',
     Network       varchar(32) NOT NULL default '',
@@ -34,6 +35,7 @@
     Flags         varchar(256) default NULL,
     Comment       varchar(256) default NULL
   );
+```
 
 * add subnet and interface columns to list route; clean up list route and add route
 * Move 'stack report system' to its own package
