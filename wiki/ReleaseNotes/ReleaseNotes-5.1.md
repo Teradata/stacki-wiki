@@ -1,3 +1,159 @@
+# 5.1rc7
+
+## Feature
+
+* When `stack sync host network localhost` is executed, cleanup the ifcfg-* files that
+
+  *don't* have the stamp that indicates the ifcfg file was written by Stacki. The stamp is:
+
+        # AUTHENTIC STACKI
+
+* Add environment scope for routes and firewalls
+
+  BREAKING CHANGE:
+  CREATE TABLE environment_routes (
+    Environment   int(11) NOT NULL default '0',
+    Network       varchar(32) NOT NULL default '',
+    Netmask       varchar(32) NOT NULL default '',
+    Gateway       varchar(32) NOT NULL default '',
+    Subnet        int(11) default NULL references subnets,
+    Interface     varchar(32) default NULL
+  );
+
+  CREATE TABLE environment_firewall (
+    Environment   int(11) NOT NULL default '0',
+    Tabletype     enum('nat','filter','mangle','raw') NOT NULL
+                  default 'filter',
+    Name          varchar(256) default NULL,
+    InSubnet      int(11) default NULL references subnets,
+    OutSubnet     int(11) default NULL references subnets,
+    Service       varchar(256) default NULL,
+    Protocol      varchar(256) default NULL,
+    Action        varchar(256) default NULL,
+    Chain         varchar(256) default NULL,
+    Flags         varchar(256) default NULL,
+    Comment       varchar(256) default NULL
+  );
+
+* add subnet and interface columns to list route; clean up list route and add route
+* Move 'stack report system' to its own package
+
+* Checkin of baseline code to interact with Mellanox 7800 IB switch.
+
+  This code provides the capability to:
+
+  * add ssh keys
+  * toggle and display subnet manager status
+  * create/delete partitions based on the 'ibfabric' and 'ibpartition' parameters in the management host interface
+  * add/remove members from partitions, based on the 'ibpartition' parameters in their ibN host interfaces
+  * members are added at differing membership levels, determined automatically
+
+* Remove insert-ethers
+
+  The newer node discovery code replaces the older insert-ethers. This
+  commit also removes a few pylib files no longer used.
+
+  The backup-db script is moved into the admin package.
+
+* dump and load system configuration information into and out of a json document
+
+* Add a check in 'stack report system' for named
+
+## Bugfix
+
+* fix sync host network cleanup for redhat
+
+* Reverse the way `stack sync host network localhost` works.
+
+  Keep all ifcfg files in /etc/sysconfig/network that *don't* have the Stacki stamp
+  (AUTHENTIC STACKI) and remove all the ifcfg files that do have the Stacki stamp. Then later
+  in the command, new ifcfg files will be written for each interface in the database for the
+  frontend.
+
+* Update `stack list switch config` to output info about *general* and *trunk* ports as
+
+  well as output the coorelation with the hosts' interfaces.
+
+* Suppress error message when removing routes from the live routing table.
+
+* Expand firewall rules to multiple lines when needed in iptables.
+
+  A firewall rule in the database can expand to multiple iptables rules in a couple cases:
+
+        1) The database rule refers to a network that associated with multiple interfaces on
+        the host.
+
+        2) When 'protocol' equals 'all' and there is a 'service' specified.
+
+  In case 1, we need a separate rule for each interface.
+
+  In case 2, we need two separate rules, one with '-p tcp' and one with '-p udp'.
+
+* [WebService] 'stack add pallet .iso' requires root for loopback mounting
+
+* [WebService] remove the unneeded admin web interface as well as list_dir functionality
+
+* [WebService] Fix string encoding bug in web service, and disable debug output from django
+
+* Fix Stack report host bootfile so that it doesn't throw stack traces
+
+* Fix stack sync host firewall restarts
+
+  1. The current code uses the OS information of the frontend
+     to decide which commands to run. This means for SLES 11
+     backends installed from a SLES 12 frontend, the sync host firewall
+     command will always be wrong, and error out.
+  2. Cleanup firewall startup script for SLES 11 SP3.
+     Add status, and restart commands to the service script
+
+* Make argument processors in stack commands work consistently
+
+  Continuation of a previous fix, some of the code went on walkabout but
+  it is back now.
+
+  Now fails when any of the following objects do not exist:
+
+  - appliance
+  - box
+  - cart
+  - environment
+  - host
+  - network
+  - os
+  - pallet
+
+* In *stack report switch*, don't output a `vlan` stanza if there are no vlans
+
+  configured for any backend hosts, and don't output a line that tells the switch to not
+  DHCP for its management IP address (once you set the IP address, the switch automatically
+  puts the management IP in `static` mode.
+
+* Add test cases for add host and list attr
+
+* stack add host won't accept empty string as rack and rank
+
+* Modifying code to remove long name from appliances
+
+  BREAKING CHANGE:
+  ALTER TABLE appliances DROP COLUMN Longname;
+  Replace places where longname is used to the appliance name.
+
+* WS incorrectly handled params with `=` in value
+
+  While we are here also
+  - move logging to local1 (was local2)
+  - log the complete command line called
+
+* Log and ignore incorrect inconfigurations during reports
+
+* in report system, only check named if it needs to be checked.  Also added a check for sshd.
+
+* Validation of host interface before entering them in etc/hosts file
+
+## Git
+
+* starting 5.1rc7
+
 # 5.1rc6
 
 ## Feature
