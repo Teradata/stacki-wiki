@@ -1,3 +1,78 @@
+# 5.1rc9
+
+## Feature
+
+* Ability to add user-defined global configuration for the Dell 1052 switch.
+
+  For example, to configure SNMP on the switch named *ethernet-231-43*, exeucte:
+
+  `stack add host attr ethernet-231-43 attr=switch_global_config value="snmp-server community \
+public ro view Default"`
+
+* Attribute control to configure a host's switch port as a *trunk*.
+
+  A *trunk* port allows all VLAN traffic to pass through it. You can set a host's switch port
+  to a trunk by executing:
+
+        `stack set host attr hostname attr=switch_port_mode value=true`
+
+* Include man, and man-pages in install
+
+  SLES does not include man, or man-pages as part
+  of a Minimal install set. Include the packages.
+
+* Support for globbing on uppercase hostnames
+
+  Globbing on hostnames is now case insensitive.
+
+* `set host power` updates the message queue
+
+* [Switch] Manage ssh keys on Mellanox IB switches
+
+  * Automatically add stacki's public key to the switch on a sync.
+  * Wipe out all ssh authorized keys on nukeswitch=true
+
+* Added `nukeswitch=yes|no` to the Dell 1052 ethernet switch configuration.
+
+  When `nukeswitch=yes`, all VLANs will be removed from the switch and each port will be confi\
+gured onto the default VLAN (i.e., VLAN 1).
+
+## Bugfix
+
+* stack enable/disable pallet is now multiple arg friendly
+
+* Make `remove os` actually remove the OS, even if it has attrs or routes attached
+
+* [Switch] Correct membership settings for IB configs
+
+* Duplicate default host interfaces won't be allowed in stack add host interface
+
+## Git
+
+* starting stacki-5.1rc9
+
+# 5.1rc8
+
+## Feature
+
+* remove the deprecated status in `list host`
+
+* Better tracking of 3rdparty packages
+
+  - Update LICENSE.txt files for foundation packages
+  - Generate a `nosat.txt` file for pip packages
+  - Move more binaries out of git and into s3
+  - Added top level LICENSE-3rdparty.txt
+
+## Bugfix
+
+* Freeze python-daemon pip module to 2.1.2
+
+## Git
+
+* starting 5.1rc8
+
+
 # 5.1rc7
 
 ## Feature
