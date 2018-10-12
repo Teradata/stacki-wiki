@@ -1,3 +1,17 @@
+# 5.1rc10a
+
+## Bugfix
+
+* Fix UPPERCASE hostnames (again)
+
+  Stop manipulating the case on lookups and always store the original
+  case (we always did this). When we do this lookups are correctly case
+  insensitive but globbing is case incorrectly sensitive.
+
+  Now do extra work to change only the globbing lookups and make the
+  glob pattern case insensitive (Python cannot natively do this because
+  it defaults to the OS behavior).
+
 # 5.1rc10
 
 ## Feature
