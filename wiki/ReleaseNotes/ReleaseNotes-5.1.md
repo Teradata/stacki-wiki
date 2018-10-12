@@ -1,3 +1,119 @@
+# 5.1rc10
+
+## Feature
+
+* Better Git->ReleaseNotes
+
+* Move hardcoding of commands that require sudo in Web Service
+
+  FIXES - JIRA-739
+
+  Currently, there are several commands in the Stacki command line, that,
+  when invoked through the web-service, require sudo access. These commands
+  are hardcoded into the web-service.
+
+  This check-in adds the ability to dynamically update list of commands
+  that require sudo access.
+
+* add "list host switch" to sudo commands
+
+* Auto sync when adding and removing sudo commands
+
+  When adding or removing commands to the sudo list, default to
+  automatically syncing the sudoers file. However give the user
+  the option to turn syncing off. This way, you can add multiple
+  commands, and then run sync once.
+
+* Add ibfabric to the output of 'stack list switch expanded=true'
+
+* Remove `set host osaction` and `set host installaction`
+
+* Remove the `bootflags` related commands
+
+  This commands are no longer used and were removed:
+
+  * remove host bootflags
+  * report host bootflags
+  * set host bootflags
+
+* Tags (sort of like Attributes but not)
+
+  This is the stat of a Tags feature. Tags can be applied to various objects in the
+  Stacki Database but do not roll up into XML entities when building host profiles.
+  Tags are only visible through the CLI/API and for now only with the following
+  commands:
+
+  - `stack add pallet tag`
+  - `stack set pallet tag`
+  - `stack list pallet tag`
+  - `stack remove pallet tag`
+
+## Bugfix
+
+* Change how getBoxPallet returns information
+
+  This branch started as a bugfix branch for "run pallet".
+  "run pallet" did not work if there were 2 pallets of the same
+  name on the frontend, but only one was enabled for the frontend box.
+
+  This required a re-architecting of the "run pallet" command, which
+  involved changing how getBoxPallet function returned information.
+
+  With this change "getBoxPallets" function returns output in the
+  same format as "getPallets" from the PalletArgument Processor.
+  This makes it easy to compare the 2 data structures.
+
+  This also means that, all commands using getBoxPallets need to change.
+  As part of this cleanup, "report host repo" was also cleaned up.
+
+* Specify command when erroring out.
+
+* Fix uppercase hostnames (again)
+
+* Have `load json` restore both the osaction and installaction
+
+* `set bootaction` will now either create a new bootaction or override an existing one, if iRe
+already exists.
+
+* Accept forwarded traffic by default.
+
+  The Default Firewall policy on a machine installed
+  by Stacki is to drop forwarded packets. This breaks
+  installs with multiple networks, and hypervisor installs.
+
+  To allow forwarded packets to pass-through by default, change
+  the default policy on the FORWARD chain to ACCEPT.
+
+  Fixes JIRA: STACKI-630
+
+* Make sure the pallet matches the box OS before enabling it
+
+## Breaking Change
+
+* Any commands that currently consume the output
+
+  of `stack {verb} api` commands will need to be audited to
+  ensure that the headers are being referenced correctly.
+
+* schema addition
+
+  ```
+  $ mysql cluster
+  CREATE TABLE tags (
+  Scope           enum ('box', 'cart', 'host', 'network', 'pallet'),
+  Tag             varchar(128) NOT NULL,
+  Value           text,
+  ScopeID         int(11),
+  INDEX (Scope),
+  INDEX (Tag),
+  INDEX (ScopeID)
+  );
+  ```
+
+## Git
+
+* starting 5.1rc10
+
 # 5.1rc9
 
 ## Feature
