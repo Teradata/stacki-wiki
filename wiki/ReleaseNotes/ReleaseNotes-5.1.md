@@ -1,3 +1,162 @@
+# 5.1rc11
+
+## Feature
+
+* Produces a list of health messages for every ethernet and InfiniBand switch in the system.
+
+  The effect is the output from `stack list host status` will look something like:
+
+  | HOST | STATE | SSH |
+  |------|-------|-----|
+  | ethernet-667-1 | online | up |
+  | stacki-667-4 | online | up |
+  | stacki-667-5 | online | up |
+  | infiniband-667-9 | online | up |
+
+* remove deprecated switch commands:
+
+  * add switch
+  * load switch hostfile
+  * load switchfile
+
+* Give ib switches their own commands.
+
+  Adds the following commands:
+
+  add switch partition
+  add switch partition member
+  list switch partition
+  list switch partition member
+  remove switch partition
+  remove switch partition member
+  set switch partition membership
+  set switch partition options
+  sync switch ib
+
+  IB switches no longer use the interfaces table to store partition information.
+
+  New attributes are required to use IB switches.  An attribute, 'switch_type=infiniband' muste
+set on IB switches.
+
+## Bugfix
+
+* match IB switch credential attribute names to the ones used in the rest of the code.
+
+  Both switch types now use the format:
+
+  * switch_username
+  * switch_password
+
+* sync switch ib now correctly syncs partition flags
+
+  IB subsystem no longer uses the options field in the networking table.  A new attribute, 'ibbr
+ic' controls only the determination about which switches shouldn't be subnet managers in a multi
+-switch fabric.
+
+  Replaced 'hostname' parameter with 'member' in the ib switch commands.
+
+* Rollback all package version changes besides itsdangerous
+
+* ItsDangerous is now itsdangerous again
+
+  Reset the `python-packages/versions.json` to pick up the current
+  quantum state of the ItsDangerous/itsdangerous package. Then update
+  the initrd/updates for installation kernels.
+
+* pip2src freeze dependency versions
+
+* do not install ansible on backend
+
+* Fix substring search in the `stack help` command
+
+* The `output-network` of a firewall rule should generate a `-o` flag
+
+* `report host interface` for redhat was incorrectly checking for the existance of an interfacRe
+name, not the network.
+
+* CNAMEs in `report zones` were broken because the code was using the IP address, not the deviRe
+, to look up entries in the aliases table.
+
+* Add `list switch *` and `create host switch mapping` to the list of commands that require suRe
+ for the ReST API.
+
+* Fix the code that compares a host's hash on the node versus the computed hash for the host oRe
+the frontend.
+
+* Need to put a newline in the code that adds `net.ipv4.ip_forward` to /etc/sysctl.conf.
+
+  Without this fix, the line /etc/sysctl.conf looks like:
+
+  `# net.ipv6.conf.all.disable_ipv6 = 1net.ipv4.ip_forward = 1`
+
+  Rather than the correct form of:
+
+  ```# net.ipv6.conf.all.disable_ipv6 = 1
+  net.ipv4.ip_forward = 1```
+
+* Disable standard status message during second stage of YaST installer
+
+* itsdangerous is now ItsDangerous
+
+## Breaking Change
+
+* Introduces new database tables
+
+  DROP TABLE IF EXISTS ib_partitions;
+  CREATE TABLE ib_partitions (
+  id        int(11) NOT NULL auto_increment,
+  switch    int(11) NOT NULL references nodes on delete cascade,
+  part_key    int(11) NOT NULL,
+  part_name    varchar(128) NOT NULL,
+  options    varchar(128) NOT NULL default '',
+  PRIMARY KEY (id),
+  INDEX (part_name)
+  );
+
+  DROP TABLE IF EXISTS ib_memberships;
+  CREATE TABLE ib_memberships (
+  id        int(11) NOT NULL auto_increment,
+  switch    int(11) NOT NULL references nodes on delete cascade,
+  interface    int(11) NOT NULL references networks on delete cascade,
+  part_name    int(11) NOT NULL references ib_partitions on delete cascade,
+  member_type    varchar(32) NOT NULL default 'limited',
+  PRIMARY KEY (id),
+  INDEX (switch, part_name, interface)
+  );
+
+## Git
+
+* starting 5.1rc11
+
+
+# 5.1rc10b
+
+## Bugfix
+
+* Actually import the module that you want to use
+
+* `list pallet tag` incorrect tag name
+
+  List command reported all tags with correct values but a single
+  incorrect name.
+
+* Rewrite AUTO IP to improve performance
+
+  The rewrite takes CLASS A network search time from 45s to 0.1s
+
+* A few modules needed upgrading in test-framework
+
+  Github started complaining about anisible and paramiko versions. I also got
+  rid of the package hash checking, because it was a pain in my butt to
+  maintain.
+
+* Actually import the module that you want to use
+
+## Git
+
+* starting 5.1rc10b
+
+
 # 5.1rc10a
 
 ## Bugfix
