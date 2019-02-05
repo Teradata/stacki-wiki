@@ -10,7 +10,7 @@ If any of the terms below are unfamiliar to you, read the [Definitions](Definiti
 
 ## Installation
 
-You need one frontend and at least one backend.
+You need one frontend and at least one backend.  They need to be networked.  The backend needs to be set to PXE boot.
 
 You can't install a backend without a frontend.
 
