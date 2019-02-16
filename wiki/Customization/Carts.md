@@ -55,7 +55,7 @@ Seeing how this works is best done through examples. The most common use cases a
 
 Follow these examples to futher customize your cart.
 
-* [Adding RPMS](Adding-RPMS)
+* [Adding RPMs](Adding-RPMs)
 * [Adding Files](Adding-Files)
 * [Adding Installation Scripts](Adding-Scripts)
 
