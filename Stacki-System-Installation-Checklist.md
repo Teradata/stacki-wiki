@@ -9,6 +9,8 @@ checklist.py is written as a systemd service that runs on the frontend all the t
 
 The installation messages will be written to /var/log/checklist.log
 
+![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Install-Stages.png)
+
 # Installation Stages
 Checklist code generates the below messages based on the OS type. Once the 'Reboot_Okay' stage is reached, the message list will be cleared to indicate the end of an install.
 
@@ -60,7 +62,12 @@ checklist.py uses python threaded daemons to monitor the installation progress t
 
 **MQProcessor** - Listens on the Stack Message Queue 'health' channel for messages relevant to backend installations.
 **BackendExec** - SSH's into the installing node via port 2200 and drops a BackendTest.py script that checks if partition files were generated, ludicrous-client service was started etc.
+![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Backend.png)
 **CheckTimeouts** - Triggers a timeout message if backend installation does not progress to the next state within a certain time span.
+
+![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Daemons.png)
 
 ## Message Sharing - Design Architecture
 Python Synchronized Queue's are used to share messages between the different threaded daemons. GlobalQueueAdder removes messages from localQ and adds it to the Shared Q. This is done to minimize Shared Q contention and to have the threaded daemons not spend time waiting to add messages to the Shared Q, especially during multiple backend installations.
+
+![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Messages.png)
