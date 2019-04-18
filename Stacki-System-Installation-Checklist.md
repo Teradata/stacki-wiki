@@ -7,7 +7,11 @@ checklist.py is written as a systemd service that runs on the frontend all the t
 
 **Usage - Debug Mode:** export STACKDEBUG=y;/opt/stack/bin/checklist.py
 
+The installation messages will be written to /var/log/checklist.log
+
 # Installation Stages
+Checklist code generates the below messages based on the OS type. Once the 'Reboot_Okay' stage is reached, the message list will be cleared to indicate the end of an install.
+
 | Install Stage | Description | Supported in Redhat | Supported in SLES |
 | :---          |     :---:      |          ---: |          ---: |
 | DHCPDISCOVER  | DHCP Handshake message     | Yes    | Yes |
