@@ -11,6 +11,7 @@ You're forewarned, apparently armed, and your foot is down. Help is in Stacki Sl
 
 **tl;dr**
 * [Installation Order](Install-Order)
+* [Monitoring System Installation](Stacki-System-Installation-Checklist)
 * [The difference between a Cart and a Pallet](Carts-vs-Pallets)
 * [Using the Include Directive](Include-Directive) - Relatively safe.
 * [Setting Cart Order](Setting-Cart-Order) - Relatively safe but confusing.
