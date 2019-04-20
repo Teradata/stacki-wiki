@@ -55,6 +55,7 @@ Ways to monitor installation progress:
 checklist.py uses python threaded daemons to monitor the installation progress through all the above mediums.
 
 **LogParser** - Tail's log files and monitors messages relevant to installation. Below is a list of log files that are read and parsed on the frontend.
+
 | Message Type | SLES | Redhat |
 | :--- | :---: | ---: |
 | DHCP, TFTP messages | /var/log/messages | /var/log/messages |
