@@ -56,8 +56,8 @@ checklist.py uses python threaded daemons to monitor the installation progress t
 
 **LogParser** - Tail's log files and monitors messages relevant to installation.
 | Message Type | SLES | Redhat |
-| :---          |     :---:      |          ---: |
-| DHCP, TFTP messages | /var/log/messages	 | /var/log/messages |
+| :--- | :---: | ---: |
+| DHCP, TFTP messages | /var/log/messages | /var/log/messages |
 | Get Install Profiles, Set Bootaction | /var/log/httpd/ssl_access_log , /var/log/httpd/access_log | /var/log/apache2/ssl_access_log, /var/log/apache2/access_log |
 
 **MQProcessor** - Listens on the Stack Message Queue 'health' channel for messages relevant to backend installations.
