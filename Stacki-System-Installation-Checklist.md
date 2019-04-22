@@ -72,3 +72,19 @@ checklist.py uses python threaded daemons to monitor the installation progress t
 Python Synchronized Queue's are used to share messages between the different threaded daemons. GlobalQueueAdder removes messages from localQ and adds it to the Shared Q. This is done to minimize Shared Q contention and to have the threaded daemons not spend time waiting to add messages to the Shared Q, especially during multiple backend installations.
 
 ![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Messages.png)
+
+# Adding new install states
+* Create an enum for the install state in class State(Enum) class.
+* Add the enum in the 'class StateSequence' under the relevant OS dictionaries along with the time in seconds by which installation needs to progress to the next state.
+* Determine whether this state needs to be monitored in the frontend or installing backend.
+   1. Frontend
+   2. Installing Backend - Example if a new state 'DISKS_NUKED' needs to be added, the smq-publish command can be called in the installation code in the below format:
+
+>   state  = DISKS_NUKED
+    isErr  = False
+    msg    = ""
+    cmd = ['/opt/stack/bin/smq-publish', 
+        '-chealth', 
+        '-t300',
+        '{"systest":"%s","flag":"%s","msg":"%s"}' % (state, str(flag), msg)]
+    subprocess.run(cmd, env=pyenv)
