@@ -1,3 +1,11 @@
+# Table of Contents  
+* [Introduction](#intro)
+* [Install Stages](#installstages)
+* [Design Architechture](#designarch)
+* [Adding New Installation Stages](#addnewinstallstages)
+
+<a name="intro"/>
+
 # Introduction
 checklist.py is written as a systemd service that runs on the frontend all the time and reports the status of backend installations as it progresses through the various states. Typically a backend installation will include the below stages and the backend is expected to progress linearly through these stages except for the 'Install Wait' or 'Install Stalled' stages.
 
@@ -10,6 +18,8 @@ checklist.py is written as a systemd service that runs on the frontend all the t
 The installation messages will be written to /var/log/checklist.log
 
 ![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Install-Stages.png)
+
+<a name="installstages"/>
 
 # Installation Stages
 Checklist code generates the below messages based on the OS type. Once the 'Reboot_Okay' stage is reached, the message list will be cleared to indicate the end of an install.
@@ -44,6 +54,8 @@ Checklist code generates the below messages based on the OS type. Once the 'Rebo
 |Install_Wait | Install halted due to manually inserted /tmp/wait file for debugging purposes | | Yes |
 |Install_Stalled | Install halted due to errors like missing packages etc| | Yes |
 
+<a name="designarch"/>
+
 # Design Architecture
 ## Daemon Design Architecture
 Ways to monitor installation progress:
@@ -72,6 +84,8 @@ checklist.py uses python threaded daemons to monitor the installation progress t
 Python Synchronized Queue's are used to share messages between the different threaded daemons. GlobalQueueAdder removes messages from localQ and adds it to the Shared Q. This is done to minimize Shared Q contention and to have the threaded daemons not spend time waiting to add messages to the Shared Q, especially during multiple backend installations.
 
 ![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Messages.png)
+
+<a name="addnewinstallstages"/>
 
 # Adding new install states
 * Create an enum for the install state in class State(Enum) class.
