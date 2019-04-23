@@ -89,7 +89,7 @@ Python Synchronized Queue's are used to share messages between the different thr
 
 # Adding new install states
 * Create an enum for the install state in class State(Enum) class.
-* Add the enum in the 'class StateSequence' under the relevant OS dictionaries along with the time in seconds by which installation needs to progress to the next state.
+* Add the enum in the 'class StateSequence' under the relevant OS dictionaries along with the time in seconds by which installation needs to progress to the next state. Make sure it is inserted into the correct place within the dictionary.
 * Determine whether this state needs to be monitored in the frontend or installing backend.
    1. Frontend - If the state can be monitored through the log files mentioned above, then the existing code can be modified to accommodate this. If its a completely different functionality, a new daemon may need to be written similar to LogParser, MQProcessor etc. 
    2. Installing Backend - For example if a new state 'DISKS_NUKED' needs to be added, the smq-publish command can be called in the installation code in the below format:
