@@ -62,7 +62,7 @@ Ways to monitor installation progress:
 
 * Log Files - /var/log/messages, Http log files
 * Message Queue
-* SSH into the Installing Node
+* Files on Installing Node - Parsing log files, other system files on the installing node.
 
 checklist.py uses python threaded daemons to monitor the installation progress through all the above mediums.
 
