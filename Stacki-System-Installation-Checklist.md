@@ -76,7 +76,7 @@ checklist.py uses python threaded daemons to monitor the installation progress t
 **MQProcessor** - Listens on the Stack Message Queue 'health' channel for messages relevant to backend installations.
 **CheckTimeouts** - Triggers a timeout message if backend installation does not progress to the next state within a certain time span.
 
-![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Daemons.png)
+![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Daemons_frontend.png)
 
 ## Message Sharing - Design Architecture
 Python Synchronized Queue's are used to share messages between the different threaded daemons. GlobalQueueAdder removes messages from localQ and adds it to the Shared Q. This is done to minimize Shared Q contention and to have the threaded daemons not spend time waiting to add messages to the Shared Q, especially during multiple backend installations.
