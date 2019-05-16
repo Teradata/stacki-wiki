@@ -74,8 +74,6 @@ checklist.py uses python threaded daemons to monitor the installation progress t
 | Get Install Profiles, Set Bootaction | /var/log/httpd/ssl_access_log , /var/log/httpd/access_log | /var/log/apache2/ssl_access_log, /var/log/apache2/access_log |
 
 **MQProcessor** - Listens on the Stack Message Queue 'health' channel for messages relevant to backend installations.
-**BackendExec** - SSH's into the installing node via port 2200 and drops a BackendTest.py script that checks if partition files were generated, ludicrous-client service was started etc.
-![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Backend.png)
 **CheckTimeouts** - Triggers a timeout message if backend installation does not progress to the next state within a certain time span.
 
 ![](https://github.com/Teradata/stacki-wiki/blob/master/images/Stacki-Checklist-Daemons.png)
