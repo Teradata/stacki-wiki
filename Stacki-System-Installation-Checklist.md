@@ -44,7 +44,7 @@ Checklist code generates the below messages based on the OS type. Once the 'Rebo
 | Profile_XML_Sent | Installation profile file parsed and sent successfully to the backend | Yes    | Yes |
 | SSH_Open| SSH Port 2200 open on the installing backend | | Yes |
 | AUTOINST_Present| /tmp/profile/autoinst.xml is present on the installing backend with install profile information | | Yes |
-| Partition_XML_Present | /tmp/stack_site/__init__.py is present on the installing backend with partition | | Yes|
+| Partition_File_Present | /tmp/stack_site/__init__.py is present on the installing backend with partition | | Yes|
 | Ludicrous_Started | Ludicrous client has started on the installing backend | | Yes |
 | Ludicrous_Populated | Ludicrous client has started downloading packages | | Yes |
 | Set_DB_Partitions | Database partitions from the backend get written to the frontend | Yes    | Yes |
