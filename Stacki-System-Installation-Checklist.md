@@ -42,11 +42,11 @@ Checklist code generates the below messages based on the OS type. Once the 'Rebo
 | Bind_Sent | File sent to backend as part of installation | | Yes |
 | SLES_Img_Sent | File sent to backend as part of installation | | Yes |
 | Profile_XML_Sent | Installation profile file parsed and sent successfully to the backend | Yes    | Yes |
-| SSH_Open| SSH Port 2200 open on the installing backend | | Yes |
+| SSH_Open| SSH Port 2200 open on the installing backend | Yes | Yes |
 | AUTOINST_Present| /tmp/profile/autoinst.xml is present on the installing backend with install profile information | | Yes |
-| Partition_File_Present | /tmp/stack_site/__init__.py is present on the installing backend with partition | | Yes|
-| Ludicrous_Started | Ludicrous client has started on the installing backend | | Yes |
-| Ludicrous_Populated | Ludicrous client has started downloading packages | | Yes |
+| Partition_File_Present | /tmp/partition.xml(SLES) or /tmp/partition-info (Redhat) is present on the installing backend with partition | Yes | Yes|
+| Ludicrous_Started | Ludicrous client has started on the installing backend | Yes | Yes |
+| Ludicrous_Populated | Ludicrous client has started downloading packages | Yes | Yes |
 | Set_DB_Partitions | Database partitions from the backend get written to the frontend | Yes    | Yes |
 | Set_Bootaction_OS | bootaction is set to 'os' on the frontend for the installing backend | Yes    | Yes |
 | Rebooting_HDD | Installing backend reboots from Hard disk on 1st boot after installation | Yes    | Yes |
