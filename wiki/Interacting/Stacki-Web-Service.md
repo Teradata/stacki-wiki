@@ -1,17 +1,15 @@
 
-## Stacki REST API
+## Stacki Web Service
 
-The Stacki REST API is distributed as a web service
-running as a Django Application.
+The Stacki API is distributed as a web service running as a Django Application.
 
-By default, Stacki includes a webservice client, and creates
-admin credentials to help validate the API.
+By default, Stacki includes a webservice client, and creates admin credentials
+to help validate the API.
 
-## Testing the ReST API
+## Testing the API
 
-Stacki comes with a built in webservice client.
-The webservice client is called **wsclient**. The webservice
-admin credentials are placed in `/root/stacki-ws.cred`
+Stacki comes with a built in webservice client. The webservice client is called
+**wsclient**. The webservice admin credentials are placed in `/root/stacki-ws.cred`
 
 To test the web service client, run
 ```shell
@@ -24,14 +22,12 @@ from the command.
 [{"host": "stacki-50", "rack": "0", "rank": "0", "appliance": "frontend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "default", "status": "up", "comment": null}, {"host": "backend-0-0", "rack": "0", "rank": "0", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}, {"host": "backend-0-1", "rack": "0", "rank": "1", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}, {"host": "backend-0-2", "rack": "0", "rank": "2", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}, {"host": "backend-0-3", "rack": "0", "rank": "3", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}, {"host": "backend-0-4", "rack": "0", "rank": "4", "appliance": "backend", "os": "redhat", "box": "default", "environment": null, "osaction": "default", "installaction": "console", "status": "up", "comment": null}]
 ```
 
-## Writing a REST API Client
+## Writing an API Client
 
-The Stacki REST API provides the entire
-Stack Command-Line interface through a
-web service - with one exception - which
-we will explain later.
+The Stacki API provides the entire Stack Command-Line interface through a web
+service - with one exception - which we will explain later.
 
-The Stacki REST API provides 1 endpoint - **/stack**
+The Stacki API provides 1 endpoint - **/stack**
 
 ### PROTOCOL
 
@@ -105,21 +101,19 @@ The Stacki REST API provides 1 endpoint - **/stack**
 
 ### API RESTRICTIONS
 
-The Stacki REST API does not allow **"run host"** commands,
-since this exposes arbitrary shell execution.
+The Stacki Web Service does not allow **"run host"** commands, since this
+exposes arbitrary shell execution.
 
-The Stacki REST API allows only an administrator to run
-**sync** commands
+The Stacki Web Service allows only an administrator to run **sync** commands
 
-### REST API ADMINISTRATION
+### Web Service API ADMINISTRATION
 
-The REST API endpoint is available on the frontend.
-To access the REST API, a username, and API key is
-necessary. To create the username/key pair, command-line
-tools are made available.
+The API endpoint is available on the frontend. To access the API, a username,
+and key is necessary. To create the username/key pair, command-line tools are
+made available.
 
-The complete list of stacki commands that manipulate access
-to the ReST API are available in the [CLI Reference](stacki-CLI-documentation)
+The complete list of stacki commands that manipulate access to the API are
+available in the [CLI Reference](stacki-CLI-documentation)
 
 1. To add a user to the API, run
    ```shell

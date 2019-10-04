@@ -21,7 +21,7 @@ The most common objects those verbs will use are: ***host, cart, pallet, hostfil
 
 Loading spreadsheets also short-cuts running many of these commands at the command line.
 
-This documentation has numerous examples of "stack" commands, and are the ones you will most commonly use. And many others are available at hand in the [Stacki 5.0 Cheat Sheet](CheatSheet).
+This documentation has numerous examples of "stack" commands, and are the ones you will most commonly use. And many others are available at hand in the [Stacki Cheat Sheet](CheatSheet).
 
 ## The most common command
 

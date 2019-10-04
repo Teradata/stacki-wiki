@@ -78,5 +78,6 @@ redhat/src/stack/images/$LATEST_VERSION/updates.img/version.mk
 For SLES:
 
 ```
-TODO
+sles/src/stack/images/SLES/11.3/1.138/images.mk
+sles/src/stack/images/SLES/12/sp3/images.mk
 ```

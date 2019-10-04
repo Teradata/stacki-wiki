@@ -6,15 +6,15 @@ If you need any software housed in the CentOS distribution, you'll want to add t
 
 These commands work with all OSs, but CentOS is the example.
 
-Download the full CentOS 7.4 ISOs from a CentOS mirror.
+Download the full CentOS 7.6 ISOs from a CentOS mirror.
 
 You can use:
 
-[CentOS-7-x86_64-DVD-1708.iso](http://mirror.rackspace.com/CentOS/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso)
+[CentOS-7-x86_64-DVD-1810.iso](http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)
 
 but I usually use:
 
-[CentOS-7-x86_64-Everything-1708.iso](http://mirror.rackspace.com/CentOS/7/isos/x86_64/CentOS-7-x86_64-Everything-1708.iso)
+[x86_64/CentOS-7-x86_64-Everything-1810.iso](http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-Everything-1810.iso)
 
 Once they're downloaded, `scp` the ISOs to the frontend and add them. /export is usually the largest disk partition so I usually put them there.:
 
@@ -27,14 +27,14 @@ ssh root@10.1.1.1
 
 cd /export
 
-# stack add pallet CentOS-7-x86_64-Everything-1708.iso
+# stack add pallet CentOS-7-x86_64-*.iso
 ```
 
 List pallets:
 ```
 # stack list pallet
 NAME           VERSION      RELEASE ARCH   OS     BOXES
-stacki         5.0          redhat7 x86_64 redhat default
+stacki         5.3          redhat7 x86_64 redhat default
 os             7.4          redhat7 x86_64 redhat defaults
 CentOS         7            redhat7 x86_64 redhat
 ```
@@ -53,7 +53,7 @@ Disable the OS pallet and list pallets to make sure:
 
 # stack list pallet
 NAME           VERSION      RELEASE ARCH   OS     BOXES
-stacki         5.0          redhat7 x86_64 redhat default
+stacki         5.3          redhat7 x86_64 redhat default
 os             7.4          redhat7 x86_64 redhat
 CentOS         7            redhat7 x86_64 redhat default
 ```
@@ -117,9 +117,9 @@ So now we have an updates iso with a rational name. Add it and enable it:
 # stack list pallet
 NAME           VERSION              RELEASE ARCH   OS     BOXES
 os             7.4_20171128         redhat7 x86_64 redhat
-stacki         5.0_20171128_b0ed4e3 redhat7 x86_64 redhat default
+stacki         5.3                  redhat7 x86_64 redhat default
 CentOS         7                    redhat7 x86_64 redhat default
-CentOS-Updates 7.4_20171128         redhat7 x86_64 redhat default
+CentOS-Updates 7.6_20171128         redhat7 x86_64 redhat default
 ```
 
 These pallets are in the yum repository for backend nodes.
