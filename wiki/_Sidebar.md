@@ -1,8 +1,8 @@
-### Stacki 5.0 Documentation
+### Stacki Documentation
 * [Getting Started](Home)
 * [Overview](Overview)
 * [Definitions](Definitions)
-* [Stacki 5.0 Cheat Sheet](CheatSheet)
+* [Stacki Cheat Sheet](CheatSheet)
 * Installation
   * [Quickstart](Quickstart)
   * [Frontend Install - Basics](Frontend-Installation)
@@ -53,6 +53,8 @@
   * [CLI Reference](stacki-CLI-documentation)
   * [Example CSV Files](Example-CSV-Files)
 * Release Notes
+  * [Release Notes for 5.3](ReleaseNotes-5.3)
+  * [Release Notes for 5.2](ReleaseNotes-5.2)
   * [Release Notes for 5.1](ReleaseNotes-5.1)
   * [Release Notes for 5.0](ReleaseNotes-5.0)
   * [Diffs from Stacki 4.0](ReleaseNote-DiffsFrom4.0)
@@ -60,4 +62,3 @@
   * [Overview Licenses](Licenses)
   * [Rocks License](Rocks-License)
   * [Stacki License](Stacki-License)
-
