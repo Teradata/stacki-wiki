@@ -34,10 +34,15 @@ If you have controller config you also are redoing:
 Check it:
 ```
 # stack list host boot
-HOST        ACTION  NUKEDISKS NUKECONTROLLER
-stacki50    os      False     False
-backend-0-0 install True      True
+HOST         ACTION  NUKEDISKS NUKECONTROLLER
+frontend-0-0 ------- False     False
+backend-0-0  install True      True
+backend-0-1  install True      True
+backend-0-2  install True      True
+backend-0-3  install True      True
+backend-0-4  install True      True
 ```
+
 Reboot:
 ```
 # stack run host command="reboot"

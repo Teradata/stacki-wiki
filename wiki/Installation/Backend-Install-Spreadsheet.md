@@ -6,7 +6,7 @@
 3. Nodes are set to PXE first.
 4. Nodes have a system disk.
 5. The switch has spanning tree off or the switch ports are set to "edge"
-6. Node is not a laptop.  
+6. Node is not a laptop.
 
 ## Spreadsheet
 
@@ -57,13 +57,13 @@ You can verify the data was correctly loaded be listing the host
 information from the configuration database.
 
 ```
-HOST        RACK RANK APPLIANCE OS     BOX     ENVIRONMENT OSACTION INSTALLACTION STATUS COMMENT
-centos      0    0    frontend  redhat default ----------- default  default       up
-backend-0-0 0    0    backend   redhat default ----------- default  default       ------
-backend-0-1 0    1    backend   redhat default ----------- default  default       ------
-backend-0-2 0    2    backend   redhat default ----------- default  default       ------
-backend-0-3 0    3    backend   redhat default ----------- default  default       ------
-backend-0-4 0    4    backend   redhat default ----------- default  default       ------
+HOST         RACK RANK APPLIANCE OS     BOX     ENVIRONMENT OSACTION INSTALLACTION COMMENT
+frontend-0-0 0    0    frontend  redhat default ----------- default  default       -------
+backend-0-0  0    0    backend   redhat default ----------- default  default       -------
+backend-0-1  0    1    backend   redhat default ----------- default  default       -------
+backend-0-2  0    2    backend   redhat default ----------- default  default       -------
+backend-0-3  0    3    backend   redhat default ----------- default  default       -------
+backend-0-4  0    4    backend   redhat default ----------- default  default       -------
 ```
 
 Every time a backend node boots, it will send a PXE request to the
@@ -72,13 +72,13 @@ install. The default boot action is always _os_ as you can see below.
 
 ```
 # stack list host boot
-HOST        ACTION NUKEDISKS NUKECONTROLLER
-centos      ------ False     False
-backend-0-0 os     False     False
-backend-0-1 os     False     False
-backend-0-2 os     False     False
-backend-0-3 os     False     False
-backend-0-4 os     False     False
+HOST         ACTION NUKEDISKS NUKECONTROLLER
+frontend-0-0 ------ False     False
+backend-0-0  os     False     False
+backend-0-1  os     False     False
+backend-0-2  os     False     False
+backend-0-3  os     False     False
+backend-0-4  os     False     False
 ```
 
 In order to install a backend you will need to switch the boot action
@@ -91,13 +91,13 @@ to _install_ and then reboot.
 
 ```
 # stack list host boot
-HOST        ACTION  NUKEDISKS NUKECONTROLLER
-centos      ------- False     False
-backend-0-0 install False     False
-backend-0-1 install False     False
-backend-0-2 install False     False
-backend-0-3 install False     False
-backend-0-4 install False     False
+HOST         ACTION  NUKEDISKS NUKECONTROLLER
+frontend-0-0 ------- False     False
+backend-0-0  install False     False
+backend-0-1  install False     False
+backend-0-2  install False     False
+backend-0-3  install False     False
+backend-0-4  install False     False
 ```
 
 The very first install, you must set "nukedisks" to true. This is no brownfield installer. We want complete control - including partitioning which is [another discussion](Partitioning)
@@ -109,13 +109,13 @@ Verify:
 
 ```
 # stack list host boot
-HOST        ACTION  NUKEDISKS NUKECONTROLLER
-centos      ------- False     False
-backend-0-0 install True      False
-backend-0-1 install True      False
-backend-0-2 install True      False
-backend-0-3 install True      False
-backend-0-4 install True      False
+HOST         ACTION  NUKEDISKS NUKECONTROLLER
+frontend-0-0 ------- False     False
+backend-0-0  install True      False
+backend-0-1  install True      False
+backend-0-2  install True      False
+backend-0-3  install True      False
+backend-0-4  install True      False
 ```
 
 **Note:** You do NOT have to set "nukecontroller" at this point, especially if you are happy with the current hardware RAID controller configuration or your machines don't have hardware RAID controllers in the LSI family. If these machines are brand new, have LSI controllers, and you want to set them up, look at the [Storage Controller](Storage-Configuration) configuration on how to set that up.
@@ -125,22 +125,19 @@ The backend machines will first boot into the Stacki installer,
 install the OS, set their boot action back to _os_, and reboot.
 
 You should be able to get status messages for the install by watching the output of
-"stack list host."
+"stack list host status".
 
 ```
-# watch -n 5 "stack list host"
-Every 5.0s: stack list host                                                                                                                          Thu Dec 14 18:00:34 2017
-
-HOST        RACK RANK APPLIANCE OS     BOX     ENVIRONMENT OSACTION INSTALLACTION STATUS                           COMMENT
-centos      0    0    frontend  redhat default ----------- default  default	  up
-backend-0-0 0    0    backend   redhat default ----------- default  console	  install profile.cgi profile sent
-backend-0-1 0    1    backend   redhat default ----------- default  console	  install profile.cgi profile sent
-backend-0-2 0    2    backend   redhat default ----------- default  console	  install profile.cgi profile sent
-backend-0-3 0    3    backend   redhat default ----------- default  console	  install profile.cgi profile sent
-backend-0-4 0    4    backend   redhat default ----------- default  console	  install profile.cgi profile sent
+# stack list host status
+HOST         STATE                SSH
+frontend-0-0 online               up
+backend-0-0  install profile sent ---
+backend-0-1  install profile sent ---
+backend-0-3  install profile sent ---
+backend-0-4  install profile sent ---
 ```
 
-When the machines are "up" in the status column, you should be able to password-less ssh to them.
+When the machines are "online" in the STATE column, and "up" in the SSH column, you should be able to password-less ssh to them.
 
 You can also use the parallel command runner to get to all the nodes from the frontend:
 

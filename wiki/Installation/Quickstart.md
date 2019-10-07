@@ -11,21 +11,20 @@ Follow this guide if you are:
 
 Do not follow this guide if:
 1. You've done it many many times before. It's all just the same.
-2. You want Ubuntu or SLES. These are not currently supported on Stacki 5.0.
+2. You want Ubuntu. It is not currently supported on Stacki 5.x.
 3. You want CentOS/RHEL 6.x - not supported yet. (Really? 7.x beckons.)
 
 (If you really, really, really...really, need 2 or 3, use [Stacki-4.0](https://github.com/Teradata/stacki-documentation-4.x/wiki).
 
 ## Default cluster install
 
-Three steps:
-1. Download the software
-2. Install the frontend.
-3. Install backend(s).
+Four steps:
+1. Check Requirements
+2. Download the software
+3. Install the frontend.
+4. Install backend(s).
 
 That's it.
-
-Actually, I lied, it's four steps.
 
 Don't do any of this if you haven't checked your machine/VM against the requirements.
 
@@ -33,26 +32,26 @@ If you ask for help, it's the first thing we're going to ask you, and you will s
 
 ## 1. Check Requirements
 Frontend:
-* At least 4G of memory, especially for a VM.
+* At least 2G of memory (4GB recommended), especially for a VM.
 * A least 100G of system disk.
 * At least one network where backend machines can talk to frontend machines.
 * The software.
 
 Backend:
-* At least 4G of memory.
+* At least 3G of memory (4GB recommended).
 * At least 80G system disk.
 * At least one network that talks to the frontend.
 * PXE first!
 
-## 2. Download the software (formerly Step 1)
+## 2. Download the software
 
-The current version is Stacki 5.0.
+The current version is Stacki 5.4.
 
-[stackios-5.0_20171128_b0ed4e3-redhat7.x86_64.disk1.iso](http://teradata-stacki.s3.amazonaws.com/release/stacki/5.x/stackios-5.0_20171128_b0ed4e3-redhat7.x86_64.disk1.iso) (md5: 06a32c320cf8ed546c01d6f5cbe9d31c)
+[stackios-05.04.00.00-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/stackios-05.04.00.00-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
 
 Check the md5sum. Yeah, no, check the md5sum. Remember, silent acid rain of mockery.
 
-## 3. Install the frontend (formerly Step 2)
+## 3. Install the frontend
 
 Burn the ISO to a DVD or USB. Then put the just burned DVD into an external, internal, or virtual DVD drive.
 
@@ -115,9 +114,9 @@ Log-in and run the following to verify it worked:
 
 Looks good! Let's go!
 
-## 4. Install backend(s) (formerly Step 3)
+## 4. Install backend(s)
 
-** Please note: Installing laptops as backends is not supported. Ever. Evvvvvvvverrrrrrrrrr. Don't write, don't call, don't text if you're trying to install a laptop as a backend server. Our most acidic mockery is reserved for you. (pH level = 0 = battery acid) If you're successful, great, don't tell us, we don't care.
+** Please note: Installing laptops as backends is not supported. Ever. Evvvvvvvverrrrrrrrrr. Don't write, don't call, don't text if you're trying to install a laptop as a backend server. Our most acidic mockery is reserved for you. (pH level = 0 = battery acid) If you're successful, great, don't tell us, we don't care. **
 
 You have a frontend. It's useless if it's not managing backend nodes.
 
@@ -184,12 +183,12 @@ You can quit out of the discover-nodes application at this point. Or discover mo
 If you want to see the status of the node as it installs you can do:
 
 ```bash
-# watch -n 2 "stack list host"
+# watch -n 2 "stack list host status"
 ```
 
-The "Status" column will periodically indicate what is happening.
+The "STATE" column will periodically indicate what is happening.
 
-When the node says "up", it's installed, and you should be able to ssh to it without giving a password.
+When the state says "online", it's installed, and you should be able to ssh to it without giving a password.
 
 ```bash
 # ssh backend-0-0
