@@ -1,6 +1,21 @@
 ## Prepare the Server
 
-Stacki can either be built on an existing Stacki Frontend, or on the fresh install of a CentOS or SLES machine.  Ensure you have an adequate amount of space to build, somewhere on the order of 10GB.
+Stacki can be built using a tool called `iso-builder`, on an existing Stacki Frontend, or on the fresh install of a CentOS or SLES machine.  Ensure you have an adequate amount of space to build, somewhere on the order of 10GB.
+
+### Iso Builder
+
+The `iso-builder` tool uses Vagrant to spin up a VM and build the ISO file inside based on the local copy of the source code.
+
+Assuming you have Vagrant installed, with either Virtualbox or Libvirt/KVM, simply change into the `tools/iso-builder` directory. Then run:
+```
+PLATFORM=redhat7 vagrant up
+```
+
+This will bring up a VM and build the pallet, which will end up in the root of the project. The build process currently takes about 45 minutes.
+
+You can then run `vagrant destroy -f` to clean up the iso-builder VM.
+
+Further information about `iso-builder` came be found at: https://github.com/Teradata/stacki/tree/master/tools/iso-builder
 
 ### Frontend Server
 
@@ -8,10 +23,10 @@ If you are using a Stacki Frontend as your build host you will need to add an OS
 
 #### CentOS Frontend
 
-Download [CentOS 7.4](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1708.iso).
+Download [CentOS 7.6](http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-Everything-1810.iso).
 
 ```
-# stack add pallet CentOS-7-x86_64-Everything-1708.iso
+# stack add pallet CentOS-7-x86_64-Everything-1810.iso
 # stack enable pallet CentOS
 # stack disable pallet os
 ```
@@ -27,10 +42,7 @@ Download [CentOS 7.4](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-
 
 #### CentOS
 
-Start with a fresh install of [CentOS
-7.4](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1708.iso)
-using the default "minimal" package selection. You should also
-configure the network to have access to remote yum repositories.
+Start with a fresh install of [CentOS 7.6](http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-Everything-1810.iso) using the default "minimal" package selection. You should also configure the network to have access to remote yum repositories.
 
 #### SLES
 

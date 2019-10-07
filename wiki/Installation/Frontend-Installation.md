@@ -40,13 +40,13 @@ would cause conflicts on the network. (Two+ DHCP servers can co-exist if the Sta
 
 ### New or Existing
 
-The Stacki frontend runs on top of a CentOS/RHEL flavored 7.x base.  
+The Stacki frontend runs on top of a CentOS/RHEL flavored 7.6 base.  
 
 You have two options:
 
 **Building on new server**
 
-  If you don't have an already existing vanilla CentOS or RedHat 7.4 system, build a new server from bare metal with Stacki and the required CentOS bits (which we call "stackios").
+  If you don't have an already existing vanilla CentOS or RedHat 7.6 system, build a new server from bare metal with Stacki and the required CentOS bits (which we call "stackios").
 
   Follow the [Frontend Install - New](Frontend-Install-New) doc.
 
@@ -57,6 +57,6 @@ You have two options:
 
 **Building on an existing server**
 
-  If you wish to install Stacki on top of an existing vanilla CentOS or RedHat 7.4 system, follow the document labeled [Frontend Install - Existing](Frontend-Install-Existing).
+  If you wish to install Stacki on top of an existing vanilla CentOS or RedHat 7.6 system, follow the document labeled [Frontend Install - Existing](Frontend-Install-Existing).
 
 This procedure works for any CentOS/RHEL system including Oracle and Scientific Linux.  

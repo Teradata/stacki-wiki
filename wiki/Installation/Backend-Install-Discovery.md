@@ -6,7 +6,7 @@
 3. Nodes are set to PXE first.
 4. Nodes have a system disk.
 5. The switch has spanning tree off or the switch ports are set to "edge"
-6. Node is not a laptop.  
+6. Node is not a laptop.
 
 ## Discovery
 
@@ -31,53 +31,38 @@ To start discovery mode, log into the frontend as root and run the following:
 # discover-nodes
 ```
 
-(There are a bunch of options listed in "discover-nodes -h". You'll want to look at those if you don't want the default host naming scheme.)
+There are a bunch of options listed in "discover-nodes -h". You'll want to look at those if you don't want the default host naming scheme.
 
-This will bring up a screen that shows a list of appliances available
-for installation.
-
-![insert-ethers-1](images/insert-ethers/insert-ethers-1.png)
-
-By default only the _Backend_ appliance will be listed.
-Press _OK_ to continue and then turn on the machine you want
-installed.
-
-![insert-ethers-2](images/insert-ethers/insert-ethers-2.png)
+![discover-nodes-1](images/discover-nodes/discover-nodes-1.png)
 
 Once the backend node sends out a PXE request, the frontend captures the request and adds it to the Stacki database.
 
-The default ordering for "insert-ethers" assigns the name to:
+The default ordering for "discover-nodes" assigns the name to:
 _appliance_-_rack_-_rank_. Where "rank" is assigned in the order
 a backend node is discovered.
 
 If the server did not PXE boot, go back and verify the BIOS boot order.
 
-![insert-ethers-4](images/insert-ethers/insert-ethers-4.png)
+![discover-nodes-2](images/discover-nodes/discover-nodes-2.png)
 
 Once the backend node downloads its Kickstart file, a '*' will appear next to the hostname assigned to the new backend node.
 
-![insert-ethers-5](images/insert-ethers/insert-ethers-5.png)
+![discover-nodes-3](images/discover-nodes/discover-nodes-3.png)
 
-Continue to turn on any other machines you want installed and hit _F8_
-when done to quit "discover-nodes."
+Continue to turn on any other machines you want installed and select "Quit" when done.
 
 You should be able to get status messages for the install by watching the output of
-"stack list host."
+"stack list host status".
 
 ```
-# watch -n 5 "stack list host"
-Every 5.0s: stack list host                                                                                                                          Thu Dec 14 18:00:34 2017
-
-HOST        RACK RANK APPLIANCE OS     BOX     ENVIRONMENT OSACTION INSTALLACTION STATUS                           COMMENT
-centos      0    0    frontend  redhat default ----------- default  default	  up
-backend-0-0 0    0    backend   redhat default ----------- default  console	  install profile.cgi profile sent
-backend-0-1 0    1    backend   redhat default ----------- default  console	  install profile.cgi profile sent
-backend-0-2 0    2    backend   redhat default ----------- default  console	  install profile.cgi profile sent
-backend-0-3 0    3    backend   redhat default ----------- default  console	  install profile.cgi profile sent
-backend-0-4 0    4    backend   redhat default ----------- default  console	  install profile.cgi profile sent
+# stack list host status
+HOST         STATE                SSH
+frontend-0-0 online               up
+backend-0-0  install profile sent ---
+backend-0-1  install profile sent ---
 ```
 
-When the machines are "up" in the status column, you should be able to password-less ssh to them.
+When the machines are "online" in the STATE column, and "up" in the SSH column, you should be able to password-less ssh to them.
 
 You can also use the parallel command runner to get to all the nodes from the frontend:
 
