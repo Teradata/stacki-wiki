@@ -8,7 +8,7 @@ And it's pronounced "Stack-ee" not "Stack-eye" or "Stuh-kai."
 
 ## Yeah, whatever - what is it?
 
-Stacki is a CentOS/RHEL/Ubuntu/SLES bare metal install tool that takes servers from bare hardware (or virtual hardware) to working Linux, ready to install applications. It doesn't install images of OSs, it installs the OS with native kickstart, preseed or autoyast.
+Stacki is a CentOS/RHEL/SLES bare metal install tool that takes servers from bare hardware (or virtual hardware) to working Linux, ready to install applications. It doesn't install images of OSs, it installs the OS with native kickstart, preseed or autoyast.
 
 Stacki parallelizes at scale - deploying 1000+ servers is no slower or complex than deploying one.
 
@@ -34,7 +34,7 @@ What it produces is complex:
 
 ## Linux
 
-Stacki supports Red Hat and its variants, also Ubuntu and SLES.
+Stacki supports Red Hat and its variants, and also SLES.
 We generally develop on SLES since it is Teradata's focus, but we always test on CentOS/RHEL to give you the choice for your base operating system. We have also seen Oracle Linux and Scientific Linux deployed.
 
 ## Applications
