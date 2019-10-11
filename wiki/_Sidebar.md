@@ -50,6 +50,7 @@
   * [Building From Source](Building-From-Source)
   * [Building For AWS](Building-For-AWS)
   * [Adding new packages to Stacki](Adding-New-Packages-To-Stacki)
+  * [Test Framework](Test-Framework)
 * Reference
   * [CLI Reference](stacki-CLI-documentation)
   * [Example CSV Files](Example-CSV-Files)
