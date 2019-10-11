@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack set host interface mac {host ...} {interface=string} {mac=string}`
+`stack set host interface mac {host} {mac=string} [interface=string] [network=string]`
 
 ### Description
 
@@ -15,16 +15,15 @@
 
 * `[host]`
 
-   Host name.
+   A single host.
 
 
 ### Parameters
-* `[interface=string]`
 * `[mac=string]`
+* `{interface=string}`
+* `{network=string}`
 
-   The mac address of the interface. Usually of the form dd:dd:dd:dd:dd:dd
-	where d is a hex digit. This format is not enforced. Use mac=NULL to
-	clear the mac address.
+   Network name of the interface.
 
 ### Examples
 

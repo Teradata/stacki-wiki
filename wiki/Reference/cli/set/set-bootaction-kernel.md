@@ -2,23 +2,24 @@
 
 ### Usage
 
-`stack set bootaction kernel [bootaction] [kernel=string] [os=string] [type=string]`
+`stack set bootaction kernel {action} {kernel=string} [os=string] [type=string]`
 
 ### Description
 
 
 	Updates the kernel for a bootaction.
+
 	
 
 ### Arguments
 
-* `{bootaction}`
+* `[action]`
 
    Name of the bootaction that needs to be updated.
 
 
 ### Parameters
-* `{kernel=string}`
+* `[kernel=string]`
 * `{os=string}`
 * `{type=string}`
 
@@ -28,7 +29,7 @@
 
 * `stack set bootaction kernel memtest kernel="memtest" type="os" os="redhat"`
 
-   Sets the kernel for bootaction named memtest with type="os" and os="redhat" 
+   Sets the kernel for bootaction named memtest with type="os" and os="redhat"
 	to be "memtest".
 
 

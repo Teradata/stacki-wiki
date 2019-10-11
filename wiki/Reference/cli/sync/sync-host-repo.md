@@ -8,10 +8,10 @@
 
 
 	Sync a repository configuration file to backend nodes.
-	
-	When a cart or pallet is added to the 
+
+	When a cart or pallet is added to the
 	frontend, to use the resulting repo but not
-	reinstall machines, sync the new repo to the 
+	reinstall machines, sync the new repo to the
 	backends for immediate use.
 
 	

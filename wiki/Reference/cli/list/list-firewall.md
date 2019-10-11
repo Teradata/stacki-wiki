@@ -7,7 +7,15 @@
 ### Description
 
 
-	List the global firewall rules.
+	Lists the set of global firewalls.
+
 	
+
+### Examples
+
+* `stack list firewall`
+
+   List the global firewall rules.
+
 
 

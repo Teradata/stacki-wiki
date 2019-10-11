@@ -9,6 +9,8 @@
 
 	Reconfigure and optionally restart the network for the named hosts.
 
+	Note that this will always trigger a 'stack sync config' on the Frontend.
+
 	
 
 ### Parameters

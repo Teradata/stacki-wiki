@@ -16,7 +16,7 @@
 * `{shadow=boolean}`
 
    Specifies is shadow attributes are listed, the default
-	is False.
+	is True.
 
 ### Examples
 

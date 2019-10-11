@@ -2,13 +2,13 @@
 
 ### Usage
 
-`stack set network dns [network ...] {dns=boolean}`
+`stack set network dns {network ...} {dns=boolean}`
 
 ### Description
 
 
 	Enables or Disables DNS for one of more networks.
-	
+
 	If DNS is enabled for a network then all known hosts on that network
 	will have their hostnames and IP addresses in a DNS server running
 	on the Frontend.  This will serve both forward and reverse lookups.
@@ -17,10 +17,9 @@
 
 ### Arguments
 
-* `{network}`
+* `[network]`
 
-   The names of zero of more networks. If no network is specified
-	the DNS is set for all existing networks.
+   The names of one or more networks.
 
 
 ### Parameters

@@ -2,28 +2,29 @@
 
 ### Usage
 
-`stack set host interface vlan [host ...] {vlan=string} [interface=string] [mac=string]`
+`stack set host interface vlan {host ...} {vlan=integer} [interface=string] [mac=string] [network=string]`
 
 ### Description
 
 
-	Sets the VLAN ID for an interface on one of more hosts. 
+	Sets the VLAN ID for an interface on one of more hosts.
 
 	
 
 ### Arguments
 
-* `{host}`
+* `[host]`
 
-   One or more named hosts.
+   One or more hosts.
 
 
 ### Parameters
-* `[vlan=string]`
+* `[vlan=integer]`
 * `{interface=string}`
 * `{mac=string}`
+* `{network=string}`
 
-   MAC address of the interface.
+   Network name of the interface.
 
 ### Examples
 

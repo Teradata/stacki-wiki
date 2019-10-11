@@ -2,13 +2,13 @@
 
 ### Usage
 
-`stack list pallet [pallet ...]`
+`stack list pallet [pallet ...] {expanded=bool} [arch=string] [os=string] [release=string] [version=string]`
 
 ### Description
 
 
 	List the status of available pallets.
-	
+
 	
 
 ### Arguments
@@ -20,6 +20,16 @@
 	listed.
 
 
+### Parameters
+* `[expanded=bool]`
+* `{arch=string}`
+* `{os=string}`
+* `{release=string}`
+* `{version=string}`
+
+   The version number of the pallets to list. If no version number is
+	supplied, then all versions of a pallet will be listed.
+
 ### Examples
 
 * `stack list pallet kernel`
@@ -29,6 +39,10 @@
 * `stack list pallet`
 
    List the status of all the available pallets.
+
+* `stack list pallet expanded=true`
+
+   List the status of all the available pallets and their urls.
 
 
 ### Related

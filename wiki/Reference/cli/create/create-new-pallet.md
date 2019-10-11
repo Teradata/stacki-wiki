@@ -7,8 +7,7 @@
 ### Description
 
 	
-	Create a skeleton directory structure for a pallet
-	source.
+	Create a skeleton directory structure for a pallet source.
 
 	This command is to be used mainly by pallet developers.
 

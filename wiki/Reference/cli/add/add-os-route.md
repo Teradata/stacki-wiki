@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add os route {os} [address=string] [gateway=string] [netmask=string]`
+`stack add os route {os ...} {address=string} {gateway=string} [interface=string] [netmask=string]`
 
 ### Description
 
@@ -19,8 +19,9 @@
 
 
 ### Parameters
-* `{address=string}`
-* `{gateway=string}`
+* `[address=string]`
+* `[gateway=string]`
+* `{interface=string}`
 * `{netmask=string}`
 
    Specifies the netmask for a network route.  For a host route

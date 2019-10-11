@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack list host attr [host] [attr=string]`
+`stack list host attr [host] [attr=string] [display=string]`
 
 ### Description
 
@@ -20,9 +20,19 @@
 
 ### Parameters
 * `{attr=string}`
+* `{display=string}`
 
-   A shell syntax glob pattern to specify to attributes to
-	be listed.
+   Control which attributes are displayed for the provided
+	hosts.
+
+	'all' will display all attributes for each host, grouped
+	by host.  This is the default.
+
+	'common' will display only attributes which are identical
+	for every host.
+
+	'distinct' will display only attributes which are not
+	identical for every host.
 
 ### Examples
 

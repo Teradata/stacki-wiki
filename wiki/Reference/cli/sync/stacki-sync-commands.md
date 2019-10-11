@@ -1,11 +1,18 @@
 # sync commands
 
+  * [sync api sudo command](sync-api-sudo-command)
   * [sync config](sync-config)
   * [sync dhcpd](sync-dhcpd)
   * [sync dns](sync-dns)
+  * [sync firmware](sync-firmware)
   * [sync host](sync-host)
+  * [sync host ansible](sync-host-ansible)
   * [sync host boot](sync-host-boot)
   * [sync host config](sync-host-config)
   * [sync host firewall](sync-host-firewall)
+  * [sync host firmware](sync-host-firmware)
   * [sync host network](sync-host-network)
   * [sync host repo](sync-host-repo)
+  * [sync host time](sync-host-time)
+  * [sync switch](sync-switch)
+  * [sync switch ib](sync-switch-ib)

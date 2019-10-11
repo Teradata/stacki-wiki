@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack remove appliance route {appliance} {address=string}`
+`stack remove appliance route {appliance ...} {address=string}`
 
 ### Description
 

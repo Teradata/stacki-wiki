@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack set network pxe [network ...] {pxe=boolean}`
+`stack set network pxe {network ...} {pxe=boolean}`
 
 ### Description
 
@@ -16,10 +16,9 @@
 
 ### Arguments
 
-* `{network}`
+* `[network]`
 
-   The names of zero of more networks. If no network is specified
-	the PXE is set for all existing networks.
+   The names of one or more networks.
 
 
 ### Parameters

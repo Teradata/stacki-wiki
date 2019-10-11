@@ -8,6 +8,7 @@
 * [create](stacki-create-commands)
 * [disable](stacki-disable-commands)
   * [disable cart](disable-cart)
+  * [disable discovery](disable-discovery)
   * [disable pallet](disable-pallet)
 * [dump](stacki-dump-commands)
 * [enable](stacki-enable-commands)
@@ -23,4 +24,4 @@
 * [swap](stacki-swap-commands)
 * [sync](stacki-sync-commands)
 * [unload](stacki-unload-commands)
-* [unpack](stacki-unpack-commands)
+* [verify](stacki-verify-commands)

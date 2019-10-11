@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add pallet [pallet ...] [clean=bool] [dir=string] [updatedb=string]`
+`stack add pallet [pallet ...] [clean=bool] [dir=string] [password=string] [updatedb=string] [username=string]`
 
 ### Description
 
@@ -19,16 +19,18 @@
 
    A list of pallet ISO images to add to the local machine. If no list is
 	supplied, then if a pallet is mounted on /mnt/cdrom, it will be copied
-	to the local machine.
+	to the local machine. If the pallet is hosted on the internet, it will
+	be downloaded and stored on the local machine.
 
 
 ### Parameters
 * `{clean=bool}`
 * `{dir=string}`
+* `{password=string}`
 * `{updatedb=string}`
+* `{username=string}`
 
-   Add the pallet info to the cluster database.
-	The default is: true.
+   If the pallet's download server requires authentication.
 
 ### Examples
 

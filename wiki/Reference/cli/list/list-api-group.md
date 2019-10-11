@@ -11,4 +11,12 @@
 	the API framework.
 	
 
+### Examples
+
+* `stack list api group`
+
+   List all the users allowed to access
+	the API framework.
+
+
 

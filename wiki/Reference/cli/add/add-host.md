@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add host {host} [box=string] [environment=string] [longname=string] [rack=string] [rank=string]`
+`stack add host {host} [box=string] [environment=string] [rack=string] [rank=string]`
 
 ### Description
 
@@ -23,7 +23,6 @@
 ### Parameters
 * `{box=string}`
 * `{environment=string}`
-* `{longname=string}`
 * `{rack=string}`
 * `{rank=string}`
 
@@ -39,10 +38,10 @@
    Adds the host "backend-0-1" to the database with 1 CPU, a appliance
 	name of "backend", a rack number of 0, and rank of 1.
 
-* `stack add host backend rack=0 rank=1 longname=Backend`
+* `stack add host backend appliance=backend rack=0 rank=1`
 
-   Adds the host "backend" to the database with 1 CPU, a long appliance name
-	of "Backend", a rack number of 0, and rank of 1.
+   Adds the host "backend" to the database with 1 CPU, appliance type 'backend', a rack number
+	of 0, and rank of 1.
 
 
 ### Related

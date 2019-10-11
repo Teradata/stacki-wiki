@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack list cart [cart ...]`
+`stack list cart [cart ...] {expanded=string}`
 
 ### Description
 
@@ -20,6 +20,11 @@
 	listed.
 
 
+### Parameters
+* `[expanded=string]`
+
+   Include the source url of the cart.
+
 ### Examples
 
 * `stack list cart kernel`
@@ -29,6 +34,10 @@
 * `stack list cart`
 
    List the status of all the available carts.
+
+* `stack list cart expanded=True`
+
+   List the status of all the available carts and their source urls.
 
 
 

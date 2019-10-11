@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack set host interface options [host ...] [interface=string] [mac=string] [options=string]`
+`stack set host interface options {host ...} {options=string} [interface=string] [mac=string] [network=string]`
 
 ### Description
 
@@ -14,20 +14,18 @@
 
 ### Arguments
 
-* `{host}`
+* `[host]`
 
    One or more hosts.
 
 
 ### Parameters
+* `[options=string]`
 * `{interface=string}`
 * `{mac=string}`
-* `{options=string}`
+* `{network=string}`
 
-   The options for an interface. Use options=NULL to clear.
-	options="dhcp", and options="noreport" have
-	special meaning. options="bonding-opts=\"\"" sets up bonding
-	options for bonded interfaces
+   Network name of the interface.
 
 ### Examples
 

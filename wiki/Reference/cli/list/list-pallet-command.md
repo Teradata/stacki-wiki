@@ -2,13 +2,13 @@
 
 ### Usage
 
-`stack list pallet command [pallet ...]`
+`stack list pallet command [pallet ...] [arch=string] [os=string] [release=string] [version=string]`
 
 ### Description
 
 
 	List the commands provided by a pallet.
-	
+
 	
 
 ### Arguments
@@ -19,6 +19,15 @@
 	kernel). If no pallets are listed, then commands for all the pallets
 	are listed.
 
+
+### Parameters
+* `{arch=string}`
+* `{os=string}`
+* `{release=string}`
+* `{version=string}`
+
+   The version number of the pallets to list. If no version number is
+	supplied, then all versions of a pallet will be listed.
 
 ### Examples
 

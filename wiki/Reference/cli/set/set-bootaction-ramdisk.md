@@ -2,24 +2,25 @@
 
 ### Usage
 
-`stack set bootaction ramdisk [bootaction] [os=string] [ramdisk=string] [type=string]`
+`stack set bootaction ramdisk {action} {ramdisk=string} [os=string] [type=string]`
 
 ### Description
 
 
 	Updates the ramdisk for a bootaction.
+
 	
 
 ### Arguments
 
-* `{bootaction}`
+* `[action]`
 
    Name of the bootaction that needs to be updated.
 
 
 ### Parameters
+* `[ramdisk=string]`
 * `{os=string}`
-* `{ramdisk=string}`
 * `{type=string}`
 
    type of the bootaction. Can be install or os.

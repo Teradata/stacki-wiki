@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack create mirror [arch=string] [name=string] [newest=boolean] [quiet=boolean] [repoconfig=string] [repoid=string] [url=string] [urlonly=boolean] [version=string]`
+`stack create mirror [arch=string] [name=string] [newest=boolean] [os=string] [quiet=boolean] [repoconfig=string] [repoid=string] [url=string] [urlonly=boolean] [version=string]`
 
 ### Description
 
@@ -24,6 +24,7 @@
 * `{arch=string}`
 * `{name=string}`
 * `{newest=boolean}`
+* `{os=string}`
 * `{quiet=boolean}`
 * `{repoconfig=string}`
 * `{repoid=string}`

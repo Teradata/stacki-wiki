@@ -8,7 +8,7 @@
 
 
 	Rename a host.
-	
+
 	
 
 ### Arguments

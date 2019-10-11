@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack set host interface name {host} {name=string} [interface=string] [mac=string]`
+`stack set host interface name {host} {name=string} [interface=string] [mac=string] [network=string]`
 
 ### Description
 
@@ -15,15 +15,16 @@
 
 * `[host]`
 
-   Host name.
+   A single host.
 
 
 ### Parameters
 * `[name=string]`
 * `{interface=string}`
 * `{mac=string}`
+* `{network=string}`
 
-   MAC address of the interface.
+   Network name of the interface.
 
 ### Examples
 

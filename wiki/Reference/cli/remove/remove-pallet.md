@@ -2,12 +2,12 @@
 
 ### Usage
 
-`stack remove pallet {pallet ...} [arch=string] [release=string] [version=string]`
+`stack remove pallet {pallet ...} [arch=string] [os=string] [release=string] [version=string]`
 
 ### Description
 
 
-	Remove a pallet from both the database and filesystem.	
+	Remove a pallet from both the database and filesystem.
 
 	
 
@@ -21,6 +21,7 @@
 
 ### Parameters
 * `{arch=string}`
+* `{os=string}`
 * `{release=string}`
 * `{version=string}`
 

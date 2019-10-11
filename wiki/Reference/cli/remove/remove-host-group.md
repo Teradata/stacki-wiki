@@ -7,7 +7,7 @@
 ### Description
 
 
-	Removes a group from or more hosts.
+	Removes a group from one or more hosts.
 
 	
 

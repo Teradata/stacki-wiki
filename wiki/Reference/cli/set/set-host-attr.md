@@ -2,18 +2,18 @@
 
 ### Usage
 
-`stack set host attr [host ...] {attr=string} {value=string} [shadow=boolean]`
+`stack set host attr {host ...} {attr=string} {value=string} [shadow=boolean]`
 
 ### Description
 
 
-	Sets an attribute to a host and sets the associated values 
+	Sets an attribute to a host and sets the associated values
 
 	
 
 ### Arguments
 
-* `{host}`
+* `[host]`
 
    Host name of machine
 

@@ -8,7 +8,7 @@
 
 
 	Sets the box for a list of hosts.
-	
+
 	
 
 ### Arguments

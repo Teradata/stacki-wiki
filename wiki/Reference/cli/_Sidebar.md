@@ -23,4 +23,4 @@
 * [swap](stacki-swap-commands)
 * [sync](stacki-sync-commands)
 * [unload](stacki-unload-commands)
-* [unpack](stacki-unpack-commands)
+* [verify](stacki-verify-commands)

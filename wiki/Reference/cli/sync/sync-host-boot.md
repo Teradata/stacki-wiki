@@ -9,7 +9,7 @@
 
 	You'll rarely have to use this command.
 
-	It usually gets run as part of the 
+	It usually gets run as part of the
 	"stack set host boot" command.
 
 	Recreates the /tftpboot/pxelinux/pxelinux.cfg/

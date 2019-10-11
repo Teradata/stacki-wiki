@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add os firewall {os ...} [action=string] [chain=string] [network=string] [output-network=string] [protocol=string] [rulename=string] [service=string] [table=string]`
+`stack add os firewall {os ...} {action=string} {chain=string} {protocol=string} {service=string} [comment=string] [flags=string] [network=string] [output-network=string] [rulename=string] [table=string]`
 
 ### Description
 
@@ -19,13 +19,15 @@
 
 
 ### Parameters
-* `{action=string}`
-* `{chain=string}`
+* `[action=string]`
+* `[chain=string]`
+* `[protocol=string]`
+* `[service=string]`
+* `{comment=string}`
+* `{flags=string}`
 * `{network=string}`
 * `{output-network=string}`
-* `{protocol=string}`
 * `{rulename=string}`
-* `{service=string}`
 * `{table=string}`
 
    The table to add the rule to. Valid values are 'filter',

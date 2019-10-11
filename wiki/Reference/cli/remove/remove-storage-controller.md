@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack remove storage controller {scope} [adapter=int] [enclosure=int] [slot=int]`
+`stack remove storage controller {slot=integer} [adapter=integer] [enclosure=integer]`
 
 ### Description
 
@@ -11,33 +11,23 @@
 
 	
 
-### Arguments
-
-* `[scope]`
-
-   Zero or one argument. The argument is the scope: a valid os (e.g.,
-	'redhat'), a valid appliance (e.g., 'backend') or a valid host
-	(e.g., 'backend-0-0). No argument means the scope is 'global'.
-
-
 ### Parameters
-* `{adapter=int}`
-* `{enclosure=int}`
-* `{slot=int}`
+* `[slot=integer]`
+* `{adapter=integer}`
+* `{enclosure=integer}`
 
-   Slot address(es). This can be a comma-separated list. If slot is '*',
-	adapter/enclosure address applies to all slots.
+   Enclosure address. If enclosure is '*', adapter/slot address applies
+	to all enclosures.
 
 ### Examples
 
-* `stack remove storage controller backend-0-0 slot=1`
+* `stack remove storage controller slot=1`
 
-   Remove the disk array configuration for slot 1 on backend-0-0.
+   Remove the global disk array configuration for slot 1.
 
-* `stack remove storage controller backend slot=1,2,3,4`
+* `stack remove storage controller slot=1,2,3,4`
 
-   Remove the disk array configuration for slots 1-4 for the backend
-	appliance.
+   Remove the global disk array configuration for slots 1-4.
 
 
 

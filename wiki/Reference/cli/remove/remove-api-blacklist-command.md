@@ -18,7 +18,7 @@
 
 ### Examples
 
-* `stack remove blacklist command command='list host message'`
+* `stack remove api blacklist command command='list host message'`
 
    Remove "list host message" command from the blacklist.
 

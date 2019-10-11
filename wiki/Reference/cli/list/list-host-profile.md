@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack list host profile [host]`
+`stack list host profile [host] [hash=boolean]`
 
 ### Description
 
@@ -24,6 +24,12 @@
    Zero, one or more host names. If no host names are supplied, info about
 	all the known hosts is listed.
 
+
+### Parameters
+* `{hash=boolean}`
+
+   If 'yes', output a hash for this profile on stderr.
+	Default is 'no'.
 
 ### Examples
 

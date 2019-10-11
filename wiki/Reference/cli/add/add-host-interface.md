@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add host interface {host} [default=boolean] [interface=string] [ip=string] [mac=string] [module=string] [name=string] [network=string] [vlan=string]`
+`stack add host interface {host} [channel=string] [default=boolean] [interface=string] [ip=string] [mac=string] [module=string] [name=string] [network=string] [vlan=string]`
 
 ### Description
 
@@ -19,6 +19,7 @@
 
 
 ### Parameters
+* `{channel=string}`
 * `{default=boolean}`
 * `{interface=string}`
 * `{ip=string}`

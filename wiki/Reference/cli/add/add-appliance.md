@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add appliance {appliance} [longname=string] [node=string] [public=bool]`
+`stack add appliance {appliance} [node=string] [public=bool]`
 
 ### Description
 
@@ -19,7 +19,6 @@
 
 
 ### Parameters
-* `{longname=string}`
 * `{node=string}`
 * `{public=bool}`
 
@@ -28,7 +27,7 @@
 
 ### Examples
 
-* `stack add appliance nas longname="NAS Appliance" node=nas public=yes`
+* `stack add appliance nas node=nas public=yes`
 
    
 

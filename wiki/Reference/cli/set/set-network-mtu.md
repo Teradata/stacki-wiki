@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack set network mtu [network ...] {mtu=string}`
+`stack set network mtu {network ...} {mtu=string}`
 
 ### Description
 
@@ -13,10 +13,9 @@
 
 ### Arguments
 
-* `{network}`
+* `[network]`
 
-   The names of zero of more networks. If no network is specified
-	the MTU is set for all existing networks.
+   The names of one or more networks.
 
 
 ### Parameters

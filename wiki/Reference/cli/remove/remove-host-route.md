@@ -22,7 +22,7 @@
 * `[address=string]`
 * `{syncnow=string}`
 
-   if set to true, the routing table will be updated as well as the db.
+   If set to true, the routing table will be updated as well as the db.
 
 ### Examples
 

@@ -2,18 +2,18 @@
 
 ### Usage
 
-`stack add appliance attr [appliance ...] {attr=string} {value=string} [shadow=boolean]`
+`stack add appliance attr {appliance ...} {attr=string} {value=string} [shadow=boolean]`
 
 ### Description
 
 
-	Adds an attribute to an appliance and sets the associated values 
+	Adds an attribute to an appliance and sets the associated values
 
 	
 
 ### Arguments
 
-* `{appliance}`
+* `[appliance]`
 
    Name of appliance
 

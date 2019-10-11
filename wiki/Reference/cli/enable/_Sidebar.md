@@ -10,6 +10,7 @@
 * [dump](stacki-dump-commands)
 * [enable](stacki-enable-commands)
   * [enable cart](enable-cart)
+  * [enable discovery](enable-discovery)
   * [enable pallet](enable-pallet)
 * [help](stacki-help-commands)
 * [iterate](stacki-iterate-commands)
@@ -23,4 +24,4 @@
 * [swap](stacki-swap-commands)
 * [sync](stacki-sync-commands)
 * [unload](stacki-unload-commands)
-* [unpack](stacki-unpack-commands)
+* [verify](stacki-verify-commands)

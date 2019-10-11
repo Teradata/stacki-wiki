@@ -2,29 +2,29 @@
 
 ### Usage
 
-`stack set host interface default [host ...] {default=bool} {interface=string} {mac=string} {network=string}`
+`stack set host interface default {host ...} [default=boolean] [interface=string] [mac=string] [network=string]`
 
 ### Description
 
 
 	Designates one network as the default route for a set of hosts.
-	Either the interface or network paramater is required.
+	Either the interface, mac, or network paramater is required.
 
 	
 
 ### Arguments
 
-* `{host}`
+* `[host]`
 
-   Host name.
+   One or more hosts.
 
 
 ### Parameters
-* `[default=bool]`
-* `[interface=string]`
-* `[mac=string]`
-* `[network=string]`
+* `{default=boolean}`
+* `{interface=string}`
+* `{mac=string}`
+* `{network=string}`
 
-   Network name of the default interface.
+   Network name of the interface.
 
 

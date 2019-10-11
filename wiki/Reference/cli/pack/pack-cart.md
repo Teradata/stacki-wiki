@@ -25,7 +25,7 @@
 
 * `[cart]`
 
-   The name of the cart to be created.
+   The name of the cart to be compressed.
 
 
 ### Parameters
@@ -34,5 +34,18 @@
 
    Put the suffix on the subsequent cart file.
 	Default is tgz.
+
+### Examples
+
+* `stack pack cart site-custom`
+
+   Tars up site-custom into site-custom.tgz.
+	Includes all dirs but repodata and fingerprint.
+
+	This does NOT remove the cart from the system.
+
+
+### Related
+[unpack cart file=](unpack-cart-file=)
 
 

@@ -2,14 +2,14 @@
 
 ### Usage
 
-`stack disable pallet {pallet ...} [arch=string] [box=string] [version=string]`
+`stack disable pallet {pallet ...} [arch=string] [box=string] [os=string] [release=string] [version=string]`
 
 ### Description
 
 
 	Disable an available pallet. The pallet must already be copied on the
 	system using the command "stack add pallet".
-	
+
 	
 
 ### Arguments
@@ -23,6 +23,8 @@
 ### Parameters
 * `{arch=string}`
 * `{box=string}`
+* `{os=string}`
+* `{release=string}`
 * `{version=string}`
 
    The version number of the pallet to be disabled. If no version number is

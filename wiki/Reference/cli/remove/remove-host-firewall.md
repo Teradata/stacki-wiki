@@ -8,8 +8,7 @@
 
 
 	Remove a firewall rule for a host. To remove a rule,
-	you must supply the name of the rule. The Rule names may
-	be obtained by running "rocks list host firewall"
+	you must supply the name of the rule.
 
 	
 

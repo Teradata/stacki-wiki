@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add host firewall {host ...} [action=string] [chain=string] [comment=string] [flags=string] [network=string] [output-network=string] [protocol=string] [rulename=string] [service=string] [table=string]`
+`stack add host firewall {host ...} {action=string} {chain=string} {protocol=string} {service=string} [comment=string] [flags=string] [network=string] [output-network=string] [rulename=string] [table=string]`
 
 ### Description
 
@@ -19,15 +19,15 @@
 
 
 ### Parameters
-* `{action=string}`
-* `{chain=string}`
+* `[action=string]`
+* `[chain=string]`
+* `[protocol=string]`
+* `[service=string]`
 * `{comment=string}`
 * `{flags=string}`
 * `{network=string}`
 * `{output-network=string}`
-* `{protocol=string}`
 * `{rulename=string}`
-* `{service=string}`
 * `{table=string}`
 
    The table to add the rule to. Valid values are 'filter',
@@ -44,7 +44,7 @@
 	be translated as the following iptables rule:
 	"-A FORWARD -i eth0 -j ACCEPT".
 
-* `stack add host firewall localhost network=all service="40000"  protocol="tcp" action="REJECT" chain="INPUT"`
+* `stack add host firewall localhost service="40000"  protocol="tcp" action="REJECT" chain="INPUT"`
 
    Reject TCP packets that are destined for port 40000 on all networks
 	on the INPUT chain.

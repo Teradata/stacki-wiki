@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack remove os {os}`
+`stack remove os {os ...}`
 
 ### Description
 

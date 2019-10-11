@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack set network mask [network ...] {mask=string}`
+`stack set network mask {network ...} {mask=string}`
 
 ### Description
 
@@ -13,10 +13,9 @@
 
 ### Arguments
 
-* `{network}`
+* `[network]`
 
-   The names of zero of more networks. If no network is specified
-	the mask is set for all existing networks.
+   The names of one or more networks.
 
 
 ### Parameters

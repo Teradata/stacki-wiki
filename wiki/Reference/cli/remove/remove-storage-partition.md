@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack remove storage partition {scope} [device=string] [mountpoint=string]`
+`stack remove storage partition [device=string] [mountpoint=string]`
 
 ### Description
 
@@ -10,15 +10,6 @@
 	Remove a storage partition configuration from the database.
 
 	
-
-### Arguments
-
-* `[scope]`
-
-   Zero or one argument. The argument is the scope: a valid os (e.g.,
-	'redhat'), a valid appliance (e.g., 'backend') or a valid host
-	(e.g., 'backend-0-0). No argument means the scope is 'global'.
-
 
 ### Parameters
 * `{device=string}`
@@ -29,18 +20,13 @@
 
 ### Examples
 
-* `stack remove storage partition backend-0-0 device=sda`
+* `stack remove storage partition device=sda`
 
-   Remove the disk partition configuration for sda on backend-0-0.
+   Remove the global storage partition configuration for sda.
 
-* `stack remove storage partition backend-0-0 device=sda mountpoint=/var`
+* `stack remove storage partition device=sda mountpoint=/var`
 
-   Remove the disk partition configuration for partition /var on sda on backend-0-0.
-
-* `stack remove storage partition backend`
-
-   Remove the disk array configuration for backend
-	appliance.
+   Remove the global storage partition configuration for /var on sda.
 
 
 

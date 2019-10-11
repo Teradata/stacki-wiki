@@ -24,7 +24,7 @@
 
 * `stack help`
 
-   Alias for 'rocks list help'
+   Lists all the available commands.
 
 * `stack help viz`
 

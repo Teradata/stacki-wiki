@@ -6,6 +6,7 @@
 * [compile](stacki-compile-commands)
 * [config](stacki-config-commands)
 * [create](stacki-create-commands)
+  * [create host switch mapping](create-host-switch-mapping)
   * [create keys](create-keys)
   * [create mirror](create-mirror)
   * [create new pallet](create-new-pallet)
@@ -26,4 +27,4 @@
 * [swap](stacki-swap-commands)
 * [sync](stacki-sync-commands)
 * [unload](stacki-unload-commands)
-* [unpack](stacki-unpack-commands)
+* [verify](stacki-verify-commands)

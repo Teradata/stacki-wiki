@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack enable pallet {pallet ...} [arch=string] [box=string] [release=string] [version=string]`
+`stack enable pallet {pallet ...} [arch=string] [box=string] [os=string] [release=string] [version=string]`
 
 ### Description
 
@@ -23,6 +23,7 @@
 ### Parameters
 * `{arch=string}`
 * `{box=string}`
+* `{os=string}`
 * `{release=string}`
 * `{version=string}`
 

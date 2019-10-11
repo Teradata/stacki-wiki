@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack set host interface module [host ...] {module=string} [interface=string] [mac=string]`
+`stack set host interface module {host ...} {module=string} [interface=string] [mac=string] [network=string]`
 
 ### Description
 
@@ -14,7 +14,7 @@
 
 ### Arguments
 
-* `{host}`
+* `[host]`
 
    One or more hosts.
 
@@ -23,8 +23,9 @@
 * `[module=string]`
 * `{interface=string}`
 * `{mac=string}`
+* `{network=string}`
 
-   MAC address of the interface.
+   Network name of the interface.
 
 ### Examples
 

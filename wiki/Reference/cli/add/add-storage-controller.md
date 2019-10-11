@@ -2,45 +2,36 @@
 
 ### Usage
 
-`stack add storage controller {scope} [adapter=int] [arrayid=string] [enclosure=int] [hotspare=int] [raidlevel=int] [slot=int]`
+`stack add storage controller {arrayid=string} [adapter=integer] [enclosure=integer] [hotspare=integer] [raidlevel=integer] [slot=integer]`
 
 ### Description
 
 
-	Add a storage controller configuration to the database.
+	Add a global storage controller configuration for the all hosts in the cluster.
 
 	
 
-### Arguments
-
-* `[scope]`
-
-   Zero or one argument. The argument is the scope: a valid os (e.g.,
-	'redhat'), a valid appliance (e.g., 'backend') or a valid host
-	(e.g., 'backend-0-0). No argument means the scope is 'global'.
-
-
 ### Parameters
-* `{adapter=int}`
-* `{arrayid=string}`
-* `{enclosure=int}`
-* `{hotspare=int}`
-* `{raidlevel=int}`
-* `{slot=int}`
+* `[arrayid=string]`
+* `{adapter=integer}`
+* `{enclosure=integer}`
+* `{hotspare=integer}`
+* `{raidlevel=integer}`
+* `{slot=integer}`
 
    Slot address(es). This can be a comma-separated list meaning all disks
 	in the specified slots will be associated with the same array
 
 ### Examples
 
-* `stack add storage controller backend-0-0 slot=1 raidlevel=0 arrayid=1`
+* `stack add storage controller slot=1 raidlevel=0 arrayid=1`
 
-   The disk in slot 1 on backend-0-0 should be a RAID 0 disk.
+   The disk in slot 1 should be a RAID 0 disk.
 
-* `stack add storage controller backend-0-0 slot=2,3,4,5,6 raidlevel=6 hotspare=7,8 arrayid=2`
+* `stack add storage controller slot=2,3,4,5,6 raidlevel=6 hotspare=7,8 arrayid=2`
 
-   The disks in slots 2-6 on backend-0-0 should be a RAID 6 with two
-	hotspares associated with the array in slots 7 and 8.
+   The disks in slots 2-6 should be a RAID 6 with two hotspares associated
+	with the array in slots 7 and 8.
 
 
 

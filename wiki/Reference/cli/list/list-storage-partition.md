@@ -2,51 +2,20 @@
 
 ### Usage
 
-`stack list storage partition [host] {globalOnly=bool}`
+`stack list storage partition`
 
 ### Description
 
 
-	List the storage partition configuration for one of the following:
-	global, os, appliance or host.
+	List the global storage partition configuration.
 
 	
 
-### Arguments
-
-* `{host}`
-
-   This argument can be nothing, a valid 'os' (e.g., 'redhat'), a valid
-	appliance (e.g., 'backend') or a host.
-	If nothing is supplied, then the global storage partition
-	configuration will be output.
-
-
-### Parameters
-* `[globalOnly=bool]`
-
-   Flag that specifies if only the 'global' partition entries should
-	be displayed.
-
 ### Examples
-
-* `stack list storage partition backend-0-0`
-
-   List host-specific storage partition configuration for backend-0-0.
-
-* `stack list storage partition backend`
-
-   List appliance-specific storage partition configuration for all
-	backend appliances.
 
 * `stack list storage partition`
 
-   List all storage partition configurations in the database.
-
-* `stack list storage partition globalOnly=y`
-
-   Lists only global storage partition configuration i.e. configuration
-	not associated with a specific host or appliance type.
+   List the global storage partition configuration for this cluster.
 
 
 

@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack config host interface {host} [flag=string] [interface=string] [mac=string] [module=string]`
+`stack config host interface {host} [flag=string] [interface=string] [mac=string] [module=string] [sync=bool]`
 
 ### Description
 
@@ -27,8 +27,8 @@
 * `{interface=string}`
 * `{mac=string}`
 * `{module=string}`
+* `{sync=bool}`
 
-   Driver modules to be loaded for the interfaces. If multiple modules
-	are supplied, then they must be comma-separated.
+   When set to true, stack sync config is called. Defaults to true.
 
 

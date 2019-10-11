@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add appliance firewall {appliance ...} [action=string] [chain=string] [network=string] [output-network=string] [protocol=string] [rulename=string] [service=string] [table=string]`
+`stack add appliance firewall {appliance ...} {action=string} {chain=string} {protocol=string} {service=string} [comment=string] [flags=string] [network=string] [output-network=string] [rulename=string] [table=string]`
 
 ### Description
 
@@ -19,13 +19,15 @@
 
 
 ### Parameters
-* `{action=string}`
-* `{chain=string}`
+* `[action=string]`
+* `[chain=string]`
+* `[protocol=string]`
+* `[service=string]`
+* `{comment=string}`
+* `{flags=string}`
 * `{network=string}`
 * `{output-network=string}`
-* `{protocol=string}`
 * `{rulename=string}`
-* `{service=string}`
 * `{table=string}`
 
    The table to add the rule to. Valid values are 'filter',
@@ -42,7 +44,7 @@
 	then this will be translated as the following iptables rule:
 	"-A FORWARD -i eth0 -j ACCEPT"
 
-* `stack add appliance firewall login network=all service="8649" protocol="udp" action="REJECT" chain="INPUT"`
+* `stack add appliance firewall login service="8649" protocol="udp" action="REJECT" chain="INPUT"`
 
    Reject UDP packets with a destination port of 8649 on all networks for
 	the INPUT chain.

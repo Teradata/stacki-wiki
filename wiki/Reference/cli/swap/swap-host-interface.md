@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack swap host interface [host] {interfaces=string} [sync-config=boolean]`
+`stack swap host interface {host ...} {interfaces=string} [sync-config=boolean]`
 
 ### Description
 
@@ -13,7 +13,7 @@
 
 ### Arguments
 
-* `{host}`
+* `[host]`
 
    Host name of machine
 
@@ -22,7 +22,7 @@
 * `[interfaces=string]`
 * `{sync-config=boolean}`
 
-   If "yes", then run 'rocks sync config' at the end of the command.
-	The default is: yes.
+   If "yes", then run 'stack sync host config' and 'stack sync host network'
+	at the end of the command. The default is: yes.
 
 

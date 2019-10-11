@@ -8,7 +8,7 @@
 
 
 	Set the rack number for a list of hosts.
-	
+
 	
 
 ### Arguments

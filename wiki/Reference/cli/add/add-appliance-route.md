@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add appliance route {appliance} {address=string} {gateway=string} [netmask=string]`
+`stack add appliance route {appliance ...} {address=string} {gateway=string} [interface=string] [netmask=string]`
 
 ### Description
 
@@ -21,6 +21,7 @@
 ### Parameters
 * `[address=string]`
 * `[gateway=string]`
+* `{interface=string}`
 * `{netmask=string}`
 
    Specifies the netmask for a network route.  For a host route
