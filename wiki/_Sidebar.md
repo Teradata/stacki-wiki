@@ -8,6 +8,7 @@
   * [Frontend Install - Basics](Frontend-Installation)
   * [Frontend Install - New](Frontend-Install-New)
   * [Frontend Install - Existing](Frontend-Install-Existing)
+  * [Frontend Install - Cluster Up](Frontend-Install-Cluster-Up)
   * [Backend Install - Basics](Backend-Installation)
   * [Backend Install - Discovery](Backend-Install-Discovery)
   * [Backend Install - Spreadsheet](Backend-Install-Spreadsheet)

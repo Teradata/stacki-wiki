@@ -31,7 +31,7 @@ servers. Stacki refers to the single network as the _private_ network,
 and often this will be an isolated network.
 This default setup in shown below.
 
-![](images/cluster-architecture-network.png)  
+![](images/cluster-architecture-network.png)
 
 The private network cannot have another DHCP server that would answer
 a DHCP request from a backend server. The frontend provides DHCP
@@ -40,11 +40,11 @@ would cause conflicts on the network. (Two+ DHCP servers can co-exist if the Sta
 
 ### New or Existing
 
-The Stacki frontend runs on top of a CentOS/RHEL flavored 7.6 base.  
+The Stacki frontend runs on top of a CentOS/RHEL flavored 7.6 base.
 
-You have two options:
+You have three options:
 
-**Building on new server**
+#### Building on new server
 
   If you don't have an already existing vanilla CentOS or RedHat 7.6 system, build a new server from bare metal with Stacki and the required CentOS bits (which we call "stackios").
 
@@ -55,8 +55,12 @@ You have two options:
   * [Creating and using a "jumbo" pallet](Create-Jumbo-Pallets)
 
 
-**Building on an existing server**
+#### Building on an existing server
 
   If you wish to install Stacki on top of an existing vanilla CentOS or RedHat 7.6 system, follow the document labeled [Frontend Install - Existing](Frontend-Install-Existing).
 
-This procedure works for any CentOS/RHEL system including Oracle and Scientific Linux.  
+#### Building in a VM using Cluster Up
+
+  Stacki includes a tool called Cluster Up that can install a frontend in a VirtualBox or KVM VM, in a completely automated fashion. Follow the document labeled [Frontend Install - Cluster Up](Frontend-Install-Cluster-Up).
+
+This procedure works for any CentOS/RHEL system including Oracle and Scientific Linux.
