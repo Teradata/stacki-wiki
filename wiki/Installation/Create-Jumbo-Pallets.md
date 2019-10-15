@@ -12,7 +12,7 @@ This is only for a frontend so it contains the same OS that you want on the back
 
 You're going to have to start with a stacki frontend. Follow the [Frontend Install New](Frontend-Install-New) but do it on a virtual machine. This gives you a minimal frontend and allows you to create additional pallets.
 
-Once you have the frontend, copy the [stacki 5.4 pallet](https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/stacki-05.04.00.00-redhat7.x86_64.disk1.iso) to your frontend.
+Once you have the frontend, copy the [stacki 5.4 pallet](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso) to your frontend.
 
 Then get whatever OS you want to use. In this example, we're using the rhel-server-7.4-x86_64-dvd.iso available from your RedHat subscription.
 
@@ -21,31 +21,31 @@ scp or wget your OS iso to /export.
 
 ```
 # cd /export
-# wget https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/stacki-05.04.00.00-redhat7.x86_64.disk1.iso
+# wget https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso
 # wget http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
 ```
 
 Create an iso with with both the Stacki and CentOS inside, using defaults:
 
 ```
-# stack create pallet stacki-05.04.00.00-redhat7.x86_64.disk1.iso CentOS-7-x86_64-DVD-1810.iso
+# stack create pallet stacki-5.4-redhat7.x86_64.disk1.iso CentOS-7-x86_64-DVD-1810.iso
 ```
 
 You should see this:
 ```
-Building stacki+CentOS-05.04.00.00_20191004_a246ab2-redhat7.x86_64 ...
+Building stacki+CentOS-5.4_20191004_a246ab2-redhat7.x86_64 ...
 	copying stacki
 	copying CentOS
 Copying CentOS 7-redhat7 pallet ...
 Pallet is 4951.3MB
 Building ISO image for disk1
 ```
-And you'll see we have a stacki+CentOS-05.04.00.00_20191004_a246ab2-redhat7.x86_64.disk1.iso pallet.
+And you'll see we have a stacki+CentOS-5.4_20191004_a246ab2-redhat7.x86_64.disk1.iso pallet.
 
 ```
 # ls *.iso
-CentOS-7-x86_64-DVD-1810.iso                 stacki+CentOS-05.04.00.00_20191004_a246ab2-redhat7.x86_64.disk1.iso
-stacki-05.04.00.00-redhat7.x86_64.disk1.iso
+CentOS-7-x86_64-DVD-1810.iso                 stacki+CentOS-5.4_20191004_a246ab2-redhat7.x86_64.disk1.iso
+stacki-5.4-redhat7.x86_64.disk1.iso
 ```
 
 This pallet can be used in a [Frontend Install - New](Frontend-Install-New) instead of the stackios pallet to produce a frontend that will have Centos 7.6 as it's base OS.

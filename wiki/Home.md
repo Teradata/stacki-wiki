@@ -16,7 +16,7 @@ You can't install a backend without a frontend.
 
 You can't install a frontend without an OS pallet AND the stacki pallet.
 
-Which means the [stackios](https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/stackios-05.04.00.00-redhat7.x86_64.disk1.iso) pallet is ideal for the majority of you.
+Which means the [stackios](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) pallet is ideal for the majority of you.
 
 If you're an experiential learner and don't need/want explanations follow the [Quickstart](Quickstart).
 
@@ -51,13 +51,13 @@ Get them all right here:
 
 ** This pallet is THE recommended pallet **
 
-[stackios-05.04.00.00-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/stackios-05.04.00.00-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
+[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
 
 ** Individual Pallets **
 
 For building on an already installed server.
 
-[stacki-05.04.00.00-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/stacki-05.04.00.00-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
+[stacki-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
 
 You will also need a [CentOS 7.6](http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/) iso. I use the Everything version but you can use smaller DVD one (which has less packages). You can also use a RHEL 7.6 iso if you want to run Redhat Enterprise.
 

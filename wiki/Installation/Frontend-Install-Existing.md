@@ -10,7 +10,7 @@ To perform this installation, log into the frontend and download two pallets and
 
 1. **Stacki ISO**. Download the Stacki ISO and put it on the server you want as the Stacki frontend.
 
-    * [stacki-05.04.00.00-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/stacki-05.04.00.00-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
+    * [stacki-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
 
 2. **OS Pallet** You'll need to download ONE of the following OS pallets:
 
@@ -27,17 +27,17 @@ To perform this installation, log into the frontend and download two pallets and
 Execute frontend-install.py:
 
     # chmod u+x frontend-install.py
-    # ./frontend-install.py --stacki-iso=stacki-05.04.00.00-redhat7.x86_64.disk1.iso
+    # ./frontend-install.py --stacki-iso=stacki-5.4-redhat7.x86_64.disk1.iso
 
 Using just the stacki iso will create a frontend but then you have to add an OS pallet after the reboot. To shortcut that step, add an os pallet on the command line with the "--extra-iso" option and supply any OS pallets you have:
 
 With the full CentOS iso ( or rhel-server iso or Oracle etc.)
 
-    # ./frontend-install.py --stacki-iso=stacki-05.04.00.00-redhat7.x86_64.disk1.iso --extra-iso=CentOS-7-x86_64-Everything-1810.iso
+    # ./frontend-install.py --stacki-iso=stacki-5.4-redhat7.x86_64.disk1.iso --extra-iso=CentOS-7-x86_64-Everything-1810.iso
 
 If you want to use the current network, route, DNS, timezone, root password and do not want to use the wizard, throw the ""--use-existing" option:
 
-    # ./frontend-install.py --use-existing --stacki-iso=stacki-05.04.00.00-redhat7.x86_64.disk1.iso --extra-iso=CentOS-7-x86_64-Everything-1810.iso
+    # ./frontend-install.py --use-existing --stacki-iso=stacki-5.4-redhat7.x86_64.disk1.iso --extra-iso=CentOS-7-x86_64-Everything-1810.iso
 
 
 If you have not used the "--use-existing command", the above any of the previous steps display the [Installation Wizard](#installation-wizard) to set system configuration including: network, password, timezone, pallets, and partitioning.
@@ -144,9 +144,9 @@ And you should see two pallets:
 
 ```
 # stack list pallet
-NAME   VERSION     RELEASE ARCH   OS     BOXES
-stacki 05.04.00.00 redhat7 x86_64 redhat default frontend
-CentOS 7           redhat7 x86_64 redhat default frontend
+NAME   VERSION RELEASE ARCH   OS     BOXES
+stacki 5.4     redhat7 x86_64 redhat default frontend
+CentOS 7       redhat7 x86_64 redhat default frontend
 ```
 
 Your Stacki frontend is now ready to [install backend servers](Backend-Installation).
@@ -157,8 +157,8 @@ If you didn't supply an OS pallet with the "--extra-iso" option to frontend-inst
 
 ```
 # stack list pallet
-NAME   VERSION     RELEASE ARCH   OS     BOXES
-stacki 05.04.00.00 redhat7 x86_64 redhat default frontend
+NAME   VERSION RELEASE ARCH   OS     BOXES
+stacki 5.4     redhat7 x86_64 redhat default frontend
 ```
 
 You need to add an **OS pallet**.
@@ -182,9 +182,9 @@ Then _enable_ the 'CentOS' pallet. This makes the 'CentOS' repository on the Sta
 Should produce output similar to:
 
 ```
-NAME   VERSION     RELEASE ARCH   OS     BOXES
-stacki 05.04.00.00 redhat7 x86_64 redhat default frontend
-CentOS 7           redhat7 x86_64 redhat default frontend
+NAME   VERSION RELEASE ARCH   OS     BOXES
+stacki 5.4     redhat7 x86_64 redhat default frontend
+CentOS 7       redhat7 x86_64 redhat default frontend
 ```
 
 And now Your Stacki frontend is now ready to [install backend servers](Backend-Installation).

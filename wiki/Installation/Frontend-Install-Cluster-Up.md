@@ -8,10 +8,10 @@ Stacki ships with a tool which can automatically provision a frontend in a VM us
 1. Make sure you have Vagrant installed and either VirtualBox or the vagrant-libvirt plugin.
 
 2. Download the following files to the VM host machine:
-    * **Stacki ISO**: [stacki-05.04.00.00-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/stacki-05.04.00.00-redhat7.x86_64.disk1.iso)
+    * **Stacki ISO**: [stacki-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso)
 
     * **Cluster Up**:
-    [cluster-up-05.04.00.00.tar.gz](https://github.com/Teradata/stacki/releases/download/stacki-05.04.00.00/cluster-up-05.04.00.00.tar.gz)
+    [cluster-up-5.4.tar.gz](https://github.com/Teradata/stacki/releases/download/stacki-5.4/cluster-up-5.4.tar.gz)
 
         **Note**: If you have a Stacki source repository locally, then you already have Cluster up in the `tools/cluster-up` folder.
 
