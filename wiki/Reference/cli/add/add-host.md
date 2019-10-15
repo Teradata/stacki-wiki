@@ -2,7 +2,7 @@
 
 ### Usage
 
-`stack add host {host} [box=string] [environment=string] [rack=string] [rank=string]`
+`stack add host {host} [appliance=string] [box=string] [environment=string] [rack=string] [rank=string]`
 
 ### Description
 
@@ -21,6 +21,7 @@
 
 
 ### Parameters
+* `{appliance=string}`
 * `{box=string}`
 * `{environment=string}`
 * `{rack=string}`

@@ -7,9 +7,11 @@
 ### Description
 
 
-	Add pallet ISO images to this machine's pallet directory. This command
-	copies all files in the ISOs to the local machine. The default location
-	is a directory under /export/stack/pallets.
+	Add pallets to this machine's pallet directory. This command copies all
+	files in ISOs or paths recognized by stacki to be pallets to the local
+	machine. The default location is a directory under /export/stack/pallets.
+	See also the 'probepal' utility to ascertain how, if at all, stacki will
+	recognize it.
 
 	
 
@@ -17,10 +19,11 @@
 
 * `{pallet}`
 
-   A list of pallet ISO images to add to the local machine. If no list is
-	supplied, then if a pallet is mounted on /mnt/cdrom, it will be copied
+   A list of pallets to add to the local machine. If no list is supplied
+	stacki will check if a pallet is mounted on /mnt/cdrom, and if so copy it
 	to the local machine. If the pallet is hosted on the internet, it will
-	be downloaded and stored on the local machine.
+	be downloaded to a temporary directory before being added.  All temporary
+	files and mounts will be cleaned up, with the exception of /mnt/cdrom.
 
 
 ### Parameters
@@ -30,23 +33,25 @@
 * `{updatedb=string}`
 * `{username=string}`
 
-   If the pallet's download server requires authentication.
+   A username that will be used for authenticating to any remote pallet locations
 
 ### Examples
 
-* `stack add pallet clean=1 kernel*iso`
+* `stack add pallet clean=true kernel*iso`
 
    Adds the Kernel pallet to local pallet directory.  Before the pallet is
 	added the old Kernel pallet packages are removed from the pallet
 	directory.
 
-* `stack add pallet kernel*iso pvfs2*iso ganglia*iso`
+* `stack add pallet kernel*iso https://10.0.1.3/pallets/`
 
-   Added the Kernel, PVFS, and Ganglia pallets to the local pallet
-	directory.
+   Added the Kernel pallet along with any pallets found at the remote server
+	 to the local pallet directory.
 
 
 ### Related
+[create new pallet](create-new-pallet)
+
 [create pallet](create-pallet)
 
 [disable pallet](disable-pallet)

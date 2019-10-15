@@ -178,7 +178,6 @@
 * [load](stacki-load-commands)
   * [load ](load)
   * [load attrfile](load-attrfile)
-  * [load host](load-host)
   * [load hostfile](load-hostfile)
   * [load networkfile](load-networkfile)
   * [load storage controller](load-storage-controller)

@@ -7,7 +7,7 @@
 ### Description
 
 
-	Take rows from a spreadsheet that describe how a host's disk controller
+	Take rows from a spreadsheet that describe the logical networks that
 	should be configured and then place those values into the database.
 	
 	
@@ -23,8 +23,15 @@
 
 * `stack load networkfile file=mynets.csv`
 
-   Read disk controller configuration from controller.csv and use the
+   Read network configuration from mynets.csv and use the
 	default processor to parse the data.
 
+
+### Related
+[dump network](dump-network)
+
+[load](load)
+
+[report networkfile](report-networkfile)
 
 
