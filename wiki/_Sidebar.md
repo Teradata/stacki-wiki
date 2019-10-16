@@ -15,6 +15,8 @@
   * [Backend Reinstall](Backend-Reinstall)
   * [Amazon Web Services](Amazon-Web-Services)
   * [Creating Jumbo Pallets](Create-Jumbo-Pallets)
+* Upgrading
+  * [Upgrading Frontends](Upgrading-Frontends)
 * [Customization](Customization)
   * [Carts](Carts)
     * [Adding Packages](Adding-RPMs)
@@ -26,8 +28,6 @@
   * [Boxes](Boxes)
   * [Appliances](Appliances)
   * [Stacki Universal XML](Stacki-Universal-XML)
-* Upgrading
-  * [Upgrading Frontends](Upgrading-Frontends)
 * Configuration
   * [Using Attributes](Using-Attributes)
   * [Using Spreadsheets](Using-Spreadsheets)
