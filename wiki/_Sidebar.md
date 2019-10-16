@@ -26,6 +26,8 @@
   * [Boxes](Boxes)
   * [Appliances](Appliances)
   * [Stacki Universal XML](Stacki-Universal-XML)
+* Upgrading
+  * [Upgrading Frontends](Upgrading-Frontends)
 * Configuration
   * [Using Attributes](Using-Attributes)
   * [Using Spreadsheets](Using-Spreadsheets)
