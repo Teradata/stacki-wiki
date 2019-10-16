@@ -3,7 +3,7 @@
 It is of course, recommended that you use the newest release when testing or building new clusters.
 
 Download the Stackios ISO file.
-[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
+[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: 2b63727b8bf9fd5959effbfd09633bcf)
 
 Burn the file to a DVD and mount it in an external or internal DVD drive or on the virtual media for the server to be installed. Installing a frontend will completely erase and reformat the hard disks in the server. So use caution when deciding which server to designate as your frontend.
 

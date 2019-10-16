@@ -51,13 +51,13 @@ Get them all right here:
 
 ** This pallet is THE recommended pallet **
 
-[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
+[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: 2b63727b8bf9fd5959effbfd09633bcf)
 
 ** Individual Pallets **
 
 For building on an already installed server.
 
-[stacki-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
+[stacki-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso) (MD5: 0293f63fa93eda2a99621ebe99216ef9)
 
 You will also need a [CentOS 7.6](http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/) iso. I use the Everything version but you can use smaller DVD one (which has less packages). You can also use a RHEL 7.6 iso if you want to run Redhat Enterprise.
 

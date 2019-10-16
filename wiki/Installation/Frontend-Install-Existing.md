@@ -10,7 +10,7 @@ To perform this installation, log into the frontend and download two pallets and
 
 1. **Stacki ISO**. Download the Stacki ISO and put it on the server you want as the Stacki frontend.
 
-    * [stacki-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
+    * [stacki-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stacki-5.4-redhat7.x86_64.disk1.iso) (MD5: 0293f63fa93eda2a99621ebe99216ef9)
 
 2. **OS Pallet** You'll need to download ONE of the following OS pallets:
 

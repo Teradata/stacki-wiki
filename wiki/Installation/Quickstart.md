@@ -47,7 +47,7 @@ Backend:
 
 The current version is Stacki 5.4.
 
-[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: *TBD*)
+[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: 2b63727b8bf9fd5959effbfd09633bcf)
 
 Check the md5sum. Yeah, no, check the md5sum. Remember, silent acid rain of mockery.
 
