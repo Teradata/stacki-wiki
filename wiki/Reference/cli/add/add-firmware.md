@@ -9,7 +9,7 @@
 
 	Adds a firmware image to stacki.
 
-	
+
 
 ### Arguments
 
@@ -31,20 +31,20 @@
 
 ### Examples
 
-* `stack add firmware 3.6.5002 source=/export/some/path/img-3.6.5002.img make=Mellanox model=7800 imp=mellanox_m7800`
+* `stack add firmware 3.6.5002 source=/export/some/path/img-3.6.5002.img make=Mellanox model=m7800 imp=mellanox_m7800`
 
    Fetches the firmware file from the source (a local file on the front end in /export/some/path), associates it with the
 	Mellanox make and 7800 model, and sets the version to 3.6.5002, and adds it to be tracked in the stacki database.
 
-* `stack add firmware 3.6.5002 source=http://www.your-sweet-site.com/firmware/mellanox/img-3.6.5002.img make=Mellanox model=7800 imp=mellanox_m7800`
+* `stack add firmware 3.6.5002 source=http://www.your-sweet-site.com/firmware/mellanox/img-3.6.5002.img make=Mellanox model=m7800 imp=mellanox_m7800`
 
    This performs the same steps as the previous example except the image is fetched via HTTP.
 
-* `stack add firmware 3.6.5002 source=http://www.your-sweet-site.com/firmware/mellanox/img-3.6.5002.img make=Mellanox model=7800 hosts=switch-0-1,switch-0-2`
+* `stack add firmware 3.6.5002 source=http://www.your-sweet-site.com/firmware/mellanox/img-3.6.5002.img make=Mellanox model=m7800 hosts=switch-0-1,switch-0-2`
 
    This performs the same steps as the previous example except the firmware gets associated with the hosts named switch-0-1 and switch-0-2.
 
-* `stack add firmware 3.6.5002 source=http://www.your-sweet-site.com/firmware/mellanox/img-3.6.5002.img make=Mellanox model=7800 hosts=a:switch`
+* `stack add firmware 3.6.5002 source=http://www.your-sweet-site.com/firmware/mellanox/img-3.6.5002.img make=Mellanox model=m7800 hosts=a:switch`
 
    This performs the same steps as the previous example except the firmware gets associated with all hosts that are of the appliance switch type.
 
