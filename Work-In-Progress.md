@@ -7,7 +7,7 @@ New Data format for Stacki
 			"pallet": [
 				{"name" : "tdc-infrastructure", "version": "1.0", "release":"sles11", "url":"https://", "box" : ["default", "sles12"]},
 				{"name" : "netapp", "version": "1.0", "release":"sles12", "box": []},
-				{"name" : "kubernetes", "version": "1.0", "release":"sles12sp2", "box": []}
+				{"name" : "kubernetes", "version": "1.0", "release":"sles12sp3", "box": []}
 			],
 			"cart" : [
 				{"name": "mycart-12.2", "url":"https://", "box":["default", "sles12"]},

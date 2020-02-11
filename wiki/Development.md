@@ -23,7 +23,7 @@ We need a real consensus on this, but right now the rule is when you
 drop into a piece of code try to copy the existing style. For new code
 just keep it readable. Eventually someone will get bored and write up
 a style guide for Stacki, we will fight about it for a week or so and
-loose interest and we will be back to where we are now. All of this
+lose interest and we will be back to where we are now. All of this
 has happened before, and all of this will happen again.
 
 There is a `.flake8` (think `pep8` with more stuff) in the Stacki
