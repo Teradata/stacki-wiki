@@ -46,13 +46,13 @@ Start with a fresh install of [CentOS 7.6](http://archive.kernel.org/centos-vaul
 
 #### SLES
 
-##### 12SP2
+##### 12SP3
 
 Start with a fresh install of SLES 12, using the default desktop/workstation "system role".  If you do not have access to the remote SLES zypper repositories, you need to add the install ISO and the first SDK ISO as repos.
 
 ```
-zypper ar iso:/?iso=/export/SLE-12-SP2-Server-DVD-x86_64-GM-DVD1.iso install_dvd
-zypper ar iso:/?iso=/export/SLE-12-SP2-SDK-DVD-x86_64-GM-DVD1.iso sdk_dvd
+zypper ar iso:/?iso=/export/SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso install_dvd
+zypper ar iso:/?iso=/export/SLE-12-SP3-SDK-DVD-x86_64-GM-DVD1.iso sdk_dvd
 ```
 
 ##### 11SP3
