@@ -16,6 +16,7 @@ a file and squirrel it away somewhere before nuking your frontend.
 Note that this **will not** save:
 
 * The current state of boot state for your node (os vs install)
+* The actual pallets (pallet metadata will be kept, including original URL's, but these will not be automatically re-added during `stack load`)
 
 ## Install your new frontend
 
