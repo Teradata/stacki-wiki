@@ -53,8 +53,8 @@ The Stacki API provides 1 endpoint - **/stack**
    as follows
    * Set header `csrftoken` to the CSRFToken from the CSRF Cookie
    * Set header `X-CSRFToken` to the CSRFToken from the CSRF Cookie
-   * Set Content-Type to `application/x-www-form-urlencoded`
-   * Set Data to `USERNAME=<username>&PASSWORD=<password>`
+   * Set header `Content-Type` to `application/x-www-form-urlencoded`
+   * In the body of the request, set data to `USERNAME=<username>&PASSWORD=<password>`
 
    Upon successful login, the response headers will include the following.
    * **CSRFToken cookie** - This is different from the csrftoken cookie obtained
