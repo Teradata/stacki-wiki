@@ -16,7 +16,7 @@ You can't install a backend without a frontend.
 
 You can't install a frontend without an OS pallet AND the stacki pallet.
 
-Which means the [stackios](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) pallet is ideal for the majority of you.
+Which means the [stackios](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) pallet is ideal for the majority of you. (Although 5.6 is coming out soon, and stackios will not be provided - the way to install 5.6 will be on top of an existing CentOS/RHEL system.)
 
 If you're an experiential learner and don't need/want explanations follow the [Quickstart](Quickstart).
 
