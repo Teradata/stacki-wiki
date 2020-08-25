@@ -51,7 +51,7 @@ Get them all right here:
 
 ** This pallet is THE recommended pallet **
 
-[stackios-5.4.1-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) (MD5: **TBD**)
+[stackios-5.4.1-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) (MD5: 03daf2291e8d6617f8ae1f4d5e821ed6, sha256sum: 9784891a2b2a0cf1928324fdcaa0bb1b86f8414e5eb8734ad7203490d5b1b4ac)
 
 ** Individual Pallets **
 
