@@ -6,7 +6,7 @@ So yeah, there's that.
 
 On Stacki 5.x we currently DO NOT support installing CentOS/RHEL 6.x systems.
 
-If any of the terms below are unfamiliar to you, read the [Definitions](Definitions)
+If any of the terms below are unfamiliar to you, read the [Definitions](Definitions).
 
 ## Installation
 
@@ -49,11 +49,11 @@ The general work flow is:
 ### Downloads
 Get them all right here:
 
-** This pallet is THE recommended pallet **
+**This pallet is THE recommended pallet**
 
 [stackios-5.4.1-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) (MD5: 03daf2291e8d6617f8ae1f4d5e821ed6)
 
-** Individual Pallets **
+**Individual Pallets**
 
 For building on an already installed server.
 
