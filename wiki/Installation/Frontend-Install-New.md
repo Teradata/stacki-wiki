@@ -1,9 +1,9 @@
 ## Frontend install new server
 
-It is of course, recommended that you use the newest release when testing or building new clusters.
+It is of course, recommended that you use the newest release when testing or building new clusters.  Please note, the last working release of StackiOS is 5.4.1 (link below).
 
 Download the Stackios ISO file.
-[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: 2b63727b8bf9fd5959effbfd09633bcf)
+[stackios-5.4.1-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) (MD5: 03daf2291e8d6617f8ae1f4d5e821ed6)
 
 Burn the file to a DVD and mount it in an external or internal DVD drive or on the virtual media for the server to be installed. Installing a frontend will completely erase and reformat the hard disks in the server. So use caution when deciding which server to designate as your frontend.
 
@@ -129,7 +129,7 @@ And you should see two pallets:
 ```
 # stack list pallet
 NAME   VERSION RELEASE ARCH   OS     BOXES
-stacki 5.4     redhat7 x86_64 redhat default frontend
+stacki 5.4.1   redhat7 x86_64 redhat default frontend
 CentOS 7       redhat7 x86_64 redhat default frontend
 ```
 

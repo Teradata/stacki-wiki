@@ -16,7 +16,7 @@ You can't install a backend without a frontend.
 
 You can't install a frontend without an OS pallet AND the stacki pallet.
 
-Which means the [stackios](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) pallet is ideal for the majority of you. (Although 5.6 is coming out soon, and stackios will not be provided - the way to install 5.6 will be on top of an existing CentOS/RHEL system.)
+Which means the [stackios](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) pallet may be ideal for you. Please note that Stacki 5.4.1 is the last release that shipped stackios.  The way to install 5.6 is on top of an existing CentOS/RHEL/SLES system.
 
 If you're an experiential learner and don't need/want explanations follow the [Quickstart](Quickstart).
 
@@ -49,7 +49,7 @@ The general work flow is:
 ### Downloads
 Get them all right here:
 
-**This pallet is THE recommended pallet**
+**This pallet is the StackiOS 5.4.1 ISO**
 
 [stackios-5.4.1-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) (MD5: 03daf2291e8d6617f8ae1f4d5e821ed6)
 
@@ -57,10 +57,14 @@ Get them all right here:
 
 For building on an already installed server.
 
+With Stacki 5.6.5:
+
+[stacki-5.6.5-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.6.5/stacki-5.6.5-redhat7.x86_64.disk1.iso) (MD5: de43aea1da528cc954388d03ecb5f978)
+
+With Stacki 5.4.1:
+
 [stacki-5.4.1-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stacki-5.4.1-redhat7.x86_64.disk1.iso) (MD5: 9e1c159ec4a34396b0d4c9c88d6c0b95)
 
-You will also need a [CentOS 7.6](http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/) iso. I use the Everything version but you can use smaller DVD one (which has less packages). You can also use a RHEL 7.6 iso if you want to run Redhat Enterprise.
+For either version of stacki, you will also need a [CentOS 7.6](http://archive.kernel.org/centos-vault/7.6.1810/isos/x86_64/) iso. I use the Everything version but you can use smaller DVD one (which has less packages). You can also use a RHEL 7.6 iso if you want to run Redhat Enterprise.  SLES12 and 15 will also work as a stacki Frontend, but you must build the stacki SLSE pallet yourself.
 
-If you're installing on a pre-installed CentOS/RHEL machine you'll need the **frontend-install.py** script as well:
-
-[frontend-install.py](https://raw.githubusercontent.com/Teradata/stacki/master/tools/fab/frontend-install.py)
+If you're installing stacki on a pre-installed CentOS/RHEL/SLES machine you'll need the **frontend-install.py** script as well.  On stacki 5.4.1 and later, this is part of the frontend install process and the script is included in the ISO itself.  Mount the iso then find and install the stacki-fab*rpm and foundation-python-3*rpm.

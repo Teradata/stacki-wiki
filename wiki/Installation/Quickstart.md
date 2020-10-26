@@ -45,9 +45,9 @@ Backend:
 
 ## 2. Download the software
 
-The current version is Stacki 5.4.
+The current version of StackiOS is Stacki 5.4.1.
 
-[stackios-5.4-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4/stackios-5.4-redhat7.x86_64.disk1.iso) (MD5: 2b63727b8bf9fd5959effbfd09633bcf)
+[stackios-5.4.1-redhat7.x86_64.disk1.iso](https://github.com/Teradata/stacki/releases/download/stacki-5.4.1/stackios-5.4.1-redhat7.x86_64.disk1.iso) (MD5: 03daf2291e8d6617f8ae1f4d5e821ed6)
 
 Check the md5sum. Yeah, no, check the md5sum. Remember, silent acid rain of mockery.
 
